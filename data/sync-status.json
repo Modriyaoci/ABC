@@ -1,0 +1,16 @@
+{
+  "running": false,
+  "lastStarted": "2026-09-18T17:15:46+08:00",
+  "lastSuccess": "2026-09-18T17:00:46+08:00",
+  "lastError": null,
+  "lastReason": "live",
+  "progressDone": 2,
+  "progressTotal": 2,
+  "progressLabel": "同步完成",
+  "lastLiveSuccess": "2026-09-18T17:15:47+08:00",
+  "lastLiveError": null,
+  "retryAt": null,
+  "liveRetryAt": null,
+  "liveFailures": 0,
+  "dataVersion": "2026-09-18T17:15:47.287879+08:00"
+}
