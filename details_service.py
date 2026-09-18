@@ -348,3 +348,26 @@ def get_tournament(sport: str, records: list[dict[str, Any]] | None = None, fetc
             message = "循环赛积分；官网暂无淘汰赛对阵图"
         events.append({"id": key, "name": _translate_category(_text(definition.get("Desc"), key)), "groups": tables, "rounds": rounds, "message": message})
     return {"updatedAt": _now(), "events": events, "message": "" if events else "官网尚未公布该项目积分或对阵图"}
+
+# SENTINEL-END
+
+# Schedule data includes an explicit winner when the bracket feed omits it.
+_original_enrich_bracket_rounds = _enrich_bracket_rounds
+
+def _enrich_bracket_rounds(rounds: list[dict[str, Any]], records: list[dict[str, Any]] | None) -> None:
+    _original_enrich_bracket_rounds(rounds, records)
+    by_id = {str(record.get("id")): record for record in records or [] if isinstance(record, dict) and record.get("id")}
+    for round_ in rounds:
+        for match in round_.get("matches", []):
+            record = by_id.get(str(match.get("id")))
+            if not record or _text(record.get("status")).upper() not in TERMINAL_RESULTS:
+                continue
+            sides = (record.get("home"), record.get("away"))
+            flags = []
+            for side in sides:
+                value = side.get("Winner") if isinstance(side, dict) else None
+                flags.append(value is True or str(value).strip().lower() in {"true", "1", "yes"})
+            if flags == [True, False]:
+                match["winner"] = "home"
+            elif flags == [False, True]:
+                match["winner"] = "away"
