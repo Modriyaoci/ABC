@@ -118,14 +118,17 @@ function renderDateFilter() {
 }
 
 function renderCategoryFilter() {
-  let options;
-  if (state.view === "schedule") {
-    options = [...new Map(sportRecords().map((record) => [recordCategory(record), record.category])).entries()];
-    options.unshift(["", "全部类别"]);
-  } else {
-    options = (state.tournaments.get(state.activeSport)?.data?.events || []).map((event) => [String(event.id), event.name]);
-    if (!options.length) options = [["", "暂无类别"]];
-  }
+  // The schedule is the source of truth for available categories. This keeps
+  // mixed doubles and any newly published event visible even if the separate
+  // standings/bracket endpoint lags behind.
+  const scheduleOptions = [...new Map(sportRecords()
+    .filter((record) => recordCategory(record))
+    .map((record) => [recordCategory(record), record.category])).entries()];
+  let options = state.view === "schedule" || scheduleOptions.length
+    ? scheduleOptions
+    : (state.tournaments.get(state.activeSport)?.data?.events || []).map((event) => [String(event.id), event.name]);
+  if (state.view === "schedule") options.unshift(["", "全部类别"]);
+  if (!options.length) options = [["", "暂无类别"]];
   const key = selectionKey();
   if (!options.some(([value]) => value === state.selections.get(key))) state.selections.set(key, options[0][0]);
   elements.category.innerHTML = options.map(([value, label]) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`).join("");
@@ -221,8 +224,10 @@ function bracketMatch(match, number, locations) {
   const awayWins = winner && ["AWAY", "2", String(match.away).toUpperCase()].includes(winner);
   const destination = match.nextMatchId ? locations.get(String(match.nextMatchId)) : null;
   const score = (value) => String(value ?? "").trim() || "—";
+  const status = String(match.status || "").toUpperCase();
+  const statusLabel = status === "CANCELED" || status === "CANCELLED" ? "已取消" : "";
   return `<article class="bracket-match" id="bracket-${escapeHtml(encodeURIComponent(String(match.id)))}" tabindex="-1">
-    <p class="bracket-match-label">对阵 ${number}</p>
+    <p class="bracket-match-label">对阵 ${number}${statusLabel ? ` · ${statusLabel}` : ""}</p>
     <div class="bracket-team ${homeWins ? "is-winner" : ""}"><span>${escapeHtml(match.home || "待定")}</span><strong>${escapeHtml(score(match.homeScore))}</strong></div>
     <div class="bracket-team ${awayWins ? "is-winner" : ""}"><span>${escapeHtml(match.away || "待定")}</span><strong>${escapeHtml(score(match.awayScore))}</strong></div>
     ${destination ? `<button class="advancement-link" type="button" data-advance-to="${escapeHtml(match.nextMatchId)}">胜者进入：${escapeHtml(destination.round)} · 对阵 ${destination.number} <span aria-hidden="true">→</span></button>` : ""}
@@ -233,7 +238,12 @@ function renderView() {
   elements.title.textContent = SPORTS[state.activeSport] || "赛程";
   elements.scheduleView.hidden = state.view !== "schedule";
   elements.tournamentView.hidden = state.view === "schedule";
-  elements.scheduleFilters.hidden = state.view !== "schedule";
+  // Keep the event/category selector available for standings and bracket
+  // views. Date and status only apply to the schedule table.
+  elements.scheduleFilters.hidden = false;
+  elements.dateFilter.parentElement.hidden = state.view !== "schedule";
+  elements.statusFilter.parentElement.hidden = state.view !== "schedule";
+  elements.category.parentElement.hidden = false;
   for (const button of elements.viewTabs.querySelectorAll("[data-view]")) button.setAttribute("aria-selected", String(button.dataset.view === state.view));
   renderCategoryFilter();
   if (state.view === "schedule") renderDateFilter();
