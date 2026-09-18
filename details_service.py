@@ -15,6 +15,7 @@ from sync_service import BEIJING_TZ, SPORTS, SyncError, _competitor_name, _stage
 
 Fetcher = Callable[[str], Any]
 PRESTART = {"SCHEDULED", "UNSCHEDULED", "START_LIST", "PROVISIONAL", "GETTING_READY", "POSTPONED", "RESCHEDULED"}
+TERMINAL_RESULTS = {"OFFICIAL", "FINISHED", "COMPLETED"}
 
 
 def _text(value: Any, default: str = "") -> str:
@@ -212,6 +213,55 @@ def _group_table(group: dict[str, Any]) -> dict[str, Any]:
     return {"name": _translate_stage(_text(group.get("Desc") or group.get("DescA"), "小组")), "columns": [label for label, _ in fields], "rows": rows}
 
 
+def _bracket_match_order(key: str) -> tuple[int, str]:
+    """Sort official bracket units by their published unit number."""
+    match = re.search(r"\.(\d+)-*$", key)
+    return (int(match.group(1)) if match else 10**12, key)
+
+
+def _bracket_score(value: Any, sport: str) -> str:
+    score = _text(value)
+    if sport == "CKT":
+        match = re.match(r"\s*(\d+)", score)
+        return match.group(1) if match else score
+    return score
+
+
+def _record_participants(record: dict[str, Any]) -> tuple[str, str] | None:
+    matchup = _text(record.get("matchup"))
+    if " vs " not in matchup:
+        return None
+    home, away = (part.strip() for part in matchup.split(" vs ", 1))
+    if not home or not away or home == "对阵待定" or away == "对阵待定":
+        return None
+    return home, away
+
+
+def _enrich_bracket_rounds(rounds: list[dict[str, Any]], records: list[dict[str, Any]] | None) -> None:
+    """Use the synchronized schedule as a fallback for confirmed teams.
+
+    The official bracket feed can briefly lag the daily schedule feed. When
+    that happens, a published matchup in the schedule is safe to copy into
+    the corresponding bracket unit; no names are inferred from scores.
+    """
+    by_id = {str(record.get("id")): record for record in records or [] if isinstance(record, dict) and record.get("id")}
+    for round_ in rounds:
+        for match in round_.get("matches", []):
+            record = by_id.get(str(match.get("id")))
+            if not record:
+                continue
+            participants = _record_participants(record)
+            if participants:
+                # The daily schedule is the freshest published matchup. Use
+                # it to correct a stale bracket participant as well as a TBD.
+                match["home"], match["away"] = participants
+            status = _text(record.get("status")).upper()
+            if status:
+                match["status"] = status
+            if status not in TERMINAL_RESULTS:
+                match["winner"] = ""
+
+
 def _bracket_rounds(data: Any, sport: str, event_key: str, pool_keys: set[str]) -> list[dict[str, Any]]:
     if data is None:
         return []
@@ -233,7 +283,12 @@ def _bracket_rounds(data: Any, sport: str, event_key: str, pool_keys: set[str]) 
                 info = match.get("Info") or {}
                 home, away = match.get("Home") or {}, match.get("Away") or {}
                 key = _text(info.get("Key"))
-                item = {"id": f"{sport}:{key}", "home": _bracket_name(home, match_type, sport), "away": _bracket_name(away, match_type, sport), "homeScore": _text(home.get("Res")), "awayScore": _text(away.get("Res")), "winner": "home" if home.get("Win") else "away" if away.get("Win") else ""}
+                status = _text(info.get("Status")).upper()
+                # Win flags in a canceled or provisional unit are sometimes
+                # copied from the original draw. Only terminal official
+                # results can mark a bracket team as the winner.
+                winner = "" if status and status not in TERMINAL_RESULTS else "home" if home.get("Win") else "away" if away.get("Win") else ""
+                item = {"id": f"{sport}:{key}", "home": _bracket_name(home, match_type, sport), "away": _bracket_name(away, match_type, sport), "homeScore": _bracket_score(home.get("Res"), sport), "awayScore": _bracket_score(away.get("Res"), sport), "winner": winner, "status": status}
                 # Only explicit feed provenance establishes a link. Numeric
                 # ordering is insufficient for classification/bronze matches.
                 for side in (home, away):
@@ -242,6 +297,7 @@ def _bracket_rounds(data: Any, sport: str, event_key: str, pool_keys: set[str]) 
                     if predecessor and rank == "1" and not predecessor.endswith(".--------"):
                         links[f"{sport}:{predecessor}"] = item["id"]
                 matches.append(item)
+            matches.sort(key=lambda item: _bracket_match_order(item["id"]))
             if not matches:
                 continue
             name = _text(phase.get("Desc"), "轮次")
@@ -286,6 +342,7 @@ def get_tournament(sport: str, records: list[dict[str, Any]] | None = None, fetc
         pool_keys = {_text(g.get("Key")) for g in groups if g.get("Type") == "POOL"}
         tables = [_group_table(g) for g in groups if g.get("Competitors")]
         rounds = _bracket_rounds(payloads[(key, "brackets")], sport, key, pool_keys)
+        _enrich_bracket_rounds(rounds, records)
         message = "" if tables or rounds else "官网尚未公布该项目积分或对阵图"
         if tables and not rounds:
             message = "循环赛积分；官网暂无淘汰赛对阵图"
