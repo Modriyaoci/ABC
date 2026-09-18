@@ -1,0 +1,437 @@
+const SPORTS = {
+  TEN: "网球", BBL: "棒球", CKT: "板球", VVO: "排球",
+  TTE: "乒乓球", BDM: "羽毛球", HBL: "手球",
+};
+const WEEKDAYS = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+const state = {
+  records: [], activeSport: null, view: "schedule", selections: new Map(),
+  dateFilter: "", statusFilter: "",
+  status: null, statusTimer: null, refreshing: false, refreshAgain: false,
+  recordsLoaded: false, loadedVersion: null, connectionError: "",
+  expanded: new Set(), details: new Map(), tournaments: new Map(),
+};
+const elements = {
+  tabs: document.querySelector("#sport-tabs"),
+  title: document.querySelector("#active-sport-title"),
+  count: document.querySelector("#record-count"),
+  body: document.querySelector("#schedule-body"),
+  empty: document.querySelector("#empty-state"),
+  syncButton: document.querySelector("#sync-button"),
+  syncStatus: document.querySelector("#sync-status"),
+  automaticSync: document.querySelector("#automatic-sync"),
+  statusDot: document.querySelector("#status-dot"),
+  errorBanner: document.querySelector("#error-banner"),
+  viewTabs: document.querySelector("#view-tabs"),
+  scheduleFilters: document.querySelector("#schedule-filters"),
+  dateFilter: document.querySelector("#date-filter"),
+  statusFilter: document.querySelector("#status-filter"),
+  category: document.querySelector("#category-filter"),
+  scheduleView: document.querySelector("#schedule-view"),
+  tournamentView: document.querySelector("#tournament-view"),
+};
+
+function escapeHtml(value) {
+  return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
+}
+
+function formatDateTime(record) {
+  const date = new Date(`${record.date}T12:00:00Z`);
+  const [, month, day] = String(record.date || "").split("-");
+  return {
+    date: Number.isNaN(date.getTime()) ? "日期待定" : `${month}月${day}日 ${WEEKDAYS[date.getUTCDay()]}`,
+    time: record.time || "时间待定",
+  };
+}
+
+function formatSyncTime(value) {
+  if (!value) return "尚未完成同步";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "时间待定";
+  return new Intl.DateTimeFormat("zh-CN", {
+    timeZone: "Asia/Shanghai", month: "2-digit", day: "2-digit",
+    hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false,
+  }).format(date);
+}
+
+async function fetchJson(url, options = {}) {
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 25000);
+  try {
+    const response = await fetch(url, { cache: "no-store", ...options, signal: controller.signal });
+    if (!response.ok) throw new Error(response.status === 503 ? "正在准备官方数据，请稍后再试" : "暂时无法读取数据");
+    return await response.json();
+  } catch (error) {
+    if (error.name === "AbortError") throw new Error("读取超时，将自动重试");
+    throw error;
+  } finally {
+    window.clearTimeout(timeout);
+  }
+}
+
+function renderTabs() {
+  elements.tabs.innerHTML = Object.entries(SPORTS).map(([code, name]) => `
+    <button class="sport-tab" type="button" role="tab" data-sport="${code}"
+      aria-selected="${state.activeSport === code}">${name}</button>`).join("");
+}
+
+function selectionKey() { return `${state.activeSport}:${state.view === "schedule" ? "schedule" : "tournament"}`; }
+function recordCategory(record) { return String(record.eventCode || record.category || ""); }
+function sportRecords() { return state.records.filter((record) => record.sport === state.activeSport); }
+function recordStatus(record) {
+  if (record.isLive || ["LIVE", "RUNNING", "IN_PROGRESS"].includes(String(record.status || "").toUpperCase())) return "live";
+  if (["OFFICIAL", "FINISHED", "COMPLETED", "CANCELED", "CANCELLED"].includes(String(record.status || "").toUpperCase())) return "completed";
+  return "upcoming";
+}
+function dateLabel(value) {
+  const [, month, day] = String(value || "").split("-");
+  return month && day ? `${month}月${day}日` : value || "日期待定";
+}
+function formatScore(record) {
+  const raw = String(record.score || "").trim();
+  if (record.sport !== "CKT" || !raw) return raw || "—";
+  const sides = raw.split(/\s*:\s*/);
+  if (sides.length !== 2) return raw;
+  const runs = sides.map((side) => (side.match(/^\s*(\d+)/) || ["", side.trim()])[1]);
+  return `${runs[0]} : ${runs[1]}`;
+}
+function filteredRecords() {
+  const category = state.selections.get(selectionKey()) || "";
+  return sportRecords()
+    .filter((record) => !category || recordCategory(record) === category)
+    .filter((record) => !state.dateFilter || record.date === state.dateFilter)
+    .filter((record) => !state.statusFilter || recordStatus(record) === state.statusFilter)
+    .sort((left, right) => {
+      const liveOrder = Number(rightStatusIsLive(right) - rightStatusIsLive(left));
+      if (liveOrder) return liveOrder;
+      return `${left.date || ""}T${left.time || ""}`.localeCompare(`${right.date || ""}T${right.time || ""}`) || String(left.id).localeCompare(String(right.id));
+    });
+}
+function rightStatusIsLive(record) { return recordStatus(record) === "live" ? 1 : 0; }
+
+function renderDateFilter() {
+  const dates = [...new Set(sportRecords().map((record) => record.date).filter(Boolean))].sort();
+  const current = state.dateFilter;
+  elements.dateFilter.innerHTML = `<option value="">全部日期</option>${dates.map((date) => `<option value="${escapeHtml(date)}">${escapeHtml(dateLabel(date))}</option>`).join("")}`;
+  if (current && dates.includes(current)) elements.dateFilter.value = current;
+  else if (current) state.dateFilter = "";
+}
+
+function renderCategoryFilter() {
+  let options;
+  if (state.view === "schedule") {
+    options = [...new Map(sportRecords().map((record) => [recordCategory(record), record.category])).entries()];
+    options.unshift(["", "全部类别"]);
+  } else {
+    options = (state.tournaments.get(state.activeSport)?.data?.events || []).map((event) => [String(event.id), event.name]);
+    if (!options.length) options = [["", "暂无类别"]];
+  }
+  const key = selectionKey();
+  if (!options.some(([value]) => value === state.selections.get(key))) state.selections.set(key, options[0][0]);
+  elements.category.innerHTML = options.map(([value, label]) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`).join("");
+  elements.category.value = state.selections.get(key);
+  elements.category.disabled = options.length <= 1;
+}
+
+function renderDataTable(section) {
+  const columns = Array.isArray(section.columns) ? section.columns : [];
+  const rows = Array.isArray(section.rows) ? section.rows : [];
+  if (!rows.length) return "";
+  return `<div class="data-table-scroll"><table class="data-table">
+    ${columns.length ? `<thead><tr>${columns.map((value) => `<th scope="col">${escapeHtml(value)}</th>`).join("")}</tr></thead>` : ""}
+    <tbody>${rows.map((row) => `<tr>${(Array.isArray(row) ? row : []).map((value, index) => `<${index === 0 ? "th scope=\"row\"" : "td"}>${escapeHtml(value)}</${index === 0 ? "th" : "td"}>`).join("")}</tr>`).join("")}</tbody>
+  </table></div>`;
+}
+
+function detailContent(id) {
+  const detail = state.details.get(id);
+  if (!detail || (detail.loading && !detail.data)) return '<p class="panel-message" role="status">正在读取小分…</p>';
+  if (!detail.data) return `<p class="panel-message">${escapeHtml(detail.error || "官网尚未公布小分")}</p><button class="text-button" type="button" data-retry-match="${escapeHtml(id)}">重试</button>`;
+  const sections = (detail.data.sections || []).filter((section) => Array.isArray(section.rows) && section.rows.length);
+  return `${staleNotice(detail, "小分")}
+    ${sections.length ? sections.map((section) => `<section class="score-section">${section.title ? `<h3>${escapeHtml(section.title)}</h3>` : ""}${renderDataTable(section)}</section>`).join("") : `<p class="panel-message">${escapeHtml(detail.data.message || "官网尚未公布小分")}</p>`}`;
+}
+
+function staleNotice(entry, label) {
+  if (!entry?.error && !entry?.data?.stale) return "";
+  const reason = entry.error || entry.data.message || "官网暂时连接失败";
+  const updated = entry.data?.updatedAt ? `上次更新 ${formatSyncTime(entry.data.updatedAt)}（北京时间）` : "上次更新时间未提供";
+  return `<p class="panel-message is-error">${escapeHtml(label)}暂未更新，显示上次成功数据。${escapeHtml(reason)} · ${escapeHtml(updated)}</p>`;
+}
+
+function renderSchedule() {
+  const records = filteredRecords();
+  elements.count.textContent = `${records.length} 场`;
+  elements.empty.hidden = records.length !== 0;
+  const focusedMatch = document.activeElement?.dataset?.toggleMatch;
+  elements.body.innerHTML = records.map((record) => {
+    const dateTime = formatDateTime(record);
+    const cancelled = ["CANCELED", "CANCELLED", "POSTPONED"].includes(record.status);
+    const open = state.expanded.has(record.id);
+    const rowClass = record.isLive ? "is-live" : cancelled ? "is-cancelled" : "";
+    return `<tr class="match-row ${rowClass} ${open ? "is-expanded" : ""}" data-match-id="${escapeHtml(record.id)}">
+      <td class="date-cell" data-label="日期时间"><span><strong>${escapeHtml(dateTime.date)}</strong>${escapeHtml(dateTime.time)}</span></td>
+      <td class="category-cell" data-label="类别"><span>${escapeHtml(record.category)}</span></td>
+      <td data-label="阶段"><span>${escapeHtml(record.stage)}</span></td>
+      <td class="matchup-cell" data-label="对阵"><span>${escapeHtml(record.matchup)}</span></td>
+      <td class="score-cell" data-label="比分"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}"
+        aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分">
+        <span>${escapeHtml(formatScore(record))}</span><span class="disclosure-arrow" aria-hidden="true">⌄</span></button></td>
+      <td data-label="场馆"><span>${escapeHtml(record.venue)}</span></td>
+    </tr>${open ? `<tr class="detail-row"><td colspan="6"><div class="match-detail" id="detail-${escapeHtml(record.id)}" aria-label="${escapeHtml(record.matchup)}的小分">${detailContent(record.id)}</div></td></tr>` : ""}`;
+  }).join("");
+  if (focusedMatch) [...elements.body.querySelectorAll("[data-toggle-match]")].find((button) => button.dataset.toggleMatch === focusedMatch)?.focus({ preventScroll: true });
+}
+
+function renderTournament() {
+  const entry = state.tournaments.get(state.activeSport);
+  const previousScroll = elements.tournamentView.querySelector(".rounds-board")?.scrollLeft || 0;
+  elements.count.textContent = "";
+  if (!entry || (entry.loading && !entry.data)) {
+    elements.tournamentView.innerHTML = '<div class="view-message" role="status">正在读取官方数据…</div>';
+    return;
+  }
+  if (!entry.data) {
+    elements.tournamentView.innerHTML = `<div class="view-message"><p>${escapeHtml(entry.error || "官网尚未公布")}</p><button class="text-button" type="button" data-retry-tournament>重试</button></div>`;
+    return;
+  }
+  const event = (entry.data.events || []).find((item) => String(item.id) === state.selections.get(selectionKey()));
+  const errorNote = staleNotice(entry, state.view === "groups" ? "小组积分" : "对阵图");
+  if (!event) {
+    elements.tournamentView.innerHTML = `${errorNote}<div class="view-message">${escapeHtml(entry.data.message || "官网尚未公布")}</div>`;
+    return;
+  }
+  if (state.view === "groups") {
+    const groups = (event.groups || []).filter((group) => Array.isArray(group.rows) && group.rows.length);
+    elements.tournamentView.innerHTML = `${errorNote}${groups.length ? `<div class="group-grid">${groups.map((group) => `<section class="group-card"><h3>${escapeHtml(group.name)}</h3>${renderDataTable(group)}</section>`).join("")}</div>` : `<div class="view-message">${escapeHtml(event.message || "官网尚未公布此类别的小组积分")}</div>`}`;
+    elements.count.textContent = groups.length ? `${groups.length} 个小组` : "";
+  } else {
+    const rounds = (event.rounds || []).filter((round) => Array.isArray(round.matches) && round.matches.length);
+    const matchLocations = new Map(rounds.flatMap((round) => round.matches.map((match, index) => [String(match.id), { round: round.name, number: index + 1 }])));
+    elements.tournamentView.innerHTML = `${errorNote}${rounds.length ? `<div class="rounds-board" aria-label="淘汰赛各轮对阵">${rounds.map((round) => `<section class="round-column"><h3>${escapeHtml(round.name)}</h3><div class="round-matches">${round.matches.map((match, index) => bracketMatch(match, index + 1, matchLocations)).join("")}</div></section>`).join("")}</div>` : `<div class="view-message">${escapeHtml(event.message || "官网尚未公布此类别的淘汰赛对阵")}</div>`}`;
+    elements.count.textContent = rounds.length ? `${rounds.length} 轮` : "";
+    const board = elements.tournamentView.querySelector(".rounds-board");
+    if (board) board.scrollLeft = previousScroll;
+  }
+}
+
+function bracketMatch(match, number, locations) {
+  const winner = String(match.winner ?? "").toUpperCase();
+  const homeWins = winner && ["HOME", "1", String(match.home).toUpperCase()].includes(winner);
+  const awayWins = winner && ["AWAY", "2", String(match.away).toUpperCase()].includes(winner);
+  const destination = match.nextMatchId ? locations.get(String(match.nextMatchId)) : null;
+  const score = (value) => String(value ?? "").trim() || "—";
+  return `<article class="bracket-match" id="bracket-${escapeHtml(encodeURIComponent(String(match.id)))}" tabindex="-1">
+    <p class="bracket-match-label">对阵 ${number}</p>
+    <div class="bracket-team ${homeWins ? "is-winner" : ""}"><span>${escapeHtml(match.home || "待定")}</span><strong>${escapeHtml(score(match.homeScore))}</strong></div>
+    <div class="bracket-team ${awayWins ? "is-winner" : ""}"><span>${escapeHtml(match.away || "待定")}</span><strong>${escapeHtml(score(match.awayScore))}</strong></div>
+    ${destination ? `<button class="advancement-link" type="button" data-advance-to="${escapeHtml(match.nextMatchId)}">胜者进入：${escapeHtml(destination.round)} · 对阵 ${destination.number} <span aria-hidden="true">→</span></button>` : ""}
+  </article>`;
+}
+
+function renderView() {
+  elements.title.textContent = SPORTS[state.activeSport] || "赛程";
+  elements.scheduleView.hidden = state.view !== "schedule";
+  elements.tournamentView.hidden = state.view === "schedule";
+  elements.scheduleFilters.hidden = state.view !== "schedule";
+  for (const button of elements.viewTabs.querySelectorAll("[data-view]")) button.setAttribute("aria-selected", String(button.dataset.view === state.view));
+  renderCategoryFilter();
+  if (state.view === "schedule") renderDateFilter();
+  if (state.view === "schedule") renderSchedule(); else renderTournament();
+}
+
+function renderStatus() {
+  const status = state.status || {};
+  elements.statusDot.className = "status-dot";
+  elements.syncButton.disabled = Boolean(status.running);
+  elements.syncButton.classList.toggle("is-running", Boolean(status.running));
+  const interval = Number(status.liveIntervalSeconds) || 30;
+  elements.automaticSync.textContent = status.liveEnabled
+    ? `每天 08:00 全量同步 · 比赛日约每 ${interval} 秒更新比分`
+    : status.nextAutomaticSync ? "每天 08:00 自动同步赛程" : "读取自动同步设置";
+  elements.automaticSync.title = status.nextAutomaticSync ? `北京时间，下次全量同步 ${formatSyncTime(status.nextAutomaticSync)}` : "北京时间";
+  const updated = [status.lastLiveSuccess, status.lastSuccess].filter(Boolean).sort().at(-1);
+  if (state.connectionError) {
+    elements.statusDot.classList.add("is-error");
+    elements.syncStatus.textContent = "连接中断，正在自动重试";
+  } else if (status.running) {
+    elements.statusDot.classList.add("is-running");
+    elements.syncStatus.textContent = `正在同步${status.progressTotal ? ` ${status.progressDone}/${status.progressTotal}` : ""}`;
+  } else if (status.lastError || status.lastLiveError) {
+    elements.statusDot.classList.add("is-error");
+    elements.syncStatus.textContent = `等待重试 · 上次更新 ${formatSyncTime(updated)}`;
+  } else if (updated) {
+    elements.statusDot.classList.add("is-success");
+    elements.syncStatus.textContent = `更新于 ${formatSyncTime(updated)}`;
+  } else elements.syncStatus.textContent = "等待首次同步";
+  const error = state.connectionError || status.lastLiveError || status.lastError;
+  elements.errorBanner.hidden = !error;
+  elements.errorBanner.textContent = error ? `暂未更新，已保留现有赛程。${error}` : "";
+}
+
+function statusVersion(status) {
+  return String(status?.dataVersion ?? `${status?.lastSuccess || ""}|${status?.lastLiveSuccess || ""}`);
+}
+
+async function loadSchedule(version) {
+  const payload = await fetchJson("/api/schedule");
+  state.records = Array.isArray(payload.records) ? payload.records : [];
+  state.recordsLoaded = true;
+  state.loadedVersion = version;
+  if (!state.activeSport) {
+    state.activeSport = state.records.find((record) => record.isLive)?.sport || "TEN";
+    renderTabs();
+  }
+  renderView();
+}
+
+async function loadMatch(id, force = false) {
+  const current = state.details.get(id);
+  if (current?.loading || (!force && current?.data)) return;
+  const entry = { ...current, loading: true, lastRequested: Date.now(), error: "" };
+  state.details.set(id, entry);
+  const panel = document.getElementById(`detail-${id}`);
+  if (panel) panel.innerHTML = detailContent(id);
+  try { entry.data = await fetchJson(`/api/match?id=${encodeURIComponent(id)}`); }
+  catch (error) { entry.error = error.message || "无法读取小分"; }
+  finally {
+    entry.loading = false;
+    const currentPanel = document.getElementById(`detail-${id}`);
+    if (currentPanel) currentPanel.innerHTML = detailContent(id);
+  }
+}
+
+async function loadTournament(force = false) {
+  const sport = state.activeSport;
+  if (!sport) return;
+  const current = state.tournaments.get(sport);
+  if (current?.loading || (!force && current?.data && current.version === state.loadedVersion)) return;
+  const entry = { ...current, loading: true, lastRequested: Date.now(), error: "", version: state.loadedVersion };
+  state.tournaments.set(sport, entry);
+  if (state.view !== "schedule") renderView();
+  try { entry.data = await fetchJson(`/api/tournament?sport=${encodeURIComponent(sport)}`); }
+  catch (error) { entry.error = error.message || "无法读取积分和对阵"; }
+  finally {
+    entry.loading = false;
+    if (state.activeSport === sport && state.view !== "schedule") renderView();
+  }
+}
+
+async function refreshVisibleExtras(force = false) {
+  const interval = (Number(state.status?.liveIntervalSeconds) || 30) * 1000;
+  if (state.view !== "schedule") {
+    const entry = state.tournaments.get(state.activeSport);
+    if (force || !entry || Date.now() - entry.lastRequested >= interval) await loadTournament(true);
+    return;
+  }
+  const visibleOpen = filteredRecords().filter((record) => state.expanded.has(record.id));
+  await Promise.allSettled(visibleOpen.map((record) => {
+    const entry = state.details.get(record.id);
+    return force || !entry || Date.now() - entry.lastRequested >= interval ? loadMatch(record.id, true) : undefined;
+  }));
+}
+
+async function refresh(force = false) {
+  if (state.refreshing) { state.refreshAgain ||= force; return; }
+  state.refreshing = true;
+  try {
+    const status = await fetchJson("/api/status");
+    state.status = status;
+    const version = statusVersion(status);
+    const changed = version !== state.loadedVersion;
+    if (force || !state.recordsLoaded || changed) await loadSchedule(version);
+    state.connectionError = "";
+    renderStatus();
+    if (!document.hidden) await refreshVisibleExtras(force || changed);
+  } catch (error) {
+    state.connectionError = error.message || "无法连接本地服务";
+    renderStatus();
+  } finally {
+    state.refreshing = false;
+    if (state.refreshAgain) {
+      state.refreshAgain = false;
+      void refresh(true);
+    }
+  }
+}
+
+async function requestSync() {
+  elements.syncButton.disabled = true;
+  try {
+    const response = await fetch("/api/sync", { method: "POST" });
+    if (!response.ok && response.status !== 409) throw new Error("无法启动同步");
+    await refresh();
+  } catch (error) {
+    state.connectionError = error.message;
+    renderStatus();
+  }
+}
+
+function toggleMatch(id) {
+  if (state.expanded.has(id)) state.expanded.delete(id);
+  else state.expanded.add(id);
+  renderSchedule();
+  if (state.expanded.has(id)) void loadMatch(id);
+}
+
+elements.tabs.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-sport]");
+  if (!button) return;
+  state.activeSport = button.dataset.sport;
+  renderTabs();
+  renderView();
+  if (state.view !== "schedule") void loadTournament();
+  else void refreshVisibleExtras();
+});
+elements.viewTabs.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-view]");
+  if (!button) return;
+  state.view = button.dataset.view;
+  renderView();
+  if (state.view !== "schedule") void loadTournament();
+  else void refreshVisibleExtras();
+});
+elements.category.addEventListener("change", () => {
+  state.selections.set(selectionKey(), elements.category.value);
+  renderView();
+  void refreshVisibleExtras();
+});
+elements.dateFilter.addEventListener("change", () => {
+  state.dateFilter = elements.dateFilter.value;
+  renderView();
+  void refreshVisibleExtras();
+});
+elements.statusFilter.addEventListener("change", () => {
+  state.statusFilter = elements.statusFilter.value;
+  renderView();
+  void refreshVisibleExtras();
+});
+elements.body.addEventListener("click", (event) => {
+  const retry = event.target.closest("[data-retry-match]");
+  if (retry) { void loadMatch(retry.dataset.retryMatch, true); return; }
+  const row = event.target.closest("[data-match-id]");
+  if (row && !window.getSelection()?.toString()) toggleMatch(row.dataset.matchId);
+});
+elements.tournamentView.addEventListener("click", (event) => {
+  if (event.target.closest("[data-retry-tournament]")) void loadTournament(true);
+  const advancement = event.target.closest("[data-advance-to]");
+  if (advancement) {
+    const destination = document.getElementById(`bracket-${encodeURIComponent(advancement.dataset.advanceTo)}`);
+    if (destination) {
+      destination.focus({ preventScroll: true });
+      destination.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    }
+  }
+});
+elements.syncButton.addEventListener("click", () => { void requestSync(); });
+window.addEventListener("focus", () => { void refresh(true); });
+document.addEventListener("visibilitychange", () => { if (!document.hidden) void refresh(true); });
+window.addEventListener("online", () => { void refresh(true); });
+
+async function init() {
+  renderTabs();
+  if (window.lucide) window.lucide.createIcons();
+  await refresh();
+  state.statusTimer = window.setInterval(() => { void refresh(); }, 2000);
+}
+void init();
