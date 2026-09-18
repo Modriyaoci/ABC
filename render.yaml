@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: 2026Asiagames-ABC
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 server.py --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    autoDeploy: true
