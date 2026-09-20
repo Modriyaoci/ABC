@@ -10,6 +10,7 @@ import json
 from sync_service import (
     BEIJING_TZ, SPORTS, SyncError, _atomic_json_write,
     fetch_official_json, normalize_unit,
+    preserve_known_matchups,
 )
 
 JAPAN_TZ = ZoneInfo("Asia/Tokyo")
@@ -85,9 +86,11 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
     if errors:
         raise SyncError("；".join(errors))
 
+    previous_records = list(payload["records"])
     target_set = set(targets)
-    records = [row for row in payload["records"]
+    records = [row for row in previous_records
                if (row["sport"], row.get("sourceDate", row["date"])) not in target_set]
+    replacements = preserve_known_matchups(previous_records, replacements)
     unique = {row["id"]: row for row in records + replacements}
     payload["records"] = sorted(unique.values(), key=lambda row: (
         row["date"], row["time"], list(SPORTS).index(row["sport"]), row["id"]

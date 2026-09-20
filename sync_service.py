@@ -302,6 +302,41 @@ def _competitor_name(competitor: dict[str, Any] | None, match_type: str) -> str:
     return org_name or "待定"
 
 
+def _has_known_matchup(record: dict[str, Any]) -> bool:
+    """Return whether a normalized record has an actual published matchup."""
+    matchup = str(record.get("matchup") or "").strip()
+    return bool(matchup and "待定" not in matchup)
+
+
+def preserve_known_matchups(
+    previous: list[dict[str, Any]],
+    incoming: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Keep published names when a live feed briefly omits competitors.
+
+    The official schedule occasionally returns the same unit with empty Home /
+    Away objects while it is refreshing. Treating that response as authoritative
+    makes a whole day's known table-tennis matchups flash to “对阵待定”. A
+    later response with real competitors still replaces the old values; only a
+    pending incoming row is repaired from the last successful snapshot.
+    """
+    known = {
+        str(row.get("id")): row
+        for row in previous
+        if row.get("id") and _has_known_matchup(row)
+    }
+    repaired: list[dict[str, Any]] = []
+    for row in incoming:
+        old = known.get(str(row.get("id")))
+        if old and not _has_known_matchup(row):
+            row = dict(row)
+            for key in ("home", "away", "matchup"):
+                if old.get(key):
+                    row[key] = old[key]
+        repaired.append(row)
+    return repaired
+
+
 def _score(item: dict[str, Any], disc: str = "") -> str:
     home_value = (item.get("Home") or {}).get("Result")
     away_value = (item.get("Away") or {}).get("Result")
@@ -447,6 +482,13 @@ def sync_all(
     if fetch_errors:
         raise SyncError("；".join(fetch_errors[:5]))
 
+    previous_records: list[dict[str, Any]] = []
+    try:
+        previous_payload = json.loads(output_path.read_text(encoding="utf-8"))
+        previous_records = [row for row in previous_payload.get("records", []) if isinstance(row, dict)]
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        pass
+    records = preserve_known_matchups(previous_records, records)
     unique = {record["id"]: record for record in records}
     ordered = sorted(
         unique.values(),
