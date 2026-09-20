@@ -252,9 +252,63 @@ function detailContent(id) {
   if (!detail.data) return `<p class="panel-message">${escapeHtml(detail.error || "官网尚未公布小分")}</p><button class="text-button" type="button" data-retry-match="${escapeHtml(id)}">重试</button>`;
   const sections = (detail.data.sections || []).filter((section) => Array.isArray(section.rows) && section.rows.length);
   const subMatches = Array.isArray(detail.data.subMatches) ? detail.data.subMatches : [];
+  const hasLineup = lineupPlayers(detail.data, "home").length || lineupPlayers(detail.data, "away").length;
+  const hasContent = sections.length || subMatches.length || hasLineup;
   return `${staleNotice(detail, "小分")}
-    ${renderScoreSections(sections)}${renderSubMatches(subMatches, id)}
-    ${sections.length || subMatches.length ? "" : `<p class="panel-message">${escapeHtml(detail.data.message || "官网尚未公布小分")}</p>`}`;
+    ${renderLineup(detail.data)}${renderScoreSections(sections)}${renderSubMatches(subMatches, id)}
+    ${hasContent ? "" : `<p class="panel-message">${escapeHtml(detail.data.message || "官网尚未公布小分")}</p>`}`;
+}
+
+function lineupPlayers(match, side) {
+  const players = match && match[`${side}Players`];
+  if (!Array.isArray(players)) return [];
+  return players.filter((player) => player && typeof player === "object");
+}
+
+function lineupPhoto(player) {
+  const value = String(player?.photo || player?.avatar || "").trim();
+  if (/^https?:\/\//i.test(value)) return value;
+  const reg = String(player?.reg || "").trim();
+  return reg && /^[A-Za-z0-9_-]+$/.test(reg)
+    ? `https://results.asiangames2026.org/ag2026/photos/${encodeURIComponent(reg)}.jpg`
+    : "";
+}
+
+function lineupInitials(player) {
+  const name = String(player?.name || "?").trim();
+  const words = name.split(/\s+/).filter(Boolean);
+  if (words.length > 1) return `${words[0][0] || ""}${words[words.length - 1][0] || ""}`.toUpperCase();
+  return [...name].slice(0, 2).join("").toUpperCase() || "?";
+}
+
+function lineupCountry(player) {
+  return String(player?.country || player?.orgName || player?.org || "").trim();
+}
+
+function renderLineupPlayer(player) {
+  const name = String(player.name || "待定").trim() || "待定";
+  const photo = lineupPhoto(player);
+  const initials = lineupInitials(player);
+  const country = lineupCountry(player);
+  const role = player.substitute ? " · 替补" : "";
+  const photoMarkup = photo
+    ? `<img class="lineup-player-photo" src="${escapeHtml(photo)}" alt="" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />`
+    : "";
+  return `<li class="lineup-player">
+    <span class="lineup-player-avatar">${photoMarkup}<span class="lineup-player-initials"${photo ? " hidden" : ""} aria-hidden="true">${escapeHtml(initials)}</span></span>
+    <span class="lineup-player-copy"><strong>${escapeHtml(name)}</strong>${country || role ? `<span>${escapeHtml(country)}${escapeHtml(role)}</span>` : ""}</span>
+  </li>`;
+}
+
+function renderLineup(match) {
+  const home = lineupPlayers(match, "home");
+  const away = lineupPlayers(match, "away");
+  if (!home.length && !away.length) return "";
+  const team = (label, players, side) => `<div class="lineup-team lineup-team-${side}">
+    <h4>${escapeHtml(label || (side === "home" ? "主队" : "客队"))}</h4>
+    <ul>${players.map(renderLineupPlayer).join("")}</ul>
+  </div>`;
+  return `<section class="lineup-section" aria-label="Line-up"><div class="lineup-heading"><h3>Line-up</h3><span>球员名单</span></div><div class="lineup-grid">${team(match.home, home, "home")}${team(match.away, away, "away")}</div></section>`;
 }
 
 function renderScoreSections(sections) {
@@ -296,7 +350,7 @@ function renderSubMatches(matches, parentKey, rootId = parentKey) {
         <div><span>${escapeHtml(match.home || "待定")}</span><strong>${score(match.homeScore)}</strong></div>
         <div><span>${escapeHtml(match.away || "待定")}</span><strong>${score(match.awayScore)}</strong></div>
       </div>
-      ${renderScoreSections(sections)}${renderSubMatches(match.subMatches, `${parentKey}/${keyOf(match, index)}`, rootId)}
+      ${renderLineup(match)}${renderScoreSections(sections)}${renderSubMatches(match.subMatches, `${parentKey}/${keyOf(match, index)}`, rootId)}
     </section></div>`;
 }
 

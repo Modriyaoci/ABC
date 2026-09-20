@@ -26,6 +26,7 @@ from sync_service import (
 Fetcher = Callable[[str], Any]
 PRESTART = {"SCHEDULED", "UNSCHEDULED", "START_LIST", "PROVISIONAL", "GETTING_READY", "POSTPONED", "RESCHEDULED"}
 TERMINAL_RESULTS = {"OFFICIAL", "FINISHED", "COMPLETED"}
+PLAYER_PHOTO_BASE = "https://results.asiangames2026.org/ag2026/photos/"
 
 
 def _text(value: Any, default: str = "") -> str:
@@ -80,6 +81,74 @@ def _submatch_type(value: Any) -> str:
     """Translate the official child unit type while preserving unknowns."""
     code = _text(value).upper()
     return {"A": "单打", "D": "双打"}.get(code, "")
+
+
+def _player_photo(reg: Any) -> str:
+    """Build the official athlete photo URL from a registration number.
+
+    The Results site publishes participant photos at a stable path keyed by
+    ``Reg``.  Keep the value empty when the feed has no usable registration
+    number so the client can render its normal avatar fallback.  Restricting
+    the characters here also prevents a malformed official value from
+    escaping the intended photo directory.
+    """
+    registration = _text(reg).strip()
+    if not registration or not re.fullmatch(r"[A-Za-z0-9_.-]+", registration):
+        return ""
+    return f"{PLAYER_PHOTO_BASE}{registration}.jpg"
+
+
+def _lineup_players(value: Any, sport: str, match_type: str = "A") -> list[dict[str, Any]]:
+    """Normalize TTE/BDM competitor members for the Line-up view.
+
+    Team competitors expose all selected athletes in ``Members``.  Singles
+    and doubles child units expose the same member objects in their own
+    competitor entries; a few provisional responses omit ``Members`` and
+    publish the athlete directly on the competitor, so retain that fallback
+    when the competitor is clearly an individual registration.
+    """
+    if sport not in {"TTE", "BDM"} or not isinstance(value, dict):
+        return []
+    members = value.get("Members")
+    if not isinstance(members, list) or not members:
+        registration = _text(value.get("Reg")).strip()
+        # Team registrations look like TTEWTEAM.../BDMMTEAM... and should
+        # not be rendered as a country named player when their member list is
+        # temporarily absent. Individual registrations are normally numeric;
+        # for a clearly individual (Type=A) feed also accept a safe
+        # alphanumeric registration used by a few provisional units.
+        if not re.fullmatch(r"\d+", registration) and not (match_type.upper() == "A" and re.fullmatch(r"[A-Za-z0-9_.-]+", registration)):
+            return []
+        members = [value]
+    players: list[dict[str, Any]] = []
+    for member in members:
+        if not isinstance(member, dict):
+            continue
+        name = _text(member.get("Name") or member.get("NameS")).strip()
+        registration = _text(member.get("Reg")).strip()
+        if not name and not registration:
+            continue
+        org = _text(member.get("Org") or value.get("Org")).strip()
+        photo = _player_photo(registration)
+        country = ORG_NAMES.get(org.upper(), org)
+        players.append({
+            "name": name or "待定",
+            "nameS": _text(member.get("NameS")),
+            "org": org,
+            "orgName": country,
+            "country": country,
+            "reg": registration,
+            "photo": photo,
+            "photoUrl": photo,
+            # Keep an explicit alias for clients that call the image an
+            # avatar. Both point to the official photo URL.
+            "avatar": photo,
+            "substitute": bool(member.get("Substitute")),
+            "captain": bool(member.get("Captain")),
+            "posDesc": _text(member.get("PosDesc")),
+            "bib": _text(member.get("Bib")),
+        })
+    return players
 
 
 def _now() -> str:
@@ -284,6 +353,8 @@ def _submatches(payload: dict[str, Any], sport: str) -> list[dict[str, Any]]:
             "type": _submatch_type(info.get("Type")),
             "home": _submatch_name(competitors[0]) if len(competitors) > 0 else "待定",
             "away": _submatch_name(competitors[1]) if len(competitors) > 1 else "待定",
+            "homePlayers": _lineup_players(competitors[0], sport, _text(info.get("Type"), "A")) if len(competitors) > 0 else [],
+            "awayPlayers": _lineup_players(competitors[1], sport, _text(info.get("Type"), "A")) if len(competitors) > 1 else [],
             "homeScore": _submatch_score(competitors, 0, status, is_live),
             "awayScore": _submatch_score(competitors, 1, status, is_live),
             "status": status,
@@ -312,14 +383,19 @@ def get_match_details(record: Any, fetcher: Fetcher | None = None) -> dict[str, 
     names = [_name(competitors[i], match_type) if i < len(competitors) else "待定" for i in (0, 1)]
     sections = _sections(payload, sport)
     sub_matches = _submatches(payload, sport)
+    home_players = _lineup_players(competitors[0], sport, match_type) if len(competitors) > 0 else []
+    away_players = _lineup_players(competitors[1], sport, match_type) if len(competitors) > 1 else []
+    has_content = bool(sections or sub_matches or home_players or away_players)
     return {
-        "available": bool(sections or sub_matches),
+        "available": has_content,
         "updatedAt": _now(),
         "home": names[0],
         "away": names[1],
+        "homePlayers": home_players,
+        "awayPlayers": away_players,
         "sections": sections,
         "subMatches": sub_matches,
-        "message": "" if sections or sub_matches else "官网尚未公布该场小分",
+        "message": "" if has_content else "官网尚未公布该场小分",
     }
 
 
