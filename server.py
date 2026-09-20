@@ -81,6 +81,38 @@ def schedule_changes(previous: dict | None, current: dict | None) -> list[dict]:
     return changes
 
 
+def team_submatch_order(record: dict, details: dict) -> list[str] | None:
+    """Return an unambiguous child order, without live scores or state.
+
+    Child IDs remain stable when the venue rearranges a team tie. The
+    displayed number can change, so sort by that number and compare IDs.
+    Incomplete/unpublished and stale responses cannot establish a new order.
+    """
+    sport = str(record.get("sport") or "").upper()
+    is_team = "团体" in str(record.get("category") or "") or "TEAM" in str(record.get("eventCode") or "").upper()
+    if sport not in {"BDM", "TTE"} or not is_team or not isinstance(details, dict) or details.get("stale"):
+        return None
+    children = details.get("subMatches")
+    if not isinstance(children, list) or len(children) < 2:
+        return None
+    ordered = []
+    for child in children:
+        if not isinstance(child, dict):
+            return None
+        child_id = child.get("id")
+        # The adapter creates sub-N as a fallback when the source has no
+        # stable key. Such an ID describes a slot, not a known child match.
+        if not isinstance(child_id, str) or not child_id.startswith(f"{sport}:") or ":sub-" in child_id:
+            return None
+        number = child.get("number")
+        if isinstance(number, bool) or not isinstance(number, int) or number <= 0:
+            return None
+        ordered.append((number, child_id))
+    if len({number for number, _ in ordered}) != len(ordered) or len({key for _, key in ordered}) != len(ordered):
+        return None
+    return [key for _, key in sorted(ordered)]
+
+
 def match_detail_ttl(record: dict) -> int:
     """Choose a short cache window for live and team-tie details.
 
@@ -119,6 +151,7 @@ class AppState:
         self.lock = threading.Lock()
         self.running = False
         self.stop_event = threading.Event()
+        self.team_submatch_orders: dict[str, list[str]] = {}
         self.status = {
             "running": False,
             "lastStarted": None,
@@ -137,6 +170,10 @@ class AppState:
             "scheduleChangeAt": None,
             "scheduleChangeCount": 0,
             "scheduleChanges": [],
+            # Child-order notices are scoped to their team-tie row. Keep this
+            # separate from ordinary schedule edits so the UI never promotes
+            # a team sub-match reorder to the global banner.
+            "teamScheduleChanges": {},
             "dataVersion": None,
         }
         self._load_status()
@@ -156,17 +193,60 @@ class AppState:
             saved = json.loads(self.status_file.read_text(encoding="utf-8"))
             for key in ("lastStarted", "lastSuccess", "lastError", "lastReason",
                         "lastLiveSuccess", "lastLiveError", "retryAt", "liveRetryAt", "liveFailures",
-                        "scheduleChanged", "scheduleChangeAt", "scheduleChangeCount", "scheduleChanges"):
+                        "scheduleChanged", "scheduleChangeAt", "scheduleChangeCount", "scheduleChanges",
+                        "teamScheduleChanges"):
                 if key in saved and saved[key] is not None:
                     self.status[key] = saved[key]
+            if not isinstance(self.status.get("teamScheduleChanges"), dict):
+                self.status["teamScheduleChanges"] = {}
+            orders = saved.get("teamSubmatchOrders")
+            if isinstance(orders, dict):
+                self.team_submatch_orders = {
+                    key: order for key, order in orders.items()
+                    if isinstance(key, str) and isinstance(order, list) and len(order) >= 2
+                    and all(isinstance(child_id, str) for child_id in order)
+                    and len(set(order)) == len(order)
+                }
         except (FileNotFoundError, json.JSONDecodeError, OSError):
             return
 
     def _save_status(self) -> None:
         self.status_file.parent.mkdir(parents=True, exist_ok=True)
         temporary = self.status_file.with_suffix(".json.tmp")
-        temporary.write_text(json.dumps(self.status, ensure_ascii=False, indent=2), encoding="utf-8")
+        saved = {**self.status, "teamSubmatchOrders": self.team_submatch_orders}
+        temporary.write_text(json.dumps(saved, ensure_ascii=False, indent=2), encoding="utf-8")
         temporary.replace(self.status_file)
+
+    def observe_match_details(self, record: dict, details: dict) -> None:
+        """Persist known child orders and latch a notice after a real reorder.
+
+        The first complete response establishes a baseline. Later missing
+        children must not erase it; a larger published set can establish a
+        richer baseline without claiming an order change. Only the same
+        identified children in a different order trigger the notice.
+        """
+        order = team_submatch_order(record, details)
+        match_id = record.get("id")
+        if order is None or not match_id:
+            return
+        with self.lock:
+            previous = self.team_submatch_orders.get(match_id)
+            if previous == order:
+                return
+            if previous and set(previous) != set(order):
+                if not set(previous).issubset(order):
+                    return
+                # More complete metadata is not evidence of a rearrangement.
+                previous = None
+            self.team_submatch_orders[match_id] = order
+            if previous:
+                changed_at = self.clock().isoformat(timespec="seconds")
+                self.status["teamScheduleChanges"][match_id] = {
+                    "changedAt": changed_at,
+                    "matchup": record.get("matchup", ""),
+                    "fields": ["subMatchOrder"],
+                }
+            self._save_status()
 
     @staticmethod
     def _parse_time(value):
@@ -376,7 +456,16 @@ class RequestHandler(BaseHTTPRequestHandler):
                         self._send_json({"message": "找不到这场比赛"}, HTTPStatus.NOT_FOUND)
                         return
                     ttl = match_detail_ttl(record)
-                    value = OFFICIAL_CACHE.get(("match", match_id), ttl, lambda: get_match_details(record))
+
+                    def load_details():
+                        details = get_match_details(record)
+                        # Observe fresh responses inside the cache's per-match
+                        # lock so simultaneous readers cannot replay an older
+                        # response after a newer order has been recorded.
+                        STATE.observe_match_details(record, details)
+                        return details
+
+                    value = OFFICIAL_CACHE.get(("match", match_id), ttl, load_details)
                 else:
                     sport = query.get("sport", [""])[0]
                     if sport not in SPORTS:
