@@ -33,6 +33,7 @@ const elements = {
   automaticSync: document.querySelector("#automatic-sync"),
   statusDot: document.querySelector("#status-dot"),
   errorBanner: document.querySelector("#error-banner"),
+  scheduleChangeBanner: document.querySelector("#schedule-change-banner"),
   viewTabs: document.querySelector("#view-tabs"),
   scheduleFilters: document.querySelector("#schedule-filters"),
   dateFilter: document.querySelector("#date-filter"),
@@ -545,6 +546,13 @@ function renderStatus() {
   const error = state.connectionError || status.lastLiveError || status.lastError;
   elements.errorBanner.hidden = !error;
   elements.errorBanner.textContent = error ? `暂未更新，已保留现有赛程。${error}` : "";
+  const changedCount = Number(status.scheduleChangeCount) || 0;
+  const changedAt = status.scheduleChangeAt ? `（${formatSyncTime(status.scheduleChangeAt)}）` : "";
+  const scheduleChanged = Boolean(status.scheduleChanged) && changedCount > 0;
+  elements.scheduleChangeBanner.hidden = !scheduleChanged;
+  elements.scheduleChangeBanner.textContent = scheduleChanged
+    ? `官网赛程有变动：${changedCount}场比赛信息已更新，请以当前页面为准${changedAt}`
+    : "";
 }
 
 function statusVersion(status) {
