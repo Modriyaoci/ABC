@@ -5,7 +5,7 @@ from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import Mock, patch
 
-from server import AppState, BEIJING_TZ, LIVE_INTERVAL, match_detail_ttl, next_eight
+from server import AppState, BEIJING_TZ, LIVE_INTERVAL, match_detail_ttl, next_eight, schedule_changes
 from sync_service import SyncError
 from live_service import live_targets, sync_live
 
@@ -108,6 +108,19 @@ class SchedulerTests(unittest.TestCase):
         self.app.live_sync = Mock(side_effect=SyncError("offline"))
         self.app._run_sync("live")
         self.assertEqual(self.app.status["liveRetryAt"], (self.now + timedelta(seconds=300)).isoformat())
+
+    def test_schedule_changes_ignore_live_scores_and_report_time_edits(self):
+        old = {"records": [{
+            "id": "BDM:tie-7", "date": "2026-09-20", "time": "14:00",
+            "category": "女子团体", "stage": "16强赛", "matchup": "哈萨克斯坦 vs 印度",
+            "venue": "一宫市综合体育馆", "score": "0 : 0", "status": "RUNNING",
+        }]}
+        live_only = {"records": [{**old["records"][0], "score": "1 : 0", "status": "OFFICIAL"}]}
+        self.assertEqual(schedule_changes(old, live_only), [])
+        moved = {"records": [{**old["records"][0], "time": "15:00"}]}
+        changes = schedule_changes(old, moved)
+        self.assertEqual(len(changes), 1)
+        self.assertEqual(changes[0]["fields"], ["time"])
 
 
 class LiveMergeTests(unittest.TestCase):

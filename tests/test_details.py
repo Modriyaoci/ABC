@@ -211,7 +211,8 @@ class DetailsServiceTests(unittest.TestCase):
             "Competitors": [{"Org": "INA"}, {"Org": "MGL"}],
             "Results": {},
             # The endpoint has occasionally returned these in a non-numeric
-            # order. SubMatchNum is the authoritative order.
+            # order. With no SubunitOrder in this fixture, SubMatchNum is the
+            # fallback order.
             "SubUnits": [
                 {"Info": {"Key": "W.TEAM.00010003", "Type": "A", "Status": "START_LIST", "UnitDescA": "Tie 4 Match 3"},
                  "Results": {"Extensions": [{"Type": "UNIT_INFO", "Code": "SubMatchNum", "Value": "3"}], "CurrentPeriod": 0,
@@ -241,6 +242,46 @@ class DetailsServiceTests(unittest.TestCase):
         self.assertEqual(third["home"], "WIRYAWAN Thalita Ramadhani（印度尼西亚）")
         self.assertEqual((third["homeScore"], third["awayScore"]), ("", ""))
         self.assertEqual(third["sections"], [])
+
+    def test_team_submatches_follow_current_official_order_over_slot_number(self):
+        payload = {
+            "Info": {"Type": "T", "Status": "RUNNING", "IsLive": True},
+            "Competitors": [{"Org": "KAZ"}, {"Org": "IND"}],
+            "Results": {},
+            "SubUnits": [
+                {"Info": {"Key": "tie.00010001", "Type": "A"},
+                 "Results": {"Extensions": [{"Type": "UNIT_INFO", "Code": "SubMatchNum", "Value": "1"},
+                                                {"Type": "UNIT_INFO", "Code": "SubunitOrder", "Value": "2"}]},
+                 "Competitors": [{"Name": "First slot", "Org": "KAZ"}, {"Name": "Second match", "Org": "IND"}]},
+                {"Info": {"Key": "tie.00010003", "Type": "A"},
+                 "Results": {"Extensions": [{"Type": "UNIT_INFO", "Code": "SubMatchNum", "Value": "3"},
+                                                {"Type": "UNIT_INFO", "Code": "SubunitOrder", "Value": "1"}]},
+                 "Competitors": [{"Name": "Second slot", "Org": "KAZ"}, {"Name": "First match", "Org": "IND"}]},
+            ],
+        }
+        out = get_match_details("BDM:W.TEAM--------------.8FNL.00070000", lambda _: payload)
+        self.assertEqual([child["number"] for child in out["subMatches"]], [1, 2])
+        self.assertEqual([child["home"] for child in out["subMatches"]], ["Second slot（哈萨克斯坦）", "First slot（哈萨克斯坦）"])
+
+    def test_table_tennis_child_match_uses_m_suffix(self):
+        payload = {
+            "Info": {"Type": "T", "Status": "OFFICIAL"},
+            "Competitors": [{"Org": "CHN"}, {"Org": "NEP"}],
+            "Results": {},
+            # TTE labels the parent tie and child slot separately ("Match 1
+            # M2"). The M suffix is the number shown by the official UI.
+            "SubUnits": [
+                {"Info": {"Key": "tie.00010002", "Type": "A", "UnitDescA": "Match 1 M2"},
+                 "Results": {"Extensions": [{"Type": "UNIT_INFO", "Code": "SubMatchNum", "Value": "2"}]},
+                 "Competitors": [{"Name": "Player 2", "Org": "CHN"}, {"Name": "Opponent 2", "Org": "NEP"}]},
+                {"Info": {"Key": "tie.00010001", "Type": "A", "UnitDescA": "Match 1 M1"},
+                 "Results": {"Extensions": [{"Type": "UNIT_INFO", "Code": "SubMatchNum", "Value": "1"}]},
+                 "Competitors": [{"Name": "Player 1", "Org": "CHN"}, {"Name": "Opponent 1", "Org": "NEP"}]},
+            ],
+        }
+        out = get_match_details("TTE:W.TEAM--------------.GPA-.00010000", lambda _: payload)
+        self.assertEqual([child["number"] for child in out["subMatches"]], [1, 2])
+        self.assertEqual([child["home"] for child in out["subMatches"]], ["Player 1（中国）", "Player 2（中国）"])
 
     def test_nested_team_submatches_are_kept_structured(self):
         payload = {"Info": {"Type": "T", "Status": "RUNNING"}, "Competitors": [], "Results": {},

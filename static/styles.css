@@ -245,6 +245,15 @@ main {
   font-size: 13px;
 }
 
+.schedule-change-banner {
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  color: #765300;
+  background: #fff8dc;
+  border-left: 3px solid #d9a319;
+  font-size: 13px;
+}
+
 .table-shell {
   overflow: hidden;
   background: var(--white);

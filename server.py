@@ -44,6 +44,43 @@ def iso_now() -> str:
     return datetime.now(BEIJING_TZ).isoformat(timespec="seconds")
 
 
+SCHEDULE_CHANGE_FIELDS = ("date", "time", "category", "stage", "matchup", "venue")
+
+
+def schedule_changes(previous: dict | None, current: dict | None) -> list[dict]:
+    """Summarize published schedule edits while ignoring live score changes."""
+    before = {
+        str(row.get("id")): row
+        for row in (previous or {}).get("records", [])
+        if isinstance(row, dict) and row.get("id")
+    }
+    after = {
+        str(row.get("id")): row
+        for row in (current or {}).get("records", [])
+        if isinstance(row, dict) and row.get("id")
+    }
+    # An empty previous snapshot is the initial load, not a schedule change.
+    if not before:
+        return []
+    changes: list[dict] = []
+    for match_id in sorted(set(before) | set(after)):
+        old = before.get(match_id)
+        new = after.get(match_id)
+        if old is None:
+            changes.append({"type": "added", "id": match_id, "matchup": new.get("matchup", "")})
+            continue
+        if new is None:
+            changes.append({"type": "removed", "id": match_id, "matchup": old.get("matchup", "")})
+            continue
+        fields = [field for field in SCHEDULE_CHANGE_FIELDS if old.get(field) != new.get(field)]
+        if fields:
+            changes.append({
+                "type": "updated", "id": match_id, "matchup": new.get("matchup") or old.get("matchup", ""),
+                "fields": fields,
+            })
+    return changes
+
+
 def match_detail_ttl(record: dict) -> int:
     """Choose a short cache window for live and team-tie details.
 
@@ -96,6 +133,10 @@ class AppState:
             "retryAt": None,
             "liveRetryAt": None,
             "liveFailures": 0,
+            "scheduleChanged": False,
+            "scheduleChangeAt": None,
+            "scheduleChangeCount": 0,
+            "scheduleChanges": [],
             "dataVersion": None,
         }
         self._load_status()
@@ -114,8 +155,10 @@ class AppState:
         try:
             saved = json.loads(self.status_file.read_text(encoding="utf-8"))
             for key in ("lastStarted", "lastSuccess", "lastError", "lastReason",
-                        "lastLiveSuccess", "lastLiveError", "retryAt", "liveRetryAt", "liveFailures"):
-                self.status[key] = saved.get(key)
+                        "lastLiveSuccess", "lastLiveError", "retryAt", "liveRetryAt", "liveFailures",
+                        "scheduleChanged", "scheduleChangeAt", "scheduleChangeCount", "scheduleChanges"):
+                if key in saved and saved[key] is not None:
+                    self.status[key] = saved[key]
         except (FileNotFoundError, json.JSONDecodeError, OSError):
             return
 
@@ -206,6 +249,8 @@ class AppState:
     def _run_sync(self, reason: str) -> None:
         live = reason == "live"
         try:
+            with self.lock:
+                previous_payload = self.payload
             if live:
                 payload = self.live_sync(self.data_file, self.clock(), self._progress)
             else:
@@ -213,6 +258,12 @@ class AppState:
             with self.lock:
                 self.payload = payload
                 self.status["dataVersion"] = payload["meta"]["generatedAt"]
+                changes = schedule_changes(previous_payload, payload)
+                if changes:
+                    self.status["scheduleChanged"] = True
+                    self.status["scheduleChangeAt"] = self.clock().isoformat(timespec="seconds")
+                    self.status["scheduleChangeCount"] = len(changes)
+                    self.status["scheduleChanges"] = changes[:20]
                 self.status["lastLiveSuccess" if live else "lastSuccess"] = self.clock().isoformat(timespec="seconds")
                 if not live:
                     self.status["lastError"] = None
