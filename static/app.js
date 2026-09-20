@@ -194,7 +194,7 @@ function transposeScoreSection(section) {
     const competitors = columns.slice(1);
     return {
       ...section,
-      columns: ["姓名", ...labels],
+      columns: [section.entityLabel || "姓名", ...labels],
       rows: competitors.map((name, competitorIndex) => [name, ...rows.map((row) => values(row, competitorIndex + 1))]),
     };
   }
@@ -206,7 +206,7 @@ function transposeScoreSection(section) {
     const labels = rows.map((row) => String(row[0]));
     return {
       ...section,
-      columns: ["队伍", ...labels],
+      columns: [section.entityLabel || "队伍", ...labels],
       rows: competitors.map((name, competitorIndex) => [name, ...rows.map((row) => values(row, competitorIndex + 1))]),
     };
   }
@@ -217,7 +217,7 @@ function transposeScoreSection(section) {
     const row = rows[0];
     return {
       ...section,
-      columns: ["姓名", section.title || "当前比分"],
+      columns: [section.entityLabel || "姓名", section.title || "当前比分"],
       rows: columns.map((name, index) => [name, values(row, index)]),
     };
   }
@@ -227,7 +227,7 @@ function transposeScoreSection(section) {
   if (rows.length === 1 && columns.length && columns.every((label) => ["坏球", "好球", "出局"].includes(String(label)))) {
     return {
       ...section,
-      columns: ["项目", "数量"],
+      columns: [section.entityLabel || "项目", "数量"],
       rows: columns.map((label, index) => [label, values(rows[0], index)]),
     };
   }
