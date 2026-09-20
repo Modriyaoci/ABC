@@ -62,18 +62,20 @@ class TeamSubmatchNoticeTests(unittest.TestCase):
         self.now += timedelta(minutes=5)
         self.state.observe_match_details(self.record, self.details((1, 3, 5, 4, 2)))
         status = self.state.snapshot()
-        self.assertTrue(status["scheduleChanged"])
-        self.assertEqual(status["scheduleChangeCount"], 1)
-        self.assertEqual(status["scheduleChanges"], [{
-            "type": "updated", "id": self.record["id"],
-            "matchup": self.record["matchup"], "fields": ["subMatchOrder"],
-        }])
-        changed_at = status["scheduleChangeAt"]
+        self.assertFalse(status["scheduleChanged"])
+        self.assertEqual(status["teamScheduleChanges"], {
+            self.record["id"]: {
+                "changedAt": status["teamScheduleChanges"][self.record["id"]]["changedAt"],
+                "matchup": self.record["matchup"], "fields": ["subMatchOrder"],
+            },
+        })
+        changed_at = status["teamScheduleChanges"][self.record["id"]]["changedAt"]
         self.state = self.new_state()
         self.now += timedelta(minutes=5)
         self.state.observe_match_details(self.record, self.details((1, 3, 5, 4, 2)))
-        self.assertTrue(self.state.snapshot()["scheduleChanged"])
-        self.assertEqual(self.state.snapshot()["scheduleChangeAt"], changed_at)
+        self.assertFalse(self.state.snapshot()["scheduleChanged"])
+        self.assertIn(self.record["id"], self.state.snapshot()["teamScheduleChanges"])
+        self.assertEqual(self.state.snapshot()["teamScheduleChanges"][self.record["id"]]["changedAt"], changed_at)
 
     def test_partial_stale_or_ambiguous_data_does_not_replace_known_order(self):
         self.state.observe_match_details(self.record, self.details())
@@ -93,13 +95,24 @@ class TeamSubmatchNoticeTests(unittest.TestCase):
                 self.assertEqual(self.state.team_submatch_orders, original)
                 self.assertFalse(self.state.snapshot()["scheduleChanged"])
         self.state.observe_match_details(self.record, self.details((1, 3, 5, 4, 2)))
-        self.assertTrue(self.state.snapshot()["scheduleChanged"])
+        self.assertFalse(self.state.snapshot()["scheduleChanged"])
+        self.assertIn(self.record["id"], self.state.snapshot()["teamScheduleChanges"])
 
     def test_more_complete_initial_data_establishes_baseline_without_notice(self):
         self.state.observe_match_details(self.record, self.details((1, 3)))
         self.state.observe_match_details(self.record, self.details((1, 3, 5, 4, 2)))
         self.assertFalse(self.state.snapshot()["scheduleChanged"])
         self.assertEqual(len(self.state.team_submatch_orders[self.record["id"]]), 5)
+
+    def test_full_schedule_sync_does_not_overwrite_team_schedule_changes(self):
+        self.state.observe_match_details(self.record, self.details())
+        self.state.observe_match_details(self.record, self.details((1, 3, 5, 4, 2)))
+        before = copy.deepcopy(self.state.snapshot()["teamScheduleChanges"])
+        self.state.full_sync = lambda *_args: {
+            "meta": {"generatedAt": "v2"}, "records": [self.record],
+        }
+        self.state._run_sync("scheduled")
+        self.assertEqual(self.state.snapshot()["teamScheduleChanges"], before)
 
     def test_only_supported_team_ties_are_observed(self):
         for record in (

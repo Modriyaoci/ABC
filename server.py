@@ -170,6 +170,10 @@ class AppState:
             "scheduleChangeAt": None,
             "scheduleChangeCount": 0,
             "scheduleChanges": [],
+            # Child-order notices are scoped to their team-tie row. Keep this
+            # separate from ordinary schedule edits so the UI never promotes
+            # a team sub-match reorder to the global banner.
+            "teamScheduleChanges": {},
             "dataVersion": None,
         }
         self._load_status()
@@ -189,9 +193,12 @@ class AppState:
             saved = json.loads(self.status_file.read_text(encoding="utf-8"))
             for key in ("lastStarted", "lastSuccess", "lastError", "lastReason",
                         "lastLiveSuccess", "lastLiveError", "retryAt", "liveRetryAt", "liveFailures",
-                        "scheduleChanged", "scheduleChangeAt", "scheduleChangeCount", "scheduleChanges"):
+                        "scheduleChanged", "scheduleChangeAt", "scheduleChangeCount", "scheduleChanges",
+                        "teamScheduleChanges"):
                 if key in saved and saved[key] is not None:
                     self.status[key] = saved[key]
+            if not isinstance(self.status.get("teamScheduleChanges"), dict):
+                self.status["teamScheduleChanges"] = {}
             orders = saved.get("teamSubmatchOrders")
             if isinstance(orders, dict):
                 self.team_submatch_orders = {
@@ -233,15 +240,12 @@ class AppState:
                 previous = None
             self.team_submatch_orders[match_id] = order
             if previous:
-                self.status.update({
-                    "scheduleChanged": True,
-                    "scheduleChangeAt": self.clock().isoformat(timespec="seconds"),
-                    "scheduleChangeCount": 1,
-                    "scheduleChanges": [{
-                        "type": "updated", "id": match_id,
-                        "matchup": record.get("matchup", ""), "fields": ["subMatchOrder"],
-                    }],
-                })
+                changed_at = self.clock().isoformat(timespec="seconds")
+                self.status["teamScheduleChanges"][match_id] = {
+                    "changedAt": changed_at,
+                    "matchup": record.get("matchup", ""),
+                    "fields": ["subMatchOrder"],
+                }
             self._save_status()
 
     @staticmethod

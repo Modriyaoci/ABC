@@ -20,8 +20,8 @@ test("schedule updates without observing running state and retains expanded deta
         return route.fulfill({ json: {
           running: false, dataVersion: String(version), lastSuccess: "2026-09-17T12:00:00+08:00",
           liveEnabled: true, liveIntervalSeconds: 5, nextAutomaticSync: "2026-09-18T08:00:00+08:00",
-          // Simulate a transient response that omits the persisted notice on
-          // later status polls.  The banner must remain visible.
+          // Ordinary changes remain available in the API for diagnostics; the
+          // UI displays child-order changes beside the affected team row.
           scheduleChanged: statusRequests === 1,
           scheduleChangeCount: statusRequests === 1 ? 2 : 0,
           scheduleChangeAt: "2026-09-17T11:59:00+08:00",
@@ -40,14 +40,12 @@ test("schedule updates without observing running state and retains expanded deta
     await page.locator(".score-toggle").waitFor();
     assert.match(await page.locator("#automatic-sync").innerText(), /每 5 秒/);
     const scheduleChangeBanner = page.locator("#schedule-change-banner");
-    await scheduleChangeBanner.waitFor({ state: "visible" });
-    assert.match(await scheduleChangeBanner.innerText(), /官网赛程有变动：2场/);
+    assert.equal(await scheduleChangeBanner.isVisible(), false);
     await page.waitForTimeout(1300);
-    assert.equal(await scheduleChangeBanner.isVisible(), true);
+    assert.equal(await scheduleChangeBanner.isVisible(), false);
     await page.reload();
     await page.locator(".score-toggle").waitFor();
-    assert.equal(await scheduleChangeBanner.isVisible(), true);
-    assert.match(await scheduleChangeBanner.innerText(), /官网赛程有变动：2场/);
+    assert.equal(await scheduleChangeBanner.isVisible(), false);
     assert.equal(await page.locator(".schedule-table > thead th").count(), 6);
     await page.locator(".score-toggle").focus();
     await page.keyboard.press("Enter");
@@ -84,6 +82,49 @@ test("schedule updates without observing running state and retains expanded deta
       assert.equal(await page.locator(".score-toggle").getAttribute("aria-expanded"), "true");
     }
     assert.deepEqual(errors, []);
+  } finally {
+    await browser.close();
+  }
+});
+
+test("team sub-match reorder notice stays on the parent row and card", async () => {
+  const browser = await chromium.launch({ headless: true, executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" });
+  try {
+    const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+    const team = { id: "TTE:team", sport: "TTE", date: "2026-09-20", time: "09:00", category: "男子团体", eventCode: "M.TEAM", stage: "小组赛", matchup: "中国 vs 日本", score: "—", venue: "体育馆", isLive: false };
+    const single = { ...team, id: "TTE:single", category: "男子单打", eventCode: "M.SINGLE", matchup: "中国 vs 韩国" };
+    const otherSport = { ...team, id: "VVO:team", sport: "VVO", matchup: "中国 vs 伊朗" };
+    await page.route("http://127.0.0.1:4173/**", async (route) => {
+      const url = new URL(route.request().url());
+      if (url.pathname === "/api/status") return route.fulfill({ json: {
+        running: false, dataVersion: "v1", lastSuccess: "2026-09-20T08:00:00+08:00",
+        liveEnabled: true, liveIntervalSeconds: 5,
+        scheduleChanged: true, scheduleChangeCount: 1,
+        scheduleChanges: [{ type: "updated", id: team.id, fields: ["subMatchOrder"] }],
+        teamScheduleChanges: { [team.id]: { changedAt: "2026-09-20T08:01:00+08:00", fields: ["subMatchOrder"] } },
+      } });
+      if (url.pathname === "/api/schedule") return route.fulfill({ json: { records: [team, single, otherSport] } });
+      if (url.pathname === "/api/match") return route.fulfill({ json: { available: true, subMatches: [] } });
+      const filename = url.pathname === "/" || url.pathname === "/table-tennis" ? "index.html" : path.basename(url.pathname);
+      const body = await fs.readFile(path.join(__dirname, "../static", filename));
+      const contentType = filename.endsWith(".css") ? "text/css" : filename.endsWith(".js") ? "application/javascript" : "text/html";
+      return route.fulfill({ body, contentType });
+    });
+    await page.goto("http://127.0.0.1:4173/table-tennis");
+    await page.locator(".match-row").first().waitFor();
+    assert.equal(await page.locator("#schedule-change-banner").isVisible(), false);
+    assert.equal(await page.locator(".match-row .schedule-change-inline").count(), 1);
+    assert.match(await page.locator(".match-row .schedule-change-inline").innerText(), /官网赛程有变动/);
+    assert.equal(await page.locator('[data-match-id="TTE:single"] .schedule-change-inline').count(), 0);
+    assert.equal(await page.locator('[data-match-id="VVO:team"] .schedule-change-inline').count(), 0);
+
+    await page.locator("#layout-filter").selectOption("2");
+    assert.equal(await page.locator(".match-card .schedule-change-inline").count(), 1);
+    assert.equal(await page.locator("#schedule-change-banner").isVisible(), false);
+    await page.reload();
+    await page.locator(".match-card").first().waitFor();
+    assert.equal(await page.locator(".match-card .schedule-change-inline").count(), 1);
+    assert.equal(await page.locator("#schedule-change-banner").isVisible(), false);
   } finally {
     await browser.close();
   }
