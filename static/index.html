@@ -56,6 +56,7 @@
             <label class="category-filter">日期 <select id="date-filter" aria-label="选择比赛日期"><option value="">全部日期</option></select></label>
             <label class="category-filter">状态 <select id="status-filter" aria-label="选择比赛状态"><option value="">全部状态</option><option value="live">进行中</option><option value="completed">完场</option><option value="upcoming">未开赛</option></select></label>
             <label class="category-filter">类别 <select id="category-filter" aria-label="选择比赛类别"><option value="">全部类别</option></select></label>
+            <label class="category-filter">布局 <select id="layout-filter" aria-label="选择页面布局"><option value="0">列表</option><option value="2">2列</option><option value="3">3列</option><option value="4">4列</option></select></label>
           </div>
         </div>
 
@@ -73,6 +74,7 @@
             </thead>
             <tbody id="schedule-body"></tbody>
           </table>
+          <div class="schedule-cards" id="schedule-cards" hidden></div>
           <div class="empty-state" id="empty-state" hidden>
             <i data-lucide="calendar-clock" aria-hidden="true"></i>
             <p>暂无赛程数据</p>

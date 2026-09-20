@@ -9,12 +9,16 @@ const state = {
   status: null, statusTimer: null, refreshing: false, refreshAgain: false,
   recordsLoaded: false, loadedVersion: null, connectionError: "",
   expanded: new Set(), details: new Map(), tournaments: new Map(),
+  selectedSubMatches: new Map(), layout: savedLayout(),
 };
 const elements = {
   tabs: document.querySelector("#sport-tabs"),
   title: document.querySelector("#active-sport-title"),
   count: document.querySelector("#record-count"),
   body: document.querySelector("#schedule-body"),
+  table: document.querySelector(".schedule-table"),
+  cards: document.querySelector("#schedule-cards"),
+  layout: document.querySelector("#layout-filter"),
   empty: document.querySelector("#empty-state"),
   syncButton: document.querySelector("#sync-button"),
   syncStatus: document.querySelector("#sync-status"),
@@ -29,6 +33,13 @@ const elements = {
   scheduleView: document.querySelector("#schedule-view"),
   tournamentView: document.querySelector("#tournament-view"),
 };
+
+function savedLayout() {
+  try {
+    const columns = Number(window.localStorage?.getItem("schedule-layout"));
+    return [2, 3, 4].includes(columns) ? columns : 0;
+  } catch { return 0; }
+}
 
 function escapeHtml(value) {
   return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;")
@@ -153,7 +164,7 @@ function detailContent(id) {
   const sections = (detail.data.sections || []).filter((section) => Array.isArray(section.rows) && section.rows.length);
   const subMatches = Array.isArray(detail.data.subMatches) ? detail.data.subMatches : [];
   return `${staleNotice(detail, "小分")}
-    ${renderScoreSections(sections)}${renderSubMatches(subMatches)}
+    ${renderScoreSections(sections)}${renderSubMatches(subMatches, id)}
     ${sections.length || subMatches.length ? "" : `<p class="panel-message">${escapeHtml(detail.data.message || "官网尚未公布小分")}</p>`}`;
 }
 
@@ -175,21 +186,42 @@ function subMatchStatus(match) {
   return "状态待定";
 }
 
-function renderSubMatches(matches) {
+function renderSubMatches(matches, parentKey, rootId = parentKey) {
   if (!Array.isArray(matches) || !matches.length) return "";
-  return `<div class="submatch-list" aria-label="团体赛子比赛">${matches.map((match, index) => {
-    const status = subMatchStatus(match);
-    const score = (value) => value === null || value === undefined || value === "" ? "—" : escapeHtml(value);
-    const sections = (match.sections || []).filter((section) => Array.isArray(section.rows) && section.rows.length);
-    return `<section class="submatch-card" data-submatch-id="${escapeHtml(match.id || "")}">
+  const keyOf = (match, index) => String(match.id || index + 1);
+  let index = matches.findIndex((match, i) => keyOf(match, i) === state.selectedSubMatches.get(parentKey));
+  if (index < 0) {
+    index = Math.max(0, matches.findIndex((match) => subMatchStatus(match) === "进行中"));
+    state.selectedSubMatches.set(parentKey, keyOf(matches[index], index));
+  }
+  const match = matches[index];
+  const status = subMatchStatus(match);
+  const score = (value) => value === null || value === undefined || value === "" ? "—" : escapeHtml(value);
+  const sections = (match.sections || []).filter((section) => Array.isArray(section.rows) && section.rows.length);
+  const panelId = `submatch-panel-${encodeURIComponent(parentKey)}`;
+  return `<div class="submatch-list" aria-label="团体赛子比赛">
+    <div class="submatch-tabs" role="group" aria-label="选择子比赛">${matches.map((child, i) => `<button class="submatch-tab" type="button" aria-pressed="${i === index}" aria-controls="${escapeHtml(panelId)}" data-select-submatch="${escapeHtml(keyOf(child, i))}" data-submatch-parent="${escapeHtml(parentKey)}" data-submatch-root="${escapeHtml(rootId)}">第${escapeHtml(child.number || i + 1)}场${child.type ? ` · ${escapeHtml(child.type)}` : ""}${subMatchStatus(child) === "进行中" ? '<span class="submatch-live-dot" aria-label="进行中"></span>' : ""}</button>`).join("")}</div>
+    <section class="submatch-card" id="${escapeHtml(panelId)}" data-submatch-id="${escapeHtml(keyOf(match, index))}">
       <div class="submatch-heading"><h3>第${escapeHtml(match.number || index + 1)}场${match.type ? ` · ${escapeHtml(match.type)}` : ""}</h3><span class="submatch-status${status === "进行中" ? " is-live" : ""}">${status}</span></div>
       <div class="submatch-players" aria-label="选手与比分">
         <div><span>${escapeHtml(match.home || "待定")}</span><strong>${score(match.homeScore)}</strong></div>
         <div><span>${escapeHtml(match.away || "待定")}</span><strong>${score(match.awayScore)}</strong></div>
       </div>
-      ${renderScoreSections(sections)}${renderSubMatches(match.subMatches)}
-    </section>`;
-  }).join("")}</div>`;
+      ${renderScoreSections(sections)}${renderSubMatches(match.subMatches, `${parentKey}/${keyOf(match, index)}`, rootId)}
+    </section></div>`;
+}
+
+function restoreSubmatchFocus(container, focus) {
+  if (!focus?.selectSubmatch) return;
+  [...container.querySelectorAll("[data-select-submatch]")].find((button) => button.dataset.selectSubmatch === focus.selectSubmatch && button.dataset.submatchParent === focus.submatchParent)?.focus({ preventScroll: true });
+}
+
+function updateDetailPanel(id) {
+  const panel = document.getElementById(`detail-${id}`);
+  if (!panel) return;
+  const focus = { ...document.activeElement?.dataset };
+  panel.innerHTML = detailContent(id);
+  restoreSubmatchFocus(panel, focus);
 }
 
 function staleNotice(entry, label) {
@@ -204,6 +236,34 @@ function renderSchedule() {
   elements.count.textContent = `${records.length} 场`;
   elements.empty.hidden = records.length !== 0;
   const focusedMatch = document.activeElement?.dataset?.toggleMatch;
+  const submatchFocus = { ...document.activeElement?.dataset };
+  elements.table.hidden = Boolean(state.layout);
+  elements.cards.hidden = !state.layout;
+  elements.scheduleView.classList.toggle("is-card-layout", Boolean(state.layout));
+  elements.layout.value = String(state.layout);
+  elements.cards.style.setProperty("--match-columns", state.layout || 1);
+  if (state.layout) {
+    elements.body.innerHTML = "";
+    elements.cards.innerHTML = records.map((record) => {
+      const dateTime = formatDateTime(record);
+      const open = state.expanded.has(record.id);
+      const status = recordStatus(record);
+      return `<article class="match-card ${status === "live" ? "is-live" : ""} ${open ? "is-expanded" : ""}" data-match-id="${escapeHtml(record.id)}">
+        <div class="card-content">
+          <header class="card-header"><div class="card-date"><strong>${escapeHtml(dateTime.date)}</strong><span>${escapeHtml(dateTime.time)}</span></div><span class="card-category">${escapeHtml(record.category)}</span></header>
+          <p class="card-stage">${escapeHtml(record.stage)}</p>
+          <h3 class="card-matchup">${escapeHtml(record.matchup)}</h3>
+          <div class="card-score"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}" aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分"><span>${escapeHtml(formatScore(record))}</span><span class="disclosure-arrow" aria-hidden="true">⌄</span></button></div>
+          <p class="card-venue">${escapeHtml(record.venue)}</p>
+        </div>
+        ${open ? `<div class="match-detail" id="detail-${escapeHtml(record.id)}" aria-label="${escapeHtml(record.matchup)}的小分">${detailContent(record.id)}</div>` : ""}
+      </article>`;
+    }).join("");
+    if (focusedMatch) [...elements.cards.querySelectorAll("[data-toggle-match]")].find((button) => button.dataset.toggleMatch === focusedMatch)?.focus({ preventScroll: true });
+    restoreSubmatchFocus(elements.cards, submatchFocus);
+    return;
+  }
+  elements.cards.innerHTML = "";
   elements.body.innerHTML = records.map((record) => {
     const dateTime = formatDateTime(record);
     const cancelled = ["CANCELED", "CANCELLED", "POSTPONED"].includes(record.status);
@@ -221,6 +281,7 @@ function renderSchedule() {
     </tr>${open ? `<tr class="detail-row"><td colspan="6"><div class="match-detail" id="detail-${escapeHtml(record.id)}" aria-label="${escapeHtml(record.matchup)}的小分">${detailContent(record.id)}</div></td></tr>` : ""}`;
   }).join("");
   if (focusedMatch) [...elements.body.querySelectorAll("[data-toggle-match]")].find((button) => button.dataset.toggleMatch === focusedMatch)?.focus({ preventScroll: true });
+  restoreSubmatchFocus(elements.body, submatchFocus);
 }
 
 function renderTournament() {
@@ -280,6 +341,7 @@ function renderView() {
   elements.scheduleFilters.hidden = false;
   elements.dateFilter.parentElement.hidden = state.view !== "schedule";
   elements.statusFilter.parentElement.hidden = state.view !== "schedule";
+  elements.layout.parentElement.hidden = state.view !== "schedule";
   elements.category.parentElement.hidden = false;
   for (const button of elements.viewTabs.querySelectorAll("[data-view]")) button.setAttribute("aria-selected", String(button.dataset.view === state.view));
   renderCategoryFilter();
@@ -337,14 +399,12 @@ async function loadMatch(id, force = false) {
   if (current?.loading || (!force && current?.data)) return;
   const entry = { ...current, loading: true, lastRequested: Date.now(), error: "" };
   state.details.set(id, entry);
-  const panel = document.getElementById(`detail-${id}`);
-  if (panel) panel.innerHTML = detailContent(id);
+  updateDetailPanel(id);
   try { entry.data = await fetchJson(`/api/match?id=${encodeURIComponent(id)}`); }
   catch (error) { entry.error = error.message || "无法读取小分"; }
   finally {
     entry.loading = false;
-    const currentPanel = document.getElementById(`detail-${id}`);
-    if (currentPanel) currentPanel.innerHTML = detailContent(id);
+    updateDetailPanel(id);
   }
 }
 
@@ -453,9 +513,22 @@ elements.statusFilter.addEventListener("change", () => {
   renderView();
   void refreshVisibleExtras();
 });
-elements.body.addEventListener("click", (event) => {
+elements.layout.addEventListener("change", () => {
+  const columns = Number(elements.layout.value);
+  state.layout = [2, 3, 4].includes(columns) ? columns : 0;
+  try { window.localStorage?.setItem("schedule-layout", String(state.layout)); } catch {}
+  renderSchedule();
+});
+elements.scheduleView.addEventListener("click", (event) => {
+  const submatch = event.target.closest("[data-select-submatch]");
+  if (submatch) {
+    state.selectedSubMatches.set(submatch.dataset.submatchParent, submatch.dataset.selectSubmatch);
+    updateDetailPanel(submatch.dataset.submatchRoot);
+    return;
+  }
   const retry = event.target.closest("[data-retry-match]");
   if (retry) { void loadMatch(retry.dataset.retryMatch, true); return; }
+  if (event.target.closest(".match-detail")) return;
   const row = event.target.closest("[data-match-id]");
   if (row && !window.getSelection()?.toString()) toggleMatch(row.dataset.matchId);
 });

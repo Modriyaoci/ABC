@@ -504,6 +504,27 @@ button:focus-visible, select:focus-visible {
 
 .score-section + .submatch-list { margin-top: 20px; }
 
+.submatch-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.submatch-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 7px 12px;
+  border: 1px solid var(--teal);
+  border-radius: 5px;
+  color: var(--teal);
+  background: var(--white);
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.submatch-tab[aria-pressed="true"] { color: var(--white); background: var(--teal); }
+.submatch-live-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
 .submatch-card {
   min-width: 0;
   padding: 16px;
@@ -970,5 +991,131 @@ button:focus-visible, select:focus-visible {
   *::after {
     scroll-behavior: auto !important;
     transition: none !important;
+  }
+}
+
+/* Schedule card layouts (the view and column count are controlled by app.js). */
+.schedule-cards {
+  --match-columns: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--match-columns), minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.table-shell.is-card-layout { background: transparent; border: 0; box-shadow: none; overflow: visible; }
+
+.schedule-cards[hidden] {
+  display: none;
+}
+
+.match-card {
+  min-width: 0;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.match-card.is-live {
+  border-color: color-mix(in srgb, var(--live) 45%, var(--line));
+}
+
+.match-card.is-cancelled {
+  opacity: 0.72;
+}
+
+.match-card .card-content {
+  min-width: 0;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.match-card .card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.match-card .card-date {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.match-card .card-date strong {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.match-card .card-category {
+  color: var(--teal);
+  font-weight: 700;
+  text-align: right;
+}
+
+.match-card .card-stage {
+  margin: 14px 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.match-card .card-matchup {
+  margin: 0;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.match-card .card-score {
+  display: flex;
+  justify-content: flex-start;
+  margin: 12px 0 8px;
+}
+
+.match-card .card-score .score-toggle {
+  min-width: 0;
+  padding: 7px 11px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--soft);
+  color: var(--ink);
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+}
+
+.match-card .card-venue {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.match-card > .match-detail {
+  min-width: 0;
+  border-top: 1px solid var(--line);
+  padding: 14px 16px 16px;
+}
+
+@media (max-width: 1023px) {
+  .schedule-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .schedule-cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .match-card .card-content {
+    padding: 14px;
   }
 }
