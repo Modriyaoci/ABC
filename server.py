@@ -28,6 +28,16 @@ LIVE_INTERVAL = 5
 DETAIL_LIVE_TTL = 4
 DETAIL_IDLE_TTL = 120
 RETRY_INTERVAL = 300
+SPORT_PATHS = {
+    "TEN": "tennis",
+    "BBL": "baseball",
+    "CKT": "cricket",
+    "VVO": "volleyball",
+    "TTE": "table-tennis",
+    "BDM": "badminton",
+    "HBL": "handball",
+}
+SPORT_ROUTES = {f"/{slug}" for slug in SPORT_PATHS.values()}
 
 
 def iso_now() -> str:
@@ -342,7 +352,11 @@ class RequestHandler(BaseHTTPRequestHandler):
         if path == "/api/health":
             self._send_json({"ok": True, "time": iso_now()})
             return
-        if path == "/":
+        # The client owns the selected sport in the URL (for example
+        # ``/tennis``). Serve the SPA shell for every sport route, including
+        # a trailing slash, so a direct visit or browser refresh keeps that
+        # selection instead of returning a static-file 404.
+        if (path.rstrip("/") or "/") in SPORT_ROUTES or path == "/":
             self._send_static("index.html")
             return
         self._send_static(path.lstrip("/"))
