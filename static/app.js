@@ -213,7 +213,7 @@ function transposeScoreSection(section) {
 
   // A one-row current-score section (for example tennis' live points) has no
   // period label. Give it the same left-name/right-score treatment.
-  if (rows.length === 1 && columns.length >= 2 && !["坏球", "好球", "出局"].every((label) => columns.includes(label))) {
+  if (rows.length === 1 && columns.length >= 2 && (section.entityLabel === "姓名" || section.title === "当前局")) {
     const row = rows[0];
     return {
       ...section,
