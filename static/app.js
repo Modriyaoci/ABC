@@ -15,6 +15,7 @@ const state = {
   records: [], activeSport: null, view: "schedule", selections: new Map(),
   dateFilter: "", statusFilter: "",
   status: null, statusTimer: null, refreshing: false, refreshAgain: false,
+  teamScheduleChanges: savedTeamScheduleChanges(),
   recordsLoaded: false, loadedVersion: null, connectionError: "",
   expanded: new Set(), details: new Map(), tournaments: new Map(),
   selectedSubMatches: new Map(), lineupVisibility: savedLineupVisibility(), layout: savedLayout(),
@@ -48,6 +49,49 @@ function savedLayout() {
     const columns = Number(window.localStorage?.getItem("schedule-layout"));
     return [2, 3, 4, 5].includes(columns) ? columns : 0;
   } catch { return 0; }
+}
+
+function savedTeamScheduleChanges() {
+  try {
+    const value = JSON.parse(window.localStorage?.getItem("team-schedule-changes") || "[]");
+    if (Array.isArray(value)) return new Set(value.map(String));
+    if (value && typeof value === "object") return new Set(Object.keys(value));
+  } catch {}
+  return new Set();
+}
+
+function teamScheduleChangeIds(status) {
+  const changes = status?.teamScheduleChanges;
+  if (Array.isArray(changes)) return changes.map(String);
+  if (changes && typeof changes === "object") return Object.keys(changes);
+  return [];
+}
+
+function retainTeamScheduleChanges(status) {
+  const ids = teamScheduleChangeIds(status);
+  if (!ids.length) return false;
+  let changed = false;
+  for (const id of ids) {
+    if (!state.teamScheduleChanges.has(id)) {
+      state.teamScheduleChanges.add(id);
+      changed = true;
+    }
+  }
+  if (changed) {
+    try { window.localStorage?.setItem("team-schedule-changes", JSON.stringify([...state.teamScheduleChanges])); } catch {}
+  }
+  return changed;
+}
+
+function hasTeamScheduleChange(id) {
+  return state.teamScheduleChanges.has(String(id));
+}
+
+function isTeamRecord(record) {
+  const sport = String(record?.sport || "").toUpperCase();
+  const category = String(record?.category || "");
+  const eventCode = String(record?.eventCode || "").toUpperCase();
+  return (sport === "TTE" || sport === "BDM") && (category.includes("团体") || eventCode.includes("TEAM"));
 }
 
 function savedLineupVisibility() {
@@ -418,11 +462,12 @@ function renderSchedule() {
       const dateTime = formatDateTime(record);
       const open = state.expanded.has(record.id);
       const status = recordStatus(record);
+      const scheduleNotice = isTeamRecord(record) && hasTeamScheduleChange(record.id) ? '<span class="schedule-change-inline">官网赛程有变动</span>' : "";
       return `<article class="match-card ${status === "live" ? "is-live" : ""} ${open ? "is-expanded" : ""}" data-match-id="${escapeHtml(record.id)}">
         <div class="card-content">
           <header class="card-header"><div class="card-date"><strong>${escapeHtml(dateTime.date)}</strong><span>${escapeHtml(dateTime.time)}</span></div><span class="card-category">${escapeHtml(record.category)}</span></header>
           <p class="card-stage">${escapeHtml(record.stage)}</p>
-          <h3 class="card-matchup">${escapeHtml(record.matchup)}</h3>
+          <h3 class="card-matchup">${escapeHtml(record.matchup)}${scheduleNotice}</h3>
           <div class="card-score"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}" aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分"><span>${escapeHtml(formatScore(record))}</span><span class="disclosure-arrow" aria-hidden="true">⌄</span></button></div>
           <p class="card-venue">${escapeHtml(record.venue)}</p>
         </div>
@@ -439,11 +484,12 @@ function renderSchedule() {
     const cancelled = ["CANCELED", "CANCELLED", "POSTPONED"].includes(record.status);
     const open = state.expanded.has(record.id);
     const rowClass = record.isLive ? "is-live" : cancelled ? "is-cancelled" : "";
+    const scheduleNotice = isTeamRecord(record) && hasTeamScheduleChange(record.id) ? '<span class="schedule-change-inline">官网赛程有变动</span>' : "";
     return `<tr class="match-row ${rowClass} ${open ? "is-expanded" : ""}" data-match-id="${escapeHtml(record.id)}">
       <td class="date-cell" data-label="日期时间"><span><strong>${escapeHtml(dateTime.date)}</strong>${escapeHtml(dateTime.time)}</span></td>
       <td class="category-cell" data-label="类别"><span>${escapeHtml(record.category)}</span></td>
       <td data-label="阶段"><span>${escapeHtml(record.stage)}</span></td>
-      <td class="matchup-cell" data-label="对阵"><span>${escapeHtml(record.matchup)}</span></td>
+      <td class="matchup-cell" data-label="对阵"><span>${escapeHtml(record.matchup)}</span>${scheduleNotice}</td>
       <td class="score-cell" data-label="比分"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}"
         aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分">
         <span>${escapeHtml(formatScore(record))}</span><span class="disclosure-arrow" aria-hidden="true">⌄</span></button></td>
@@ -521,6 +567,8 @@ function renderView() {
 
 function renderStatus() {
   const status = state.status || {};
+  const teamChangesAdded = retainTeamScheduleChanges(status);
+  if (teamChangesAdded && state.recordsLoaded && state.view === "schedule") renderSchedule();
   elements.statusDot.className = "status-dot";
   elements.syncButton.disabled = Boolean(status.running);
   elements.syncButton.classList.toggle("is-running", Boolean(status.running));
@@ -546,13 +594,11 @@ function renderStatus() {
   const error = state.connectionError || status.lastLiveError || status.lastError;
   elements.errorBanner.hidden = !error;
   elements.errorBanner.textContent = error ? `暂未更新，已保留现有赛程。${error}` : "";
-  const changedCount = Number(status.scheduleChangeCount) || 0;
-  const changedAt = status.scheduleChangeAt ? `（${formatSyncTime(status.scheduleChangeAt)}）` : "";
-  const scheduleChanged = Boolean(status.scheduleChanged) && changedCount > 0;
-  elements.scheduleChangeBanner.hidden = !scheduleChanged;
-  elements.scheduleChangeBanner.textContent = scheduleChanged
-    ? `官网赛程有变动：${changedCount}场比赛信息已更新，请以当前页面为准${changedAt}`
-    : "";
+  // Schedule edits are shown beside the affected team-tie row. A global
+  // banner is intentionally kept hidden because it cannot identify which
+  // of the many matches changed.
+  elements.scheduleChangeBanner.hidden = true;
+  elements.scheduleChangeBanner.textContent = "";
 }
 
 function statusVersion(status) {
