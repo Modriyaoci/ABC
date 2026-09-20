@@ -53,10 +53,10 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
         return payload
     replacements = []
     errors = []
-    # Refresh every sport in parallel.  With seven enabled sports, four
-    # workers could make the latter requests miss the five-second cadence when
-    # the official endpoint was slow.
-    with ThreadPoolExecutor(max_workers=max(1, len(targets))) as pool:
+    # The official service rate-limits bursts.  Two workers keep the poll
+    # responsive while sync_service's process-wide limiter spaces individual
+    # requests across all sports.
+    with ThreadPoolExecutor(max_workers=min(2, len(targets))) as pool:
         futures = {
             pool.submit(fetch_official_json, f"/s/AG2026/en/{sport}/schedule/daily/{day}", 1): (sport, day)
             for sport, day in targets

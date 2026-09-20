@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import ssl
 import threading
@@ -113,6 +114,57 @@ class SyncError(RuntimeError):
     pass
 
 
+# The results service applies a fairly strict per-client rate limit.  A full
+# refresh can otherwise create a burst of requests (one for each sport and
+# then one for every competition day), while the live poller creates another
+# burst every five seconds.  Keep requests spaced out process-wide so the
+# callers can still use small worker pools without overwhelming the official
+# API.  The value is configurable for local diagnostics, but the conservative
+# default is appropriate for the free Render instance.
+REQUEST_INTERVAL_SECONDS = max(
+    0.1, float(os.environ.get("OFFICIAL_REQUEST_INTERVAL", "0.75"))
+)
+RATE_LIMIT_BACKOFF_SECONDS = max(
+    2.0, float(os.environ.get("OFFICIAL_RATE_LIMIT_BACKOFF", "8"))
+)
+_request_lock = threading.Lock()
+_next_request_at = 0.0
+_rate_limit_until = 0.0
+
+
+def _wait_for_request() -> None:
+    """Throttle all official requests, including requests from worker threads."""
+    global _next_request_at
+    with _request_lock:
+        now = time.monotonic()
+        target = max(now, _next_request_at, _rate_limit_until)
+        _next_request_at = target + REQUEST_INTERVAL_SECONDS
+    delay = target - now
+    if delay > 0:
+        time.sleep(delay)
+
+
+def _set_rate_limit_cooldown(seconds: float) -> None:
+    global _rate_limit_until
+    if seconds <= 0:
+        return
+    with _request_lock:
+        _rate_limit_until = max(_rate_limit_until, time.monotonic() + seconds)
+
+
+def _retry_after_seconds(error: urllib.error.HTTPError) -> float | None:
+    """Read a standards-compliant Retry-After value, if the server sent one."""
+    value = error.headers.get("Retry-After") if error.headers else None
+    if not value:
+        return None
+    try:
+        return max(0.0, float(value))
+    except (TypeError, ValueError):
+        # HTTP-date Retry-After is uncommon for this API.  Treat an unknown
+        # value as absent and use our exponential fallback instead.
+        return None
+
+
 def _decode_response(body: bytes) -> Any:
     stripped = body.lstrip()
     if stripped.startswith((b"[", b"{")):
@@ -132,27 +184,56 @@ def _decode_response(body: bytes) -> Any:
 
 
 def fetch_official_json(path: str, retries: int = 3) -> Any:
-    separator = "&" if "?" in path else "?"
-    url = f"{API_BASE}{path}{separator}_={time.time_ns()}"
+    # Do not append a unique cache-busting query to every request.  That
+    # bypasses the official CDN and turns the five-second live poll into a
+    # stream of origin requests, which is what triggers HTTP 429.  Explicit
+    # no-cache headers still let a cache revalidate a response when needed.
+    url = f"{API_BASE}{path}"
     headers = {
         "Accept": "application/json, text/plain, */*",
+        "Cache-Control": "no-cache",
         "Origin": "https://results.asiangames2026.org",
+        "Pragma": "no-cache",
         "Referer": "https://results.asiangames2026.org/",
-        "User-Agent": "Mozilla/5.0 AichiNagoyaLocalSchedule/1.0",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36 "
+        "AichiNagoyaLocalSchedule/1.0",
     }
 
+    total_retries = max(1, retries)
     last_error: Exception | None = None
-    for attempt in range(retries):
+    for attempt in range(total_retries):
+        _wait_for_request()
         try:
             request = urllib.request.Request(url, headers=headers)
             with urllib.request.urlopen(request, timeout=25, context=SSL_CONTEXT) as response:
                 if response.status != 200:
                     raise SyncError(f"官网返回 HTTP {response.status}")
                 return _decode_response(response.read())
+        except urllib.error.HTTPError as exc:
+            if exc.code == 429:
+                # The provider currently returns a JSON ``rate_limit_exceeded``
+                # body without Retry-After. Keep the user-facing error
+                # actionable instead of exposing Python's generic HTTP text.
+                last_error = SyncError("官网匿名请求额度已用尽（HTTP 429），请稍后重试")
+                # Honour the server's requested cooldown where possible.  In
+                # its absence, back off exponentially (8, 16, 32 seconds by
+                # default), and share the cooldown with all worker threads.
+                retry_after = _retry_after_seconds(exc)
+                delay = max(
+                    retry_after or 0.0,
+                    RATE_LIMIT_BACKOFF_SECONDS * (2 ** attempt),
+                )
+                _set_rate_limit_cooldown(delay)
+            else:
+                last_error = exc
+                delay = 1.5 * (attempt + 1) if attempt + 1 < total_retries else 0.0
+            if attempt + 1 < total_retries and delay:
+                time.sleep(delay)
         except (urllib.error.URLError, TimeoutError, SyncError) as exc:
             last_error = exc
-            if attempt + 1 < retries:
-                time.sleep(0.8 * (attempt + 1))
+            if attempt + 1 < total_retries:
+                time.sleep(1.5 * (attempt + 1))
 
     raise SyncError(f"无法连接官网：{last_error}")
 
@@ -424,7 +505,10 @@ def sync_all(
     day_lists: dict[str, list[dict[str, Any]]] = {}
     day_errors: list[str] = []
 
-    with ThreadPoolExecutor(max_workers=len(SPORTS)) as pool:
+    # Keep the initial index lookup gentle as well.  The request-level limiter
+    # protects the process, while a small pool avoids a burst of seven sockets
+    # when the daily job starts after a Render restart.
+    with ThreadPoolExecutor(max_workers=min(2, len(SPORTS))) as pool:
         future_to_disc = {
             pool.submit(fetch_official_json, f"/s/AG2026/en/{disc}/schedule/days"): disc
             for disc in SPORTS
@@ -458,7 +542,9 @@ def sync_all(
         path = f"/s/AG2026/en/{disc}/schedule/daily/{date}"
         return disc, date, fetch_official_json(path)
 
-    with ThreadPoolExecutor(max_workers=10) as pool:
+    # Daily feeds are numerous; two workers plus the global limiter complete a
+    # full refresh predictably without tripping the official rate limit.
+    with ThreadPoolExecutor(max_workers=2) as pool:
         futures = {pool.submit(fetch_day, disc, date): (disc, date) for disc, date in tasks}
         for future in as_completed(futures):
             disc, date = futures[future]

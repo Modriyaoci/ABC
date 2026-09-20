@@ -1,11 +1,20 @@
 import json
+import io
+import urllib.error
 import unittest
 import zlib
 from datetime import datetime
+from unittest.mock import patch
 from zoneinfo import ZoneInfo
 
 from server import next_eight
-from sync_service import _decode_response, _score, normalize_unit, preserve_known_matchups
+from sync_service import (
+    _decode_response,
+    _score,
+    fetch_official_json,
+    normalize_unit,
+    preserve_known_matchups,
+)
 
 
 class SyncServiceTests(unittest.TestCase):
@@ -40,6 +49,38 @@ class SyncServiceTests(unittest.TestCase):
         compressed = zlib.compress(json.dumps(expected).encode("utf-8"))
         wire_body = compressed.decode("latin-1").encode("utf-8")
         self.assertEqual(_decode_response(wire_body), expected)
+
+    def test_official_fetch_retries_rate_limit_without_cache_buster(self):
+        body = json.dumps([{"raw": "2026-09-19"}]).encode("utf-8")
+
+        class Response:
+            status = 200
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                return False
+
+            def read(self):
+                return body
+
+        limited = urllib.error.HTTPError(
+            "https://back.results.asiangames2026.org/test",
+            429,
+            "Too Many Requests",
+            {"Retry-After": "3"},
+            io.BytesIO(),
+        )
+        with patch("sync_service._wait_for_request"), \
+                patch("sync_service._set_rate_limit_cooldown") as cooldown, \
+                patch("sync_service.time.sleep"), \
+                patch("sync_service.urllib.request.urlopen", side_effect=[limited, Response()]) as open_url:
+            self.assertEqual(fetch_official_json("/test", retries=2), [{"raw": "2026-09-19"}])
+
+        self.assertEqual(cooldown.call_args.args[0], 8)
+        first_request = open_url.call_args_list[0].args[0]
+        self.assertNotIn("_=", first_request.full_url)
 
     def test_normalizes_japan_time_to_beijing_time(self):
         unit = {
