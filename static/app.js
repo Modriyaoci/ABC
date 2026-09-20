@@ -2,6 +2,14 @@ const SPORTS = {
   TEN: "网球", BBL: "棒球", CKT: "板球", VVO: "排球",
   TTE: "乒乓球", BDM: "羽毛球", HBL: "手球",
 };
+// Keep a stable, human-readable URL for every sport. The path is part of the
+// page state so a refresh (or a shared link) opens the same sport instead of
+// falling back to whichever sport happens to have a live match.
+const SPORT_PATHS = {
+  TEN: "tennis", BBL: "baseball", CKT: "cricket", VVO: "volleyball",
+  TTE: "table-tennis", BDM: "badminton", HBL: "handball",
+};
+const PATH_SPORTS = Object.fromEntries(Object.entries(SPORT_PATHS).map(([sport, path]) => [path, sport]));
 const WEEKDAYS = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
 const state = {
   records: [], activeSport: null, view: "schedule", selections: new Map(),
@@ -39,6 +47,28 @@ function savedLayout() {
     const columns = Number(window.localStorage?.getItem("schedule-layout"));
     return [2, 3, 4].includes(columns) ? columns : 0;
   } catch { return 0; }
+}
+
+function sportFromPath(pathname = window.location.pathname) {
+  const path = String(pathname || "").replace(/^\/+|\/+$/g, "").toLowerCase();
+  return PATH_SPORTS[path] || null;
+}
+
+function sportPath(sport) {
+  const path = SPORT_PATHS[sport];
+  return path ? `/${path}` : "/";
+}
+
+function updateSportPath(sport, { replace = false } = {}) {
+  const path = sportPath(sport);
+  if (window.location.pathname === path) return;
+  const url = `${path}${window.location.search}${window.location.hash}`;
+  try {
+    window.history[replace ? "replaceState" : "pushState"]({ sport }, "", url);
+  } catch {
+    // Browsers that do not expose History API still retain the in-memory
+    // selection; the rest of the page remains usable.
+  }
 }
 
 function escapeHtml(value) {
@@ -147,11 +177,70 @@ function renderCategoryFilter() {
   elements.category.disabled = options.length <= 1;
 }
 
-function renderDataTable(section) {
-  const columns = Array.isArray(section.columns) ? section.columns : [];
-  const rows = Array.isArray(section.rows) ? section.rows : [];
+function transposeScoreSection(section) {
+  const columns = Array.isArray(section?.columns) ? section.columns : [];
+  const rows = Array.isArray(section?.rows) ? section.rows : [];
+  if (!columns.length || !rows.length) return section;
+
+  const first = String(columns[0] || "").trim();
+  const values = (row, index) => Array.isArray(row) ? (row[index] ?? "—") : "—";
+
+  // Official set/game feeds put the period in the first column and the
+  // competitors in the column headings.  Present the same data in the
+  // orientation used by the official detail view: one competitor per row,
+  // with each period's score in its own column.
+  if (/^(局|盘|节)(?:\/|、)?(?:局|盘|节)?/.test(first) && columns.length > 1) {
+    const labels = rows.map((row, index) => String(Array.isArray(row) && row[0] ? row[0] : `第${index + 1}局`));
+    const competitors = columns.slice(1);
+    return {
+      ...section,
+      columns: ["姓名", ...labels],
+      rows: competitors.map((name, competitorIndex) => [name, ...rows.map((row) => values(row, competitorIndex + 1))]),
+    };
+  }
+
+  // Cricket's Runs/Wickets/Overs block has the same axis inversion, but its
+  // first column is labelled “项目” rather than “局/节”.
+  if (first === "项目" && columns.length > 2 && rows.every((row) => /^(Runs|Wickets|Overs)$/i.test(String(row?.[0] || "")))) {
+    const competitors = columns.slice(1);
+    const labels = rows.map((row) => String(row[0]));
+    return {
+      ...section,
+      columns: ["队伍", ...labels],
+      rows: competitors.map((name, competitorIndex) => [name, ...rows.map((row) => values(row, competitorIndex + 1))]),
+    };
+  }
+
+  // A one-row current-score section (for example tennis' live points) has no
+  // period label. Give it the same left-name/right-score treatment.
+  if (rows.length === 1 && columns.length >= 2 && !["坏球", "好球", "出局"].every((label) => columns.includes(label))) {
+    const row = rows[0];
+    return {
+      ...section,
+      columns: ["姓名", section.title || "当前比分"],
+      rows: columns.map((name, index) => [name, values(row, index)]),
+    };
+  }
+
+  // Baseball's current at-bat counters have no competitors; keeping them as
+  // a compact vertical key/value table is clearer on narrow screens.
+  if (rows.length === 1 && columns.length && columns.every((label) => ["坏球", "好球", "出局"].includes(String(label)))) {
+    return {
+      ...section,
+      columns: ["项目", "数量"],
+      rows: columns.map((label, index) => [label, values(rows[0], index)]),
+    };
+  }
+  return section;
+}
+
+function renderDataTable(section, options = {}) {
+  const display = options.transpose ? transposeScoreSection(section) : section;
+  const columns = Array.isArray(display.columns) ? display.columns : [];
+  const rows = Array.isArray(display.rows) ? display.rows : [];
   if (!rows.length) return "";
-  return `<div class="data-table-scroll"><table class="data-table">
+  const tableClass = options.transpose ? "data-table score-orientation-table" : "data-table";
+  return `<div class="data-table-scroll"><table class="${tableClass}">
     ${columns.length ? `<thead><tr>${columns.map((value) => `<th scope="col">${escapeHtml(value)}</th>`).join("")}</tr></thead>` : ""}
     <tbody>${rows.map((row) => `<tr>${(Array.isArray(row) ? row : []).map((value, index) => `<${index === 0 ? "th scope=\"row\"" : "td"}>${escapeHtml(value)}</${index === 0 ? "th" : "td"}>`).join("")}</tr>`).join("")}</tbody>
   </table></div>`;
@@ -169,7 +258,7 @@ function detailContent(id) {
 }
 
 function renderScoreSections(sections) {
-  return (sections || []).map((section) => `<section class="score-section">${section.title ? `<h3>${escapeHtml(section.title)}</h3>` : ""}${renderDataTable(section)}</section>`).join("");
+  return (sections || []).map((section) => `<section class="score-section">${section.title ? `<h3>${escapeHtml(section.title)}</h3>` : ""}${renderDataTable(section, { transpose: true })}</section>`).join("");
 }
 
 function subMatchStatus(match) {
@@ -389,6 +478,7 @@ async function loadSchedule(version) {
   state.loadedVersion = version;
   if (!state.activeSport) {
     state.activeSport = state.records.find((record) => record.isLive)?.sport || "TEN";
+    updateSportPath(state.activeSport, { replace: true });
     renderTabs();
   }
   renderView();
@@ -485,6 +575,7 @@ elements.tabs.addEventListener("click", (event) => {
   const button = event.target.closest("[data-sport]");
   if (!button) return;
   state.activeSport = button.dataset.sport;
+  updateSportPath(state.activeSport);
   renderTabs();
   renderView();
   if (state.view !== "schedule") void loadTournament();
@@ -547,8 +638,18 @@ elements.syncButton.addEventListener("click", () => { void requestSync(); });
 window.addEventListener("focus", () => { void refresh(true); });
 document.addEventListener("visibilitychange", () => { if (!document.hidden) void refresh(true); });
 window.addEventListener("online", () => { void refresh(true); });
+window.addEventListener("popstate", () => {
+  const sport = sportFromPath();
+  if (!sport || sport === state.activeSport) return;
+  state.activeSport = sport;
+  renderTabs();
+  renderView();
+  if (state.view !== "schedule") void loadTournament();
+  else void refreshVisibleExtras();
+});
 
 async function init() {
+  state.activeSport = sportFromPath();
   renderTabs();
   if (window.lucide) window.lucide.createIcons();
   await refresh();

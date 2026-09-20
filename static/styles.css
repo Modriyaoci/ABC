@@ -631,6 +631,17 @@ button:focus-visible, select:focus-visible {
   text-align: left;
 }
 
+.score-orientation-table th:first-child,
+.score-orientation-table td:first-child {
+  min-width: 150px;
+}
+
+.score-orientation-table th:not(:first-child),
+.score-orientation-table td:not(:first-child) {
+  min-width: 72px;
+  text-align: center;
+}
+
 .data-table tbody th {
   color: var(--ink);
   font-weight: 600;
