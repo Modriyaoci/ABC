@@ -5,7 +5,15 @@ from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import Mock, patch
 
-from server import AppState, BEIJING_TZ, LIVE_INTERVAL, match_detail_ttl, next_eight, schedule_changes
+from server import (
+    AppState,
+    BEIJING_TZ,
+    LIVE_INTERVAL,
+    RATE_LIMIT_RETRY_INTERVAL,
+    match_detail_ttl,
+    next_eight,
+    schedule_changes,
+)
 from sync_service import SyncError
 from live_service import live_targets, sync_live
 
@@ -108,6 +116,24 @@ class SchedulerTests(unittest.TestCase):
         self.app.live_sync = Mock(side_effect=SyncError("offline"))
         self.app._run_sync("live")
         self.assertEqual(self.app.status["liveRetryAt"], (self.now + timedelta(seconds=300)).isoformat())
+
+    def test_rate_limit_uses_long_backoff_for_live_and_full_sync(self):
+        error = SyncError("官网匿名请求额度已用尽（HTTP 429），请稍后重试")
+        self.app.status["lastSuccess"] = self.now.isoformat()
+        self.app.payload["meta"]["officialDays"]["TEN"] = ["2026-09-17"]
+        self.app.live_sync = Mock(side_effect=error)
+        self.app._run_sync("live")
+        self.assertEqual(
+            self.app.status["liveRetryAt"],
+            (self.now + timedelta(seconds=RATE_LIMIT_RETRY_INTERVAL)).isoformat(),
+        )
+
+        self.app.full_sync = Mock(side_effect=error)
+        self.app._run_sync("manual")
+        self.assertEqual(
+            self.app.status["retryAt"],
+            (self.now + timedelta(seconds=RATE_LIMIT_RETRY_INTERVAL)).isoformat(),
+        )
 
     def test_schedule_changes_ignore_live_scores_and_report_time_edits(self):
         old = {"records": [{

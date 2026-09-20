@@ -28,6 +28,10 @@ LIVE_INTERVAL = 5
 DETAIL_LIVE_TTL = 4
 DETAIL_IDLE_TTL = 120
 RETRY_INTERVAL = 300
+# A 429 from the official service currently means the anonymous allowance has
+# been exhausted, rather than a short transient failure. Avoid retrying every
+# five minutes and extending the outage while that quota window recovers.
+RATE_LIMIT_RETRY_INTERVAL = 3600
 SPORT_PATHS = {
     "TEN": "tennis",
     "BBL": "baseball",
@@ -42,6 +46,11 @@ SPORT_ROUTES = {f"/{slug}" for slug in SPORT_PATHS.values()}
 
 def iso_now() -> str:
     return datetime.now(BEIJING_TZ).isoformat(timespec="seconds")
+
+
+def is_rate_limit_error(error: Exception) -> bool:
+    message = str(error).lower()
+    return "429" in message or "rate_limit" in message or "请求额度" in message
 
 
 SCHEDULE_CHANGE_FIELDS = ("date", "time", "category", "stage", "matchup", "venue")
@@ -354,15 +363,21 @@ class AppState:
                 self.status["progressLabel"] = "同步完成"
         except Exception as exc:
             with self.lock:
+                rate_limited = is_rate_limit_error(exc)
                 if live:
                     failures = int(self.status.get("liveFailures") or 0) + 1
                     self.status["liveFailures"] = failures
-                    delay = min(LIVE_INTERVAL * 2 ** min(failures - 1, 6), RETRY_INTERVAL)
+                    delay = (
+                        RATE_LIMIT_RETRY_INTERVAL
+                        if rate_limited
+                        else min(LIVE_INTERVAL * 2 ** min(failures - 1, 6), RETRY_INTERVAL)
+                    )
                     self.status["liveRetryAt"] = (self.clock() + timedelta(seconds=delay)).isoformat()
                     self.status["lastLiveError"] = str(exc)
                 else:
                     self.status["lastError"] = str(exc)
-                    self.status["retryAt"] = (self.clock() + timedelta(seconds=RETRY_INTERVAL)).isoformat()
+                    delay = RATE_LIMIT_RETRY_INTERVAL if rate_limited else RETRY_INTERVAL
+                    self.status["retryAt"] = (self.clock() + timedelta(seconds=delay)).isoformat()
                 self.status["progressLabel"] = "同步失败"
         finally:
             with self.lock:
