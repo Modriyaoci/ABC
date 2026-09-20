@@ -496,6 +496,58 @@ button:focus-visible, select:focus-visible {
   margin-top: 20px;
 }
 
+.submatch-list {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+.score-section + .submatch-list { margin-top: 20px; }
+
+.submatch-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--white);
+}
+
+.submatch-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.submatch-heading h3 { margin: 0; font-size: 14px; }
+
+.submatch-status {
+  flex-shrink: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.submatch-status.is-live { color: var(--live); font-weight: 700; }
+
+.submatch-players { margin-bottom: 12px; }
+.submatch-players:last-child { margin-bottom: 0; }
+
+.submatch-players > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(36px, auto);
+  align-items: center;
+  gap: 16px;
+  padding: 7px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.submatch-players span { overflow-wrap: anywhere; }
+.submatch-players strong { text-align: right; font-size: 18px; font-variant-numeric: tabular-nums; }
+.submatch-card .data-table { table-layout: fixed; }
+.submatch-card .data-table th, .submatch-card .data-table td { min-width: 0; white-space: normal; overflow-wrap: anywhere; }
+
 .score-section h3, .group-card h3, .round-column h3 {
   margin: 0 0 12px;
   font-size: 14px;

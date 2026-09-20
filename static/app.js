@@ -151,8 +151,45 @@ function detailContent(id) {
   if (!detail || (detail.loading && !detail.data)) return '<p class="panel-message" role="status">正在读取小分…</p>';
   if (!detail.data) return `<p class="panel-message">${escapeHtml(detail.error || "官网尚未公布小分")}</p><button class="text-button" type="button" data-retry-match="${escapeHtml(id)}">重试</button>`;
   const sections = (detail.data.sections || []).filter((section) => Array.isArray(section.rows) && section.rows.length);
+  const subMatches = Array.isArray(detail.data.subMatches) ? detail.data.subMatches : [];
   return `${staleNotice(detail, "小分")}
-    ${sections.length ? sections.map((section) => `<section class="score-section">${section.title ? `<h3>${escapeHtml(section.title)}</h3>` : ""}${renderDataTable(section)}</section>`).join("") : `<p class="panel-message">${escapeHtml(detail.data.message || "官网尚未公布小分")}</p>`}`;
+    ${renderScoreSections(sections)}${renderSubMatches(subMatches)}
+    ${sections.length || subMatches.length ? "" : `<p class="panel-message">${escapeHtml(detail.data.message || "官网尚未公布小分")}</p>`}`;
+}
+
+function renderScoreSections(sections) {
+  return (sections || []).map((section) => `<section class="score-section">${section.title ? `<h3>${escapeHtml(section.title)}</h3>` : ""}${renderDataTable(section)}</section>`).join("");
+}
+
+function subMatchStatus(match) {
+  if (match.isLive) return "进行中";
+  const status = String(match.status || "").toUpperCase();
+  if (["LIVE", "RUNNING", "IN_PROGRESS"].includes(status)) return "进行中";
+  if (["OFFICIAL", "FINISHED", "COMPLETED"].includes(status)) return "完场";
+  if (["CANCELED", "CANCELLED"].includes(status)) return "已取消";
+  if (status === "NOT_PLAYED") return "未进行";
+  if (status === "POSTPONED") return "推迟";
+  if (status === "SUSPENDED" || status === "INTERRUPTED") return "暂停";
+  if (status === "UNOFFICIAL") return "成绩待确认";
+  if (["SCHEDULED", "UNSCHEDULED", "START_LIST", "PROVISIONAL", "GETTING_READY", "RESCHEDULED"].includes(status)) return "未开赛";
+  return "状态待定";
+}
+
+function renderSubMatches(matches) {
+  if (!Array.isArray(matches) || !matches.length) return "";
+  return `<div class="submatch-list" aria-label="团体赛子比赛">${matches.map((match, index) => {
+    const status = subMatchStatus(match);
+    const score = (value) => value === null || value === undefined || value === "" ? "—" : escapeHtml(value);
+    const sections = (match.sections || []).filter((section) => Array.isArray(section.rows) && section.rows.length);
+    return `<section class="submatch-card" data-submatch-id="${escapeHtml(match.id || "")}">
+      <div class="submatch-heading"><h3>第${escapeHtml(match.number || index + 1)}场${match.type ? ` · ${escapeHtml(match.type)}` : ""}</h3><span class="submatch-status${status === "进行中" ? " is-live" : ""}">${status}</span></div>
+      <div class="submatch-players" aria-label="选手与比分">
+        <div><span>${escapeHtml(match.home || "待定")}</span><strong>${score(match.homeScore)}</strong></div>
+        <div><span>${escapeHtml(match.away || "待定")}</span><strong>${score(match.awayScore)}</strong></div>
+      </div>
+      ${renderScoreSections(sections)}${renderSubMatches(match.subMatches)}
+    </section>`;
+  }).join("")}</div>`;
 }
 
 function staleNotice(entry, label) {
@@ -442,6 +479,6 @@ async function init() {
   renderTabs();
   if (window.lucide) window.lucide.createIcons();
   await refresh();
-  state.statusTimer = window.setInterval(() => { void refresh(); }, 2000);
+  state.statusTimer = window.setInterval(() => { void refresh(); }, 1000);
 }
 void init();
