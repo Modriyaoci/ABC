@@ -45,7 +45,7 @@ const elements = {
 function savedLayout() {
   try {
     const columns = Number(window.localStorage?.getItem("schedule-layout"));
-    return [2, 3, 4].includes(columns) ? columns : 0;
+    return [2, 3, 4, 5].includes(columns) ? columns : 0;
   } catch { return 0; }
 }
 
@@ -606,7 +606,7 @@ elements.statusFilter.addEventListener("change", () => {
 });
 elements.layout.addEventListener("change", () => {
   const columns = Number(elements.layout.value);
-  state.layout = [2, 3, 4].includes(columns) ? columns : 0;
+  state.layout = [2, 3, 4, 5].includes(columns) ? columns : 0;
   try { window.localStorage?.setItem("schedule-layout", String(state.layout)); } catch {}
   renderSchedule();
 });
