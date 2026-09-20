@@ -207,20 +207,21 @@ def _sections(payload: dict[str, Any], sport: str, title: str = "小分") -> lis
     match_type = _text(info.get("Type"), "T" if sport in {"BBL", "CKT", "VVO", "HBL"} else "A")
     names = [_name(competitors[i], match_type) if i < len(competitors) else "待定" for i in (0, 1)]
     rows = _period_rows(payload, sport)
-    sections = [{"title": title, "columns": ["局/节", *names], "rows": rows}] if rows else []
+    entity_label = "队伍" if match_type == "T" else "姓名"
+    sections = [{"title": title, "entityLabel": entity_label, "columns": ["局/节", *names], "rows": rows}] if rows else []
     if sport == "TEN" and info.get("IsLive"):
         points = [_extension(result, "RESULT_INFO", f"{side}Points") for side in ("Home", "Away")]
         if any(points):
-            sections.append({"title": "当前局", "columns": names, "rows": [[x or "—" for x in points]]})
+            sections.append({"title": "当前局", "entityLabel": "姓名", "columns": names, "rows": [[x or "—" for x in points]]})
     if sport == "BBL" and info.get("IsLive"):
         values = [_extension(result, "UNIT_INFO", key) for key in ("Balls", "Strikes", "Outs")]
         if any(values):
-            sections.append({"title": "当前打席", "columns": ["坏球", "好球", "出局"], "rows": [[x or "—" for x in values]]})
+            sections.append({"title": "当前打席", "entityLabel": "项目", "columns": ["坏球", "好球", "出局"], "rows": [[x or "—" for x in values]]})
     if sport == "CKT" and _text(info.get("Status")) not in PRESTART:
         metrics = [_cricket_metrics(c) for c in competitors[:2]]
         if metrics and any(any(value != "—" for value in row) for row in metrics):
             sections.append({
-                "title": "板球详情",
+                "title": "板球详情", "entityLabel": "队伍",
                 "columns": ["项目", *names],
                 "rows": [[label, metrics[0][index] if len(metrics) > 0 else "—", metrics[1][index] if len(metrics) > 1 else "—"] for index, label in enumerate(("Runs", "Wickets", "Overs"))],
             })
