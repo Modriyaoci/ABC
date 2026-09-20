@@ -76,6 +76,25 @@ test("published line-up remains visible when scores are not available yet", () =
   assert.doesNotMatch(html, /官网尚未公布该场小分/);
 });
 
+test("line-up can be hidden and shown independently", () => {
+  const context = appContext();
+  const match = {
+    home: "中国", away: "日本",
+    homePlayers: [{name: "CHEN Yi", org: "CHN", reg: "16276085"}],
+    awayPlayers: [{name: "HARIMOTO Miwa", org: "JPN", reg: "380921"}],
+  };
+  const hidden = vm.runInContext(`setLineupVisibility("match", false); renderLineup(${JSON.stringify(match)}, "match", "match")`, context);
+  assert.match(hidden, /aria-expanded="false"/);
+  assert.match(hidden, /显示阵容/);
+  assert.match(hidden, /class="lineup-grid"[^>]* hidden/);
+  assert.doesNotMatch(hidden, /aria-expanded="true"/);
+
+  const shown = vm.runInContext(`setLineupVisibility("match", true); renderLineup(${JSON.stringify(match)}, "match", "match")`, context);
+  assert.match(shown, /aria-expanded="true"/);
+  assert.match(shown, /隐藏阵容/);
+  assert.doesNotMatch(shown, /class="lineup-grid"[^>]* hidden/);
+});
+
 test("small-score tables put names on the left and periods across the score columns", () => {
   const context = appContext();
   const html = vm.runInContext(`renderDataTable({
