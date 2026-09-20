@@ -301,21 +301,60 @@ def _sections(payload: dict[str, Any], sport: str, title: str = "小分") -> lis
 
 
 def _submatch_number(payload: dict[str, Any], fallback: int) -> int:
-    """Read the official child number, falling back to its key/index."""
+    """Read the current official display number for a child match.
+
+    Team-tie feeds have two different numbers. ``SubMatchNum`` identifies
+    the originally assigned discipline slot (for example, the second
+    doubles slot), while ``SubunitOrder`` is the order currently published
+    by the venue. The latter can change shortly before play starts, so it is
+    the number shown in the official UI and must take precedence.
+    """
     info = payload.get("Info") or {}
     result = payload.get("Results") or {}
-    raw = _extension(result, "UNIT_INFO", "SubMatchNum") or _text(info.get("UnitNum"))
-    if not raw:
-        key = _text(info.get("Key") or info.get("RSC"))
-        # A child key ends in a two-digit sub-match suffix (…00040001).
-        # The preceding digits identify the tie, so do not parse the whole
-        # numeric tail as the child number.
-        match = re.search(r"(\d{2})$", key)
-        raw = match.group(1) if match else ""
-    try:
-        return int(raw)
-    except (TypeError, ValueError):
-        return fallback
+
+    def positive_int(raw: Any) -> int | None:
+        try:
+            value = int(str(raw).strip())
+        except (TypeError, ValueError):
+            return None
+        return value if value > 0 else None
+
+    # TTE team children use labels such as ``Match 1 M2``: the first number
+    # identifies the parent tie and the trailing ``M2`` identifies this
+    # child. Prefer that trailing marker or every child would be rendered as
+    # Match 1. BDM uses ``Tie 7 Match 2`` without an ``M`` marker, so fall
+    # back to the ordinary ``Match N`` label below.
+    for description in (info.get("UnitDescA"), info.get("UnitDesc"), info.get("UnitDescS")):
+        match = re.search(r"\bM\s*(\d+)\b", _text(description), flags=re.I)
+        if match:
+            return int(match.group(1))
+
+    # BDM uses “Tie 7 Match 2”. It reflects last-minute scheduling changes,
+    # whereas SubMatchNum can remain the original discipline slot (e.g. slot
+    # 3 is currently Match 2). Prefer the label when it is available.
+    for description in (info.get("UnitDescA"), info.get("UnitDesc"), info.get("UnitDescS")):
+        text = _text(description)
+        match = re.search(r"\bMatch\s+(\d+)\b", text, flags=re.I)
+        if match:
+            return int(match.group(1))
+
+    # SubunitOrder is the API's numeric equivalent of the current display
+    # order. Some preliminary records publish 0, which means “unset”.
+    for raw in (
+        _extension(result, "UNIT_INFO", "SubunitOrder"),
+        _extension(result, "UNIT_INFO", "SubMatchNum"),
+        info.get("UnitNum"),
+    ):
+        value = positive_int(raw)
+        if value is not None:
+            return value
+
+    key = _text(info.get("Key") or info.get("RSC"))
+    # A child key ends in a two-digit sub-match suffix (…00040001). The
+    # preceding digits identify the tie, so do not parse the whole numeric
+    # tail as the child number.
+    match = re.search(r"(\d{2})$", key)
+    return positive_int(match.group(1) if match else "") or fallback
 
 
 def _submatch_score(competitors: list[Any], side: int, status: str, is_live: bool) -> str:

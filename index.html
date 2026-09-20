@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>爱知·名古屋 2026｜赛程与赛果</title>
+    <link rel="icon" href="/official-mark.png" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand-lockup">
+        <img class="event-logo" src="/official-logo.png" alt="爱知·名古屋 2026" />
+        <div class="title-block">
+          <p>UTC+8 · 北京时间</p>
+          <h1>赛程与赛果</h1>
+        </div>
+      </div>
+      <div class="sync-tools">
+        <div class="sync-information">
+          <p class="automatic-sync" id="automatic-sync">读取自动同步设置</p>
+          <div class="sync-state" aria-live="polite">
+            <span class="status-dot" id="status-dot"></span>
+            <span id="sync-status">读取同步状态</span>
+          </div>
+        </div>
+        <button class="sync-button" id="sync-button" type="button">
+          <i data-lucide="refresh-cw" aria-hidden="true"></i>
+          <span>立即同步</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <nav class="sport-tabs" id="sport-tabs" role="tablist" aria-label="选择项目"></nav>
+
+      <section class="schedule-section" aria-labelledby="active-sport-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">官方赛程</p>
+            <h2 id="active-sport-title">全部项目</h2>
+          </div>
+          <p class="record-count" id="record-count"></p>
+        </div>
+
+        <div class="error-banner" id="error-banner" role="alert" hidden></div>
+        <div class="schedule-change-banner" id="schedule-change-banner" role="status" hidden></div>
+
+        <div class="view-toolbar">
+          <nav class="view-tabs" id="view-tabs" role="tablist" aria-label="查看内容">
+            <button type="button" role="tab" data-view="schedule" aria-selected="true">赛程赛果</button>
+            <button type="button" role="tab" data-view="groups" aria-selected="false">小组积分</button>
+            <button type="button" role="tab" data-view="bracket" aria-selected="false">淘汰赛对阵图</button>
+          </nav>
+          <div class="schedule-filters" id="schedule-filters">
+            <label class="category-filter">日期 <select id="date-filter" aria-label="选择比赛日期"><option value="">全部日期</option></select></label>
+            <label class="category-filter">状态 <select id="status-filter" aria-label="选择比赛状态"><option value="">全部状态</option><option value="live">进行中</option><option value="completed">完场</option><option value="upcoming">未开赛</option></select></label>
+            <label class="category-filter">类别 <select id="category-filter" aria-label="选择比赛类别"><option value="">全部类别</option></select></label>
+            <label class="category-filter">布局 <select id="layout-filter" aria-label="选择页面布局"><option value="0">列表</option><option value="2">2列</option><option value="3">3列</option><option value="4">4列</option><option value="5">5列</option></select></label>
+          </div>
+        </div>
+
+        <div class="table-shell" id="schedule-view">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>日期时间</th>
+                <th>类别</th>
+                <th>阶段</th>
+                <th>对阵</th>
+                <th>比分</th>
+                <th>场馆</th>
+              </tr>
+            </thead>
+            <tbody id="schedule-body"></tbody>
+          </table>
+          <div class="schedule-cards" id="schedule-cards" hidden></div>
+          <div class="empty-state" id="empty-state" hidden>
+            <i data-lucide="calendar-clock" aria-hidden="true"></i>
+            <p>暂无赛程数据</p>
+          </div>
+        </div>
+        <div class="tournament-view" id="tournament-view" hidden></div>
+      </section>
+    </main>
+
+    <script src="/lucide.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
