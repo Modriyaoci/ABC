@@ -15,6 +15,9 @@ const state = {
   records: [], activeSport: null, view: "schedule", selections: new Map(),
   dateFilter: "", statusFilter: "",
   status: null, statusTimer: null, refreshing: false, refreshAgain: false,
+  // Keep the last seen notice across score polls and page reloads, including
+  // a server restart or deployment that temporarily has no change metadata.
+  scheduleChangeNotice: savedScheduleChangeNotice(),
   recordsLoaded: false, loadedVersion: null, connectionError: "",
   expanded: new Set(), details: new Map(), tournaments: new Map(),
   selectedSubMatches: new Map(), lineupVisibility: savedLineupVisibility(), layout: savedLayout(),
@@ -48,6 +51,29 @@ function savedLayout() {
     const columns = Number(window.localStorage?.getItem("schedule-layout"));
     return [2, 3, 4, 5].includes(columns) ? columns : 0;
   } catch { return 0; }
+}
+
+function savedScheduleChangeNotice() {
+  try {
+    const value = JSON.parse(window.localStorage?.getItem("schedule-change-notice") || "null");
+    if (value && Number(value.count) > 0) return {count: Number(value.count), at: value.at || null};
+  } catch {}
+  return null;
+}
+
+function retainScheduleChangeNotice(status) {
+  const count = Number(status.scheduleChangeCount) || 0;
+  if (!status.scheduleChanged || count <= 0) return state.scheduleChangeNotice;
+  const next = {count, at: status.scheduleChangeAt || null};
+  const current = state.scheduleChangeNotice;
+  // A rolling deployment can briefly return an older status snapshot.  Keep
+  // the newest change rather than replacing it with that earlier warning.
+  if (current?.at && (!next.at || Date.parse(next.at) < Date.parse(current.at))) return current;
+  if (!current || current.count !== next.count || current.at !== next.at) {
+    state.scheduleChangeNotice = next;
+    try { window.localStorage?.setItem("schedule-change-notice", JSON.stringify(next)); } catch {}
+  }
+  return state.scheduleChangeNotice;
 }
 
 function savedLineupVisibility() {
@@ -546,12 +572,12 @@ function renderStatus() {
   const error = state.connectionError || status.lastLiveError || status.lastError;
   elements.errorBanner.hidden = !error;
   elements.errorBanner.textContent = error ? `暂未更新，已保留现有赛程。${error}` : "";
-  const changedCount = Number(status.scheduleChangeCount) || 0;
-  const changedAt = status.scheduleChangeAt ? `（${formatSyncTime(status.scheduleChangeAt)}）` : "";
-  const scheduleChanged = Boolean(status.scheduleChanged) && changedCount > 0;
+  const notice = retainScheduleChangeNotice(status);
+  const changedAt = notice?.at ? `（${formatSyncTime(notice.at)}）` : "";
+  const scheduleChanged = Boolean(notice);
   elements.scheduleChangeBanner.hidden = !scheduleChanged;
   elements.scheduleChangeBanner.textContent = scheduleChanged
-    ? `官网赛程有变动：${changedCount}场比赛信息已更新，请以当前页面为准${changedAt}`
+    ? `官网赛程有变动：${notice.count}场比赛信息已更新，请以当前页面为准${changedAt}`
     : "";
 }
 

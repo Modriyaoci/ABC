@@ -17,20 +17,37 @@ test("schedule updates without observing running state and retains expanded deta
       const url = new URL(route.request().url());
       if (url.pathname === "/api/status") {
         statusRequests += 1;
-        return route.fulfill({ json: { running: false, dataVersion: String(version), lastSuccess: "2026-09-17T12:00:00+08:00", liveEnabled: true, liveIntervalSeconds: 30, nextAutomaticSync: "2026-09-18T08:00:00+08:00" } });
+        return route.fulfill({ json: {
+          running: false, dataVersion: String(version), lastSuccess: "2026-09-17T12:00:00+08:00",
+          liveEnabled: true, liveIntervalSeconds: 5, nextAutomaticSync: "2026-09-18T08:00:00+08:00",
+          // Simulate a transient response that omits the persisted notice on
+          // later status polls.  The banner must remain visible.
+          scheduleChanged: statusRequests === 1,
+          scheduleChangeCount: statusRequests === 1 ? 2 : 0,
+          scheduleChangeAt: "2026-09-17T11:59:00+08:00",
+        } });
       }
       if (url.pathname === "/api/schedule") return route.fulfill({ json: { records: [{ ...match, score: version === 1 ? "2 : 1" : "3 : 1" }] } });
       if (url.pathname === "/api/match") return route.fulfill({ json: { available: true, stale: version > 1, updatedAt: "2026-09-17T12:00:00+08:00", message: version > 1 ? "官网暂时连接失败，显示上次成功数据" : "", home: "中国", away: "日本", sections: [{ title: "各局小分", columns: ["队伍", "第一局", "第二局"], rows: [["中国", "25", "25"], ["日本<script>throw Error('unsafe')</script>", "20", "21"]] }] } });
       if (url.pathname === "/api/tournament") return route.fulfill({ json: { stale: true, updatedAt: "2026-09-17T12:00:00+08:00", message: "官网暂时连接失败，显示上次成功数据", events: [{ id: "women", name: "女子", groups: [{ name: "A组", columns: ["排名", "国家", "积分"], rows: [["1", "中国", "6"]] }], rounds: [{ id: "semifinal", name: "半决赛", matches: [{ id: "a", home: "中国", away: "日本", homeScore: "3", awayScore: "1", winner: "home", nextMatchId: "b" }] }, { id: "final", name: "决赛", matches: [{ id: "b", home: "中国", away: "韩国", homeScore: "", awayScore: null }] }] }] } });
       if (url.pathname.endsWith(".png")) return route.fulfill({ status: 204 });
-      const filename = url.pathname === "/" ? "index.html" : path.basename(url.pathname);
+      const filename = ["/", "/volleyball"].includes(url.pathname) ? "index.html" : path.basename(url.pathname);
       const body = await fs.readFile(path.join(__dirname, "../static", filename));
       const contentType = filename.endsWith(".css") ? "text/css" : filename.endsWith(".js") ? "application/javascript" : "text/html";
       return route.fulfill({ body, contentType });
     });
     await page.goto("http://127.0.0.1:4173/");
     await page.locator(".score-toggle").waitFor();
-    assert.match(await page.locator("#automatic-sync").innerText(), /每 30 秒/);
+    assert.match(await page.locator("#automatic-sync").innerText(), /每 5 秒/);
+    const scheduleChangeBanner = page.locator("#schedule-change-banner");
+    await scheduleChangeBanner.waitFor({ state: "visible" });
+    assert.match(await scheduleChangeBanner.innerText(), /官网赛程有变动：2场/);
+    await page.waitForTimeout(1300);
+    assert.equal(await scheduleChangeBanner.isVisible(), true);
+    await page.reload();
+    await page.locator(".score-toggle").waitFor();
+    assert.equal(await scheduleChangeBanner.isVisible(), true);
+    assert.match(await scheduleChangeBanner.innerText(), /官网赛程有变动：2场/);
     assert.equal(await page.locator(".schedule-table > thead th").count(), 6);
     await page.locator(".score-toggle").focus();
     await page.keyboard.press("Enter");

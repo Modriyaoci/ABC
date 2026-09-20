@@ -122,6 +122,45 @@ class SchedulerTests(unittest.TestCase):
         self.assertEqual(len(changes), 1)
         self.assertEqual(changes[0]["fields"], ["time"])
 
+    def test_schedule_change_notice_survives_later_live_refreshes_and_restart(self):
+        old = {
+            "meta": {"generatedAt": "v1", "officialDays": {"BDM": ["2026-09-20"]}},
+            "records": [{
+                "id": "BDM:tie-7", "date": "2026-09-20", "time": "14:00",
+                "category": "女子团体", "stage": "16强赛", "matchup": "哈萨克斯坦 vs 印度",
+                "venue": "一宫市综合体育馆", "score": "0 : 0",
+            }],
+        }
+        moved = {
+            "meta": {"generatedAt": "v2", "officialDays": {"BDM": ["2026-09-20"]}},
+            "records": [{**old["records"][0], "time": "15:00", "score": "1 : 0"}],
+        }
+        score_update = {
+            "meta": {**moved["meta"], "generatedAt": "v3"},
+            "records": [{**moved["records"][0], "score": "2 : 0"}],
+        }
+        self.app.payload = old
+        self.app.live_sync = Mock(side_effect=[moved, score_update])
+
+        # The first live update detects the schedule edit and persists the
+        # notice.  A later score-only refresh must not clear it.
+        self.app._run_sync("live")
+        self.assertTrue(self.app.status["scheduleChanged"])
+        self.assertEqual(self.app.status["scheduleChangeCount"], 1)
+        changed_at = self.app.status["scheduleChangeAt"]
+        self.now += timedelta(seconds=LIVE_INTERVAL)
+        self.app._run_sync("live")
+        self.assertTrue(self.app.status["scheduleChanged"])
+        self.assertEqual(self.app.status["scheduleChangeCount"], 1)
+        self.assertEqual(self.app.status["scheduleChangeAt"], changed_at)
+
+        saved = json.loads(self.status.read_text())
+        self.assertTrue(saved["scheduleChanged"])
+        self.assertEqual(saved["scheduleChangeCount"], 1)
+        restarted = AppState(self.data, self.status, lambda: self.now)
+        self.assertTrue(restarted.status["scheduleChanged"])
+        self.assertEqual(restarted.status["scheduleChangeCount"], 1)
+
 
 class LiveMergeTests(unittest.TestCase):
     def test_official_japan_date_and_cross_midnight_live_match(self):
