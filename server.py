@@ -24,12 +24,33 @@ STATIC_DIR = ROOT / "static"
 DATA_FILE = ROOT / "data" / "schedule.json"
 STATUS_FILE = ROOT / "data" / "sync-status.json"
 BEIJING_TZ = ZoneInfo("Asia/Shanghai")
-LIVE_INTERVAL = 30
+LIVE_INTERVAL = 5
+DETAIL_LIVE_TTL = 4
+DETAIL_IDLE_TTL = 120
 RETRY_INTERVAL = 300
 
 
 def iso_now() -> str:
     return datetime.now(BEIJING_TZ).isoformat(timespec="seconds")
+
+
+def match_detail_ttl(record: dict) -> int:
+    """Choose a short cache window for live and team-tie details.
+
+    A team tie can remain ``isLive=false`` while one of its child matches is
+    already running.  Caching those parent responses for the normal idle
+    window would hide the child score for two minutes, so team events use the
+    live window as well.
+    """
+    category = str(record.get("category") or "")
+    event_code = str(record.get("eventCode") or "").upper()
+    status = str(record.get("status") or "").upper()
+    live_status = status in {"LIVE", "RUNNING", "IN_PROGRESS"}
+    sport = str(record.get("sport") or "").upper()
+    # Only TTE/BDM team ties expose child matches.  Volleyball and handball
+    # also use team-shaped event codes, but their details are single matches.
+    is_team_tie = sport in {"TTE", "BDM"} and ("团体" in category or "TEAM" in event_code)
+    return DETAIL_LIVE_TTL if record.get("isLive") or live_status or is_team_tie else DETAIL_IDLE_TTL
 
 
 def next_eight(now: datetime | None = None) -> datetime:
@@ -195,7 +216,7 @@ class AppState:
                 if live:
                     failures = int(self.status.get("liveFailures") or 0) + 1
                     self.status["liveFailures"] = failures
-                    delay = min(LIVE_INTERVAL * 2 ** min(failures - 1, 4), RETRY_INTERVAL)
+                    delay = min(LIVE_INTERVAL * 2 ** min(failures - 1, 6), RETRY_INTERVAL)
                     self.status["liveRetryAt"] = (self.clock() + timedelta(seconds=delay)).isoformat()
                     self.status["lastLiveError"] = str(exc)
                 else:
@@ -293,7 +314,7 @@ class RequestHandler(BaseHTTPRequestHandler):
                     if not record:
                         self._send_json({"message": "找不到这场比赛"}, HTTPStatus.NOT_FOUND)
                         return
-                    ttl = 25 if record.get("isLive") else 120
+                    ttl = match_detail_ttl(record)
                     value = OFFICIAL_CACHE.get(("match", match_id), ttl, lambda: get_match_details(record))
                 else:
                     sport = query.get("sport", [""])[0]

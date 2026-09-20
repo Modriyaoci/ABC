@@ -11,7 +11,17 @@ from datetime import datetime
 from html import unescape
 from typing import Any, Callable
 
-from sync_service import BEIJING_TZ, SPORTS, SyncError, _competitor_name, _stage_labels, _translate_category, _translate_stage, fetch_official_json
+from sync_service import (
+    BEIJING_TZ,
+    ORG_NAMES,
+    SPORTS,
+    SyncError,
+    _competitor_name,
+    _stage_labels,
+    _translate_category,
+    _translate_stage,
+    fetch_official_json,
+)
 
 Fetcher = Callable[[str], Any]
 PRESTART = {"SCHEDULED", "UNSCHEDULED", "START_LIST", "PROVISIONAL", "GETTING_READY", "POSTPONED", "RESCHEDULED"}
@@ -31,6 +41,45 @@ def _name(value: Any, match_type: str = "T") -> str:
     if name.upper() == "BYE" or _text(value.get("Reg")).upper() == "BYE":
         return "轮空"
     return _competitor_name(value, match_type)
+
+
+def _submatch_name(value: Any) -> str:
+    """Return a child-match participant with the published full name.
+
+    The regular schedule intentionally uses short names for individual
+    competitors.  The team-match endpoint publishes a full ``Name`` (and,
+    for doubles, both names separated by ``/``), so use it here and append
+    the country to keep the child match self-contained.  A few provisional
+    units omit ``Name`` but include ``Members``; those members are a safe
+    fallback for doubles.
+    """
+    if not isinstance(value, dict):
+        return "待定"
+    raw = _text(value.get("Name")).strip()
+    members = value.get("Members") or []
+    if not raw and isinstance(members, list):
+        member_names = [
+            _text(member.get("Name") or member.get("NameS")).strip()
+            for member in members
+            if isinstance(member, dict) and _text(member.get("Name") or member.get("NameS")).strip()
+        ]
+        raw = "/".join(member_names)
+    if not raw:
+        raw = _text(value.get("NameS")).strip()
+    if raw.upper() in {"TBD", "TBA"}:
+        return "待定"
+    if raw.upper() == "BYE" or _text(value.get("Reg")).upper() == "BYE":
+        return "轮空"
+    org = ORG_NAMES.get(_text(value.get("Org")).upper(), _text(value.get("Org")))
+    if not raw:
+        return org or "待定"
+    return f"{raw}（{org}）" if org and org not in raw else raw
+
+
+def _submatch_type(value: Any) -> str:
+    """Translate the official child unit type while preserving unknowns."""
+    code = _text(value).upper()
+    return {"A": "单打", "D": "双打"}.get(code, "")
 
 
 def _now() -> str:
@@ -178,12 +227,73 @@ def _sections(payload: dict[str, Any], sport: str, title: str = "小分") -> lis
         cricket_rows = [[name, _plain_html(c.get("FreeResInfo"))] for name, c in zip(names, competitors) if _plain_html(c.get("FreeResInfo"))]
         if cricket_rows:
             sections.append({"title": "得分 / 出局 / 轮数", "columns": ["队伍", "小分"], "rows": cricket_rows})
-    for index, child in enumerate(payload.get("SubUnits") or [], 1):
-        if isinstance(child, dict):
-            child_info = child.get("Info") or {}
-            name = _translate_stage(_text(child_info.get("UnitDescA") or child_info.get("UnitDesc"), f"第{index}场"))
-            sections.extend(_sections(child, sport, name))
     return sections
+
+
+def _submatch_number(payload: dict[str, Any], fallback: int) -> int:
+    """Read the official child number, falling back to its key/index."""
+    info = payload.get("Info") or {}
+    result = payload.get("Results") or {}
+    raw = _extension(result, "UNIT_INFO", "SubMatchNum") or _text(info.get("UnitNum"))
+    if not raw:
+        key = _text(info.get("Key") or info.get("RSC"))
+        # A child key ends in a two-digit sub-match suffix (…00040001).
+        # The preceding digits identify the tie, so do not parse the whole
+        # numeric tail as the child number.
+        match = re.search(r"(\d{2})$", key)
+        raw = match.group(1) if match else ""
+    try:
+        return int(raw)
+    except (TypeError, ValueError):
+        return fallback
+
+
+def _submatch_score(competitors: list[Any], side: int, status: str, is_live: bool) -> str:
+    """Return a child total while preserving an explicit live ``0``."""
+    if side >= len(competitors) or not isinstance(competitors[side], dict):
+        return ""
+    value = competitors[side].get("Result")
+    if value is None or value == "":
+        return ""
+    if status in PRESTART and not is_live and str(value).strip() == "0":
+        return ""
+    return _text(value)
+
+
+def _submatches(payload: dict[str, Any], sport: str) -> list[dict[str, Any]]:
+    """Convert official ``SubUnits`` into structured child matches.
+
+    Child units are deliberately kept separate from the parent ``sections``.
+    This matters for team events: a tie has several singles/doubles matches,
+    and pre-start children often already have published names but no periods.
+    """
+    children = [child for child in payload.get("SubUnits") or [] if isinstance(child, dict)]
+    ordered = sorted(enumerate(children, 1), key=lambda pair: (_submatch_number(pair[1], pair[0]), pair[0]))
+    output: list[dict[str, Any]] = []
+    for fallback, child in ordered:
+        info = child.get("Info") or {}
+        competitors = child.get("Competitors") or []
+        child_key = _text(info.get("Key") or info.get("RSC"))
+        number = _submatch_number(child, fallback)
+        status = _text(info.get("Status")).upper()
+        is_live = bool(info.get("IsLive")) or status in {"LIVE", "RUNNING"}
+        sub_match = {
+            "id": f"{sport}:{child_key}" if child_key else f"{sport}:sub-{number}",
+            "number": number,
+            "type": _submatch_type(info.get("Type")),
+            "home": _submatch_name(competitors[0]) if len(competitors) > 0 else "待定",
+            "away": _submatch_name(competitors[1]) if len(competitors) > 1 else "待定",
+            "homeScore": _submatch_score(competitors, 0, status, is_live),
+            "awayScore": _submatch_score(competitors, 1, status, is_live),
+            "status": status,
+            "isLive": is_live,
+            "sections": _sections(child, sport),
+        }
+        nested = _submatches(child, sport)
+        if nested:
+            sub_match["subMatches"] = nested
+        output.append(sub_match)
+    return output
 
 
 def get_match_details(record: Any, fetcher: Fetcher | None = None) -> dict[str, Any]:
@@ -200,7 +310,16 @@ def get_match_details(record: Any, fetcher: Fetcher | None = None) -> dict[str, 
     match_type = _text(info.get("Type"), "T" if sport in {"BBL", "CKT", "VVO", "HBL"} else "A")
     names = [_name(competitors[i], match_type) if i < len(competitors) else "待定" for i in (0, 1)]
     sections = _sections(payload, sport)
-    return {"available": bool(sections), "updatedAt": _now(), "home": names[0], "away": names[1], "sections": sections, "message": "" if sections else "官网尚未公布该场小分"}
+    sub_matches = _submatches(payload, sport)
+    return {
+        "available": bool(sections or sub_matches),
+        "updatedAt": _now(),
+        "home": names[0],
+        "away": names[1],
+        "sections": sections,
+        "subMatches": sub_matches,
+        "message": "" if sections or sub_matches else "官网尚未公布该场小分",
+    }
 
 
 def _group_table(group: dict[str, Any]) -> dict[str, Any]:
@@ -237,6 +356,20 @@ def _record_participants(record: dict[str, Any]) -> tuple[str, str] | None:
     return home, away
 
 
+def _record_winner(record: dict[str, Any]) -> str:
+    """Return an explicit schedule winner when the bracket feed omits it."""
+    sides = (record.get("home"), record.get("away"))
+    flags = []
+    for side in sides:
+        value = side.get("Winner") if isinstance(side, dict) else None
+        flags.append(value is True or str(value).strip().lower() in {"true", "1", "yes"})
+    if flags == [True, False]:
+        return "home"
+    if flags == [False, True]:
+        return "away"
+    return ""
+
+
 def _enrich_bracket_rounds(rounds: list[dict[str, Any]], records: list[dict[str, Any]] | None) -> None:
     """Use the synchronized schedule as a fallback for confirmed teams.
 
@@ -260,6 +393,14 @@ def _enrich_bracket_rounds(rounds: list[dict[str, Any]], records: list[dict[str,
                 match["status"] = status
             if status not in TERMINAL_RESULTS:
                 match["winner"] = ""
+            else:
+                # Some official bracket responses include the final score but
+                # omit their Win flag. The synchronized schedule carries the
+                # explicit winner used by the results table, so copy it when
+                # available and keep the bracket flag otherwise.
+                winner = _record_winner(record)
+                if winner:
+                    match["winner"] = winner
 
 
 def _bracket_rounds(data: Any, sport: str, event_key: str, pool_keys: set[str]) -> list[dict[str, Any]]:
@@ -348,26 +489,3 @@ def get_tournament(sport: str, records: list[dict[str, Any]] | None = None, fetc
             message = "循环赛积分；官网暂无淘汰赛对阵图"
         events.append({"id": key, "name": _translate_category(_text(definition.get("Desc"), key)), "groups": tables, "rounds": rounds, "message": message})
     return {"updatedAt": _now(), "events": events, "message": "" if events else "官网尚未公布该项目积分或对阵图"}
-
-# SENTINEL-END
-
-# Schedule data includes an explicit winner when the bracket feed omits it.
-_original_enrich_bracket_rounds = _enrich_bracket_rounds
-
-def _enrich_bracket_rounds(rounds: list[dict[str, Any]], records: list[dict[str, Any]] | None) -> None:
-    _original_enrich_bracket_rounds(rounds, records)
-    by_id = {str(record.get("id")): record for record in records or [] if isinstance(record, dict) and record.get("id")}
-    for round_ in rounds:
-        for match in round_.get("matches", []):
-            record = by_id.get(str(match.get("id")))
-            if not record or _text(record.get("status")).upper() not in TERMINAL_RESULTS:
-                continue
-            sides = (record.get("home"), record.get("away"))
-            flags = []
-            for side in sides:
-                value = side.get("Winner") if isinstance(side, dict) else None
-                flags.append(value is True or str(value).strip().lower() in {"true", "1", "yes"})
-            if flags == [True, False]:
-                match["winner"] = "home"
-            elif flags == [False, True]:
-                match["winner"] = "away"
