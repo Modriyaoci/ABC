@@ -585,8 +585,23 @@ button:focus-visible, select:focus-visible {
   margin-bottom: 10px;
 }
 
+.lineup-heading > div { min-width: 0; }
 .lineup-heading h3 { margin: 0; font-size: 14px; }
 .lineup-heading span { color: var(--muted); font-size: 12px; }
+
+.lineup-toggle {
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  color: var(--teal);
+  border: 1px solid #bedfe1;
+  border-radius: 4px;
+  background: var(--white);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.lineup-toggle:hover { background: #eaf6f6; }
+.lineup-toggle:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 
 .lineup-grid {
   display: grid;

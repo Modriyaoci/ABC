@@ -17,7 +17,7 @@ const state = {
   status: null, statusTimer: null, refreshing: false, refreshAgain: false,
   recordsLoaded: false, loadedVersion: null, connectionError: "",
   expanded: new Set(), details: new Map(), tournaments: new Map(),
-  selectedSubMatches: new Map(), layout: savedLayout(),
+  selectedSubMatches: new Map(), lineupVisibility: savedLineupVisibility(), layout: savedLayout(),
 };
 const elements = {
   tabs: document.querySelector("#sport-tabs"),
@@ -47,6 +47,25 @@ function savedLayout() {
     const columns = Number(window.localStorage?.getItem("schedule-layout"));
     return [2, 3, 4, 5].includes(columns) ? columns : 0;
   } catch { return 0; }
+}
+
+function savedLineupVisibility() {
+  try {
+    const value = JSON.parse(window.localStorage?.getItem("lineup-visibility") || "{}");
+    if (!value || typeof value !== "object" || Array.isArray(value)) return new Map();
+    return new Map(Object.entries(value).map(([key, visible]) => [key, visible !== false]));
+  } catch { return new Map(); }
+}
+
+function lineupIsVisible(key) {
+  return state.lineupVisibility.get(String(key)) !== false;
+}
+
+function setLineupVisibility(key, visible) {
+  state.lineupVisibility.set(String(key), Boolean(visible));
+  try {
+    window.localStorage?.setItem("lineup-visibility", JSON.stringify(Object.fromEntries(state.lineupVisibility)));
+  } catch {}
 }
 
 function sportFromPath(pathname = window.location.pathname) {
@@ -255,7 +274,7 @@ function detailContent(id) {
   const hasLineup = lineupPlayers(detail.data, "home").length || lineupPlayers(detail.data, "away").length;
   const hasContent = sections.length || subMatches.length || hasLineup;
   return `${staleNotice(detail, "小分")}
-    ${renderLineup(detail.data)}${renderScoreSections(sections)}${renderSubMatches(subMatches, id)}
+    ${renderLineup(detail.data, id, id)}${renderScoreSections(sections)}${renderSubMatches(subMatches, id, id)}
     ${hasContent ? "" : `<p class="panel-message">${escapeHtml(detail.data.message || "官网尚未公布小分")}</p>`}`;
 }
 
@@ -300,15 +319,18 @@ function renderLineupPlayer(player) {
   </li>`;
 }
 
-function renderLineup(match) {
+function renderLineup(match, lineupKey = "lineup", rootId = lineupKey) {
   const home = lineupPlayers(match, "home");
   const away = lineupPlayers(match, "away");
   if (!home.length && !away.length) return "";
+  const key = String(lineupKey);
+  const visible = lineupIsVisible(key);
+  const panelId = `lineup-panel-${encodeURIComponent(key)}`;
   const team = (label, players, side) => `<div class="lineup-team lineup-team-${side}">
     <h4>${escapeHtml(label || (side === "home" ? "主队" : "客队"))}</h4>
     <ul>${players.map(renderLineupPlayer).join("")}</ul>
   </div>`;
-  return `<section class="lineup-section" aria-label="Line-up"><div class="lineup-heading"><h3>Line-up</h3><span>球员名单</span></div><div class="lineup-grid">${team(match.home, home, "home")}${team(match.away, away, "away")}</div></section>`;
+  return `<section class="lineup-section" aria-label="Line-up"><div class="lineup-heading"><div><h3>Line-up</h3><span>球员名单</span></div><button class="lineup-toggle" type="button" data-toggle-lineup="${escapeHtml(key)}" data-lineup-root="${escapeHtml(rootId)}" aria-expanded="${visible}" aria-controls="${escapeHtml(panelId)}">${visible ? "隐藏阵容" : "显示阵容"}</button></div><div class="lineup-grid" id="${escapeHtml(panelId)}"${visible ? "" : " hidden"}>${team(match.home, home, "home")}${team(match.away, away, "away")}</div></section>`;
 }
 
 function renderScoreSections(sections) {
@@ -350,7 +372,7 @@ function renderSubMatches(matches, parentKey, rootId = parentKey) {
         <div><span>${escapeHtml(match.home || "待定")}</span><strong>${score(match.homeScore)}</strong></div>
         <div><span>${escapeHtml(match.away || "待定")}</span><strong>${score(match.awayScore)}</strong></div>
       </div>
-      ${renderLineup(match)}${renderScoreSections(sections)}${renderSubMatches(match.subMatches, `${parentKey}/${keyOf(match, index)}`, rootId)}
+      ${renderLineup(match, `${parentKey}/${keyOf(match, index)}`, rootId)}${renderScoreSections(sections)}${renderSubMatches(match.subMatches, `${parentKey}/${keyOf(match, index)}`, rootId)}
     </section></div>`;
 }
 
@@ -365,6 +387,10 @@ function updateDetailPanel(id) {
   const focus = { ...document.activeElement?.dataset };
   panel.innerHTML = detailContent(id);
   restoreSubmatchFocus(panel, focus);
+  if (focus?.toggleLineup) {
+    [...panel.querySelectorAll("[data-toggle-lineup]")]
+      .find((button) => button.dataset.toggleLineup === focus.toggleLineup)?.focus({ preventScroll: true });
+  }
 }
 
 function staleNotice(entry, label) {
@@ -669,6 +695,13 @@ elements.scheduleView.addEventListener("click", (event) => {
   if (submatch) {
     state.selectedSubMatches.set(submatch.dataset.submatchParent, submatch.dataset.selectSubmatch);
     updateDetailPanel(submatch.dataset.submatchRoot);
+    return;
+  }
+  const lineupToggle = event.target.closest("[data-toggle-lineup]");
+  if (lineupToggle) {
+    const key = lineupToggle.dataset.toggleLineup;
+    setLineupVisibility(key, lineupToggle.getAttribute("aria-expanded") !== "true");
+    updateDetailPanel(lineupToggle.dataset.lineupRoot);
     return;
   }
   const retry = event.target.closest("[data-retry-match]");
