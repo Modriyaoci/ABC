@@ -15,6 +15,7 @@ const state = {
   records: [], activeSport: null, view: "schedule", selections: new Map(),
   dateFilter: "", statusFilter: "",
   status: null, statusTimer: null, refreshing: false, refreshAgain: false,
+  manualSyncPending: false, manualExtrasPending: false,
   teamScheduleChanges: savedTeamScheduleChanges(),
   recordsLoaded: false, loadedVersion: null, connectionError: "",
   expanded: new Set(), details: new Map(), tournaments: new Map(),
@@ -573,9 +574,11 @@ function renderStatus() {
   elements.syncButton.disabled = Boolean(status.running);
   elements.syncButton.classList.toggle("is-running", Boolean(status.running));
   const interval = Number(status.liveIntervalSeconds) || 30;
-  elements.automaticSync.textContent = status.liveEnabled
-    ? `每天 08:00 全量同步 · 比赛日约每 ${interval} 秒更新比分`
-    : status.nextAutomaticSync ? "每天 08:00 自动同步赛程" : "读取自动同步设置";
+  elements.automaticSync.textContent = !automaticSyncAllowed()
+    ? "北京时间 08:00–23:00 自动更新 · 当前仅手动同步"
+    : status.liveEnabled
+      ? `北京时间 08:00–23:00 自动更新 · 比赛日约每 ${interval} 秒更新比分`
+      : "北京时间 08:00–23:00 自动更新 · 每天 08:00 全量同步";
   elements.automaticSync.title = status.nextAutomaticSync ? `北京时间，下次全量同步 ${formatSyncTime(status.nextAutomaticSync)}` : "北京时间";
   const updated = [status.lastLiveSuccess, status.lastSuccess].filter(Boolean).sort().at(-1);
   if (state.connectionError) {
@@ -618,13 +621,13 @@ async function loadSchedule(version) {
   renderView();
 }
 
-async function loadMatch(id, force = false) {
+async function loadMatch(id, force = false, { automatic = false } = {}) {
   const current = state.details.get(id);
   if (current?.loading || (!force && current?.data)) return;
   const entry = { ...current, loading: true, lastRequested: Date.now(), error: "" };
   state.details.set(id, entry);
   updateDetailPanel(id);
-  try { entry.data = await fetchJson(`/api/match?id=${encodeURIComponent(id)}`); }
+  try { entry.data = await fetchJson(`/api/match?id=${encodeURIComponent(id)}${automatic ? "&automatic=1" : ""}`); }
   catch (error) { entry.error = error.message || "无法读取小分"; }
   finally {
     entry.loading = false;
@@ -632,7 +635,7 @@ async function loadMatch(id, force = false) {
   }
 }
 
-async function loadTournament(force = false) {
+async function loadTournament(force = false, { automatic = false } = {}) {
   const sport = state.activeSport;
   if (!sport) return;
   const current = state.tournaments.get(sport);
@@ -640,7 +643,7 @@ async function loadTournament(force = false) {
   const entry = { ...current, loading: true, lastRequested: Date.now(), error: "", version: state.loadedVersion };
   state.tournaments.set(sport, entry);
   if (state.view !== "schedule") renderView();
-  try { entry.data = await fetchJson(`/api/tournament?sport=${encodeURIComponent(sport)}`); }
+  try { entry.data = await fetchJson(`/api/tournament?sport=${encodeURIComponent(sport)}${automatic ? "&automatic=1" : ""}`); }
   catch (error) { entry.error = error.message || "无法读取积分和对阵"; }
   finally {
     entry.loading = false;
@@ -648,17 +651,25 @@ async function loadTournament(force = false) {
   }
 }
 
-async function refreshVisibleExtras(force = false) {
+function automaticSyncAllowed(now = Date.now()) {
+  // Use a fixed UTC+8 offset so device timezone and an old status response
+  // cannot leave automatic detail requests running after 23:00 Beijing time.
+  const beijingHour = new Date(now + 8 * 60 * 60 * 1000).getUTCHours();
+  return beijingHour >= 8 && beijingHour < 23 && state.status?.automaticSyncAllowed !== false;
+}
+
+async function refreshVisibleExtras(force = false, { manual = false } = {}) {
+  if (!manual && !automaticSyncAllowed()) return;
   const interval = (Number(state.status?.liveIntervalSeconds) || 30) * 1000;
   if (state.view !== "schedule") {
     const entry = state.tournaments.get(state.activeSport);
-    if (force || !entry || Date.now() - entry.lastRequested >= interval) await loadTournament(true);
+    if (force || !entry || Date.now() - entry.lastRequested >= interval) await loadTournament(true, { automatic: !manual });
     return;
   }
   const visibleOpen = filteredRecords().filter((record) => state.expanded.has(record.id));
   await Promise.allSettled(visibleOpen.map((record) => {
     const entry = state.details.get(record.id);
-    return force || !entry || Date.now() - entry.lastRequested >= interval ? loadMatch(record.id, true) : undefined;
+    return force || !entry || Date.now() - entry.lastRequested >= interval ? loadMatch(record.id, true, { automatic: !manual }) : undefined;
   }));
 }
 
@@ -673,7 +684,15 @@ async function refresh(force = false) {
     if (force || !state.recordsLoaded || changed) await loadSchedule(version);
     state.connectionError = "";
     renderStatus();
-    if (!document.hidden) await refreshVisibleExtras(force || changed);
+    if (state.manualSyncPending && !status.running) {
+      state.manualSyncPending = false;
+      state.manualExtrasPending = !status.lastError;
+    }
+    if (!document.hidden) {
+      const manual = state.manualExtrasPending;
+      state.manualExtrasPending = false;
+      await refreshVisibleExtras(force || changed || manual, { manual });
+    }
   } catch (error) {
     state.connectionError = error.message || "无法连接本地服务";
     renderStatus();
@@ -691,6 +710,7 @@ async function requestSync() {
   try {
     const response = await fetch("/api/sync", { method: "POST" });
     if (!response.ok && response.status !== 409) throw new Error("无法启动同步");
+    state.manualSyncPending = true;
     await refresh();
   } catch (error) {
     state.connectionError = error.message;
@@ -713,7 +733,7 @@ elements.tabs.addEventListener("click", (event) => {
   renderTabs();
   renderView();
   if (state.view !== "schedule") void loadTournament();
-  else void refreshVisibleExtras();
+  else void refreshVisibleExtras(false, { manual: true });
 });
 elements.viewTabs.addEventListener("click", (event) => {
   const button = event.target.closest("[data-view]");
@@ -721,22 +741,22 @@ elements.viewTabs.addEventListener("click", (event) => {
   state.view = button.dataset.view;
   renderView();
   if (state.view !== "schedule") void loadTournament();
-  else void refreshVisibleExtras();
+  else void refreshVisibleExtras(false, { manual: true });
 });
 elements.category.addEventListener("change", () => {
   state.selections.set(selectionKey(), elements.category.value);
   renderView();
-  void refreshVisibleExtras();
+  void refreshVisibleExtras(false, { manual: true });
 });
 elements.dateFilter.addEventListener("change", () => {
   state.dateFilter = elements.dateFilter.value;
   renderView();
-  void refreshVisibleExtras();
+  void refreshVisibleExtras(false, { manual: true });
 });
 elements.statusFilter.addEventListener("change", () => {
   state.statusFilter = elements.statusFilter.value;
   renderView();
-  void refreshVisibleExtras();
+  void refreshVisibleExtras(false, { manual: true });
 });
 elements.layout.addEventListener("change", () => {
   const columns = Number(elements.layout.value);
@@ -786,7 +806,7 @@ window.addEventListener("popstate", () => {
   renderTabs();
   renderView();
   if (state.view !== "schedule") void loadTournament();
-  else void refreshVisibleExtras();
+  else void refreshVisibleExtras(false, { manual: true });
 });
 
 async function init() {
