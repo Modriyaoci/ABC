@@ -427,6 +427,8 @@ def get_match_details(record: Any, fetcher: Fetcher | None = None) -> dict[str, 
     has_content = bool(sections or sub_matches or home_players or away_players)
     return {
         "available": has_content,
+        "status": _text(info.get("Status")).upper(),
+        "isLive": bool(info.get("IsLive")) or _text(info.get("Status")).upper() in {"LIVE", "RUNNING", "IN_PROGRESS"},
         "updatedAt": _now(),
         "home": names[0],
         "away": names[1],

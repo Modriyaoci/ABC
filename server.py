@@ -15,7 +15,7 @@ from urllib.parse import parse_qs, unquote, urlparse
 from zoneinfo import ZoneInfo
 
 from sync_service import SPORTS, SyncError, sync_all
-from live_service import live_targets, sync_live
+from live_service import FINAL_STATUSES, live_targets, sync_live
 from details_service import get_match_details, get_tournament
 
 
@@ -165,6 +165,28 @@ def next_automatic_time(candidate: datetime) -> datetime:
     return current
 
 
+def today_completed(payload: dict, now: datetime, last_full_success: str | None) -> bool:
+    """Stop only on a complete, successfully refreshed Beijing day's results."""
+    today = now.astimezone(BEIJING_TZ).date()
+    try:
+        refreshed = datetime.fromisoformat(last_full_success)
+        if not refreshed.tzinfo or refreshed.astimezone(BEIJING_TZ).date() != today:
+            return False
+    except (TypeError, ValueError):
+        return False
+    rows = [row for row in payload.get("records", [])
+            if row.get("sport") in SPORTS and row.get("date") == today.isoformat()]
+    if not rows:
+        return False
+    # An empty/missing sport feed is not evidence that its matches have ended.
+    expected = {sport for sport, days in payload.get("meta", {}).get("officialDays", {}).items()
+                if sport in SPORTS and today.isoformat() in days}
+    if not expected or not expected.issubset({row["sport"] for row in rows}):
+        return False
+    return all(not row.get("isLive") and str(row.get("status", "")).upper() in FINAL_STATUSES
+               for row in rows)
+
+
 class AppState:
     def __init__(self, data_file=DATA_FILE, status_file=STATUS_FILE, clock=None,
                  full_sync=sync_all, live_sync=sync_live) -> None:
@@ -177,6 +199,7 @@ class AppState:
         self.running = False
         self.stop_event = threading.Event()
         self.team_submatch_orders: dict[str, list[str]] = {}
+        self.final_details_pending_date = None
         self.status = {
             "running": False,
             "lastStarted": None,
@@ -292,11 +315,15 @@ class AppState:
             return next_automatic_time(max(now, retry))
         return next_automatic_time(now) if stale else next_eight(now)
 
+    def _today_completed(self, now):
+        return (self.final_details_pending_date != now.astimezone(BEIJING_TZ).date().isoformat()
+                and today_completed(self.payload, now, self.status.get("lastSuccess")))
+
     def tick(self) -> str | None:
         """Recompute due work after every wake; never replay each missed day."""
         now = self.clock()
         with self.lock:
-            if self.running or not automatic_sync_allowed(now):
+            if self.running or not automatic_sync_allowed(now) or self._today_completed(now):
                 return None
             if now >= self._full_due(now):
                 reason = "retry" if self.status.get("retryAt") else "scheduled"
@@ -313,8 +340,11 @@ class AppState:
             snapshot = dict(self.status)
             snapshot["running"] = self.running
             now = self.clock()
-            snapshot["nextAutomaticSync"] = self._full_due(now).isoformat(timespec="seconds")
-            allowed = automatic_sync_allowed(now)
+            completed = self._today_completed(now)
+            snapshot["todayCompleted"] = completed
+            snapshot["completionDate"] = now.astimezone(BEIJING_TZ).date().isoformat() if completed else None
+            snapshot["nextAutomaticSync"] = (next_eight(now) if completed else self._full_due(now)).isoformat(timespec="seconds")
+            allowed = automatic_sync_allowed(now) and not completed
             snapshot["automaticSyncAllowed"] = allowed
             snapshot["automaticWindow"] = dict(AUTOMATIC_WINDOW)
             active = allowed and bool(live_targets(self.payload, now))
@@ -330,7 +360,9 @@ class AppState:
     def start_sync(self, reason: str) -> bool:
         with self.lock:
             now = self.clock()
-            if self.running or (reason != "manual" and not automatic_sync_allowed(now)):
+            if self.running or (reason != "manual" and (
+                not automatic_sync_allowed(now) or self._today_completed(now)
+            )):
                 return False
             self.running = True
             self.status.update(
@@ -355,15 +387,71 @@ class AppState:
             self.status["progressTotal"] = total
             self.status["progressLabel"] = label
 
+    def _finish_cached_results(self, payload: dict, manual: bool) -> bool:
+        """Finish already-viewed score panels before publishing the daily pause."""
+        today = self.clock().astimezone(BEIJING_TZ).date().isoformat()
+        records = payload.get("records", [])
+        matches = {row["id"]: row for row in records if row.get("date") == today
+                   and row.get("sport") in SPORTS}
+        sports = {row["sport"] for row in matches.values()}
+        with OFFICIAL_CACHE.lock:
+            keys = list(OFFICIAL_CACHE.values)
+        ready = True
+        for kind, identifier in keys:
+            if not manual and not automatic_sync_allowed(self.clock()):
+                break
+            if kind == "match" and identifier in matches:
+                record = matches[identifier]
+
+                def loader(record=record):
+                    details = get_match_details(record)
+                    self.observe_match_details(record, details)
+                    return details
+            elif kind == "tournament" and identifier in sports:
+                loader = lambda sport=identifier: get_tournament(sport, records)
+            else:
+                continue
+            key = (kind, identifier)
+            previous = OFFICIAL_CACHE.peek(key)
+            if not manual and previous.get("completedForDate") == today:
+                continue
+            value = OFFICIAL_CACHE.get(key, 0, loader)
+            # Daily scores and detailed results can be published separately.
+            # Keep checking only an unfinished, already-viewed detail until
+            # its final response arrives; don't label a running child final.
+            def unfinished(detail):
+                status = str(detail.get("status") or "").upper()
+                return (detail.get("isLive") or status in {"LIVE", "RUNNING", "IN_PROGRESS", "UNOFFICIAL"}
+                        or any(unfinished(child) for child in detail.get("subMatches", [])))
+
+            if kind == "match" and not value.get("stale") and (
+                unfinished(value)
+                or (value.get("status") and str(value["status"]).upper() not in FINAL_STATUSES)
+                or (previous.get("available") and value.get("available") is False)
+            ) and matches[identifier].get("status") not in {"CANCELED", "CANCELLED"}:
+                ready = False
+                continue
+            # Keep failed final reads explicitly stale even when read via peek.
+            with OFFICIAL_CACHE.lock:
+                timestamp = OFFICIAL_CACHE.values[key][0]
+                OFFICIAL_CACHE.values[key] = (timestamp, {**value, "completedForDate": today})
+        return ready
+
     def _run_sync(self, reason: str) -> None:
         live = reason == "live"
         try:
             with self.lock:
                 previous_payload = self.payload
+                was_completed = self._today_completed(self.clock())
+                last_full_success = self.status.get("lastSuccess")
             if live:
                 payload = self.live_sync(self.data_file, self.clock(), self._progress)
             else:
                 payload = self.full_sync(self.data_file, self._progress)
+            full_success = last_full_success if live else self.clock().isoformat()
+            if (not was_completed or reason == "manual") and today_completed(payload, self.clock(), full_success):
+                ready = self._finish_cached_results(payload, reason == "manual")
+                self.final_details_pending_date = None if ready else self.clock().astimezone(BEIJING_TZ).date().isoformat()
             with self.lock:
                 self.payload = payload
                 self.status["dataVersion"] = payload["meta"]["generatedAt"]
@@ -490,15 +578,21 @@ class RequestHandler(BaseHTTPRequestHandler):
             query = parse_qs(parsed.query)
             with STATE.lock:
                 records = list(STATE.payload.get("records", []))
-            if query.get("automatic", [""])[0] == "1" and not automatic_sync_allowed(STATE.clock()):
+            with STATE.lock:
+                now = STATE.clock()
+                completed = STATE._today_completed(now)
+            if query.get("automatic", [""])[0] == "1" and (completed or not automatic_sync_allowed(now)):
                 key = ("match", query.get("id", [""])[0]) if path == "/api/match" else ("tournament", query.get("sport", [""])[0])
                 cached = OFFICIAL_CACHE.peek(key)
                 self._send_json({
                     **(cached or {"available": False, "unavailable": True}),
                     "automaticSyncPaused": True,
                     "automaticWindow": dict(AUTOMATIC_WINDOW),
-                    "stale": True,
-                    "message": "夜间自动同步已暂停，可手动刷新；每天北京时间 08:00 恢复自动同步",
+                    "stale": bool((cached or {}).get("stale")) or not (
+                        completed and (cached or {}).get("completedForDate") == now.astimezone(BEIJING_TZ).date().isoformat()
+                    ),
+                    "message": ("今日比赛已全部完场，自动同步已停止，可手动刷新" if completed
+                                else "夜间自动同步已暂停，可手动刷新；每天北京时间 08:00 恢复自动同步"),
                 })
                 return
             try:
