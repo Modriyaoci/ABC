@@ -24,6 +24,7 @@ STATIC_DIR = ROOT / "static"
 DATA_FILE = ROOT / "data" / "schedule.json"
 STATUS_FILE = ROOT / "data" / "sync-status.json"
 BEIJING_TZ = ZoneInfo("Asia/Shanghai")
+AUTOMATIC_WINDOW = {"start": "08:00", "end": "23:00", "timezone": "Asia/Shanghai"}
 LIVE_INTERVAL = 10
 DETAIL_LIVE_TTL = 4
 DETAIL_IDLE_TTL = 120
@@ -147,6 +148,21 @@ def next_eight(now: datetime | None = None) -> datetime:
     if current >= target:
         target += timedelta(days=1)
     return target
+
+
+def automatic_sync_allowed(now: datetime) -> bool:
+    """Automatic source requests are allowed only from 08:00 until 23:00 Beijing time."""
+    return 8 <= now.astimezone(BEIJING_TZ).hour < 23
+
+
+def next_automatic_time(candidate: datetime) -> datetime:
+    """Move a deadline inside the next allowed automatic window, never backwards."""
+    current = candidate.astimezone(BEIJING_TZ)
+    if current.hour < 8:
+        return current.replace(hour=8, minute=0, second=0, microsecond=0)
+    if current.hour >= 23:
+        return next_eight(current)
+    return current
 
 
 class AppState:
@@ -273,14 +289,14 @@ class AppState:
         stale = stale or not self.payload.get("meta", {}).get("officialDays")
         retry = self._parse_time(self.status.get("retryAt"))
         if retry:
-            return retry
-        return now if stale else next_eight(now)
+            return next_automatic_time(max(now, retry))
+        return next_automatic_time(now) if stale else next_eight(now)
 
     def tick(self) -> str | None:
         """Recompute due work after every wake; never replay each missed day."""
         now = self.clock()
         with self.lock:
-            if self.running:
+            if self.running or not automatic_sync_allowed(now):
                 return None
             if now >= self._full_due(now):
                 reason = "retry" if self.status.get("retryAt") else "scheduled"
@@ -298,9 +314,12 @@ class AppState:
             snapshot["running"] = self.running
             now = self.clock()
             snapshot["nextAutomaticSync"] = self._full_due(now).isoformat(timespec="seconds")
-            active = bool(live_targets(self.payload, now))
+            allowed = automatic_sync_allowed(now)
+            snapshot["automaticSyncAllowed"] = allowed
+            snapshot["automaticWindow"] = dict(AUTOMATIC_WINDOW)
+            active = allowed and bool(live_targets(self.payload, now))
             retry = self._parse_time(self.status.get("liveRetryAt"))
-            snapshot["nextLiveSync"] = max(self.next_live, retry or now).isoformat(timespec="seconds") if active else None
+            snapshot["nextLiveSync"] = next_automatic_time(max(self.next_live, retry or now, now)).isoformat(timespec="seconds") if active else None
             snapshot["liveActive"] = active
         snapshot["liveEnabled"] = True
         snapshot["liveIntervalSeconds"] = LIVE_INTERVAL
@@ -310,13 +329,14 @@ class AppState:
 
     def start_sync(self, reason: str) -> bool:
         with self.lock:
-            if self.running:
+            now = self.clock()
+            if self.running or (reason != "manual" and not automatic_sync_allowed(now)):
                 return False
             self.running = True
             self.status.update(
                 {
                     "running": True,
-                    "lastStarted": self.clock().isoformat(timespec="seconds"),
+                    "lastStarted": now.isoformat(timespec="seconds"),
                     "lastReason": reason,
                     "progressDone": 0,
                     "progressTotal": 0,
@@ -397,6 +417,12 @@ class OfficialCache:
         self.locks = {}
         self.values = {}
 
+    def peek(self, key):
+        """Read the last value without loading or waiting for a source request."""
+        with self.lock:
+            previous = self.values.get(key)
+            return dict(previous[1]) if previous else None
+
     def get(self, key, ttl, loader):
         with self.lock:
             key_lock = self.locks.setdefault(key, threading.Lock())
@@ -410,7 +436,8 @@ class OfficialCache:
                 if previous:
                     return {**previous[1], "stale": True, "message": "官网暂时连接失败，显示上次成功数据"}
                 raise
-            self.values[key] = (time.monotonic(), value)
+            with self.lock:
+                self.values[key] = (time.monotonic(), value)
             return value
 
 
@@ -463,6 +490,17 @@ class RequestHandler(BaseHTTPRequestHandler):
             query = parse_qs(parsed.query)
             with STATE.lock:
                 records = list(STATE.payload.get("records", []))
+            if query.get("automatic", [""])[0] == "1" and not automatic_sync_allowed(STATE.clock()):
+                key = ("match", query.get("id", [""])[0]) if path == "/api/match" else ("tournament", query.get("sport", [""])[0])
+                cached = OFFICIAL_CACHE.peek(key)
+                self._send_json({
+                    **(cached or {"available": False, "unavailable": True}),
+                    "automaticSyncPaused": True,
+                    "automaticWindow": dict(AUTOMATIC_WINDOW),
+                    "stale": True,
+                    "message": "夜间自动同步已暂停，可手动刷新；每天北京时间 08:00 恢复自动同步",
+                })
+                return
             try:
                 if path == "/api/match":
                     match_id = query.get("id", [""])[0]
@@ -540,11 +578,21 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="爱知·名古屋2026赛程与赛果本地网站")
     parser.add_argument("--host", default=os.environ.get("HOST", "127.0.0.1"))
     parser.add_argument("--port", type=int, default=int(os.environ.get("PORT", "4173")))
+    parser.add_argument("--upstream", default=os.environ.get("SCHEDULE_UPSTREAM_URL"),
+                        help="从已部署的网站读取比分，本地不重复请求官网")
     args = parser.parse_args()
 
-    server = ThreadingHTTPServer((args.host, args.port), RequestHandler)
-    scheduler = threading.Thread(target=scheduler_loop, name="daily-scheduler", daemon=True)
-    scheduler.start()
+    handler = RequestHandler
+    if args.upstream:
+        from upstream_service import make_upstream_handler
+        try:
+            handler = make_upstream_handler(RequestHandler, args.upstream)
+        except ValueError as error:
+            parser.error(str(error))
+    server = ThreadingHTTPServer((args.host, args.port), handler)
+    if not args.upstream:
+        scheduler = threading.Thread(target=scheduler_loop, name="daily-scheduler", daemon=True)
+        scheduler.start()
 
     def stop_server(_signum, _frame) -> None:
         STATE.stop_event.set()
@@ -553,6 +601,8 @@ def main() -> None:
     signal.signal(signal.SIGTERM, stop_server)
     signal.signal(signal.SIGINT, stop_server)
     print(f"Local schedule site: http://{args.host}:{args.port}", flush=True)
+    if args.upstream:
+        print(f"Shared score source: {handler.upstream_origin}", flush=True)
     try:
         server.serve_forever(poll_interval=0.5)
     finally:
