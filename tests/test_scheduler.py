@@ -211,10 +211,36 @@ class LiveMergeTests(unittest.TestCase):
             self.assertEqual([r["id"] for r in result["records"]], ["VVO:new", "TEN:future"])
             self.assertEqual(result["records"][1], future)
             successful = path.read_bytes()
-            with patch("live_service.fetch_official_json", side_effect=SyncError("offline")):
-                with self.assertRaises(SyncError):
-                    sync_live(path, now)
+            with patch("live_service.fetch_official_json", return_value=[]):
+                result = sync_live(path, now)
             self.assertEqual(path.read_bytes(), successful)
+
+    def test_live_now_aggregate_merges_one_current_score_request(self):
+        with TemporaryDirectory() as directory:
+            path = Path(directory) / "schedule.json"
+            old = {
+                "meta": {"generatedAt": "old", "officialDays": {"VVO": ["2026-09-17"]}},
+                "records": [{
+                    "id": "VVO:live", "sport": "VVO", "sourceDate": "2026-09-17",
+                    "date": "2026-09-17", "time": "10:00", "home": {"Org": "CHN"},
+                    "away": {"Org": "JPN"}, "matchup": "中国 vs 日本", "score": "0 : 0",
+                }],
+            }
+            path.write_text(json.dumps(old))
+            now = datetime(2026, 9, 17, 12, tzinfo=BEIJING_TZ)
+            live_unit = {
+                "Disc": "VVO", "Key": "live", "DateTimeRaw": "2026-09-17T10:00:00+09:00",
+                "Type": "T", "EventDesc": "Men's Team", "PhaseDesc": "Preliminary Round",
+                "UnitDesc": "Match 1", "VenueDesc": "Park Arena Komaki", "Status": "RUNNING",
+                "Home": {"Org": "CHN", "Result": "12"},
+                "Away": {"Org": "JPN", "Result": "10"},
+            }
+            with patch("live_service.fetch_official_json", return_value=[live_unit]) as fetch:
+                result = sync_live(path, now)
+            self.assertEqual(fetch.call_count, 1)
+            self.assertEqual(fetch.call_args.args[0], "/s/AG2026/en/ALL/schedule/live-now")
+            self.assertEqual(result["records"][0]["id"], "VVO:live")
+            self.assertEqual(result["records"][0]["score"], "12 : 10")
 
     def test_live_refresh_keeps_matchup_when_official_temporarily_omits_teams(self):
         with TemporaryDirectory() as directory:
@@ -238,9 +264,10 @@ class LiveMergeTests(unittest.TestCase):
             self.assertEqual(result["records"][0]["matchup"], "中国 vs 日本")
             self.assertEqual(result["records"][0]["score"], "待赛")
             successful = path.read_bytes()
+            # An empty aggregate live-now response is a successful no-op.
             with patch("live_service.fetch_official_json", return_value=[]):
-                with self.assertRaises(SyncError):
-                    sync_live(path, now)
+                result = sync_live(path, now)
+            self.assertEqual(result["records"][0]["matchup"], "中国 vs 日本")
             self.assertEqual(path.read_bytes(), successful)
 
 
