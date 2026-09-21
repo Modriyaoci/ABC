@@ -14,6 +14,7 @@ from sync_service import (
 )
 
 JAPAN_TZ = ZoneInfo("Asia/Tokyo")
+LIVE_NOW_PATH = "/s/AG2026/en/ALL/schedule/live-now"
 
 
 def live_targets(payload: dict, now: datetime) -> list[tuple[str, str]]:
@@ -52,46 +53,93 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
     if not targets:
         return payload
     replacements = []
-    errors = []
-    # The official service rate-limits bursts.  Two workers keep the poll
-    # responsive while sync_service's process-wide limiter spaces individual
-    # requests across all sports.
-    with ThreadPoolExecutor(max_workers=min(2, len(targets))) as pool:
-        futures = {
-            pool.submit(fetch_official_json, f"/s/AG2026/en/{sport}/schedule/daily/{day}", 1): (sport, day)
-            for sport, day in targets
-        }
-        for index, future in enumerate(as_completed(futures), 1):
-            sport, day = futures[future]
-            try:
-                units = future.result()
-                if not isinstance(units, list):
-                    raise SyncError("逐场数据格式不正确")
-                # An unexplained empty response must not erase known matches.
-                if not units and any(
-                    row["sport"] == sport and row.get("sourceDate", row["date"]) == day
-                    for row in payload["records"]
-                ):
-                    raise SyncError("官网暂未返回已公布的比赛，保留上次数据")
-                for unit in units:
-                    if isinstance(unit, dict):
-                        record = normalize_unit(unit, sport)
-                        if record:
-                            record["sourceDate"] = day
-                            replacements.append(record)
-            except Exception as exc:
-                errors.append(f"{SPORTS[sport]}：{exc}")
-            if progress:
-                progress(index, len(targets), "更新今日比分")
-    if errors:
-        raise SyncError("；".join(errors))
-
     previous_records = list(payload["records"])
-    target_set = set(targets)
-    records = [row for row in previous_records
-               if (row["sport"], row.get("sourceDate", row["date"])) not in target_set]
+
+    # The official site exposes one compressed, cross-sport feed for matches
+    # that are currently live.  Polling this aggregate endpoint once per
+    # Ten-second UI refresh avoids the old five-to-seven daily-feed requests
+    # per cycle, which quickly exhausts the anonymous API allowance.  It is a
+    # partial feed by design: matches that are not currently live remain in
+    # the last successful schedule snapshot until the next full refresh.
+    units = fetch_official_json(LIVE_NOW_PATH, 1)
+    if not isinstance(units, list):
+        raise SyncError("官网实时数据格式不正确")
+
+    # A few test/integration callers historically supplied daily-feed-shaped
+    # units without ``Disc``.  Keep that input compatible by falling back to
+    # the old per-sport path only for an unidentifiable response.  Production
+    # live-now responses always include Disc, so a valid response containing
+    # only another sport (for example hockey) does not trigger a burst.
+    aggregate_units = [unit for unit in units if isinstance(unit, dict)]
+    aggregate_shape = all("Disc" in unit for unit in aggregate_units)
+    if aggregate_shape:
+        for unit in aggregate_units:
+            sport = str(unit.get("Disc") or "").upper()
+            if sport not in SPORTS:
+                continue
+            record = normalize_unit(unit, sport)
+            if not record:
+                continue
+            raw_datetime = str(unit.get("DateTimeRaw") or "")
+            try:
+                source_date = datetime.fromisoformat(
+                    raw_datetime.replace("Z", "+00:00")
+                ).astimezone(JAPAN_TZ).date().isoformat()
+            except ValueError:
+                continue
+            record["sourceDate"] = source_date
+            replacements.append(record)
+        if progress:
+            progress(1, 1, "更新今日比分")
+    else:
+        # Compatibility fallback for a malformed/unversioned response.  This
+        # path is also useful if the aggregate feed is temporarily rolled back
+        # by the provider, while keeping the normal path to one request.
+        errors = []
+        with ThreadPoolExecutor(max_workers=min(2, len(targets))) as pool:
+            futures = {
+                pool.submit(fetch_official_json, f"/s/AG2026/en/{sport}/schedule/daily/{day}", 1): (sport, day)
+                for sport, day in targets
+            }
+            for index, future in enumerate(as_completed(futures), 1):
+                sport, day = futures[future]
+                try:
+                    daily_units = future.result()
+                    if not isinstance(daily_units, list):
+                        raise SyncError("逐场数据格式不正确")
+                    if not daily_units and any(
+                        row["sport"] == sport and row.get("sourceDate", row["date"]) == day
+                        for row in previous_records
+                    ):
+                        raise SyncError("官网暂未返回已公布的比赛，保留上次数据")
+                    for unit in daily_units:
+                        if isinstance(unit, dict):
+                            record = normalize_unit(unit, sport)
+                            if record:
+                                record["sourceDate"] = day
+                                replacements.append(record)
+                except Exception as exc:
+                    errors.append(f"{SPORTS[sport]}：{exc}")
+                if progress:
+                    progress(index, len(targets), "更新今日比分")
+        if errors:
+            raise SyncError("；".join(errors))
+
     replacements = preserve_known_matchups(previous_records, replacements)
-    unique = {row["id"]: row for row in records + replacements}
+    if aggregate_shape:
+        if not replacements:
+            # No current live unit (or only another sport's unit) means there
+            # is no schedule/score delta to persist.  Keeping the file bytes
+            # unchanged also avoids needless metadata churn every five seconds.
+            return payload
+        # live-now is partial, so retain every prior record not present in the
+        # response.  A current live unit replaces its matching stable ID.
+        unique = {row["id"]: row for row in previous_records + replacements}
+    else:
+        target_set = set(targets)
+        records = [row for row in previous_records
+                   if (row["sport"], row.get("sourceDate", row["date"])) not in target_set]
+        unique = {row["id"]: row for row in records + replacements}
     payload["records"] = sorted(unique.values(), key=lambda row: (
         row["date"], row["time"], list(SPORTS).index(row["sport"]), row["id"]
     ))

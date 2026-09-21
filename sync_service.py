@@ -22,6 +22,15 @@ BEIJING_TZ = ZoneInfo("Asia/Shanghai")
 JAPAN_TZ = ZoneInfo("Asia/Tokyo")
 SYSTEM_CA_FILE = Path("/etc/ssl/cert.pem")
 SSL_CONTEXT = ssl.create_default_context(cafile=str(SYSTEM_CA_FILE) if SYSTEM_CA_FILE.exists() else None)
+# The development machine may expose a shared HTTP(S) proxy through the
+# environment.  That proxy is also used by other jobs and has already
+# exhausted the official service's anonymous allowance.  Prefer a direct
+# connection for this feed; set OFFICIAL_USE_SYSTEM_PROXY=1 only when a
+# network requires the configured proxy.
+DIRECT_OPENER = urllib.request.build_opener(
+    urllib.request.ProxyHandler({}),
+    urllib.request.HTTPSHandler(context=SSL_CONTEXT),
+)
 
 SPORTS = {
     "TEN": "网球",
@@ -114,6 +123,12 @@ class SyncError(RuntimeError):
     pass
 
 
+def _open_official(request: urllib.request.Request, timeout: float):
+    if os.environ.get("OFFICIAL_USE_SYSTEM_PROXY", "").lower() in {"1", "true", "yes"}:
+        return urllib.request.urlopen(request, timeout=timeout, context=SSL_CONTEXT)
+    return DIRECT_OPENER.open(request, timeout=timeout)
+
+
 # The results service applies a fairly strict per-client rate limit.  A full
 # refresh can otherwise create a burst of requests (one for each sport and
 # then one for every competition day), while the live poller creates another
@@ -185,7 +200,7 @@ def _decode_response(body: bytes) -> Any:
 
 def fetch_official_json(path: str, retries: int = 3) -> Any:
     # Do not append a unique cache-busting query to every request.  That
-    # bypasses the official CDN and turns the five-second live poll into a
+    # bypasses the official CDN and turns the ten-second live poll into a
     # stream of origin requests, which is what triggers HTTP 429.  Explicit
     # no-cache headers still let a cache revalidate a response when needed.
     url = f"{API_BASE}{path}"
@@ -206,7 +221,7 @@ def fetch_official_json(path: str, retries: int = 3) -> Any:
         _wait_for_request()
         try:
             request = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(request, timeout=25, context=SSL_CONTEXT) as response:
+            with _open_official(request, timeout=25) as response:
                 if response.status != 200:
                     raise SyncError(f"官网返回 HTTP {response.status}")
                 return _decode_response(response.read())
@@ -225,6 +240,13 @@ def fetch_official_json(path: str, retries: int = 3) -> Any:
                     RATE_LIMIT_BACKOFF_SECONDS * (2 ** attempt),
                 )
                 _set_rate_limit_cooldown(delay)
+                # This provider's anonymous quota response has no
+                # Retry-After header and will not recover within this call.
+                # Stop immediately so a full refresh does not spend minutes
+                # repeating doomed requests. A server-provided Retry-After,
+                # on the other hand, is safe to honour once.
+                if retry_after is None:
+                    break
             else:
                 last_error = exc
                 delay = 1.5 * (attempt + 1) if attempt + 1 < total_retries else 0.0
