@@ -461,6 +461,24 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def _send_rate_limit(self, retry_at: datetime) -> None:
+        """Tell callers about the persisted cooldown without touching the API."""
+        seconds = max(1, int((retry_at - datetime.now(BEIJING_TZ)).total_seconds() + 0.999))
+        minutes, remainder = divmod(seconds, 60)
+        if minutes:
+            wait_text = f"{minutes}分钟{remainder}秒" if remainder else f"{minutes}分钟"
+        else:
+            wait_text = f"{seconds}秒"
+        self._send_json(
+            {
+                "accepted": False,
+                "message": f"官网暂时限流，请等待{wait_text}后自动重试",
+                "retryAt": retry_at.isoformat(timespec="seconds"),
+                "retryAfterSeconds": seconds,
+            },
+            HTTPStatus.TOO_MANY_REQUESTS,
+        )
+
     def _send_static(self, relative_path: str) -> None:
         requested = (STATIC_DIR / relative_path).resolve()
         if STATIC_DIR.resolve() not in requested.parents and requested != STATIC_DIR.resolve():
@@ -483,6 +501,10 @@ class RequestHandler(BaseHTTPRequestHandler):
         parsed = urlparse(self.path)
         path = unquote(parsed.path)
         if path in {"/api/match", "/api/tournament"}:
+            retry_at = STATE.rate_limit_retry_at()
+            if retry_at:
+                self._send_rate_limit(retry_at)
+                return
             query = parse_qs(parsed.query)
             with STATE.lock:
                 records = list(STATE.payload.get("records", []))
@@ -546,21 +568,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             return
         retry_at = STATE.rate_limit_retry_at()
         if retry_at:
-            seconds = max(1, int((retry_at - datetime.now(BEIJING_TZ)).total_seconds() + 0.999))
-            minutes, remainder = divmod(seconds, 60)
-            if minutes:
-                wait_text = f"{minutes}分钟{remainder}秒" if remainder else f"{minutes}分钟"
-            else:
-                wait_text = f"{seconds}秒"
-            self._send_json(
-                {
-                    "accepted": False,
-                    "message": f"官网暂时限流，请等待{wait_text}后自动重试",
-                    "retryAt": retry_at.isoformat(timespec="seconds"),
-                    "retryAfterSeconds": seconds,
-                },
-                HTTPStatus.TOO_MANY_REQUESTS,
-            )
+            self._send_rate_limit(retry_at)
             return
         started = STATE.start_sync("manual")
         if not started:
