@@ -265,6 +265,29 @@ class AppState:
         except (TypeError, ValueError):
             return None
 
+    def rate_limit_retry_at(self, now: datetime | None = None) -> datetime | None:
+        """Return the latest active provider cooldown, if one is recorded.
+
+        A manual sync is otherwise allowed to bypass the scheduler's backoff
+        and immediately replay the same requests that just received HTTP 429.
+        Keep the check based on the persisted retry timestamps so it survives
+        a local server restart.  The latest deadline is used when the full
+        and live jobs have different cooldowns: a full refresh would touch
+        both request paths, so it must wait for both to be safe.
+        """
+        current = (now or self.clock()).astimezone(BEIJING_TZ)
+        with self.lock:
+            retry_values = (
+                self.status.get("retryAt"),
+                self.status.get("liveRetryAt"),
+            )
+            candidates = []
+            for value in retry_values:
+                parsed = self._parse_time(value)
+                if parsed and parsed > current:
+                    candidates.append(parsed)
+        return max(candidates, default=None)
+
     def _full_due(self, now):
         last = self._parse_time(self.status.get("lastSuccess"))
         boundary = next_eight(now) - timedelta(days=1)
@@ -520,6 +543,24 @@ class RequestHandler(BaseHTTPRequestHandler):
         path = urlparse(self.path).path
         if path != "/api/sync":
             self.send_error(HTTPStatus.NOT_FOUND)
+            return
+        retry_at = STATE.rate_limit_retry_at()
+        if retry_at:
+            seconds = max(1, int((retry_at - datetime.now(BEIJING_TZ)).total_seconds() + 0.999))
+            minutes, remainder = divmod(seconds, 60)
+            if minutes:
+                wait_text = f"{minutes}分钟{remainder}秒" if remainder else f"{minutes}分钟"
+            else:
+                wait_text = f"{seconds}秒"
+            self._send_json(
+                {
+                    "accepted": False,
+                    "message": f"官网暂时限流，请等待{wait_text}后自动重试",
+                    "retryAt": retry_at.isoformat(timespec="seconds"),
+                    "retryAfterSeconds": seconds,
+                },
+                HTTPStatus.TOO_MANY_REQUESTS,
+            )
             return
         started = STATE.start_sync("manual")
         if not started:
