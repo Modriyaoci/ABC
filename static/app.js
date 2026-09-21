@@ -15,7 +15,8 @@ const state = {
   records: [], activeSport: null, view: "schedule", selections: new Map(),
   dateFilter: "", statusFilter: "",
   status: null, statusTimer: null, refreshing: false, refreshAgain: false,
-  manualSyncPending: false, manualExtrasPending: false,
+  manualSyncPending: false, manualExtrasPending: false, completionExtrasPending: false,
+  completionExtrasRetryAt: 0,
   teamScheduleChanges: savedTeamScheduleChanges(),
   recordsLoaded: false, loadedVersion: null, connectionError: "",
   expanded: new Set(), details: new Map(), tournaments: new Map(),
@@ -574,11 +575,13 @@ function renderStatus() {
   elements.syncButton.disabled = Boolean(status.running);
   elements.syncButton.classList.toggle("is-running", Boolean(status.running));
   const interval = Number(status.liveIntervalSeconds) || 30;
-  elements.automaticSync.textContent = !automaticSyncAllowed()
-    ? "北京时间 08:00–23:00 自动更新 · 当前仅手动同步"
-    : status.liveEnabled
-      ? `北京时间 08:00–23:00 自动更新 · 比赛日约每 ${interval} 秒更新比分`
-      : "北京时间 08:00–23:00 自动更新 · 每天 08:00 全量同步";
+  elements.automaticSync.textContent = todayCompleted()
+    ? "今日比赛已全部完场 · 自动同步已停止"
+    : !automaticSyncAllowed()
+      ? "北京时间 08:00–23:00 自动更新 · 当前仅手动同步"
+      : status.liveEnabled
+        ? `北京时间 08:00–23:00 自动更新 · 比赛日约每 ${interval} 秒更新比分`
+        : "北京时间 08:00–23:00 自动更新 · 每天 08:00 全量同步";
   elements.automaticSync.title = status.nextAutomaticSync ? `北京时间，下次全量同步 ${formatSyncTime(status.nextAutomaticSync)}` : "北京时间";
   const updated = [status.lastLiveSuccess, status.lastSuccess].filter(Boolean).sort().at(-1);
   if (state.connectionError) {
@@ -651,15 +654,22 @@ async function loadTournament(force = false, { automatic = false } = {}) {
   }
 }
 
+function todayCompleted(now = Date.now()) {
+  const beijingDate = new Date(now + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  return state.status?.todayCompleted === true && state.status.completionDate === beijingDate;
+}
+
 function automaticSyncAllowed(now = Date.now()) {
   // Use a fixed UTC+8 offset so device timezone and an old status response
   // cannot leave automatic detail requests running after 23:00 Beijing time.
   const beijingHour = new Date(now + 8 * 60 * 60 * 1000).getUTCHours();
-  return beijingHour >= 8 && beijingHour < 23 && state.status?.automaticSyncAllowed !== false;
+  return beijingHour >= 8 && beijingHour < 23 && !todayCompleted(now) && state.status?.automaticSyncAllowed !== false;
 }
 
-async function refreshVisibleExtras(force = false, { manual = false } = {}) {
-  if (!manual && !automaticSyncAllowed()) return;
+async function refreshVisibleExtras(force = false, { manual = false, completionRefresh = false } = {}) {
+  // On completion the server has finalized its existing detail caches. Read
+  // those once so open views include the final score, then stop polling them.
+  if (!manual && !automaticSyncAllowed() && !(completionRefresh && todayCompleted())) return;
   const interval = (Number(state.status?.liveIntervalSeconds) || 30) * 1000;
   if (state.view !== "schedule") {
     const entry = state.tournaments.get(state.activeSport);
@@ -673,12 +683,28 @@ async function refreshVisibleExtras(force = false, { manual = false } = {}) {
   }));
 }
 
+function visibleExtrasNeedRetry() {
+  const entries = state.view !== "schedule"
+    ? [state.tournaments.get(state.activeSport)]
+    : filteredRecords().filter((record) => state.expanded.has(record.id)).map((record) => state.details.get(record.id));
+  return entries.some((entry) => !entry || entry.loading || entry.error);
+}
+
 async function refresh(force = false) {
   if (state.refreshing) { state.refreshAgain ||= force; return; }
   state.refreshing = true;
   try {
     const status = await fetchJson("/api/status");
+    const wasCompleted = todayCompleted();
     state.status = status;
+    if (!wasCompleted && todayCompleted()) {
+      state.completionExtrasPending = true;
+      state.completionExtrasRetryAt = 0;
+    }
+    if (!todayCompleted()) {
+      state.completionExtrasPending = false;
+      state.completionExtrasRetryAt = 0;
+    }
     const version = statusVersion(status);
     const changed = version !== state.loadedVersion;
     if (force || !state.recordsLoaded || changed) await loadSchedule(version);
@@ -690,8 +716,16 @@ async function refresh(force = false) {
     }
     if (!document.hidden) {
       const manual = state.manualExtrasPending;
+      const completionRefresh = state.completionExtrasPending && Date.now() >= state.completionExtrasRetryAt;
       state.manualExtrasPending = false;
-      await refreshVisibleExtras(force || changed || manual, { manual });
+      if (completionRefresh) {
+        state.completionExtrasRetryAt = Date.now() + (Number(status.liveIntervalSeconds) || 30) * 1000;
+      }
+      await refreshVisibleExtras(force || changed || manual || completionRefresh, { manual, completionRefresh });
+      // A failed final cache read must not lose the final score. Subsequent
+      // attempts still use automatic=1 (cache only after completion), at the
+      // normal score interval even when focus forces a status refresh.
+      if (completionRefresh) state.completionExtrasPending = visibleExtrasNeedRetry();
     }
   } catch (error) {
     state.connectionError = error.message || "无法连接本地服务";
