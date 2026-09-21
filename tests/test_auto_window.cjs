@@ -34,6 +34,7 @@ function appContext(time = "2026-09-21T12:00:00+08:00") {
   const source = fs.readFileSync(path.join(__dirname, "../static/app.js"), "utf8");
   vm.runInContext(source.replace(/void init\(\);\s*$/, ""), context);
   vm.runInContext(`
+    const renderRealStatus = renderStatus;
     renderView = () => {}; renderStatus = () => {}; renderSchedule = () => {};
     updateDetailPanel = () => {}; filteredRecords = () => state.records;
     state.activeSport = "TTE"; state.loadedVersion = "v1"; state.recordsLoaded = true;
@@ -54,7 +55,7 @@ function appContext(time = "2026-09-21T12:00:00+08:00") {
     return {ok: code >= 200 && code < 300, status: code, json: async () => value};
   };
   return {
-    context, requests, windowListeners, documentListeners,
+    context, requests, windowListeners, documentListeners, getElement,
     run: (expression) => vm.runInContext(expression, context),
     setNow: (value) => { now = Date.parse(value); },
     setStatus: (value) => { status = {...status, ...value}; },
@@ -166,5 +167,132 @@ test("failed manual requests and failed jobs do not start a nighttime detail ret
     await app.run("requestSync()");
     await app.run("refresh(true)");
     assert.equal(app.detailRequests().length, 0);
+  }
+});
+
+test("confirmed completion is displayed for its Beijing date, including after 23:00", () => {
+  const app = appContext();
+  app.run('state.status = {todayCompleted: true, completionDate: "2026-09-21", automaticSyncAllowed: false}');
+  for (const time of ["2026-09-21T12:00:00+08:00", "2026-09-21T23:30:00+08:00"]) {
+    app.setNow(time);
+    app.run("renderRealStatus()");
+    assert.equal(app.getElement("#automatic-sync").textContent, "今日比赛已全部完场 · 自动同步已停止");
+  }
+  app.setNow("2026-09-22T00:00:00+08:00");
+  app.run("renderRealStatus()");
+  assert.doesNotMatch(app.getElement("#automatic-sync").textContent, /全部完场/);
+});
+
+test("completion reads final cached details once, then forced refresh and focus do not poll them", async () => {
+  for (const view of ["schedule", "groups", "bracket"]) {
+    const app = appContext();
+    app.run(`state.view = "${view}"`);
+    app.setStatus({todayCompleted: true, completionDate: "2026-09-21", automaticSyncAllowed: false});
+    await app.run("refresh()");
+    assert.equal(app.detailRequests().length, 1, "the final cached score/standings must reach the open view");
+    assert.match(app.detailRequests()[0].url, /automatic=1/);
+    await app.run("refresh(true)");
+    await app.run("refreshVisibleExtras(true)");
+    for (const listener of [
+      app.windowListeners.get("focus"), app.windowListeners.get("online"),
+      app.documentListeners.get("visibilitychange"),
+    ]) {
+      listener();
+      while (app.run("state.refreshing")) await new Promise((resolve) => setImmediate(resolve));
+    }
+    assert.equal(app.detailRequests().length, 1, view);
+    assert.equal(app.requests.filter(({url}) => url === "/api/status").length, 5);
+  }
+});
+
+test("hidden completion defers its final cached detail refresh until visible", async () => {
+  const app = appContext();
+  app.context.document.hidden = true;
+  app.setStatus({todayCompleted: true, completionDate: "2026-09-21", automaticSyncAllowed: false});
+  await app.run("refresh()");
+  assert.equal(app.detailRequests().length, 0);
+  app.context.document.hidden = false;
+  await app.run("refresh(true)");
+  assert.equal(app.detailRequests().length, 1);
+  await app.run("refresh(true)");
+  assert.equal(app.detailRequests().length, 1);
+});
+
+test("manual details and sync remain usable after all matches complete", async () => {
+  const app = appContext();
+  app.setStatus({todayCompleted: true, completionDate: "2026-09-21", automaticSyncAllowed: false});
+  await app.run("refresh()");
+  app.requests.length = 0;
+  await app.run('loadMatch("tie", true)');
+  await app.run("loadTournament(true)");
+  await app.run("requestSync()");
+  assert.equal(app.detailRequests().length, 3);
+  assert.ok(app.detailRequests().every(({url}) => !url.includes("automatic=1")));
+  assert.equal(app.requests.filter(({url, method}) => url === "/api/sync" && method === "POST").length, 1);
+  await app.run("refresh(true)");
+  assert.equal(app.detailRequests().length, 3, "a manual action does not re-enable automatic polling");
+});
+
+test("new server status reopens automatic details when a match is no longer complete", async () => {
+  const app = appContext();
+  app.setStatus({todayCompleted: true, completionDate: "2026-09-21", automaticSyncAllowed: false});
+  await app.run("refresh()");
+  app.setStatus({todayCompleted: false, completionDate: null, automaticSyncAllowed: true});
+  app.setNow("2026-09-21T12:00:05+08:00");
+  await app.run("refresh()");
+  assert.equal(app.run("automaticSyncAllowed()"), true);
+  assert.equal(app.detailRequests().length, 2);
+  assert.match(app.detailRequests()[1].url, /automatic=1/);
+});
+
+test("previous-day completion does not survive the next 08:00 status response", async () => {
+  const app = appContext();
+  app.setStatus({todayCompleted: true, completionDate: "2026-09-21", automaticSyncAllowed: false});
+  await app.run("refresh()");
+  app.setNow("2026-09-22T07:59:59+08:00");
+  assert.equal(app.run("todayCompleted()"), false);
+  assert.equal(app.run("automaticSyncAllowed()"), false);
+  app.setNow("2026-09-22T08:00:00+08:00");
+  app.setStatus({todayCompleted: false, completionDate: null, automaticSyncAllowed: true});
+  await app.run("refresh()");
+  assert.equal(app.run("automaticSyncAllowed()"), true);
+  assert.equal(app.detailRequests().length, 2);
+});
+
+test("failed final cache reads retry at the score interval and stop after success", async () => {
+  for (const view of ["schedule", "groups", "bracket"]) {
+    const app = appContext();
+    app.run(`state.view = "${view}"`);
+    const originalFetch = app.context.fetch;
+    let failures = 1;
+    app.context.fetch = async (url, options) => {
+      const response = await originalFetch(url, options);
+      if (/\/api\/(match|tournament)\?/.test(url) && failures > 0) {
+        failures -= 1;
+        throw new Error("短暂连接中断");
+      }
+      return response;
+    };
+    app.setStatus({todayCompleted: true, completionDate: "2026-09-21", automaticSyncAllowed: false});
+    await app.run("refresh()");
+    assert.equal(app.detailRequests().length, 1);
+    assert.equal(app.run("state.completionExtrasPending"), true);
+    app.setNow("2026-09-21T12:00:01+08:00");
+    await app.run("refresh(true)");
+    assert.equal(app.detailRequests().length, 1, "forced status updates must not accelerate cache retries");
+    app.setNow("2026-09-21T12:00:05+08:00");
+    await app.run("refresh()");
+    assert.equal(app.detailRequests().length, 2);
+    assert.equal(app.run("state.completionExtrasPending"), false);
+    assert.ok(app.detailRequests().every(({url}) => url.includes("automatic=1")));
+    app.setNow("2026-09-21T12:00:10+08:00");
+    await app.run("refresh(true)");
+    assert.equal(app.detailRequests().length, 2);
+    failures = 1;
+    await app.run('state.view === "schedule" ? loadMatch("tie", true) : loadTournament(true)');
+    app.setNow("2026-09-21T12:00:15+08:00");
+    await app.run("refresh(true)");
+    assert.equal(app.detailRequests().length, 3, "a later failed manual read must not start an automatic retry loop");
+    assert.doesNotMatch(app.detailRequests()[2].url, /automatic=1/);
   }
 });
