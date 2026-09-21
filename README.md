@@ -31,3 +31,14 @@ node --test tests/test_submatches.cjs
 ```
 
 前端验证需要 Playwright 与本机 Google Chrome；运行网站本身只需 Python 3.12 和标准库。
+
+## 实时数据源
+
+官方公开接口返回 HTTP 429 时，页面和接口都会被同一层匿名额度拦截；页面抓取不能绕过这层限制。要在比赛期间持续取得实时比分，需接入 Bornan 提供的授权专用 feed，或用户已有授权的兼容接口。配置专用 feed 时设置：
+
+```bash
+export OFFICIAL_API_BASE="https://你的授权接口"
+export OFFICIAL_API_TOKEN="你的 Bearer token"   # 或使用 OFFICIAL_API_KEY
+```
+
+服务会自动把 token/API key 加到所有赛程、实时比分、详情、积分和对阵请求中；没有授权凭据时只能显示最近一次成功快照，不能保证实时比分。

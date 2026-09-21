@@ -98,6 +98,30 @@ class SyncServiceTests(unittest.TestCase):
                 fetch_official_json("/test", retries=3)
         self.assertEqual(open_url.call_count, 1)
 
+    def test_authorized_feed_credentials_are_sent_when_configured(self):
+        body = b"[]"
+
+        class Response:
+            status = 200
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                return False
+
+            def read(self):
+                return body
+
+        with patch("sync_service.OFFICIAL_API_TOKEN", "token-123"), \
+                patch("sync_service.OFFICIAL_API_KEY", "key-456"), \
+                patch("sync_service._wait_for_request"), \
+                patch("sync_service._open_official", return_value=Response()) as open_url:
+            self.assertEqual(fetch_official_json("/authorized", retries=1), [])
+        request = open_url.call_args.args[0]
+        self.assertEqual(request.get_header("Authorization"), "Bearer token-123")
+        self.assertEqual(request.get_header("X-api-key"), "key-456")
+
     def test_normalizes_japan_time_to_beijing_time(self):
         unit = {
             "Key": "test",

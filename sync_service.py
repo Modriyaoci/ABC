@@ -16,7 +16,13 @@ from typing import Any, Callable
 from zoneinfo import ZoneInfo
 
 
-API_BASE = "https://back.results.asiangames2026.org"
+# Keep the public endpoint as the default, but allow an authorized dedicated
+# feed to be supplied at runtime. Bornan's 429 response explicitly directs
+# integrators to a supported dedicated feed; changing the URL alone cannot
+# bypass the anonymous allowance.
+API_BASE = os.environ.get("OFFICIAL_API_BASE", "https://back.results.asiangames2026.org").rstrip("/")
+OFFICIAL_API_TOKEN = os.environ.get("OFFICIAL_API_TOKEN", "").strip()
+OFFICIAL_API_KEY = os.environ.get("OFFICIAL_API_KEY", "").strip()
 OFFICIAL_RESULTS_URL = "https://results.asiangames2026.org/#/schedule/daily/"
 BEIJING_TZ = ZoneInfo("Asia/Shanghai")
 JAPAN_TZ = ZoneInfo("Asia/Tokyo")
@@ -214,6 +220,10 @@ def fetch_official_json(path: str, retries: int = 3) -> Any:
         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36 "
         "AichiNagoyaLocalSchedule/1.0",
     }
+    if OFFICIAL_API_TOKEN:
+        headers["Authorization"] = f"Bearer {OFFICIAL_API_TOKEN}"
+    if OFFICIAL_API_KEY:
+        headers["X-API-Key"] = OFFICIAL_API_KEY
 
     total_retries = max(1, retries)
     last_error: Exception | None = None

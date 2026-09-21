@@ -159,6 +159,12 @@ function formatSyncTime(value) {
   }).format(date);
 }
 
+function cooldownLabel(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? "稍后" : `${formatSyncTime(value)}（北京时间）`;
+}
+
 async function fetchJson(url, options = {}) {
   const controller = new AbortController();
   const timeout = window.setTimeout(() => controller.abort(), 25000);
@@ -578,12 +584,17 @@ function renderStatus() {
     : status.nextAutomaticSync ? "每天 08:00 自动同步赛程" : "读取自动同步设置";
   elements.automaticSync.title = status.nextAutomaticSync ? `北京时间，下次全量同步 ${formatSyncTime(status.nextAutomaticSync)}` : "北京时间";
   const updated = [status.lastLiveSuccess, status.lastSuccess].filter(Boolean).sort().at(-1);
+  const cooldownUntil = status.provider?.cooldownUntil || status.liveRetryAt || status.retryAt;
+  const cooldown = cooldownUntil && new Date(cooldownUntil).getTime() > Date.now();
   if (state.connectionError) {
     elements.statusDot.classList.add("is-error");
     elements.syncStatus.textContent = "连接中断，正在自动重试";
   } else if (status.running) {
     elements.statusDot.classList.add("is-running");
     elements.syncStatus.textContent = `正在同步${status.progressTotal ? ` ${status.progressDone}/${status.progressTotal}` : ""}`;
+  } else if (cooldown) {
+    elements.statusDot.classList.add("is-error");
+    elements.syncStatus.textContent = `官方限流，自动重试 ${cooldownLabel(cooldownUntil)}`;
   } else if (status.lastError || status.lastLiveError) {
     elements.statusDot.classList.add("is-error");
     elements.syncStatus.textContent = `等待重试 · 上次更新 ${formatSyncTime(updated)}`;
@@ -591,7 +602,9 @@ function renderStatus() {
     elements.statusDot.classList.add("is-success");
     elements.syncStatus.textContent = `更新于 ${formatSyncTime(updated)}`;
   } else elements.syncStatus.textContent = "等待首次同步";
-  const error = state.connectionError || status.lastLiveError || status.lastError;
+  const error = state.connectionError || (cooldown
+    ? `官网暂时限流，页面保留最近成功数据，系统会在 ${cooldownLabel(cooldownUntil)} 自动重试`
+    : status.lastLiveError || status.lastError);
   elements.errorBanner.hidden = !error;
   elements.errorBanner.textContent = error ? `暂未更新，已保留现有赛程。${error}` : "";
   // Schedule edits are shown beside the affected team-tie row. A global
@@ -690,7 +703,15 @@ async function requestSync() {
   elements.syncButton.disabled = true;
   try {
     const response = await fetch("/api/sync", { method: "POST" });
-    if (!response.ok && response.status !== 409) throw new Error("无法启动同步");
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok && response.status !== 409) {
+      if (response.status === 429 && payload.message) {
+        state.connectionError = payload.message;
+        await refresh();
+        return;
+      }
+      throw new Error(payload.message || "无法启动同步");
+    }
     await refresh();
   } catch (error) {
     state.connectionError = error.message;

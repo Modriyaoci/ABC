@@ -14,7 +14,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, unquote, urlparse
 from zoneinfo import ZoneInfo
 
-from sync_service import SPORTS, SyncError, sync_all
+from sync_service import API_BASE, OFFICIAL_API_KEY, OFFICIAL_API_TOKEN, SPORTS, SyncError, sync_all
 from live_service import live_targets, sync_live
 from details_service import get_match_details, get_tournament
 
@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parent
 STATIC_DIR = ROOT / "static"
 DATA_FILE = ROOT / "data" / "schedule.json"
 STATUS_FILE = ROOT / "data" / "sync-status.json"
+DETAILS_CACHE_FILE = ROOT / "data" / "details-cache.json"
 BEIJING_TZ = ZoneInfo("Asia/Shanghai")
 LIVE_INTERVAL = 10
 DETAIL_LIVE_TTL = 4
@@ -325,10 +326,21 @@ class AppState:
             retry = self._parse_time(self.status.get("liveRetryAt"))
             snapshot["nextLiveSync"] = max(self.next_live, retry or now).isoformat(timespec="seconds") if active else None
             snapshot["liveActive"] = active
+            cooldown_values = [self._parse_time(value) for value in (
+                self.status.get("retryAt"), self.status.get("liveRetryAt")
+            )]
+            cooldown = max((value for value in cooldown_values if value and value > now), default=None)
         snapshot["liveEnabled"] = True
         snapshot["liveIntervalSeconds"] = LIVE_INTERVAL
         snapshot["timezone"] = "Asia/Shanghai"
         snapshot["sports"] = SPORTS
+        snapshot["provider"] = {
+            "name": "Bornan Results",
+            "baseUrl": API_BASE,
+            "authorized": bool(OFFICIAL_API_TOKEN or OFFICIAL_API_KEY),
+            "cooldownUntil": cooldown.isoformat(timespec="seconds") if cooldown else None,
+            "realtimeAvailable": cooldown is None,
+        }
         return snapshot
 
     def start_sync(self, reason: str) -> bool:
@@ -440,6 +452,61 @@ class OfficialCache:
 OFFICIAL_CACHE = OfficialCache()
 
 
+class PersistentDetailsCache:
+    """Keep the last successful detail response across process restarts.
+
+    This cache is deliberately a resilience layer, not a second source of
+    truth. It is used only while the provider is unavailable, and every
+    response is marked stale so callers never mistake it for a live score.
+    """
+
+    def __init__(self, path: Path):
+        self.path = path
+        self.lock = threading.Lock()
+        self.values: dict[str, dict] = {}
+        self._load()
+
+    def _load(self) -> None:
+        try:
+            saved = json.loads(self.path.read_text(encoding="utf-8"))
+            if isinstance(saved, dict):
+                self.values = {
+                    str(key): value for key, value in saved.items()
+                    if isinstance(value, dict) and isinstance(value.get("data"), dict)
+                }
+        except (FileNotFoundError, OSError, json.JSONDecodeError):
+            self.values = {}
+
+    def get(self, key: str) -> dict | None:
+        with self.lock:
+            value = self.values.get(str(key))
+            return dict(value) if value else None
+
+    def put(self, key: str, value: dict) -> None:
+        if not isinstance(value, dict):
+            return
+        with self.lock:
+            self.values[str(key)] = {
+                "updatedAt": value.get("updatedAt") or iso_now(),
+                "data": value,
+            }
+            self.path.parent.mkdir(parents=True, exist_ok=True)
+            temporary = self.path.with_suffix(".json.tmp")
+            temporary.write_text(json.dumps(self.values, ensure_ascii=False), encoding="utf-8")
+            temporary.replace(self.path)
+
+
+DETAILS_CACHE = PersistentDetailsCache(DETAILS_CACHE_FILE)
+
+
+def stale_detail(value: dict, reason: str) -> dict:
+    """Annotate cached details without mutating the stored response."""
+    response = dict(value)
+    response["stale"] = True
+    response["message"] = reason
+    return response
+
+
 class RequestHandler(BaseHTTPRequestHandler):
     server_version = "AichiSchedule/1.0"
 
@@ -502,15 +569,27 @@ class RequestHandler(BaseHTTPRequestHandler):
         path = unquote(parsed.path)
         if path in {"/api/match", "/api/tournament"}:
             retry_at = STATE.rate_limit_retry_at()
-            if retry_at:
-                self._send_rate_limit(retry_at)
-                return
             query = parse_qs(parsed.query)
             with STATE.lock:
                 records = list(STATE.payload.get("records", []))
+            if path == "/api/match":
+                match_id = query.get("id", [""])[0]
+                cache_key = f"match:{match_id}"
+            else:
+                sport = query.get("sport", [""])[0]
+                cache_key = f"tournament:{sport}"
+            if retry_at:
+                cached = DETAILS_CACHE.get(cache_key)
+                if cached:
+                    self._send_json(stale_detail(
+                        cached["data"],
+                        "官网暂时限流，当前显示最近一次成功的小分/积分数据；来源恢复后会自动更新",
+                    ))
+                else:
+                    self._send_rate_limit(retry_at)
+                return
             try:
                 if path == "/api/match":
-                    match_id = query.get("id", [""])[0]
                     record = next((row for row in records if row["id"] == match_id), None)
                     if not record:
                         self._send_json({"message": "找不到这场比赛"}, HTTPStatus.NOT_FOUND)
@@ -527,14 +606,22 @@ class RequestHandler(BaseHTTPRequestHandler):
 
                     value = OFFICIAL_CACHE.get(("match", match_id), ttl, load_details)
                 else:
-                    sport = query.get("sport", [""])[0]
                     if sport not in SPORTS:
                         self._send_json({"message": "未知项目"}, HTTPStatus.BAD_REQUEST)
                         return
                     value = OFFICIAL_CACHE.get(("tournament", sport), 55, lambda: get_tournament(sport, records))
+                if not value.get("stale"):
+                    DETAILS_CACHE.put(cache_key, value)
                 self._send_json(value)
             except Exception:
-                self._send_json({"message": "暂时无法读取官网详情，请稍后重试"}, HTTPStatus.BAD_GATEWAY)
+                cached = DETAILS_CACHE.get(cache_key)
+                if cached:
+                    self._send_json(stale_detail(
+                        cached["data"],
+                        "官网暂时无法连接，当前显示最近一次成功的小分/积分数据",
+                    ))
+                else:
+                    self._send_json({"message": "暂时无法读取官网详情，请稍后重试"}, HTTPStatus.BAD_GATEWAY)
             return
         if path == "/api/schedule":
             try:
