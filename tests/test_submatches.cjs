@@ -5,6 +5,11 @@ const path = require("node:path");
 const vm = require("node:vm");
 
 function appContext() {
+  const daytime = Date.parse("2026-09-21T12:00:00+08:00");
+  class DaytimeDate extends Date {
+    constructor(...args) { super(...(args.length ? args : [daytime])); }
+    static now() { return daytime; }
+  }
   const elements = new Map();
   const storage = new Map();
   const elementFor = (selector) => {
@@ -15,6 +20,7 @@ function appContext() {
     return elements.get(selector);
   };
   const context = vm.createContext({
+    Date: DaytimeDate,
     document: { querySelector: elementFor, addEventListener() {}, getElementById: () => null },
     window: { addEventListener() {}, setTimeout, clearTimeout, localStorage: { getItem: (key) => storage.get(key), setItem: (key, value) => storage.set(key, value) } },
     AbortController,
@@ -121,13 +127,18 @@ test("ten-second polling refreshes expanded child scores without a schedule chan
     state.activeSport = "TTE";
     state.records = [{id: "team", sport: "TTE", isLive: true}];
   `, context);
-  context.fetch = async () => ({ ok: true, json: async () => ({
+  let requests = 0;
+  context.fetch = async () => { requests += 1; return { ok: true, json: async () => ({
     sections: [], subMatches: [
       { ...context.payload.subMatches[0], homeScore: "3", status: "OFFICIAL", sections: [{ title: "小分", columns: ["局", "A", "B"], rows: [["第1局", "11", "9"]] }] },
       context.payload.subMatches[1],
     ],
-  }) });
+  }) }; };
   await vm.runInContext('refreshVisibleExtras()', context);
+  assert.equal(requests, 0, "six seconds must not trigger the ten-second poll");
+  vm.runInContext('state.details.get("team").lastRequested = Date.now() - 11000', context);
+  await vm.runInContext('refreshVisibleExtras()', context);
+  assert.equal(requests, 1);
   const html = vm.runInContext('detailContent("team")', context);
   assert.match(html, /<strong>3<\/strong>/);
   assert.match(html, /完场/);

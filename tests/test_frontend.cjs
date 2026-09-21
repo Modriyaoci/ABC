@@ -4,10 +4,23 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const { chromium } = require("playwright");
 
+async function useDaytimeClock(page) {
+  await page.addInitScript(() => {
+    const NativeDate = Date;
+    const daytime = NativeDate.parse("2026-09-21T12:00:00+08:00");
+    const started = NativeDate.now();
+    window.Date = class extends NativeDate {
+      constructor(...args) { super(...(args.length ? args : [daytime + NativeDate.now() - started])); }
+      static now() { return daytime + NativeDate.now() - started; }
+    };
+  });
+}
+
 test("schedule updates without observing running state and retains expanded details", async () => {
   const browser = await chromium.launch({ headless: true, executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" });
   try {
     const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+    await useDaytimeClock(page);
     const errors = [];
     page.on("pageerror", (error) => errors.push(error.message));
     let version = 1;
@@ -91,6 +104,7 @@ test("team sub-match reorder notice stays on the parent row and card", async () 
   const browser = await chromium.launch({ headless: true, executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" });
   try {
     const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+    await useDaytimeClock(page);
     const team = { id: "TTE:team", sport: "TTE", date: "2026-09-20", time: "09:00", category: "男子团体", eventCode: "M.TEAM", stage: "小组赛", matchup: "中国 vs 日本", score: "—", venue: "体育馆", isLive: false };
     const single = { ...team, id: "TTE:single", category: "男子单打", eventCode: "M.SINGLE", matchup: "中国 vs 韩国" };
     const otherSport = { ...team, id: "VVO:team", sport: "VVO", matchup: "中国 vs 伊朗" };
