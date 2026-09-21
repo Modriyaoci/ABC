@@ -37,12 +37,12 @@ function appContext(time = "2026-09-21T12:00:00+08:00") {
     renderView = () => {}; renderStatus = () => {}; renderSchedule = () => {};
     updateDetailPanel = () => {}; filteredRecords = () => state.records;
     state.activeSport = "TTE"; state.loadedVersion = "v1"; state.recordsLoaded = true;
-    state.status = {automaticSyncAllowed: true, liveIntervalSeconds: 10};
+    state.status = {automaticSyncAllowed: true, liveIntervalSeconds: 5};
     state.records = [{id: "tie", sport: "TTE", isLive: true}];
     state.expanded.add("tie");
   `, context);
   const requests = [];
-  let status = {running: false, automaticSyncAllowed: true, liveIntervalSeconds: 10, dataVersion: "v1"};
+  let status = {running: false, automaticSyncAllowed: true, liveIntervalSeconds: 5, dataVersion: "v1"};
   let syncStatus = 202;
   context.fetch = async (url, options = {}) => {
     requests.push({url, method: options.method || "GET"});

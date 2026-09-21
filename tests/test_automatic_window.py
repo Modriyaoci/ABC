@@ -91,7 +91,7 @@ class AutomaticWindowTests(unittest.TestCase):
     def test_live_retry_and_next_interval_cannot_launch_at_night(self):
         self.now = self.now.replace(hour=22, minute=59, second=59)
         self.app.status["lastSuccess"] = self.now.replace(hour=8).isoformat()
-        self.app.next_live = self.now + timedelta(seconds=10)
+        self.app.next_live = self.now + timedelta(seconds=server.LIVE_INTERVAL)
         self.app.status["liveRetryAt"] = "2026-09-21T23:00:05+08:00"
         self.assertEqual(self.app.snapshot()["nextLiveSync"], "2026-09-22T08:00:00+08:00")
         self.now += timedelta(seconds=11)

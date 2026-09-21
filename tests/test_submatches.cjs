@@ -114,16 +114,16 @@ test("small-score tables put names on the left and periods across the score colu
   assert.doesNotMatch(html, /<th scope="col">局\/节<\/th>/);
 });
 
-test("ten-second polling refreshes expanded child scores without a schedule change", async () => {
+test("five-second polling refreshes expanded child scores without a schedule change", async () => {
   const context = appContext();
   context.payload = { sections: [], subMatches: [
     { id: "one", number: 1, home: "A", away: "B", homeScore: "1", awayScore: "0", status: "RUNNING", sections: [] },
     { id: "two", number: 2, home: "C", away: "D", status: "START_LIST", sections: [] },
   ] };
   vm.runInContext(`
-    state.details.set("team", {data: payload, lastRequested: Date.now() - 6000});
+    state.details.set("team", {data: payload, lastRequested: Date.now() - 4000});
     state.expanded.add("team");
-    state.status = {liveIntervalSeconds: 10};
+    state.status = {liveIntervalSeconds: 5};
     state.activeSport = "TTE";
     state.records = [{id: "team", sport: "TTE", isLive: true}];
   `, context);
@@ -135,8 +135,8 @@ test("ten-second polling refreshes expanded child scores without a schedule chan
     ],
   }) }; };
   await vm.runInContext('refreshVisibleExtras()', context);
-  assert.equal(requests, 0, "six seconds must not trigger the ten-second poll");
-  vm.runInContext('state.details.get("team").lastRequested = Date.now() - 11000', context);
+  assert.equal(requests, 0, "four seconds must not trigger the five-second poll");
+  vm.runInContext('state.details.get("team").lastRequested = Date.now() - 5000', context);
   await vm.runInContext('refreshVisibleExtras()', context);
   assert.equal(requests, 1);
   const html = vm.runInContext('detailContent("team")', context);
