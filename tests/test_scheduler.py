@@ -5,7 +5,15 @@ from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import Mock, patch
 
-from server import AppState, BEIJING_TZ, LIVE_INTERVAL, match_detail_ttl, next_eight, schedule_changes
+from server import (
+    AppState,
+    BEIJING_TZ,
+    LIVE_INTERVAL,
+    RATE_LIMIT_RETRY_INTERVAL,
+    match_detail_ttl,
+    next_eight,
+    schedule_changes,
+)
 from sync_service import SyncError
 from live_service import live_targets, sync_live
 
@@ -91,8 +99,8 @@ class SchedulerTests(unittest.TestCase):
         self.assertEqual(self.app.status["lastSuccess"], "2026-09-17T08:01:00+08:00")
 
     def test_live_interval_and_team_detail_cache_window(self):
-        self.assertEqual(LIVE_INTERVAL, 5)
-        self.assertEqual(self.app.snapshot()["liveIntervalSeconds"], 5)
+        self.assertEqual(LIVE_INTERVAL, 10)
+        self.assertEqual(self.app.snapshot()["liveIntervalSeconds"], 10)
         self.assertEqual(match_detail_ttl({"isLive": True}), 4)
         self.assertEqual(match_detail_ttl({"isLive": False, "sport": "BDM", "category": "女子团体"}), 4)
         self.assertEqual(match_detail_ttl({"isLive": False, "sport": "TTE", "eventCode": "M.TEAM----------------"}), 4)
@@ -109,6 +117,24 @@ class SchedulerTests(unittest.TestCase):
         self.app._run_sync("live")
         self.assertEqual(self.app.status["liveRetryAt"], (self.now + timedelta(seconds=300)).isoformat())
 
+    def test_rate_limit_uses_long_backoff_for_live_and_full_sync(self):
+        error = SyncError("官网匿名请求额度已用尽（HTTP 429），请稍后重试")
+        self.app.status["lastSuccess"] = self.now.isoformat()
+        self.app.payload["meta"]["officialDays"]["TEN"] = ["2026-09-17"]
+        self.app.live_sync = Mock(side_effect=error)
+        self.app._run_sync("live")
+        self.assertEqual(
+            self.app.status["liveRetryAt"],
+            (self.now + timedelta(seconds=RATE_LIMIT_RETRY_INTERVAL)).isoformat(),
+        )
+
+        self.app.full_sync = Mock(side_effect=error)
+        self.app._run_sync("manual")
+        self.assertEqual(
+            self.app.status["retryAt"],
+            (self.now + timedelta(seconds=RATE_LIMIT_RETRY_INTERVAL)).isoformat(),
+        )
+
     def test_schedule_changes_ignore_live_scores_and_report_time_edits(self):
         old = {"records": [{
             "id": "BDM:tie-7", "date": "2026-09-20", "time": "14:00",
@@ -121,6 +147,45 @@ class SchedulerTests(unittest.TestCase):
         changes = schedule_changes(old, moved)
         self.assertEqual(len(changes), 1)
         self.assertEqual(changes[0]["fields"], ["time"])
+
+    def test_schedule_change_notice_survives_later_live_refreshes_and_restart(self):
+        old = {
+            "meta": {"generatedAt": "v1", "officialDays": {"BDM": ["2026-09-20"]}},
+            "records": [{
+                "id": "BDM:tie-7", "date": "2026-09-20", "time": "14:00",
+                "category": "女子团体", "stage": "16强赛", "matchup": "哈萨克斯坦 vs 印度",
+                "venue": "一宫市综合体育馆", "score": "0 : 0",
+            }],
+        }
+        moved = {
+            "meta": {"generatedAt": "v2", "officialDays": {"BDM": ["2026-09-20"]}},
+            "records": [{**old["records"][0], "time": "15:00", "score": "1 : 0"}],
+        }
+        score_update = {
+            "meta": {**moved["meta"], "generatedAt": "v3"},
+            "records": [{**moved["records"][0], "score": "2 : 0"}],
+        }
+        self.app.payload = old
+        self.app.live_sync = Mock(side_effect=[moved, score_update])
+
+        # The first live update detects the schedule edit and persists the
+        # notice.  A later score-only refresh must not clear it.
+        self.app._run_sync("live")
+        self.assertTrue(self.app.status["scheduleChanged"])
+        self.assertEqual(self.app.status["scheduleChangeCount"], 1)
+        changed_at = self.app.status["scheduleChangeAt"]
+        self.now += timedelta(seconds=LIVE_INTERVAL)
+        self.app._run_sync("live")
+        self.assertTrue(self.app.status["scheduleChanged"])
+        self.assertEqual(self.app.status["scheduleChangeCount"], 1)
+        self.assertEqual(self.app.status["scheduleChangeAt"], changed_at)
+
+        saved = json.loads(self.status.read_text())
+        self.assertTrue(saved["scheduleChanged"])
+        self.assertEqual(saved["scheduleChangeCount"], 1)
+        restarted = AppState(self.data, self.status, lambda: self.now)
+        self.assertTrue(restarted.status["scheduleChanged"])
+        self.assertEqual(restarted.status["scheduleChangeCount"], 1)
 
 
 class LiveMergeTests(unittest.TestCase):
@@ -146,10 +211,36 @@ class LiveMergeTests(unittest.TestCase):
             self.assertEqual([r["id"] for r in result["records"]], ["VVO:new", "TEN:future"])
             self.assertEqual(result["records"][1], future)
             successful = path.read_bytes()
-            with patch("live_service.fetch_official_json", side_effect=SyncError("offline")):
-                with self.assertRaises(SyncError):
-                    sync_live(path, now)
+            with patch("live_service.fetch_official_json", return_value=[]):
+                result = sync_live(path, now)
             self.assertEqual(path.read_bytes(), successful)
+
+    def test_live_now_aggregate_merges_one_current_score_request(self):
+        with TemporaryDirectory() as directory:
+            path = Path(directory) / "schedule.json"
+            old = {
+                "meta": {"generatedAt": "old", "officialDays": {"VVO": ["2026-09-17"]}},
+                "records": [{
+                    "id": "VVO:live", "sport": "VVO", "sourceDate": "2026-09-17",
+                    "date": "2026-09-17", "time": "10:00", "home": {"Org": "CHN"},
+                    "away": {"Org": "JPN"}, "matchup": "中国 vs 日本", "score": "0 : 0",
+                }],
+            }
+            path.write_text(json.dumps(old))
+            now = datetime(2026, 9, 17, 12, tzinfo=BEIJING_TZ)
+            live_unit = {
+                "Disc": "VVO", "Key": "live", "DateTimeRaw": "2026-09-17T10:00:00+09:00",
+                "Type": "T", "EventDesc": "Men's Team", "PhaseDesc": "Preliminary Round",
+                "UnitDesc": "Match 1", "VenueDesc": "Park Arena Komaki", "Status": "RUNNING",
+                "Home": {"Org": "CHN", "Result": "12"},
+                "Away": {"Org": "JPN", "Result": "10"},
+            }
+            with patch("live_service.fetch_official_json", return_value=[live_unit]) as fetch:
+                result = sync_live(path, now)
+            self.assertEqual(fetch.call_count, 1)
+            self.assertEqual(fetch.call_args.args[0], "/s/AG2026/en/ALL/schedule/live-now")
+            self.assertEqual(result["records"][0]["id"], "VVO:live")
+            self.assertEqual(result["records"][0]["score"], "12 : 10")
 
     def test_live_refresh_keeps_matchup_when_official_temporarily_omits_teams(self):
         with TemporaryDirectory() as directory:
@@ -173,9 +264,10 @@ class LiveMergeTests(unittest.TestCase):
             self.assertEqual(result["records"][0]["matchup"], "中国 vs 日本")
             self.assertEqual(result["records"][0]["score"], "待赛")
             successful = path.read_bytes()
+            # An empty aggregate live-now response is a successful no-op.
             with patch("live_service.fetch_official_json", return_value=[]):
-                with self.assertRaises(SyncError):
-                    sync_live(path, now)
+                result = sync_live(path, now)
+            self.assertEqual(result["records"][0]["matchup"], "中国 vs 日本")
             self.assertEqual(path.read_bytes(), successful)
 
 
