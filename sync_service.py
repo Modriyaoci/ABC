@@ -22,6 +22,15 @@ BEIJING_TZ = ZoneInfo("Asia/Shanghai")
 JAPAN_TZ = ZoneInfo("Asia/Tokyo")
 SYSTEM_CA_FILE = Path("/etc/ssl/cert.pem")
 SSL_CONTEXT = ssl.create_default_context(cafile=str(SYSTEM_CA_FILE) if SYSTEM_CA_FILE.exists() else None)
+# The development machine may expose a shared HTTP(S) proxy through the
+# environment.  That proxy is also used by other jobs and has already
+# exhausted the official service's anonymous allowance.  Prefer a direct
+# connection for this feed; set OFFICIAL_USE_SYSTEM_PROXY=1 only when a
+# network requires the configured proxy.
+DIRECT_OPENER = urllib.request.build_opener(
+    urllib.request.ProxyHandler({}),
+    urllib.request.HTTPSHandler(context=SSL_CONTEXT),
+)
 
 SPORTS = {
     "TEN": "网球",
@@ -112,6 +121,12 @@ STATUS_NAMES = {
 
 class SyncError(RuntimeError):
     pass
+
+
+def _open_official(request: urllib.request.Request, timeout: float):
+    if os.environ.get("OFFICIAL_USE_SYSTEM_PROXY", "").lower() in {"1", "true", "yes"}:
+        return urllib.request.urlopen(request, timeout=timeout, context=SSL_CONTEXT)
+    return DIRECT_OPENER.open(request, timeout=timeout)
 
 
 # The results service applies a fairly strict per-client rate limit.  A full
@@ -206,7 +221,7 @@ def fetch_official_json(path: str, retries: int = 3) -> Any:
         _wait_for_request()
         try:
             request = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(request, timeout=25, context=SSL_CONTEXT) as response:
+            with _open_official(request, timeout=25) as response:
                 if response.status != 200:
                     raise SyncError(f"官网返回 HTTP {response.status}")
                 return _decode_response(response.read())

@@ -75,7 +75,7 @@ class SyncServiceTests(unittest.TestCase):
         with patch("sync_service._wait_for_request"), \
                 patch("sync_service._set_rate_limit_cooldown") as cooldown, \
                 patch("sync_service.time.sleep"), \
-                patch("sync_service.urllib.request.urlopen", side_effect=[limited, Response()]) as open_url:
+                patch("sync_service._open_official", side_effect=[limited, Response()]) as open_url:
             self.assertEqual(fetch_official_json("/test", retries=2), [{"raw": "2026-09-19"}])
 
         self.assertEqual(cooldown.call_args.args[0], 8)
@@ -93,7 +93,7 @@ class SyncServiceTests(unittest.TestCase):
         with patch("sync_service._wait_for_request"), \
                 patch("sync_service._set_rate_limit_cooldown"), \
                 patch("sync_service.time.sleep"), \
-                patch("sync_service.urllib.request.urlopen", side_effect=limited) as open_url:
+                patch("sync_service._open_official", side_effect=limited) as open_url:
             with self.assertRaisesRegex(Exception, "HTTP 429"):
                 fetch_official_json("/test", retries=3)
         self.assertEqual(open_url.call_count, 1)
