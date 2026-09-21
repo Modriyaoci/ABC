@@ -57,7 +57,7 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
 
     # The official site exposes one compressed, cross-sport feed for matches
     # that are currently live.  Polling this aggregate endpoint once per
-    # five-second UI refresh avoids the old five-to-seven daily-feed requests
+    # Ten-second UI refresh avoids the old five-to-seven daily-feed requests
     # per cycle, which quickly exhausts the anonymous API allowance.  It is a
     # partial feed by design: matches that are not currently live remain in
     # the last successful schedule snapshot until the next full refresh.

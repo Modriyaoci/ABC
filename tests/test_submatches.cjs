@@ -108,7 +108,7 @@ test("small-score tables put names on the left and periods across the score colu
   assert.doesNotMatch(html, /<th scope="col">局\/节<\/th>/);
 });
 
-test("five-second polling refreshes expanded child scores without a schedule change", async () => {
+test("ten-second polling refreshes expanded child scores without a schedule change", async () => {
   const context = appContext();
   context.payload = { sections: [], subMatches: [
     { id: "one", number: 1, home: "A", away: "B", homeScore: "1", awayScore: "0", status: "RUNNING", sections: [] },
@@ -117,7 +117,7 @@ test("five-second polling refreshes expanded child scores without a schedule cha
   vm.runInContext(`
     state.details.set("team", {data: payload, lastRequested: Date.now() - 6000});
     state.expanded.add("team");
-    state.status = {liveIntervalSeconds: 5};
+    state.status = {liveIntervalSeconds: 10};
     state.activeSport = "TTE";
     state.records = [{id: "team", sport: "TTE", isLive: true}];
   `, context);

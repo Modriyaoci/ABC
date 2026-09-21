@@ -99,8 +99,8 @@ class SchedulerTests(unittest.TestCase):
         self.assertEqual(self.app.status["lastSuccess"], "2026-09-17T08:01:00+08:00")
 
     def test_live_interval_and_team_detail_cache_window(self):
-        self.assertEqual(LIVE_INTERVAL, 5)
-        self.assertEqual(self.app.snapshot()["liveIntervalSeconds"], 5)
+        self.assertEqual(LIVE_INTERVAL, 10)
+        self.assertEqual(self.app.snapshot()["liveIntervalSeconds"], 10)
         self.assertEqual(match_detail_ttl({"isLive": True}), 4)
         self.assertEqual(match_detail_ttl({"isLive": False, "sport": "BDM", "category": "女子团体"}), 4)
         self.assertEqual(match_detail_ttl({"isLive": False, "sport": "TTE", "eventCode": "M.TEAM----------------"}), 4)
