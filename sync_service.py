@@ -200,7 +200,7 @@ def _decode_response(body: bytes) -> Any:
 
 def fetch_official_json(path: str, retries: int = 3) -> Any:
     # Do not append a unique cache-busting query to every request.  That
-    # bypasses the official CDN and turns the ten-second live poll into a
+    # bypasses the official CDN and turns the five-second live poll into a
     # stream of origin requests, which is what triggers HTTP 429.  Explicit
     # no-cache headers still let a cache revalidate a response when needed.
     url = f"{API_BASE}{path}"
