@@ -82,6 +82,22 @@ class SyncServiceTests(unittest.TestCase):
         first_request = open_url.call_args_list[0].args[0]
         self.assertNotIn("_=", first_request.full_url)
 
+    def test_official_quota_429_stops_without_retry_after(self):
+        limited = urllib.error.HTTPError(
+            "https://back.results.asiangames2026.org/test",
+            429,
+            "Too Many Requests",
+            {},
+            io.BytesIO(),
+        )
+        with patch("sync_service._wait_for_request"), \
+                patch("sync_service._set_rate_limit_cooldown"), \
+                patch("sync_service.time.sleep"), \
+                patch("sync_service.urllib.request.urlopen", side_effect=limited) as open_url:
+            with self.assertRaisesRegex(Exception, "HTTP 429"):
+                fetch_official_json("/test", retries=3)
+        self.assertEqual(open_url.call_count, 1)
+
     def test_normalizes_japan_time_to_beijing_time(self):
         unit = {
             "Key": "test",

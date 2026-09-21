@@ -225,6 +225,13 @@ def fetch_official_json(path: str, retries: int = 3) -> Any:
                     RATE_LIMIT_BACKOFF_SECONDS * (2 ** attempt),
                 )
                 _set_rate_limit_cooldown(delay)
+                # This provider's anonymous quota response has no
+                # Retry-After header and will not recover within this call.
+                # Stop immediately so a full refresh does not spend minutes
+                # repeating doomed requests. A server-provided Retry-After,
+                # on the other hand, is safe to honour once.
+                if retry_after is None:
+                    break
             else:
                 last_error = exc
                 delay = 1.5 * (attempt + 1) if attempt + 1 < total_retries else 0.0
