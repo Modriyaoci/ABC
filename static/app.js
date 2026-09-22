@@ -187,7 +187,7 @@ function recordCategory(record) { return String(record.eventCode || record.categ
 function sportRecords() { return state.records.filter((record) => record.sport === state.activeSport); }
 function recordStatus(record) {
   if (record.isLive || ["LIVE", "RUNNING", "IN_PROGRESS"].includes(String(record.status || "").toUpperCase())) return "live";
-  if (["OFFICIAL", "FINISHED", "COMPLETED", "CANCELED", "CANCELLED"].includes(String(record.status || "").toUpperCase())) return "completed";
+  if (["OFFICIAL", "UNOFFICIAL", "FINISHED", "COMPLETED", "CANCELED", "CANCELLED"].includes(String(record.status || "").toUpperCase())) return "completed";
   return "upcoming";
 }
 function dateLabel(value) {
@@ -580,13 +580,19 @@ function renderStatus() {
   elements.syncButton.classList.toggle("is-running", Boolean(status.running));
   const interval = Number(status.liveIntervalSeconds) || 30;
   elements.automaticSync.textContent = todayCompleted()
-    ? "今日比赛已全部完场 · 自动同步已停止"
+    ? status.resultsPendingConfirmation
+      ? status.resultConfirmationExpired
+        ? "待确认赛果自动核对已结束 · 请手动同步"
+        : "今日比赛已结束 · 每 5 分钟核对待确认赛果"
+      : "今日比赛已全部完场 · 自动同步已停止"
     : !automaticSyncAllowed()
       ? "北京时间 08:00–23:00 自动更新 · 当前仅手动同步"
       : status.liveEnabled
         ? `北京时间 08:00–23:00 自动更新 · 比赛日约每 ${interval} 秒更新比分`
         : "北京时间 08:00–23:00 自动更新 · 每天 08:00 全量同步";
-  elements.automaticSync.title = status.nextAutomaticSync ? `北京时间，下次全量同步 ${formatSyncTime(status.nextAutomaticSync)}` : "北京时间";
+  elements.automaticSync.title = todayCompleted() && status.resultsPendingConfirmation && status.resultConfirmationDeadline
+    ? `北京时间，待确认赛果自动核对截止 ${formatSyncTime(status.resultConfirmationDeadline)}`
+    : status.nextAutomaticSync ? `北京时间，下次全量同步 ${formatSyncTime(status.nextAutomaticSync)}` : "北京时间";
   const updated = [status.lastLiveSuccess, status.lastSuccess].filter(Boolean).sort().at(-1);
   if (state.connectionError) {
     elements.statusDot.classList.add("is-error");
@@ -671,8 +677,9 @@ function automaticSyncAllowed(now = Date.now()) {
 }
 
 async function refreshVisibleExtras(force = false, { manual = false, completionRefresh = false } = {}) {
-  // On completion the server has finalized its existing detail caches. Read
-  // those once so open views include the final score, then stop polling them.
+  // Completion refreshes only read finalized server caches, including versions
+  // updated by the low-frequency confirmation checks.
+  if (!manual && todayCompleted() && state.status?.resultConfirmationExpired) return;
   if (!manual && !automaticSyncAllowed() && !(completionRefresh && todayCompleted())) return;
   const interval = (Number(state.status?.liveIntervalSeconds) || 30) * 1000;
   if (state.view !== "schedule") {
@@ -701,16 +708,16 @@ async function refresh(force = false) {
     const status = await fetchJson("/api/status");
     const wasCompleted = todayCompleted();
     state.status = status;
-    if (!wasCompleted && todayCompleted()) {
+    const version = statusVersion(status);
+    const changed = version !== state.loadedVersion;
+    if (todayCompleted() && !status.resultConfirmationExpired && (!wasCompleted || changed)) {
       state.completionExtrasPending = true;
       state.completionExtrasRetryAt = 0;
     }
-    if (!todayCompleted()) {
+    if (!todayCompleted() || status.resultConfirmationExpired) {
       state.completionExtrasPending = false;
       state.completionExtrasRetryAt = 0;
     }
-    const version = statusVersion(status);
-    const changed = version !== state.loadedVersion;
     if (force || !state.recordsLoaded || changed) await loadSchedule(version);
     state.connectionError = "";
     renderStatus();
@@ -723,12 +730,13 @@ async function refresh(force = false) {
       const completionRefresh = state.completionExtrasPending && Date.now() >= state.completionExtrasRetryAt;
       state.manualExtrasPending = false;
       if (completionRefresh) {
-        state.completionExtrasRetryAt = Date.now() + (Number(status.liveIntervalSeconds) || 30) * 1000;
+        const retrySeconds = status.resultsPendingConfirmation ? 300 : (Number(status.liveIntervalSeconds) || 30);
+        state.completionExtrasRetryAt = Date.now() + retrySeconds * 1000;
       }
       await refreshVisibleExtras(force || changed || manual || completionRefresh, { manual, completionRefresh });
       // A failed final cache read must not lose the final score. Subsequent
       // attempts still use automatic=1 (cache only after completion), at the
-      // normal score interval even when focus forces a status refresh.
+      // confirmation interval while results are pending, even on focus.
       if (completionRefresh) state.completionExtrasPending = visibleExtrasNeedRetry();
     }
   } catch (error) {
