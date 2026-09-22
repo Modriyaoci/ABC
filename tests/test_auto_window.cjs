@@ -183,6 +183,81 @@ test("confirmed completion is displayed for its Beijing date, including after 23
   assert.doesNotMatch(app.getElement("#automatic-sync").textContent, /全部完场/);
 });
 
+test("unofficial results are completed only when no longer live", () => {
+  const app = appContext();
+  assert.equal(app.run('recordStatus({status: "UNOFFICIAL", isLive: false})'), "completed");
+  assert.equal(app.run('recordStatus({status: "UNOFFICIAL", isLive: true})'), "live");
+  assert.equal(app.run('recordStatus({status: "SCHEDULED", isLive: false})'), "upcoming");
+});
+
+test("pending confirmation displays low-frequency checks while automatic details stay paused", async () => {
+  const app = appContext();
+  app.setStatus({todayCompleted: true, resultsPendingConfirmation: true, completionDate: "2026-09-21", automaticSyncAllowed: false});
+  await app.run("refresh()");
+  app.run("renderRealStatus()");
+  assert.equal(app.getElement("#automatic-sync").textContent, "今日比赛已结束 · 每 5 分钟核对待确认赛果");
+  assert.equal(app.run("automaticSyncAllowed()"), false);
+  assert.equal(app.detailRequests().length, 1, "final cached details are read once");
+  app.setNow("2026-09-21T12:00:05+08:00");
+  await app.run("refresh(true)");
+  await app.run("refreshVisibleExtras(true)");
+  assert.equal(app.detailRequests().length, 1, "pending results do not restart high-frequency detail polling");
+  app.setStatus({resultsPendingConfirmation: false});
+  await app.run("refresh()");
+  app.run("renderRealStatus()");
+  assert.equal(app.getElement("#automatic-sync").textContent, "今日比赛已全部完场 · 自动同步已停止");
+});
+
+test("expired confirmation window asks for manual sync and keeps automatic details paused", async () => {
+  const app = appContext();
+  app.setStatus({
+    todayCompleted: true, resultsPendingConfirmation: true,
+    resultConfirmationExpired: true, resultConfirmationDeadline: "2026-09-21T11:59:00+08:00",
+    completionDate: "2026-09-21", automaticSyncAllowed: false,
+  });
+  await app.run("refresh()");
+  app.run("renderRealStatus()");
+  assert.equal(app.getElement("#automatic-sync").textContent, "待确认赛果自动核对已结束 · 请手动同步");
+  assert.match(app.getElement("#automatic-sync").title, /自动核对截止/);
+  app.setNow("2026-09-21T12:00:05+08:00");
+  await app.run("refresh(true)");
+  await app.run("refreshVisibleExtras(true)");
+  assert.equal(app.detailRequests().length, 0, "expired confirmation does not read automatic details");
+  await app.run('loadMatch("tie", true)');
+  assert.equal(app.detailRequests().length, 1, "manual detail reads remain available");
+  assert.doesNotMatch(app.detailRequests()[0].url, /automatic=1/);
+});
+
+test("late confirmation versions refresh cached details and failed reads use a five-minute interval", async () => {
+  const app = appContext();
+  app.setStatus({todayCompleted: true, resultsPendingConfirmation: true, completionDate: "2026-09-21", automaticSyncAllowed: false});
+  await app.run("refresh()");
+  assert.equal(app.detailRequests().length, 1);
+  const originalFetch = app.context.fetch;
+  let fail = true;
+  app.context.fetch = async (url, options) => {
+    const response = await originalFetch(url, options);
+    if (url.startsWith("/api/match?") && fail) throw new Error("temporary error");
+    return response;
+  };
+  app.setStatus({dataVersion: "v2"});
+  app.setNow("2026-09-21T12:05:00+08:00");
+  await app.run("refresh()");
+  assert.equal(app.detailRequests().length, 2, "new confirmation version updates final cached details");
+  app.setNow("2026-09-21T12:05:05+08:00");
+  await app.run("refresh(true)");
+  assert.equal(app.detailRequests().length, 2, "failed reads do not retry after five seconds");
+  fail = false;
+  app.setNow("2026-09-21T12:10:00+08:00");
+  await app.run("refresh()");
+  assert.equal(app.detailRequests().length, 3);
+  assert.equal(app.run("state.completionExtrasPending"), false);
+  app.setStatus({dataVersion: "v3", resultConfirmationExpired: true});
+  app.setNow("2026-09-21T13:00:00+08:00");
+  await app.run("refresh(true)");
+  assert.equal(app.detailRequests().length, 3, "expired window suppresses reads even for a new version");
+});
+
 test("completion reads final cached details once, then forced refresh and focus do not poll them", async () => {
   for (const view of ["schedule", "groups", "bracket"]) {
     const app = appContext();

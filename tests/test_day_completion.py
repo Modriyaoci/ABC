@@ -57,7 +57,7 @@ class DayCompletionTests(unittest.TestCase):
             thread.return_value.start.assert_called_once()
 
     def test_empty_missing_or_unconfirmed_schedule_does_not_stop(self):
-        for status in ("RUNNING", "SCHEDULED", "START_LIST", "POSTPONED", "SUSPENDED", "UNOFFICIAL", "", "NEW_STATUS"):
+        for status in ("RUNNING", "SCHEDULED", "START_LIST", "POSTPONED", "SUSPENDED", "", "NEW_STATUS"):
             with self.subTest(status=status):
                 self.app.payload["records"][0]["status"] = status
                 self.assertFalse(self.completed())
@@ -159,10 +159,11 @@ class DayCompletionTests(unittest.TestCase):
                 self.app.live_sync = Mock(return_value=self.payload)
                 with patch.object(server, "get_match_details", side_effect=[pending, {"available": True, "status": "OFFICIAL", "score": "3 : 2"}]) as match:
                     self.app._run_sync("live")
-                    self.assertFalse(self.completed())
+                    self.assertTrue(self.completed())
+                    self.assertTrue(self.app.snapshot()["resultsPendingConfirmation"])
                     self.assertNotIn("completedForDate", self.cache.peek(("match", "TTE:tie")))
-                    self.now += timedelta(seconds=server.LIVE_INTERVAL)
-                    self.app._run_sync("live")
+                    self.now += timedelta(seconds=server.RESULT_CONFIRMATION_INTERVAL)
+                    self.app._run_sync("confirmation")
                     self.assertTrue(self.completed())
                     self.assertEqual(match.call_count, 2)
                     self.assertEqual(self.cache.peek(("match", "TTE:tie"))["score"], "3 : 2")
@@ -172,6 +173,92 @@ class DayCompletionTests(unittest.TestCase):
         out = get_match_details("TTE:tie", lambda _: {"Info": {"Status": "RUNNING", "IsLive": True}})
         self.assertEqual(out["status"], "RUNNING")
         self.assertTrue(out["isLive"])
+
+    def test_unofficial_stops_fast_polling_and_checks_every_five_minutes(self):
+        self.app.payload["records"][0]["status"] = "UNOFFICIAL"
+        self.app.status["lastLiveSuccess"] = self.now.isoformat()
+        self.assertTrue(self.completed())
+        self.assertFalse(self.app.snapshot()["automaticSyncAllowed"])
+        self.assertIsNone(self.app.snapshot()["nextLiveSync"])
+        with patch("server.threading.Thread") as thread:
+            self.assertFalse(self.app.start_sync("live"))
+            self.assertFalse(self.app.start_sync("confirmation"))
+            thread.assert_not_called()
+        with patch.object(self.app, "start_sync", return_value=True) as start:
+            self.now += timedelta(seconds=299)
+            self.assertIsNone(self.app.tick())
+            self.now += timedelta(seconds=1)
+            self.assertEqual(self.app.tick(), "confirmation")
+            start.assert_called_once_with("confirmation")
+        self.app.live_sync = Mock(return_value=self.app.payload)
+        self.app.full_sync = Mock()
+        self.app._run_sync("confirmation")
+        self.app.live_sync.assert_called_once()
+        self.app.full_sync.assert_not_called()
+        self.assertIsNone(self.app.tick())
+        self.app.payload["records"][0]["status"] = "OFFICIAL"
+        self.assertFalse(self.app.snapshot()["resultsPendingConfirmation"])
+        self.now += timedelta(minutes=5)
+        self.assertIsNone(self.app.tick())
+
+    def test_confirmation_error_does_not_restart_fast_retry(self):
+        self.app.payload["records"][0]["status"] = "UNOFFICIAL"
+        self.app.live_sync = Mock(side_effect=RuntimeError("offline"))
+        self.app._run_sync("confirmation")
+        self.assertEqual(self.app.status["liveRetryAt"], (self.now + timedelta(minutes=5)).isoformat())
+        self.now += timedelta(seconds=5)
+        self.assertIsNone(self.app.tick())
+
+    def test_confirmation_expires_at_one_hour_but_manual_is_allowed(self):
+        self.app.payload["records"][0]["status"] = "UNOFFICIAL"
+        deadline = self.now + timedelta(hours=1)
+        self.assertEqual(self.app.snapshot()["resultConfirmationDeadline"], deadline.isoformat())
+        self.now = deadline - timedelta(seconds=1)
+        with patch.object(self.app, "start_sync", return_value=True):
+            self.assertEqual(self.app.tick(), "confirmation")
+        self.now = deadline
+        status = self.app.snapshot()
+        self.assertTrue(status["resultConfirmationExpired"])
+        self.assertIsNone(status["nextResultConfirmation"])
+        self.assertIsNone(self.app.tick())
+        with patch("server.threading.Thread") as thread:
+            self.assertFalse(self.app.start_sync("confirmation"))
+            thread.assert_not_called()
+            self.assertTrue(self.app.start_sync("manual"))
+
+    def test_restart_and_manual_sync_do_not_extend_confirmation_deadline(self):
+        self.app.payload["records"][0]["status"] = "UNOFFICIAL"
+        self.data.write_text(json.dumps(self.app.payload))
+        deadline = self.app.snapshot()["resultConfirmationDeadline"]
+        self.now += timedelta(minutes=45)
+        restarted = server.AppState(self.data, self.status, lambda: self.now)
+        self.assertEqual(restarted.snapshot()["resultConfirmationDeadline"], deadline)
+        restarted.full_sync = Mock(return_value=restarted.payload)
+        restarted._run_sync("manual")
+        self.assertEqual(restarted.snapshot()["resultConfirmationDeadline"], deadline)
+        self.now += timedelta(minutes=16)
+        restarted._run_sync("manual")
+        self.assertTrue(restarted.snapshot()["resultConfirmationExpired"])
+        self.assertIsNone(restarted.tick())
+
+    def test_pending_details_also_expire_and_next_day_gets_a_new_deadline(self):
+        self.app.final_details_pending_date = "2026-09-21"
+        self.app._save_status()
+        self.now += timedelta(hours=1)
+        restarted = server.AppState(self.data, self.status, lambda: self.now)
+        self.assertTrue(restarted.snapshot()["resultConfirmationExpired"])
+        self.assertIsNone(restarted.tick())
+        self.now += timedelta(days=1)
+        self.assertFalse(restarted.snapshot()["resultConfirmationExpired"])
+        self.assertIsNone(restarted.snapshot()["resultConfirmationDeadline"])
+        tomorrow = copy.deepcopy(self.payload)
+        tomorrow["meta"]["officialDays"] = {"TTE": ["2026-09-22"]}
+        tomorrow["records"][0].update(date="2026-09-22", status="UNOFFICIAL")
+        restarted.full_sync = Mock(return_value=tomorrow)
+        restarted._run_sync("manual")
+        status = restarted.snapshot()
+        self.assertFalse(status["resultConfirmationExpired"])
+        self.assertEqual(status["resultConfirmationDeadline"], (self.now + timedelta(hours=1)).isoformat())
 
 
 if __name__ == "__main__":
