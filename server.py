@@ -7,6 +7,8 @@ import os
 import signal
 import threading
 import time
+import urllib.error
+import urllib.request
 from datetime import datetime, timedelta
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -14,7 +16,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, unquote, urlparse
 from zoneinfo import ZoneInfo
 
-from sync_service import SPORTS, SyncError, sync_all
+from sync_service import SSL_CONTEXT, SPORTS, SyncError, sync_all
 from live_service import FINAL_STATUSES, live_targets, sync_live
 from details_service import get_match_details, get_tournament
 
@@ -33,6 +35,9 @@ RETRY_INTERVAL = 300
 # been exhausted, rather than a short transient failure. Avoid retrying every
 # five minutes and extending the outage while that quota window recovers.
 RATE_LIMIT_RETRY_INTERVAL = 3600
+PLAYER_PHOTO_BASE = "https://results.asiangames2026.org/ag2026/photos/"
+PLAYER_PHOTO_CACHE: dict[str, tuple[bytes, str]] = {}
+PLAYER_PHOTO_LOCK = threading.Lock()
 SPORT_PATHS = {
     "TEN": "tennis",
     "BBL": "baseball",
@@ -571,9 +576,46 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def _send_player_photo(self, registration: str) -> None:
+        if not registration or len(registration) > 40 or not registration.replace("_", "").replace("-", "").isalnum():
+            self.send_error(HTTPStatus.BAD_REQUEST)
+            return
+        with PLAYER_PHOTO_LOCK:
+            cached = PLAYER_PHOTO_CACHE.get(registration)
+        if cached:
+            body, content_type = cached
+        else:
+            try:
+                request = urllib.request.Request(f"{PLAYER_PHOTO_BASE}{registration}.jpg", headers={"User-Agent": "AichiSchedule/1.0", "Accept": "image/jpeg,image/*"})
+                opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), urllib.request.HTTPSHandler(context=SSL_CONTEXT))
+                with opener.open(request, timeout=20) as response:
+                    if response.status != 200:
+                        self.send_error(HTTPStatus.NOT_FOUND)
+                        return
+                    body = response.read(2 * 1024 * 1024 + 1)
+                    content_type = response.headers.get("Content-Type", "image/jpeg").split(";", 1)[0]
+                if len(body) > 2 * 1024 * 1024 or not content_type.startswith("image/"):
+                    self.send_error(HTTPStatus.BAD_GATEWAY)
+                    return
+                with PLAYER_PHOTO_LOCK:
+                    PLAYER_PHOTO_CACHE[registration] = (body, content_type)
+            except (OSError, urllib.error.URLError):
+                self.send_error(HTTPStatus.NOT_FOUND)
+                return
+        self.send_response(HTTPStatus.OK)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "public, max-age=86400")
+        self._security_headers()
+        self.end_headers()
+        self.wfile.write(body)
+
     def do_GET(self) -> None:  # noqa: N802
         parsed = urlparse(self.path)
         path = unquote(parsed.path)
+        if path == "/api/player-photo":
+            self._send_player_photo(parse_qs(parsed.query).get("reg", [""])[0])
+            return
         if path in {"/api/match", "/api/tournament"}:
             query = parse_qs(parsed.query)
             with STATE.lock:

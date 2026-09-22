@@ -12,7 +12,7 @@ from urllib.parse import unquote, urlsplit
 from sync_service import SSL_CONTEXT
 
 
-GET_PATHS = {"/api/schedule", "/api/status", "/api/match", "/api/tournament"}
+GET_PATHS = {"/api/schedule", "/api/status", "/api/match", "/api/tournament", "/api/player-photo"}
 MAX_RESPONSE_BYTES = 32 * 1024 * 1024
 MAX_REQUEST_BYTES = 64 * 1024
 UPSTREAM_TIMEOUT = 90
@@ -69,6 +69,28 @@ def make_upstream_handler(base_handler, upstream_url: str):
 
     class UpstreamRequestHandler(base_handler):
         upstream_origin = origin
+
+        def _proxy_photo(self, query: str) -> None:
+            url = origin + "/api/player-photo" + (f"?{query}" if query else "")
+            try:
+                request = urllib.request.Request(url, headers={"Accept": "image/*", "User-Agent": "AichiSchedule/1.0"})
+                with opener.open(request, timeout=UPSTREAM_TIMEOUT) as response:
+                    raw = response.read(2 * 1024 * 1024 + 1)
+                    status = response.status
+                    content_type = response.headers.get("Content-Type", "image/jpeg").split(";", 1)[0]
+            except (OSError, urllib.error.URLError, HTTPException):
+                self.send_error(HTTPStatus.BAD_GATEWAY)
+                return
+            if status != 200 or len(raw) > 2 * 1024 * 1024 or not content_type.startswith("image/"):
+                self.send_error(status if status >= 400 else HTTPStatus.BAD_GATEWAY)
+                return
+            self.send_response(status)
+            self.send_header("Content-Type", content_type)
+            self.send_header("Content-Length", str(len(raw)))
+            self.send_header("Cache-Control", "public, max-age=86400")
+            self._security_headers()
+            self.end_headers()
+            self.wfile.write(raw)
 
         def _proxy_api(self, method: str, path: str, query: str) -> None:
             destination_port = destination.port or (443 if destination.scheme == "https" else 80)
@@ -136,7 +158,9 @@ def make_upstream_handler(base_handler, upstream_url: str):
         def do_GET(self) -> None:  # noqa: N802
             parsed = urlsplit(self.path)
             path = unquote(parsed.path)
-            if path in GET_PATHS:
+            if path == "/api/player-photo":
+                self._proxy_photo(parsed.query)
+            elif path in GET_PATHS:
                 self._proxy_api("GET", path, parsed.query)
             elif path.startswith("/api/") and path != "/api/health":
                 self._send_json({"message": "找不到此接口"}, HTTPStatus.NOT_FOUND)
