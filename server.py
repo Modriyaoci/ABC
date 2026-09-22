@@ -28,6 +28,8 @@ STATUS_FILE = ROOT / "data" / "sync-status.json"
 BEIJING_TZ = ZoneInfo("Asia/Shanghai")
 AUTOMATIC_WINDOW = {"start": "08:00", "end": "23:00", "timezone": "Asia/Shanghai"}
 LIVE_INTERVAL = 5
+RESULT_CONFIRMATION_INTERVAL = 300
+RESULT_CONFIRMATION_LIMIT = 3600
 DETAIL_LIVE_TTL = 4
 DETAIL_IDLE_TTL = 120
 RETRY_INTERVAL = 300
@@ -188,7 +190,7 @@ def today_completed(payload: dict, now: datetime, last_full_success: str | None)
                 if sport in SPORTS and today.isoformat() in days}
     if not expected or not expected.issubset({row["sport"] for row in rows}):
         return False
-    return all(not row.get("isLive") and str(row.get("status", "")).upper() in FINAL_STATUSES
+    return all(not row.get("isLive") and str(row.get("status", "")).upper() in FINAL_STATUSES | {"UNOFFICIAL"}
                for row in rows)
 
 
@@ -232,6 +234,7 @@ class AppState:
         self._load_status()
         self.next_live = self.clock()
         self._read_metadata()
+        self._confirmation_deadline(self.clock())
 
     def _read_metadata(self) -> None:
         try:
@@ -247,11 +250,12 @@ class AppState:
             for key in ("lastStarted", "lastSuccess", "lastError", "lastReason",
                         "lastLiveSuccess", "lastLiveError", "retryAt", "liveRetryAt", "liveFailures",
                         "scheduleChanged", "scheduleChangeAt", "scheduleChangeCount", "scheduleChanges",
-                        "teamScheduleChanges"):
+                        "teamScheduleChanges", "resultConfirmationStartedAt", "resultConfirmationDate"):
                 if key in saved and saved[key] is not None:
                     self.status[key] = saved[key]
             if not isinstance(self.status.get("teamScheduleChanges"), dict):
                 self.status["teamScheduleChanges"] = {}
+            self.final_details_pending_date = saved.get("finalDetailsPendingDate")
             orders = saved.get("teamSubmatchOrders")
             if isinstance(orders, dict):
                 self.team_submatch_orders = {
@@ -266,7 +270,8 @@ class AppState:
     def _save_status(self) -> None:
         self.status_file.parent.mkdir(parents=True, exist_ok=True)
         temporary = self.status_file.with_suffix(".json.tmp")
-        saved = {**self.status, "teamSubmatchOrders": self.team_submatch_orders}
+        saved = {**self.status, "teamSubmatchOrders": self.team_submatch_orders,
+                 "finalDetailsPendingDate": self.final_details_pending_date}
         temporary.write_text(json.dumps(saved, ensure_ascii=False, indent=2), encoding="utf-8")
         temporary.replace(self.status_file)
 
@@ -321,16 +326,48 @@ class AppState:
         return next_automatic_time(now) if stale else next_eight(now)
 
     def _today_completed(self, now):
-        return (self.final_details_pending_date != now.astimezone(BEIJING_TZ).date().isoformat()
-                and today_completed(self.payload, now, self.status.get("lastSuccess")))
+        return today_completed(self.payload, now, self.status.get("lastSuccess"))
+
+    def _results_pending(self, now):
+        today = now.astimezone(BEIJING_TZ).date().isoformat()
+        return self._today_completed(now) and (
+            self.final_details_pending_date == today or any(
+                row.get("sport") in SPORTS and row.get("date") == today
+                and row.get("status") == "UNOFFICIAL"
+                for row in self.payload.get("records", [])
+            )
+        )
+
+    def _confirmation_due(self, now):
+        last = self._parse_time(self.status.get("lastLiveSuccess")) or self._parse_time(self.status.get("lastSuccess")) or now
+        retry = self._parse_time(self.status.get("liveRetryAt")) or last
+        return next_automatic_time(max(last + timedelta(seconds=RESULT_CONFIRMATION_INTERVAL), retry))
+
+    def _confirmation_deadline(self, now):
+        """Latch the first completed-day observation; retries/manual sync never extend it."""
+        if not self._today_completed(now):
+            return None
+        today = now.astimezone(BEIJING_TZ).date().isoformat()
+        started = self._parse_time(self.status.get("resultConfirmationStartedAt"))
+        if self.status.get("resultConfirmationDate") != today or not started:
+            started = now.astimezone(BEIJING_TZ)
+            self.status["resultConfirmationDate"] = today
+            self.status["resultConfirmationStartedAt"] = started.isoformat(timespec="seconds")
+            self._save_status()
+        return started + timedelta(seconds=RESULT_CONFIRMATION_LIMIT)
 
     def tick(self) -> str | None:
         """Recompute due work after every wake; never replay each missed day."""
         now = self.clock()
         with self.lock:
-            if self.running or not automatic_sync_allowed(now) or self._today_completed(now):
+            if self.running or not automatic_sync_allowed(now):
                 return None
-            if now >= self._full_due(now):
+            if self._today_completed(now):
+                deadline = self._confirmation_deadline(now)
+                if not self._results_pending(now) or now >= deadline or now < self._confirmation_due(now):
+                    return None
+                reason = "confirmation"
+            elif now >= self._full_due(now):
                 reason = "retry" if self.status.get("retryAt") else "scheduled"
             else:
                 retry = self._parse_time(self.status.get("liveRetryAt"))
@@ -342,11 +379,20 @@ class AppState:
 
     def snapshot(self) -> dict:
         with self.lock:
+            now = self.clock()
+            deadline = self._confirmation_deadline(now)
             snapshot = dict(self.status)
             snapshot["running"] = self.running
-            now = self.clock()
             completed = self._today_completed(now)
             snapshot["todayCompleted"] = completed
+            pending = self._results_pending(now)
+            snapshot["resultsPendingConfirmation"] = pending
+            snapshot["resultConfirmationIntervalSeconds"] = RESULT_CONFIRMATION_INTERVAL
+            expired = bool(pending and deadline and now >= deadline)
+            snapshot["resultConfirmationExpired"] = expired
+            snapshot["resultConfirmationDeadline"] = deadline.isoformat(timespec="seconds") if deadline else None
+            due = self._confirmation_due(now) if pending and not expired else None
+            snapshot["nextResultConfirmation"] = due.isoformat(timespec="seconds") if due and due < deadline else None
             snapshot["completionDate"] = now.astimezone(BEIJING_TZ).date().isoformat() if completed else None
             snapshot["nextAutomaticSync"] = (next_eight(now) if completed else self._full_due(now)).isoformat(timespec="seconds")
             allowed = automatic_sync_allowed(now) and not completed
@@ -365,8 +411,12 @@ class AppState:
     def start_sync(self, reason: str) -> bool:
         with self.lock:
             now = self.clock()
+            deadline = self._confirmation_deadline(now)
             if self.running or (reason != "manual" and (
-                not automatic_sync_allowed(now) or self._today_completed(now)
+                not automatic_sync_allowed(now) or (self._today_completed(now) and not (
+                    reason == "confirmation" and self._results_pending(now)
+                    and now < deadline and now >= self._confirmation_due(now)
+                ))
             )):
                 return False
             self.running = True
@@ -380,7 +430,7 @@ class AppState:
                     "progressLabel": "准备连接官网",
                 }
             )
-            if reason != "live":
+            if reason not in {"live", "confirmation"}:
                 self.status["lastError"] = None
             self._save_status()
         threading.Thread(target=self._run_sync, args=(reason,), name="official-sync", daemon=True).start()
@@ -443,7 +493,7 @@ class AppState:
         return ready
 
     def _run_sync(self, reason: str) -> None:
-        live = reason == "live"
+        live = reason in {"live", "confirmation"}
         try:
             with self.lock:
                 previous_payload = self.payload
@@ -454,7 +504,7 @@ class AppState:
             else:
                 payload = self.full_sync(self.data_file, self._progress)
             full_success = last_full_success if live else self.clock().isoformat()
-            if (not was_completed or reason == "manual") and today_completed(payload, self.clock(), full_success):
+            if (not was_completed or reason in {"manual", "confirmation"}) and today_completed(payload, self.clock(), full_success):
                 ready = self._finish_cached_results(payload, reason == "manual")
                 self.final_details_pending_date = None if ready else self.clock().astimezone(BEIJING_TZ).date().isoformat()
             with self.lock:
@@ -467,6 +517,7 @@ class AppState:
                     self.status["scheduleChangeCount"] = len(changes)
                     self.status["scheduleChanges"] = changes[:20]
                 self.status["lastLiveSuccess" if live else "lastSuccess"] = self.clock().isoformat(timespec="seconds")
+                self._confirmation_deadline(self.clock())
                 if not live:
                     self.status["lastError"] = None
                     self.status["retryAt"] = None
@@ -485,6 +536,8 @@ class AppState:
                         if rate_limited
                         else min(LIVE_INTERVAL * 2 ** min(failures - 1, 6), RETRY_INTERVAL)
                     )
+                    if reason == "confirmation":
+                        delay = max(delay, RESULT_CONFIRMATION_INTERVAL)
                     self.status["liveRetryAt"] = (self.clock() + timedelta(seconds=delay)).isoformat()
                     self.status["lastLiveError"] = str(exc)
                 else:
