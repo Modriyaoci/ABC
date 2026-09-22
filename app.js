@@ -332,12 +332,16 @@ function lineupPlayers(match, side) {
 }
 
 function lineupPhoto(player) {
-  const value = String(player?.photo || player?.avatar || "").trim();
-  if (/^https?:\/\//i.test(value)) return value;
   const reg = String(player?.reg || "").trim();
-  return reg && /^[A-Za-z0-9_-]+$/.test(reg)
-    ? `/api/player-photo?reg=${encodeURIComponent(reg)}`
-    : "";
+  // Always use our same-origin image proxy when a registration number is
+  // available.  Direct official image URLs are rate-limited independently
+  // by the browser and made every lineup avatar disappear together; the
+  // proxy fetches once from the Oregon collector and caches the result.
+  if (reg && /^[A-Za-z0-9_.-]+$/.test(reg)) {
+    return `/api/player-photo?reg=${encodeURIComponent(reg)}`;
+  }
+  const value = String(player?.photo || player?.avatar || "").trim();
+  return /^https?:\/\//i.test(value) ? value : "";
 }
 
 function lineupInitials(player) {
