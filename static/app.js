@@ -585,6 +585,8 @@ function renderView() {
   elements.sportFilter.parentElement.hidden = state.view !== "schedule" || Boolean(state.activeSport);
   elements.layout.parentElement.hidden = state.view !== "schedule";
   elements.category.parentElement.hidden = false;
+  elements.category.multiple = state.view === "schedule";
+  elements.category.size = state.view === "schedule" ? 1 : 1;
   elements.viewTabs.hidden = !state.activeSport;
   for (const button of elements.viewTabs.querySelectorAll("[data-view]")) button.setAttribute("aria-selected", String(button.dataset.view === state.view));
   renderCategoryFilter();
