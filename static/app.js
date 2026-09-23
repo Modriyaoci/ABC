@@ -536,7 +536,8 @@ function renderTournament() {
     elements.tournamentView.innerHTML = `<div class="view-message"><p>${escapeHtml(entry.error || "官网尚未公布")}</p><button class="text-button" type="button" data-retry-tournament>重试</button></div>`;
     return;
   }
-  const event = (entry.data.events || []).find((item) => String(item.id) === state.selections.get(selectionKey()));
+  const selectedEvents = state.selections.get(selectionKey()) || [];
+  const event = (entry.data.events || []).find((item) => selectedEvents.includes(String(item.id)));
   const errorNote = staleNotice(entry, state.view === "groups" ? "小组积分" : "对阵图");
   if (!event) {
     elements.tournamentView.innerHTML = `${errorNote}<div class="view-message">${escapeHtml(entry.data.message || "官网尚未公布")}</div>`;
