@@ -653,8 +653,17 @@ async function loadMatch(id, force = false, { automatic = false } = {}) {
         const names = players.map((player) => String(player?.name || player?.nameS || "").trim()).filter(Boolean);
         return names.length ? names.join(" / ") : "";
       };
-      const home = side(entry.data?.home, entry.data?.homePlayers);
-      const away = side(entry.data?.away, entry.data?.awayPlayers);
+      // Mixed/team results may publish the lineup only on a child unit.
+      // Walk those units as well; the first child with both sides confirmed
+      // is the official opponent pair for the provisional parent row.
+      const sources = [entry.data, ...(Array.isArray(entry.data?.subMatches) ? entry.data.subMatches : [])];
+      let home = "";
+      let away = "";
+      for (const source of sources) {
+        home = side(source?.home, source?.homePlayers);
+        away = side(source?.away, source?.awayPlayers);
+        if (home && away) break;
+      }
       if (home && away) {
         record.matchup = `${home} vs ${away}`;
         renderView();
