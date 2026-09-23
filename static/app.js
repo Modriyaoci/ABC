@@ -13,7 +13,7 @@ const PATH_SPORTS = Object.fromEntries(Object.entries(SPORT_PATHS).map(([sport, 
 const WEEKDAYS = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
 const state = {
   records: [], activeSport: null, view: "schedule", selections: new Map(),
-  dateFilter: "", statusFilter: "",
+  dateFilter: [], statusFilter: [], sportFilter: [],
   status: null, statusTimer: null, refreshing: false, refreshAgain: false,
   manualSyncPending: false, manualExtrasPending: false, completionExtrasPending: false,
   completionExtrasRetryAt: 0,
@@ -41,6 +41,7 @@ const elements = {
   scheduleFilters: document.querySelector("#schedule-filters"),
   dateFilter: document.querySelector("#date-filter"),
   statusFilter: document.querySelector("#status-filter"),
+  sportFilter: document.querySelector("#sport-filter"),
   category: document.querySelector("#category-filter"),
   scheduleView: document.querySelector("#schedule-view"),
   tournamentView: document.querySelector("#tournament-view"),
@@ -184,7 +185,10 @@ function renderTabs() {
 
 function selectionKey() { return `${state.activeSport}:${state.view === "schedule" ? "schedule" : "tournament"}`; }
 function recordCategory(record) { return String(record.eventCode || record.category || ""); }
-function sportRecords() { return state.records.filter((record) => record.sport === state.activeSport); }
+function sportRecords() {
+  if (!state.activeSport) return state.records.filter((record) => !state.sportFilter.length || state.sportFilter.includes(record.sport));
+  return state.records.filter((record) => record.sport === state.activeSport);
+}
 function recordStatus(record) {
   if (record.isLive || ["LIVE", "RUNNING", "IN_PROGRESS"].includes(String(record.status || "").toUpperCase())) return "live";
   if (["OFFICIAL", "UNOFFICIAL", "FINISHED", "COMPLETED", "CANCELED", "CANCELLED"].includes(String(record.status || "").toUpperCase())) return "completed";
@@ -203,11 +207,11 @@ function formatScore(record) {
   return `${runs[0]} : ${runs[1]}`;
 }
 function filteredRecords() {
-  const category = state.selections.get(selectionKey()) || "";
+  const categories = state.selections.get(selectionKey()) || [];
   return sportRecords()
-    .filter((record) => !category || recordCategory(record) === category)
-    .filter((record) => !state.dateFilter || record.date === state.dateFilter)
-    .filter((record) => !state.statusFilter || recordStatus(record) === state.statusFilter)
+    .filter((record) => !categories.length || categories.includes(recordCategory(record)))
+    .filter((record) => !state.dateFilter.length || state.dateFilter.includes(record.date))
+    .filter((record) => !state.statusFilter.length || state.statusFilter.includes(recordStatus(record)))
     .sort((left, right) => {
       const liveOrder = Number(rightStatusIsLive(right) - rightStatusIsLive(left));
       if (liveOrder) return liveOrder;
@@ -219,9 +223,15 @@ function rightStatusIsLive(record) { return recordStatus(record) === "live" ? 1 
 function renderDateFilter() {
   const dates = [...new Set(sportRecords().map((record) => record.date).filter(Boolean))].sort();
   const current = state.dateFilter;
-  elements.dateFilter.innerHTML = `<option value="">全部日期</option>${dates.map((date) => `<option value="${escapeHtml(date)}">${escapeHtml(dateLabel(date))}</option>`).join("")}`;
-  if (current && dates.includes(current)) elements.dateFilter.value = current;
-  else if (current) state.dateFilter = "";
+  elements.dateFilter.innerHTML = dates.map((date) => `<option value="${escapeHtml(date)}">${escapeHtml(dateLabel(date))}</option>`).join("");
+  for (const option of elements.dateFilter.options) option.selected = current.includes(option.value);
+  state.dateFilter = current.filter((date) => dates.includes(date));
+}
+
+function renderSportFilter() {
+  const options = Object.entries(SPORTS).filter(([code]) => state.records.some((record) => record.sport === code));
+  elements.sportFilter.innerHTML = options.map(([value, label]) => `<option value="${value}">${escapeHtml(label)}</option>`).join("");
+  for (const option of elements.sportFilter.options) option.selected = state.sportFilter.includes(option.value);
 }
 
 function renderCategoryFilter() {
@@ -234,12 +244,13 @@ function renderCategoryFilter() {
   let options = state.view === "schedule" || scheduleOptions.length
     ? scheduleOptions
     : (state.tournaments.get(state.activeSport)?.data?.events || []).map((event) => [String(event.id), event.name]);
-  if (state.view === "schedule") options.unshift(["", "全部类别"]);
   if (!options.length) options = [["", "暂无类别"]];
   const key = selectionKey();
-  if (!options.some(([value]) => value === state.selections.get(key))) state.selections.set(key, options[0][0]);
+  const current = state.selections.get(key) || [];
+  const values = options.map(([value]) => value);
+  state.selections.set(key, current.filter((value) => values.includes(value)));
   elements.category.innerHTML = options.map(([value, label]) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`).join("");
-  elements.category.value = state.selections.get(key);
+  for (const option of elements.category.options) option.selected = state.selections.get(key).includes(option.value);
   elements.category.disabled = options.length <= 1;
 }
 
@@ -555,7 +566,7 @@ function bracketMatch(match, number, locations) {
 }
 
 function renderView() {
-  elements.title.textContent = SPORTS[state.activeSport] || "赛程";
+  elements.title.textContent = SPORTS[state.activeSport] || "今日赛程";
   elements.scheduleView.hidden = state.view !== "schedule";
   elements.tournamentView.hidden = state.view === "schedule";
   // Keep the event/category selector available for standings and bracket
@@ -563,11 +574,12 @@ function renderView() {
   elements.scheduleFilters.hidden = false;
   elements.dateFilter.parentElement.hidden = state.view !== "schedule";
   elements.statusFilter.parentElement.hidden = state.view !== "schedule";
+  elements.sportFilter.parentElement.hidden = state.view !== "schedule" || Boolean(state.activeSport);
   elements.layout.parentElement.hidden = state.view !== "schedule";
   elements.category.parentElement.hidden = false;
   for (const button of elements.viewTabs.querySelectorAll("[data-view]")) button.setAttribute("aria-selected", String(button.dataset.view === state.view));
   renderCategoryFilter();
-  if (state.view === "schedule") renderDateFilter();
+  if (state.view === "schedule") { renderSportFilter(); renderDateFilter(); }
   if (state.view === "schedule") renderSchedule(); else renderTournament();
 }
 
@@ -626,11 +638,14 @@ async function loadSchedule(version) {
   state.records = Array.isArray(payload.records) ? payload.records : [];
   state.recordsLoaded = true;
   state.loadedVersion = version;
-  if (!state.activeSport) {
-    state.activeSport = state.records.find((record) => record.isLive)?.sport || "TEN";
-    updateSportPath(state.activeSport, { replace: true });
-    renderTabs();
+  if (!state.activeSport && !state.dateFilter.length) {
+    const today = new Date(Date.now() + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
+    if (state.records.some((record) => record.date === today)) state.dateFilter = [today];
   }
+  // The root path is the all-sports “今日赛程” view. Sport paths opt into a
+  // single sport explicitly and remain stable across refreshes.
+  if (state.activeSport && !SPORTS[state.activeSport]) state.activeSport = null;
+  renderTabs();
   renderView();
 }
 
@@ -819,17 +834,22 @@ elements.viewTabs.addEventListener("click", (event) => {
   else void refreshVisibleExtras(false, { manual: true });
 });
 elements.category.addEventListener("change", () => {
-  state.selections.set(selectionKey(), elements.category.value);
+  state.selections.set(selectionKey(), [...elements.category.selectedOptions].map((option) => option.value));
   renderView();
   void refreshVisibleExtras(false, { manual: true });
 });
 elements.dateFilter.addEventListener("change", () => {
-  state.dateFilter = elements.dateFilter.value;
+  state.dateFilter = [...elements.dateFilter.selectedOptions].map((option) => option.value);
   renderView();
   void refreshVisibleExtras(false, { manual: true });
 });
 elements.statusFilter.addEventListener("change", () => {
-  state.statusFilter = elements.statusFilter.value;
+  state.statusFilter = [...elements.statusFilter.selectedOptions].map((option) => option.value);
+  renderView();
+  void refreshVisibleExtras(false, { manual: true });
+});
+elements.sportFilter.addEventListener("change", () => {
+  state.sportFilter = [...elements.sportFilter.selectedOptions].map((option) => option.value);
   renderView();
   void refreshVisibleExtras(false, { manual: true });
 });
@@ -876,7 +896,7 @@ document.addEventListener("visibilitychange", () => { if (!document.hidden) void
 window.addEventListener("online", () => { void refresh(true); });
 window.addEventListener("popstate", () => {
   const sport = sportFromPath();
-  if (!sport || sport === state.activeSport) return;
+  if (sport === state.activeSport) return;
   state.activeSport = sport;
   renderTabs();
   renderView();

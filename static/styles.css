@@ -470,6 +470,17 @@ tr.is-cancelled td {
   border-radius: 5px;
 }
 
+/* Multi-select filters stay compact until opened; holding Ctrl/Cmd (or
+   tapping on mobile) allows several dates, statuses, events, or sports. */
+.category-filter select[multiple] {
+  min-width: 116px;
+  padding-right: 8px;
+}
+.category-filter select[multiple]:focus,
+.category-filter select[multiple]:active {
+  min-height: 88px;
+}
+
 .match-row {
   cursor: pointer;
 }
