@@ -26,6 +26,11 @@ const state = {
   expanded: new Set(), details: new Map(), tournaments: new Map(),
   selectedSubMatches: new Map(), lineupVisibility: savedLineupVisibility(), layout: savedLayout(),
 };
+// Status is deliberately polled at five-second intervals.  The status
+// response is small and carries the dataVersion; the full schedule is only
+// fetched when that version changes (see refresh()), so a live score update
+// does not repeatedly download an unchanged schedule document.
+const STATUS_POLL_INTERVAL_MS = 5000;
 const elements = {
   tabs: document.querySelector("#sport-tabs"),
   title: document.querySelector("#active-sport-title"),
@@ -50,6 +55,31 @@ const elements = {
   scheduleView: document.querySelector("#schedule-view"),
   tournamentView: document.querySelector("#tournament-view"),
 };
+
+// Schedule filters use a compact checkbox menu. Tournament views keep the
+// native single-choice event selector, so the two kinds of filtering never
+// share a control or selection state.
+const checkboxMenus = new WeakMap();
+function renderCheckboxMenu(select, options, selected, onChange) {
+  if (!select || !select.multiple) return;
+  let menu = checkboxMenus.get(select);
+  if (!menu) {
+    menu = document.createElement("details");
+    menu.className = "checkbox-filter-menu";
+    menu.addEventListener("toggle", () => {
+      if (menu.open) document.querySelectorAll(".checkbox-filter-menu[open]").forEach((other) => { if (other !== menu) other.open = false; });
+    });
+    select.hidden = true;
+    select.parentElement.appendChild(menu);
+    checkboxMenus.set(select, menu);
+  }
+  const selectedLabels = options.filter(([value]) => selected.includes(value)).map(([, label]) => String(label));
+  const summary = selectedLabels.length ? (selectedLabels.length <= 2 ? selectedLabels.join("、") : `已选 ${selectedLabels.length} 项`) : "全部";
+  menu.innerHTML = `<summary>${escapeHtml(summary)}</summary><div class="checkbox-filter-options">${options.map(([value, label]) => `<label><input type="checkbox" value="${escapeHtml(value)}" ${selected.includes(value) ? "checked" : ""}> <span>${escapeHtml(label)}</span></label>`).join("")}</div>`;
+  menu.querySelectorAll("input").forEach((input) => input.addEventListener("change", () => {
+    onChange([...menu.querySelectorAll("input:checked")].map((item) => item.value));
+  }));
+}
 
 function savedLayout() {
   try {
@@ -169,10 +199,17 @@ function formatSyncTime(value) {
 async function fetchJson(url, options = {}) {
   const controller = new AbortController();
   const timeout = window.setTimeout(() => controller.abort(), 25000);
+  const cached = fetchJson.cache.get(url);
+  const headers = new Headers(options.headers || {});
+  if (cached?.etag && !headers.has("If-None-Match")) headers.set("If-None-Match", cached.etag);
   try {
-    const response = await fetch(url, { cache: "no-store", ...options, signal: controller.signal });
+    const response = await fetch(url, { cache: "no-store", ...options, headers, signal: controller.signal });
+    if (response.status === 304 && cached) return cached.data;
     if (!response.ok) throw new Error(response.status === 503 ? "正在准备官方数据，请稍后再试" : "暂时无法读取数据");
-    return await response.json();
+    const data = await response.json();
+    const etag = response.headers.get("ETag");
+    if (etag) fetchJson.cache.set(url, { etag, data });
+    return data;
   } catch (error) {
     if (error.name === "AbortError") throw new Error("读取超时，将自动重试");
     throw error;
@@ -180,6 +217,7 @@ async function fetchJson(url, options = {}) {
     window.clearTimeout(timeout);
   }
 }
+fetchJson.cache = new Map();
 
 function renderTabs() {
   const tabs = [["TODAY", "今日赛程"], ...Object.entries(SPORTS)];
@@ -231,12 +269,14 @@ function renderDateFilter() {
   elements.dateFilter.innerHTML = dates.map((date) => `<option value="${escapeHtml(date)}">${escapeHtml(dateLabel(date))}</option>`).join("");
   for (const option of elements.dateFilter.options) option.selected = current.includes(option.value);
   state.dateFilter = current.filter((date) => dates.includes(date));
+  renderCheckboxMenu(elements.dateFilter, dates.map((date) => [date, dateLabel(date)]), state.dateFilter, (values) => { state.dateFilter = values; renderView(); void refreshVisibleExtras(false, { manual: true }); });
 }
 
 function renderSportFilter() {
   const options = Object.entries(SPORTS).filter(([code]) => state.records.some((record) => record.sport === code));
   elements.sportFilter.innerHTML = options.map(([value, label]) => `<option value="${value}">${escapeHtml(label)}</option>`).join("");
   for (const option of elements.sportFilter.options) option.selected = state.sportFilter.includes(option.value);
+  renderCheckboxMenu(elements.sportFilter, options, state.sportFilter, (values) => { state.sportFilter = values; renderView(); void refreshVisibleExtras(false, { manual: true }); });
 }
 
 function renderCategoryFilter() {
@@ -261,6 +301,9 @@ function renderCategoryFilter() {
   elements.category.innerHTML = options.map(([value, label]) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`).join("");
   for (const option of elements.category.options) option.selected = state.selections.get(key).includes(option.value);
   elements.category.disabled = options.length <= 1;
+  if (state.view === "schedule") {
+    renderCheckboxMenu(elements.category, options, state.selections.get(key), (values) => { state.selections.set(key, values); renderView(); void refreshVisibleExtras(false, { manual: true }); });
+  }
 }
 
 function transposeScoreSection(section) {
@@ -591,10 +634,17 @@ function renderView() {
   elements.category.parentElement.hidden = false;
   elements.category.multiple = state.view === "schedule";
   elements.category.size = state.view === "schedule" ? 1 : 1;
+  elements.category.hidden = state.view === "schedule";
+  const categoryMenu = checkboxMenus.get(elements.category);
+  if (categoryMenu) categoryMenu.hidden = state.view !== "schedule";
   elements.viewTabs.hidden = !state.activeSport;
   for (const button of elements.viewTabs.querySelectorAll("[data-view]")) button.setAttribute("aria-selected", String(button.dataset.view === state.view));
   renderCategoryFilter();
-  if (state.view === "schedule") { renderSportFilter(); renderDateFilter(); }
+  if (state.view === "schedule") {
+    renderSportFilter();
+    renderDateFilter();
+    renderCheckboxMenu(elements.statusFilter, [["live", "进行中"], ["completed", "完场"], ["upcoming", "未开赛"]], state.statusFilter, (values) => { state.statusFilter = values; renderView(); void refreshVisibleExtras(false, { manual: true }); });
+  }
   if (state.view === "schedule") renderSchedule(); else renderTournament();
 }
 
@@ -924,6 +974,6 @@ async function init() {
   renderTabs();
   if (window.lucide) window.lucide.createIcons();
   await refresh();
-  state.statusTimer = window.setInterval(() => { void refresh(); }, 1000);
+  state.statusTimer = window.setInterval(() => { void refresh(); }, STATUS_POLL_INTERVAL_MS);
 }
 void init();
