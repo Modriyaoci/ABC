@@ -480,10 +480,11 @@ function renderSchedule() {
       const dateTime = formatDateTime(record);
       const open = state.expanded.has(record.id);
       const status = recordStatus(record);
+      const categoryLabel = state.activeSport ? record.category : `${record.sportName || SPORTS[record.sport] || ""} · ${record.category || ""}`;
       const scheduleNotice = isTeamRecord(record) && hasTeamScheduleChange(record.id) ? '<span class="schedule-change-inline">官网赛程有变动</span>' : "";
       return `<article class="match-card ${status === "live" ? "is-live" : ""} ${open ? "is-expanded" : ""}" data-match-id="${escapeHtml(record.id)}">
         <div class="card-content">
-          <header class="card-header"><div class="card-date"><strong>${escapeHtml(dateTime.date)}</strong><span>${escapeHtml(dateTime.time)}</span></div><span class="card-category">${escapeHtml(record.category)}</span></header>
+          <header class="card-header"><div class="card-date"><strong>${escapeHtml(dateTime.date)}</strong><span>${escapeHtml(dateTime.time)}</span></div><span class="card-category">${escapeHtml(categoryLabel)}</span></header>
           <p class="card-stage">${escapeHtml(record.stage)}</p>
           <h3 class="card-matchup">${escapeHtml(record.matchup)}${scheduleNotice}</h3>
           <div class="card-score"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}" aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分"><span>${escapeHtml(formatScore(record))}</span><span class="disclosure-arrow" aria-hidden="true">⌄</span></button></div>
@@ -501,11 +502,12 @@ function renderSchedule() {
     const dateTime = formatDateTime(record);
     const cancelled = ["CANCELED", "CANCELLED", "POSTPONED"].includes(record.status);
     const open = state.expanded.has(record.id);
+    const categoryLabel = state.activeSport ? record.category : `${record.sportName || SPORTS[record.sport] || ""} · ${record.category || ""}`;
     const rowClass = record.isLive ? "is-live" : cancelled ? "is-cancelled" : "";
     const scheduleNotice = isTeamRecord(record) && hasTeamScheduleChange(record.id) ? '<span class="schedule-change-inline">官网赛程有变动</span>' : "";
     return `<tr class="match-row ${rowClass} ${open ? "is-expanded" : ""}" data-match-id="${escapeHtml(record.id)}">
       <td class="date-cell" data-label="日期时间"><span><strong>${escapeHtml(dateTime.date)}</strong>${escapeHtml(dateTime.time)}</span></td>
-      <td class="category-cell" data-label="类别"><span>${escapeHtml(record.category)}</span></td>
+      <td class="category-cell" data-label="类别"><span>${escapeHtml(categoryLabel)}</span></td>
       <td data-label="阶段"><span>${escapeHtml(record.stage)}</span></td>
       <td class="matchup-cell" data-label="对阵"><span>${escapeHtml(record.matchup)}</span>${scheduleNotice}</td>
       <td class="score-cell" data-label="比分"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}"
