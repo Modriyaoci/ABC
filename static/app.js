@@ -178,7 +178,8 @@ async function fetchJson(url, options = {}) {
 }
 
 function renderTabs() {
-  elements.tabs.innerHTML = Object.entries(SPORTS).map(([code, name]) => `
+  const tabs = [["TODAY", "今日赛程"], ...Object.entries(SPORTS)];
+  elements.tabs.innerHTML = tabs.map(([code, name]) => `
     <button class="sport-tab" type="button" role="tab" data-sport="${code}"
       aria-selected="${state.activeSport === code}">${name}</button>`).join("");
 }
@@ -577,6 +578,7 @@ function renderView() {
   elements.sportFilter.parentElement.hidden = state.view !== "schedule" || Boolean(state.activeSport);
   elements.layout.parentElement.hidden = state.view !== "schedule";
   elements.category.parentElement.hidden = false;
+  elements.viewTabs.hidden = !state.activeSport;
   for (const button of elements.viewTabs.querySelectorAll("[data-view]")) button.setAttribute("aria-selected", String(button.dataset.view === state.view));
   renderCategoryFilter();
   if (state.view === "schedule") { renderSportFilter(); renderDateFilter(); }
@@ -818,7 +820,7 @@ function toggleMatch(id) {
 elements.tabs.addEventListener("click", (event) => {
   const button = event.target.closest("[data-sport]");
   if (!button) return;
-  state.activeSport = button.dataset.sport;
+  state.activeSport = button.dataset.sport === "TODAY" ? null : button.dataset.sport;
   updateSportPath(state.activeSport);
   renderTabs();
   renderView();
