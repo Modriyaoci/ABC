@@ -10,6 +10,10 @@ const SPORT_PATHS = {
   TTE: "table-tennis", BDM: "badminton", HBL: "handball",
 };
 const PATH_SPORTS = Object.fromEntries(Object.entries(SPORT_PATHS).map(([sport, path]) => [path, sport]));
+const GITHUB_PAGES = window.location.hostname.endsWith(".github.io");
+const SITE_BASE = GITHUB_PAGES && window.location.pathname.startsWith("/ABC") ? "/ABC" : "";
+const API_BASE = GITHUB_PAGES ? "https://two026asiagames-abc.onrender.com" : "";
+const apiUrl = (path) => `${API_BASE}${path}`;
 const WEEKDAYS = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
 const state = {
   records: [], activeSport: null, view: "schedule", selections: new Map(),
@@ -117,13 +121,13 @@ function setLineupVisibility(key, visible) {
 }
 
 function sportFromPath(pathname = window.location.pathname) {
-  const path = String(pathname || "").replace(/^\/+|\/+$/g, "").toLowerCase();
+  const path = String(pathname || "").replace(new RegExp(`^${SITE_BASE}\\/?`), "").replace(/^\/+|\/+$/g, "").toLowerCase();
   return PATH_SPORTS[path] || null;
 }
 
 function sportPath(sport) {
   const path = SPORT_PATHS[sport];
-  return path ? `/${path}` : "/";
+  return path ? `${SITE_BASE}/${path}` : `${SITE_BASE}/`;
 }
 
 function updateSportPath(sport, { replace = false } = {}) {
@@ -354,7 +358,7 @@ function lineupPhoto(player) {
   // by the browser and made every lineup avatar disappear together; the
   // proxy fetches once from the Oregon collector and caches the result.
   if (reg && /^[A-Za-z0-9_.-]+$/.test(reg)) {
-    return `/api/player-photo?reg=${encodeURIComponent(reg)}`;
+    return apiUrl(`/api/player-photo?reg=${encodeURIComponent(reg)}`);
   }
   const value = String(player?.photo || player?.avatar || "").trim();
   return /^https?:\/\//i.test(value) ? value : "";
@@ -645,7 +649,7 @@ function statusVersion(status) {
 }
 
 async function loadSchedule(version) {
-  const payload = await fetchJson("/api/schedule");
+  const payload = await fetchJson(apiUrl("/api/schedule"));
   state.records = Array.isArray(payload.records) ? payload.records : [];
   state.recordsLoaded = true;
   state.loadedVersion = version;
@@ -667,7 +671,7 @@ async function loadMatch(id, force = false, { automatic = false } = {}) {
   state.details.set(id, entry);
   updateDetailPanel(id);
   try {
-    entry.data = await fetchJson(`/api/match?id=${encodeURIComponent(id)}${automatic ? "&automatic=1" : ""}`);
+    entry.data = await fetchJson(apiUrl(`/api/match?id=${encodeURIComponent(id)}${automatic ? "&automatic=1" : ""}`));
     // The schedule feed can publish a provisional “对阵待定” row while the
     // official results page already exposes the selected doubles players.
     // Promote that confirmed Line-up into the visible matchup immediately.
@@ -711,7 +715,7 @@ async function loadTournament(force = false, { automatic = false } = {}) {
   const entry = { ...current, loading: true, lastRequested: Date.now(), error: "", version: state.loadedVersion };
   state.tournaments.set(sport, entry);
   if (state.view !== "schedule") renderView();
-  try { entry.data = await fetchJson(`/api/tournament?sport=${encodeURIComponent(sport)}${automatic ? "&automatic=1" : ""}`); }
+  try { entry.data = await fetchJson(apiUrl(`/api/tournament?sport=${encodeURIComponent(sport)}${automatic ? "&automatic=1" : ""}`)); }
   catch (error) { entry.error = error.message || "无法读取积分和对阵"; }
   finally {
     entry.loading = false;
@@ -760,7 +764,7 @@ async function refresh(force = false) {
   if (state.refreshing) { state.refreshAgain ||= force; return; }
   state.refreshing = true;
   try {
-    const status = await fetchJson("/api/status");
+    const status = await fetchJson(apiUrl("/api/status"));
     const wasCompleted = todayCompleted();
     state.status = status;
     const version = statusVersion(status);
@@ -809,7 +813,7 @@ async function refresh(force = false) {
 async function requestSync() {
   elements.syncButton.disabled = true;
   try {
-    const response = await fetch("/api/sync", { method: "POST" });
+    const response = await fetch(apiUrl("/api/sync"), { method: "POST" });
     if (!response.ok && response.status !== 409) throw new Error("无法启动同步");
     state.manualSyncPending = true;
     await refresh();
