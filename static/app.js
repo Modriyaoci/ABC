@@ -249,7 +249,11 @@ function renderCategoryFilter() {
   const key = selectionKey();
   const current = state.selections.get(key) || [];
   const values = options.map(([value]) => value);
-  state.selections.set(key, current.filter((value) => values.includes(value)));
+  // Tournament views need one event selected so their standings/bracket can
+  // render. The today overview remains unselected by default to show all
+  // categories.
+  const selected = state.view === "schedule" ? current.filter((value) => values.includes(value)) : (current.filter((value) => values.includes(value)).length ? current.filter((value) => values.includes(value)) : [options[0][0]]);
+  state.selections.set(key, selected);
   elements.category.innerHTML = options.map(([value, label]) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`).join("");
   for (const option of elements.category.options) option.selected = state.selections.get(key).includes(option.value);
   elements.category.disabled = options.length <= 1;
