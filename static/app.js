@@ -640,7 +640,27 @@ async function loadMatch(id, force = false, { automatic = false } = {}) {
   const entry = { ...current, loading: true, lastRequested: Date.now(), error: "" };
   state.details.set(id, entry);
   updateDetailPanel(id);
-  try { entry.data = await fetchJson(`/api/match?id=${encodeURIComponent(id)}${automatic ? "&automatic=1" : ""}`); }
+  try {
+    entry.data = await fetchJson(`/api/match?id=${encodeURIComponent(id)}${automatic ? "&automatic=1" : ""}`);
+    // The schedule feed can publish a provisional “对阵待定” row while the
+    // official results page already exposes the selected doubles players.
+    // Promote that confirmed Line-up into the visible matchup immediately.
+    const record = state.records.find((item) => String(item.id) === String(id));
+    if (record && /待定/.test(String(record.matchup || ""))) {
+      const side = (label, players) => {
+        if (label && !/待定/.test(String(label))) return String(label);
+        if (!Array.isArray(players) || !players.length || players.length > 2) return "";
+        const names = players.map((player) => String(player?.name || player?.nameS || "").trim()).filter(Boolean);
+        return names.length ? names.join(" / ") : "";
+      };
+      const home = side(entry.data?.home, entry.data?.homePlayers);
+      const away = side(entry.data?.away, entry.data?.awayPlayers);
+      if (home && away) {
+        record.matchup = `${home} vs ${away}`;
+        renderView();
+      }
+    }
+  }
   catch (error) { entry.error = error.message || "无法读取小分"; }
   finally {
     entry.loading = false;
