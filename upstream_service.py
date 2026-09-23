@@ -100,6 +100,10 @@ def make_upstream_handler(base_handler, upstream_url: str):
 
             body = None
             headers = {"Accept": "application/json", "User-Agent": "AichiSchedule/1.0"}
+            # Forward the browser validator so an unchanged upstream payload
+            # can short-circuit as 304 instead of crossing the service link.
+            if self.headers.get("If-None-Match"):
+                headers["If-None-Match"] = self.headers["If-None-Match"]
             if method == "POST":
                 try:
                     length = int(self.headers.get("Content-Length", "0"))
@@ -124,6 +128,15 @@ def make_upstream_handler(base_handler, upstream_url: str):
                     response = error
                 with response:
                     status = response.status
+                    if status == HTTPStatus.NOT_MODIFIED:
+                        self.send_response(status)
+                        etag = response.headers.get("ETag")
+                        if etag:
+                            self.send_header("ETag", etag)
+                        self.send_header("Cache-Control", "no-cache")
+                        self._security_headers()
+                        self.end_headers()
+                        return
                     raw = response.read(MAX_RESPONSE_BYTES + 1)
                     retry_after = response.headers.get("Retry-After")
                 if 300 <= status < 400:
@@ -145,15 +158,9 @@ def make_upstream_handler(base_handler, upstream_url: str):
                 return
 
             encoded = json.dumps(value, ensure_ascii=False).encode("utf-8")
-            self.send_response(status)
-            self.send_header("Content-Type", "application/json; charset=utf-8")
-            self.send_header("Content-Length", str(len(encoded)))
-            self.send_header("Cache-Control", "no-store")
-            if retry_after and "\r" not in retry_after and "\n" not in retry_after:
-                self.send_header("Retry-After", retry_after)
-            self._security_headers()
-            self.end_headers()
-            self.wfile.write(encoded)
+            # Reuse the local response helper for stable ETags and gzip.  It
+            # also handles a client validator when the upstream did not.
+            self._send_json(value, HTTPStatus(status), retry_after=retry_after)
 
         def do_GET(self) -> None:  # noqa: N802
             parsed = urlsplit(self.path)

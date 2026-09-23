@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 import argparse
+import gzip
+import hashlib
 import json
 import mimetypes
 import os
 import signal
 import threading
+import tempfile
 import time
 import urllib.error
 import urllib.request
@@ -38,6 +41,11 @@ RETRY_INTERVAL = 300
 # five minutes and extending the outage while that quota window recovers.
 RATE_LIMIT_RETRY_INTERVAL = 3600
 PLAYER_PHOTO_BASE = "https://results.asiangames2026.org/ag2026/photos/"
+# Player photos are immutable enough for the duration of the games.  Keep a
+# disk copy so a Render restart (or a second worker process) does not make the
+# official photo host serve the same image again.  The location can be moved
+# to a persistent mounted directory with PLAYER_PHOTO_CACHE_DIR.
+PLAYER_PHOTO_CACHE_DIR = Path(os.environ.get("PLAYER_PHOTO_CACHE_DIR", str(ROOT / "data" / "player-photos")))
 PLAYER_PHOTO_CACHE: dict[str, tuple[bytes, str]] = {}
 PLAYER_PHOTO_LOCK = threading.Lock()
 SPORT_PATHS = {
@@ -601,12 +609,56 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.send_header("X-Frame-Options", "SAMEORIGIN")
         self.send_header("Referrer-Policy", "no-referrer")
 
-    def _send_json(self, value: dict, status: HTTPStatus = HTTPStatus.OK) -> None:
+    def _send_json(self, value: dict, status: HTTPStatus = HTTPStatus.OK, *, retry_after: str | None = None) -> None:
         body = json.dumps(value, ensure_ascii=False).encode("utf-8")
+        # The schedule is a large, mostly stable JSON document.  A strong
+        # validator lets the browser/proxy receive a zero-byte 304 when the
+        # five-second poll observes no change; gzip keeps the first response
+        # small as well.  Hash the uncompressed representation so validators
+        # remain stable regardless of the client's compression preference.
+        # Live snapshots refresh ``meta.generatedAt`` on every poll. It is
+        # bookkeeping rather than score data, so exclude it from the
+        # validator; otherwise an unchanged five-second snapshot could never
+        # produce a 304.
+        validator_value = value
+        if isinstance(value, dict) and isinstance(value.get("records"), list):
+            validator_value = dict(value)
+            meta = dict(value.get("meta") or {})
+            meta.pop("generatedAt", None)
+            validator_value["meta"] = meta
+        validator_body = json.dumps(validator_value, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+        etag = '"' + hashlib.sha256(validator_body).hexdigest()[:32] + '"'
+        incoming = self.headers.get("If-None-Match", "")
+        validators = {
+            token.strip()[2:] if token.strip().startswith("W/") else token.strip()
+            for token in incoming.split(",") if token.strip()
+        }
+        if status == HTTPStatus.OK and ("*" in validators or etag in validators):
+            self.send_response(HTTPStatus.NOT_MODIFIED)
+            self.send_header("ETag", etag)
+            self.send_header("Cache-Control", "no-cache")
+            self._security_headers()
+            self.end_headers()
+            return
+        compressed = False
+        if status != HTTPStatus.NOT_MODIFIED and len(body) >= 512:
+            accepted = self.headers.get("Accept-Encoding", "").lower()
+            if "gzip" in accepted:
+                body = gzip.compress(body, compresslevel=6, mtime=0)
+                compressed = True
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
-        self.send_header("Cache-Control", "no-store")
+        # Keep the representation in the browser cache, but require a
+        # validator on every poll.  This is what makes the ETag useful while
+        # preserving fresh scores rather than serving a stale cached body.
+        self.send_header("Cache-Control", "no-cache")
+        self.send_header("ETag", etag)
+        if compressed:
+            self.send_header("Content-Encoding", "gzip")
+            self.send_header("Vary", "Accept-Encoding")
+        if retry_after and "\r" not in retry_after and "\n" not in retry_after:
+            self.send_header("Retry-After", retry_after)
         self._security_headers()
         self.end_headers()
         self.wfile.write(body)
@@ -629,12 +681,68 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    @staticmethod
+    def _photo_cache_paths(registration: str) -> tuple[Path, Path]:
+        """Return the image and content-type paths for a validated ID."""
+        return (
+            PLAYER_PHOTO_CACHE_DIR / f"{registration}.jpg",
+            PLAYER_PHOTO_CACHE_DIR / f"{registration}.type",
+        )
+
+    @classmethod
+    def _read_cached_photo(cls, registration: str) -> tuple[bytes, str] | None:
+        """Read a photo from memory or the durable cache, if available."""
+        with PLAYER_PHOTO_LOCK:
+            cached = PLAYER_PHOTO_CACHE.get(registration)
+        if cached:
+            return cached
+        image_path, type_path = cls._photo_cache_paths(registration)
+        try:
+            body = image_path.read_bytes()
+            if not body or len(body) > 2 * 1024 * 1024:
+                return None
+            content_type = type_path.read_text(encoding="ascii").strip() if type_path.is_file() else "image/jpeg"
+            if not content_type.startswith("image/"):
+                content_type = "image/jpeg"
+        except (OSError, UnicodeError):
+            return None
+        with PLAYER_PHOTO_LOCK:
+            PLAYER_PHOTO_CACHE[registration] = (body, content_type)
+        return body, content_type
+
+    @classmethod
+    def _cache_photo(cls, registration: str, body: bytes, content_type: str) -> None:
+        """Persist a newly fetched photo using atomic same-directory renames."""
+        image_path, type_path = cls._photo_cache_paths(registration)
+        try:
+            PLAYER_PHOTO_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+            # NamedTemporaryFile is created in the destination directory so
+            # os.replace remains atomic even on filesystems used by Render.
+            with tempfile.NamedTemporaryFile(dir=PLAYER_PHOTO_CACHE_DIR, prefix=f".{registration}.", suffix=".tmp", delete=False) as temporary:
+                temporary.write(body)
+                image_tmp = Path(temporary.name)
+            os.replace(image_tmp, image_path)
+            with tempfile.NamedTemporaryFile(dir=PLAYER_PHOTO_CACHE_DIR, prefix=f".{registration}.", suffix=".tmp", mode="w", encoding="ascii", delete=False) as temporary:
+                temporary.write(content_type)
+                type_tmp = Path(temporary.name)
+            os.replace(type_tmp, type_path)
+        except OSError:
+            # A read-only or ephemeral deployment can still serve the photo;
+            # the in-process cache remains useful until the next restart.
+            for temporary in locals().get("image_tmp", Path()), locals().get("type_tmp", Path()):
+                if temporary:
+                    try:
+                        temporary.unlink(missing_ok=True)
+                    except OSError:
+                        pass
+        with PLAYER_PHOTO_LOCK:
+            PLAYER_PHOTO_CACHE[registration] = (body, content_type)
+
     def _send_player_photo(self, registration: str) -> None:
         if not registration or len(registration) > 40 or not registration.replace("_", "").replace("-", "").isalnum():
             self.send_error(HTTPStatus.BAD_REQUEST)
             return
-        with PLAYER_PHOTO_LOCK:
-            cached = PLAYER_PHOTO_CACHE.get(registration)
+        cached = self._read_cached_photo(registration)
         if cached:
             body, content_type = cached
         else:
@@ -650,11 +758,16 @@ class RequestHandler(BaseHTTPRequestHandler):
                 if len(body) > 2 * 1024 * 1024 or not content_type.startswith("image/"):
                     self.send_error(HTTPStatus.BAD_GATEWAY)
                     return
-                with PLAYER_PHOTO_LOCK:
-                    PLAYER_PHOTO_CACHE[registration] = (body, content_type)
             except (OSError, urllib.error.URLError):
-                self.send_error(HTTPStatus.NOT_FOUND)
-                return
+                # If a previous process wrote the image but this process did
+                # not load it yet, serve that stale copy instead of failing.
+                cached = self._read_cached_photo(registration)
+                if not cached:
+                    self.send_error(HTTPStatus.NOT_FOUND)
+                    return
+                body, content_type = cached
+            else:
+                self._cache_photo(registration, body, content_type)
         self.send_response(HTTPStatus.OK)
         self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(len(body)))

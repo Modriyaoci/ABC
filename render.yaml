@@ -7,3 +7,8 @@ services:
     startCommand: python3 server.py --host 0.0.0.0 --port $PORT
     healthCheckPath: /api/health
     autoDeploy: true
+    envVars:
+      # Official collection must stay on the Oregon instance; this service
+      # only serves the UI and forwards API reads with gzip/ETag validators.
+      - key: SCHEDULE_UPSTREAM_URL
+        value: https://two026asiagames-abc-oregon.onrender.com
