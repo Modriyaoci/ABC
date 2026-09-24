@@ -238,6 +238,9 @@ class AppState:
             # a team sub-match reorder to the global banner.
             "teamScheduleChanges": {},
             "dataVersion": None,
+            "scheduleVersion": None,
+            "liveVersion": 0,
+            "liveDelta": [],
         }
         self._load_status()
         self.next_live = self.clock()
@@ -251,6 +254,7 @@ class AppState:
             payload = {"meta": {}, "records": []}
         self.payload = payload
         self.status["dataVersion"] = payload.get("meta", {}).get("generatedAt")
+        self.status["scheduleVersion"] = self.status["dataVersion"]
 
     def _load_status(self) -> None:
         try:
@@ -517,9 +521,26 @@ class AppState:
                 self.final_details_pending_date = None if ready else self.clock().astimezone(BEIJING_TZ).date().isoformat()
             with self.lock:
                 self.payload = payload
-                self.status["dataVersion"] = payload["meta"]["generatedAt"]
+                # A live poll changes scores frequently. Keep the full
+                # schedule validator stable and publish only compact score
+                # deltas through /api/status so clients do not redownload the
+                # megabyte schedule every five seconds.
+                if live:
+                    before = {str(row.get("id")): row for row in previous_payload.get("records", [])}
+                    delta = []
+                    for row in payload.get("records", []):
+                        old = before.get(str(row.get("id")))
+                        if old is None or any(old.get(key) != row.get(key) for key in ("score", "status", "isLive", "home", "away", "matchup")):
+                            delta.append(row)
+                    self.status["liveVersion"] = int(self.status.get("liveVersion") or 0) + 1
+                    self.status["liveDelta"] = delta[:200]
+                else:
+                    self.status["dataVersion"] = payload["meta"]["generatedAt"]
+                    self.status["scheduleVersion"] = self.status["dataVersion"]
                 changes = schedule_changes(previous_payload, payload)
                 if changes:
+                    self.status["scheduleVersion"] = payload["meta"]["generatedAt"]
+                    self.status["dataVersion"] = payload["meta"]["generatedAt"]
                     self.status["scheduleChanged"] = True
                     self.status["scheduleChangeAt"] = self.clock().isoformat(timespec="seconds")
                     self.status["scheduleChangeCount"] = len(changes)
@@ -649,9 +670,8 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
-        # Keep the representation in the browser cache, but require a
-        # validator on every poll.  This is what makes the ETag useful while
-        # preserving fresh scores rather than serving a stale cached body.
+        # Require a validator on every API poll so unchanged responses become
+        # a zero-byte 304 while fresh scores remain immediately visible.
         self.send_header("Cache-Control", "no-cache")
         self.send_header("ETag", etag)
         if compressed:
@@ -672,14 +692,39 @@ class RequestHandler(BaseHTTPRequestHandler):
             self.send_error(HTTPStatus.NOT_FOUND)
             return
         body = requested.read_bytes()
+        # Static assets are content-addressed by the deploy, so let browsers
+        # and the Render edge keep them for a year.  A validator also avoids
+        # retransmitting an asset when a client still has an older copy.
+        etag = '"' + hashlib.sha256(body).hexdigest()[:32] + '"'
+        incoming = self.headers.get("If-None-Match", "")
+        validators = {
+            token.strip()[2:] if token.strip().startswith("W/") else token.strip()
+            for token in incoming.split(",") if token.strip()
+        }
+        if "*" in validators or etag in validators:
+            self.send_response(HTTPStatus.NOT_MODIFIED)
+            self.send_header("ETag", etag)
+            self.send_header("Cache-Control", "public, max-age=31536000, immutable")
+            self._security_headers()
+            self.end_headers()
+            return
         mime_type, _ = mimetypes.guess_type(requested.name)
+        compressed = False
+        response_body = body
+        if mime_type in {"text/css", "text/html", "text/javascript", "application/javascript", "application/json", "image/svg+xml"} and "gzip" in self.headers.get("Accept-Encoding", "").lower() and len(body) >= 512:
+            response_body = gzip.compress(body, compresslevel=6, mtime=0)
+            compressed = True
         self.send_response(HTTPStatus.OK)
         self.send_header("Content-Type", f"{mime_type or 'application/octet-stream'}; charset=utf-8")
-        self.send_header("Content-Length", str(len(body)))
-        self.send_header("Cache-Control", "no-cache")
+        self.send_header("Content-Length", str(len(response_body)))
+        self.send_header("Cache-Control", "public, max-age=31536000, immutable")
+        self.send_header("ETag", etag)
+        if compressed:
+            self.send_header("Content-Encoding", "gzip")
+            self.send_header("Vary", "Accept-Encoding")
         self._security_headers()
         self.end_headers()
-        self.wfile.write(body)
+        self.wfile.write(response_body)
 
     @staticmethod
     def _photo_cache_paths(registration: str) -> tuple[Path, Path]:
@@ -846,6 +891,12 @@ class RequestHandler(BaseHTTPRequestHandler):
             return
         if path == "/api/health":
             self._send_json({"ok": True, "time": iso_now()})
+            return
+        # Checked-in player photos are served before the SPA fallback.  The
+        # same path works on Render and under the /ABC prefix on GitHub Pages;
+        # a missing asset is handled by the browser's one-time API fallback.
+        if path.startswith("/player-photos/"):
+            self._send_static(path.lstrip("/"))
             return
         # The client owns the selected sport in the URL (for example
         # ``/tennis``). Serve the SPA shell for every sport route, including
