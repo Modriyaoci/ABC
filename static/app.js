@@ -419,6 +419,20 @@ function lineupCountry(player) {
   return String(player?.country || player?.orgName || player?.org || "").trim();
 }
 
+function flagMarkup(value, label = "") {
+  const code = String(value?.Org || value?.org || value?.countryCode || value || "").trim().toUpperCase();
+  if (!/^[A-Z]{3}$/.test(code)) return "";
+  const src = `${SITE_BASE}/flags/${encodeURIComponent(code)}.png`;
+  return `<img class="country-flag" src="${escapeHtml(src)}" alt="${escapeHtml(label || code)}" loading="lazy" onerror="this.hidden=true">`;
+}
+
+function renderMatchup(record) {
+  const text = String(record?.matchup || "对阵待定");
+  const home = record?.home || {};
+  const away = record?.away || {};
+  return `<span class="matchup-with-flags">${flagMarkup(home, home.Name || home.NameS || "")}${escapeHtml(text)}${flagMarkup(away, away.Name || away.NameS || "")}</span>`;
+}
+
 function renderLineupPlayer(player) {
   const name = String(player.name || "待定").trim() || "待定";
   const photo = lineupPhoto(player);
@@ -433,7 +447,7 @@ function renderLineupPlayer(player) {
     : "";
   return `<li class="lineup-player">
     <span class="lineup-player-avatar">${photoMarkup}<span class="lineup-player-initials"${photo ? " hidden" : ""} aria-hidden="true">${escapeHtml(initials)}</span></span>
-    <span class="lineup-player-copy"><strong>${escapeHtml(name)}</strong>${country || role ? `<span>${escapeHtml(country)}${escapeHtml(role)}</span>` : ""}</span>
+    <span class="lineup-player-copy"><strong>${flagMarkup(player, country)}${escapeHtml(name)}</strong>${country || role ? `<span>${escapeHtml(country)}${escapeHtml(role)}</span>` : ""}</span>
   </li>`;
 }
 
@@ -541,7 +555,7 @@ function renderSchedule() {
         <div class="card-content">
           <header class="card-header"><div class="card-date"><strong>${escapeHtml(dateTime.date)}</strong><span>${escapeHtml(dateTime.time)}</span></div><span class="card-category">${escapeHtml(categoryLabel)}</span></header>
           <p class="card-stage">${escapeHtml(record.stage)}</p>
-          <h3 class="card-matchup">${escapeHtml(record.matchup)}${scheduleNotice}</h3>
+          <h3 class="card-matchup">${renderMatchup(record)}${scheduleNotice}</h3>
           <div class="card-score"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}" aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分"><span>${escapeHtml(formatScore(record))}</span><span class="disclosure-arrow" aria-hidden="true">⌄</span></button></div>
           <p class="card-venue">${escapeHtml(record.venue)}</p>
         </div>
@@ -564,7 +578,7 @@ function renderSchedule() {
       <td class="date-cell" data-label="日期时间"><span><strong>${escapeHtml(dateTime.date)}</strong>${escapeHtml(dateTime.time)}</span></td>
       <td class="category-cell" data-label="类别"><span>${escapeHtml(categoryLabel)}</span></td>
       <td data-label="阶段"><span>${escapeHtml(record.stage)}</span></td>
-      <td class="matchup-cell" data-label="对阵"><span>${escapeHtml(record.matchup)}</span>${scheduleNotice}</td>
+      <td class="matchup-cell" data-label="对阵">${renderMatchup(record)}${scheduleNotice}</td>
       <td class="score-cell" data-label="比分"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}"
         aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分">
         <span>${escapeHtml(formatScore(record))}</span><span class="disclosure-arrow" aria-hidden="true">⌄</span></button></td>
