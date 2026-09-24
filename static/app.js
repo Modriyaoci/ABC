@@ -396,12 +396,13 @@ function lineupPlayers(match, side) {
 
 function lineupPhoto(player) {
   const reg = String(player?.reg || "").trim();
-  // Always use our same-origin image proxy when a registration number is
-  // available.  Direct official image URLs are rate-limited independently
-  // by the browser and made every lineup avatar disappear together; the
-  // proxy fetches once from the Oregon collector and caches the result.
+  // Prefer a checked-in static asset.  This keeps GitHub Pages and Render
+  // from requesting the official photo host for every Line-up render.  The
+  // image's error handler falls back to our API only when this registration
+  // has not yet been harvested into static/player-photos.
   if (reg && /^[A-Za-z0-9_.-]+$/.test(reg)) {
-    return apiUrl(`/api/player-photo?reg=${encodeURIComponent(reg)}`);
+    const base = SITE_BASE || "";
+    return `${base}/player-photos/${encodeURIComponent(reg)}.jpg`;
   }
   const value = String(player?.photo || player?.avatar || "").trim();
   return /^https?:\/\//i.test(value) ? value : "";
@@ -424,8 +425,11 @@ function renderLineupPlayer(player) {
   const initials = lineupInitials(player);
   const country = lineupCountry(player);
   const role = player.substitute ? " · 替补" : "";
+  const reg = String(player?.reg || "").trim();
+  const fallback = reg && /^[A-Za-z0-9_.-]+$/.test(reg)
+    ? apiUrl(`/api/player-photo?reg=${encodeURIComponent(reg)}`) : "";
   const photoMarkup = photo
-    ? `<img class="lineup-player-photo" src="${escapeHtml(photo)}" alt="" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />`
+    ? `<img class="lineup-player-photo" src="${escapeHtml(photo)}" alt="" loading="lazy" onerror="${fallback ? `this.onerror=function(){this.hidden=true;this.nextElementSibling.hidden=false};this.src='${escapeHtml(fallback)}';` : "this.hidden=true;this.nextElementSibling.hidden=false;"}" />`
     : "";
   return `<li class="lineup-player">
     <span class="lineup-player-avatar">${photoMarkup}<span class="lineup-player-initials"${photo ? " hidden" : ""} aria-hidden="true">${escapeHtml(initials)}</span></span>
@@ -695,7 +699,18 @@ function renderStatus() {
 }
 
 function statusVersion(status) {
-  return String(status?.dataVersion ?? `${status?.lastSuccess || ""}|${status?.lastLiveSuccess || ""}`);
+  return String(status?.scheduleVersion ?? status?.dataVersion ?? `${status?.lastSuccess || ""}`);
+}
+
+function applyLiveDelta(status) {
+  const delta = Array.isArray(status?.liveDelta) ? status.liveDelta : [];
+  if (!delta.length || !state.recordsLoaded) return;
+  const byId = new Map(state.records.map((record) => [String(record.id), record]));
+  for (const update of delta) {
+    const current = byId.get(String(update?.id));
+    if (current && update && typeof update === "object") Object.assign(current, update);
+  }
+  renderView();
 }
 
 async function loadSchedule(version) {
@@ -817,6 +832,7 @@ async function refresh(force = false) {
     const status = await fetchJson(apiUrl("/api/status"));
     const wasCompleted = todayCompleted();
     state.status = status;
+    applyLiveDelta(status);
     const version = statusVersion(status);
     const changed = version !== state.loadedVersion;
     if (todayCompleted() && !status.resultConfirmationExpired && (!wasCompleted || changed)) {
