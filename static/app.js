@@ -17,7 +17,7 @@ const apiUrl = (path) => `${API_BASE}${path}`;
 const WEEKDAYS = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
 const state = {
   records: [], activeSport: null, view: "schedule", selections: new Map(),
-  dateFilter: [], statusFilter: [], sportFilter: [],
+  dateFilter: [], statusFilter: [], sportFilter: [], courtSelections: new Map(),
   status: null, statusTimer: null, refreshing: false, refreshAgain: false,
   manualSyncPending: false, manualExtrasPending: false, completionExtrasPending: false,
   completionExtrasRetryAt: 0,
@@ -51,6 +51,7 @@ const elements = {
   dateFilter: document.querySelector("#date-filter"),
   statusFilter: document.querySelector("#status-filter"),
   sportFilter: document.querySelector("#sport-filter"),
+  courtFilter: document.querySelector("#court-filter"),
   category: document.querySelector("#category-filter"),
   scheduleView: document.querySelector("#schedule-view"),
   tournamentView: document.querySelector("#tournament-view"),
@@ -265,8 +266,31 @@ function formatScore(record) {
   const runs = sides.map((side) => (side.match(/^\s*(\d+)/) || ["", side.trim()])[1]);
   return `${runs[0]} : ${runs[1]}`;
 }
+function courtFilterKey() { return state.activeSport || "TODAY"; }
+function recordCourtKey(record) { return record.court ? `${record.sport}:${String(record.court).trim()}` : ""; }
+function courtLabel(court) {
+  return String(court || "").replace(/^Court\s+(\d+)$/i, "$1号场").replace(/^Table\s+(\d+)$/i, "$1号台");
+}
+function recordVenue(record) {
+  return [record.venue, courtLabel(record.court)].filter(Boolean).join(" · ");
+}
+function renderCourtFilter() {
+  const options = [...new Map(sportRecords()
+    .filter((record) => ["TEN", "TTE", "BDM"].includes(record.sport) && !recordHasBye(record) && record.court)
+    .map((record) => [recordCourtKey(record), `${state.activeSport ? "" : SPORTS[record.sport] + " · "}${courtLabel(record.court)}`])).entries()]
+    .sort((a, b) => a[1].localeCompare(b[1], "zh-CN", { numeric: true }));
+  const selected = state.courtSelections.get(courtFilterKey()) || [];
+  elements.courtFilter.innerHTML = options.map(([value, label]) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`).join("");
+  for (const option of elements.courtFilter.options) option.selected = selected.includes(option.value);
+  renderCheckboxMenu(elements.courtFilter, options, selected, (values) => {
+    state.courtSelections.set(courtFilterKey(), values);
+    renderView();
+    void refreshVisibleExtras(false, { manual: true });
+  });
+}
 function filteredRecords() {
   const categories = state.selections.get(selectionKey()) || [];
+  const courts = state.courtSelections.get(courtFilterKey()) || [];
   return sportRecords()
     // A bye is a bracket advancement, not a played match. Keep it available
     // to the official bracket data, but never show it as a schedule fixture.
@@ -274,6 +298,7 @@ function filteredRecords() {
     .filter((record) => !categories.length || categories.includes(recordCategory(record)))
     .filter((record) => !state.dateFilter.length || state.dateFilter.includes(record.date))
     .filter((record) => !state.statusFilter.length || state.statusFilter.includes(recordStatus(record)))
+    .filter((record) => !courts.length || courts.includes(recordCourtKey(record)))
     .sort((left, right) => {
       const liveOrder = Number(rightStatusIsLive(right) - rightStatusIsLive(left));
       if (liveOrder) return liveOrder;
@@ -576,7 +601,7 @@ function renderSchedule() {
           <p class="card-stage">${escapeHtml(record.stage)}</p>
           <h3 class="card-matchup">${renderMatchup(record)}${scheduleNotice}</h3>
           <div class="card-score"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}" aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分"><span>${escapeHtml(formatScore(record))}</span><span class="disclosure-arrow" aria-hidden="true">⌄</span></button></div>
-          <p class="card-venue">${escapeHtml(record.venue)}</p>
+          <p class="card-venue">${escapeHtml(recordVenue(record))}</p>
         </div>
         ${open ? `<div class="match-detail" id="detail-${escapeHtml(record.id)}" aria-label="${escapeHtml(record.matchup)}的小分">${detailContent(record.id)}</div>` : ""}
       </article>`;
@@ -601,7 +626,7 @@ function renderSchedule() {
       <td class="score-cell" data-label="比分"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}"
         aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分">
         <span>${escapeHtml(formatScore(record))}</span><span class="disclosure-arrow" aria-hidden="true">⌄</span></button></td>
-      <td data-label="场馆"><span>${escapeHtml(record.venue)}</span></td>
+      <td data-label="场馆"><span>${escapeHtml(recordVenue(record))}</span></td>
     </tr>${open ? `<tr class="detail-row"><td colspan="6"><div class="match-detail" id="detail-${escapeHtml(record.id)}" aria-label="${escapeHtml(record.matchup)}的小分">${detailContent(record.id)}</div></td></tr>` : ""}`;
   }).join("");
   if (focusedMatch) [...elements.body.querySelectorAll("[data-toggle-match]")].find((button) => button.dataset.toggleMatch === focusedMatch)?.focus({ preventScroll: true });
@@ -668,6 +693,8 @@ function renderView() {
   elements.statusFilter.parentElement.hidden = state.view !== "schedule";
   elements.sportFilter.parentElement.hidden = state.view !== "schedule" || Boolean(state.activeSport);
   elements.layout.parentElement.hidden = state.view !== "schedule";
+  elements.courtFilter.parentElement.hidden = state.view !== "schedule" || (Boolean(state.activeSport) && !["TEN", "TTE", "BDM"].includes(state.activeSport));
+  if (state.view === "schedule") renderCourtFilter();
   elements.category.parentElement.hidden = false;
   elements.category.multiple = state.view === "schedule";
   elements.category.size = state.view === "schedule" ? 1 : 1;
