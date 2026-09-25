@@ -482,6 +482,12 @@ def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
     if "victory ceremony" in stage_source.lower() and not home_data and not away_data:
         return None
     phase, stage = _stage_labels(item, disc)
+    # The badminton court schedule publishes these mixed-doubles second-round
+    # ties as “Not Before 16:00”. DateTimeRaw remains the original rolling
+    # court slot (11:50/15:00/etc.), so use the official not-before time for
+    # the affected 25 September session instead of showing a stale slot.
+    if disc == "BDM" and str(item.get("Phase") or "").startswith("X.DOUBLES") and "8FNL" in str(item.get("Phase") or "") and beijing_time.date().isoformat() == "2026-09-25":
+        beijing_time = beijing_time.replace(hour=16, minute=0)
     venue_source = str(item.get("VenueDesc") or item.get("LocDesc") or "")
     status = str(item.get("Status") or "SCHEDULED").upper()
 
