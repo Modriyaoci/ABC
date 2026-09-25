@@ -494,7 +494,8 @@ def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
         return None
     phase, stage = _stage_labels(item, disc)
     if disc == "BDM" and str(item.get("Phase") or "").startswith("X.DOUBLES") and "8FNL" in str(item.get("Phase") or "") and beijing_time.date().isoformat() == "2026-09-25":
-        beijing_time = beijing_time.replace(hour=16, minute=0)
+        # The official “Not Before 16:00” is Japan time (UTC+9).
+        beijing_time = beijing_time.replace(hour=15, minute=0)
     venue_source = str(item.get("VenueDesc") or item.get("LocDesc") or "")
     status = str(item.get("Status") or "SCHEDULED").upper()
 

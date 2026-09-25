@@ -48,6 +48,7 @@ const elements = {
   tournamentView: document.querySelector("#tournament-view"),
 };
 
+
 const checkboxMenus = new WeakMap();
 function renderCheckboxMenu(select, options, selected, onChange) {
   if (!select || !select.multiple) return;
@@ -707,7 +708,7 @@ function statusVersion(status) {
 }
 
 async function loadSchedule(version) {
-  const payload = await fetchJson("/api/schedule");
+  const payload = await fetchJson("/api/schedule?schema=2");
   state.records = Array.isArray(payload.records) ? payload.records : [];
   state.recordsLoaded = true;
   state.loadedVersion = version;
