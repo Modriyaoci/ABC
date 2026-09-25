@@ -228,6 +228,22 @@ function renderTabs() {
 
 function selectionKey() { return `${state.activeSport}:${state.view === "schedule" ? "schedule" : "tournament"}`; }
 function recordCategory(record) { return String(record.eventCode || record.category || ""); }
+function isByeValue(value) {
+  const text = String(value ?? "").trim().toUpperCase().replace(/[()（）\[\]【】]/g, "");
+  return text === "BYE" || text === "轮空";
+}
+function recordHasBye(record) {
+  if (!record || typeof record !== "object") return false;
+  const values = [record.matchup, record.home, record.away, record.homeName, record.awayName,
+    ...(Array.isArray(record.homePlayers) ? record.homePlayers : []),
+    ...(Array.isArray(record.awayPlayers) ? record.awayPlayers : [])];
+  return values.some((value) => {
+    if (isByeValue(value)) return true;
+    if (!value || typeof value !== "object") return false;
+    return [value.Name, value.NameS, value.name, value.shortName, value.org, value.Org, value.country]
+      .some(isByeValue);
+  });
+}
 function sportRecords() {
   if (!state.activeSport) return state.records.filter((record) => !state.sportFilter.length || state.sportFilter.includes(record.sport));
   return state.records.filter((record) => record.sport === state.activeSport);
@@ -252,6 +268,9 @@ function formatScore(record) {
 function filteredRecords() {
   const categories = state.selections.get(selectionKey()) || [];
   return sportRecords()
+    // A bye is a bracket advancement, not a played match. Keep it available
+    // to the official bracket data, but never show it as a schedule fixture.
+    .filter((record) => !recordHasBye(record))
     .filter((record) => !categories.length || categories.includes(recordCategory(record)))
     .filter((record) => !state.dateFilter.length || state.dateFilter.includes(record.date))
     .filter((record) => !state.statusFilter.length || state.statusFilter.includes(recordStatus(record)))
