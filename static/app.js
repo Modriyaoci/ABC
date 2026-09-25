@@ -13,8 +13,10 @@ const PATH_SPORTS = Object.fromEntries(Object.entries(SPORT_PATHS).map(([sport, 
 const WEEKDAYS = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
 const state = {
   records: [], activeSport: null, view: "schedule", selections: new Map(),
-  dateFilter: "", statusFilter: "",
+  dateFilter: [], statusFilter: [], sportFilter: [],
   status: null, statusTimer: null, refreshing: false, refreshAgain: false,
+  manualSyncPending: false, manualExtrasPending: false, completionExtrasPending: false,
+  completionExtrasRetryAt: 0,
   teamScheduleChanges: savedTeamScheduleChanges(),
   recordsLoaded: false, loadedVersion: null, connectionError: "",
   expanded: new Set(), details: new Map(), tournaments: new Map(),
@@ -39,6 +41,7 @@ const elements = {
   scheduleFilters: document.querySelector("#schedule-filters"),
   dateFilter: document.querySelector("#date-filter"),
   statusFilter: document.querySelector("#status-filter"),
+  sportFilter: document.querySelector("#sport-filter"),
   category: document.querySelector("#category-filter"),
   scheduleView: document.querySelector("#schedule-view"),
   tournamentView: document.querySelector("#tournament-view"),
@@ -159,12 +162,6 @@ function formatSyncTime(value) {
   }).format(date);
 }
 
-function cooldownLabel(value) {
-  if (!value) return "";
-  const date = new Date(value);
-  return Number.isNaN(date.getTime()) ? "稍后" : `${formatSyncTime(value)}（北京时间）`;
-}
-
 async function fetchJson(url, options = {}) {
   const controller = new AbortController();
   const timeout = window.setTimeout(() => controller.abort(), 25000);
@@ -181,17 +178,37 @@ async function fetchJson(url, options = {}) {
 }
 
 function renderTabs() {
-  elements.tabs.innerHTML = Object.entries(SPORTS).map(([code, name]) => `
+  const tabs = [["TODAY", "今日赛程"], ...Object.entries(SPORTS)];
+  elements.tabs.innerHTML = tabs.map(([code, name]) => `
     <button class="sport-tab" type="button" role="tab" data-sport="${code}"
       aria-selected="${state.activeSport === code}">${name}</button>`).join("");
 }
 
 function selectionKey() { return `${state.activeSport}:${state.view === "schedule" ? "schedule" : "tournament"}`; }
 function recordCategory(record) { return String(record.eventCode || record.category || ""); }
-function sportRecords() { return state.records.filter((record) => record.sport === state.activeSport); }
+function isByeValue(value) {
+  const text = String(value ?? "").trim().toUpperCase().replace(/[()（）\[\]【】]/g, "");
+  return text === "BYE" || text === "轮空";
+}
+function recordHasBye(record) {
+  if (!record || typeof record !== "object") return false;
+  const values = [record.matchup, record.home, record.away, record.homeName, record.awayName,
+    ...(Array.isArray(record.homePlayers) ? record.homePlayers : []),
+    ...(Array.isArray(record.awayPlayers) ? record.awayPlayers : [])];
+  return values.some((value) => {
+    if (isByeValue(value)) return true;
+    if (!value || typeof value !== "object") return false;
+    return [value.Name, value.NameS, value.name, value.shortName, value.org, value.Org, value.country]
+      .some(isByeValue);
+  });
+}
+function sportRecords() {
+  if (!state.activeSport) return state.records.filter((record) => !state.sportFilter.length || state.sportFilter.includes(record.sport));
+  return state.records.filter((record) => record.sport === state.activeSport);
+}
 function recordStatus(record) {
   if (record.isLive || ["LIVE", "RUNNING", "IN_PROGRESS"].includes(String(record.status || "").toUpperCase())) return "live";
-  if (["OFFICIAL", "FINISHED", "COMPLETED", "CANCELED", "CANCELLED"].includes(String(record.status || "").toUpperCase())) return "completed";
+  if (["OFFICIAL", "UNOFFICIAL", "FINISHED", "COMPLETED", "CANCELED", "CANCELLED"].includes(String(record.status || "").toUpperCase())) return "completed";
   return "upcoming";
 }
 function dateLabel(value) {
@@ -207,11 +224,12 @@ function formatScore(record) {
   return `${runs[0]} : ${runs[1]}`;
 }
 function filteredRecords() {
-  const category = state.selections.get(selectionKey()) || "";
+  const categories = state.selections.get(selectionKey()) || [];
   return sportRecords()
-    .filter((record) => !category || recordCategory(record) === category)
-    .filter((record) => !state.dateFilter || record.date === state.dateFilter)
-    .filter((record) => !state.statusFilter || recordStatus(record) === state.statusFilter)
+    .filter((record) => !recordHasBye(record))
+    .filter((record) => !categories.length || categories.includes(recordCategory(record)))
+    .filter((record) => !state.dateFilter.length || state.dateFilter.includes(record.date))
+    .filter((record) => !state.statusFilter.length || state.statusFilter.includes(recordStatus(record)))
     .sort((left, right) => {
       const liveOrder = Number(rightStatusIsLive(right) - rightStatusIsLive(left));
       if (liveOrder) return liveOrder;
@@ -223,9 +241,15 @@ function rightStatusIsLive(record) { return recordStatus(record) === "live" ? 1 
 function renderDateFilter() {
   const dates = [...new Set(sportRecords().map((record) => record.date).filter(Boolean))].sort();
   const current = state.dateFilter;
-  elements.dateFilter.innerHTML = `<option value="">全部日期</option>${dates.map((date) => `<option value="${escapeHtml(date)}">${escapeHtml(dateLabel(date))}</option>`).join("")}`;
-  if (current && dates.includes(current)) elements.dateFilter.value = current;
-  else if (current) state.dateFilter = "";
+  elements.dateFilter.innerHTML = dates.map((date) => `<option value="${escapeHtml(date)}">${escapeHtml(dateLabel(date))}</option>`).join("");
+  for (const option of elements.dateFilter.options) option.selected = current.includes(option.value);
+  state.dateFilter = current.filter((date) => dates.includes(date));
+}
+
+function renderSportFilter() {
+  const options = Object.entries(SPORTS).filter(([code]) => state.records.some((record) => record.sport === code));
+  elements.sportFilter.innerHTML = options.map(([value, label]) => `<option value="${value}">${escapeHtml(label)}</option>`).join("");
+  for (const option of elements.sportFilter.options) option.selected = state.sportFilter.includes(option.value);
 }
 
 function renderCategoryFilter() {
@@ -238,12 +262,14 @@ function renderCategoryFilter() {
   let options = state.view === "schedule" || scheduleOptions.length
     ? scheduleOptions
     : (state.tournaments.get(state.activeSport)?.data?.events || []).map((event) => [String(event.id), event.name]);
-  if (state.view === "schedule") options.unshift(["", "全部类别"]);
   if (!options.length) options = [["", "暂无类别"]];
   const key = selectionKey();
-  if (!options.some(([value]) => value === state.selections.get(key))) state.selections.set(key, options[0][0]);
+  const current = state.selections.get(key) || [];
+  const values = options.map(([value]) => value);
+  const selected = state.view === "schedule" ? current.filter((value) => values.includes(value)) : (current.filter((value) => values.includes(value)).length ? current.filter((value) => values.includes(value)) : [options[0][0]]);
+  state.selections.set(key, selected);
   elements.category.innerHTML = options.map(([value, label]) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`).join("");
-  elements.category.value = state.selections.get(key);
+  for (const option of elements.category.options) option.selected = state.selections.get(key).includes(option.value);
   elements.category.disabled = options.length <= 1;
 }
 
@@ -336,12 +362,15 @@ function lineupPlayers(match, side) {
 }
 
 function lineupPhoto(player) {
-  const value = String(player?.photo || player?.avatar || "").trim();
-  if (/^https?:\/\//i.test(value)) return value;
   const reg = String(player?.reg || "").trim();
-  return reg && /^[A-Za-z0-9_-]+$/.test(reg)
-    ? `https://results.asiangames2026.org/ag2026/photos/${encodeURIComponent(reg)}.jpg`
-    : "";
+  // Prefer the bundled repository copy.  Only registrations that are not in
+  // the cache fall through to the same-origin proxy, so routine lineup
+  // refreshes never request the official image host again.
+  if (reg && /^[A-Za-z0-9_.-]+$/.test(reg)) {
+    return `/player-photos/${encodeURIComponent(reg)}.jpg`;
+  }
+  const value = String(player?.photo || player?.avatar || "").trim();
+  return /^https?:\/\//i.test(value) ? value : "";
 }
 
 function lineupInitials(player) {
@@ -362,7 +391,7 @@ function renderLineupPlayer(player) {
   const country = lineupCountry(player);
   const role = player.substitute ? " · 替补" : "";
   const photoMarkup = photo
-    ? `<img class="lineup-player-photo" src="${escapeHtml(photo)}" alt="" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />`
+    ? `<img class="lineup-player-photo" src="${escapeHtml(photo)}" alt="" loading="lazy" onerror="if(this.dataset.fallback!=='1'&&this.src.includes('/player-photos/')){this.dataset.fallback='1';this.src='/api/player-photo?reg=${encodeURIComponent(String(player.reg || ''))}';}else{this.hidden=true;this.nextElementSibling.hidden=false;}" />`
     : "";
   return `<li class="lineup-player">
     <span class="lineup-player-avatar">${photoMarkup}<span class="lineup-player-initials"${photo ? " hidden" : ""} aria-hidden="true">${escapeHtml(initials)}</span></span>
@@ -468,10 +497,11 @@ function renderSchedule() {
       const dateTime = formatDateTime(record);
       const open = state.expanded.has(record.id);
       const status = recordStatus(record);
+      const categoryLabel = state.activeSport ? record.category : `${record.sportName || SPORTS[record.sport] || ""} · ${record.category || ""}`;
       const scheduleNotice = isTeamRecord(record) && hasTeamScheduleChange(record.id) ? '<span class="schedule-change-inline">官网赛程有变动</span>' : "";
       return `<article class="match-card ${status === "live" ? "is-live" : ""} ${open ? "is-expanded" : ""}" data-match-id="${escapeHtml(record.id)}">
         <div class="card-content">
-          <header class="card-header"><div class="card-date"><strong>${escapeHtml(dateTime.date)}</strong><span>${escapeHtml(dateTime.time)}</span></div><span class="card-category">${escapeHtml(record.category)}</span></header>
+          <header class="card-header"><div class="card-date"><strong>${escapeHtml(dateTime.date)}</strong><span>${escapeHtml(dateTime.time)}</span></div><span class="card-category">${escapeHtml(categoryLabel)}</span></header>
           <p class="card-stage">${escapeHtml(record.stage)}</p>
           <h3 class="card-matchup">${escapeHtml(record.matchup)}${scheduleNotice}</h3>
           <div class="card-score"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}" aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分"><span>${escapeHtml(formatScore(record))}</span><span class="disclosure-arrow" aria-hidden="true">⌄</span></button></div>
@@ -489,11 +519,12 @@ function renderSchedule() {
     const dateTime = formatDateTime(record);
     const cancelled = ["CANCELED", "CANCELLED", "POSTPONED"].includes(record.status);
     const open = state.expanded.has(record.id);
+    const categoryLabel = state.activeSport ? record.category : `${record.sportName || SPORTS[record.sport] || ""} · ${record.category || ""}`;
     const rowClass = record.isLive ? "is-live" : cancelled ? "is-cancelled" : "";
     const scheduleNotice = isTeamRecord(record) && hasTeamScheduleChange(record.id) ? '<span class="schedule-change-inline">官网赛程有变动</span>' : "";
     return `<tr class="match-row ${rowClass} ${open ? "is-expanded" : ""}" data-match-id="${escapeHtml(record.id)}">
       <td class="date-cell" data-label="日期时间"><span><strong>${escapeHtml(dateTime.date)}</strong>${escapeHtml(dateTime.time)}</span></td>
-      <td class="category-cell" data-label="类别"><span>${escapeHtml(record.category)}</span></td>
+      <td class="category-cell" data-label="类别"><span>${escapeHtml(categoryLabel)}</span></td>
       <td data-label="阶段"><span>${escapeHtml(record.stage)}</span></td>
       <td class="matchup-cell" data-label="对阵"><span>${escapeHtml(record.matchup)}</span>${scheduleNotice}</td>
       <td class="score-cell" data-label="比分"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}"
@@ -518,7 +549,8 @@ function renderTournament() {
     elements.tournamentView.innerHTML = `<div class="view-message"><p>${escapeHtml(entry.error || "官网尚未公布")}</p><button class="text-button" type="button" data-retry-tournament>重试</button></div>`;
     return;
   }
-  const event = (entry.data.events || []).find((item) => String(item.id) === state.selections.get(selectionKey()));
+  const selectedEvents = state.selections.get(selectionKey()) || [];
+  const event = (entry.data.events || []).find((item) => selectedEvents.includes(String(item.id)));
   const errorNote = staleNotice(entry, state.view === "groups" ? "小组积分" : "对阵图");
   if (!event) {
     elements.tournamentView.innerHTML = `${errorNote}<div class="view-message">${escapeHtml(entry.data.message || "官网尚未公布")}</div>`;
@@ -555,7 +587,7 @@ function bracketMatch(match, number, locations) {
 }
 
 function renderView() {
-  elements.title.textContent = SPORTS[state.activeSport] || "赛程";
+  elements.title.textContent = SPORTS[state.activeSport] || "今日赛程";
   elements.scheduleView.hidden = state.view !== "schedule";
   elements.tournamentView.hidden = state.view === "schedule";
   // Keep the event/category selector available for standings and bracket
@@ -563,11 +595,15 @@ function renderView() {
   elements.scheduleFilters.hidden = false;
   elements.dateFilter.parentElement.hidden = state.view !== "schedule";
   elements.statusFilter.parentElement.hidden = state.view !== "schedule";
+  elements.sportFilter.parentElement.hidden = state.view !== "schedule" || Boolean(state.activeSport);
   elements.layout.parentElement.hidden = state.view !== "schedule";
   elements.category.parentElement.hidden = false;
+  elements.category.multiple = state.view === "schedule";
+  elements.category.size = 1;
+  elements.viewTabs.hidden = !state.activeSport;
   for (const button of elements.viewTabs.querySelectorAll("[data-view]")) button.setAttribute("aria-selected", String(button.dataset.view === state.view));
   renderCategoryFilter();
-  if (state.view === "schedule") renderDateFilter();
+  if (state.view === "schedule") { renderSportFilter(); renderDateFilter(); }
   if (state.view === "schedule") renderSchedule(); else renderTournament();
 }
 
@@ -579,22 +615,27 @@ function renderStatus() {
   elements.syncButton.disabled = Boolean(status.running);
   elements.syncButton.classList.toggle("is-running", Boolean(status.running));
   const interval = Number(status.liveIntervalSeconds) || 30;
-  elements.automaticSync.textContent = status.liveEnabled
-    ? `每天 08:00 全量同步 · 比赛日约每 ${interval} 秒更新比分`
-    : status.nextAutomaticSync ? "每天 08:00 自动同步赛程" : "读取自动同步设置";
-  elements.automaticSync.title = status.nextAutomaticSync ? `北京时间，下次全量同步 ${formatSyncTime(status.nextAutomaticSync)}` : "北京时间";
+  elements.automaticSync.textContent = todayCompleted()
+    ? status.resultsPendingConfirmation
+      ? status.resultConfirmationExpired
+        ? "待确认赛果自动核对已结束 · 请手动同步"
+        : "今日比赛已结束 · 每 5 分钟核对待确认赛果"
+      : "今日比赛已全部完场 · 自动同步已停止"
+    : !automaticSyncAllowed()
+      ? "北京时间 08:00–23:00 自动更新 · 当前仅手动同步"
+      : status.liveEnabled
+        ? `北京时间 08:00–23:00 自动更新 · 比赛日约每 ${interval} 秒更新比分`
+        : "北京时间 08:00–23:00 自动更新 · 每天 08:00 全量同步";
+  elements.automaticSync.title = todayCompleted() && status.resultsPendingConfirmation && status.resultConfirmationDeadline
+    ? `北京时间，待确认赛果自动核对截止 ${formatSyncTime(status.resultConfirmationDeadline)}`
+    : status.nextAutomaticSync ? `北京时间，下次全量同步 ${formatSyncTime(status.nextAutomaticSync)}` : "北京时间";
   const updated = [status.lastLiveSuccess, status.lastSuccess].filter(Boolean).sort().at(-1);
-  const cooldownUntil = status.provider?.cooldownUntil || status.liveRetryAt || status.retryAt;
-  const cooldown = cooldownUntil && new Date(cooldownUntil).getTime() > Date.now();
   if (state.connectionError) {
     elements.statusDot.classList.add("is-error");
     elements.syncStatus.textContent = "连接中断，正在自动重试";
   } else if (status.running) {
     elements.statusDot.classList.add("is-running");
     elements.syncStatus.textContent = `正在同步${status.progressTotal ? ` ${status.progressDone}/${status.progressTotal}` : ""}`;
-  } else if (cooldown) {
-    elements.statusDot.classList.add("is-error");
-    elements.syncStatus.textContent = `官方限流，自动重试 ${cooldownLabel(cooldownUntil)}`;
   } else if (status.lastError || status.lastLiveError) {
     elements.statusDot.classList.add("is-error");
     elements.syncStatus.textContent = `等待重试 · 上次更新 ${formatSyncTime(updated)}`;
@@ -602,9 +643,7 @@ function renderStatus() {
     elements.statusDot.classList.add("is-success");
     elements.syncStatus.textContent = `更新于 ${formatSyncTime(updated)}`;
   } else elements.syncStatus.textContent = "等待首次同步";
-  const error = state.connectionError || (cooldown
-    ? `官网暂时限流，页面保留最近成功数据，系统会在 ${cooldownLabel(cooldownUntil)} 自动重试`
-    : status.lastLiveError || status.lastError);
+  const error = state.connectionError || status.lastLiveError || status.lastError;
   elements.errorBanner.hidden = !error;
   elements.errorBanner.textContent = error ? `暂未更新，已保留现有赛程。${error}` : "";
   // Schedule edits are shown beside the affected team-tie row. A global
@@ -623,21 +662,53 @@ async function loadSchedule(version) {
   state.records = Array.isArray(payload.records) ? payload.records : [];
   state.recordsLoaded = true;
   state.loadedVersion = version;
-  if (!state.activeSport) {
-    state.activeSport = state.records.find((record) => record.isLive)?.sport || "TEN";
-    updateSportPath(state.activeSport, { replace: true });
-    renderTabs();
+  if (!state.activeSport && !state.dateFilter.length) {
+    const today = new Date(Date.now() + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
+    if (state.records.some((record) => record.date === today)) state.dateFilter = [today];
   }
+  // The root path is the all-sports “今日赛程” view. Sport paths opt into a
+  // single sport explicitly and remain stable across refreshes.
+  if (state.activeSport && !SPORTS[state.activeSport]) state.activeSport = null;
+  renderTabs();
   renderView();
 }
 
-async function loadMatch(id, force = false) {
+async function loadMatch(id, force = false, { automatic = false } = {}) {
   const current = state.details.get(id);
   if (current?.loading || (!force && current?.data)) return;
   const entry = { ...current, loading: true, lastRequested: Date.now(), error: "" };
   state.details.set(id, entry);
   updateDetailPanel(id);
-  try { entry.data = await fetchJson(`/api/match?id=${encodeURIComponent(id)}`); }
+  try {
+    entry.data = await fetchJson(`/api/match?id=${encodeURIComponent(id)}${automatic ? "&automatic=1" : ""}`);
+    // The schedule feed can publish a provisional “对阵待定” row while the
+    // official results page already exposes the selected doubles players.
+    // Promote that confirmed Line-up into the visible matchup immediately.
+    const record = state.records.find((item) => String(item.id) === String(id));
+    if (record && /待定/.test(String(record.matchup || ""))) {
+      const side = (label, players) => {
+        if (label && !/待定/.test(String(label))) return String(label);
+        if (!Array.isArray(players) || !players.length || players.length > 2) return "";
+        const names = players.map((player) => String(player?.name || player?.nameS || "").trim()).filter(Boolean);
+        return names.length ? names.join(" / ") : "";
+      };
+      // Mixed/team results may publish the lineup only on a child unit.
+      // Walk those units as well; the first child with both sides confirmed
+      // is the official opponent pair for the provisional parent row.
+      const sources = [entry.data, ...(Array.isArray(entry.data?.subMatches) ? entry.data.subMatches : [])];
+      let home = "";
+      let away = "";
+      for (const source of sources) {
+        home = side(source?.home, source?.homePlayers);
+        away = side(source?.away, source?.awayPlayers);
+        if (home && away) break;
+      }
+      if (home && away) {
+        record.matchup = `${home} vs ${away}`;
+        renderView();
+      }
+    }
+  }
   catch (error) { entry.error = error.message || "无法读取小分"; }
   finally {
     entry.loading = false;
@@ -645,7 +716,7 @@ async function loadMatch(id, force = false) {
   }
 }
 
-async function loadTournament(force = false) {
+async function loadTournament(force = false, { automatic = false } = {}) {
   const sport = state.activeSport;
   if (!sport) return;
   const current = state.tournaments.get(sport);
@@ -653,7 +724,7 @@ async function loadTournament(force = false) {
   const entry = { ...current, loading: true, lastRequested: Date.now(), error: "", version: state.loadedVersion };
   state.tournaments.set(sport, entry);
   if (state.view !== "schedule") renderView();
-  try { entry.data = await fetchJson(`/api/tournament?sport=${encodeURIComponent(sport)}`); }
+  try { entry.data = await fetchJson(`/api/tournament?sport=${encodeURIComponent(sport)}${automatic ? "&automatic=1" : ""}`); }
   catch (error) { entry.error = error.message || "无法读取积分和对阵"; }
   finally {
     entry.loading = false;
@@ -661,18 +732,41 @@ async function loadTournament(force = false) {
   }
 }
 
-async function refreshVisibleExtras(force = false) {
+function todayCompleted(now = Date.now()) {
+  const beijingDate = new Date(now + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  return state.status?.todayCompleted === true && state.status.completionDate === beijingDate;
+}
+
+function automaticSyncAllowed(now = Date.now()) {
+  // Use a fixed UTC+8 offset so device timezone and an old status response
+  // cannot leave automatic detail requests running after 23:00 Beijing time.
+  const beijingHour = new Date(now + 8 * 60 * 60 * 1000).getUTCHours();
+  return beijingHour >= 8 && beijingHour < 23 && !todayCompleted(now) && state.status?.automaticSyncAllowed !== false;
+}
+
+async function refreshVisibleExtras(force = false, { manual = false, completionRefresh = false } = {}) {
+  // Completion refreshes only read finalized server caches, including versions
+  // updated by the low-frequency confirmation checks.
+  if (!manual && todayCompleted() && state.status?.resultConfirmationExpired) return;
+  if (!manual && !automaticSyncAllowed() && !(completionRefresh && todayCompleted())) return;
   const interval = (Number(state.status?.liveIntervalSeconds) || 30) * 1000;
   if (state.view !== "schedule") {
     const entry = state.tournaments.get(state.activeSport);
-    if (force || !entry || Date.now() - entry.lastRequested >= interval) await loadTournament(true);
+    if (force || !entry || Date.now() - entry.lastRequested >= interval) await loadTournament(true, { automatic: !manual });
     return;
   }
   const visibleOpen = filteredRecords().filter((record) => state.expanded.has(record.id));
   await Promise.allSettled(visibleOpen.map((record) => {
     const entry = state.details.get(record.id);
-    return force || !entry || Date.now() - entry.lastRequested >= interval ? loadMatch(record.id, true) : undefined;
+    return force || !entry || Date.now() - entry.lastRequested >= interval ? loadMatch(record.id, true, { automatic: !manual }) : undefined;
   }));
+}
+
+function visibleExtrasNeedRetry() {
+  const entries = state.view !== "schedule"
+    ? [state.tournaments.get(state.activeSport)]
+    : filteredRecords().filter((record) => state.expanded.has(record.id)).map((record) => state.details.get(record.id));
+  return entries.some((entry) => !entry || entry.loading || entry.error);
 }
 
 async function refresh(force = false) {
@@ -680,13 +774,39 @@ async function refresh(force = false) {
   state.refreshing = true;
   try {
     const status = await fetchJson("/api/status");
+    const wasCompleted = todayCompleted();
     state.status = status;
     const version = statusVersion(status);
     const changed = version !== state.loadedVersion;
+    if (todayCompleted() && !status.resultConfirmationExpired && (!wasCompleted || changed)) {
+      state.completionExtrasPending = true;
+      state.completionExtrasRetryAt = 0;
+    }
+    if (!todayCompleted() || status.resultConfirmationExpired) {
+      state.completionExtrasPending = false;
+      state.completionExtrasRetryAt = 0;
+    }
     if (force || !state.recordsLoaded || changed) await loadSchedule(version);
     state.connectionError = "";
     renderStatus();
-    if (!document.hidden) await refreshVisibleExtras(force || changed);
+    if (state.manualSyncPending && !status.running) {
+      state.manualSyncPending = false;
+      state.manualExtrasPending = !status.lastError;
+    }
+    if (!document.hidden) {
+      const manual = state.manualExtrasPending;
+      const completionRefresh = state.completionExtrasPending && Date.now() >= state.completionExtrasRetryAt;
+      state.manualExtrasPending = false;
+      if (completionRefresh) {
+        const retrySeconds = status.resultsPendingConfirmation ? 300 : (Number(status.liveIntervalSeconds) || 30);
+        state.completionExtrasRetryAt = Date.now() + retrySeconds * 1000;
+      }
+      await refreshVisibleExtras(force || changed || manual || completionRefresh, { manual, completionRefresh });
+      // A failed final cache read must not lose the final score. Subsequent
+      // attempts still use automatic=1 (cache only after completion), at the
+      // confirmation interval while results are pending, even on focus.
+      if (completionRefresh) state.completionExtrasPending = visibleExtrasNeedRetry();
+    }
   } catch (error) {
     state.connectionError = error.message || "无法连接本地服务";
     renderStatus();
@@ -703,15 +823,8 @@ async function requestSync() {
   elements.syncButton.disabled = true;
   try {
     const response = await fetch("/api/sync", { method: "POST" });
-    const payload = await response.json().catch(() => ({}));
-    if (!response.ok && response.status !== 409) {
-      if (response.status === 429 && payload.message) {
-        state.connectionError = payload.message;
-        await refresh();
-        return;
-      }
-      throw new Error(payload.message || "无法启动同步");
-    }
+    if (!response.ok && response.status !== 409) throw new Error("无法启动同步");
+    state.manualSyncPending = true;
     await refresh();
   } catch (error) {
     state.connectionError = error.message;
@@ -729,12 +842,12 @@ function toggleMatch(id) {
 elements.tabs.addEventListener("click", (event) => {
   const button = event.target.closest("[data-sport]");
   if (!button) return;
-  state.activeSport = button.dataset.sport;
+  state.activeSport = button.dataset.sport === "TODAY" ? null : button.dataset.sport;
   updateSportPath(state.activeSport);
   renderTabs();
   renderView();
   if (state.view !== "schedule") void loadTournament();
-  else void refreshVisibleExtras();
+  else void refreshVisibleExtras(false, { manual: true });
 });
 elements.viewTabs.addEventListener("click", (event) => {
   const button = event.target.closest("[data-view]");
@@ -742,22 +855,27 @@ elements.viewTabs.addEventListener("click", (event) => {
   state.view = button.dataset.view;
   renderView();
   if (state.view !== "schedule") void loadTournament();
-  else void refreshVisibleExtras();
+  else void refreshVisibleExtras(false, { manual: true });
 });
 elements.category.addEventListener("change", () => {
-  state.selections.set(selectionKey(), elements.category.value);
+  state.selections.set(selectionKey(), [...elements.category.selectedOptions].map((option) => option.value));
   renderView();
-  void refreshVisibleExtras();
+  void refreshVisibleExtras(false, { manual: true });
 });
 elements.dateFilter.addEventListener("change", () => {
-  state.dateFilter = elements.dateFilter.value;
+  state.dateFilter = [...elements.dateFilter.selectedOptions].map((option) => option.value);
   renderView();
-  void refreshVisibleExtras();
+  void refreshVisibleExtras(false, { manual: true });
 });
 elements.statusFilter.addEventListener("change", () => {
-  state.statusFilter = elements.statusFilter.value;
+  state.statusFilter = [...elements.statusFilter.selectedOptions].map((option) => option.value);
   renderView();
-  void refreshVisibleExtras();
+  void refreshVisibleExtras(false, { manual: true });
+});
+elements.sportFilter.addEventListener("change", () => {
+  state.sportFilter = [...elements.sportFilter.selectedOptions].map((option) => option.value);
+  renderView();
+  void refreshVisibleExtras(false, { manual: true });
 });
 elements.layout.addEventListener("change", () => {
   const columns = Number(elements.layout.value);
@@ -802,12 +920,12 @@ document.addEventListener("visibilitychange", () => { if (!document.hidden) void
 window.addEventListener("online", () => { void refresh(true); });
 window.addEventListener("popstate", () => {
   const sport = sportFromPath();
-  if (!sport || sport === state.activeSport) return;
+  if (sport === state.activeSport) return;
   state.activeSport = sport;
   renderTabs();
   renderView();
   if (state.view !== "schedule") void loadTournament();
-  else void refreshVisibleExtras();
+  else void refreshVisibleExtras(false, { manual: true });
 });
 
 async function init() {
