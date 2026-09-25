@@ -10,10 +10,14 @@ const SPORT_PATHS = {
   TTE: "table-tennis", BDM: "badminton", HBL: "handball",
 };
 const PATH_SPORTS = Object.fromEntries(Object.entries(SPORT_PATHS).map(([sport, path]) => [path, sport]));
+const GITHUB_PAGES = window.location.hostname.endsWith(".github.io");
+const SITE_BASE = GITHUB_PAGES && window.location.pathname.startsWith("/ABC") ? "/ABC" : "";
+const API_BASE = GITHUB_PAGES ? "https://two026asiagames-abc.onrender.com" : "";
+const apiUrl = (path) => `${API_BASE}${path}`;
 const WEEKDAYS = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
 const state = {
   records: [], activeSport: null, view: "schedule", selections: new Map(),
-  dateFilter: "", statusFilter: "",
+  dateFilter: [], statusFilter: [], sportFilter: [],
   status: null, statusTimer: null, refreshing: false, refreshAgain: false,
   manualSyncPending: false, manualExtrasPending: false, completionExtrasPending: false,
   completionExtrasRetryAt: 0,
@@ -22,6 +26,11 @@ const state = {
   expanded: new Set(), details: new Map(), tournaments: new Map(),
   selectedSubMatches: new Map(), lineupVisibility: savedLineupVisibility(), layout: savedLayout(),
 };
+// Status is deliberately polled at five-second intervals.  The status
+// response is small and carries the dataVersion; the full schedule is only
+// fetched when that version changes (see refresh()), so a live score update
+// does not repeatedly download an unchanged schedule document.
+const STATUS_POLL_INTERVAL_MS = 5000;
 const elements = {
   tabs: document.querySelector("#sport-tabs"),
   title: document.querySelector("#active-sport-title"),
@@ -41,10 +50,36 @@ const elements = {
   scheduleFilters: document.querySelector("#schedule-filters"),
   dateFilter: document.querySelector("#date-filter"),
   statusFilter: document.querySelector("#status-filter"),
+  sportFilter: document.querySelector("#sport-filter"),
   category: document.querySelector("#category-filter"),
   scheduleView: document.querySelector("#schedule-view"),
   tournamentView: document.querySelector("#tournament-view"),
 };
+
+// Schedule filters use a compact checkbox menu. Tournament views keep the
+// native single-choice event selector, so the two kinds of filtering never
+// share a control or selection state.
+const checkboxMenus = new WeakMap();
+function renderCheckboxMenu(select, options, selected, onChange) {
+  if (!select || !select.multiple) return;
+  let menu = checkboxMenus.get(select);
+  if (!menu) {
+    menu = document.createElement("details");
+    menu.className = "checkbox-filter-menu";
+    menu.addEventListener("toggle", () => {
+      if (menu.open) document.querySelectorAll(".checkbox-filter-menu[open]").forEach((other) => { if (other !== menu) other.open = false; });
+    });
+    select.hidden = true;
+    select.parentElement.appendChild(menu);
+    checkboxMenus.set(select, menu);
+  }
+  const selectedLabels = options.filter(([value]) => selected.includes(value)).map(([, label]) => String(label));
+  const summary = selectedLabels.length ? (selectedLabels.length <= 2 ? selectedLabels.join("、") : `已选 ${selectedLabels.length} 项`) : "全部";
+  menu.innerHTML = `<summary>${escapeHtml(summary)}</summary><div class="checkbox-filter-options">${options.map(([value, label]) => `<label><input type="checkbox" value="${escapeHtml(value)}" ${selected.includes(value) ? "checked" : ""}> <span>${escapeHtml(label)}</span></label>`).join("")}</div>`;
+  menu.querySelectorAll("input").forEach((input) => input.addEventListener("change", () => {
+    onChange([...menu.querySelectorAll("input:checked")].map((item) => item.value));
+  }));
+}
 
 function savedLayout() {
   try {
@@ -116,13 +151,13 @@ function setLineupVisibility(key, visible) {
 }
 
 function sportFromPath(pathname = window.location.pathname) {
-  const path = String(pathname || "").replace(/^\/+|\/+$/g, "").toLowerCase();
+  const path = String(pathname || "").replace(new RegExp(`^${SITE_BASE}\\/?`), "").replace(/^\/+|\/+$/g, "").toLowerCase();
   return PATH_SPORTS[path] || null;
 }
 
 function sportPath(sport) {
   const path = SPORT_PATHS[sport];
-  return path ? `/${path}` : "/";
+  return path ? `${SITE_BASE}/${path}` : `${SITE_BASE}/`;
 }
 
 function updateSportPath(sport, { replace = false } = {}) {
@@ -164,10 +199,17 @@ function formatSyncTime(value) {
 async function fetchJson(url, options = {}) {
   const controller = new AbortController();
   const timeout = window.setTimeout(() => controller.abort(), 25000);
+  const cached = fetchJson.cache.get(url);
+  const headers = new Headers(options.headers || {});
+  if (cached?.etag && !headers.has("If-None-Match")) headers.set("If-None-Match", cached.etag);
   try {
-    const response = await fetch(url, { cache: "no-store", ...options, signal: controller.signal });
+    const response = await fetch(url, { cache: "no-store", ...options, headers, signal: controller.signal });
+    if (response.status === 304 && cached) return cached.data;
     if (!response.ok) throw new Error(response.status === 503 ? "正在准备官方数据，请稍后再试" : "暂时无法读取数据");
-    return await response.json();
+    const data = await response.json();
+    const etag = response.headers.get("ETag");
+    if (etag) fetchJson.cache.set(url, { etag, data });
+    return data;
   } catch (error) {
     if (error.name === "AbortError") throw new Error("读取超时，将自动重试");
     throw error;
@@ -175,19 +217,40 @@ async function fetchJson(url, options = {}) {
     window.clearTimeout(timeout);
   }
 }
+fetchJson.cache = new Map();
 
 function renderTabs() {
-  elements.tabs.innerHTML = Object.entries(SPORTS).map(([code, name]) => `
+  const tabs = [["TODAY", "今日赛程"], ...Object.entries(SPORTS)];
+  elements.tabs.innerHTML = tabs.map(([code, name]) => `
     <button class="sport-tab" type="button" role="tab" data-sport="${code}"
       aria-selected="${state.activeSport === code}">${name}</button>`).join("");
 }
 
 function selectionKey() { return `${state.activeSport}:${state.view === "schedule" ? "schedule" : "tournament"}`; }
 function recordCategory(record) { return String(record.eventCode || record.category || ""); }
-function sportRecords() { return state.records.filter((record) => record.sport === state.activeSport); }
+function isByeValue(value) {
+  const text = String(value ?? "").trim().toUpperCase().replace(/[()（）\[\]【】]/g, "");
+  return text === "BYE" || text === "轮空";
+}
+function recordHasBye(record) {
+  if (!record || typeof record !== "object") return false;
+  const values = [record.matchup, record.home, record.away, record.homeName, record.awayName,
+    ...(Array.isArray(record.homePlayers) ? record.homePlayers : []),
+    ...(Array.isArray(record.awayPlayers) ? record.awayPlayers : [])];
+  return values.some((value) => {
+    if (isByeValue(value)) return true;
+    if (!value || typeof value !== "object") return false;
+    return [value.Name, value.NameS, value.name, value.shortName, value.org, value.Org, value.country]
+      .some(isByeValue);
+  });
+}
+function sportRecords() {
+  if (!state.activeSport) return state.records.filter((record) => !state.sportFilter.length || state.sportFilter.includes(record.sport));
+  return state.records.filter((record) => record.sport === state.activeSport);
+}
 function recordStatus(record) {
   if (record.isLive || ["LIVE", "RUNNING", "IN_PROGRESS"].includes(String(record.status || "").toUpperCase())) return "live";
-  if (["OFFICIAL", "FINISHED", "COMPLETED", "CANCELED", "CANCELLED"].includes(String(record.status || "").toUpperCase())) return "completed";
+  if (["OFFICIAL", "UNOFFICIAL", "FINISHED", "COMPLETED", "CANCELED", "CANCELLED"].includes(String(record.status || "").toUpperCase())) return "completed";
   return "upcoming";
 }
 function dateLabel(value) {
@@ -203,11 +266,14 @@ function formatScore(record) {
   return `${runs[0]} : ${runs[1]}`;
 }
 function filteredRecords() {
-  const category = state.selections.get(selectionKey()) || "";
+  const categories = state.selections.get(selectionKey()) || [];
   return sportRecords()
-    .filter((record) => !category || recordCategory(record) === category)
-    .filter((record) => !state.dateFilter || record.date === state.dateFilter)
-    .filter((record) => !state.statusFilter || recordStatus(record) === state.statusFilter)
+    // A bye is a bracket advancement, not a played match. Keep it available
+    // to the official bracket data, but never show it as a schedule fixture.
+    .filter((record) => !recordHasBye(record))
+    .filter((record) => !categories.length || categories.includes(recordCategory(record)))
+    .filter((record) => !state.dateFilter.length || state.dateFilter.includes(record.date))
+    .filter((record) => !state.statusFilter.length || state.statusFilter.includes(recordStatus(record)))
     .sort((left, right) => {
       const liveOrder = Number(rightStatusIsLive(right) - rightStatusIsLive(left));
       if (liveOrder) return liveOrder;
@@ -219,9 +285,17 @@ function rightStatusIsLive(record) { return recordStatus(record) === "live" ? 1 
 function renderDateFilter() {
   const dates = [...new Set(sportRecords().map((record) => record.date).filter(Boolean))].sort();
   const current = state.dateFilter;
-  elements.dateFilter.innerHTML = `<option value="">全部日期</option>${dates.map((date) => `<option value="${escapeHtml(date)}">${escapeHtml(dateLabel(date))}</option>`).join("")}`;
-  if (current && dates.includes(current)) elements.dateFilter.value = current;
-  else if (current) state.dateFilter = "";
+  elements.dateFilter.innerHTML = dates.map((date) => `<option value="${escapeHtml(date)}">${escapeHtml(dateLabel(date))}</option>`).join("");
+  for (const option of elements.dateFilter.options) option.selected = current.includes(option.value);
+  state.dateFilter = current.filter((date) => dates.includes(date));
+  renderCheckboxMenu(elements.dateFilter, dates.map((date) => [date, dateLabel(date)]), state.dateFilter, (values) => { state.dateFilter = values; renderView(); void refreshVisibleExtras(false, { manual: true }); });
+}
+
+function renderSportFilter() {
+  const options = Object.entries(SPORTS).filter(([code]) => state.records.some((record) => record.sport === code));
+  elements.sportFilter.innerHTML = options.map(([value, label]) => `<option value="${value}">${escapeHtml(label)}</option>`).join("");
+  for (const option of elements.sportFilter.options) option.selected = state.sportFilter.includes(option.value);
+  renderCheckboxMenu(elements.sportFilter, options, state.sportFilter, (values) => { state.sportFilter = values; renderView(); void refreshVisibleExtras(false, { manual: true }); });
 }
 
 function renderCategoryFilter() {
@@ -234,13 +308,21 @@ function renderCategoryFilter() {
   let options = state.view === "schedule" || scheduleOptions.length
     ? scheduleOptions
     : (state.tournaments.get(state.activeSport)?.data?.events || []).map((event) => [String(event.id), event.name]);
-  if (state.view === "schedule") options.unshift(["", "全部类别"]);
   if (!options.length) options = [["", "暂无类别"]];
   const key = selectionKey();
-  if (!options.some(([value]) => value === state.selections.get(key))) state.selections.set(key, options[0][0]);
+  const current = state.selections.get(key) || [];
+  const values = options.map(([value]) => value);
+  // Tournament views need one event selected so their standings/bracket can
+  // render. The today overview remains unselected by default to show all
+  // categories.
+  const selected = state.view === "schedule" ? current.filter((value) => values.includes(value)) : (current.filter((value) => values.includes(value)).length ? current.filter((value) => values.includes(value)) : [options[0][0]]);
+  state.selections.set(key, selected);
   elements.category.innerHTML = options.map(([value, label]) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`).join("");
-  elements.category.value = state.selections.get(key);
+  for (const option of elements.category.options) option.selected = state.selections.get(key).includes(option.value);
   elements.category.disabled = options.length <= 1;
+  if (state.view === "schedule") {
+    renderCheckboxMenu(elements.category, options, state.selections.get(key), (values) => { state.selections.set(key, values); renderView(); void refreshVisibleExtras(false, { manual: true }); });
+  }
 }
 
 function transposeScoreSection(section) {
@@ -333,12 +415,13 @@ function lineupPlayers(match, side) {
 
 function lineupPhoto(player) {
   const reg = String(player?.reg || "").trim();
-  // Always use our same-origin image proxy when a registration number is
-  // available.  Direct official image URLs are rate-limited independently
-  // by the browser and made every lineup avatar disappear together; the
-  // proxy fetches once from the Oregon collector and caches the result.
+  // Prefer a checked-in static asset.  This keeps GitHub Pages and Render
+  // from requesting the official photo host for every Line-up render.  The
+  // image's error handler falls back to our API only when this registration
+  // has not yet been harvested into static/player-photos.
   if (reg && /^[A-Za-z0-9_.-]+$/.test(reg)) {
-    return `/api/player-photo?reg=${encodeURIComponent(reg)}`;
+    const base = SITE_BASE || "";
+    return `${base}/player-photos/${encodeURIComponent(reg)}.jpg`;
   }
   const value = String(player?.photo || player?.avatar || "").trim();
   return /^https?:\/\//i.test(value) ? value : "";
@@ -355,18 +438,35 @@ function lineupCountry(player) {
   return String(player?.country || player?.orgName || player?.org || "").trim();
 }
 
+function flagMarkup(value, label = "") {
+  const code = String(value?.Org || value?.org || value?.countryCode || value || "").trim().toUpperCase();
+  if (!/^[A-Z]{3}$/.test(code)) return "";
+  const src = `${SITE_BASE}/flags/${encodeURIComponent(code)}.png`;
+  return `<img class="country-flag" src="${escapeHtml(src)}" alt="${escapeHtml(label || code)}" loading="lazy" onerror="this.hidden=true">`;
+}
+
+function renderMatchup(record) {
+  const text = String(record?.matchup || "对阵待定");
+  const home = record?.home || {};
+  const away = record?.away || {};
+  return `<span class="matchup-with-flags">${flagMarkup(home, home.Name || home.NameS || "")}${escapeHtml(text)}${flagMarkup(away, away.Name || away.NameS || "")}</span>`;
+}
+
 function renderLineupPlayer(player) {
   const name = String(player.name || "待定").trim() || "待定";
   const photo = lineupPhoto(player);
   const initials = lineupInitials(player);
   const country = lineupCountry(player);
   const role = player.substitute ? " · 替补" : "";
+  const reg = String(player?.reg || "").trim();
+  const fallback = reg && /^[A-Za-z0-9_.-]+$/.test(reg)
+    ? apiUrl(`/api/player-photo?reg=${encodeURIComponent(reg)}`) : "";
   const photoMarkup = photo
-    ? `<img class="lineup-player-photo" src="${escapeHtml(photo)}" alt="" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />`
+    ? `<img class="lineup-player-photo" src="${escapeHtml(photo)}" alt="" loading="lazy" onerror="${fallback ? `this.onerror=function(){this.hidden=true;this.nextElementSibling.hidden=false};this.src='${escapeHtml(fallback)}';` : "this.hidden=true;this.nextElementSibling.hidden=false;"}" />`
     : "";
   return `<li class="lineup-player">
     <span class="lineup-player-avatar">${photoMarkup}<span class="lineup-player-initials"${photo ? " hidden" : ""} aria-hidden="true">${escapeHtml(initials)}</span></span>
-    <span class="lineup-player-copy"><strong>${escapeHtml(name)}</strong>${country || role ? `<span>${escapeHtml(country)}${escapeHtml(role)}</span>` : ""}</span>
+    <span class="lineup-player-copy"><strong>${flagMarkup(player, country)}${escapeHtml(name)}</strong>${country || role ? `<span>${escapeHtml(country)}${escapeHtml(role)}</span>` : ""}</span>
   </li>`;
 }
 
@@ -468,12 +568,13 @@ function renderSchedule() {
       const dateTime = formatDateTime(record);
       const open = state.expanded.has(record.id);
       const status = recordStatus(record);
+      const categoryLabel = state.activeSport ? record.category : `${record.sportName || SPORTS[record.sport] || ""} · ${record.category || ""}`;
       const scheduleNotice = isTeamRecord(record) && hasTeamScheduleChange(record.id) ? '<span class="schedule-change-inline">官网赛程有变动</span>' : "";
       return `<article class="match-card ${status === "live" ? "is-live" : ""} ${open ? "is-expanded" : ""}" data-match-id="${escapeHtml(record.id)}">
         <div class="card-content">
-          <header class="card-header"><div class="card-date"><strong>${escapeHtml(dateTime.date)}</strong><span>${escapeHtml(dateTime.time)}</span></div><span class="card-category">${escapeHtml(record.category)}</span></header>
+          <header class="card-header"><div class="card-date"><strong>${escapeHtml(dateTime.date)}</strong><span>${escapeHtml(dateTime.time)}</span></div><span class="card-category">${escapeHtml(categoryLabel)}</span></header>
           <p class="card-stage">${escapeHtml(record.stage)}</p>
-          <h3 class="card-matchup">${escapeHtml(record.matchup)}${scheduleNotice}</h3>
+          <h3 class="card-matchup">${renderMatchup(record)}${scheduleNotice}</h3>
           <div class="card-score"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}" aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分"><span>${escapeHtml(formatScore(record))}</span><span class="disclosure-arrow" aria-hidden="true">⌄</span></button></div>
           <p class="card-venue">${escapeHtml(record.venue)}</p>
         </div>
@@ -489,13 +590,14 @@ function renderSchedule() {
     const dateTime = formatDateTime(record);
     const cancelled = ["CANCELED", "CANCELLED", "POSTPONED"].includes(record.status);
     const open = state.expanded.has(record.id);
+    const categoryLabel = state.activeSport ? record.category : `${record.sportName || SPORTS[record.sport] || ""} · ${record.category || ""}`;
     const rowClass = record.isLive ? "is-live" : cancelled ? "is-cancelled" : "";
     const scheduleNotice = isTeamRecord(record) && hasTeamScheduleChange(record.id) ? '<span class="schedule-change-inline">官网赛程有变动</span>' : "";
     return `<tr class="match-row ${rowClass} ${open ? "is-expanded" : ""}" data-match-id="${escapeHtml(record.id)}">
       <td class="date-cell" data-label="日期时间"><span><strong>${escapeHtml(dateTime.date)}</strong>${escapeHtml(dateTime.time)}</span></td>
-      <td class="category-cell" data-label="类别"><span>${escapeHtml(record.category)}</span></td>
+      <td class="category-cell" data-label="类别"><span>${escapeHtml(categoryLabel)}</span></td>
       <td data-label="阶段"><span>${escapeHtml(record.stage)}</span></td>
-      <td class="matchup-cell" data-label="对阵"><span>${escapeHtml(record.matchup)}</span>${scheduleNotice}</td>
+      <td class="matchup-cell" data-label="对阵">${renderMatchup(record)}${scheduleNotice}</td>
       <td class="score-cell" data-label="比分"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}"
         aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分">
         <span>${escapeHtml(formatScore(record))}</span><span class="disclosure-arrow" aria-hidden="true">⌄</span></button></td>
@@ -518,7 +620,8 @@ function renderTournament() {
     elements.tournamentView.innerHTML = `<div class="view-message"><p>${escapeHtml(entry.error || "官网尚未公布")}</p><button class="text-button" type="button" data-retry-tournament>重试</button></div>`;
     return;
   }
-  const event = (entry.data.events || []).find((item) => String(item.id) === state.selections.get(selectionKey()));
+  const selectedEvents = state.selections.get(selectionKey()) || [];
+  const event = (entry.data.events || []).find((item) => selectedEvents.includes(String(item.id)));
   const errorNote = staleNotice(entry, state.view === "groups" ? "小组积分" : "对阵图");
   if (!event) {
     elements.tournamentView.innerHTML = `${errorNote}<div class="view-message">${escapeHtml(entry.data.message || "官网尚未公布")}</div>`;
@@ -555,7 +658,7 @@ function bracketMatch(match, number, locations) {
 }
 
 function renderView() {
-  elements.title.textContent = SPORTS[state.activeSport] || "赛程";
+  elements.title.textContent = SPORTS[state.activeSport] || "今日赛程";
   elements.scheduleView.hidden = state.view !== "schedule";
   elements.tournamentView.hidden = state.view === "schedule";
   // Keep the event/category selector available for standings and bracket
@@ -563,11 +666,22 @@ function renderView() {
   elements.scheduleFilters.hidden = false;
   elements.dateFilter.parentElement.hidden = state.view !== "schedule";
   elements.statusFilter.parentElement.hidden = state.view !== "schedule";
+  elements.sportFilter.parentElement.hidden = state.view !== "schedule" || Boolean(state.activeSport);
   elements.layout.parentElement.hidden = state.view !== "schedule";
   elements.category.parentElement.hidden = false;
+  elements.category.multiple = state.view === "schedule";
+  elements.category.size = state.view === "schedule" ? 1 : 1;
+  elements.category.hidden = state.view === "schedule";
+  const categoryMenu = checkboxMenus.get(elements.category);
+  if (categoryMenu) categoryMenu.hidden = state.view !== "schedule";
+  elements.viewTabs.hidden = !state.activeSport;
   for (const button of elements.viewTabs.querySelectorAll("[data-view]")) button.setAttribute("aria-selected", String(button.dataset.view === state.view));
   renderCategoryFilter();
-  if (state.view === "schedule") renderDateFilter();
+  if (state.view === "schedule") {
+    renderSportFilter();
+    renderDateFilter();
+    renderCheckboxMenu(elements.statusFilter, [["live", "进行中"], ["completed", "完场"], ["upcoming", "未开赛"]], state.statusFilter, (values) => { state.statusFilter = values; renderView(); void refreshVisibleExtras(false, { manual: true }); });
+  }
   if (state.view === "schedule") renderSchedule(); else renderTournament();
 }
 
@@ -580,13 +694,19 @@ function renderStatus() {
   elements.syncButton.classList.toggle("is-running", Boolean(status.running));
   const interval = Number(status.liveIntervalSeconds) || 30;
   elements.automaticSync.textContent = todayCompleted()
-    ? "今日比赛已全部完场 · 自动同步已停止"
+    ? status.resultsPendingConfirmation
+      ? status.resultConfirmationExpired
+        ? "待确认赛果自动核对已结束 · 请手动同步"
+        : "今日比赛已结束 · 每 5 分钟核对待确认赛果"
+      : "今日比赛已全部完场 · 自动同步已停止"
     : !automaticSyncAllowed()
       ? "北京时间 08:00–23:00 自动更新 · 当前仅手动同步"
       : status.liveEnabled
         ? `北京时间 08:00–23:00 自动更新 · 比赛日约每 ${interval} 秒更新比分`
         : "北京时间 08:00–23:00 自动更新 · 每天 08:00 全量同步";
-  elements.automaticSync.title = status.nextAutomaticSync ? `北京时间，下次全量同步 ${formatSyncTime(status.nextAutomaticSync)}` : "北京时间";
+  elements.automaticSync.title = todayCompleted() && status.resultsPendingConfirmation && status.resultConfirmationDeadline
+    ? `北京时间，待确认赛果自动核对截止 ${formatSyncTime(status.resultConfirmationDeadline)}`
+    : status.nextAutomaticSync ? `北京时间，下次全量同步 ${formatSyncTime(status.nextAutomaticSync)}` : "北京时间";
   const updated = [status.lastLiveSuccess, status.lastSuccess].filter(Boolean).sort().at(-1);
   if (state.connectionError) {
     elements.statusDot.classList.add("is-error");
@@ -612,19 +732,33 @@ function renderStatus() {
 }
 
 function statusVersion(status) {
-  return String(status?.dataVersion ?? `${status?.lastSuccess || ""}|${status?.lastLiveSuccess || ""}`);
+  return String(status?.scheduleVersion ?? status?.dataVersion ?? `${status?.lastSuccess || ""}`);
+}
+
+function applyLiveDelta(status) {
+  const delta = Array.isArray(status?.liveDelta) ? status.liveDelta : [];
+  if (!delta.length || !state.recordsLoaded) return;
+  const byId = new Map(state.records.map((record) => [String(record.id), record]));
+  for (const update of delta) {
+    const current = byId.get(String(update?.id));
+    if (current && update && typeof update === "object") Object.assign(current, update);
+  }
+  renderView();
 }
 
 async function loadSchedule(version) {
-  const payload = await fetchJson("/api/schedule");
+  const payload = await fetchJson(apiUrl("/api/schedule"));
   state.records = Array.isArray(payload.records) ? payload.records : [];
   state.recordsLoaded = true;
   state.loadedVersion = version;
-  if (!state.activeSport) {
-    state.activeSport = state.records.find((record) => record.isLive)?.sport || "TEN";
-    updateSportPath(state.activeSport, { replace: true });
-    renderTabs();
+  if (!state.activeSport && !state.dateFilter.length) {
+    const today = new Date(Date.now() + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
+    if (state.records.some((record) => record.date === today)) state.dateFilter = [today];
   }
+  // The root path is the all-sports “今日赛程” view. Sport paths opt into a
+  // single sport explicitly and remain stable across refreshes.
+  if (state.activeSport && !SPORTS[state.activeSport]) state.activeSport = null;
+  renderTabs();
   renderView();
 }
 
@@ -634,7 +768,36 @@ async function loadMatch(id, force = false, { automatic = false } = {}) {
   const entry = { ...current, loading: true, lastRequested: Date.now(), error: "" };
   state.details.set(id, entry);
   updateDetailPanel(id);
-  try { entry.data = await fetchJson(`/api/match?id=${encodeURIComponent(id)}${automatic ? "&automatic=1" : ""}`); }
+  try {
+    entry.data = await fetchJson(apiUrl(`/api/match?id=${encodeURIComponent(id)}${automatic ? "&automatic=1" : ""}`));
+    // The schedule feed can publish a provisional “对阵待定” row while the
+    // official results page already exposes the selected doubles players.
+    // Promote that confirmed Line-up into the visible matchup immediately.
+    const record = state.records.find((item) => String(item.id) === String(id));
+    if (record && /待定/.test(String(record.matchup || ""))) {
+      const side = (label, players) => {
+        if (label && !/待定/.test(String(label))) return String(label);
+        if (!Array.isArray(players) || !players.length || players.length > 2) return "";
+        const names = players.map((player) => String(player?.name || player?.nameS || "").trim()).filter(Boolean);
+        return names.length ? names.join(" / ") : "";
+      };
+      // Mixed/team results may publish the lineup only on a child unit.
+      // Walk those units as well; the first child with both sides confirmed
+      // is the official opponent pair for the provisional parent row.
+      const sources = [entry.data, ...(Array.isArray(entry.data?.subMatches) ? entry.data.subMatches : [])];
+      let home = "";
+      let away = "";
+      for (const source of sources) {
+        home = side(source?.home, source?.homePlayers);
+        away = side(source?.away, source?.awayPlayers);
+        if (home && away) break;
+      }
+      if (home && away) {
+        record.matchup = `${home} vs ${away}`;
+        renderView();
+      }
+    }
+  }
   catch (error) { entry.error = error.message || "无法读取小分"; }
   finally {
     entry.loading = false;
@@ -650,7 +813,7 @@ async function loadTournament(force = false, { automatic = false } = {}) {
   const entry = { ...current, loading: true, lastRequested: Date.now(), error: "", version: state.loadedVersion };
   state.tournaments.set(sport, entry);
   if (state.view !== "schedule") renderView();
-  try { entry.data = await fetchJson(`/api/tournament?sport=${encodeURIComponent(sport)}${automatic ? "&automatic=1" : ""}`); }
+  try { entry.data = await fetchJson(apiUrl(`/api/tournament?sport=${encodeURIComponent(sport)}${automatic ? "&automatic=1" : ""}`)); }
   catch (error) { entry.error = error.message || "无法读取积分和对阵"; }
   finally {
     entry.loading = false;
@@ -671,8 +834,9 @@ function automaticSyncAllowed(now = Date.now()) {
 }
 
 async function refreshVisibleExtras(force = false, { manual = false, completionRefresh = false } = {}) {
-  // On completion the server has finalized its existing detail caches. Read
-  // those once so open views include the final score, then stop polling them.
+  // Completion refreshes only read finalized server caches, including versions
+  // updated by the low-frequency confirmation checks.
+  if (!manual && todayCompleted() && state.status?.resultConfirmationExpired) return;
   if (!manual && !automaticSyncAllowed() && !(completionRefresh && todayCompleted())) return;
   const interval = (Number(state.status?.liveIntervalSeconds) || 30) * 1000;
   if (state.view !== "schedule") {
@@ -698,19 +862,20 @@ async function refresh(force = false) {
   if (state.refreshing) { state.refreshAgain ||= force; return; }
   state.refreshing = true;
   try {
-    const status = await fetchJson("/api/status");
+    const status = await fetchJson(apiUrl("/api/status"));
     const wasCompleted = todayCompleted();
     state.status = status;
-    if (!wasCompleted && todayCompleted()) {
+    applyLiveDelta(status);
+    const version = statusVersion(status);
+    const changed = version !== state.loadedVersion;
+    if (todayCompleted() && !status.resultConfirmationExpired && (!wasCompleted || changed)) {
       state.completionExtrasPending = true;
       state.completionExtrasRetryAt = 0;
     }
-    if (!todayCompleted()) {
+    if (!todayCompleted() || status.resultConfirmationExpired) {
       state.completionExtrasPending = false;
       state.completionExtrasRetryAt = 0;
     }
-    const version = statusVersion(status);
-    const changed = version !== state.loadedVersion;
     if (force || !state.recordsLoaded || changed) await loadSchedule(version);
     state.connectionError = "";
     renderStatus();
@@ -723,12 +888,13 @@ async function refresh(force = false) {
       const completionRefresh = state.completionExtrasPending && Date.now() >= state.completionExtrasRetryAt;
       state.manualExtrasPending = false;
       if (completionRefresh) {
-        state.completionExtrasRetryAt = Date.now() + (Number(status.liveIntervalSeconds) || 30) * 1000;
+        const retrySeconds = status.resultsPendingConfirmation ? 300 : (Number(status.liveIntervalSeconds) || 30);
+        state.completionExtrasRetryAt = Date.now() + retrySeconds * 1000;
       }
       await refreshVisibleExtras(force || changed || manual || completionRefresh, { manual, completionRefresh });
       // A failed final cache read must not lose the final score. Subsequent
       // attempts still use automatic=1 (cache only after completion), at the
-      // normal score interval even when focus forces a status refresh.
+      // confirmation interval while results are pending, even on focus.
       if (completionRefresh) state.completionExtrasPending = visibleExtrasNeedRetry();
     }
   } catch (error) {
@@ -746,7 +912,7 @@ async function refresh(force = false) {
 async function requestSync() {
   elements.syncButton.disabled = true;
   try {
-    const response = await fetch("/api/sync", { method: "POST" });
+    const response = await fetch(apiUrl("/api/sync"), { method: "POST" });
     if (!response.ok && response.status !== 409) throw new Error("无法启动同步");
     state.manualSyncPending = true;
     await refresh();
@@ -766,7 +932,7 @@ function toggleMatch(id) {
 elements.tabs.addEventListener("click", (event) => {
   const button = event.target.closest("[data-sport]");
   if (!button) return;
-  state.activeSport = button.dataset.sport;
+  state.activeSport = button.dataset.sport === "TODAY" ? null : button.dataset.sport;
   updateSportPath(state.activeSport);
   renderTabs();
   renderView();
@@ -782,17 +948,22 @@ elements.viewTabs.addEventListener("click", (event) => {
   else void refreshVisibleExtras(false, { manual: true });
 });
 elements.category.addEventListener("change", () => {
-  state.selections.set(selectionKey(), elements.category.value);
+  state.selections.set(selectionKey(), [...elements.category.selectedOptions].map((option) => option.value));
   renderView();
   void refreshVisibleExtras(false, { manual: true });
 });
 elements.dateFilter.addEventListener("change", () => {
-  state.dateFilter = elements.dateFilter.value;
+  state.dateFilter = [...elements.dateFilter.selectedOptions].map((option) => option.value);
   renderView();
   void refreshVisibleExtras(false, { manual: true });
 });
 elements.statusFilter.addEventListener("change", () => {
-  state.statusFilter = elements.statusFilter.value;
+  state.statusFilter = [...elements.statusFilter.selectedOptions].map((option) => option.value);
+  renderView();
+  void refreshVisibleExtras(false, { manual: true });
+});
+elements.sportFilter.addEventListener("change", () => {
+  state.sportFilter = [...elements.sportFilter.selectedOptions].map((option) => option.value);
   renderView();
   void refreshVisibleExtras(false, { manual: true });
 });
@@ -839,7 +1010,7 @@ document.addEventListener("visibilitychange", () => { if (!document.hidden) void
 window.addEventListener("online", () => { void refresh(true); });
 window.addEventListener("popstate", () => {
   const sport = sportFromPath();
-  if (!sport || sport === state.activeSport) return;
+  if (sport === state.activeSport) return;
   state.activeSport = sport;
   renderTabs();
   renderView();
@@ -852,6 +1023,6 @@ async function init() {
   renderTabs();
   if (window.lucide) window.lucide.createIcons();
   await refresh();
-  state.statusTimer = window.setInterval(() => { void refresh(); }, 1000);
+  state.statusTimer = window.setInterval(() => { void refresh(); }, STATUS_POLL_INTERVAL_MS);
 }
 void init();
