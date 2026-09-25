@@ -7,6 +7,8 @@ import os
 import signal
 import threading
 import time
+import urllib.error
+import urllib.request
 from datetime import datetime, timedelta
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -14,8 +16,8 @@ from pathlib import Path
 from urllib.parse import parse_qs, unquote, urlparse
 from zoneinfo import ZoneInfo
 
-from sync_service import API_BASE, OFFICIAL_API_KEY, OFFICIAL_API_TOKEN, SPORTS, SyncError, sync_all
-from live_service import live_targets, sync_live
+from sync_service import SSL_CONTEXT, SPORTS, SyncError, sync_all
+from live_service import FINAL_STATUSES, live_targets, sync_live
 from details_service import get_match_details, get_tournament
 
 
@@ -23,9 +25,11 @@ ROOT = Path(__file__).resolve().parent
 STATIC_DIR = ROOT / "static"
 DATA_FILE = ROOT / "data" / "schedule.json"
 STATUS_FILE = ROOT / "data" / "sync-status.json"
-DETAILS_CACHE_FILE = ROOT / "data" / "details-cache.json"
 BEIJING_TZ = ZoneInfo("Asia/Shanghai")
-LIVE_INTERVAL = 10
+AUTOMATIC_WINDOW = {"start": "08:00", "end": "23:00", "timezone": "Asia/Shanghai"}
+LIVE_INTERVAL = 5
+RESULT_CONFIRMATION_INTERVAL = 300
+RESULT_CONFIRMATION_LIMIT = 3600
 DETAIL_LIVE_TTL = 4
 DETAIL_IDLE_TTL = 120
 RETRY_INTERVAL = 300
@@ -33,6 +37,9 @@ RETRY_INTERVAL = 300
 # been exhausted, rather than a short transient failure. Avoid retrying every
 # five minutes and extending the outage while that quota window recovers.
 RATE_LIMIT_RETRY_INTERVAL = 3600
+PLAYER_PHOTO_BASE = "https://results.asiangames2026.org/ag2026/photos/"
+PLAYER_PHOTO_CACHE: dict[str, tuple[bytes, str]] = {}
+PLAYER_PHOTO_LOCK = threading.Lock()
 SPORT_PATHS = {
     "TEN": "tennis",
     "BBL": "baseball",
@@ -54,7 +61,7 @@ def is_rate_limit_error(error: Exception) -> bool:
     return "429" in message or "rate_limit" in message or "请求额度" in message
 
 
-SCHEDULE_CHANGE_FIELDS = ("date", "time", "category", "stage", "matchup", "venue")
+SCHEDULE_CHANGE_FIELDS = ("date", "time", "category", "stage", "matchup", "venue", "court")
 
 
 def schedule_changes(previous: dict | None, current: dict | None) -> list[dict]:
@@ -150,6 +157,43 @@ def next_eight(now: datetime | None = None) -> datetime:
     return target
 
 
+def automatic_sync_allowed(now: datetime) -> bool:
+    """Automatic source requests are allowed only from 08:00 until 23:00 Beijing time."""
+    return 8 <= now.astimezone(BEIJING_TZ).hour < 23
+
+
+def next_automatic_time(candidate: datetime) -> datetime:
+    """Move a deadline inside the next allowed automatic window, never backwards."""
+    current = candidate.astimezone(BEIJING_TZ)
+    if current.hour < 8:
+        return current.replace(hour=8, minute=0, second=0, microsecond=0)
+    if current.hour >= 23:
+        return next_eight(current)
+    return current
+
+
+def today_completed(payload: dict, now: datetime, last_full_success: str | None) -> bool:
+    """Stop only on a complete, successfully refreshed Beijing day's results."""
+    today = now.astimezone(BEIJING_TZ).date()
+    try:
+        refreshed = datetime.fromisoformat(last_full_success)
+        if not refreshed.tzinfo or refreshed.astimezone(BEIJING_TZ).date() != today:
+            return False
+    except (TypeError, ValueError):
+        return False
+    rows = [row for row in payload.get("records", [])
+            if row.get("sport") in SPORTS and row.get("date") == today.isoformat()]
+    if not rows:
+        return False
+    # An empty/missing sport feed is not evidence that its matches have ended.
+    expected = {sport for sport, days in payload.get("meta", {}).get("officialDays", {}).items()
+                if sport in SPORTS and today.isoformat() in days}
+    if not expected or not expected.issubset({row["sport"] for row in rows}):
+        return False
+    return all(not row.get("isLive") and str(row.get("status", "")).upper() in FINAL_STATUSES | {"UNOFFICIAL"}
+               for row in rows)
+
+
 class AppState:
     def __init__(self, data_file=DATA_FILE, status_file=STATUS_FILE, clock=None,
                  full_sync=sync_all, live_sync=sync_live) -> None:
@@ -162,6 +206,7 @@ class AppState:
         self.running = False
         self.stop_event = threading.Event()
         self.team_submatch_orders: dict[str, list[str]] = {}
+        self.final_details_pending_date = None
         self.status = {
             "running": False,
             "lastStarted": None,
@@ -189,6 +234,7 @@ class AppState:
         self._load_status()
         self.next_live = self.clock()
         self._read_metadata()
+        self._confirmation_deadline(self.clock())
 
     def _read_metadata(self) -> None:
         try:
@@ -204,11 +250,12 @@ class AppState:
             for key in ("lastStarted", "lastSuccess", "lastError", "lastReason",
                         "lastLiveSuccess", "lastLiveError", "retryAt", "liveRetryAt", "liveFailures",
                         "scheduleChanged", "scheduleChangeAt", "scheduleChangeCount", "scheduleChanges",
-                        "teamScheduleChanges"):
+                        "teamScheduleChanges", "resultConfirmationStartedAt", "resultConfirmationDate"):
                 if key in saved and saved[key] is not None:
                     self.status[key] = saved[key]
             if not isinstance(self.status.get("teamScheduleChanges"), dict):
                 self.status["teamScheduleChanges"] = {}
+            self.final_details_pending_date = saved.get("finalDetailsPendingDate")
             orders = saved.get("teamSubmatchOrders")
             if isinstance(orders, dict):
                 self.team_submatch_orders = {
@@ -223,7 +270,8 @@ class AppState:
     def _save_status(self) -> None:
         self.status_file.parent.mkdir(parents=True, exist_ok=True)
         temporary = self.status_file.with_suffix(".json.tmp")
-        saved = {**self.status, "teamSubmatchOrders": self.team_submatch_orders}
+        saved = {**self.status, "teamSubmatchOrders": self.team_submatch_orders,
+                 "finalDetailsPendingDate": self.final_details_pending_date}
         temporary.write_text(json.dumps(saved, ensure_ascii=False, indent=2), encoding="utf-8")
         temporary.replace(self.status_file)
 
@@ -266,29 +314,6 @@ class AppState:
         except (TypeError, ValueError):
             return None
 
-    def rate_limit_retry_at(self, now: datetime | None = None) -> datetime | None:
-        """Return the latest active provider cooldown, if one is recorded.
-
-        A manual sync is otherwise allowed to bypass the scheduler's backoff
-        and immediately replay the same requests that just received HTTP 429.
-        Keep the check based on the persisted retry timestamps so it survives
-        a local server restart.  The latest deadline is used when the full
-        and live jobs have different cooldowns: a full refresh would touch
-        both request paths, so it must wait for both to be safe.
-        """
-        current = (now or self.clock()).astimezone(BEIJING_TZ)
-        with self.lock:
-            retry_values = (
-                self.status.get("retryAt"),
-                self.status.get("liveRetryAt"),
-            )
-            candidates = []
-            for value in retry_values:
-                parsed = self._parse_time(value)
-                if parsed and parsed > current:
-                    candidates.append(parsed)
-        return max(candidates, default=None)
-
     def _full_due(self, now):
         last = self._parse_time(self.status.get("lastSuccess"))
         boundary = next_eight(now) - timedelta(days=1)
@@ -297,16 +322,52 @@ class AppState:
         stale = stale or not self.payload.get("meta", {}).get("officialDays")
         retry = self._parse_time(self.status.get("retryAt"))
         if retry:
-            return retry
-        return now if stale else next_eight(now)
+            return next_automatic_time(max(now, retry))
+        return next_automatic_time(now) if stale else next_eight(now)
+
+    def _today_completed(self, now):
+        return today_completed(self.payload, now, self.status.get("lastSuccess"))
+
+    def _results_pending(self, now):
+        today = now.astimezone(BEIJING_TZ).date().isoformat()
+        return self._today_completed(now) and (
+            self.final_details_pending_date == today or any(
+                row.get("sport") in SPORTS and row.get("date") == today
+                and row.get("status") == "UNOFFICIAL"
+                for row in self.payload.get("records", [])
+            )
+        )
+
+    def _confirmation_due(self, now):
+        last = self._parse_time(self.status.get("lastLiveSuccess")) or self._parse_time(self.status.get("lastSuccess")) or now
+        retry = self._parse_time(self.status.get("liveRetryAt")) or last
+        return next_automatic_time(max(last + timedelta(seconds=RESULT_CONFIRMATION_INTERVAL), retry))
+
+    def _confirmation_deadline(self, now):
+        """Latch the first completed-day observation; retries/manual sync never extend it."""
+        if not self._today_completed(now):
+            return None
+        today = now.astimezone(BEIJING_TZ).date().isoformat()
+        started = self._parse_time(self.status.get("resultConfirmationStartedAt"))
+        if self.status.get("resultConfirmationDate") != today or not started:
+            started = now.astimezone(BEIJING_TZ)
+            self.status["resultConfirmationDate"] = today
+            self.status["resultConfirmationStartedAt"] = started.isoformat(timespec="seconds")
+            self._save_status()
+        return started + timedelta(seconds=RESULT_CONFIRMATION_LIMIT)
 
     def tick(self) -> str | None:
         """Recompute due work after every wake; never replay each missed day."""
         now = self.clock()
         with self.lock:
-            if self.running:
+            if self.running or not automatic_sync_allowed(now):
                 return None
-            if now >= self._full_due(now):
+            if self._today_completed(now):
+                deadline = self._confirmation_deadline(now)
+                if not self._results_pending(now) or now >= deadline or now < self._confirmation_due(now):
+                    return None
+                reason = "confirmation"
+            elif now >= self._full_due(now):
                 reason = "retry" if self.status.get("retryAt") else "scheduled"
             else:
                 retry = self._parse_time(self.status.get("liveRetryAt"))
@@ -318,47 +379,58 @@ class AppState:
 
     def snapshot(self) -> dict:
         with self.lock:
+            now = self.clock()
+            deadline = self._confirmation_deadline(now)
             snapshot = dict(self.status)
             snapshot["running"] = self.running
-            now = self.clock()
-            snapshot["nextAutomaticSync"] = self._full_due(now).isoformat(timespec="seconds")
-            active = bool(live_targets(self.payload, now))
+            completed = self._today_completed(now)
+            snapshot["todayCompleted"] = completed
+            pending = self._results_pending(now)
+            snapshot["resultsPendingConfirmation"] = pending
+            snapshot["resultConfirmationIntervalSeconds"] = RESULT_CONFIRMATION_INTERVAL
+            expired = bool(pending and deadline and now >= deadline)
+            snapshot["resultConfirmationExpired"] = expired
+            snapshot["resultConfirmationDeadline"] = deadline.isoformat(timespec="seconds") if deadline else None
+            due = self._confirmation_due(now) if pending and not expired else None
+            snapshot["nextResultConfirmation"] = due.isoformat(timespec="seconds") if due and due < deadline else None
+            snapshot["completionDate"] = now.astimezone(BEIJING_TZ).date().isoformat() if completed else None
+            snapshot["nextAutomaticSync"] = (next_eight(now) if completed else self._full_due(now)).isoformat(timespec="seconds")
+            allowed = automatic_sync_allowed(now) and not completed
+            snapshot["automaticSyncAllowed"] = allowed
+            snapshot["automaticWindow"] = dict(AUTOMATIC_WINDOW)
+            active = allowed and bool(live_targets(self.payload, now))
             retry = self._parse_time(self.status.get("liveRetryAt"))
-            snapshot["nextLiveSync"] = max(self.next_live, retry or now).isoformat(timespec="seconds") if active else None
+            snapshot["nextLiveSync"] = next_automatic_time(max(self.next_live, retry or now, now)).isoformat(timespec="seconds") if active else None
             snapshot["liveActive"] = active
-            cooldown_values = [self._parse_time(value) for value in (
-                self.status.get("retryAt"), self.status.get("liveRetryAt")
-            )]
-            cooldown = max((value for value in cooldown_values if value and value > now), default=None)
         snapshot["liveEnabled"] = True
         snapshot["liveIntervalSeconds"] = LIVE_INTERVAL
         snapshot["timezone"] = "Asia/Shanghai"
         snapshot["sports"] = SPORTS
-        snapshot["provider"] = {
-            "name": "Bornan Results",
-            "baseUrl": API_BASE,
-            "authorized": bool(OFFICIAL_API_TOKEN or OFFICIAL_API_KEY),
-            "cooldownUntil": cooldown.isoformat(timespec="seconds") if cooldown else None,
-            "realtimeAvailable": cooldown is None,
-        }
         return snapshot
 
     def start_sync(self, reason: str) -> bool:
         with self.lock:
-            if self.running:
+            now = self.clock()
+            deadline = self._confirmation_deadline(now)
+            if self.running or (reason != "manual" and (
+                not automatic_sync_allowed(now) or (self._today_completed(now) and not (
+                    reason == "confirmation" and self._results_pending(now)
+                    and now < deadline and now >= self._confirmation_due(now)
+                ))
+            )):
                 return False
             self.running = True
             self.status.update(
                 {
                     "running": True,
-                    "lastStarted": self.clock().isoformat(timespec="seconds"),
+                    "lastStarted": now.isoformat(timespec="seconds"),
                     "lastReason": reason,
                     "progressDone": 0,
                     "progressTotal": 0,
                     "progressLabel": "准备连接官网",
                 }
             )
-            if reason != "live":
+            if reason not in {"live", "confirmation"}:
                 self.status["lastError"] = None
             self._save_status()
         threading.Thread(target=self._run_sync, args=(reason,), name="official-sync", daemon=True).start()
@@ -370,15 +442,71 @@ class AppState:
             self.status["progressTotal"] = total
             self.status["progressLabel"] = label
 
+    def _finish_cached_results(self, payload: dict, manual: bool) -> bool:
+        """Finish already-viewed score panels before publishing the daily pause."""
+        today = self.clock().astimezone(BEIJING_TZ).date().isoformat()
+        records = payload.get("records", [])
+        matches = {row["id"]: row for row in records if row.get("date") == today
+                   and row.get("sport") in SPORTS}
+        sports = {row["sport"] for row in matches.values()}
+        with OFFICIAL_CACHE.lock:
+            keys = list(OFFICIAL_CACHE.values)
+        ready = True
+        for kind, identifier in keys:
+            if not manual and not automatic_sync_allowed(self.clock()):
+                break
+            if kind == "match" and identifier in matches:
+                record = matches[identifier]
+
+                def loader(record=record):
+                    details = get_match_details(record)
+                    self.observe_match_details(record, details)
+                    return details
+            elif kind == "tournament" and identifier in sports:
+                loader = lambda sport=identifier: get_tournament(sport, records)
+            else:
+                continue
+            key = (kind, identifier)
+            previous = OFFICIAL_CACHE.peek(key)
+            if not manual and previous.get("completedForDate") == today:
+                continue
+            value = OFFICIAL_CACHE.get(key, 0, loader)
+            # Daily scores and detailed results can be published separately.
+            # Keep checking only an unfinished, already-viewed detail until
+            # its final response arrives; don't label a running child final.
+            def unfinished(detail):
+                status = str(detail.get("status") or "").upper()
+                return (detail.get("isLive") or status in {"LIVE", "RUNNING", "IN_PROGRESS", "UNOFFICIAL"}
+                        or any(unfinished(child) for child in detail.get("subMatches", [])))
+
+            if kind == "match" and not value.get("stale") and (
+                unfinished(value)
+                or (value.get("status") and str(value["status"]).upper() not in FINAL_STATUSES)
+                or (previous.get("available") and value.get("available") is False)
+            ) and matches[identifier].get("status") not in {"CANCELED", "CANCELLED"}:
+                ready = False
+                continue
+            # Keep failed final reads explicitly stale even when read via peek.
+            with OFFICIAL_CACHE.lock:
+                timestamp = OFFICIAL_CACHE.values[key][0]
+                OFFICIAL_CACHE.values[key] = (timestamp, {**value, "completedForDate": today})
+        return ready
+
     def _run_sync(self, reason: str) -> None:
-        live = reason == "live"
+        live = reason in {"live", "confirmation"}
         try:
             with self.lock:
                 previous_payload = self.payload
+                was_completed = self._today_completed(self.clock())
+                last_full_success = self.status.get("lastSuccess")
             if live:
                 payload = self.live_sync(self.data_file, self.clock(), self._progress)
             else:
                 payload = self.full_sync(self.data_file, self._progress)
+            full_success = last_full_success if live else self.clock().isoformat()
+            if (not was_completed or reason in {"manual", "confirmation"}) and today_completed(payload, self.clock(), full_success):
+                ready = self._finish_cached_results(payload, reason == "manual")
+                self.final_details_pending_date = None if ready else self.clock().astimezone(BEIJING_TZ).date().isoformat()
             with self.lock:
                 self.payload = payload
                 self.status["dataVersion"] = payload["meta"]["generatedAt"]
@@ -389,6 +517,7 @@ class AppState:
                     self.status["scheduleChangeCount"] = len(changes)
                     self.status["scheduleChanges"] = changes[:20]
                 self.status["lastLiveSuccess" if live else "lastSuccess"] = self.clock().isoformat(timespec="seconds")
+                self._confirmation_deadline(self.clock())
                 if not live:
                     self.status["lastError"] = None
                     self.status["retryAt"] = None
@@ -407,6 +536,8 @@ class AppState:
                         if rate_limited
                         else min(LIVE_INTERVAL * 2 ** min(failures - 1, 6), RETRY_INTERVAL)
                     )
+                    if reason == "confirmation":
+                        delay = max(delay, RESULT_CONFIRMATION_INTERVAL)
                     self.status["liveRetryAt"] = (self.clock() + timedelta(seconds=delay)).isoformat()
                     self.status["lastLiveError"] = str(exc)
                 else:
@@ -432,6 +563,12 @@ class OfficialCache:
         self.locks = {}
         self.values = {}
 
+    def peek(self, key):
+        """Read the last value without loading or waiting for a source request."""
+        with self.lock:
+            previous = self.values.get(key)
+            return dict(previous[1]) if previous else None
+
     def get(self, key, ttl, loader):
         with self.lock:
             key_lock = self.locks.setdefault(key, threading.Lock())
@@ -445,66 +582,12 @@ class OfficialCache:
                 if previous:
                     return {**previous[1], "stale": True, "message": "官网暂时连接失败，显示上次成功数据"}
                 raise
-            self.values[key] = (time.monotonic(), value)
+            with self.lock:
+                self.values[key] = (time.monotonic(), value)
             return value
 
 
 OFFICIAL_CACHE = OfficialCache()
-
-
-class PersistentDetailsCache:
-    """Keep the last successful detail response across process restarts.
-
-    This cache is deliberately a resilience layer, not a second source of
-    truth. It is used only while the provider is unavailable, and every
-    response is marked stale so callers never mistake it for a live score.
-    """
-
-    def __init__(self, path: Path):
-        self.path = path
-        self.lock = threading.Lock()
-        self.values: dict[str, dict] = {}
-        self._load()
-
-    def _load(self) -> None:
-        try:
-            saved = json.loads(self.path.read_text(encoding="utf-8"))
-            if isinstance(saved, dict):
-                self.values = {
-                    str(key): value for key, value in saved.items()
-                    if isinstance(value, dict) and isinstance(value.get("data"), dict)
-                }
-        except (FileNotFoundError, OSError, json.JSONDecodeError):
-            self.values = {}
-
-    def get(self, key: str) -> dict | None:
-        with self.lock:
-            value = self.values.get(str(key))
-            return dict(value) if value else None
-
-    def put(self, key: str, value: dict) -> None:
-        if not isinstance(value, dict):
-            return
-        with self.lock:
-            self.values[str(key)] = {
-                "updatedAt": value.get("updatedAt") or iso_now(),
-                "data": value,
-            }
-            self.path.parent.mkdir(parents=True, exist_ok=True)
-            temporary = self.path.with_suffix(".json.tmp")
-            temporary.write_text(json.dumps(self.values, ensure_ascii=False), encoding="utf-8")
-            temporary.replace(self.path)
-
-
-DETAILS_CACHE = PersistentDetailsCache(DETAILS_CACHE_FILE)
-
-
-def stale_detail(value: dict, reason: str) -> dict:
-    """Annotate cached details without mutating the stored response."""
-    response = dict(value)
-    response["stale"] = True
-    response["message"] = reason
-    return response
 
 
 class RequestHandler(BaseHTTPRequestHandler):
@@ -528,24 +611,6 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
-    def _send_rate_limit(self, retry_at: datetime) -> None:
-        """Tell callers about the persisted cooldown without touching the API."""
-        seconds = max(1, int((retry_at - datetime.now(BEIJING_TZ)).total_seconds() + 0.999))
-        minutes, remainder = divmod(seconds, 60)
-        if minutes:
-            wait_text = f"{minutes}分钟{remainder}秒" if remainder else f"{minutes}分钟"
-        else:
-            wait_text = f"{seconds}秒"
-        self._send_json(
-            {
-                "accepted": False,
-                "message": f"官网暂时限流，请等待{wait_text}后自动重试",
-                "retryAt": retry_at.isoformat(timespec="seconds"),
-                "retryAfterSeconds": seconds,
-            },
-            HTTPStatus.TOO_MANY_REQUESTS,
-        )
-
     def _send_static(self, relative_path: str) -> None:
         requested = (STATIC_DIR / relative_path).resolve()
         if STATIC_DIR.resolve() not in requested.parents and requested != STATIC_DIR.resolve():
@@ -564,32 +629,70 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def _send_player_photo(self, registration: str) -> None:
+        if not registration or len(registration) > 40 or not registration.replace("_", "").replace("-", "").isalnum():
+            self.send_error(HTTPStatus.BAD_REQUEST)
+            return
+        with PLAYER_PHOTO_LOCK:
+            cached = PLAYER_PHOTO_CACHE.get(registration)
+        if cached:
+            body, content_type = cached
+        else:
+            try:
+                request = urllib.request.Request(f"{PLAYER_PHOTO_BASE}{registration}.jpg", headers={"User-Agent": "AichiSchedule/1.0", "Accept": "image/jpeg,image/*"})
+                opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), urllib.request.HTTPSHandler(context=SSL_CONTEXT))
+                with opener.open(request, timeout=20) as response:
+                    if response.status != 200:
+                        self.send_error(HTTPStatus.NOT_FOUND)
+                        return
+                    body = response.read(2 * 1024 * 1024 + 1)
+                    content_type = response.headers.get("Content-Type", "image/jpeg").split(";", 1)[0]
+                if len(body) > 2 * 1024 * 1024 or not content_type.startswith("image/"):
+                    self.send_error(HTTPStatus.BAD_GATEWAY)
+                    return
+                with PLAYER_PHOTO_LOCK:
+                    PLAYER_PHOTO_CACHE[registration] = (body, content_type)
+            except (OSError, urllib.error.URLError):
+                self.send_error(HTTPStatus.NOT_FOUND)
+                return
+        self.send_response(HTTPStatus.OK)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "public, max-age=86400")
+        self._security_headers()
+        self.end_headers()
+        self.wfile.write(body)
+
     def do_GET(self) -> None:  # noqa: N802
         parsed = urlparse(self.path)
         path = unquote(parsed.path)
+        if path == "/api/player-photo":
+            self._send_player_photo(parse_qs(parsed.query).get("reg", [""])[0])
+            return
         if path in {"/api/match", "/api/tournament"}:
-            retry_at = STATE.rate_limit_retry_at()
             query = parse_qs(parsed.query)
             with STATE.lock:
                 records = list(STATE.payload.get("records", []))
-            if path == "/api/match":
-                match_id = query.get("id", [""])[0]
-                cache_key = f"match:{match_id}"
-            else:
-                sport = query.get("sport", [""])[0]
-                cache_key = f"tournament:{sport}"
-            if retry_at:
-                cached = DETAILS_CACHE.get(cache_key)
-                if cached:
-                    self._send_json(stale_detail(
-                        cached["data"],
-                        "官网暂时限流，当前显示最近一次成功的小分/积分数据；来源恢复后会自动更新",
-                    ))
-                else:
-                    self._send_rate_limit(retry_at)
+            with STATE.lock:
+                now = STATE.clock()
+                completed = STATE._today_completed(now)
+            if query.get("automatic", [""])[0] == "1" and (completed or not automatic_sync_allowed(now)):
+                key = ("match", query.get("id", [""])[0]) if path == "/api/match" else ("tournament", query.get("sport", [""])[0])
+                cached = OFFICIAL_CACHE.peek(key)
+                self._send_json({
+                    **(cached or {"available": False, "unavailable": True}),
+                    "automaticSyncPaused": True,
+                    "automaticWindow": dict(AUTOMATIC_WINDOW),
+                    "stale": bool((cached or {}).get("stale")) or not (
+                        completed and (cached or {}).get("completedForDate") == now.astimezone(BEIJING_TZ).date().isoformat()
+                    ),
+                    "message": ("今日比赛已全部完场，自动同步已停止，可手动刷新" if completed
+                                else "夜间自动同步已暂停，可手动刷新；每天北京时间 08:00 恢复自动同步"),
+                })
                 return
             try:
                 if path == "/api/match":
+                    match_id = query.get("id", [""])[0]
                     record = next((row for row in records if row["id"] == match_id), None)
                     if not record:
                         self._send_json({"message": "找不到这场比赛"}, HTTPStatus.NOT_FOUND)
@@ -606,22 +709,14 @@ class RequestHandler(BaseHTTPRequestHandler):
 
                     value = OFFICIAL_CACHE.get(("match", match_id), ttl, load_details)
                 else:
+                    sport = query.get("sport", [""])[0]
                     if sport not in SPORTS:
                         self._send_json({"message": "未知项目"}, HTTPStatus.BAD_REQUEST)
                         return
                     value = OFFICIAL_CACHE.get(("tournament", sport), 55, lambda: get_tournament(sport, records))
-                if not value.get("stale"):
-                    DETAILS_CACHE.put(cache_key, value)
                 self._send_json(value)
             except Exception:
-                cached = DETAILS_CACHE.get(cache_key)
-                if cached:
-                    self._send_json(stale_detail(
-                        cached["data"],
-                        "官网暂时无法连接，当前显示最近一次成功的小分/积分数据",
-                    ))
-                else:
-                    self._send_json({"message": "暂时无法读取官网详情，请稍后重试"}, HTTPStatus.BAD_GATEWAY)
+                self._send_json({"message": "暂时无法读取官网详情，请稍后重试"}, HTTPStatus.BAD_GATEWAY)
             return
         if path == "/api/schedule":
             try:
@@ -653,10 +748,6 @@ class RequestHandler(BaseHTTPRequestHandler):
         if path != "/api/sync":
             self.send_error(HTTPStatus.NOT_FOUND)
             return
-        retry_at = STATE.rate_limit_retry_at()
-        if retry_at:
-            self._send_rate_limit(retry_at)
-            return
         started = STATE.start_sync("manual")
         if not started:
             self._send_json({"accepted": False, "message": "同步正在进行中"}, HTTPStatus.CONFLICT)
@@ -676,11 +767,21 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="爱知·名古屋2026赛程与赛果本地网站")
     parser.add_argument("--host", default=os.environ.get("HOST", "127.0.0.1"))
     parser.add_argument("--port", type=int, default=int(os.environ.get("PORT", "4173")))
+    parser.add_argument("--upstream", default=os.environ.get("SCHEDULE_UPSTREAM_URL"),
+                        help="从已部署的网站读取比分，本地不重复请求官网")
     args = parser.parse_args()
 
-    server = ThreadingHTTPServer((args.host, args.port), RequestHandler)
-    scheduler = threading.Thread(target=scheduler_loop, name="daily-scheduler", daemon=True)
-    scheduler.start()
+    handler = RequestHandler
+    if args.upstream:
+        from upstream_service import make_upstream_handler
+        try:
+            handler = make_upstream_handler(RequestHandler, args.upstream)
+        except ValueError as error:
+            parser.error(str(error))
+    server = ThreadingHTTPServer((args.host, args.port), handler)
+    if not args.upstream:
+        scheduler = threading.Thread(target=scheduler_loop, name="daily-scheduler", daemon=True)
+        scheduler.start()
 
     def stop_server(_signum, _frame) -> None:
         STATE.stop_event.set()
@@ -689,6 +790,8 @@ def main() -> None:
     signal.signal(signal.SIGTERM, stop_server)
     signal.signal(signal.SIGINT, stop_server)
     print(f"Local schedule site: http://{args.host}:{args.port}", flush=True)
+    if args.upstream:
+        print(f"Shared score source: {handler.upstream_origin}", flush=True)
     try:
         server.serve_forever(poll_interval=0.5)
     finally:

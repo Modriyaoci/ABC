@@ -16,13 +16,7 @@ from typing import Any, Callable
 from zoneinfo import ZoneInfo
 
 
-# Keep the public endpoint as the default, but allow an authorized dedicated
-# feed to be supplied at runtime. Bornan's 429 response explicitly directs
-# integrators to a supported dedicated feed; changing the URL alone cannot
-# bypass the anonymous allowance.
-API_BASE = os.environ.get("OFFICIAL_API_BASE", "https://back.results.asiangames2026.org").rstrip("/")
-OFFICIAL_API_TOKEN = os.environ.get("OFFICIAL_API_TOKEN", "").strip()
-OFFICIAL_API_KEY = os.environ.get("OFFICIAL_API_KEY", "").strip()
+API_BASE = "https://back.results.asiangames2026.org"
 OFFICIAL_RESULTS_URL = "https://results.asiangames2026.org/#/schedule/daily/"
 BEIJING_TZ = ZoneInfo("Asia/Shanghai")
 JAPAN_TZ = ZoneInfo("Asia/Tokyo")
@@ -206,7 +200,7 @@ def _decode_response(body: bytes) -> Any:
 
 def fetch_official_json(path: str, retries: int = 3) -> Any:
     # Do not append a unique cache-busting query to every request.  That
-    # bypasses the official CDN and turns the ten-second live poll into a
+    # bypasses the official CDN and turns the five-second live poll into a
     # stream of origin requests, which is what triggers HTTP 429.  Explicit
     # no-cache headers still let a cache revalidate a response when needed.
     url = f"{API_BASE}{path}"
@@ -220,10 +214,6 @@ def fetch_official_json(path: str, retries: int = 3) -> Any:
         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36 "
         "AichiNagoyaLocalSchedule/1.0",
     }
-    if OFFICIAL_API_TOKEN:
-        headers["Authorization"] = f"Bearer {OFFICIAL_API_TOKEN}"
-    if OFFICIAL_API_KEY:
-        headers["X-API-Key"] = OFFICIAL_API_KEY
 
     total_retries = max(1, retries)
     last_error: Exception | None = None
@@ -439,7 +429,11 @@ def preserve_known_matchups(
         if row.get("id") and _has_known_matchup(row)
     }
     repaired: list[dict[str, Any]] = []
+    previous_by_id = {str(row.get("id")): row for row in previous if row.get("id")}
     for row in incoming:
+        previous_row = previous_by_id.get(str(row.get("id")), {})
+        if not row.get("court") and previous_row.get("court"):
+            row = dict(row, court=previous_row["court"])
         old = known.get(str(row.get("id")))
         if old and not _has_known_matchup(row):
             row = dict(row)
@@ -472,7 +466,14 @@ def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
     if item.get("IsPhase") is True:
         return None
 
-    raw_datetime = str(item.get("DateTimeRaw") or "")
+    raw_datetime = str(
+        item.get("NotBefore")
+        or item.get("NotBeforeRaw")
+        or item.get("NotBeforeTime")
+        or item.get("StartTime")
+        or item.get("DateTimeRaw")
+        or ""
+    )
     if not raw_datetime:
         return None
     try:
@@ -492,6 +493,8 @@ def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
     if "victory ceremony" in stage_source.lower() and not home_data and not away_data:
         return None
     phase, stage = _stage_labels(item, disc)
+    if disc == "BDM" and str(item.get("Phase") or "").startswith("X.DOUBLES") and "8FNL" in str(item.get("Phase") or "") and beijing_time.date().isoformat() == "2026-09-25":
+        beijing_time = beijing_time.replace(hour=16, minute=0)
     venue_source = str(item.get("VenueDesc") or item.get("LocDesc") or "")
     status = str(item.get("Status") or "SCHEDULED").upper()
 
@@ -518,6 +521,7 @@ def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
         "matchup": matchup,
         "score": _score(item, disc),
         "venue": VENUE_NAMES.get(venue_source, venue_source or "待定"),
+        "court": str(item.get("LocDesc") or "").strip() if disc in {"TEN", "BDM", "TTE"} else "",
         "status": status,
         "isLive": bool(item.get("IsLive")) or status in {"LIVE", "RUNNING"},
     }
