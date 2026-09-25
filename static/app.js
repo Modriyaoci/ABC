@@ -775,7 +775,10 @@ function applyLiveDelta(status) {
 }
 
 async function loadSchedule(version) {
-  const payload = await fetchJson(apiUrl("/api/schedule"));
+  // Bind the full schedule request to the server version so a browser or
+  // proxy cannot reuse an older snapshot that lacked court locations.
+  const cacheKey = version ? `?schema=2&v=${encodeURIComponent(version)}` : "?schema=2";
+  const payload = await fetchJson(apiUrl(`/api/schedule${cacheKey}`));
   state.records = Array.isArray(payload.records) ? payload.records : [];
   state.recordsLoaded = true;
   state.loadedVersion = version;
