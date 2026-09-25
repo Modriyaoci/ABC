@@ -429,7 +429,11 @@ def preserve_known_matchups(
         if row.get("id") and _has_known_matchup(row)
     }
     repaired: list[dict[str, Any]] = []
+    previous_by_id = {str(row.get("id")): row for row in previous if row.get("id")}
     for row in incoming:
+        previous_row = previous_by_id.get(str(row.get("id")), {})
+        if not row.get("court") and previous_row.get("court"):
+            row = dict(row, court=previous_row["court"])
         old = known.get(str(row.get("id")))
         if old and not _has_known_matchup(row):
             row = dict(row)
@@ -514,6 +518,7 @@ def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
         "matchup": matchup,
         "score": _score(item, disc),
         "venue": VENUE_NAMES.get(venue_source, venue_source or "待定"),
+        "court": str(item.get("LocDesc") or "").strip() if disc in {"TEN", "BDM", "TTE"} else "",
         "status": status,
         "isLive": bool(item.get("IsLive")) or status in {"LIVE", "RUNNING"},
     }

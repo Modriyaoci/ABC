@@ -69,7 +69,7 @@ def is_rate_limit_error(error: Exception) -> bool:
     return "429" in message or "rate_limit" in message or "请求额度" in message
 
 
-SCHEDULE_CHANGE_FIELDS = ("date", "time", "category", "stage", "matchup", "venue")
+SCHEDULE_CHANGE_FIELDS = ("date", "time", "category", "stage", "matchup", "venue", "court")
 
 
 def schedule_changes(previous: dict | None, current: dict | None) -> list[dict]:
