@@ -465,7 +465,13 @@ def _bracket_score(value: Any, sport: str) -> str:
 
 
 def _score_winner(home_score: Any, away_score: Any) -> str:
-    """Derive a winner from a completed bracket score when unambiguous."""
+    """Derive a winner from a completed bracket score when unambiguous.
+
+    The official draw sometimes leaves the ``Win`` flag attached to the
+    pre-toss home/away side.  A completed match's numeric result is the
+    reliable side association in that case.  Return an empty value for
+    blanks, non-numeric results, or a tie so callers can retain provenance.
+    """
     home = str(home_score or "").strip()
     away = str(away_score or "").strip()
     if not re.fullmatch(r"\d+", home) or not re.fullmatch(r"\d+", away):
@@ -518,6 +524,13 @@ def _enrich_bracket_rounds(rounds: list[dict[str, Any]], records: list[dict[str,
                 # it to correct a stale bracket participant as well as a TBD.
                 old_home, old_away = _text(match.get("home")), _text(match.get("away"))
                 new_home, new_away = participants
+                # The schedule feed occasionally publishes a tie in the
+                # opposite order from the bracket feed.  Replacing only the
+                # names in that case leaves the scores and winner attached
+                # to the wrong country (for example, a 0:3 loss rendered as
+                # the green 3-point winner).  Preserve the side association
+                # by swapping all side-dependent fields when the published
+                # participants are the exact reverse pair.
                 if old_home and old_away and old_home == new_away and old_away == new_home:
                     match["homeScore"], match["awayScore"] = match.get("awayScore", ""), match.get("homeScore", "")
                     if match.get("winner") == "home":

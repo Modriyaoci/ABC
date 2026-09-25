@@ -4,3 +4,4 @@ __pycache__/
 logs/
 data/player-photos/
 tests/__pycache__/
+data/sync-status.json
