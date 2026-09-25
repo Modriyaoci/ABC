@@ -211,6 +211,22 @@ main {
   border-color: var(--red);
 }
 
+/* Keep country flags at a stable size across browser image-rendering rules.
+   Windows Chrome otherwise uses the source PNG dimensions, making flags
+   expand to card width while macOS happens to constrain them incidentally. */
+.country-flag {
+  display: inline-block;
+  width: 18px;
+  height: 12px;
+  max-width: 18px;
+  max-height: 12px;
+  margin: 0 5px 0 0;
+  vertical-align: -1px;
+  object-fit: contain;
+  object-position: center;
+  flex: 0 0 auto;
+}
+
 .schedule-section {
   padding-top: 8px;
 }
