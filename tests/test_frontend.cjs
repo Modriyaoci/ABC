@@ -4,10 +4,23 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const { chromium } = require("playwright");
 
+async function useDaytimeClock(page) {
+  await page.addInitScript(() => {
+    const NativeDate = Date;
+    const daytime = NativeDate.parse("2026-09-21T12:00:00+08:00");
+    const started = NativeDate.now();
+    window.Date = class extends NativeDate {
+      constructor(...args) { super(...(args.length ? args : [daytime + NativeDate.now() - started])); }
+      static now() { return daytime + NativeDate.now() - started; }
+    };
+  });
+}
+
 test("schedule updates without observing running state and retains expanded details", async () => {
   const browser = await chromium.launch({ headless: true, executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" });
   try {
     const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+    await useDaytimeClock(page);
     const errors = [];
     page.on("pageerror", (error) => errors.push(error.message));
     let version = 1;
@@ -19,7 +32,7 @@ test("schedule updates without observing running state and retains expanded deta
         statusRequests += 1;
         return route.fulfill({ json: {
           running: false, dataVersion: String(version), lastSuccess: "2026-09-17T12:00:00+08:00",
-          liveEnabled: true, liveIntervalSeconds: 10, nextAutomaticSync: "2026-09-18T08:00:00+08:00",
+          liveEnabled: true, liveIntervalSeconds: 5, nextAutomaticSync: "2026-09-18T08:00:00+08:00",
           // Ordinary changes remain available in the API for diagnostics; the
           // UI displays child-order changes beside the affected team row.
           scheduleChanged: statusRequests === 1,
@@ -38,7 +51,7 @@ test("schedule updates without observing running state and retains expanded deta
     });
     await page.goto("http://127.0.0.1:4173/");
     await page.locator(".score-toggle").waitFor();
-    assert.match(await page.locator("#automatic-sync").innerText(), /每 10 秒/);
+    assert.match(await page.locator("#automatic-sync").innerText(), /每 5 秒/);
     const scheduleChangeBanner = page.locator("#schedule-change-banner");
     assert.equal(await scheduleChangeBanner.isVisible(), false);
     await page.waitForTimeout(1300);
@@ -91,6 +104,7 @@ test("team sub-match reorder notice stays on the parent row and card", async () 
   const browser = await chromium.launch({ headless: true, executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" });
   try {
     const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+    await useDaytimeClock(page);
     const team = { id: "TTE:team", sport: "TTE", date: "2026-09-20", time: "09:00", category: "男子团体", eventCode: "M.TEAM", stage: "小组赛", matchup: "中国 vs 日本", score: "—", venue: "体育馆", isLive: false };
     const single = { ...team, id: "TTE:single", category: "男子单打", eventCode: "M.SINGLE", matchup: "中国 vs 韩国" };
     const otherSport = { ...team, id: "VVO:team", sport: "VVO", matchup: "中国 vs 伊朗" };
@@ -98,7 +112,7 @@ test("team sub-match reorder notice stays on the parent row and card", async () 
       const url = new URL(route.request().url());
       if (url.pathname === "/api/status") return route.fulfill({ json: {
         running: false, dataVersion: "v1", lastSuccess: "2026-09-20T08:00:00+08:00",
-        liveEnabled: true, liveIntervalSeconds: 10,
+        liveEnabled: true, liveIntervalSeconds: 5,
         scheduleChanged: true, scheduleChangeCount: 1,
         scheduleChanges: [{ type: "updated", id: team.id, fields: ["subMatchOrder"] }],
         teamScheduleChanges: { [team.id]: { changedAt: "2026-09-20T08:01:00+08:00", fields: ["subMatchOrder"] } },

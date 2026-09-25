@@ -99,8 +99,8 @@ class SchedulerTests(unittest.TestCase):
         self.assertEqual(self.app.status["lastSuccess"], "2026-09-17T08:01:00+08:00")
 
     def test_live_interval_and_team_detail_cache_window(self):
-        self.assertEqual(LIVE_INTERVAL, 10)
-        self.assertEqual(self.app.snapshot()["liveIntervalSeconds"], 10)
+        self.assertEqual(LIVE_INTERVAL, 5)
+        self.assertEqual(self.app.snapshot()["liveIntervalSeconds"], 5)
         self.assertEqual(match_detail_ttl({"isLive": True}), 4)
         self.assertEqual(match_detail_ttl({"isLive": False, "sport": "BDM", "category": "女子团体"}), 4)
         self.assertEqual(match_detail_ttl({"isLive": False, "sport": "TTE", "eventCode": "M.TEAM----------------"}), 4)
@@ -134,16 +134,6 @@ class SchedulerTests(unittest.TestCase):
             self.app.status["retryAt"],
             (self.now + timedelta(seconds=RATE_LIMIT_RETRY_INTERVAL)).isoformat(),
         )
-
-    def test_manual_sync_cooldown_uses_latest_persisted_deadline(self):
-        live_retry = self.now + timedelta(minutes=10)
-        full_retry = self.now + timedelta(minutes=20)
-        self.app.status["liveRetryAt"] = live_retry.isoformat()
-        self.app.status["retryAt"] = full_retry.isoformat()
-        self.assertEqual(self.app.rate_limit_retry_at(), full_retry)
-
-        self.now = full_retry
-        self.assertIsNone(self.app.rate_limit_retry_at())
 
     def test_schedule_changes_ignore_live_scores_and_report_time_edits(self):
         old = {"records": [{

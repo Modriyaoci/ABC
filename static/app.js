@@ -256,6 +256,10 @@ function recordVenue(record) {
   return [record.venue, courtLabel(record.court)].filter(Boolean).join(" · ");
 }
 function renderCourtFilter() {
+  // Court selection is a schedule-only multi-select, just like date/status.
+  // Set this before rendering the checkbox menu so the native select is
+  // replaced by the visible checkbox dropdown and the court options appear.
+  elements.courtFilter.multiple = true;
   const options = [...new Map(sportRecords()
     .filter((record) => ["TEN", "TTE", "BDM"].includes(record.sport) && !recordHasBye(record) && record.court)
     .map((record) => [recordCourtKey(record), `${state.activeSport ? "" : SPORTS[record.sport] + " · "}${courtLabel(record.court)}`])).entries()]

@@ -5,6 +5,11 @@ const path = require("node:path");
 const vm = require("node:vm");
 
 function appContext() {
+  const daytime = Date.parse("2026-09-21T12:00:00+08:00");
+  class DaytimeDate extends Date {
+    constructor(...args) { super(...(args.length ? args : [daytime])); }
+    static now() { return daytime; }
+  }
   const elements = new Map();
   const storage = new Map();
   const elementFor = (selector) => {
@@ -15,6 +20,7 @@ function appContext() {
     return elements.get(selector);
   };
   const context = vm.createContext({
+    Date: DaytimeDate,
     document: { querySelector: elementFor, addEventListener() {}, getElementById: () => null },
     window: { addEventListener() {}, setTimeout, clearTimeout, localStorage: { getItem: (key) => storage.get(key), setItem: (key, value) => storage.set(key, value) } },
     AbortController,
@@ -57,8 +63,8 @@ test("table-tennis and badminton line-ups render official player photos with a f
   assert.match(html, /Line-up/);
   assert.match(html, /FAN Shuhan/);
   assert.match(html, /CHN/);
-  assert.match(html, /photos\/14244548\.jpg/);
-  assert.match(html, /photos\/7819131\.jpg/);
+  assert.match(html, /api\/player-photo\?reg=14244548/);
+  assert.match(html, /api\/player-photo\?reg=7819131/);
   assert.match(html, /替补/);
   assert.match(html, /lineup-player-initials/);
   assert.doesNotMatch(html, /<script>/);
@@ -108,26 +114,31 @@ test("small-score tables put names on the left and periods across the score colu
   assert.doesNotMatch(html, /<th scope="col">局\/节<\/th>/);
 });
 
-test("ten-second polling refreshes expanded child scores without a schedule change", async () => {
+test("five-second polling refreshes expanded child scores without a schedule change", async () => {
   const context = appContext();
   context.payload = { sections: [], subMatches: [
     { id: "one", number: 1, home: "A", away: "B", homeScore: "1", awayScore: "0", status: "RUNNING", sections: [] },
     { id: "two", number: 2, home: "C", away: "D", status: "START_LIST", sections: [] },
   ] };
   vm.runInContext(`
-    state.details.set("team", {data: payload, lastRequested: Date.now() - 6000});
+    state.details.set("team", {data: payload, lastRequested: Date.now() - 4000});
     state.expanded.add("team");
-    state.status = {liveIntervalSeconds: 10};
+    state.status = {liveIntervalSeconds: 5};
     state.activeSport = "TTE";
     state.records = [{id: "team", sport: "TTE", isLive: true}];
   `, context);
-  context.fetch = async () => ({ ok: true, json: async () => ({
+  let requests = 0;
+  context.fetch = async () => { requests += 1; return { ok: true, json: async () => ({
     sections: [], subMatches: [
       { ...context.payload.subMatches[0], homeScore: "3", status: "OFFICIAL", sections: [{ title: "小分", columns: ["局", "A", "B"], rows: [["第1局", "11", "9"]] }] },
       context.payload.subMatches[1],
     ],
-  }) });
+  }) }; };
   await vm.runInContext('refreshVisibleExtras()', context);
+  assert.equal(requests, 0, "four seconds must not trigger the five-second poll");
+  vm.runInContext('state.details.get("team").lastRequested = Date.now() - 5000', context);
+  await vm.runInContext('refreshVisibleExtras()', context);
+  assert.equal(requests, 1);
   const html = vm.runInContext('detailContent("team")', context);
   assert.match(html, /<strong>3<\/strong>/);
   assert.match(html, /完场/);

@@ -462,24 +462,39 @@ def _score(item: dict[str, Any], disc: str = "") -> str:
     return STATUS_NAMES.get(status, "待赛")
 
 
+def _schedule_datetime(item: dict[str, Any]) -> datetime | None:
+    """Parse an official schedule time and return it in Beijing time.
+
+    The results site publishes ``NotBefore`` as a wall-clock time in the
+    venue's Japan timezone (UTC+9), sometimes without an explicit offset.
+    Treating that value as the machine's local timezone makes 16:00 appear as
+    16:00 Beijing instead of 15:00.  Explicitly attach Japan time to naive
+    Not-Before values while preserving offsets on ISO timestamps.
+    """
+    fields = ("NotBefore", "NotBeforeRaw", "NotBeforeTime", "StartTime", "DateTimeRaw")
+    selected_field = next((field for field in fields if item.get(field)), None)
+    if not selected_field:
+        return None
+    raw = str(item[selected_field]).strip()
+    if not raw:
+        return None
+    try:
+        parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None and selected_field.startswith("NotBefore"):
+        parsed = parsed.replace(tzinfo=JAPAN_TZ)
+    return parsed.astimezone(BEIJING_TZ)
+
+
 def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
     if item.get("IsPhase") is True:
         return None
 
-    raw_datetime = str(
-        item.get("NotBefore")
-        or item.get("NotBeforeRaw")
-        or item.get("NotBeforeTime")
-        or item.get("StartTime")
-        or item.get("DateTimeRaw")
-        or ""
-    )
-    if not raw_datetime:
+    beijing_time = _schedule_datetime(item)
+    if beijing_time is None:
         return None
-    try:
-        beijing_time = datetime.fromisoformat(raw_datetime.replace("Z", "+00:00")).astimezone(BEIJING_TZ)
-    except ValueError:
-        return None
+    raw_datetime = str(next((item.get(field) for field in ("NotBefore", "NotBeforeRaw", "NotBeforeTime", "StartTime", "DateTimeRaw") if item.get(field)), ""))
 
     match_type = str(item.get("Type") or "")
     home = _competitor_name(item.get("Home"), match_type)
@@ -493,8 +508,9 @@ def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
     if "victory ceremony" in stage_source.lower() and not home_data and not away_data:
         return None
     phase, stage = _stage_labels(item, disc)
-    if disc == "BDM" and str(item.get("Phase") or "").startswith("X.DOUBLES") and "8FNL" in str(item.get("Phase") or "") and beijing_time.date().isoformat() == "2026-09-25":
+    if not any(item.get(field) for field in ("NotBefore", "NotBeforeRaw", "NotBeforeTime", "StartTime")) and disc == "BDM" and str(item.get("Phase") or "").startswith("X.DOUBLES") and "8FNL" in str(item.get("Phase") or "") and beijing_time.date().isoformat() == "2026-09-25":
         # The official “Not Before 16:00” is Japan time (UTC+9).
+        # Only use this known session fallback when no explicit update exists.
         beijing_time = beijing_time.replace(hour=15, minute=0)
     venue_source = str(item.get("VenueDesc") or item.get("LocDesc") or "")
     status = str(item.get("Status") or "SCHEDULED").upper()

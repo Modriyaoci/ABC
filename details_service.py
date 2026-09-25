@@ -427,6 +427,8 @@ def get_match_details(record: Any, fetcher: Fetcher | None = None) -> dict[str, 
     has_content = bool(sections or sub_matches or home_players or away_players)
     return {
         "available": has_content,
+        "status": _text(info.get("Status")).upper(),
+        "isLive": bool(info.get("IsLive")) or _text(info.get("Status")).upper() in {"LIVE", "RUNNING", "IN_PROGRESS"},
         "updatedAt": _now(),
         "home": names[0],
         "away": names[1],
@@ -460,6 +462,17 @@ def _bracket_score(value: Any, sport: str) -> str:
         match = re.match(r"\s*(\d+)", score)
         return match.group(1) if match else score
     return score
+
+
+def _score_winner(home_score: Any, away_score: Any) -> str:
+    """Derive a winner from a completed bracket score when unambiguous."""
+    home = str(home_score or "").strip()
+    away = str(away_score or "").strip()
+    if not re.fullmatch(r"\d+", home) or not re.fullmatch(r"\d+", away):
+        return ""
+    if int(home) == int(away):
+        return ""
+    return "home" if int(home) > int(away) else "away"
 
 
 def _record_participants(record: dict[str, Any]) -> tuple[str, str] | None:
@@ -503,7 +516,15 @@ def _enrich_bracket_rounds(rounds: list[dict[str, Any]], records: list[dict[str,
             if participants:
                 # The daily schedule is the freshest published matchup. Use
                 # it to correct a stale bracket participant as well as a TBD.
-                match["home"], match["away"] = participants
+                old_home, old_away = _text(match.get("home")), _text(match.get("away"))
+                new_home, new_away = participants
+                if old_home and old_away and old_home == new_away and old_away == new_home:
+                    match["homeScore"], match["awayScore"] = match.get("awayScore", ""), match.get("homeScore", "")
+                    if match.get("winner") == "home":
+                        match["winner"] = "away"
+                    elif match.get("winner") == "away":
+                        match["winner"] = "home"
+                match["home"], match["away"] = new_home, new_away
             status = _text(record.get("status")).upper()
             if status:
                 match["status"] = status
@@ -517,6 +538,9 @@ def _enrich_bracket_rounds(rounds: list[dict[str, Any]], records: list[dict[str,
                 winner = _record_winner(record)
                 if winner:
                     match["winner"] = winner
+                score_winner = _score_winner(match.get("homeScore"), match.get("awayScore"))
+                if score_winner:
+                    match["winner"] = score_winner
 
 
 def _bracket_rounds(data: Any, sport: str, event_key: str, pool_keys: set[str]) -> list[dict[str, Any]]:
@@ -544,8 +568,13 @@ def _bracket_rounds(data: Any, sport: str, event_key: str, pool_keys: set[str]) 
                 # Win flags in a canceled or provisional unit are sometimes
                 # copied from the original draw. Only terminal official
                 # results can mark a bracket team as the winner.
+                home_score = _bracket_score(home.get("Res"), sport)
+                away_score = _bracket_score(away.get("Res"), sport)
                 winner = "" if status and status not in TERMINAL_RESULTS else "home" if home.get("Win") else "away" if away.get("Win") else ""
-                item = {"id": f"{sport}:{key}", "home": _bracket_name(home, match_type, sport), "away": _bracket_name(away, match_type, sport), "homeScore": _bracket_score(home.get("Res"), sport), "awayScore": _bracket_score(away.get("Res"), sport), "winner": winner, "status": status}
+                score_winner = _score_winner(home_score, away_score)
+                if score_winner and (not status or status in TERMINAL_RESULTS):
+                    winner = score_winner
+                item = {"id": f"{sport}:{key}", "home": _bracket_name(home, match_type, sport), "away": _bracket_name(away, match_type, sport), "homeScore": home_score, "awayScore": away_score, "winner": winner, "status": status}
                 # Only explicit feed provenance establishes a link. Numeric
                 # ordering is insufficient for classification/bronze matches.
                 for side in (home, away):
