@@ -12,6 +12,7 @@ from sync_service import (
     _decode_response,
     _score,
     fetch_official_json,
+    filter_unverified_tennis_rows,
     normalize_unit,
     preserve_known_matchups,
     preserve_missing_schedule_rows,
@@ -63,6 +64,21 @@ class SyncServiceTests(unittest.TestCase):
         ]
         result = preserve_missing_schedule_rows(previous, incoming)
         self.assertEqual({row["id"] for row in result}, {"TEN:a", "TEN:c"})
+
+    def test_verified_tennis_day_has_32_allowed_units(self):
+        with open("data/verified-tennis-20260927.json", encoding="utf-8") as handle:
+            verified = json.load(handle)["rows"]
+        rows = [{"sport": "TEN", "date": "2026-09-27", "id": f"TEN:{item['id']}"}
+                for item in verified]
+        self.assertEqual(len(filter_unverified_tennis_rows(rows)), 32)
+
+    def test_verified_tennis_day_drops_bye_placeholder_but_keeps_real_singles(self):
+        rows = [
+            {"sport": "TEN", "date": "2026-09-27", "id": "TEN:W.SINGLES-----------.R64-.000100--", "matchup": "WONG Coleman vs BYE"},
+            {"sport": "TEN", "date": "2026-09-27", "id": "TEN:M.SINGLES-----------.R64-.000200--", "matchup": "AL-MASHNI Zaid vs MURTAZA Muzammil"},
+        ]
+        result = filter_unverified_tennis_rows(rows)
+        self.assertEqual([row["id"] for row in result], ["TEN:M.SINGLES-----------.R64-.000200--"])
 
     def test_cricket_schedule_score_shows_runs_only(self):
         self.assertEqual(_score({"Home": {"Result": "92 - 7"}, "Away": {"Result": "91 - 4"}}, "CKT"), "92 : 91")

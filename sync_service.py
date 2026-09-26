@@ -711,6 +711,7 @@ def _recover_tennis_20260927(records: list[dict[str, Any]]) -> list[dict[str, An
         "TEN:M.DOUBLES-----------.R32-.001400--": ("11:30", "Court 2", "KURNIAWAN Lucky / TRISMUWANTARA Gunawan（印度尼西亚） vs AL-MASHNI Zaid / ALKOTOP Mohammad（约旦）"),
         "TEN:X.DOUBLES-----------.R32-.000900--": ("13:00", "Court 2", "WONG Hong Yi / WONG Tsz Fu（中国香港） vs YULDASHEVA Sevil / SHIN Maksim（乌兹别克斯坦）"),
         "TEN:M.DOUBLES-----------.R32-.001000--": ("10:00", "Court 3", "YEVSEYEV Denis / ZHUKAYEV Beibit（哈萨克斯坦） vs CHENG Siu Chi / WONG Tsz Fu（中国香港）"),
+        "TEN:W.SINGLES-----------.R32-.001400--": ("11:00", "Court 3", "BACK Da-yeon（韩国） vs GURUNG Shivali（尼泊尔）"),
         "TEN:M.DOUBLES-----------.R32-.001300--": ("10:00", "Court 4", "ISARO Pruchya / JONES Maximus（泰国） vs KONG Weiyi / MENG Fanming（中国）"),
         "TEN:W.SINGLES-----------.R32-.000900--": ("11:00", "Court 4", "SAWANGKAEW Mananchaya（泰国） vs CHOGSOMJAV Maralgoo（蒙古）"),
         "TEN:X.DOUBLES-----------.R32-.000700--": ("13:00", "Court 4", "SAFI Meshkatolzahra / RAHMANI Kasra（伊朗） vs RIVERA Shaira / ALCANTARA Francis（菲律宾）"),
@@ -743,6 +744,43 @@ def _is_bye_fixture(row: dict[str, Any]) -> bool:
         elif value is not None and any(token in str(value).strip().lower() for token in ("轮空", "bye")):
             return True
     return False
+
+
+def _verified_tennis_ids(date: str) -> set[str]:
+    """Return the unit IDs verified against the official tennis day page.
+
+    The anonymous daily JSON has occasionally contained draw placeholders (for
+    example a BYE) or a partial session.  The verified page snapshot is an
+    allow-list for the affected day: it prevents an old placeholder from being
+    reintroduced by snapshot repair while still allowing normal score updates.
+    """
+    if date != "2026-09-27":
+        return set()
+    path = Path(__file__).resolve().parent / "data" / "verified-tennis-20260927.json"
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return set()
+    return {
+        f"TEN:{str(row.get('id')).strip()}"
+        for row in payload.get("rows", [])
+        if isinstance(row, dict) and row.get("id")
+    }
+
+
+def filter_unverified_tennis_rows(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Drop stale/placeholder tennis rows for a day with a verified snapshot."""
+    allowed = _verified_tennis_ids("2026-09-27")
+    if not allowed:
+        return records
+    return [
+        row for row in records
+        if not (
+            str(row.get("sport") or "") == "TEN"
+            and str(row.get("date") or row.get("sourceDate") or "") == "2026-09-27"
+            and str(row.get("id") or "") not in allowed
+        )
+    ]
 
 
 def _atomic_json_write(path: Path, value: dict[str, Any]) -> None:
@@ -830,8 +868,12 @@ def sync_all(
         pass
     records = preserve_known_matchups(previous_records, records)
     records = preserve_missing_schedule_rows(previous_records, records)
-    records = _recover_tennis_20260927(records)
     records = [row for row in records if not _is_bye_fixture(row)]
+    # Do not resurrect provisional draw placeholders while repairing a
+    # truncated daily response. The verified page snapshot is the allow-list
+    # for the affected tennis day; live scores and statuses still come from
+    # the official feed above.
+    records = filter_unverified_tennis_rows(records)
     records = apply_court_sequencing(records, previous_records)
     unique = {record["id"]: record for record in records}
     ordered = sorted(
