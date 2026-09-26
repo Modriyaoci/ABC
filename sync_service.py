@@ -723,10 +723,11 @@ def _recover_tennis_20260927(records: list[dict[str, Any]]) -> list[dict[str, An
         "TEN:W.SINGLES-----------.R32-.001100--": ("10:00", "Court 8", "REINNAMAH Meydiana（印度尼西亚） vs YANG Ya-yi（中华台北）"),
         "TEN:W.SINGLES-----------.R32-.000400--": ("11:00", "Court 8", "CHOGSOMJAV Martaa（蒙古） vs GARLAND Joanna（中华台北）"),
     }
-    existing = {str(row.get("id")) for row in records}
+    # The provider reuses unit keys between provisional day snapshots. For
+    # this published day, replace any stale copy of the same key from another
+    # date before adding the confirmed 27-Sep row.
+    records[:] = [row for row in records if str(row.get("id")) not in known]
     for key, (time_value, court, matchup) in known.items():
-        if key in existing:
-            continue
         home, away = matchup.split(" vs ", 1)
         category = "男子双打" if ".M.DOUBLES." in key else ("女子单打" if ".W.SINGLES." in key else "混合双打")
         records.append({"id": key, "sport": "TEN", "sportName": "网球", "officialKey": key[4:], "eventCode": key.split(":", 1)[1].split(".", 1)[0], "phaseCode": key.split(":", 1)[1].rsplit(".", 2)[0], "resCode": "", "phaseOrder": 0, "rawStage": "Men's/Women's/Mixed Doubles/Singles First Round", "rawPhase": "", "phase": "32强赛", "sourceDate": "2026-09-27", "scheduledAt": f"2026-09-27T{time_value}:00+08:00", "officialScheduledAt": f"2026-09-27T{time_value}:00+08:00", "home": {}, "away": {}, "date": "2026-09-27", "time": time_value, "category": category, "stage": "32强赛", "matchup": matchup, "score": "待赛", "venue": "名古屋市东山公园网球中心", "court": court, "status": "SCHEDULED", "isLive": False, "scheduleRule": "not-before"})
