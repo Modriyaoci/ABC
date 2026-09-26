@@ -693,6 +693,46 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
     return records
 
 
+def _recover_tennis_20260927(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Retain the published 27-Sep tennis units when the daily feed is partial.
+
+    The official page publishes several Not Before/Followed by units before
+    they appear in the anonymous daily JSON. These are stable unit keys; keep
+    the page's published pairings so a transient partial response cannot make
+    the schedule show only the first block of matches.
+    """
+    known = {
+        "TEN:W.SINGLES-----------.R32-.001300--": ("10:00", "Center Court", "SAKATSUME Himeno（日本） vs MADIS Tennielle（菲律宾）"),
+        "TEN:X.DOUBLES-----------.R32-.001100--": ("10:10", "Center Court", "ASIMOVA Shakhzoda / KOSIMI Ahmaddzhon（塔吉克斯坦） vs SHIBAHARA Ena / FRIEND Jay（日本）"),
+        "TEN:X.DOUBLES-----------.R32-.001200--": ("13:30", "Center Court", "LEE Eunhye / SHIN Sanhui（韩国） vs PLIPUECH Peangtarn / ISARO Pruchya（泰国）"),
+        "TEN:X.DOUBLES-----------.R32-.000800--": ("10:10", "Show Court", "GURUNG Shivali / KHADKA Pradip（尼泊尔） vs AOYAMA Shuko / KUSUHARA Yusuke（日本）"),
+        "TEN:X.DOUBLES-----------.R32-.001000--": ("14:00", "Show Court", "DANILINA Anna / SHEVCHENKO Aleksandr（哈萨克斯坦） vs QURESHI Mahin Aftab / QURESHI Aisam（巴基斯坦）"),
+        "TEN:W.SINGLES-----------.R32-.000800--": ("11:00", "Show Court", "BISTA Swastika（尼泊尔） vs UCHIJIMA Moyuka（日本）"),
+        "TEN:M.DOUBLES-----------.R32-.001400--": ("11:30", "Court 2", "KURNIAWAN Lucky / TRISMUWANTARA Gunawan（印度尼西亚） vs AL-MASHNI Zaid / ALKOTOP Mohammad（约旦）"),
+        "TEN:X.DOUBLES-----------.R32-.000900--": ("13:00", "Court 2", "WONG Hong Yi / WONG Tsz Fu（中国香港） vs YULDASHEVA Sevil / SHIN Maksim（乌兹别克斯坦）"),
+        "TEN:M.DOUBLES-----------.R32-.001000--": ("10:00", "Court 3", "YEVSEYEV Denis / ZHUKAYEV Beibit（哈萨克斯坦） vs CHENG Siu Chi / WONG Tsz Fu（中国香港）"),
+        "TEN:M.DOUBLES-----------.R32-.001300--": ("10:00", "Court 4", "ISARO Pruchya / JONES Maximus（泰国） vs KONG Weiyi / MENG Fanming（中国）"),
+        "TEN:W.SINGLES-----------.R32-.000900--": ("11:00", "Court 4", "SAWANGKAEW Mananchaya（泰国） vs CHOGSOMJAV Maralgoo（蒙古）"),
+        "TEN:X.DOUBLES-----------.R32-.000700--": ("13:00", "Court 4", "SAFI Meshkatolzahra / RAHMANI Kasra（伊朗） vs RIVERA Shaira / ALCANTARA Francis（菲律宾）"),
+        "TEN:W.SINGLES-----------.R32-.001200--": ("10:00", "Court 5", "SUHAIL Ushna（巴基斯坦） vs PUTINTSEVA Yuliya（哈萨克斯坦）"),
+        "TEN:M.DOUBLES-----------.R32-.000400--": ("11:00", "Court 5", "KURBONOV Shodmon / SHARIFOV Issamjon（塔吉克斯坦） vs SORNLAKSUP Pawit / TRONGCHAROENCHAIKUL Wishaya（泰国）"),
+        "TEN:W.SINGLES-----------.R32-.001500--": ("10:00", "Court 6", "SAFI Meshkatolzahra（伊朗） vs ASIMOVA Shakhzoda（塔吉克斯坦）"),
+        "TEN:W.SINGLES-----------.R32-.000200--": ("11:00", "Court 6", "CHEAPCHANDEJ Patcharin（泰国） vs QURESHI Mahin Aftab（巴基斯坦）"),
+        "TEN:X.DOUBLES-----------.R32-.000300--": ("13:00", "Court 6", "SUHAIL Ushna / KHAN Aqeel（巴基斯坦） vs KULAMBAYEVA Zhibek / ZHUKAYEV Beibit（哈萨克斯坦）"),
+        "TEN:M.DOUBLES-----------.R32-.001100--": ("10:00", "Court 7", "DAVAADASH Mandakh / ENKHJARGAL Sonompuntsag（蒙古） vs KHAN Aqeel / SHOAIB Muhammad（巴基斯坦）"),
+        "TEN:W.SINGLES-----------.R32-.001100--": ("10:00", "Court 8", "REINNAMAH Meydiana（印度尼西亚） vs YANG Ya-yi（中华台北）"),
+        "TEN:W.SINGLES-----------.R32-.000400--": ("11:00", "Court 8", "CHOGSOMJAV Martaa（蒙古） vs GARLAND Joanna（中华台北）"),
+    }
+    existing = {str(row.get("id")) for row in records}
+    for key, (time_value, court, matchup) in known.items():
+        if key in existing:
+            continue
+        home, away = matchup.split(" vs ", 1)
+        category = "男子双打" if ".M.DOUBLES." in key else ("女子单打" if ".W.SINGLES." in key else "混合双打")
+        records.append({"id": key, "sport": "TEN", "sportName": "网球", "officialKey": key[4:], "eventCode": key.split(":", 1)[1].split(".", 1)[0], "phaseCode": key.split(":", 1)[1].rsplit(".", 2)[0], "resCode": "", "phaseOrder": 0, "rawStage": "Men's/Women's/Mixed Doubles/Singles First Round", "rawPhase": "", "phase": "32强赛", "sourceDate": "2026-09-27", "scheduledAt": f"2026-09-27T{time_value}:00+08:00", "officialScheduledAt": f"2026-09-27T{time_value}:00+08:00", "home": {}, "away": {}, "date": "2026-09-27", "time": time_value, "category": category, "stage": "32强赛", "matchup": matchup, "score": "待赛", "venue": "名古屋市东山公园网球中心", "court": court, "status": "SCHEDULED", "isLive": False, "scheduleRule": "not-before"})
+    return records
+
+
 def _atomic_json_write(path: Path, value: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(f"{path.suffix}.tmp")
@@ -778,6 +818,7 @@ def sync_all(
         pass
     records = preserve_known_matchups(previous_records, records)
     records = preserve_missing_schedule_rows(previous_records, records)
+    records = _recover_tennis_20260927(records)
     records = apply_court_sequencing(records, previous_records)
     unique = {record["id"]: record for record in records}
     ordered = sorted(
