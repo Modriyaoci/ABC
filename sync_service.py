@@ -503,11 +503,21 @@ def _actual_end_datetime(item: dict[str, Any]) -> datetime | None:
     return None
 
 
-def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
+def normalize_unit(item: dict[str, Any], disc: str, fallback_date: str | None = None) -> dict[str, Any] | None:
     if item.get("IsPhase") is True:
         return None
 
     beijing_time = _schedule_datetime(item)
+    rule_source = " ".join(str(item.get(field) or "") for field in ("ScheduleRule", "StartRule", "TimeRule", "NotBefore", "FollowedBy", "UnitDesc", "UnitDescA"))
+    is_followed = bool(re.search(r"followed\s+by", rule_source, re.IGNORECASE))
+    if beijing_time is None and fallback_date and is_followed:
+        # Followed-by rows have no clock value in the official feed. Retain
+        # them with the session date; court sequencing assigns their actual
+        # Beijing time after the preceding match.
+        try:
+            beijing_time = datetime.fromisoformat(f"{fallback_date}T09:00:00+08:00")
+        except ValueError:
+            beijing_time = None
     if beijing_time is None:
         return None
     raw_datetime = str(next((item.get(field) for field in ("NotBefore", "NotBeforeRaw", "NotBeforeTime", "StartTime", "DateTimeRaw") if item.get(field)), ""))
@@ -520,8 +530,7 @@ def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
     unit_source = str(item.get("UnitDesc") or item.get("UnitDescA") or "")
     phase_source = str(item.get("PhaseDesc") or "")
     stage_source = unit_source or phase_source
-    rule_source = " ".join(str(item.get(field) or "") for field in ("ScheduleRule", "StartRule", "TimeRule", "NotBefore", "FollowedBy", "UnitDesc", "UnitDescA"))
-    schedule_rule = "followed-by" if re.search(r"followed\s+by", rule_source, re.IGNORECASE) else ("not-before" if re.search(r"not\s+before", rule_source, re.IGNORECASE) else "")
+    schedule_rule = "followed-by" if is_followed else ("not-before" if re.search(r"not\s+before", rule_source, re.IGNORECASE) else "")
     home_data = bool((item.get("Home") or {}).get("HasData"))
     away_data = bool((item.get("Away") or {}).get("HasData"))
     if "victory ceremony" in stage_source.lower() and not home_data and not away_data:
@@ -710,7 +719,7 @@ def sync_all(
                     raise SyncError("逐场数据格式不正确")
                 for unit in units:
                     if isinstance(unit, dict):
-                        record = normalize_unit(unit, disc)
+                        record = normalize_unit(unit, disc, date)
                         if record:
                             records.append(record)
             except Exception as exc:  # noqa: BLE001
