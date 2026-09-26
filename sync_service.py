@@ -722,6 +722,7 @@ def _recover_tennis_20260927(records: list[dict[str, Any]]) -> list[dict[str, An
         "TEN:M.DOUBLES-----------.R32-.001100--": ("10:00", "Court 7", "DAVAADASH Mandakh / ENKHJARGAL Sonompuntsag（蒙古） vs KHAN Aqeel / SHOAIB Muhammad（巴基斯坦）"),
         "TEN:W.SINGLES-----------.R32-.001100--": ("10:00", "Court 8", "REINNAMAH Meydiana（印度尼西亚） vs YANG Ya-yi（中华台北）"),
         "TEN:W.SINGLES-----------.R32-.000400--": ("11:00", "Court 8", "CHOGSOMJAV Martaa（蒙古） vs GARLAND Joanna（中华台北）"),
+        "TEN:W.SINGLES-----------.R32-.000100--": ("10:00", "Court 3", "对阵待定"),
     }
     # The provider reuses unit keys between provisional day snapshots. For
     # this published day, replace any stale copy of the same key from another
