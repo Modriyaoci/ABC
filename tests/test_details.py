@@ -179,7 +179,7 @@ class DetailsServiceTests(unittest.TestCase):
                 }],
             }
 
-        for sport in ("TTE", "BDM"):
+        for sport in ("TTE", "BDM", "TEN"):
             out = get_match_details(f"{sport}:W.TEAM--------------.GPA-.00010000", lambda _, sport=sport: payload(sport))
             self.assertTrue(out["available"])
             self.assertEqual([p["name"] for p in out["homePlayers"]], ["FAN Shuhan", "CHEN Yi"])

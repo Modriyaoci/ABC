@@ -99,15 +99,18 @@ def _player_photo(reg: Any) -> str:
 
 
 def _lineup_players(value: Any, sport: str, match_type: str = "A") -> list[dict[str, Any]]:
-    """Normalize TTE/BDM competitor members for the Line-up view.
+    """Normalize racket-sport competitor members for the Line-up view.
 
-    Team competitors expose all selected athletes in ``Members``.  Singles
-    and doubles child units expose the same member objects in their own
-    competitor entries; a few provisional responses omit ``Members`` and
-    publish the athlete directly on the competitor, so retain that fallback
-    when the competitor is clearly an individual registration.
+    Table tennis, badminton, and tennis competitors expose selected athletes
+    in ``Members`` when the official Line-up is published. Singles and
+    doubles units expose the same member objects in their own competitor
+    entries; a few provisional responses omit ``Members`` and publish the
+    athlete directly on the competitor, so retain that fallback when the
+    competitor is clearly an individual registration. Keeping this
+    normalization shared ensures tennis receives the same cached-photo path
+    as the other racket sports.
     """
-    if sport not in {"TTE", "BDM"} or not isinstance(value, dict):
+    if sport not in {"TEN", "TTE", "BDM"} or not isinstance(value, dict):
         return []
     members = value.get("Members")
     if not isinstance(members, list) or not members:
