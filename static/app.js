@@ -471,11 +471,47 @@ function flagMarkup(value, label = "") {
   return `<img class="country-flag" src="${escapeHtml(src)}" alt="${escapeHtml(label || code)}" loading="lazy" onerror="this.hidden=true">`;
 }
 
+function matchupPlayers(record, side) {
+  // The schedule endpoint intentionally uses compact competitor names. Once
+  // a card is opened, the detail response contains the official full names
+  // used by Line-up; use those same names in the heading as well.
+  const detail = state.details.get(String(record?.id))?.data;
+  const players = detail?.[`${side}Players`];
+  // Team entries contain a full roster; only an individual or doubles
+  // matchup belongs in the compact heading.
+  if (Array.isArray(players) && players.length > 0 && players.length <= 2) {
+    const names = players.flatMap((player) => String(player?.name || player?.nameS || "").split(/\s*[/／]\s*/))
+      .map((name) => name.trim()).filter(Boolean);
+    if (names.length) return names;
+  }
+  const detailName = String(detail?.[side] || "").trim();
+  if (detailName && !/待定|TBD|TBA/i.test(detailName)) return [detailName];
+  const value = record?.[side];
+  const members = Array.isArray(value?.Members) ? value.Members : [];
+  if (members.length === 2) {
+    const names = members.map((member) => String(member?.Name || member?.NameS || "").trim()).filter(Boolean);
+    if (names.length === 2) return names;
+  }
+  const fallback = typeof value === "object" ? (value.Name || value.NameS || value.name) : value;
+  return [String(fallback || "待定").trim() || "待定"];
+}
+
+function matchupFontSize(names) {
+  const longest = Math.max(1, ...names.map((name) => [...String(name)].length));
+  // Keep every participant on one line, scaling long official names down
+  // before the browser has to wrap or truncate them.
+  return Math.max(9, Math.min(16, 16 - Math.max(0, longest - 16) * 0.38));
+}
+
 function renderMatchup(record) {
-  const text = String(record?.matchup || "对阵待定");
   const home = record?.home || {};
   const away = record?.away || {};
-  return `<span class="matchup-with-flags">${flagMarkup(home, home.Name || home.NameS || "")}${escapeHtml(text)}${flagMarkup(away, away.Name || away.NameS || "")}</span>`;
+  const homeNames = matchupPlayers(record, "home");
+  const awayNames = matchupPlayers(record, "away");
+  const names = [...homeNames, ...awayNames];
+  const size = matchupFontSize(names).toFixed(2);
+  const side = (value, names, className) => `<span class="matchup-side ${className}">${names.map((name, index) => `<span class="matchup-name">${index === 0 ? flagMarkup(value, name) : ""}${escapeHtml(name)}</span>`).join("")}</span>`;
+  return `<span class="matchup-with-flags matchup-full-name" style="--matchup-font-size:${size}px">${side(home, homeNames, "matchup-home")}<span class="matchup-vs">vs</span>${side(away, awayNames, "matchup-away")}</span>`;
 }
 
 function renderLineupPlayer(player) {
@@ -801,6 +837,10 @@ async function loadMatch(id, force = false, { automatic = false } = {}) {
   updateDetailPanel(id);
   try {
     entry.data = await fetchJson(apiUrl(`/api/match?id=${encodeURIComponent(id)}${automatic ? "&automatic=1" : ""}`));
+    // The detail response carries the official full participant names. Redraw
+    // the schedule heading so it stays identical to the Line-up names after
+    // the user opens a card (including doubles with two rows per side).
+    if (state.view === "schedule" && state.recordsLoaded) renderSchedule();
     // The schedule feed can publish a provisional “对阵待定” row while the
     // official results page already exposes the selected doubles players.
     // Promote that confirmed Line-up into the visible matchup immediately.

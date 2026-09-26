@@ -387,6 +387,41 @@ main {
   font-weight: 650;
 }
 
+/* Matchup headings use the same full participant names as Line-up. Keep the
+   home side, separator, and away side on distinct lines; doubles naturally
+   render one participant per line within each side. */
+.matchup-full-name {
+  display: inline-flex;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  font-size: var(--matchup-font-size, 16px);
+  line-height: 1.2;
+  vertical-align: top;
+}
+
+.matchup-side {
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.matchup-name {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+}
+
+.matchup-vs {
+  color: var(--muted);
+  font-size: .82em;
+  line-height: 1;
+}
+
 .score-cell {
   color: var(--gold);
   font-weight: 800;
