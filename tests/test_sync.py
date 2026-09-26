@@ -14,6 +14,7 @@ from sync_service import (
     fetch_official_json,
     normalize_unit,
     preserve_known_matchups,
+    preserve_missing_schedule_rows,
 )
 
 
@@ -40,6 +41,28 @@ class SyncServiceTests(unittest.TestCase):
 
         partial = [{"id": "TTE:match-1", "home": {"Org": "CHN"}, "away": {}, "matchup": "中国 vs 待定"}]
         self.assertEqual(preserve_known_matchups(previous, partial)[0]["matchup"], "中国 vs 日本")
+
+    def test_truncated_daily_feed_keeps_omitted_future_rows(self):
+        previous = [
+            {"id": "TEN:a", "sport": "TEN", "date": "2026-09-27"},
+            {"id": "TEN:b", "sport": "TEN", "date": "2026-09-27"},
+            {"id": "TEN:c", "sport": "TEN", "date": "2026-09-27"},
+        ]
+        incoming = [previous[0]]
+        result = preserve_missing_schedule_rows(previous, incoming)
+        self.assertEqual({row["id"] for row in result}, {"TEN:a", "TEN:b", "TEN:c"})
+
+    def test_same_count_removals_are_authoritative(self):
+        previous = [
+            {"id": "TEN:a", "sport": "TEN", "date": "2026-09-27"},
+            {"id": "TEN:b", "sport": "TEN", "date": "2026-09-27"},
+        ]
+        incoming = [
+            {"id": "TEN:a", "sport": "TEN", "date": "2026-09-27"},
+            {"id": "TEN:c", "sport": "TEN", "date": "2026-09-27"},
+        ]
+        result = preserve_missing_schedule_rows(previous, incoming)
+        self.assertEqual({row["id"] for row in result}, {"TEN:a", "TEN:c"})
 
     def test_cricket_schedule_score_shows_runs_only(self):
         self.assertEqual(_score({"Home": {"Result": "92 - 7"}, "Away": {"Result": "91 - 4"}}, "CKT"), "92 : 91")

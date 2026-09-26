@@ -444,6 +444,43 @@ def preserve_known_matchups(
     return repaired
 
 
+def preserve_missing_schedule_rows(
+    previous: list[dict[str, Any]],
+    incoming: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Keep rows omitted by a transiently incomplete daily feed.
+
+    The official schedule endpoint can briefly return only the first session
+    of a day while its followed-by/Not-Before rows are being republished.  A
+    full refresh must not erase those already-known future fixtures.  Merge
+    missing previous rows back only for a sport/date whose incoming count is
+    lower; rows present in the new feed still replace the old snapshot.
+    """
+    from collections import Counter
+
+    incoming_ids = {str(row.get("id")) for row in incoming if row.get("id")}
+    incoming_counts = Counter(
+        (str(row.get("sport") or ""), str(row.get("date") or ""))
+        for row in incoming
+    )
+    previous_groups: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    for row in previous:
+        if row.get("id"):
+            key = (str(row.get("sport") or ""), str(row.get("date") or ""))
+            previous_groups.setdefault(key, []).append(row)
+
+    result = list(incoming)
+    for key, rows in previous_groups.items():
+        # Only repair a demonstrably truncated group.  If the feed has the
+        # same or larger row count, removals are treated as authoritative.
+        if incoming_counts.get(key, 0) >= len(rows):
+            continue
+        for row in rows:
+            if str(row.get("id")) not in incoming_ids:
+                result.append(row)
+    return result
+
+
 def _score(item: dict[str, Any], disc: str = "") -> str:
     home_value = (item.get("Home") or {}).get("Result")
     away_value = (item.get("Away") or {}).get("Result")
@@ -740,6 +777,7 @@ def sync_all(
     except (FileNotFoundError, json.JSONDecodeError, OSError):
         pass
     records = preserve_known_matchups(previous_records, records)
+    records = preserve_missing_schedule_rows(previous_records, records)
     records = apply_court_sequencing(records, previous_records)
     unique = {record["id"]: record for record in records}
     ordered = sorted(
