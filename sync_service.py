@@ -722,7 +722,6 @@ def _recover_tennis_20260927(records: list[dict[str, Any]]) -> list[dict[str, An
         "TEN:M.DOUBLES-----------.R32-.001100--": ("10:00", "Court 7", "DAVAADASH Mandakh / ENKHJARGAL Sonompuntsag（蒙古） vs KHAN Aqeel / SHOAIB Muhammad（巴基斯坦）"),
         "TEN:W.SINGLES-----------.R32-.001100--": ("10:00", "Court 8", "REINNAMAH Meydiana（印度尼西亚） vs YANG Ya-yi（中华台北）"),
         "TEN:W.SINGLES-----------.R32-.000400--": ("11:00", "Court 8", "CHOGSOMJAV Martaa（蒙古） vs GARLAND Joanna（中华台北）"),
-        "TEN:W.SINGLES-----------.R32-.000100--": ("10:00", "Court 3", "对阵待定"),
     }
     # The provider reuses unit keys between provisional day snapshots. For
     # this published day, replace any stale copy of the same key from another
@@ -733,6 +732,17 @@ def _recover_tennis_20260927(records: list[dict[str, Any]]) -> list[dict[str, An
         category = "男子双打" if ":M.DOUBLES" in key else ("女子单打" if ":W.SINGLES" in key else ("男子单打" if ":M.SINGLES" in key else "混合双打"))
         records.append({"id": key, "sport": "TEN", "sportName": "网球", "officialKey": key[4:], "eventCode": key.split(":", 1)[1].split(".", 1)[0], "phaseCode": key.split(":", 1)[1].rsplit(".", 2)[0], "resCode": "", "phaseOrder": 0, "rawStage": "Men's/Women's/Mixed Doubles/Singles First Round", "rawPhase": "", "phase": "32强赛", "sourceDate": "2026-09-27", "scheduledAt": f"2026-09-27T{time_value}:00+08:00", "officialScheduledAt": f"2026-09-27T{time_value}:00+08:00", "home": {}, "away": {}, "date": "2026-09-27", "time": time_value, "category": category, "stage": "32强赛", "matchup": matchup, "score": "待赛", "venue": "名古屋市东山公园网球中心", "court": court, "status": "SCHEDULED", "isLive": False, "scheduleRule": "not-before"})
     return records
+
+
+def _is_bye_fixture(row: dict[str, Any]) -> bool:
+    """A bye advances a draw slot and must never become a scheduled fixture."""
+    values = [row.get("matchup"), row.get("home"), row.get("away")]
+    for value in values:
+        if isinstance(value, dict):
+            values.extend(value.get(key) for key in ("Name", "NameS", "name", "Org"))
+        elif value is not None and any(token in str(value).strip().lower() for token in ("轮空", "bye")):
+            return True
+    return False
 
 
 def _atomic_json_write(path: Path, value: dict[str, Any]) -> None:
@@ -821,10 +831,7 @@ def sync_all(
     records = preserve_known_matchups(previous_records, records)
     records = preserve_missing_schedule_rows(previous_records, records)
     records = _recover_tennis_20260927(records)
-    records = [row for row in records if not (
-        row.get("sport") == "TEN" and row.get("date") == "2026-09-27"
-        and "轮空" in str(row.get("matchup") or "")
-    )]
+    records = [row for row in records if not _is_bye_fixture(row)]
     records = apply_court_sequencing(records, previous_records)
     unique = {record["id"]: record for record in records}
     ordered = sorted(
