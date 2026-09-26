@@ -10,7 +10,7 @@ import urllib.error
 import urllib.request
 import zlib
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any, Callable
 from zoneinfo import ZoneInfo
@@ -487,6 +487,22 @@ def _schedule_datetime(item: dict[str, Any]) -> datetime | None:
     return parsed.astimezone(BEIJING_TZ)
 
 
+def _actual_end_datetime(item: dict[str, Any]) -> datetime | None:
+    """Read an official finish timestamp when the feed exposes one."""
+    for field in ("EndTime", "FinishTime", "ActualEndTime", "CompletedAt", "ResultTime"):
+        raw = item.get(field)
+        if not raw:
+            continue
+        try:
+            parsed = datetime.fromisoformat(str(raw).strip().replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=JAPAN_TZ)
+        return parsed.astimezone(BEIJING_TZ)
+    return None
+
+
 def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
     if item.get("IsPhase") is True:
         return None
@@ -495,6 +511,7 @@ def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
     if beijing_time is None:
         return None
     raw_datetime = str(next((item.get(field) for field in ("NotBefore", "NotBeforeRaw", "NotBeforeTime", "StartTime", "DateTimeRaw") if item.get(field)), ""))
+    actual_end = _actual_end_datetime(item)
 
     match_type = str(item.get("Type") or "")
     home = _competitor_name(item.get("Home"), match_type)
@@ -503,6 +520,8 @@ def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
     unit_source = str(item.get("UnitDesc") or item.get("UnitDescA") or "")
     phase_source = str(item.get("PhaseDesc") or "")
     stage_source = unit_source or phase_source
+    rule_source = " ".join(str(item.get(field) or "") for field in ("ScheduleRule", "StartRule", "TimeRule", "NotBefore", "FollowedBy", "UnitDesc", "UnitDescA"))
+    schedule_rule = "followed-by" if re.search(r"followed\s+by", rule_source, re.IGNORECASE) else ("not-before" if re.search(r"not\s+before", rule_source, re.IGNORECASE) else "")
     home_data = bool((item.get("Home") or {}).get("HasData"))
     away_data = bool((item.get("Away") or {}).get("HasData"))
     if "victory ceremony" in stage_source.lower() and not home_data and not away_data:
@@ -529,6 +548,9 @@ def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
         "phase": phase,
         "sourceDate": beijing_time.astimezone(JAPAN_TZ).strftime("%Y-%m-%d"),
         "scheduledAt": beijing_time.isoformat(timespec="seconds"),
+        "officialScheduledAt": beijing_time.isoformat(timespec="seconds"),
+        "actualEndAt": actual_end.isoformat(timespec="seconds") if actual_end else "",
+        "scheduleRule": schedule_rule,
         "home": item.get("Home") or {},
         "away": item.get("Away") or {},
         "date": beijing_time.strftime("%Y-%m-%d"),
@@ -542,6 +564,87 @@ def normalize_unit(item: dict[str, Any], disc: str) -> dict[str, Any] | None:
         "status": status,
         "isLive": bool(item.get("IsLive")) or status in {"LIVE", "RUNNING"},
     }
+
+
+def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+    """Shift tennis/badminton sessions on each court when an earlier match runs late.
+
+    The official feed's first time is authoritative.  Subsequent sessions on
+    the same court begin no earlier than the prior match's actual end plus ten
+    minutes.  Tennis uses a 60-minute planning slot; badminton uses 50 minutes.
+    A live match without an end timestamp is treated as ending ``now`` for the
+    current snapshot, so following cards move forward immediately and settle
+    to the recorded finish on a later refresh.
+    """
+    previous_by_id = {str(row.get("id")): row for row in (previous or []) if row.get("id")}
+    groups: dict[tuple[str, str, str], list[dict[str, Any]]] = {}
+    for row in records:
+        sport = str(row.get("sport") or "")
+        court = str(row.get("court") or "").strip()
+        if sport not in {"TEN", "BDM"} or not court or not row.get("scheduledAt"):
+            continue
+        groups.setdefault((str(row.get("date") or ""), sport, court), []).append(row)
+
+    now = datetime.now(BEIJING_TZ)
+    completed_statuses = {"OFFICIAL", "FINISHED", "COMPLETED", "UNOFFICIAL"}
+    for rows in groups.values():
+        rows.sort(key=lambda row: (str(row.get("officialScheduledAt") or row.get("scheduledAt") or ""), str(row.get("id") or "")))
+        prior_end: datetime | None = None
+        propagated_delay = timedelta(0)
+        duration = 60 if rows[0].get("sport") == "TEN" else 50
+        for index, row in enumerate(rows):
+            try:
+                official_start = datetime.fromisoformat(str(row.get("officialScheduledAt") or row["scheduledAt"]))
+            except (KeyError, ValueError):
+                continue
+            if official_start.tzinfo is None:
+                official_start = official_start.replace(tzinfo=BEIJING_TZ)
+            # Keep the official Not Before time as the baseline. A delay from
+            # an earlier match propagates to later cards, while a Followed by
+            # card cannot start before the previous match's end plus 10 min.
+            shifted = official_start + propagated_delay
+            if index > 0 and prior_end:
+                shifted = max(shifted, prior_end)
+            row["scheduledAt"] = shifted.isoformat(timespec="seconds")
+            row["date"] = shifted.strftime("%Y-%m-%d")
+            row["time"] = shifted.strftime("%H:%M")
+            effective_start = datetime.fromisoformat(str(row["scheduledAt"]))
+            end_raw = str(row.get("actualEndAt") or "")
+            end = None
+            known_end = False
+            if end_raw:
+                try:
+                    end = datetime.fromisoformat(end_raw)
+                    known_end = True
+                except ValueError:
+                    end = None
+            if end is None:
+                old = previous_by_id.get(str(row.get("id")))
+                old_end = str(old.get("actualEndAt") or "") if old else ""
+                if old_end:
+                    try:
+                        end = datetime.fromisoformat(old_end)
+                        known_end = True
+                    except ValueError:
+                        end = None
+            status = str(row.get("status") or "").upper()
+            if end is None and status in completed_statuses:
+                end = effective_start + timedelta(minutes=duration)
+                known_end = True
+            if end is None and (row.get("isLive") or status in {"LIVE", "RUNNING", "IN_PROGRESS"}):
+                end = max(now, effective_start)
+                known_end = True
+            if end is None:
+                end = effective_start + timedelta(minutes=duration)
+            # Carry only the overrun beyond the planned slot. The ten-minute
+            # turnaround is applied to the immediate next match, while the
+            # overrun itself is propagated to later official times. This
+            # yields 09:00 -> 10:30 -> 11:20 when the first match ends 10:20.
+            planned_end = official_start + propagated_delay + timedelta(minutes=duration)
+            if known_end and end > planned_end:
+                propagated_delay += end - planned_end
+            prior_end = end + timedelta(minutes=10) if known_end else None
+    return records
 
 
 def _atomic_json_write(path: Path, value: dict[str, Any]) -> None:
@@ -628,6 +731,7 @@ def sync_all(
     except (FileNotFoundError, json.JSONDecodeError, OSError):
         pass
     records = preserve_known_matchups(previous_records, records)
+    records = apply_court_sequencing(records, previous_records)
     unique = {record["id"]: record for record in records}
     ordered = sorted(
         unique.values(),
