@@ -98,7 +98,7 @@ def _completion_updates(
             old_status = str(old.get("status") or "").upper()
             if old_status in FINAL_STATUSES and status not in FINAL_STATUSES:
                 continue
-            active_before = old.get("isLive") or old_status in {"LIVE", "RUNNING"}
+            active_before = old.get("isLive") or old_status in {"LIVE", "RUNNING", "IN_PROGRESS", "SUSPENDED", "INTERRUPTED"}
             pending_after = not record["isLive"] and status not in FINAL_STATUSES | {"UNOFFICIAL"}
             if active_before and pending_after:
                 for key in ("score", "status", "isLive"):

@@ -608,7 +608,7 @@ def normalize_unit(item: dict[str, Any], disc: str, fallback_date: str | None = 
         "venue": VENUE_NAMES.get(venue_source, venue_source or "待定"),
         "court": str(item.get("LocDesc") or "").strip() if disc in {"TEN", "BDM", "TTE"} else "",
         "status": status,
-        "isLive": bool(item.get("IsLive")) or status in {"LIVE", "RUNNING"},
+        "isLive": bool(item.get("IsLive")) or status in {"LIVE", "RUNNING", "IN_PROGRESS", "SUSPENDED", "INTERRUPTED"},
     }
 
 
