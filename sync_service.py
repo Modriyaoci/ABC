@@ -914,11 +914,15 @@ def sync_all(
     if day_errors:
         raise SyncError("；".join(day_errors))
 
+    today = datetime.now(BEIJING_TZ).date().isoformat()
+    # Historical schedules are immutable once published. Keep them from the
+    # repository snapshot and fetch only today/future days; reconciliation
+    # below merges the untouched historical rows back into the new payload.
     tasks = [
         (disc, str(day.get("raw")))
         for disc, days in day_lists.items()
         for day in days
-        if day.get("raw")
+        if day.get("raw") and str(day.get("raw")) >= today
     ]
     total = len(tasks)
     completed = 0
