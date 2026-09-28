@@ -288,6 +288,11 @@ function isUnassignedSchedulePlaceholder(record) {
   // show stale matches from another day.  Keep rows with a known matchup (or
   // an explicitly assigned court) even when the court is published later.
   if (!["TEN", "BDM", "TTE"].includes(record?.sport)) return false;
+  // Historical and future TBD fixtures remain useful schedule entries. Only
+  // hide an unallocated placeholder for today's date; today's published
+  // court snapshot is the authority for what is actually playable.
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Shanghai" }).format(new Date());
+  if (String(record?.date || "") !== today) return false;
   if (String(record?.court || "").trim()) return false;
   const status = String(record?.status || "").toUpperCase();
   const matchup = String(record?.matchup || "").trim();

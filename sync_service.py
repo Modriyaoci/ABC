@@ -634,6 +634,12 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
     now = datetime.now(BEIJING_TZ)
     completed_statuses = {"OFFICIAL", "FINISHED", "COMPLETED", "UNOFFICIAL"}
     for rows in groups.values():
+        # Court-delay projection is only for today/live play. Historical
+        # fixtures must keep their published date and time; otherwise an old
+        # match can roll into today's allow-list and be mistaken for a newly
+        # scheduled fixture.
+        if rows and str(rows[0].get("date") or "") < now.date().isoformat():
+            continue
         rows.sort(key=lambda row: (
             int(row.get("officialCourtOrder", 10**9)),
             str(row.get("officialScheduledAt") or row.get("scheduledAt") or ""),
@@ -900,10 +906,11 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             rows = json.loads(path.read_text(encoding="utf-8")).get("rows", [])
         except (FileNotFoundError, json.JSONDecodeError, OSError):
             continue
-        # A snapshot is scoped to its own day.  Do not inject an entire
-        # historical capture when the current live payload has no records for
-        # that day (for example during a unit test or a truncated fetch).
-        if not any(str(record.get("sport")) == "TEN" and str(record.get("date")) == day for record in records):
+        # Complete page captures are authoritative membership lists, including
+        # historical days that the rolling API no longer returns. Older
+        # enrichment-only captures still require an existing day in memory.
+        complete_snapshot = bool(json.loads(path.read_text(encoding="utf-8")).get("complete"))
+        if not complete_snapshot and not any(str(record.get("sport")) == "TEN" and str(record.get("date")) == day for record in records):
             continue
         by_id = {str(row.get("id")): row for row in rows if isinstance(row, dict) and row.get("id")}
         existing = {str(record.get("id", "")).removeprefix("TEN:") for record in records if str(record.get("sport")) == "TEN" and str(record.get("date")) == day}
@@ -912,7 +919,7 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
                 continue
             # Historical captures enrich rows already present in the cache,
             # but must never resurrect their entire draw after a restart.
-            if not add_missing or str(verified["id"]) in existing or day < today:
+            if not add_missing or str(verified["id"]) in existing or (day < today and not complete_snapshot):
                 continue
             category = "男子单打" if ".M.SINGLES" in f".{verified['id']}" else ("女子单打" if ".W.SINGLES" in f".{verified['id']}" else ("男子双打" if ".M.DOUBLES" in f".{verified['id']}" else ("女子双打" if ".W.DOUBLES" in f".{verified['id']}" else "混合双打")))
             fallback_at = f"{day}T11:00:00+08:00"
