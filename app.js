@@ -619,7 +619,7 @@ function staleNotice(entry, label) {
 
 function renderSchedule() {
   const records = filteredRecords();
-  const domKey = records.map((record) => [record.id, record.date, record.time, record.matchup, record.court, record.venue, record.stage, recordStatus(record), state.expanded.has(record.id), hasTeamScheduleChange(record.id)].join("\u001f")).join("\u001e") + `|${state.layout}`;
+  const domKey = records.map((record) => [record.id, record.date, record.time, record.matchup, record.court, record.venue, record.stage, recordStatus(record), ["SUSPENDED", "INTERRUPTED"].includes(String(record.status || "").toUpperCase()), state.expanded.has(record.id), hasTeamScheduleChange(record.id)].join("\u001f")).join("\u001e") + `|${state.layout}`;
   if (state.scheduleDomKey === domKey) {
     // Score/live polling must not replace the card/table DOM. Replacing it
     // reloads player images and causes names to jump while the score changes.

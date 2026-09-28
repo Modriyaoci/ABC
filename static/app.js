@@ -645,7 +645,7 @@ function staleNotice(entry, label) {
 
 function renderSchedule() {
   const records = filteredRecords();
-  const domKey = records.map((record) => [record.id, record.date, record.time, record.matchup, record.court, record.venue, record.stage, recordStatus(record), state.expanded.has(record.id), hasTeamScheduleChange(record.id)].join("\u001f")).join("\u001e") + `|${state.layout}`;
+  const domKey = records.map((record) => [record.id, record.date, record.time, record.matchup, record.court, record.venue, record.stage, recordStatus(record), ["SUSPENDED", "INTERRUPTED"].includes(String(record.status || "").toUpperCase()), state.expanded.has(record.id), hasTeamScheduleChange(record.id)].join("\u001f")).join("\u001e") + `|${state.layout}`;
   if (state.scheduleDomKey === domKey) {
     for (const record of records) {
       const root = (state.layout ? elements.cards : elements.body).querySelector(`[data-match-id="${CSS.escape(String(record.id))}"]`);
