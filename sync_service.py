@@ -774,6 +774,39 @@ def _is_bye_fixture(row: dict[str, Any]) -> bool:
     return False
 
 
+def _verified_tennis_snapshot(date: str) -> dict[str, Any] | None:
+    """Load the verified tennis snapshot for ``date`` when one exists.
+
+    Snapshots are deliberately discovered from the data directory so adding a
+    new official page capture does not require another hard-coded date list.
+    ``complete`` is opt-in: older captures remain enrichment data, while a
+    complete capture is an exact allow-list for that day.
+    """
+    base = Path(__file__).resolve().parent / "data"
+    paths = sorted(base.glob("verified-tennis-*.json"))
+    for path in paths:
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (FileNotFoundError, json.JSONDecodeError, OSError):
+            continue
+        if not isinstance(payload, dict):
+            continue
+        rows = payload.get("rows")
+        if not isinstance(rows, list):
+            continue
+        # Prefer an explicit source date; the filename fallback supports the
+        # existing captures whose names end in YYYYMMDD.
+        source_date = str(payload.get("date") or payload.get("sourceDate") or "")
+        if not source_date:
+            match = re.search(r"(20\d{2}-?\d{2}-?\d{2})", path.stem)
+            if match:
+                value = match.group(1)
+                source_date = f"{value[:4]}-{value[4:6]}-{value[6:]}" if "-" not in value else value
+        if source_date == date:
+            return payload
+    return None
+
+
 def _verified_tennis_ids(date: str) -> set[str]:
     """Return the unit IDs verified against the official tennis day page.
 
@@ -782,12 +815,8 @@ def _verified_tennis_ids(date: str) -> set[str]:
     allow-list for the affected day: it prevents an old placeholder from being
     reintroduced by snapshot repair while still allowing normal score updates.
     """
-    if date != "2026-09-27":
-        return set()
-    path = Path(__file__).resolve().parent / "data" / "verified-tennis-20260927.json"
-    try:
-        payload = json.loads(path.read_text(encoding="utf-8"))
-    except (FileNotFoundError, json.JSONDecodeError, OSError):
+    payload = _verified_tennis_snapshot(date)
+    if not payload or not payload.get("complete"):
         return set()
     return {
         f"TEN:{str(row.get('id')).strip()}"
@@ -798,15 +827,29 @@ def _verified_tennis_ids(date: str) -> set[str]:
 
 def filter_unverified_tennis_rows(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Drop stale/placeholder tennis rows for a day with a verified snapshot."""
-    allowed = _verified_tennis_ids("2026-09-27")
-    if not allowed:
+    complete_days: dict[str, set[str]] = {}
+    for path in sorted((Path(__file__).resolve().parent / "data").glob("verified-tennis-*.json")):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (FileNotFoundError, json.JSONDecodeError, OSError):
+            continue
+        if not isinstance(payload, dict) or not payload.get("complete"):
+            continue
+        date = str(payload.get("date") or payload.get("sourceDate") or "")
+        if not date:
+            match = re.search(r"(20\d{2})(\d{2})(\d{2})", path.stem)
+            date = f"{match.group(1)}-{match.group(2)}-{match.group(3)}" if match else ""
+        ids = {f"TEN:{str(row.get('id')).strip()}" for row in payload.get("rows", []) if isinstance(row, dict) and row.get("id")}
+        if date and ids:
+            complete_days[date] = ids
+    if not complete_days:
         return records
     return [
         row for row in records
         if not (
             str(row.get("sport") or "") == "TEN"
-            and str(row.get("date") or row.get("sourceDate") or "") == "2026-09-27"
-            and str(row.get("id") or "") not in allowed
+            and str(row.get("date") or row.get("sourceDate") or "") in complete_days
+            and str(row.get("id") or "") not in complete_days[str(row.get("date") or row.get("sourceDate") or "")]
         )
     ]
 
@@ -834,21 +877,35 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
     status continue to come from the live feed.
     """
     base = Path(__file__).resolve().parent / "data"
-    snapshots = [("2026-09-27", base / "verified-tennis-20260927.json"), ("2026-09-28", base / "verified-tennis-20260928-men-singles.json")]
+    today = datetime.now(BEIJING_TZ).date().isoformat()
+    snapshots = []
+    for path in sorted(base.glob("verified-tennis-*.json")):
+        match = re.search(r"(20\d{2})(\d{2})(\d{2})", path.stem)
+        if match:
+            day = f"{match.group(1)}-{match.group(2)}-{match.group(3)}"
+            snapshots.append((day, path))
     for day, path in snapshots:
         try:
             rows = json.loads(path.read_text(encoding="utf-8")).get("rows", [])
         except (FileNotFoundError, json.JSONDecodeError, OSError):
+            continue
+        # A snapshot is scoped to its own day.  Do not inject an entire
+        # historical capture when the current live payload has no records for
+        # that day (for example during a unit test or a truncated fetch).
+        if not any(str(record.get("sport")) == "TEN" and str(record.get("date")) == day for record in records):
             continue
         by_id = {str(row.get("id")): row for row in rows if isinstance(row, dict) and row.get("id")}
         existing = {str(record.get("id", "")).removeprefix("TEN:") for record in records if str(record.get("sport")) == "TEN" and str(record.get("date")) == day}
         for snapshot_order, verified in enumerate(rows):
             if not isinstance(verified, dict) or not verified.get("id"):
                 continue
-            if not add_missing or str(verified["id"]) in existing:
+            # Historical captures enrich rows already present in the cache,
+            # but must never resurrect their entire draw after a restart.
+            if not add_missing or str(verified["id"]) in existing or day < today:
                 continue
             category = "男子单打" if ".M.SINGLES" in f".{verified['id']}" else ("女子单打" if ".W.SINGLES" in f".{verified['id']}" else ("男子双打" if ".M.DOUBLES" in f".{verified['id']}" else ("女子双打" if ".W.DOUBLES" in f".{verified['id']}" else "混合双打")))
-            records.append({"id": f"TEN:{verified['id']}", "sport":"TEN", "sportName":"网球", "officialKey":verified["id"], "date":day, "sourceDate":day, "category":category, "stage":"32强赛", "phase":"32强赛", "matchup":f"{verified.get('home','待定')} vs {verified.get('away','待定')}", "score":"待赛", "venue":"名古屋市东山公园网球中心", "court":verified.get("court", ""), "officialCourtOrder":snapshot_order, "status":"SCHEDULED", "isLive":False, "scheduledAt":f"{day}T11:00:00+08:00", "officialScheduledAt":f"{day}T11:00:00+08:00"})
+            fallback_at = f"{day}T11:00:00+08:00"
+            records.append({"id": f"TEN:{verified['id']}", "sport":"TEN", "sportName":"网球", "officialKey":verified["id"], "date":day, "sourceDate":day, "category":category, "stage":"32强赛", "phase":"32强赛", "matchup":f"{verified.get('home','待定')} vs {verified.get('away','待定')}", "score":"待赛", "venue":"名古屋市东山公园网球中心", "court":verified.get("court", ""), "officialCourtOrder":snapshot_order, "status":"SCHEDULED", "isLive":False, "time":"11:00", "scheduledAt":fallback_at, "officialScheduledAt":fallback_at})
         # Resolve the published court order: explicit/Not-Before times are
         # Tokyo wall-clock values; Followed-by starts ten minutes after the
         # preceding 60-minute tennis slot. Never use a fixed fallback hour.
@@ -875,16 +932,26 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             verified = by_id.get(str(record.get("id", "")).removeprefix("TEN:"))
             if not verified:
                 continue
-            record["court"] = verified["court"]
+            # Do not let recovery roll back a concrete live value.  The live
+            # schedule/result feed remains authoritative after a row exists;
+            # the snapshot only fills fields that are still blank/provisional.
+            if not str(record.get("court") or "").strip() and str(verified.get("court") or "").strip():
+                record["court"] = verified["court"]
             record["officialCourtOrder"] = next((i for i, item in enumerate(rows) if str(item.get("id")) == str(verified.get("id"))), 10**9)
-            record["matchup"] = f"{verified['home']} vs {verified['away']}"
+            snapshot_matchup = f"{verified['home']} vs {verified['away']}"
+            current_matchup = str(record.get("matchup") or "").strip()
+            if not current_matchup or re.fullmatch(r"(?:对阵待定|待定(?:\s+vs\s+待定)?)", current_matchup, re.IGNORECASE):
+                record["matchup"] = snapshot_matchup
             label = str(verified.get("timeLabel") or "")
             dt = resolved.get(str(verified.get("id")))
             if dt:
             # Official labels are Tokyo time (UTC+9), display UTC+8.
-                record["scheduledAt"] = dt.isoformat(timespec="seconds")
-                record["officialScheduledAt"] = record["scheduledAt"]
-                record["time"] = dt.strftime("%H:%M")
+                if not str(record.get("scheduledAt") or "").strip():
+                    record["scheduledAt"] = dt.isoformat(timespec="seconds")
+                if not str(record.get("officialScheduledAt") or "").strip():
+                    record["officialScheduledAt"] = record["scheduledAt"]
+                if not str(record.get("time") or "").strip():
+                    record["time"] = dt.strftime("%H:%M")
             record["status"] = record.get("status") if record.get("status") not in {"PROVISIONAL", "UNSCHEDULED"} else "SCHEDULED"
     return records
 
@@ -1016,7 +1083,7 @@ def sync_all(
     unique = {record["id"]: record for record in records}
     ordered = sorted(
         unique.values(),
-        key=lambda row: (row["date"], row["time"], list(SPORTS).index(row["sport"]), row["id"]),
+        key=lambda row: (row.get("date", ""), row.get("time", ""), list(SPORTS).index(row["sport"]), row["id"]),
     )
     counts = {disc: sum(1 for row in ordered if row["sport"] == disc) for disc in SPORTS}
     payload = {

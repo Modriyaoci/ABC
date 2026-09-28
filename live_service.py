@@ -274,7 +274,7 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
     records = apply_verified_tennis_snapshots(records, add_missing=True)
     records = apply_court_sequencing(records, previous_records)
     payload["records"] = sorted({row["id"]: row for row in records}.values(), key=lambda row: (
-        row["date"], row["time"], list(SPORTS).index(row["sport"]), row["id"]
+        row.get("date", ""), row.get("time", ""), list(SPORTS).index(row["sport"]), row["id"]
     ))
     payload["meta"].update({
         "generatedAt": datetime.now(BEIJING_TZ).isoformat(timespec="microseconds"),
