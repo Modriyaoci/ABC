@@ -12,6 +12,7 @@ from sync_service import (
     fetch_official_json, normalize_unit,
     preserve_known_matchups,
     apply_verified_tennis_snapshots, apply_court_sequencing,
+    filter_unverified_tennis_rows, filter_unlocated_current_tennis_rows,
 )
 
 JAPAN_TZ = ZoneInfo("Asia/Tokyo")
@@ -272,6 +273,11 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
     # already present in the cached aggregate; otherwise a provisional API
     # cache can permanently hide newly published matches.
     records = apply_verified_tennis_snapshots(records, add_missing=True)
+    # A live cycle must apply the same official-day allow-list as a full sync;
+    # otherwise rows removed from today's page can reappear from yesterday's
+    # cached schedule after court-time propagation.
+    records = filter_unverified_tennis_rows(records)
+    records = filter_unlocated_current_tennis_rows(records)
     records = apply_court_sequencing(records, previous_records)
     payload["records"] = sorted({row["id"]: row for row in records}.values(), key=lambda row: (
         row.get("date", ""), row.get("time", ""), list(SPORTS).index(row["sport"]), row["id"]
