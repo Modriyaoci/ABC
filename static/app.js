@@ -457,11 +457,11 @@ function lineupPlayers(match, side) {
 
 function lineupPhoto(player) {
   const reg = String(player?.reg || "").trim();
-  // Always use our own cached image endpoint for registered players. Mixing a
-  // checked-in URL with an error fallback makes a missing static asset flash
-  // before the local proxy image is loaded.
+  // Confirmed line-ups use only the immutable repository asset. Never switch
+  // to an upstream/API URL during score polling: that replacement is what
+  // causes the player logo to flash.
   if (reg && /^[A-Za-z0-9_.-]+$/.test(reg)) {
-    return apiUrl(`/api/player-photo?reg=${encodeURIComponent(reg)}`);
+    return `${SITE_BASE}/player-photos/${encodeURIComponent(reg)}.jpg`;
   }
   const value = String(player?.photo || player?.avatar || "").trim();
   return /^https?:\/\//i.test(value) ? value : "";
