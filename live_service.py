@@ -11,6 +11,7 @@ from sync_service import (
     BEIJING_TZ, SPORTS, SyncError, _atomic_json_write,
     fetch_official_json, normalize_unit,
     preserve_known_matchups,
+    apply_verified_tennis_snapshots, apply_court_sequencing,
 )
 
 JAPAN_TZ = ZoneInfo("Asia/Tokyo")
@@ -231,13 +232,19 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
         records = [row for row in previous_records
                    if (row["sport"], row.get("sourceDate", row["date"])) not in target_set]
         unique = {row["id"]: row for row in records + replacements}
-    payload["records"] = sorted(unique.values(), key=lambda row: (
+    records = list(unique.values())
+    # Every incremental score/status cycle also reconciles the latest
+    # published start times and court order. This keeps Followed-by and delay
+    # propagation aligned while a match is still running.
+    records = apply_verified_tennis_snapshots(records, add_missing=False)
+    records = apply_court_sequencing(records, previous_records)
+    payload["records"] = sorted({row["id"]: row for row in records}.values(), key=lambda row: (
         row["date"], row["time"], list(SPORTS).index(row["sport"]), row["id"]
     ))
     payload["meta"].update({
         "generatedAt": datetime.now(BEIJING_TZ).isoformat(timespec="microseconds"),
-        "total": len(unique),
-        "counts": {sport: sum(row["sport"] == sport for row in unique.values()) for sport in SPORTS},
+        "total": len(payload["records"]),
+        "counts": {sport: sum(row["sport"] == sport for row in payload["records"]) for sport in SPORTS},
     })
     _atomic_json_write(output_path, payload)
     return payload

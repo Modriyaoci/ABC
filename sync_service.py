@@ -806,7 +806,7 @@ def filter_schedule_placeholders(records: list[dict[str, Any]]) -> list[dict[str
     ]
 
 
-def apply_verified_tennis_snapshots(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: bool = True) -> list[dict[str, Any]]:
     """Restore the published 28-Sep men's singles court assignments.
 
     The daily JSON was still returning blank provisional draw slots while the
@@ -824,6 +824,8 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]]) -> list[dict[
         by_id = {str(row.get("id")): row for row in rows if isinstance(row, dict) and row.get("id")}
         existing = {str(record.get("id", "")).removeprefix("TEN:") for record in records if str(record.get("sport")) == "TEN" and str(record.get("date")) == day}
         for verified in rows:
+            if not add_missing:
+                continue
             if not isinstance(verified, dict) or not verified.get("id") or str(verified["id"]) in existing:
                 continue
             category = "男子单打" if ".M.SINGLES" in f".{verified['id']}" else ("女子单打" if ".W.SINGLES" in f".{verified['id']}" else ("男子双打" if ".M.DOUBLES" in f".{verified['id']}" else ("女子双打" if ".W.DOUBLES" in f".{verified['id']}" else "混合双打")))
