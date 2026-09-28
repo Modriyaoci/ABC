@@ -457,13 +457,11 @@ function lineupPlayers(match, side) {
 
 function lineupPhoto(player) {
   const reg = String(player?.reg || "").trim();
-  // Prefer a checked-in static asset.  This keeps GitHub Pages and Render
-  // from requesting the official photo host for every Line-up render.  The
-  // image's error handler falls back to our API only when this registration
-  // has not yet been harvested into static/player-photos.
+  // Always use our own cached image endpoint for registered players. Mixing a
+  // checked-in URL with an error fallback makes a missing static asset flash
+  // before the local proxy image is loaded.
   if (reg && /^[A-Za-z0-9_.-]+$/.test(reg)) {
-    const base = SITE_BASE || "";
-    return `${base}/player-photos/${encodeURIComponent(reg)}.jpg`;
+    return apiUrl(`/api/player-photo?reg=${encodeURIComponent(reg)}`);
   }
   const value = String(player?.photo || player?.avatar || "").trim();
   return /^https?:\/\//i.test(value) ? value : "";
@@ -537,10 +535,8 @@ function renderLineupPlayer(player) {
   const country = lineupCountry(player);
   const role = player.substitute ? " · 替补" : "";
   const reg = String(player?.reg || "").trim();
-  const fallback = reg && /^[A-Za-z0-9_.-]+$/.test(reg)
-    ? apiUrl(`/api/player-photo?reg=${encodeURIComponent(reg)}`) : "";
   const photoMarkup = photo
-    ? `<img class="lineup-player-photo" src="${escapeHtml(photo)}" alt="" loading="lazy" onerror="${fallback ? `this.onerror=function(){this.hidden=true;this.nextElementSibling.hidden=false};this.src='${escapeHtml(fallback)}';` : "this.hidden=true;this.nextElementSibling.hidden=false;"}" />`
+    ? `<img class="lineup-player-photo" src="${escapeHtml(photo)}" alt="" loading="eager" onerror="this.onerror=null;this.hidden=true;this.nextElementSibling.hidden=false;" />`
     : "";
   return `<li class="lineup-player">
     <span class="lineup-player-avatar">${photoMarkup}<span class="lineup-player-initials"${photo ? " hidden" : ""} aria-hidden="true">${escapeHtml(initials)}</span></span>
