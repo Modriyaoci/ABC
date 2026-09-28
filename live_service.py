@@ -181,6 +181,21 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
             replacements.append(record)
         if progress:
             progress(1, 1, "更新今日比分")
+        # The tennis venue page can move the first start time repeatedly
+        # before play (09:00 -> 10:00 -> 11:00 -> 12:00). Check the current
+        # Tokyo-day schedule on every live cycle so the local court sequence
+        # follows the latest official baseline.
+        tennis_day = next((day for sport, day in targets if sport == "TEN"), None)
+        if tennis_day:
+            daily = fetch_official_json(f"/s/AG2026/en/TEN/schedule/daily/{tennis_day}", 1)
+            if isinstance(daily, list):
+                for unit in daily:
+                    if not isinstance(unit, dict):
+                        continue
+                    record = normalize_unit(unit, "TEN", tennis_day)
+                    if record:
+                        record["sourceDate"] = tennis_day
+                        replacements.append(record)
     else:
         # Compatibility fallback for a malformed/unversioned response.  This
         # path is also useful if the aggregate feed is temporarily rolled back
