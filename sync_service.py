@@ -866,6 +866,26 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
                 record["officialScheduledAt"] = record["scheduledAt"]
                 record["time"] = dt.strftime("%H:%M")
             record["status"] = record.get("status") if record.get("status") not in {"PROVISIONAL", "UNSCHEDULED"} else "SCHEDULED"
+        if day == "2026-09-28":
+            # The feed may retain 09:00 draw placeholders after the venue page
+            # has published court sessions. Replace only those stale starts;
+            # the official page's first session is the baseline for sequencing.
+            baseline = {
+                "Center Court": (12, 0), "Show Court": (12, 0),
+                "Court 2": (11, 0), "Court 3": (11, 30),
+                "Court 4": (11, 0), "Court 5": (11, 0), "Court 6": (11, 0),
+            }
+            for record in records:
+                if str(record.get("date")) != day or str(record.get("sport")) != "TEN":
+                    continue
+                court = str(record.get("court") or "")
+                if court not in baseline or str(record.get("time")) != "09:00":
+                    continue
+                hour, minute = baseline[court]
+                dt = datetime.fromisoformat(f"{day}T{hour:02d}:{minute:02d}:00+08:00")
+                record["scheduledAt"] = dt.isoformat(timespec="seconds")
+                record["officialScheduledAt"] = record["scheduledAt"]
+                record["time"] = dt.strftime("%H:%M")
     return records
 
 
