@@ -619,6 +619,22 @@ function renderSchedule() {
     return;
   }
   state.scheduleDomKey = domKey;
+  // A status/court update can require rebuilding the schedule rows. Preserve
+  // expanded detail panels while doing so: moving the existing node keeps
+  // already decoded player logos in place instead of re-requesting them.
+  const detailNodes = new Map();
+  const previousRoots = (state.layout ? elements.cards : elements.body).querySelectorAll("[data-match-id]");
+  previousRoots.forEach((root) => {
+    const detail = root.querySelector(".match-detail");
+    if (detail) detailNodes.set(String(root.dataset.matchId), detail);
+  });
+  const restoreDetailNodes = (container) => {
+    detailNodes.forEach((detail, id) => {
+      const root = [...container.querySelectorAll(`[data-match-id="${CSS.escape(id)}"]`)].find((item) => item.querySelector(".match-detail"));
+      const fresh = root?.querySelector(".match-detail");
+      if (root && fresh && state.expanded.has(id)) fresh.replaceWith(detail);
+    });
+  };
   elements.count.textContent = `${records.length} 场`;
   elements.empty.hidden = records.length !== 0;
   const focusedMatch = document.activeElement?.dataset?.toggleMatch;
@@ -648,6 +664,7 @@ function renderSchedule() {
       </article>`;
     }).join("");
     if (focusedMatch) [...elements.cards.querySelectorAll("[data-toggle-match]")].find((button) => button.dataset.toggleMatch === focusedMatch)?.focus({ preventScroll: true });
+    restoreDetailNodes(elements.cards);
     restoreSubmatchFocus(elements.cards, submatchFocus);
     return;
   }
@@ -671,6 +688,7 @@ function renderSchedule() {
     </tr>${open ? `<tr class="detail-row"><td colspan="6"><div class="match-detail" id="detail-${escapeHtml(record.id)}" aria-label="${escapeHtml(record.matchup)}的小分">${detailContent(record.id)}</div></td></tr>` : ""}`;
   }).join("");
   if (focusedMatch) [...elements.body.querySelectorAll("[data-toggle-match]")].find((button) => button.dataset.toggleMatch === focusedMatch)?.focus({ preventScroll: true });
+  restoreDetailNodes(elements.body);
   restoreSubmatchFocus(elements.body, submatchFocus);
 }
 
