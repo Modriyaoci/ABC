@@ -23,6 +23,7 @@ from sync_service import (
     SSL_CONTEXT,
     SPORTS,
     SyncError,
+    apply_verified_tennis_snapshots,
     filter_unlocated_current_tennis_rows,
     sync_all,
 )
@@ -263,6 +264,7 @@ class AppState:
         # future dates are intentionally preserved until their allocation is
         # published.
         if isinstance(payload.get("records"), list):
+            payload["records"] = apply_verified_tennis_snapshots(payload["records"])
             payload["records"] = filter_unlocated_current_tennis_rows(payload["records"], self.clock())
         self.payload = payload
         self.status["dataVersion"] = payload.get("meta", {}).get("generatedAt")
