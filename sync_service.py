@@ -645,6 +645,7 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
     for rows in groups.values():
         rows.sort(key=lambda row: (str(row.get("officialScheduledAt") or row.get("scheduledAt") or ""), str(row.get("id") or "")))
         prior_end: datetime | None = None
+        propagated_delay = timedelta(0)
         duration = 60 if rows[0].get("sport") == "TEN" else 50
         for index, row in enumerate(rows):
             try:
@@ -656,7 +657,7 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
             # Keep the official Not Before time as the baseline. A delay from
             # an earlier match propagates to later cards, while a Followed by
             # card cannot start before the previous match's end plus 10 min.
-            shifted = official_start
+            shifted = official_start + propagated_delay
             if prior_end:
                 shifted = max(shifted, prior_end)
             row["scheduledAt"] = shifted.isoformat(timespec="seconds")
@@ -694,7 +695,19 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
             # This gives 10:00 -> (finished 11:20) -> 11:30 -> 12:40,
             # and while the first match is live it moves the entire tail
             # immediately instead of only shifting the next card.
-            prior_end = end + timedelta(minutes=10)
+            if known_end:
+                prior_end = end + timedelta(minutes=10)
+                # The actual overrun becomes the delay applied to every
+                # later official slot, while avoiding double counting.
+                propagated_delay = max(
+                    propagated_delay,
+                    (end + timedelta(minutes=10)) - (official_start + timedelta(minutes=duration)),
+                )
+            else:
+                # An upcoming match has no actual finish yet. Preserve the
+                # current delay, but do not push later slots by its estimated
+                # duration; the official spacing remains authoritative.
+                prior_end = None
     return records
 
 
