@@ -3,16 +3,16 @@
   "timezone": "Asia/Tokyo",
   "rows": [
     {"id":"M.SINGLES-----------.R32-.001300--","court":"Center Court","timeLabel":"Not Before 13:30","home":"MATSUOKA Hayato (JPN)","away":"THOMPSON Kairan (HKG)"},
-    {"id":"W.SINGLES-----------.8FNL.000700--","court":"Center Court","timeLabel":"Followed by","home":"SAKATSUME Himeno (JPN)","away":"BACK Dayeon (KOR)"},
+    {"id":"W.SINGLES-----------.8FNL.000700--","court":"","timeLabel":"TBD","home":"SAKATSUME Himeno (JPN)","away":"BACK Dayeon (KOR)"},
     {"id":"M.SINGLES-----------.R32-.000900--","court":"Show Court","timeLabel":"Not Before 13:30","home":"NAGAL Sumit (IND)","away":"HONG Seongchan (KOR)"},
     {"id":"W.SINGLES-----------.8FNL.000100--","court":"Show Court","timeLabel":"Followed by","home":"EALA Alexandra (PHI)","away":"CHEAPCHANDEJ Patcharin (THA)"},
     {"id":"M.SINGLES-----------.R32-.001500--","court":"Court 2","timeLabel":"Not Before 13:30","home":"JONES Maximus (THA)","away":"URNUKH Zolbadar (MGL)"},
     {"id":"W.SINGLES-----------.8FNL.000800--","court":"Court 3","timeLabel":"Not Before 13:30","home":"SAFI Meshkatolzahra (IRI)","away":"ZHANG Shuai (CHN)"},
     {"id":"W.SINGLES-----------.8FNL.000200--","court":"Court 4","timeLabel":"Not Before 13:30","home":"FARZAMI Mandegar (IRI)","away":"GARLAND Joanna (TPE)"},
-    {"id":"M.SINGLES-----------.R32-.001400--","court":"Court 4","timeLabel":"Not Before 14:00","home":"ALKOTOP Mohammad (JOR)","away":"HSU Yu-hsiou (TPE)"},
+    {"id":"M.SINGLES-----------.R32-.001400--","court":"","timeLabel":"TBD","home":"ALKOTOP Mohammad (JOR)","away":"HSU Yu-hsiou (TPE)"},
     {"id":"M.SINGLES-----------.R32-.001100--","court":"Court 5","timeLabel":"Not Before 13:30","home":"FITRIADI M Rifqi (INA)","away":"SHOAIB Muhammad (PAK)"},
     {"id":"M.SINGLES-----------.R32-.001200--","court":"Court 6","timeLabel":"Not Before 13:30","home":"YAZDANI Ali (IRI)","away":"WU Yibing (CHN)"},
-    {"id":"M.SINGLES-----------.R32-.001600--","court":"Court 6","timeLabel":"Not Before 14:00","home":"BASTOLA Abhishek (NEP)","away":"SHEVCHENKO Aleksandr (KAZ)"},
+    {"id":"M.SINGLES-----------.R32-.001600--","court":"","timeLabel":"TBD","home":"BASTOLA Abhishek (NEP)","away":"SHEVCHENKO Aleksandr (KAZ)"},
     {"id":"M.SINGLES-----------.R32-.001000--","court":"Court 8","timeLabel":"Not Before 13:30","home":"AMONOV Somon (TJK)","away":"FOMIN Sergey (UZB)"},
     {"id":"W.DOUBLES-----------.R32-.001500--","court":"Indoor Court A","timeLabel":"Starting at 10:30","home":"SHUBINA Darya YULDASHEVA Sevil (UZB)","away":"JEONG Boyoung PARK Sohyun (KOR)"},
     {"id":"W.DOUBLES-----------.R32-.000900--","court":"Indoor Court A","timeLabel":"Starting at 11:30","home":"BHOSALE Rutuja RAINA Ankita (IND)","away":"DANILINA Anna PUTINTSEVA Yuliya (KAZ)"},
@@ -26,6 +26,7 @@
     {"id":"W.DOUBLES-----------.R32-.000700--","court":"Indoor Court D","timeLabel":"Followed by","home":"CHOGSOMJAV Maralgoo CHOGSOMJAV Martaa (MGL)","away":"QURESHI Mahin Aftab SUHAIL Ushna (PAK)"},
     {"id":"W.DOUBLES-----------.R32-.000600--","court":"Indoor Court D","timeLabel":"Not Before 12:30","home":"TUKHTAEVA Sumaya YAKHYAEVA Anisa (TJK)","away":"KULAMBAYEVA Zhibek ZHIYENBAYEVA Sonja (KAZ)"},
     {"id":"X.DOUBLES-----------.R32-.000200--","court":"Indoor Court D","timeLabel":"Not Before 15:00","home":"ENKHJARGAL Sonom-yanzum PUREVDORJ Undrakh (MGL)","away":"TURSUNOVA Anastasiya KURBONOV Shodmon (TJK)"},
-    {"id":"X.DOUBLES-----------.R32-.001400--","court":"Indoor Court D","timeLabel":"TBD","home":"GUO Hanyu WU Yibing (CHN)","away":"CHOGSOMJAV Maralgoo MUNKHBAATAR Badrakh (MGL)"}
+    {"id":"X.DOUBLES-----------.R32-.001400--","court":"Indoor Court D","timeLabel":"TBD","home":"GUO Hanyu WU Yibing (CHN)","away":"CHOGSOMJAV Maralgoo MUNKHBAATAR Badrakh (MGL)"},
+    {"id":"X.DOUBLES-----------.R32-.001500--","court":"","timeLabel":"TBD","home":"FARZAMI Mandegar YAZDANI Ali (IRI)","away":"HSIEH Su-wei TSENG Chun-hsin (TPE)"}
   ]
 }
