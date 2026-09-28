@@ -84,7 +84,10 @@ def _completion_updates(
             scores = [(unit.get(side) or {}).get("Result") for side in ("Home", "Away")]
         except (AttributeError, TypeError, ValueError):
             continue
-        if not record or record["id"] in current_ids:
+        # A finished daily result may replace a unit still present in
+        # live-now as Scheduled. Non-final daily rows must never overwrite the
+        # fresher live score.
+        if not record or (record["id"] in current_ids and str(record.get("status") or "").upper() not in FINAL_STATUSES | {"UNOFFICIAL"}):
             continue
         record["sourceDate"] = day
         old = known.get(record["id"])

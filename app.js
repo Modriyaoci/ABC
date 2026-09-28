@@ -491,6 +491,8 @@ function lineupCountry(player) {
 function flagMarkup(value, label = "") {
   const code = String(value?.Org || value?.org || value?.countryCode || value || "").trim().toUpperCase();
   if (!/^[A-Z]{3}$/.test(code)) return "";
+  const localFlags = new Set("BAN BRN CHN HKG INA IND IRI JPN KAZ KOR LAO MAC MAS MDV MGL NEP PAK PHI PLE PRK SGP SRI THA TJK TPE VIE".split(" "));
+  if (!localFlags.has(code)) return "";
   const src = `${SITE_BASE}/flags/${encodeURIComponent(code)}.png`;
   return `<img class="country-flag" src="${escapeHtml(src)}" alt="${escapeHtml(label || code)}" loading="lazy" onerror="this.hidden=true">`;
 }
