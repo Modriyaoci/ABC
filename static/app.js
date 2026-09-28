@@ -895,6 +895,7 @@ async function loadMatch(id, force = false, { automatic = false } = {}) {
   const previousLineup = current?.data ? lineupFingerprint(current.data) : "";
   if (current?.loading || (!force && current?.data)) return;
   const entry = { ...current, loading: true, lastRequested: Date.now(), error: "" };
+  const record = state.records.find((item) => String(item.id) === String(id));
   state.details.set(id, entry);
   if (!current?.data) updateDetailPanel(id);
   try {
@@ -906,7 +907,6 @@ async function loadMatch(id, force = false, { automatic = false } = {}) {
     // The schedule feed can publish a provisional “对阵待定” row while the
     // official results page already exposes the selected doubles players.
     // Promote that confirmed Line-up into the visible matchup immediately.
-    const record = state.records.find((item) => String(item.id) === String(id));
     if (record && /待定/.test(String(record.matchup || ""))) {
       const side = (label, players) => {
         if (label && !/待定/.test(String(label))) return String(label);
