@@ -528,7 +528,7 @@ def _schedule_datetime(item: dict[str, Any]) -> datetime | None:
         parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
     except ValueError:
         return None
-    if parsed.tzinfo is None and selected_field.startswith("NotBefore"):
+    if parsed.tzinfo is None:
         parsed = parsed.replace(tzinfo=JAPAN_TZ)
     return parsed.astimezone(BEIJING_TZ)
 
@@ -853,6 +853,11 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]]) -> list[dict[
                 continue
             verified = by_id.get(str(record.get("id", "")).removeprefix("TEN:"))
             if not verified:
+                continue
+            # A dated recovery snapshot is never authoritative over a newer
+            # published slot. In particular restarting/full syncing must not
+            # undo an official delay, relocation or opponent correction.
+            if str(verified["id"]) in existing and record.get("court") and record.get("officialScheduledAt") and str(record.get("status") or "").upper() not in {"PROVISIONAL", "UNSCHEDULED"}:
                 continue
             record["court"] = verified["court"]
             record["matchup"] = f"{verified['home']} vs {verified['away']}"

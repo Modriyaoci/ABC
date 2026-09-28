@@ -48,7 +48,10 @@ def _completion_updates(
         for row in previous
         if row.get("id") not in current_ids
         and str(row.get("status") or "").upper() not in FINAL_STATUSES
-        and _started(row, now)
+        # Court start times can change before play begins. live-now cannot
+        # report those changes, so include upcoming court sessions in the
+        # existing throttled daily check (no extra polling loop).
+        and (_started(row, now) or row.get("sport") in {"TEN", "BDM"})
     } & target_set
     checks = _completion_checks.setdefault(str(output_path.resolve()), {})
     for target in set(checks) - target_set:
@@ -76,7 +79,7 @@ def _completion_updates(
         if not (unit.get("Key") or unit.get("ResCode")):
             continue
         try:
-            record = normalize_unit(unit, sport)
+            record = normalize_unit(unit, sport, day)
             scores = [(unit.get(side) or {}).get("Result") for side in ("Home", "Away")]
         except (AttributeError, TypeError, ValueError):
             continue
