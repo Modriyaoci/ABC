@@ -170,6 +170,16 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
             record = normalize_unit(unit, sport)
             if not record:
                 continue
+            if sport == "TEN":
+                # Tennis schedule fields come exclusively from the verified
+                # official page snapshot. The live API contributes scores and
+                # status only, so stale Not-Before values cannot overwrite the
+                # page-captured Starting-at/Followed-by order.
+                old = next((item for item in previous_records if item.get("id") == record.get("id")), None)
+                if old:
+                    for key in ("date", "time", "scheduledAt", "officialScheduledAt", "court", "venue", "matchup", "stage", "category"):
+                        if key in old:
+                            record[key] = old[key]
             raw_datetime = str(unit.get("DateTimeRaw") or "")
             try:
                 source_date = datetime.fromisoformat(
@@ -251,9 +261,10 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
     # Every incremental score/status cycle also reconciles the latest
     # published start times and court order. This keeps Followed-by and delay
     # propagation aligned while a match is still running.
-    # Do not reapply the static recovery snapshot here: the daily response
-    # just fetched in this live cycle is authoritative for any changed time,
-    # court or followed-by rule. Static data is only a startup/429 fallback.
+    # Reapply the page snapshot after merging live data. For tennis it is the
+    # sole authority for Starting-at/Not-Before/Followed-by and court order;
+    # live data remains authoritative for score and status.
+    records = apply_verified_tennis_snapshots(records, add_missing=False)
     records = apply_court_sequencing(records, previous_records)
     payload["records"] = sorted({row["id"]: row for row in records}.values(), key=lambda row: (
         row["date"], row["time"], list(SPORTS).index(row["sport"]), row["id"]
