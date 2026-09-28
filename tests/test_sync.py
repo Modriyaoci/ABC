@@ -13,6 +13,7 @@ from sync_service import (
     _score,
     fetch_official_json,
     filter_unverified_tennis_rows,
+    filter_unlocated_current_tennis_rows,
     normalize_unit,
     preserve_known_matchups,
     preserve_missing_schedule_rows,
@@ -45,9 +46,9 @@ class SyncServiceTests(unittest.TestCase):
 
     def test_truncated_daily_feed_keeps_omitted_future_rows(self):
         previous = [
-            {"id": "TEN:a", "sport": "TEN", "date": "2026-09-27"},
-            {"id": "TEN:b", "sport": "TEN", "date": "2026-09-27"},
-            {"id": "TEN:c", "sport": "TEN", "date": "2026-09-27"},
+            {"id": "TEN:a", "sport": "TEN", "date": "2026-09-27", "court": "Court 1", "matchup": "A vs B"},
+            {"id": "TEN:b", "sport": "TEN", "date": "2026-09-27", "court": "Court 2", "matchup": "C vs D"},
+            {"id": "TEN:c", "sport": "TEN", "date": "2026-09-27", "court": "Court 3", "matchup": "E vs F"},
         ]
         incoming = [previous[0]]
         result = preserve_missing_schedule_rows(previous, incoming)
@@ -65,6 +66,17 @@ class SyncServiceTests(unittest.TestCase):
         result = preserve_missing_schedule_rows(previous, incoming)
         self.assertEqual({row["id"] for row in result}, {"TEN:a", "TEN:c"})
 
+    def test_placeholder_court_sports_are_not_resurrected(self):
+        previous = [{
+            "id": "TEN:placeholder", "sport": "TEN", "date": "2026-09-28",
+            "court": "", "matchup": "对阵待定",
+        }, {
+            "id": "TEN:published", "sport": "TEN", "date": "2026-09-28",
+            "court": "Court 1", "matchup": "A vs B",
+        }]
+        result = preserve_missing_schedule_rows(previous, [previous[0]])
+        self.assertEqual({row["id"] for row in result}, {"TEN:placeholder", "TEN:published"})
+
     def test_verified_tennis_day_has_32_allowed_units(self):
         with open("data/verified-tennis-20260927.json", encoding="utf-8") as handle:
             verified = json.load(handle)["rows"]
@@ -79,6 +91,16 @@ class SyncServiceTests(unittest.TestCase):
         ]
         result = filter_unverified_tennis_rows(rows)
         self.assertEqual([row["id"] for row in result], ["TEN:M.SINGLES-----------.R64-.000200--"])
+
+    def test_same_day_tennis_without_court_is_provisional(self):
+        rows = [
+            {"id": "TEN:placeholder", "sport": "TEN", "date": "2026-09-28", "court": ""},
+            {"id": "TEN:confirmed", "sport": "TEN", "date": "2026-09-28", "court": "Court 7"},
+            {"id": "TEN:future", "sport": "TEN", "date": "2026-09-29", "court": ""},
+        ]
+        now = datetime(2026, 9, 28, 8, 0, tzinfo=ZoneInfo("Asia/Shanghai"))
+        result = filter_unlocated_current_tennis_rows(rows, now)
+        self.assertEqual([row["id"] for row in result], ["TEN:confirmed", "TEN:future"])
 
     def test_cricket_schedule_score_shows_runs_only(self):
         self.assertEqual(_score({"Home": {"Result": "92 - 7"}, "Away": {"Result": "91 - 4"}}, "CKT"), "92 : 91")

@@ -25,6 +25,7 @@ const state = {
   recordsLoaded: false, loadedVersion: null, connectionError: "",
   expanded: new Set(), details: new Map(), tournaments: new Map(),
   selectedSubMatches: new Map(), lineupVisibility: savedLineupVisibility(), layout: savedLayout(),
+  scheduleDomKey: "",
 };
 // Status is deliberately polled at five-second intervals.  The status
 // response is small and carries the dataVersion; the full schedule is only
@@ -274,6 +275,18 @@ function courtLabel(court) {
 function recordVenue(record) {
   return [record.venue, courtLabel(record.court)].filter(Boolean).join(" · ");
 }
+function isUnassignedSchedulePlaceholder(record) {
+  // The daily feed sometimes republishes draw slots as provisional rows before
+  // a court and opponents have been assigned.  They belong to the draw view,
+  // but are not playable schedule fixtures and make the Today's Schedule tab
+  // show stale matches from another day.  Keep rows with a known matchup (or
+  // an explicitly assigned court) even when the court is published later.
+  if (!["TEN", "BDM", "TTE"].includes(record?.sport)) return false;
+  if (String(record?.court || "").trim()) return false;
+  const status = String(record?.status || "").toUpperCase();
+  const matchup = String(record?.matchup || "").trim();
+  return status === "PROVISIONAL" || !matchup || /^(?:对阵待定|待定(?:\s+vs\s+待定)?)$/.test(matchup);
+}
 function renderCourtFilter() {
   const options = [...new Map(sportRecords()
     .filter((record) => ["TEN", "TTE", "BDM"].includes(record.sport) && !recordHasBye(record) && record.court)
@@ -295,6 +308,13 @@ function filteredRecords() {
     // A bye is a bracket advancement, not a played match. Keep it available
     // to the official bracket data, but never show it as a schedule fixture.
     .filter((record) => !recordHasBye(record))
+    // Unassigned provisional slots are draw placeholders, not today's
+    // schedule cards. They remain available to tournament/bracket views.
+    .filter((record) => !isUnassignedSchedulePlaceholder(record))
+    // Court based sports publish draw templates before a playable court slot
+    // exists. Those placeholders belong in the draw/details view, never in
+    // the schedule cards or today's count.
+    .filter((record) => !["TEN", "BDM", "TTE"].includes(record.sport) || String(record.court || "").trim())
     .filter((record) => !categories.length || categories.includes(recordCategory(record)))
     .filter((record) => !state.dateFilter.length || state.dateFilter.includes(record.date))
     .filter((record) => !state.statusFilter.length || state.statusFilter.includes(recordStatus(record)))
@@ -578,6 +598,19 @@ function staleNotice(entry, label) {
 
 function renderSchedule() {
   const records = filteredRecords();
+  const domKey = records.map((record) => [record.id, record.date, record.time, record.matchup, record.court, record.venue, record.stage, recordStatus(record), state.expanded.has(record.id), hasTeamScheduleChange(record.id)].join("\u001f")).join("\u001e") + `|${state.layout}`;
+  if (state.scheduleDomKey === domKey) {
+    // Score/live polling must not replace the card/table DOM. Replacing it
+    // reloads player images and causes names to jump while the score changes.
+    for (const record of records) {
+      const root = (state.layout ? elements.cards : elements.body).querySelector(`[data-match-id="${CSS.escape(String(record.id))}"]`);
+      const score = root?.querySelector(".score-toggle > span:first-child");
+      if (score) score.textContent = formatScore(record);
+      if (root) root.classList.toggle("is-live", recordStatus(record) === "live");
+    }
+    return;
+  }
+  state.scheduleDomKey = domKey;
   elements.count.textContent = `${records.length} 场`;
   elements.empty.hidden = records.length !== 0;
   const focusedMatch = document.activeElement?.dataset?.toggleMatch;

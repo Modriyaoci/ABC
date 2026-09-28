@@ -476,6 +476,15 @@ def preserve_missing_schedule_rows(
         if incoming_counts.get(key, 0) >= len(rows):
             continue
         for row in rows:
+            # A provisional tennis row without a court or published matchup is
+            # a draw/template entry, not a playable fixture. Never resurrect
+            # these rows from an older snapshot when the daily feed changes;
+            # this was the source of the 28-Sep cards with no court.
+            sport = str(row.get("sport") or "")
+            if sport in {"TEN", "BDM", "TTE"} and (
+                not str(row.get("court") or "").strip() or not _has_known_matchup(row)
+            ):
+                continue
             if str(row.get("id")) not in incoming_ids:
                 result.append(row)
     return result
@@ -783,6 +792,43 @@ def filter_unverified_tennis_rows(records: list[dict[str, Any]]) -> list[dict[st
     ]
 
 
+def filter_schedule_placeholders(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Exclude draw templates lacking a playable court from schedule data."""
+    return [
+        row for row in records
+        if not (
+            str(row.get("sport") or "") in {"TEN", "BDM", "TTE"}
+            and (
+                not str(row.get("court") or "").strip()
+                or not _has_known_matchup(row)
+            )
+        )
+    ]
+
+
+def filter_unlocated_current_tennis_rows(
+    records: list[dict[str, Any]],
+    now: datetime | None = None,
+) -> list[dict[str, Any]]:
+    """Discard provisional same-day tennis rows that have no court.
+
+    The daily feed briefly publishes draw placeholders (usually all at 09:00)
+    before the court allocation is released.  Those rows are not usable
+    today's fixtures: retaining them through snapshot reconciliation makes
+    them look like real cards without a court.  Future days remain untouched,
+    since their court assignment may legitimately be pending.
+    """
+    current_date = (now or datetime.now(BEIJING_TZ)).astimezone(BEIJING_TZ).date().isoformat()
+    return [
+        row for row in records
+        if not (
+            str(row.get("sport") or "") == "TEN"
+            and str(row.get("date") or row.get("sourceDate") or "") == current_date
+            and not str(row.get("court") or "").strip()
+        )
+    ]
+
+
 def _atomic_json_write(path: Path, value: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(f"{path.suffix}.tmp")
@@ -874,6 +920,11 @@ def sync_all(
     # for the affected tennis day; live scores and statuses still come from
     # the official feed above.
     records = filter_unverified_tennis_rows(records)
+    records = filter_schedule_placeholders(records)
+    # A same-day tennis row without a court is a provisional feed placeholder,
+    # not a playable fixture.  Apply this after all snapshot repairs so an old
+    # no-court row cannot be resurrected when the official endpoint is partial.
+    records = filter_unlocated_current_tennis_rows(records)
     records = apply_court_sequencing(records, previous_records)
     unique = {record["id"]: record for record in records}
     ordered = sorted(

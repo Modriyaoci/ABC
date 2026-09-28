@@ -19,7 +19,13 @@ from pathlib import Path
 from urllib.parse import parse_qs, unquote, urlparse
 from zoneinfo import ZoneInfo
 
-from sync_service import SSL_CONTEXT, SPORTS, SyncError, sync_all
+from sync_service import (
+    SSL_CONTEXT,
+    SPORTS,
+    SyncError,
+    filter_unlocated_current_tennis_rows,
+    sync_all,
+)
 from live_service import FINAL_STATUSES, live_targets, sync_live
 from details_service import get_match_details, get_tournament
 
@@ -252,6 +258,12 @@ class AppState:
             payload = json.loads(self.data_file.read_text(encoding="utf-8"))
         except (OSError, ValueError):
             payload = {"meta": {}, "records": []}
+        # Do not expose a stale same-day tennis placeholder while the official
+        # feed is rate-limited.  Such rows have no court and are provisional;
+        # future dates are intentionally preserved until their allocation is
+        # published.
+        if isinstance(payload.get("records"), list):
+            payload["records"] = filter_unlocated_current_tennis_rows(payload["records"], self.clock())
         self.payload = payload
         self.status["dataVersion"] = payload.get("meta", {}).get("generatedAt")
         self.status["scheduleVersion"] = self.status["dataVersion"]
@@ -877,12 +889,13 @@ class RequestHandler(BaseHTTPRequestHandler):
                 self._send_json({"message": "暂时无法读取官网详情，请稍后重试"}, HTTPStatus.BAD_GATEWAY)
             return
         if path == "/api/schedule":
-            try:
-                payload = json.loads(DATA_FILE.read_text(encoding="utf-8"))
-            except (FileNotFoundError, json.JSONDecodeError, OSError):
+            # Serve the in-memory snapshot loaded by AppState.  Reading the
+            # JSON file directly here bypassed startup sanitisation and could
+            # re-expose stale same-day tennis placeholders during a 429.
+            with STATE.lock:
                 payload = {
-                    "meta": {"generatedAt": None, "timezone": "UTC+8", "total": 0, "sports": SPORTS},
-                    "records": [],
+                    **STATE.payload,
+                    "records": list(STATE.payload.get("records", [])),
                 }
             self._send_json(payload)
             return
