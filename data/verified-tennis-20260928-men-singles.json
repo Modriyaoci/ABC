@@ -5,7 +5,7 @@
     {"id":"M.SINGLES-----------.R32-.001300--","court":"Center Court","timeLabel":"Not Before 13:30","home":"MATSUOKA Hayato (JPN)","away":"THOMPSON Kairan (HKG)"},
     {"id":"W.SINGLES-----------.8FNL.000700--","court":"Center Court","timeLabel":"Followed by","home":"SAKATSUME Himeno (JPN)","away":"BACK Dayeon (KOR)"},
     {"id":"M.SINGLES-----------.R32-.000900--","court":"Show Court","timeLabel":"Not Before 13:30","home":"NAGAL Sumit (IND)","away":"HONG Seongchan (KOR)"},
-    {"id":"W.SINGLES-----------.8FNL.000100--","court":"Show Court","timeLabel":"Not Before 14:00","home":"EALA Alexandra (PHI)","away":"CHEAPCHANDEJ Patcharin (THA)"},
+    {"id":"W.SINGLES-----------.8FNL.000100--","court":"Show Court","timeLabel":"Followed by","home":"EALA Alexandra (PHI)","away":"CHEAPCHANDEJ Patcharin (THA)"},
     {"id":"M.SINGLES-----------.R32-.001500--","court":"Court 2","timeLabel":"Not Before 13:30","home":"JONES Maximus (THA)","away":"URNUKH Zolbadar (MGL)"},
     {"id":"W.SINGLES-----------.8FNL.000800--","court":"Court 3","timeLabel":"Not Before 13:30","home":"SAFI Meshkatolzahra (IRI)","away":"ZHANG Shuai (CHN)"},
     {"id":"W.SINGLES-----------.8FNL.000200--","court":"Court 4","timeLabel":"Not Before 13:30","home":"FARZAMI Mandegar (IRI)","away":"GARLAND Joanna (TPE)"},
