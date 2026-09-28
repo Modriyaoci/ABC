@@ -994,12 +994,14 @@ async function refreshVisibleExtras(force = false, { manual = false, completionR
   // opened a card, so newly published tennis/badminton/table-tennis line-ups
   // appeared to lag behind the official schedule. Limit this to upcoming
   // matches with a confirmed matchup and the three sports that expose player
-  // detail payloads; live polling remains limited to opened cards.
+  // detail payloads; live polling remains limited to opened cards. Provisional
+  // future rows are included too: their official Line-up is often available
+  // only from the match detail even while the schedule endpoint says TBD.
   if (manual) {
     const beijingToday = new Date(Date.now() + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
     const futurePublished = sportRecords()
       .filter((record) => record.date >= beijingToday && ["TEN", "TTE", "BDM"].includes(record.sport))
-      .filter((record) => !recordHasBye(record) && record.matchup && !/待定|TBD|TBA/i.test(String(record.matchup)))
+      .filter((record) => !recordHasBye(record))
       .filter((record) => !state.details.get(record.id)?.data && !state.details.get(record.id)?.loading)
       .slice(0, 60);
     for (const record of futurePublished) {
