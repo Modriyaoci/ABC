@@ -830,9 +830,9 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
         by_id = {str(row.get("id")): row for row in rows if isinstance(row, dict) and row.get("id")}
         existing = {str(record.get("id", "")).removeprefix("TEN:") for record in records if str(record.get("sport")) == "TEN" and str(record.get("date")) == day}
         for verified in rows:
-            if not add_missing:
+            if not isinstance(verified, dict) or not verified.get("id"):
                 continue
-            if not isinstance(verified, dict) or not verified.get("id") or str(verified["id"]) in existing:
+            if not add_missing or str(verified["id"]) in existing:
                 continue
             category = "男子单打" if ".M.SINGLES" in f".{verified['id']}" else ("女子单打" if ".W.SINGLES" in f".{verified['id']}" else ("男子双打" if ".M.DOUBLES" in f".{verified['id']}" else ("女子双打" if ".W.DOUBLES" in f".{verified['id']}" else "混合双打")))
             records.append({"id": f"TEN:{verified['id']}", "sport":"TEN", "sportName":"网球", "officialKey":verified["id"], "date":day, "sourceDate":day, "category":category, "stage":"32强赛", "phase":"32强赛", "matchup":f"{verified.get('home','待定')} vs {verified.get('away','待定')}", "score":"待赛", "venue":"名古屋市东山公园网球中心", "court":verified.get("court", ""), "status":"SCHEDULED", "isLive":False, "scheduledAt":f"{day}T11:00:00+08:00", "officialScheduledAt":f"{day}T11:00:00+08:00"})
@@ -872,26 +872,6 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
                 record["officialScheduledAt"] = record["scheduledAt"]
                 record["time"] = dt.strftime("%H:%M")
             record["status"] = record.get("status") if record.get("status") not in {"PROVISIONAL", "UNSCHEDULED"} else "SCHEDULED"
-        if day == "2026-09-28":
-            # The feed may retain 09:00 draw placeholders after the venue page
-            # has published court sessions. Replace only those stale starts;
-            # the official page's first session is the baseline for sequencing.
-            baseline = {
-                "Center Court": (12, 0), "Show Court": (12, 0),
-                "Court 2": (11, 0), "Court 3": (11, 30),
-                "Court 4": (11, 0), "Court 5": (11, 0), "Court 6": (11, 0),
-            }
-            for record in records:
-                if str(record.get("date")) != day or str(record.get("sport")) != "TEN":
-                    continue
-                court = str(record.get("court") or "")
-                if court not in baseline or str(record.get("time")) != "09:00":
-                    continue
-                hour, minute = baseline[court]
-                dt = datetime.fromisoformat(f"{day}T{hour:02d}:{minute:02d}:00+08:00")
-                record["scheduledAt"] = dt.isoformat(timespec="seconds")
-                record["officialScheduledAt"] = record["scheduledAt"]
-                record["time"] = dt.strftime("%H:%M")
     return records
 
 

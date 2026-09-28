@@ -264,7 +264,11 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
     # Reapply the page snapshot after merging live data. For tennis it is the
     # sole authority for Starting-at/Not-Before/Followed-by and court order;
     # live data remains authoritative for score and status.
-    records = apply_verified_tennis_snapshots(records, add_missing=False)
+    # The rendered official page is the authoritative source for current
+    # tennis court slots.  Add newly published rows as well as updating rows
+    # already present in the cached aggregate; otherwise a provisional API
+    # cache can permanently hide newly published matches.
+    records = apply_verified_tennis_snapshots(records, add_missing=True)
     records = apply_court_sequencing(records, previous_records)
     payload["records"] = sorted({row["id"]: row for row in records}.values(), key=lambda row: (
         row["date"], row["time"], list(SPORTS).index(row["sport"]), row["id"]
