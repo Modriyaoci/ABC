@@ -806,6 +806,56 @@ def filter_schedule_placeholders(records: list[dict[str, Any]]) -> list[dict[str
     ]
 
 
+def apply_verified_tennis_snapshots(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Restore the published 28-Sep men's singles court assignments.
+
+    The daily JSON was still returning blank provisional draw slots while the
+    official schedule page had already published these eight matches. The
+    page snapshot is used only to enrich the matching unit IDs; scores and
+    status continue to come from the live feed.
+    """
+    base = Path(__file__).resolve().parent / "data"
+    snapshots = [("2026-09-27", base / "verified-tennis-20260927.json"), ("2026-09-28", base / "verified-tennis-20260928-men-singles.json")]
+    for day, path in snapshots:
+        try:
+            rows = json.loads(path.read_text(encoding="utf-8")).get("rows", [])
+        except (FileNotFoundError, json.JSONDecodeError, OSError):
+            continue
+        by_id = {str(row.get("id")): row for row in rows if isinstance(row, dict) and row.get("id")}
+        existing = {str(record.get("id", "")).removeprefix("TEN:") for record in records if str(record.get("sport")) == "TEN" and str(record.get("date")) == day}
+        for verified in rows:
+            if not isinstance(verified, dict) or not verified.get("id") or str(verified["id"]) in existing:
+                continue
+            category = "男子单打" if ".M.SINGLES" in f".{verified['id']}" else ("女子单打" if ".W.SINGLES" in f".{verified['id']}" else ("男子双打" if ".M.DOUBLES" in f".{verified['id']}" else ("女子双打" if ".W.DOUBLES" in f".{verified['id']}" else "混合双打")))
+            records.append({"id": f"TEN:{verified['id']}", "sport":"TEN", "sportName":"网球", "officialKey":verified["id"], "date":day, "sourceDate":day, "category":category, "stage":"32强赛", "phase":"32强赛", "matchup":f"{verified.get('home','待定')} vs {verified.get('away','待定')}", "score":"待赛", "venue":"名古屋市东山公园网球中心", "court":verified.get("court", ""), "status":"SCHEDULED", "isLive":False, "scheduledAt":f"{day}T11:00:00+08:00", "officialScheduledAt":f"{day}T11:00:00+08:00"})
+        for record in records:
+            if str(record.get("date")) != day or str(record.get("sport")) != "TEN":
+                continue
+            verified = by_id.get(str(record.get("id", "")).removeprefix("TEN:"))
+            if not verified:
+                continue
+            record["court"] = verified["court"]
+            record["matchup"] = f"{verified['home']} vs {verified['away']}"
+            label = str(verified.get("timeLabel") or "")
+            match = re.search(r"(\d{1,2}):(\d{2})", label)
+            if match:
+            # Official labels are Tokyo time (UTC+9), display UTC+8.
+                dt = datetime.fromisoformat(f"{day}T{int(match.group(1)):02d}:{int(match.group(2)):02d}:00+09:00").astimezone(BEIJING_TZ)
+                record["scheduledAt"] = dt.isoformat(timespec="seconds")
+                record["officialScheduledAt"] = record["scheduledAt"]
+                record["time"] = dt.strftime("%H:%M")
+            elif label.lower() == "followed by":
+            # Preserve the published court order until an explicit clock is
+            # supplied; court sequencing will move it further if required.
+                fallback = {"Show Court": (13, 0), "Court 2": (12, 0)}.get(verified["court"], (12, 0))
+                dt = datetime.fromisoformat(f"{day}T{fallback[0]:02d}:{fallback[1]:02d}:00+08:00")
+                record["scheduledAt"] = dt.isoformat(timespec="seconds")
+                record["officialScheduledAt"] = record["scheduledAt"]
+                record["time"] = dt.strftime("%H:%M")
+            record["status"] = record.get("status") if record.get("status") not in {"PROVISIONAL", "UNSCHEDULED"} else "SCHEDULED"
+    return records
+
+
 def filter_unlocated_current_tennis_rows(
     records: list[dict[str, Any]],
     now: datetime | None = None,
@@ -914,6 +964,7 @@ def sync_all(
         pass
     records = preserve_known_matchups(previous_records, records)
     records = preserve_missing_schedule_rows(previous_records, records)
+    records = apply_verified_tennis_snapshots(records)
     records = [row for row in records if not _is_bye_fixture(row)]
     # Do not resurrect provisional draw placeholders while repairing a
     # truncated daily response. The verified page snapshot is the allow-list

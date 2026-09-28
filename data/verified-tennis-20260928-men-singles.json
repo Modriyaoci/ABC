@@ -1,0 +1,14 @@
+{
+  "sourceUrl": "https://results.asiangames2026.org/#/discipline/TEN/schedule/daily/2026-09-28",
+  "timezone": "Asia/Tokyo",
+  "rows": [
+    {"id":"M.SINGLES-----------.R32-.001300--","court":"Center Court","timeLabel":"Not Before 12:00","home":"MATSUOKA Hayato (JPN)","away":"THOMPSON Kairan (HKG)"},
+    {"id":"M.SINGLES-----------.R32-.000900--","court":"Show Court","timeLabel":"Not Before 12:00","home":"NAGAL Sumit (IND)","away":"HONG Seongchan (KOR)"},
+    {"id":"M.SINGLES-----------.R32-.001400--","court":"Show Court","timeLabel":"Not Before 13:00","home":"ALKOTOP Mohammad (JOR)","away":"HSU Yu-hsiou (TPE)"},
+    {"id":"M.SINGLES-----------.R32-.001600--","court":"Show Court","timeLabel":"Followed by","home":"BASTOLA Abhishek (NEP)","away":"SHEVCHENKO Aleksandr (KAZ)"},
+    {"id":"M.SINGLES-----------.R32-.001500--","court":"Court 2","timeLabel":"Not Before 12:00","home":"JONES Maximus (THA)","away":"URNUKH Zolbadar (MGL)"},
+    {"id":"M.SINGLES-----------.R32-.001000--","court":"Court 2","timeLabel":"Followed by","home":"AMONOV Somon (TJK)","away":"FOMIN Sergey (UZB)"},
+    {"id":"M.SINGLES-----------.R32-.001100--","court":"Court 5","timeLabel":"Not Before 12:00","home":"FITRIADI M Rifqi (INA)","away":"SHOAIB Muhammad (PAK)"},
+    {"id":"M.SINGLES-----------.R32-.001200--","court":"Court 6","timeLabel":"Not Before 12:00","home":"YAZDANI Ali (IRI)","away":"WU Yibing (CHN)"}
+  ]
+}
