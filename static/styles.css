@@ -1303,6 +1303,14 @@ button:focus-visible, select:focus-visible {
   font-variant-numeric: tabular-nums;
 }
 
+.match-interrupted-label {
+  color: #c62828;
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
 .match-card .card-venue {
   margin: 0;
   color: var(--muted);

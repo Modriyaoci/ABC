@@ -255,8 +255,7 @@ function sportRecords() {
 }
 function recordStatus(record) {
   const status = String(record.status || "").toUpperCase();
-  if (["SUSPENDED", "INTERRUPTED"].includes(status)) return "interrupted";
-  if (record.isLive || ["LIVE", "RUNNING", "IN_PROGRESS"].includes(status)) return "live";
+  if (record.isLive || ["LIVE", "RUNNING", "IN_PROGRESS", "SUSPENDED", "INTERRUPTED"].includes(status)) return "live";
   // An interrupted court session still occupies the court and must remain in
   // the active view while every later slot is pushed forward.
   if (["OFFICIAL", "UNOFFICIAL", "FINISHED", "COMPLETED", "CANCELED", "CANCELLED"].includes(String(record.status || "").toUpperCase())) return "completed";
@@ -690,12 +689,13 @@ function renderSchedule() {
       const status = recordStatus(record);
       const categoryLabel = state.activeSport ? record.category : `${record.sportName || SPORTS[record.sport] || ""} · ${record.category || ""}`;
       const scheduleNotice = isTeamRecord(record) && hasTeamScheduleChange(record.id) ? '<span class="schedule-change-inline">官网赛程有变动</span>' : "";
-      return `<article class="match-card ${status === "live" || status === "interrupted" ? "is-live" : ""} ${open ? "is-expanded" : ""}" data-match-id="${escapeHtml(record.id)}">
+      const interrupted = ["SUSPENDED", "INTERRUPTED"].includes(String(record.status || "").toUpperCase());
+      return `<article class="match-card ${status === "live" ? "is-live" : ""} ${open ? "is-expanded" : ""}" data-match-id="${escapeHtml(record.id)}">
         <div class="card-content">
           <header class="card-header"><div class="card-date"><strong>${escapeHtml(dateTime.date)}</strong><span>${escapeHtml(dateTime.time)}</span></div><span class="card-category">${escapeHtml(categoryLabel)}</span></header>
           <p class="card-stage">${escapeHtml(record.stage)}</p>
           <h3 class="card-matchup">${renderMatchup(record)}${scheduleNotice}</h3>
-          <div class="card-score"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}" aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分"><span>${escapeHtml(status === "interrupted" ? "中断" : formatScore(record))}</span><span class="disclosure-arrow" aria-hidden="true">⌄</span></button></div>
+          <div class="card-score"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}" aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分"><span>${escapeHtml(formatScore(record))}</span>${interrupted ? '<strong class="match-interrupted-label">比赛中断</strong>' : ""}<span class="disclosure-arrow" aria-hidden="true">⌄</span></button></div>
           <p class="card-venue">${escapeHtml(recordVenue(record))}</p>
         </div>
         ${open ? `<div class="match-detail" id="detail-${escapeHtml(record.id)}" aria-label="${escapeHtml(record.matchup)}的小分">${detailContent(record.id)}</div>` : ""}
@@ -721,7 +721,7 @@ function renderSchedule() {
       <td class="matchup-cell" data-label="对阵">${renderMatchup(record)}${scheduleNotice}</td>
       <td class="score-cell" data-label="比分"><button class="score-toggle" type="button" data-toggle-match="${escapeHtml(record.id)}"
         aria-expanded="${open}" aria-controls="detail-${escapeHtml(record.id)}" aria-label="${open ? "收起" : "查看"}${escapeHtml(record.matchup)}的小分">
-        <span>${escapeHtml(formatScore(record))}</span><span class="disclosure-arrow" aria-hidden="true">⌄</span></button></td>
+        <span>${escapeHtml(formatScore(record))}</span>${["SUSPENDED", "INTERRUPTED"].includes(String(record.status || "").toUpperCase()) ? '<strong class="match-interrupted-label">比赛中断</strong>' : ""}<span class="disclosure-arrow" aria-hidden="true">⌄</span></button></td>
       <td data-label="场馆"><span>${escapeHtml(recordVenue(record))}</span></td>
     </tr>${open ? `<tr class="detail-row"><td colspan="6"><div class="match-detail" id="detail-${escapeHtml(record.id)}" aria-label="${escapeHtml(record.matchup)}的小分">${detailContent(record.id)}</div></td></tr>` : ""}`;
   }).join("");
@@ -804,7 +804,7 @@ function renderView() {
   if (state.view === "schedule") {
     renderSportFilter();
     renderDateFilter();
-    renderCheckboxMenu(elements.statusFilter, [["live", "进行中"], ["interrupted", "中断"], ["completed", "完场"], ["upcoming", "未开赛"]], state.statusFilter, (values) => { state.statusFilter = values; renderView(); void refreshVisibleExtras(false, { manual: true }); });
+    renderCheckboxMenu(elements.statusFilter, [["live", "进行中"], ["completed", "完场"], ["upcoming", "未开赛"]], state.statusFilter, (values) => { state.statusFilter = values; renderView(); void refreshVisibleExtras(false, { manual: true }); });
   }
   if (state.view === "schedule") renderSchedule(); else renderTournament();
 }
