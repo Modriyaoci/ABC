@@ -709,10 +709,11 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
                     (end + timedelta(minutes=10)) - (official_start + timedelta(minutes=duration)),
                 )
             else:
-                # An upcoming match has no actual finish yet. Preserve the
-                # current delay, but do not push later slots by its estimated
-                # duration; the official spacing remains authoritative.
-                prior_end = None
+                # Keep a planned one-hour court slot for an upcoming tennis
+                # match. This makes equal provisional labels sequence as
+                # 15:20, 16:20, 17:20; a real overrun above this baseline is
+                # still propagated through the later matches.
+                prior_end = effective_start + timedelta(minutes=duration)
     return records
 
 
