@@ -828,6 +828,26 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]]) -> list[dict[
                 continue
             category = "男子单打" if ".M.SINGLES" in f".{verified['id']}" else ("女子单打" if ".W.SINGLES" in f".{verified['id']}" else ("男子双打" if ".M.DOUBLES" in f".{verified['id']}" else ("女子双打" if ".W.DOUBLES" in f".{verified['id']}" else "混合双打")))
             records.append({"id": f"TEN:{verified['id']}", "sport":"TEN", "sportName":"网球", "officialKey":verified["id"], "date":day, "sourceDate":day, "category":category, "stage":"32强赛", "phase":"32强赛", "matchup":f"{verified.get('home','待定')} vs {verified.get('away','待定')}", "score":"待赛", "venue":"名古屋市东山公园网球中心", "court":verified.get("court", ""), "status":"SCHEDULED", "isLive":False, "scheduledAt":f"{day}T11:00:00+08:00", "officialScheduledAt":f"{day}T11:00:00+08:00"})
+        # Resolve the published court order: explicit/Not-Before times are
+        # Tokyo wall-clock values; Followed-by starts ten minutes after the
+        # preceding 60-minute tennis slot. Never use a fixed fallback hour.
+        by_court = {}
+        for item in rows:
+            by_court.setdefault(str(item.get("court") or ""), []).append(item)
+        resolved = {}
+        for court, items in by_court.items():
+            prior_end = None
+            for item in items:
+                label = str(item.get("timeLabel") or "")
+                m = re.search(r"(\d{1,2}):(\d{2})", label)
+                if m:
+                    start = datetime.fromisoformat(f"{day}T{int(m.group(1)):02d}:{int(m.group(2)):02d}:00+09:00").astimezone(BEIJING_TZ)
+                elif prior_end:
+                    start = prior_end + timedelta(minutes=10)
+                else:
+                    continue
+                resolved[str(item["id"])] = start
+                prior_end = start + timedelta(minutes=60)
         for record in records:
             if str(record.get("date")) != day or str(record.get("sport")) != "TEN":
                 continue
@@ -837,18 +857,9 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]]) -> list[dict[
             record["court"] = verified["court"]
             record["matchup"] = f"{verified['home']} vs {verified['away']}"
             label = str(verified.get("timeLabel") or "")
-            match = re.search(r"(\d{1,2}):(\d{2})", label)
-            if match:
+            dt = resolved.get(str(verified.get("id")))
+            if dt:
             # Official labels are Tokyo time (UTC+9), display UTC+8.
-                dt = datetime.fromisoformat(f"{day}T{int(match.group(1)):02d}:{int(match.group(2)):02d}:00+09:00").astimezone(BEIJING_TZ)
-                record["scheduledAt"] = dt.isoformat(timespec="seconds")
-                record["officialScheduledAt"] = record["scheduledAt"]
-                record["time"] = dt.strftime("%H:%M")
-            elif label.lower() == "followed by":
-            # Preserve the published court order until an explicit clock is
-            # supplied; court sequencing will move it further if required.
-                fallback = {"Show Court": (13, 0), "Court 2": (12, 0)}.get(verified["court"], (12, 0))
-                dt = datetime.fromisoformat(f"{day}T{fallback[0]:02d}:{fallback[1]:02d}:00+08:00")
                 record["scheduledAt"] = dt.isoformat(timespec="seconds")
                 record["officialScheduledAt"] = record["scheduledAt"]
                 record["time"] = dt.strftime("%H:%M")
