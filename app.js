@@ -581,6 +581,13 @@ function updateDetailPanel(id) {
   const panel = document.getElementById(`detail-${id}`);
   if (!panel) return;
   const detail = state.details.get(id);
+  if (detail?.data && !panel.dataset.lineupFingerprint) {
+    // Panels inserted by renderSchedule already contain the current detail
+    // markup. Mark them without rebuilding, otherwise the first live poll
+    // would reload every player image once.
+    panel.dataset.lineupFingerprint = lineupFingerprint(detail.data);
+    return;
+  }
   if (detail?.data && panel.dataset.lineupFingerprint === lineupFingerprint(detail.data)) return;
   const focus = { ...document.activeElement?.dataset };
   panel.innerHTML = detailContent(id);
@@ -827,9 +834,18 @@ function applyLiveDelta(status) {
   const byId = new Map(state.records.map((record) => [String(record.id), record]));
   for (const update of delta) {
     const current = byId.get(String(update?.id));
-    if (current && update && typeof update === "object") Object.assign(current, update);
+    if (current && update && typeof update === "object") {
+      Object.assign(current, update);
+      const root = document.querySelector(`[data-match-id="${CSS.escape(String(current.id))}"]`);
+      const score = root?.querySelector(".score-toggle > span:first-child");
+      if (score) score.textContent = formatScore(current);
+      if (root) root.classList.toggle("is-live", recordStatus(current) === "live");
+    }
   }
-  renderView();
+  // Live deltas only change scores/status. Updating the entire view here
+  // destroys image nodes and causes Line-up logos to flash during every poll.
+  // renderSchedule patches the visible score when the normal refresh path
+  // runs; keep the existing DOM intact for the delta itself.
 }
 
 async function loadSchedule(version) {
