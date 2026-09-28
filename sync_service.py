@@ -634,7 +634,11 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
     now = datetime.now(BEIJING_TZ)
     completed_statuses = {"OFFICIAL", "FINISHED", "COMPLETED", "UNOFFICIAL"}
     for rows in groups.values():
-        rows.sort(key=lambda row: (str(row.get("officialScheduledAt") or row.get("scheduledAt") or ""), str(row.get("id") or "")))
+        rows.sort(key=lambda row: (
+            int(row.get("officialCourtOrder", 10**9)),
+            str(row.get("officialScheduledAt") or row.get("scheduledAt") or ""),
+            str(row.get("id") or ""),
+        ))
         prior_end: datetime | None = None
         propagated_delay = timedelta(0)
         duration = 60 if rows[0].get("sport") == "TEN" else 50
@@ -838,13 +842,13 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             continue
         by_id = {str(row.get("id")): row for row in rows if isinstance(row, dict) and row.get("id")}
         existing = {str(record.get("id", "")).removeprefix("TEN:") for record in records if str(record.get("sport")) == "TEN" and str(record.get("date")) == day}
-        for verified in rows:
+        for snapshot_order, verified in enumerate(rows):
             if not isinstance(verified, dict) or not verified.get("id"):
                 continue
             if not add_missing or str(verified["id"]) in existing:
                 continue
             category = "男子单打" if ".M.SINGLES" in f".{verified['id']}" else ("女子单打" if ".W.SINGLES" in f".{verified['id']}" else ("男子双打" if ".M.DOUBLES" in f".{verified['id']}" else ("女子双打" if ".W.DOUBLES" in f".{verified['id']}" else "混合双打")))
-            records.append({"id": f"TEN:{verified['id']}", "sport":"TEN", "sportName":"网球", "officialKey":verified["id"], "date":day, "sourceDate":day, "category":category, "stage":"32强赛", "phase":"32强赛", "matchup":f"{verified.get('home','待定')} vs {verified.get('away','待定')}", "score":"待赛", "venue":"名古屋市东山公园网球中心", "court":verified.get("court", ""), "status":"SCHEDULED", "isLive":False, "scheduledAt":f"{day}T11:00:00+08:00", "officialScheduledAt":f"{day}T11:00:00+08:00"})
+            records.append({"id": f"TEN:{verified['id']}", "sport":"TEN", "sportName":"网球", "officialKey":verified["id"], "date":day, "sourceDate":day, "category":category, "stage":"32强赛", "phase":"32强赛", "matchup":f"{verified.get('home','待定')} vs {verified.get('away','待定')}", "score":"待赛", "venue":"名古屋市东山公园网球中心", "court":verified.get("court", ""), "officialCourtOrder":snapshot_order, "status":"SCHEDULED", "isLive":False, "scheduledAt":f"{day}T11:00:00+08:00", "officialScheduledAt":f"{day}T11:00:00+08:00"})
         # Resolve the published court order: explicit/Not-Before times are
         # Tokyo wall-clock values; Followed-by starts ten minutes after the
         # preceding 60-minute tennis slot. Never use a fixed fallback hour.
@@ -872,6 +876,7 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             if not verified:
                 continue
             record["court"] = verified["court"]
+            record["officialCourtOrder"] = next((i for i, item in enumerate(rows) if str(item.get("id")) == str(verified.get("id"))), 10**9)
             record["matchup"] = f"{verified['home']} vs {verified['away']}"
             label = str(verified.get("timeLabel") or "")
             dt = resolved.get(str(verified.get("id")))
