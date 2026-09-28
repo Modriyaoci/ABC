@@ -184,9 +184,11 @@ function formatDateTime(record) {
   const [, month, day] = String(record.date || "").split("-");
   return {
     date: Number.isNaN(date.getTime()) ? "日期待定" : `${month}月${day}日 ${WEEKDAYS[date.getUTCDay()]}`,
-    time: (record?.sport === "TEN" && record.date === "2026-09-28" && record.time === "09:00"
-      ? ({"Center Court":"12:00","Show Court":"12:00","Court 2":"11:00","Court 3":"11:30","Court 4":"11:00","Court 5":"11:00","Court 6":"11:00"})[String(record.court || "")] || record.time
-      : record.time) || "时间待定",
+    // The server applies the latest official Tokyo page timing and converts
+    // it to Beijing time. Never replace it with a hard-coded court baseline:
+    // this made a second match such as EALA/CHEAPCHANDEJ appear as the first
+    // 09:00 slot after an interrupted preceding match.
+    time: record.time || "时间待定",
   };
 }
 
@@ -254,6 +256,9 @@ function sportRecords() {
 }
 function recordStatus(record) {
   if (record.isLive || ["LIVE", "RUNNING", "IN_PROGRESS"].includes(String(record.status || "").toUpperCase())) return "live";
+  // An interrupted court session still occupies the court and must remain in
+  // the active view while every later slot is pushed forward.
+  if (["SUSPENDED", "INTERRUPTED"].includes(String(record.status || "").toUpperCase())) return "live";
   if (["OFFICIAL", "UNOFFICIAL", "FINISHED", "COMPLETED", "CANCELED", "CANCELLED"].includes(String(record.status || "").toUpperCase())) return "completed";
   return "upcoming";
 }

@@ -683,7 +683,7 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
             if end is None and status in completed_statuses:
                 end = effective_start + timedelta(minutes=duration)
                 known_end = True
-            if end is None and (row.get("isLive") or status in {"LIVE", "RUNNING", "IN_PROGRESS"}):
+            if end is None and (row.get("isLive") or status in {"LIVE", "RUNNING", "IN_PROGRESS", "SUSPENDED", "INTERRUPTED"}):
                 end = max(now, effective_start)
                 known_end = True
             if end is None:
