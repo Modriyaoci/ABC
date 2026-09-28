@@ -251,7 +251,9 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
     # Every incremental score/status cycle also reconciles the latest
     # published start times and court order. This keeps Followed-by and delay
     # propagation aligned while a match is still running.
-    records = apply_verified_tennis_snapshots(records, add_missing=False)
+    # Do not reapply the static recovery snapshot here: the daily response
+    # just fetched in this live cycle is authoritative for any changed time,
+    # court or followed-by rule. Static data is only a startup/429 fallback.
     records = apply_court_sequencing(records, previous_records)
     payload["records"] = sorted({row["id"]: row for row in records}.values(), key=lambda row: (
         row["date"], row["time"], list(SPORTS).index(row["sport"]), row["id"]
