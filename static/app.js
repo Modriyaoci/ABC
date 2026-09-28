@@ -613,13 +613,21 @@ function restoreSubmatchFocus(container, focus) {
 function updateDetailPanel(id) {
   const panel = document.getElementById(`detail-${id}`);
   if (!panel) return;
+  const detail = state.details.get(id);
+  if (detail?.data && panel.dataset.lineupFingerprint === lineupFingerprint(detail.data)) return;
   const focus = { ...document.activeElement?.dataset };
   panel.innerHTML = detailContent(id);
+  if (detail?.data) panel.dataset.lineupFingerprint = lineupFingerprint(detail.data);
   restoreSubmatchFocus(panel, focus);
   if (focus?.toggleLineup) {
     [...panel.querySelectorAll("[data-toggle-lineup]")]
       .find((button) => button.dataset.toggleLineup === focus.toggleLineup)?.focus({ preventScroll: true });
   }
+}
+
+function lineupFingerprint(detail) {
+  const pick = (side) => lineupPlayers(detail, side).map((player) => [player.reg, player.name, player.photo, player.avatar, player.country, player.org, player.substitute].join("|")).join(";");
+  return `${pick("home")}#${pick("away")}`;
 }
 
 function staleNotice(entry, label) {
@@ -861,7 +869,7 @@ async function loadMatch(id, force = false, { automatic = false } = {}) {
   if (current?.loading || (!force && current?.data)) return;
   const entry = { ...current, loading: true, lastRequested: Date.now(), error: "" };
   state.details.set(id, entry);
-  updateDetailPanel(id);
+  if (!current?.data) updateDetailPanel(id);
   try {
     entry.data = await fetchJson(apiUrl(`/api/match?id=${encodeURIComponent(id)}${automatic ? "&automatic=1" : ""}`));
     // The detail response carries the official full participant names. Redraw
