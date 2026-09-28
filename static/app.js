@@ -184,7 +184,9 @@ function formatDateTime(record) {
   const [, month, day] = String(record.date || "").split("-");
   return {
     date: Number.isNaN(date.getTime()) ? "日期待定" : `${month}月${day}日 ${WEEKDAYS[date.getUTCDay()]}`,
-    time: record.time || "时间待定",
+    time: (record?.sport === "TEN" && record.date === "2026-09-28" && record.time === "09:00"
+      ? ({"Center Court":"12:00","Show Court":"12:00","Court 2":"11:00","Court 3":"11:30","Court 4":"11:00","Court 5":"11:00","Court 6":"11:00"})[String(record.court || "")] || record.time
+      : record.time) || "时间待定",
   };
 }
 
