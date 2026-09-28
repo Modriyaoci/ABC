@@ -849,11 +849,17 @@ def filter_unverified_tennis_rows(records: list[dict[str, Any]]) -> list[dict[st
         if not (
             str(row.get("sport") or "") == "TEN"
             and (
-                (str(row.get("sourceDate") or "") in complete_days
-                 and str(row.get("id") or "") not in complete_days[str(row.get("sourceDate"))])
-                or (str(row.get("sourceDate") or "") not in complete_days
-                    and str(row.get("date") or "") in complete_days
-                    and str(row.get("id") or "") not in complete_days[str(row.get("date"))])
+                # Once the shifted/display date has its own complete page
+                # capture, that page wins. Otherwise fall back to sourceDate.
+                (
+                    str(row.get("date") or "") in complete_days
+                    and str(row.get("id") or "") not in complete_days[str(row.get("date"))]
+                )
+                or (
+                    str(row.get("date") or "") not in complete_days
+                    and str(row.get("sourceDate") or "") in complete_days
+                    and str(row.get("id") or "") not in complete_days[str(row.get("sourceDate"))]
+                )
             )
         )
     ]
