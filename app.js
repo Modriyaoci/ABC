@@ -865,6 +865,7 @@ async function loadSchedule(version) {
 
 async function loadMatch(id, force = false, { automatic = false } = {}) {
   const current = state.details.get(id);
+  const previousLineup = current?.data ? lineupFingerprint(current.data) : "";
   if (current?.loading || (!force && current?.data)) return;
   const entry = { ...current, loading: true, lastRequested: Date.now(), error: "" };
   state.details.set(id, entry);
@@ -902,7 +903,9 @@ async function loadMatch(id, force = false, { automatic = false } = {}) {
   catch (error) { entry.error = error.message || "无法读取小分"; }
   finally {
     entry.loading = false;
-    updateDetailPanel(id);
+    // A live score/detail refresh must not rebuild Line-up. Only a genuine
+    // player identity change warrants replacing the existing image nodes.
+    if (!previousLineup || previousLineup !== lineupFingerprint(entry.data || {})) updateDetailPanel(id);
   }
 }
 
