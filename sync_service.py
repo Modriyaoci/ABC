@@ -1033,15 +1033,28 @@ def sync_all(
         raise SyncError("；".join(day_errors))
 
     today = datetime.now(BEIJING_TZ).date().isoformat()
-    # Historical schedules are immutable once published. Keep them from the
-    # repository snapshot and fetch only today/future days; reconciliation
-    # below merges the untouched historical rows back into the new payload.
+    # Only confirmed historical results are immutable. A service restart can
+    # restore an older seed with pending results; reconcile those sport/days
+    # even if they have disappeared from today's live feed.
+    try:
+        cached_rows = json.loads(output_path.read_text(encoding="utf-8")).get("records", [])
+    except (OSError, ValueError):
+        cached_rows = []
+    settled = {"OFFICIAL", "FINISHED", "COMPLETED", "CANCELED", "CANCELLED"}
+    unresolved_days = {
+        (row.get("sport"), str(row.get("sourceDate") or row.get("date") or ""))
+        for row in cached_rows
+        if row.get("sport") in SPORTS
+        and str(row.get("status") or "").upper() not in settled | {"UNOFFICIAL"}
+        and str(row.get("sourceDate") or row.get("date") or "") < today
+    }
     tasks = [
         (disc, str(day.get("raw")))
         for disc, days in day_lists.items()
         for day in days
         if day.get("raw") and str(day.get("raw")) >= today
     ]
+    tasks = sorted(set(tasks) | {pair for pair in unresolved_days if pair[1]})
     total = len(tasks)
     completed = 0
     records: list[dict[str, Any]] = []
