@@ -656,6 +656,14 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
             # an earlier match propagates to later cards, while a Followed by
             # card cannot start before the previous match's end plus 10 min.
             shifted = official_start if status in completed_statuses else official_start + propagated_delay
+            # A scheduled court slot whose start time has already passed is
+            # postponed in ten-minute increments until it can start. This is
+            # recalculated on every live poll, so a 13:00 slot at 15:12 moves
+            # beyond the current time instead of remaining at 13:00.
+            if status in {"SCHEDULED", "START_LIST", "PROVISIONAL", "UNSCHEDULED"} and now > shifted:
+                minutes = ((now.minute // 10) + 1) * 10
+                candidate = now.replace(minute=0, second=0, microsecond=0) + timedelta(hours=minutes // 60, minutes=minutes % 60)
+                shifted = max(shifted + timedelta(minutes=10), candidate)
             if prior_end and status not in completed_statuses:
                 shifted = max(shifted, prior_end)
             row["scheduledAt"] = shifted.isoformat(timespec="seconds")
