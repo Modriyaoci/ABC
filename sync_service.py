@@ -945,16 +945,29 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
                 resolved[str(item["id"])] = start
                 prior_end = start + timedelta(minutes=60)
         for record in records:
-            if str(record.get("date")) != day or str(record.get("sport")) != "TEN":
+            if str(record.get("sport")) != "TEN":
                 continue
             verified = by_id.get(str(record.get("id", "")).removeprefix("TEN:"))
             if not verified:
                 continue
+            # An interrupted tennis match may be moved to the next official
+            # day. The page snapshot is authoritative for that relocation;
+            # retain the live score/status while moving schedule fields.
+            current_day = str(record.get("date") or "")
+            relocated = False
+            if current_day != day:
+                status = str(record.get("status") or "").upper()
+                if day > current_day and status in {"INTERRUPTED", "SUSPENDED", "RUNNING", "LIVE", "IN_PROGRESS"}:
+                    record["date"] = day
+                    record["sourceDate"] = day
+                    relocated = True
+                else:
+                    continue
             # Do not let recovery roll back a concrete live value.  The live
             # schedule/result feed remains authoritative after a row exists;
             # the snapshot only fills fields that are still blank/provisional.
-            if not str(record.get("court") or "").strip() and str(verified.get("court") or "").strip():
-                record["court"] = verified["court"]
+            if relocated:
+                record["court"] = str(verified.get("court") or "")
             record["officialCourtOrder"] = next((i for i, item in enumerate(rows) if str(item.get("id")) == str(verified.get("id"))), 10**9)
             snapshot_matchup = f"{verified['home']} vs {verified['away']}"
             current_matchup = str(record.get("matchup") or "").strip()
@@ -964,11 +977,9 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             dt = resolved.get(str(verified.get("id")))
             if dt:
             # Official labels are Tokyo time (UTC+9), display UTC+8.
-                if not str(record.get("scheduledAt") or "").strip():
+                if relocated:
                     record["scheduledAt"] = dt.isoformat(timespec="seconds")
-                if not str(record.get("officialScheduledAt") or "").strip():
                     record["officialScheduledAt"] = record["scheduledAt"]
-                if not str(record.get("time") or "").strip():
                     record["time"] = dt.strftime("%H:%M")
             record["status"] = record.get("status") if record.get("status") not in {"PROVISIONAL", "UNSCHEDULED"} else "SCHEDULED"
     return records

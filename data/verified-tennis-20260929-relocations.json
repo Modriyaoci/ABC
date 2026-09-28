@@ -1,0 +1,11 @@
+{
+  "sourceUrl": "https://results.asiangames2026.org/#/discipline/TEN/schedule/daily/2026-09-29",
+  "date": "2026-09-29",
+  "timezone": "Asia/Tokyo",
+  "complete": false,
+  "rows": [
+    {"id":"M.SINGLES-----------.R32-.001300--","court":"Center Court","timeLabel":"Starting at 10:00","status":"INTERRUPTED","home":"MATSUOKA Hayato (JPN)","away":"THOMPSON Kairan (HKG)"},
+    {"id":"M.SINGLES-----------.R32-.000900--","court":"Show Court","timeLabel":"Starting at 10:00","status":"INTERRUPTED","home":"NAGAL Sumit (IND)","away":"HONG Seongchan (KOR)"},
+    {"id":"M.SINGLES-----------.R32-.001100--","court":"Court 5","timeLabel":"Starting at 10:00","status":"INTERRUPTED","home":"FITRIADI M Rifqi (INA)","away":"SHOAIB Muhammad (PAK)"}
+  ]
+}
