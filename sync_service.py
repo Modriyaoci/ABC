@@ -645,7 +645,6 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
     for rows in groups.values():
         rows.sort(key=lambda row: (str(row.get("officialScheduledAt") or row.get("scheduledAt") or ""), str(row.get("id") or "")))
         prior_end: datetime | None = None
-        propagated_delay = timedelta(0)
         duration = 60 if rows[0].get("sport") == "TEN" else 50
         for index, row in enumerate(rows):
             try:
@@ -657,8 +656,8 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
             # Keep the official Not Before time as the baseline. A delay from
             # an earlier match propagates to later cards, while a Followed by
             # card cannot start before the previous match's end plus 10 min.
-            shifted = official_start + propagated_delay
-            if index > 0 and prior_end:
+            shifted = official_start
+            if prior_end:
                 shifted = max(shifted, prior_end)
             row["scheduledAt"] = shifted.isoformat(timespec="seconds")
             row["date"] = shifted.strftime("%Y-%m-%d")
@@ -691,14 +690,11 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
                 known_end = True
             if end is None:
                 end = effective_start + timedelta(minutes=duration)
-            # Carry only the overrun beyond the planned slot. The ten-minute
-            # turnaround is applied to the immediate next match, while the
-            # overrun itself is propagated to later official times. This
-            # yields 09:00 -> 10:30 -> 11:20 when the first match ends 10:20.
-            planned_end = official_start + propagated_delay + timedelta(minutes=duration)
-            if known_end and end > planned_end:
-                propagated_delay += end - planned_end
-            prior_end = end + timedelta(minutes=10) if known_end else None
+            # Every later match inherits this court's actual/estimated end.
+            # This gives 10:00 -> (finished 11:20) -> 11:30 -> 12:40,
+            # and while the first match is live it moves the entire tail
+            # immediately instead of only shifting the next card.
+            prior_end = end + timedelta(minutes=10)
     return records
 
 
