@@ -654,11 +654,18 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
                 continue
             if official_start.tzinfo is None:
                 official_start = official_start.replace(tzinfo=BEIJING_TZ)
+            status = str(row.get("status") or "").upper()
+            # Completed matches retain their official start time forever.
+            # Their actual finish may delay only later not-yet-started rows.
+            if status in completed_statuses:
+                row["scheduledAt"] = official_start.isoformat(timespec="seconds")
+                row["date"] = official_start.strftime("%Y-%m-%d")
+                row["time"] = official_start.strftime("%H:%M")
             # Keep the official Not Before time as the baseline. A delay from
             # an earlier match propagates to later cards, while a Followed by
             # card cannot start before the previous match's end plus 10 min.
-            shifted = official_start + propagated_delay
-            if prior_end:
+            shifted = official_start if status in completed_statuses else official_start + propagated_delay
+            if prior_end and status not in completed_statuses:
                 shifted = max(shifted, prior_end)
             row["scheduledAt"] = shifted.isoformat(timespec="seconds")
             row["date"] = shifted.strftime("%Y-%m-%d")
@@ -682,7 +689,6 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
                         known_end = True
                     except ValueError:
                         end = None
-            status = str(row.get("status") or "").upper()
             if end is None and status in completed_statuses:
                 end = effective_start + timedelta(minutes=duration)
                 known_end = True
