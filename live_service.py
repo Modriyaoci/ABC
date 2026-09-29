@@ -243,7 +243,39 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
 
     if aggregate_shape:
         replacements.extend(_completion_updates(output_path, previous_records, replacements, targets, now))
-    replacements = preserve_known_matchups(previous_records, replacements)
+    # The aggregate live feed and the daily tennis reconciliation can contain
+    # the same unit in one cycle.  The daily row is needed for its current
+    # court/order/time, but it commonly still carries SCHEDULED (and an empty
+    # score) while the live row already has the real set score.  If we simply
+    # de-duplicate by taking the last row, the daily snapshot rolls an active
+    # match back to “待赛/比赛中断”.  Merge schedule fields from the newest
+    # daily row while retaining the freshest live state and score.
+    merged_replacements: dict[str, dict] = {}
+    active_statuses = {"LIVE", "RUNNING", "IN_PROGRESS", "SUSPENDED", "INTERRUPTED"}
+    for incoming in replacements:
+        key = str(incoming.get("id") or "")
+        if not key:
+            continue
+        previous_row = merged_replacements.get(key)
+        if previous_row is None:
+            merged_replacements[key] = incoming
+            continue
+        old_active = bool(previous_row.get("isLive")) or str(previous_row.get("status") or "").upper() in active_statuses
+        new_active = bool(incoming.get("isLive")) or str(incoming.get("status") or "").upper() in active_statuses
+        # The incoming row is authoritative for schedule metadata.  State
+        # fields are then overlaid from whichever duplicate is live.
+        merged = dict(previous_row)
+        merged.update(incoming)
+        if old_active and not new_active:
+            for field in ("score", "status", "isLive", "home", "away", "matchup", "actualEndAt"):
+                if field in previous_row:
+                    merged[field] = previous_row[field]
+        elif new_active and not old_active:
+            for field in ("score", "status", "isLive", "home", "away", "matchup", "actualEndAt"):
+                if field in incoming:
+                    merged[field] = incoming[field]
+        merged_replacements[key] = merged
+    replacements = preserve_known_matchups(previous_records, list(merged_replacements.values()))
     if aggregate_shape:
         if not replacements:
             # No current live unit (or only another sport's unit) means there
