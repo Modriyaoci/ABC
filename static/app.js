@@ -267,6 +267,10 @@ function dateLabel(value) {
 }
 function formatScore(record) {
   const raw = String(record.score || "").trim();
+  const status = String(record.status || "").toUpperCase();
+  if ((record.isLive || ["LIVE", "RUNNING", "IN_PROGRESS", "SUSPENDED", "INTERRUPTED"].includes(status)) && (!raw || raw === "待赛")) {
+    return "进行中";
+  }
   if (record.sport !== "CKT" || !raw) return raw || "—";
   const sides = raw.split(/\s*:\s*/);
   if (sides.length !== 2) return raw;
