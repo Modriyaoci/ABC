@@ -274,6 +274,18 @@ function formatScore(record) {
   const runs = sides.map((side) => (side.match(/^\s*(\d+)/) || ["", side.trim()])[1]);
   return `${runs[0]} : ${runs[1]}`;
 }
+
+// A schedule row can briefly lag behind the official detail response. When
+// the latter already publishes the current game/point, use it for the row as
+// well so a match with a live score is never labelled 待赛.
+function detailCurrentScore(detail) {
+  if (!detail || !Array.isArray(detail.sections)) return "";
+  const section = detail.sections.find((item) => /当前局|当前盘|当前局比分|当前打席/i.test(String(item?.title || "")));
+  const row = section?.rows?.[0];
+  if (!Array.isArray(row) || row.length < 2) return "";
+  const values = row.slice(-2).map((value) => String(value ?? "").trim());
+  return values.every((value) => value && value !== "—") ? `${values[0]} : ${values[1]}` : "";
+}
 function courtFilterKey() { return state.activeSport || "TODAY"; }
 function recordCourtKey(record) { return record.court ? `${record.sport}:${String(record.court).trim()}` : ""; }
 function courtLabel(court) {
@@ -883,6 +895,17 @@ async function loadMatch(id, force = false, { automatic = false } = {}) {
   if (!current?.data) updateDetailPanel(id);
   try {
     entry.data = await fetchJson(apiUrl(`/api/match?id=${encodeURIComponent(id)}${automatic ? "&automatic=1" : ""}`));
+    // Promote authoritative detail status/score into the schedule row. The
+    // compact schedule feed may still say PROVISIONAL/待赛 for a few seconds
+    // after the official result page has started publishing live points.
+    if (record && entry.data && typeof entry.data === "object") {
+      const detailStatus = String(entry.data.status || "").toUpperCase();
+      if (detailStatus && !["", "UNKNOWN", "TBD"].includes(detailStatus)) record.status = detailStatus;
+      if (entry.data.isLive || ["LIVE", "RUNNING", "IN_PROGRESS", "SUSPENDED", "INTERRUPTED"].includes(detailStatus)) record.isLive = true;
+      const currentScore = detailCurrentScore(entry.data);
+      if (currentScore) record.score = currentScore;
+      if (state.view === "schedule" && state.recordsLoaded) renderSchedule();
+    }
     if (record) {
       const detailStatus = String(entry.data?.status || "").toUpperCase();
       if (["OFFICIAL", "FINISHED", "COMPLETED", "UNOFFICIAL"].includes(detailStatus)) {

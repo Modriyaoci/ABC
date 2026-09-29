@@ -431,7 +431,11 @@ def get_match_details(record: Any, fetcher: Fetcher | None = None) -> dict[str, 
     return {
         "available": has_content,
         "status": _text(info.get("Status")).upper(),
-        "isLive": bool(info.get("IsLive")) or _text(info.get("Status")).upper() in {"LIVE", "RUNNING", "IN_PROGRESS"},
+        # The official feed uses SUSPENDED/INTERRUPTED while a live court is
+        # temporarily paused.  Keep those records in the live view so a
+        # stale schedule row cannot fall back to 未开赛 while the detail feed
+        # already contains the current score.
+        "isLive": bool(info.get("IsLive")) or _text(info.get("Status")).upper() in {"LIVE", "RUNNING", "IN_PROGRESS", "SUSPENDED", "INTERRUPTED"},
         "updatedAt": _now(),
         "home": names[0],
         "away": names[1],
