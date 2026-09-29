@@ -25,7 +25,7 @@ from sync_service import (
     SyncError,
     apply_verified_tennis_snapshots,
     filter_unverified_tennis_rows,
-    filter_unlocated_current_tennis_rows,
+    filter_unlocated_current_tennis_rows, apply_forced_completions,
     sync_all,
 )
 from live_service import FINAL_STATUSES, live_targets, sync_live
@@ -268,6 +268,7 @@ class AppState:
             payload["records"] = apply_verified_tennis_snapshots(payload["records"])
             payload["records"] = filter_unverified_tennis_rows(payload["records"])
             payload["records"] = filter_unlocated_current_tennis_rows(payload["records"], self.clock())
+            payload["records"] = apply_forced_completions(payload["records"])
         self.payload = payload
         self.status["dataVersion"] = payload.get("meta", {}).get("generatedAt")
         self.status["scheduleVersion"] = self.status["dataVersion"]

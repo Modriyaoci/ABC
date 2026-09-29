@@ -19,6 +19,23 @@ from zoneinfo import ZoneInfo
 API_BASE = "https://back.results.asiangames2026.org"
 OFFICIAL_RESULTS_URL = "https://results.asiangames2026.org/#/schedule/daily/"
 BEIJING_TZ = ZoneInfo("Asia/Shanghai")
+FORCED_COMPLETIONS = {
+    # Official details for this match have been stable at 6–4, 6–0, while
+    # the live feed keeps replaying an old INTERRUPTED/待赛 row.
+    "TEN:M.SINGLES-----------.R32-.000900--": {
+        "status": "OFFICIAL", "isLive": False, "score": "2 : 0",
+        "matchup": "NAGAL Sumit (IND) vs HONG Seongchan (KOR)",
+    },
+}
+
+
+def apply_forced_completions(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Pin manually confirmed terminal results above unreliable live data."""
+    for row in records:
+        forced = FORCED_COMPLETIONS.get(str(row.get("id") or ""))
+        if forced:
+            row.update(forced)
+    return records
 JAPAN_TZ = ZoneInfo("Asia/Tokyo")
 SYSTEM_CA_FILE = Path("/etc/ssl/cert.pem")
 SSL_CONTEXT = ssl.create_default_context(cafile=str(SYSTEM_CA_FILE) if SYSTEM_CA_FILE.exists() else None)
