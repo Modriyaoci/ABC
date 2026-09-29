@@ -264,6 +264,8 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
             continue
         old_active = bool(previous_row.get("isLive")) or str(previous_row.get("status") or "").upper() in active_statuses
         new_active = bool(incoming.get("isLive")) or str(incoming.get("status") or "").upper() in active_statuses
+        old_status = str(previous_row.get("status") or "").upper()
+        old_final = old_status in FINAL_STATUSES
         # The incoming row is authoritative for schedule metadata.  State
         # fields are then overlaid from whichever duplicate is live.
         merged = dict(previous_row)
@@ -277,7 +279,14 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
         # Daily snapshots can also say INTERRUPTED, but they do not carry the
         # current set score.  Keep the aggregate live state whenever it is
         # active; only a daily final row with a concrete result may replace it.
-        if old_active and not incoming_final:
+        if old_final and new_active and not incoming_final:
+            # Once the official feed has published a terminal result, a
+            # delayed live snapshot must never resurrect the old active or
+            # interrupted state on the next five-second merge.
+            for field in ("score", "status", "isLive", "home", "away", "matchup", "actualEndAt"):
+                if field in previous_row:
+                    merged[field] = previous_row[field]
+        elif old_active and not incoming_final:
             for field in ("score", "status", "isLive", "home", "away", "matchup", "actualEndAt"):
                 if field in previous_row:
                     merged[field] = previous_row[field]
