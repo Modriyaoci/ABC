@@ -618,7 +618,7 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
     The official feed's first time is authoritative.  Subsequent sessions on
     the same court begin no earlier than the prior match's actual end plus ten
     minutes.  Tennis uses a 60-minute planning slot; badminton uses 50 minutes.
-    A live match without an end timestamp is treated as ending ``now`` for the
+    Both tennis and badminton use a 60-minute planning slot. A live match without an end timestamp is treated as ending ``now`` for the
     current snapshot, so following cards move forward immediately and settle
     to the recorded finish on a later refresh.
     """
@@ -647,7 +647,7 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
         ))
         prior_end: datetime | None = None
         propagated_delay = timedelta(0)
-        duration = 60 if rows[0].get("sport") == "TEN" else 50
+        duration = 60
         for index, row in enumerate(rows):
             try:
                 official_start = datetime.fromisoformat(str(row.get("officialScheduledAt") or row["scheduledAt"]))
