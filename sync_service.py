@@ -1088,10 +1088,12 @@ def sync_all(
                 _, _, units = future.result()
                 if not isinstance(units, list):
                     raise SyncError("逐场数据格式不正确")
-                for unit in units:
+                for official_order, unit in enumerate(units):
                     if isinstance(unit, dict):
                         record = normalize_unit(unit, disc, date)
                         if record:
+                            if disc == "TEN":
+                                record["officialCourtOrder"] = official_order
                             records.append(record)
             except Exception as exc:  # noqa: BLE001
                 fetch_errors.append(f"{SPORTS[disc]} {date}：{exc}")

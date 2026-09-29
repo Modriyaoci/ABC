@@ -197,12 +197,13 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
         if tennis_day:
             daily = fetch_official_json(f"/s/AG2026/en/TEN/schedule/daily/{tennis_day}", 1)
             if isinstance(daily, list):
-                for unit in daily:
+                for official_order, unit in enumerate(daily):
                     if not isinstance(unit, dict):
                         continue
                     record = normalize_unit(unit, "TEN", tennis_day)
                     if record:
                         record["sourceDate"] = tennis_day
+                        record["officialCourtOrder"] = official_order
                         replacements.append(record)
     else:
         # Compatibility fallback for a malformed/unversioned response.  This
@@ -225,11 +226,13 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
                         for row in previous_records
                     ):
                         raise SyncError("官网暂未返回已公布的比赛，保留上次数据")
-                    for unit in daily_units:
+                    for official_order, unit in enumerate(daily_units):
                         if isinstance(unit, dict):
                             record = normalize_unit(unit, sport)
                             if record:
                                 record["sourceDate"] = day
+                                if sport == "TEN":
+                                    record["officialCourtOrder"] = official_order
                                 replacements.append(record)
                 except Exception as exc:
                     errors.append(f"{SPORTS[sport]}：{exc}")
