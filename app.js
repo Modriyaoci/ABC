@@ -883,6 +883,20 @@ async function loadSchedule(version) {
   if (state.activeSport && !SPORTS[state.activeSport]) state.activeSport = null;
   renderTabs();
   renderView();
+  // Reconcile a small number of stale interrupted rows automatically. The
+  // compact live feed can lag behind the results page; throttle each detail
+  // read to once per minute to keep this fallback lightweight.
+  const staleLive = state.records.filter((record) => record.isLive
+    && ["INTERRUPTED", "SUSPENDED"].includes(String(record.status || "").toUpperCase())
+    && ["", "待赛", "—", "-"].includes(String(record.score || "").trim())).slice(0, 2);
+  const now = Date.now();
+  for (const record of staleLive) {
+    const key = `detail-reconcile:${record.id}`;
+    const last = Number(window.localStorage?.getItem(key) || 0);
+    if (now - last < 60_000) continue;
+    try { window.localStorage?.setItem(key, String(now)); } catch {}
+    loadMatch(record.id, true).catch(() => {});
+  }
 }
 
 async function loadMatch(id, force = false, { automatic = false } = {}) {
