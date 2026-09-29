@@ -1028,6 +1028,9 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             if snapshot_status in {"OFFICIAL", "FINISHED", "COMPLETED"} and str(record.get("status") or "").upper() in {"SCHEDULED", "START_LIST", "PROVISIONAL"}:
                 record["status"] = snapshot_status
                 record["isLive"] = False
+            elif snapshot_status in {"INTERRUPTED", "SUSPENDED"} and str(record.get("status") or "").upper() in {"SCHEDULED", "START_LIST", "PROVISIONAL"}:
+                record["status"] = snapshot_status
+                record["isLive"] = True
             if snapshot_status in {"OFFICIAL", "FINISHED", "COMPLETED"} and verified.get("score"):
                 record["score"] = str(verified["score"])
             label = str(verified.get("timeLabel") or "")
