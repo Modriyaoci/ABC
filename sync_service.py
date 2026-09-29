@@ -624,7 +624,10 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
     """
     # Merge duplicate units before building court groups. The daily feed and
     # live aggregate may briefly expose the same match twice.
-    records = list({str(row.get("id")): row for row in records if row.get("id")}.values())
+    records = list({
+        (str(row.get("id")), str(row.get("date") or row.get("sourceDate") or "")): row
+        for row in records if row.get("id")
+    }.values())
     previous_by_id = {str(row.get("id")): row for row in (previous or []) if row.get("id")}
     groups: dict[tuple[str, str, str], list[dict[str, Any]]] = {}
     for row in records:
@@ -1179,7 +1182,7 @@ def sync_all(
     records = filter_unlocated_current_tennis_rows(records)
     records = apply_court_sequencing(records, previous_records)
     unique = {
-        (record["id"], str(record.get("sourceDate") or record.get("date") or "")): record
+        (record["id"], str(record.get("date") or record.get("sourceDate") or "")): record
         for record in records
     }
     ordered = sorted(
