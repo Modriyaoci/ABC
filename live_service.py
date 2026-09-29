@@ -267,7 +267,11 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
         merged = dict(previous_row)
         merged.update(incoming)
         incoming_status = str(incoming.get("status") or "").upper()
-        incoming_final = incoming_status in FINAL_STATUSES and str(incoming.get("score") or "").strip() not in {"", "待赛", "—", "-"}
+        incoming_score = str(incoming.get("score") or "").strip()
+        incoming_final = incoming_status in FINAL_STATUSES and (
+            incoming_status in {"CANCELED", "CANCELLED"}
+            or incoming_score not in {"", "待赛", "—", "-"}
+        )
         # Daily snapshots can also say INTERRUPTED, but they do not carry the
         # current set score.  Keep the aggregate live state whenever it is
         # active; only a daily final row with a concrete result may replace it.
