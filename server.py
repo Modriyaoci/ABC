@@ -334,6 +334,44 @@ class AppState:
                 }
             self._save_status()
 
+    def reconcile_match_detail(self, match_id: str, details: dict) -> None:
+        """Promote an authoritative detail status into the schedule row.
+
+        The compact live feed is intentionally partial and can leave a row
+        marked ``INTERRUPTED`` (or ``SCHEDULED``) after the results endpoint
+        has already published the next state.  Details are fetched when a
+        user opens a match, so keeping this small reconciliation here avoids
+        showing a stale status until the next full schedule refresh.  Only
+        concrete live/terminal statuses are accepted; an empty or provisional
+        detail response can never roll a known result back to ``SCHEDULED``.
+        """
+        if not match_id or not isinstance(details, dict):
+            return
+        status = str(details.get("status") or "").upper()
+        authoritative = {"LIVE", "RUNNING", "IN_PROGRESS", "SUSPENDED", "INTERRUPTED",
+                         "OFFICIAL", "FINISHED", "COMPLETED", "UNOFFICIAL",
+                         "CANCELED", "CANCELLED"}
+        if status not in authoritative:
+            return
+        with self.lock:
+            for row in self.payload.get("records", []):
+                if str(row.get("id")) != str(match_id):
+                    continue
+                row["status"] = status
+                row["isLive"] = bool(details.get("isLive")) or status in {
+                    "LIVE", "RUNNING", "IN_PROGRESS", "SUSPENDED", "INTERRUPTED"
+                }
+                for field in ("home", "away"):
+                    value = details.get(field)
+                    if value and (not isinstance(value, str) or value.strip() not in {"", "待定"}):
+                        row[field] = value
+                home, away = details.get("home"), details.get("away")
+                if home and away and str(home).strip() != "待定" and str(away).strip() != "待定":
+                    row["matchup"] = f"{home} vs {away}"
+                self.status["liveVersion"] = int(self.status.get("liveVersion") or 0) + 1
+                self.status["liveDelta"] = [row]
+                break
+
     @staticmethod
     def _parse_time(value):
         try:
@@ -882,6 +920,11 @@ class RequestHandler(BaseHTTPRequestHandler):
                         return details
 
                     value = OFFICIAL_CACHE.get(("match", match_id), ttl, load_details)
+                    # The detail endpoint is authoritative for this match's
+                    # state.  Promote it into the in-memory schedule so the
+                    # row cannot remain "待赛/比赛中断" after its opened
+                    # panel already reports live or official play.
+                    STATE.reconcile_match_detail(match_id, value)
                 else:
                     sport = query.get("sport", [""])[0]
                     if sport not in SPORTS:
