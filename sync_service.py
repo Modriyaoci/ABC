@@ -911,7 +911,14 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
         # historical days that the rolling API no longer returns. Older
         # enrichment-only captures still require an existing day in memory.
         complete_snapshot = bool(json.loads(path.read_text(encoding="utf-8")).get("complete"))
-        if not complete_snapshot and not any(str(record.get("sport")) == "TEN" and str(record.get("date")) == day for record in records):
+        relocation_snapshot = path.stem.endswith("-relocations")
+        if not complete_snapshot and not any(
+            str(record.get("sport")) == "TEN"
+            and str(record.get("id", "")).removeprefix("TEN:") in {
+                str(row.get("id")) for row in rows if isinstance(row, dict) and row.get("id")
+            }
+            for record in records
+        ):
             continue
         by_id = {str(row.get("id")): row for row in rows if isinstance(row, dict) and row.get("id")}
         existing = {str(record.get("id", "")).removeprefix("TEN:") for record in records if str(record.get("sport")) == "TEN" and str(record.get("date")) == day}
@@ -959,7 +966,17 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             if current_day != day:
                 status = str(record.get("status") or "").upper()
                 snapshot_status = str(verified.get("status") or "").upper()
-                if day > current_day and (status in {"INTERRUPTED", "SUSPENDED", "RUNNING", "LIVE", "IN_PROGRESS"} or snapshot_status in {"INTERRUPTED", "SUSPENDED"}):
+                # A published official relocation is authoritative even when
+                # the stale rolling feed still labels the old row SCHEDULED.
+                # This is what moves a match such as Matsuoka/Thompson from
+                # yesterday's cached slot onto today's official court/time.
+                official_snapshot = snapshot_status in {"OFFICIAL", "FINISHED", "COMPLETED"}
+                current_matchup = str(record.get("matchup") or "").upper()
+                snapshot_matchup_hint = f"{verified.get('home', '')} VS {verified.get('away', '')}".upper()
+                matchup_matches = not current_matchup or snapshot_matchup_hint in current_matchup or all(
+                    token in current_matchup for token in (str(verified.get("home") or "").split()[0].upper(), str(verified.get("away") or "").split()[0].upper())
+                )
+                if day > current_day and matchup_matches and ((relocation_snapshot and day == today and official_snapshot) or status in {"INTERRUPTED", "SUSPENDED", "RUNNING", "LIVE", "IN_PROGRESS"} or snapshot_status in {"INTERRUPTED", "SUSPENDED"}):
                     record["date"] = day
                     record["sourceDate"] = day
                     relocated = True
