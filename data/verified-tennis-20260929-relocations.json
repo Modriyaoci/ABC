@@ -4,8 +4,8 @@
   "timezone": "Asia/Tokyo",
   "complete": false,
   "rows": [
-    {"id":"M.SINGLES-----------.R32-.001300--","court":"Center Court","timeLabel":"Starting at 10:00","status":"INTERRUPTED","home":"MATSUOKA Hayato (JPN)","away":"THOMPSON Kairan (HKG)"},
-    {"id":"M.SINGLES-----------.R32-.000900--","court":"Show Court","timeLabel":"Starting at 10:00","status":"INTERRUPTED","home":"NAGAL Sumit (IND)","away":"HONG Seongchan (KOR)"},
-    {"id":"M.SINGLES-----------.R32-.001100--","court":"Court 5","timeLabel":"Starting at 10:00","status":"INTERRUPTED","home":"FITRIADI M Rifqi (INA)","away":"SHOAIB Muhammad (PAK)"}
+    {"id":"M.SINGLES-----------.R32-.001300--","court":"Indoor Court C","timeLabel":"Starting at 10:00","status":"INTERRUPTED","home":"MATSUOKA Hayato (JPN)","away":"THOMPSON Kairan (HKG)"},
+    {"id":"M.SINGLES-----------.R32-.000900--","court":"Indoor Court B","timeLabel":"Not Before 12:30","status":"INTERRUPTED","home":"NAGAL Sumit (IND)","away":"HONG Seongchan (KOR)"},
+    {"id":"M.SINGLES-----------.R32-.001100--","court":"Indoor Court B","timeLabel":"Starting at 10:00","status":"INTERRUPTED","home":"FITRIADI M Rifqi (INA)","away":"SHOAIB Muhammad (PAK)"}
   ]
 }

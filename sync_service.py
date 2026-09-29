@@ -957,7 +957,8 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             relocated = False
             if current_day != day:
                 status = str(record.get("status") or "").upper()
-                if day > current_day and status in {"INTERRUPTED", "SUSPENDED", "RUNNING", "LIVE", "IN_PROGRESS"}:
+                snapshot_status = str(verified.get("status") or "").upper()
+                if day > current_day and (status in {"INTERRUPTED", "SUSPENDED", "RUNNING", "LIVE", "IN_PROGRESS"} or snapshot_status in {"INTERRUPTED", "SUSPENDED"}):
                     record["date"] = day
                     record["sourceDate"] = day
                     relocated = True
@@ -966,7 +967,7 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             # Do not let recovery roll back a concrete live value.  The live
             # schedule/result feed remains authoritative after a row exists;
             # the snapshot only fills fields that are still blank/provisional.
-            if relocated:
+            if relocated or current_day == day:
                 record["court"] = str(verified.get("court") or "")
             record["officialCourtOrder"] = next((i for i, item in enumerate(rows) if str(item.get("id")) == str(verified.get("id"))), 10**9)
             snapshot_matchup = f"{verified['home']} vs {verified['away']}"
@@ -977,7 +978,7 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             dt = resolved.get(str(verified.get("id")))
             if dt:
             # Official labels are Tokyo time (UTC+9), display UTC+8.
-                if relocated:
+                if relocated or current_day == day:
                     record["scheduledAt"] = dt.isoformat(timespec="seconds")
                     record["officialScheduledAt"] = record["scheduledAt"]
                     record["time"] = dt.strftime("%H:%M")
