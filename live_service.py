@@ -252,12 +252,18 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
             return payload
         # live-now is partial, so retain every prior record not present in the
         # response.  A current live unit replaces its matching stable ID.
-        unique = {row["id"]: row for row in previous_records + replacements}
+        unique = {
+            (row["id"], str(row.get("sourceDate") or row.get("date") or "")): row
+            for row in previous_records + replacements
+        }
     else:
         target_set = set(targets)
         records = [row for row in previous_records
                    if (row["sport"], row.get("sourceDate", row["date"])) not in target_set]
-        unique = {row["id"]: row for row in records + replacements}
+        unique = {
+            (row["id"], str(row.get("sourceDate") or row.get("date") or "")): row
+            for row in records + replacements
+        }
     records = list(unique.values())
     # Every incremental score/status cycle also reconciles the latest
     # published start times and court order. This keeps Followed-by and delay
@@ -276,7 +282,10 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
     records = filter_unverified_tennis_rows(records)
     records = filter_unlocated_current_tennis_rows(records)
     records = apply_court_sequencing(records, previous_records)
-    payload["records"] = sorted({row["id"]: row for row in records}.values(), key=lambda row: (
+    payload["records"] = sorted({
+        (row["id"], str(row.get("sourceDate") or row.get("date") or "")): row
+        for row in records
+    }.values(), key=lambda row: (
         row.get("date", ""), row.get("time", ""), list(SPORTS).index(row["sport"]), row["id"]
     ))
     payload["meta"].update({

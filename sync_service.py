@@ -1178,7 +1178,10 @@ def sync_all(
     # no-court row cannot be resurrected when the official endpoint is partial.
     records = filter_unlocated_current_tennis_rows(records)
     records = apply_court_sequencing(records, previous_records)
-    unique = {record["id"]: record for record in records}
+    unique = {
+        (record["id"], str(record.get("sourceDate") or record.get("date") or "")): record
+        for record in records
+    }
     ordered = sorted(
         unique.values(),
         key=lambda row: (row.get("date", ""), row.get("time", ""), list(SPORTS).index(row["sport"]), row["id"]),
