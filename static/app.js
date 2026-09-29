@@ -328,6 +328,14 @@ function filteredRecords() {
     .filter((record) => !state.statusFilter.length || state.statusFilter.includes(recordStatus(record)))
     .filter((record) => !courts.length || courts.includes(recordCourtKey(record)))
     .sort((left, right) => {
+      // Within one court, the official page order is authoritative. This
+      // prevents a live match from jumping ahead of an earlier scheduled
+      // court slot when the user is reviewing a single court.
+      if (left.date === right.date && left.sport === right.sport && recordCourtKey(left) && recordCourtKey(left) === recordCourtKey(right)) {
+        const leftOrder = Number.isFinite(Number(left.officialCourtOrder)) ? Number(left.officialCourtOrder) : 1e9;
+        const rightOrder = Number.isFinite(Number(right.officialCourtOrder)) ? Number(right.officialCourtOrder) : 1e9;
+        if (leftOrder !== rightOrder) return leftOrder - rightOrder;
+      }
       const liveOrder = Number(rightStatusIsLive(right) - rightStatusIsLive(left));
       if (liveOrder) return liveOrder;
       return `${left.date || ""}T${left.time || ""}`.localeCompare(`${right.date || ""}T${right.time || ""}`) || String(left.id).localeCompare(String(right.id));
