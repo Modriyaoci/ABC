@@ -14,6 +14,7 @@ from sync_service import (
     apply_verified_tennis_snapshots, apply_court_sequencing,
     filter_unverified_tennis_rows, filter_unlocated_current_tennis_rows,
 )
+from details_service import get_match_details
 
 JAPAN_TZ = ZoneInfo("Asia/Tokyo")
 LIVE_NOW_PATH = "/s/AG2026/en/ALL/schedule/live-now"
@@ -22,6 +23,7 @@ COMPLETION_CHECK_INTERVAL = 60
 # Per-process request history, separate from the published schedule so an empty
 # feed does not change its version. sync_live's clock also controls this limit.
 _completion_checks: dict[str, dict[tuple[str, str], float]] = {}
+_detail_checks: dict[str, dict[str, float]] = {}
 
 
 def _started(row: dict, now: datetime) -> bool:
@@ -111,6 +113,40 @@ def _completion_updates(
                     record[key] = old.get(key)
         updates.append(record)
     return updates
+
+
+def _detail_completion_updates(output_path: Path, previous: list[dict], now: datetime) -> list[dict]:
+    """Resolve stale interrupted rows from the authoritative result page.
+
+    The compact live feed can keep an interrupted placeholder after the
+    result page has already published OFFICIAL. Check at most one such row a
+    minute, so this repairs terminal state without restoring the old per-row
+    polling traffic for normal live scores.
+    """
+    checks = _detail_checks.setdefault(str(output_path.resolve()), {})
+    candidates = [row for row in previous if row.get("isLive") and str(row.get("status") or "").upper() in {"INTERRUPTED", "SUSPENDED"}
+                  and str(row.get("score") or "").strip() in {"", "待赛", "—", "-"}]
+    if not candidates:
+        return []
+    timestamp = now.timestamp()
+    row = min(candidates, key=lambda item: checks.get(str(item.get("id")), float("-inf")))
+    match_id = str(row.get("id") or "")
+    if timestamp - checks.get(match_id, float("-inf")) < COMPLETION_CHECK_INTERVAL:
+        return []
+    checks[match_id] = timestamp
+    try:
+        details = get_match_details(row)
+    except Exception:
+        return []
+    status = str(details.get("status") or "").upper() if isinstance(details, dict) else ""
+    if status not in FINAL_STATUSES:
+        return []
+    update = dict(row)
+    update["status"] = status
+    update["isLive"] = False
+    if details.get("score") and str(details["score"]).strip() not in {"待赛", "—", "-"}:
+        update["score"] = str(details["score"])
+    return [update]
 
 
 def live_targets(payload: dict, now: datetime) -> list[tuple[str, str]]:
@@ -245,6 +281,7 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
 
     if aggregate_shape:
         replacements.extend(_completion_updates(output_path, previous_records, replacements, targets, now))
+        replacements.extend(_detail_completion_updates(output_path, previous_records, now))
     # The aggregate live feed and the daily tennis reconciliation can contain
     # the same unit in one cycle.  The daily row is needed for its current
     # court/order/time, but it commonly still carries SCHEDULED (and an empty
