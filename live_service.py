@@ -174,16 +174,10 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
             record = normalize_unit(unit, sport)
             if not record:
                 continue
-            if sport == "TEN":
-                # Tennis schedule fields come exclusively from the verified
-                # official page snapshot. The live API contributes scores and
-                # status only, so stale Not-Before values cannot overwrite the
-                # page-captured Starting-at/Followed-by order.
-                old = next((item for item in previous_records if item.get("id") == record.get("id")), None)
-                if old:
-                    for key in ("date", "time", "scheduledAt", "officialScheduledAt", "court", "venue", "matchup", "stage", "category"):
-                        if key in old:
-                            record[key] = old[key]
+            # The live feed supplies scores/status; the daily page fetched
+            # below supplies the latest tennis date, court and order. Do not
+            # freeze those fields from the previous cache: weather relocations
+            # and interrupted matches can move between days or courts.
             raw_datetime = str(unit.get("DateTimeRaw") or "")
             try:
                 source_date = datetime.fromisoformat(
