@@ -675,7 +675,7 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
                 minutes = ((now.minute // 10) + 1) * 10
                 candidate = now.replace(minute=0, second=0, microsecond=0) + timedelta(hours=minutes // 60, minutes=minutes % 60)
                 shifted = max(shifted + timedelta(minutes=10), candidate)
-            if prior_end and status not in completed_statuses:
+            if prior_end and status not in completed_statuses and not snapshot_baseline:
                 shifted = max(shifted, prior_end)
             row["scheduledAt"] = shifted.isoformat(timespec="seconds")
             row["date"] = shifted.strftime("%Y-%m-%d")
