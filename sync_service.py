@@ -975,6 +975,10 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             current_matchup = str(record.get("matchup") or "").strip()
             if not current_matchup or re.fullmatch(r"(?:对阵待定|待定(?:\s+vs\s+待定)?)", current_matchup, re.IGNORECASE):
                 record["matchup"] = snapshot_matchup
+            snapshot_status = str(verified.get("status") or "").upper()
+            if snapshot_status in {"OFFICIAL", "FINISHED", "COMPLETED"} and str(record.get("status") or "").upper() in {"SCHEDULED", "START_LIST", "PROVISIONAL"}:
+                record["status"] = snapshot_status
+                record["isLive"] = False
             label = str(verified.get("timeLabel") or "")
             dt = resolved.get(str(verified.get("id")))
             if dt:
