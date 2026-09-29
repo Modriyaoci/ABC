@@ -93,15 +93,17 @@ def _completion_updates(
         record["sourceDate"] = day
         old = known.get(record["id"])
         status = record["status"]
-        if status in {"OFFICIAL", "FINISHED", "COMPLETED"} and any(
-            score is None or not str(score).strip() for score in scores
-        ):
-            # An incomplete final row cannot replace a known score.
-            continue
         if old:
             old_status = str(old.get("status") or "").upper()
             if old_status in FINAL_STATUSES and status not in FINAL_STATUSES:
                 continue
+            # Status and score are published independently. Preserve a
+            # concrete live score when the newly official row has only the
+            # terminal status so the stale active row still converges.
+            if status in FINAL_STATUSES and str(record.get("score") or "").strip() in {"", "待赛", "—", "-"}:
+                old_score = str(old.get("score") or "").strip()
+                if old_score not in {"", "待赛", "—", "-"}:
+                    record["score"] = old["score"]
             active_before = old.get("isLive") or old_status in {"LIVE", "RUNNING", "IN_PROGRESS", "SUSPENDED", "INTERRUPTED"}
             pending_after = not record["isLive"] and status not in FINAL_STATUSES | {"UNOFFICIAL"}
             if active_before and pending_after:
@@ -268,10 +270,10 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
         merged.update(incoming)
         incoming_status = str(incoming.get("status") or "").upper()
         incoming_score = str(incoming.get("score") or "").strip()
-        incoming_final = incoming_status in FINAL_STATUSES and (
-            incoming_status in {"CANCELED", "CANCELLED"}
-            or incoming_score not in {"", "待赛", "—", "-"}
-        )
+        # Final status is authoritative by itself.  Results and scores are
+        # published independently; requiring a non-empty score here allowed
+        # an older INTERRUPTED/LIVE row to overwrite a newly official one.
+        incoming_final = incoming_status in FINAL_STATUSES
         # Daily snapshots can also say INTERRUPTED, but they do not carry the
         # current set score.  Keep the aggregate live state whenever it is
         # active; only a daily final row with a concrete result may replace it.
@@ -279,6 +281,11 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
             for field in ("score", "status", "isLive", "home", "away", "matchup", "actualEndAt"):
                 if field in previous_row:
                     merged[field] = previous_row[field]
+        elif incoming_final and old_active and incoming_score in {"", "待赛", "—", "-"}:
+            # Keep a known live score while allowing the final status to
+            # clear the stale active flag.
+            if str(previous_row.get("score") or "").strip() not in {"", "待赛", "—", "-"}:
+                merged["score"] = previous_row["score"]
         elif new_active and not old_active:
             for field in ("score", "status", "isLive", "home", "away", "matchup", "actualEndAt"):
                 if field in incoming:

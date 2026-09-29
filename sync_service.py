@@ -1025,7 +1025,12 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             if not current_matchup or re.fullmatch(r"(?:对阵待定|待定(?:\s+vs\s+待定)?)", current_matchup, re.IGNORECASE):
                 record["matchup"] = snapshot_matchup
             snapshot_status = str(verified.get("status") or "").upper()
-            if snapshot_status in {"OFFICIAL", "FINISHED", "COMPLETED"} and str(record.get("status") or "").upper() in {"SCHEDULED", "START_LIST", "PROVISIONAL"}:
+            # A final status from the official snapshot is authoritative even
+            # when the previous cached row was LIVE/INTERRUPTED.  The daily
+            # feed can publish the result status before it publishes the
+            # score, so gating this on a concrete score leaves stale
+            # "比赛中断/待赛" rows indefinitely.
+            if snapshot_status in {"OFFICIAL", "FINISHED", "COMPLETED"}:
                 record["status"] = snapshot_status
                 record["isLive"] = False
             elif snapshot_status in {"INTERRUPTED", "SUSPENDED"} and str(record.get("status") or "").upper() in {"SCHEDULED", "START_LIST", "PROVISIONAL"}:
