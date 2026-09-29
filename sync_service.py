@@ -912,7 +912,14 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
         # enrichment-only captures still require an existing day in memory.
         complete_snapshot = bool(json.loads(path.read_text(encoding="utf-8")).get("complete"))
         relocation_snapshot = path.stem.endswith("-relocations")
-        if not complete_snapshot and not any(
+        # A relocation capture is also authoritative for the current day.
+        # The rolling daily feed often contains provisional draw IDs instead
+        # of the IDs on the rendered court page; requiring an existing ID here
+        # silently discarded the whole capture (and left all four courts at
+        # the old 09:00/unknown-court placeholders).  Current-day captures
+        # may therefore add their published rows just like a complete page.
+        authoritative_today = day == today and (complete_snapshot or relocation_snapshot)
+        if not complete_snapshot and not relocation_snapshot and not any(
             str(record.get("sport")) == "TEN"
             and str(record.get("id", "")).removeprefix("TEN:") in {
                 str(row.get("id")) for row in rows if isinstance(row, dict) and row.get("id")
@@ -985,7 +992,7 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             # Do not let recovery roll back a concrete live value.  The live
             # schedule/result feed remains authoritative after a row exists;
             # the snapshot only fills fields that are still blank/provisional.
-            if relocated or (current_day == day and not complete_snapshot):
+            if relocated or authoritative_today or (current_day == day and not complete_snapshot):
                 record["court"] = str(verified.get("court") or "")
             record["officialCourtOrder"] = next((i for i, item in enumerate(rows) if str(item.get("id")) == str(verified.get("id"))), 10**9)
             snapshot_matchup = f"{verified['home']} vs {verified['away']}"
@@ -1000,7 +1007,7 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             dt = resolved.get(str(verified.get("id")))
             if dt:
             # Official labels are Tokyo time (UTC+9), display UTC+8.
-                if relocated or (current_day == day and not complete_snapshot):
+                if relocated or authoritative_today or (current_day == day and not complete_snapshot):
                     record["scheduledAt"] = dt.isoformat(timespec="seconds")
                     record["officialScheduledAt"] = record["scheduledAt"]
                     record["time"] = dt.strftime("%H:%M")
