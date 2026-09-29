@@ -622,6 +622,9 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
     current snapshot, so following cards move forward immediately and settle
     to the recorded finish on a later refresh.
     """
+    # Merge duplicate units before building court groups. The daily feed and
+    # live aggregate may briefly expose the same match twice.
+    records = list({str(row.get("id")): row for row in records if row.get("id")}.values())
     previous_by_id = {str(row.get("id")): row for row in (previous or []) if row.get("id")}
     groups: dict[tuple[str, str, str], list[dict[str, Any]]] = {}
     for row in records:
@@ -670,7 +673,13 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
             # postponed in ten-minute increments until it can start. This is
             # recalculated on every live poll, so a 13:00 slot at 15:12 moves
             # beyond the current time instead of remaining at 13:00.
-            snapshot_baseline = index == 0 and row.get("officialCourtOrder") == 0
+            # The first published slot is a baseline *per court*.  The old
+            # global-order check only exempted the first row of the whole
+            # daily feed; first matches on Court B/C/D were then treated as
+            # overdue and pushed to ``now + 10 min`` even when the official
+            # page still said Starting at/Not Before.  That made fixing one
+            # court appear to break the others.
+            snapshot_baseline = index == 0
             if status in {"SCHEDULED", "START_LIST", "PROVISIONAL", "UNSCHEDULED"} and now > shifted and not snapshot_baseline:
                 minutes = ((now.minute // 10) + 1) * 10
                 candidate = now.replace(minute=0, second=0, microsecond=0) + timedelta(hours=minutes // 60, minutes=minutes % 60)
@@ -725,7 +734,10 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
                 # 15:20, 16:20, 17:20; a real overrun above this baseline is
                 # still propagated through the later matches.
                 prior_end = effective_start + timedelta(minutes=duration)
-    return records
+    # A partial live feed and the daily feed can contain the same unit twice.
+    # Collapse those duplicates before court sequencing; otherwise the first
+    # copy consumes a planning slot and shifts every later match by 10 minutes.
+    return list({str(row.get("id")): row for row in records if row.get("id")}.values())
 
 
 def _recover_tennis_20260927(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -938,7 +950,10 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
                 continue
             category = "男子单打" if ".M.SINGLES" in f".{verified['id']}" else ("女子单打" if ".W.SINGLES" in f".{verified['id']}" else ("男子双打" if ".M.DOUBLES" in f".{verified['id']}" else ("女子双打" if ".W.DOUBLES" in f".{verified['id']}" else "混合双打")))
             fallback_at = f"{day}T11:00:00+08:00"
-            records.append({"id": f"TEN:{verified['id']}", "sport":"TEN", "sportName":"网球", "officialKey":verified["id"], "date":day, "sourceDate":day, "category":category, "stage":"32强赛", "phase":"32强赛", "matchup":f"{verified.get('home','待定')} vs {verified.get('away','待定')}", "score":"待赛", "venue":"名古屋市东山公园网球中心", "court":verified.get("court", ""), "officialCourtOrder":snapshot_order, "status":"SCHEDULED", "isLive":False, "time":"11:00", "scheduledAt":fallback_at, "officialScheduledAt":fallback_at})
+            home = str(verified.get("home") or "").strip()
+            away = str(verified.get("away") or "").strip()
+            matchup = f"{home} vs {away}" if home or away else "对阵待定"
+            records.append({"id": f"TEN:{verified['id']}", "sport":"TEN", "sportName":"网球", "officialKey":verified["id"], "date":day, "sourceDate":day, "category":category, "stage":"32强赛", "phase":"32强赛", "matchup":matchup, "score":"待赛", "venue":"名古屋市东山公园网球中心", "court":verified.get("court", ""), "officialCourtOrder":snapshot_order, "status":"SCHEDULED", "isLive":False, "time":"11:00", "scheduledAt":fallback_at, "officialScheduledAt":fallback_at})
         # Resolve the published court order: explicit/Not-Before times are
         # Tokyo wall-clock values; Followed-by starts ten minutes after the
         # preceding 60-minute tennis slot. Never use a fixed fallback hour.
@@ -980,8 +995,13 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
                 official_snapshot = snapshot_status in {"OFFICIAL", "FINISHED", "COMPLETED"}
                 current_matchup = str(record.get("matchup") or "").upper()
                 snapshot_matchup_hint = f"{verified.get('home', '')} VS {verified.get('away', '')}".upper()
-                matchup_matches = not current_matchup or snapshot_matchup_hint in current_matchup or all(
-                    token in current_matchup for token in (str(verified.get("home") or "").split()[0].upper(), str(verified.get("away") or "").split()[0].upper())
+                snapshot_tokens = [
+                    str(verified.get(side) or "").split()[0].upper()
+                    for side in ("home", "away")
+                    if str(verified.get(side) or "").split()
+                ]
+                matchup_matches = not current_matchup or (snapshot_tokens and snapshot_matchup_hint.strip() != "VS" and snapshot_matchup_hint in current_matchup) or (
+                    snapshot_tokens and all(token in current_matchup for token in snapshot_tokens)
                 )
                 if day > current_day and matchup_matches and ((relocation_snapshot and day == today and official_snapshot) or status in {"INTERRUPTED", "SUSPENDED", "RUNNING", "LIVE", "IN_PROGRESS"} or snapshot_status in {"INTERRUPTED", "SUSPENDED"}):
                     record["date"] = day
@@ -995,7 +1015,9 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             if relocated or authoritative_today or (current_day == day and not complete_snapshot):
                 record["court"] = str(verified.get("court") or "")
             record["officialCourtOrder"] = next((i for i, item in enumerate(rows) if str(item.get("id")) == str(verified.get("id"))), 10**9)
-            snapshot_matchup = f"{verified['home']} vs {verified['away']}"
+            snapshot_home = str(verified.get("home") or "").strip()
+            snapshot_away = str(verified.get("away") or "").strip()
+            snapshot_matchup = f"{snapshot_home} vs {snapshot_away}" if snapshot_home or snapshot_away else "对阵待定"
             current_matchup = str(record.get("matchup") or "").strip()
             if not current_matchup or re.fullmatch(r"(?:对阵待定|待定(?:\s+vs\s+待定)?)", current_matchup, re.IGNORECASE):
                 record["matchup"] = snapshot_matchup
@@ -1003,6 +1025,8 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             if snapshot_status in {"OFFICIAL", "FINISHED", "COMPLETED"} and str(record.get("status") or "").upper() in {"SCHEDULED", "START_LIST", "PROVISIONAL"}:
                 record["status"] = snapshot_status
                 record["isLive"] = False
+            if snapshot_status in {"OFFICIAL", "FINISHED", "COMPLETED"} and verified.get("score"):
+                record["score"] = str(verified["score"])
             label = str(verified.get("timeLabel") or "")
             dt = resolved.get(str(verified.get("id")))
             if dt:
