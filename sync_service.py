@@ -670,7 +670,8 @@ def apply_court_sequencing(records: list[dict[str, Any]], previous: list[dict[st
             # postponed in ten-minute increments until it can start. This is
             # recalculated on every live poll, so a 13:00 slot at 15:12 moves
             # beyond the current time instead of remaining at 13:00.
-            if status in {"SCHEDULED", "START_LIST", "PROVISIONAL", "UNSCHEDULED"} and now > shifted:
+            snapshot_baseline = index == 0 and row.get("officialCourtOrder") == 0
+            if status in {"SCHEDULED", "START_LIST", "PROVISIONAL", "UNSCHEDULED"} and now > shifted and not snapshot_baseline:
                 minutes = ((now.minute // 10) + 1) * 10
                 candidate = now.replace(minute=0, second=0, microsecond=0) + timedelta(hours=minutes // 60, minutes=minutes % 60)
                 shifted = max(shifted + timedelta(minutes=10), candidate)
@@ -967,7 +968,7 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             # Do not let recovery roll back a concrete live value.  The live
             # schedule/result feed remains authoritative after a row exists;
             # the snapshot only fills fields that are still blank/provisional.
-            if relocated or current_day == day:
+            if relocated or (current_day == day and not complete_snapshot):
                 record["court"] = str(verified.get("court") or "")
             record["officialCourtOrder"] = next((i for i, item in enumerate(rows) if str(item.get("id")) == str(verified.get("id"))), 10**9)
             snapshot_matchup = f"{verified['home']} vs {verified['away']}"
@@ -978,7 +979,7 @@ def apply_verified_tennis_snapshots(records: list[dict[str, Any]], add_missing: 
             dt = resolved.get(str(verified.get("id")))
             if dt:
             # Official labels are Tokyo time (UTC+9), display UTC+8.
-                if relocated or current_day == day:
+                if relocated or (current_day == day and not complete_snapshot):
                     record["scheduledAt"] = dt.isoformat(timespec="seconds")
                     record["officialScheduledAt"] = record["scheduledAt"]
                     record["time"] = dt.strftime("%H:%M")
