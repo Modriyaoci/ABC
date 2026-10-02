@@ -963,6 +963,16 @@ class RequestHandler(BaseHTTPRequestHandler):
             if query.get("automatic", [""])[0] == "1" and (completed or not automatic_sync_allowed(now)):
                 key = ("match", query.get("id", [""])[0]) if path == "/api/match" else ("tournament", query.get("sport", [""])[0])
                 cached = OFFICIAL_CACHE.peek(key)
+                # A completed discipline has a persistent tournament snapshot;
+                # return it directly even when automatic upstream requests are
+                # paused for the day (the in-memory cache may be empty after a
+                # process restart).
+                if path == "/api/tournament":
+                    sport = query.get("sport", [""])[0].upper()
+                    local = _read_tournament_cache(sport) if sport in FROZEN_TOURNAMENT_SPORTS else None
+                    if local is not None:
+                        self._send_json({**local, "local": True, "automaticSyncPaused": True})
+                        return
                 self._send_json({
                     **(cached or {"available": False, "unavailable": True}),
                     "automaticSyncPaused": True,
