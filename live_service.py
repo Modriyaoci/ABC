@@ -14,6 +14,7 @@ from sync_service import (
     apply_verified_tennis_snapshots, apply_court_sequencing,
     filter_unverified_tennis_rows, filter_unlocated_current_tennis_rows,
     apply_forced_completions,
+    freeze_historical_records,
 )
 from details_service import get_match_details
 
@@ -378,6 +379,7 @@ def sync_live(output_path: Path, now: datetime | None = None, progress=None) -> 
     records = filter_unlocated_current_tennis_rows(records)
     records = apply_court_sequencing(records, previous_records)
     records = apply_forced_completions(records)
+    records = freeze_historical_records(records, now)
     payload["records"] = sorted({
         (row["id"], str(row.get("date") or row.get("sourceDate") or "")): row
         for row in records

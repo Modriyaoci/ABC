@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-25T11:52:43.326737+08:00",
+    "generatedAt": "2026-10-02T00:00:00+08:00",
     "timezone": "UTC+8",
     "source": "https://results.asiangames2026.org/#/schedule/daily/",
     "total": 785,
@@ -102,7 +102,9 @@
         "2026-09-28",
         "2026-09-29"
       ]
-    }
+    },
+    "historicalFrozenAt": "2026-10-02T00:00:00+08:00",
+    "historicalCutoff": "2026-10-02"
   },
   "records": [
     {
@@ -1857,7 +1859,7 @@
       "score": "已取消",
       "venue": "Korogi Athletic Park",
       "court": "",
-      "status": "CANCELED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -116130,8 +116132,8 @@
       "score": "5 : 1",
       "venue": "冈崎中央综合公园棒球场",
       "court": "",
-      "status": "RUNNING",
-      "isLive": true
+      "status": "OFFICIAL",
+      "isLive": false
     },
     {
       "id": "BBL:M.TEAM9-------------.SF5-.000200--",
@@ -116675,8 +116677,8 @@
       "score": "1 : 1",
       "venue": "丰桥市民棒球场",
       "court": "",
-      "status": "RUNNING",
-      "isLive": true
+      "status": "OFFICIAL",
+      "isLive": false
     },
     {
       "id": "BDM:M.SINGLES-----------.R64-.001600--",
@@ -117913,7 +117915,7 @@
       "score": "1 : 0",
       "venue": "一宫市综合体育馆",
       "court": "Court 1",
-      "status": "UNOFFICIAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -118487,8 +118489,8 @@
       "score": "1 : 3",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 4",
-      "status": "RUNNING",
-      "isLive": true
+      "status": "OFFICIAL",
+      "isLive": false
     },
     {
       "id": "TTE:W.SINGLES-----------.R32-.000300--",
@@ -119370,8 +119372,8 @@
       "score": "1 : 1",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 2",
-      "status": "RUNNING",
-      "isLive": true
+      "status": "OFFICIAL",
+      "isLive": false
     },
     {
       "id": "TTE:W.SINGLES-----------.R32-.000600--",
@@ -119651,8 +119653,8 @@
       "score": "0 : 3",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 6",
-      "status": "RUNNING",
-      "isLive": true
+      "status": "OFFICIAL",
+      "isLive": false
     },
     {
       "id": "TTE:W.SINGLES-----------.R32-.000700--",
@@ -120251,8 +120253,8 @@
       "score": "0 : 3",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 9",
-      "status": "RUNNING",
-      "isLive": true
+      "status": "OFFICIAL",
+      "isLive": false
     },
     {
       "id": "HBL:W.TEAM7-------------.FNL-.001300--",
@@ -120870,8 +120872,8 @@
       "score": "8 : 9",
       "venue": "ENTRIO",
       "court": "",
-      "status": "RUNNING",
-      "isLive": true
+      "status": "OFFICIAL",
+      "isLive": false
     },
     {
       "id": "BDM:M.SINGLES-----------.R64-.001200--",
@@ -121128,10 +121130,10 @@
       "category": "男子单打",
       "stage": "64强赛 · 第12场",
       "matchup": "JARGALSAIKHAN G（蒙古） vs LIN C（中华台北）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 1",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -121406,8 +121408,8 @@
       "score": "0 : 0",
       "venue": "一宫市综合体育馆",
       "court": "Court 2",
-      "status": "RUNNING",
-      "isLive": true
+      "status": "OFFICIAL",
+      "isLive": false
     },
     {
       "id": "BDM:W.SINGLES-----------.R64-.001700--",
@@ -121964,7 +121966,7 @@
       "score": "0 : 0",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 3",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -122192,10 +122194,10 @@
       "category": "女子单打",
       "stage": "32强赛 · 第10场",
       "matchup": "ERKEBAEVA A（乌兹别克斯坦） vs SU T（中国香港）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 4",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -122423,10 +122425,10 @@
       "category": "女子单打",
       "stage": "32强赛 · 第11场",
       "matchup": "AKULA S（印度） vs PYON S（朝鲜）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 2",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -122654,10 +122656,10 @@
       "category": "女子单打",
       "stage": "32强赛 · 第12场",
       "matchup": "CHEN S（中华台北） vs ZHU Y（中国澳门）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 1",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -122885,10 +122887,10 @@
       "category": "女子单打",
       "stage": "32强赛 · 第13场",
       "matchup": "JOO C（韩国） vs SWARNA B（斯里兰卡）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 5",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -123116,10 +123118,10 @@
       "category": "女子单打",
       "stage": "32强赛 · 第14场",
       "matchup": "ABBOUD R（叙利亚） vs ZENG J（新加坡）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 7",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -123347,10 +123349,10 @@
       "category": "女子单打",
       "stage": "32强赛 · 第15场",
       "matchup": "PARANANG O（泰国） vs NAZIM A（马尔代夫）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 8",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -123552,10 +123554,10 @@
       "category": "女子单打",
       "stage": "32强赛 · 第16场",
       "matchup": "ALI M（卡塔尔） vs SUN Y（中国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 9",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -124173,10 +124175,10 @@
       "category": "男子",
       "stage": "预赛 B组 · 第9场",
       "matchup": "巴林 vs 科威特",
-      "score": "待赛",
+      "score": "—",
       "venue": "春日井市综合体育馆",
       "court": "",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -124234,10 +124236,10 @@
       "category": "男子",
       "stage": "预赛 A组",
       "matchup": "阿富汗 vs 尼泊尔",
-      "score": "待赛",
+      "score": "—",
       "venue": "Korogi Athletic Park",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -124465,10 +124467,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第1场",
       "matchup": "WANG C（中国） vs PREECHAYAN T（泰国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 8",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -124696,10 +124698,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第2场",
       "matchup": "U T（朝鲜） vs THAKKAR M（印度）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 1",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -124927,10 +124929,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第3场",
       "matchup": "FENG Y（中华台北） vs CHOONG J（马来西亚）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 3",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -125158,10 +125160,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第4场",
       "matchup": "SALEH M（巴林） vs JANG W（韩国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 4",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -125389,10 +125391,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第5场",
       "matchup": "WONG C（中国香港） vs ISKANDAROV S（乌兹别克斯坦）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 5",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -125646,10 +125648,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第6场",
       "matchup": "ALAMIYAN N（伊朗） vs PANG Y（新加坡）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 6",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -125877,10 +125879,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第7场",
       "matchup": "KURMANGALIYEV A（哈萨克斯坦） vs GUBRAN E（也门）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 7",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -126108,10 +126110,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第8场",
       "matchup": "AHUSSEIN M（卡塔尔） vs HARIMOTO T（日本）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 2",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -126339,10 +126341,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第9场",
       "matchup": "LIN Y（中华台北） vs RASHED R（巴林）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 8",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -126570,10 +126572,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第10场",
       "matchup": "TANCHAROEN S（泰国） vs GERASSIMENKO K（哈萨克斯坦）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 7",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -126827,10 +126829,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第11场",
       "matchup": "CHAN B（中国香港） vs ALDHUBHANI M（也门）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 6",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -127058,10 +127060,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第12场",
       "matchup": "RI J（朝鲜） vs AN J（韩国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 1",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -127289,10 +127291,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第13场",
       "matchup": "LIN S（中国） vs MAK T（中国澳门）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 2",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -127546,10 +127548,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第14场",
       "matchup": "FARAJI B（伊朗） vs SHAH M（印度）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 5",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -127777,10 +127779,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第15场",
       "matchup": "QUEK Y（新加坡） vs ABDULHUSSEIN A（卡塔尔）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 4",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -128008,10 +128010,10 @@
       "category": "男子单打",
       "stage": "32强赛 · 第16场",
       "matchup": "ANKHBAYAR B（蒙古） vs MATSUSHIMA S（日本）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 3",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -128673,10 +128675,10 @@
       "category": "女子",
       "stage": "决赛 · 第14场",
       "matchup": "哈萨克斯坦 vs 日本",
-      "score": "待赛",
+      "score": "—",
       "venue": "ENTRIO",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -128966,10 +128968,10 @@
       "category": "女子双打",
       "stage": "16强赛 · 第5场",
       "matchup": "SHIN Y / JOO C（韩国） vs TAN Z / LAI C（新加坡）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 8",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -129259,10 +129261,10 @@
       "category": "女子双打",
       "stage": "16强赛 · 第6场",
       "matchup": "YEH Y / CHENG I（中华台北） vs SAWETTABUT S / PARANANG O（泰国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 5",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -129552,10 +129554,10 @@
       "category": "女子双打",
       "stage": "16强赛 · 第7场",
       "matchup": "NAGASAKI M / MENDE R（日本） vs LEE H / SU T（中国香港）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 2",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -129845,10 +129847,10 @@
       "category": "女子双打",
       "stage": "16强赛 · 第8场",
       "matchup": "AKULA S / DAS S（印度） vs KUAI M / WANG M（中国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 1",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -130414,10 +130416,10 @@
       "category": "男子",
       "stage": "预赛 A组 · 第6场",
       "matchup": "卡塔尔 vs 日本",
-      "score": "待赛",
+      "score": "—",
       "venue": "春日井市综合体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -130711,10 +130713,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第5场",
       "matchup": "RANKIREDDY S / SHETTY C（印度） vs TEERARATSAKUL P / SUKPHUN P（泰国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 1",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -131004,10 +131006,10 @@
       "category": "女子双打",
       "stage": "16强赛 · 第1场",
       "matchup": "HARIMOTO M / HAYATA H（日本） vs CHEN S / WU Y（中华台北）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 1",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -131297,10 +131299,10 @@
       "category": "女子双打",
       "stage": "16强赛 · 第2场",
       "matchup": "FAN S / CHEN Y（中国） vs GHORPADE Y / CHITALE D（印度）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 2",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -131616,10 +131618,10 @@
       "category": "女子双打",
       "stage": "16强赛 · 第3场",
       "matchup": "LOY M / SER L（新加坡） vs PUTRI C / RASMI C（印度尼西亚）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 9",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -131909,10 +131911,10 @@
       "category": "女子双打",
       "stage": "16强赛 · 第4场",
       "matchup": "KIM N / LEE E（韩国） vs DOO H / NG W（中国香港）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 4",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -132206,10 +132208,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第2场",
       "matchup": "CHIA A / TEE K（马来西亚） vs ABDURAKHIMOV O / SAIDOV D（塔吉克斯坦）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 4",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -132503,10 +132505,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第11场",
       "matchup": "SOKTHAVY P / LUANG AMATH N（老挝） vs THONGSA-NGA W / CHAROENKITAMORN C（泰国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 3",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -132796,10 +132798,10 @@
       "category": "男子双打",
       "stage": "16强赛 · 第1场",
       "matchup": "HUANG Y / LIN S（中国） vs LAM S / YIU K（中国香港）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 1",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -133089,10 +133091,10 @@
       "category": "男子双打",
       "stage": "16强赛 · 第2场",
       "matchup": "GERASSIMENKO K / KURMANGALIYEV A（哈萨克斯坦） vs FENG Y / KUO G（中华台北）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 3",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -133382,10 +133384,10 @@
       "category": "男子双打",
       "stage": "16强赛 · 第3场",
       "matchup": "MATSUSHIMA S / TOGAMI S（日本） vs DESAI H / GNANASEKARAN S（印度）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 2",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -133675,10 +133677,10 @@
       "category": "男子双打",
       "stage": "16强赛 · 第4场",
       "matchup": "CHEW Z / CHUA J（新加坡） vs OH J / LIM J（韩国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 8",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -134015,7 +134017,7 @@
       "score": "0 : 0",
       "venue": "一宫市综合体育馆",
       "court": "Court 3",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -134361,10 +134363,10 @@
       "category": "混合双打",
       "stage": "16强赛 · 第2场",
       "matchup": "KAPILA D / CRASTO T（印度） vs LAI S / GOH S（马来西亚）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 4",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -134710,10 +134712,10 @@
       "category": "混合双打",
       "stage": "16强赛 · 第3场",
       "matchup": "TAGUCHI M / WATANABE Y（日本） vs SYAHNAWI A / MARWAH N（印度尼西亚）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 2",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -135059,10 +135061,10 @@
       "category": "混合双打",
       "stage": "16强赛 · 第4场",
       "matchup": "JEONG N / JO S（韩国） vs TRAN D / PHAM T（越南）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 3",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -135408,10 +135410,10 @@
       "category": "混合双打",
       "stage": "16强赛 · 第5场",
       "matchup": "RAMADHANTI S / JOAQUIN N（印度尼西亚） vs OUPTHONG R / SUDJAIPRAPARAT J（泰国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 4",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -135757,10 +135759,10 @@
       "category": "混合双打",
       "stage": "16强赛 · 第6场",
       "matchup": "HOBARA S / SHIMOGAMI Y（日本） vs YE H / CHAN N（中华台北）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 1",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -136106,10 +136108,10 @@
       "category": "混合双打",
       "stage": "16强赛 · 第7场",
       "matchup": "CHEN T / CHENG S（马来西亚） vs KIM J / JANG H（韩国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 1",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -136429,10 +136431,10 @@
       "category": "混合双打",
       "stage": "16强赛 · 第8场",
       "matchup": "CHAN Y / NG T（中国香港） vs JIANG Z / WEI Y（中国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 2",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -136726,10 +136728,10 @@
       "category": "女子双打",
       "stage": "32强赛 · 第6场",
       "matchup": "TSANG H / LUI L（中国香港） vs PULLELA G / JOLLY T（印度）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 2",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -137023,10 +137025,10 @@
       "category": "女子双打",
       "stage": "32强赛 · 第7场",
       "matchup": "SETIANINGRUM F / ROSE R（印度尼西亚） vs TAN P / MURALITHARAN T（马来西亚）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 1",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -137320,10 +137322,10 @@
       "category": "女子双打",
       "stage": "32强赛 · 第15场",
       "matchup": "KUSUMA F / PUSPITASARI M（印度尼西亚） vs SELVAM K / SINGHI S（印度）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 3",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -137941,10 +137943,10 @@
       "category": "男子",
       "stage": "预赛 B组 · 第10场",
       "matchup": "哈萨克斯坦 vs 韩国",
-      "score": "待赛",
+      "score": "—",
       "venue": "春日井市综合体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -138562,10 +138564,10 @@
       "category": "女子",
       "stage": "决赛 · 第15场",
       "matchup": "韩国 vs 中国",
-      "score": "待赛",
+      "score": "—",
       "venue": "ENTRIO",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -138881,10 +138883,10 @@
       "category": "男子双打",
       "stage": "16强赛 · 第5场",
       "matchup": "CHAN B / WONG C（中国香港） vs ALAMIYAN N / ALAMIAN N（伊朗）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 7",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -139200,10 +139202,10 @@
       "category": "男子双打",
       "stage": "16强赛 · 第6场",
       "matchup": "RI J / U T（朝鲜） vs WEN R / XIANG P（中国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 2",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -139493,10 +139495,10 @@
       "category": "男子双打",
       "stage": "16强赛 · 第7场",
       "matchup": "QUEK Y / PANG Y（新加坡） vs WONG Q / CHOONG J（马来西亚）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 4",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -139786,10 +139788,10 @@
       "category": "男子双打",
       "stage": "16强赛 · 第8场",
       "matchup": "HSU H / HUNG J（中华台北） vs HARIMOTO T / SHINOZUKA H（日本）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 1",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -140083,10 +140085,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第9场",
       "matchup": "MOHD. R. N / GOH S（马来西亚） vs WANG C / CHIU H（中华台北）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 2",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -140380,10 +140382,10 @@
       "category": "女子双打",
       "stage": "32强赛 · 第4场",
       "matchup": "HSIEH P / HUNG E（中华台北） vs TSELMEG-OD E / ODBAYAR A（蒙古）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 3",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -140677,10 +140679,10 @@
       "category": "女子双打",
       "stage": "32强赛 · 第8场",
       "matchup": "KIM J / YU M（朝鲜） vs TUNGKASATAN N / MIJAD H（泰国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 4",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -140798,10 +140800,10 @@
       "category": "男子",
       "stage": "超级循环赛 · 第15场",
       "matchup": "中华台北 vs 中国",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园棒球场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -140919,10 +140921,10 @@
       "category": "男子",
       "stage": "超级循环赛 · 第16场",
       "matchup": "韩国 vs 日本",
-      "score": "待赛",
+      "score": "—",
       "venue": "丰桥市民棒球场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -141316,10 +141318,10 @@
       "category": "混合双打",
       "stage": "半决赛 · 第2场",
       "matchup": "SHAH M / CHITALE D（印度） vs WANG C / SUN Y（中国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 1",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -141613,10 +141615,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第3场",
       "matchup": "YANG P / LEE J（中华台北） vs HE J / LIU Y（中国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 1",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -141910,10 +141912,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第6场",
       "matchup": "LEONG I / VONG K（中国澳门） vs MARTHIN D / CARNANDO L（印度尼西亚）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 4",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -142207,10 +142209,10 @@
       "category": "女子双打",
       "stage": "32强赛 · 第10场",
       "matchup": "PUI C / NG W（中国澳门） vs YEUNG N / YEUNG P（中国香港）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 3",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -142504,10 +142506,10 @@
       "category": "女子双打",
       "stage": "32强赛 · 第13场",
       "matchup": "LIN J / HSU Y（中华台北） vs RAMDAN N / LOW Z（马来西亚）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 2",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -142901,10 +142903,10 @@
       "category": "混合双打",
       "stage": "半决赛 · 第1场",
       "matchup": "LIM J / SHIN Y（韩国） vs LIN S / KUAI M（中国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "Table 1",
-      "status": "START_LIST",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -143198,10 +143200,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第7场",
       "matchup": "UULENSOLONGO U / KHISHIGCHULUUN D（蒙古） vs NGUYEN D / TRAN D（越南）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 1",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -143495,10 +143497,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第10场",
       "matchup": "OHIDUL M / JUMAR A（孟加拉国） vs KOBAYASHI Y / HOKI T（日本）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 4",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -143792,10 +143794,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第13场",
       "matchup": "KI D / KANG M（韩国） vs SHAHEED ZAKI H / AHMED N（马尔代夫）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 3",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -144089,10 +144091,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第15场",
       "matchup": "PUI P / PUI C（中国澳门） vs CHEUNG S / DENG C（中国香港）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 2",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -144386,10 +144388,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第4场",
       "matchup": "LUI C / HUNG K（中国香港） vs NISHI H / KUMAGAI K（日本）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 1",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -144683,10 +144685,10 @@
       "category": "女子双打",
       "stage": "32强赛 · 第9场",
       "matchup": "ABDUL RAZZAQ F / ABDUL RAZZAQ A（马尔代夫） vs SUDJAIPRAPARAT J / AIMSAARD N（泰国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "TBA",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -144980,10 +144982,10 @@
       "category": "女子双打",
       "stage": "32强赛 · 第11场",
       "matchup": "PHAM T / PHAM T（越南） vs NAKANISHI K / UESAKA R（日本）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 2",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -145277,10 +145279,10 @@
       "category": "女子双打",
       "stage": "32强赛 · 第14场",
       "matchup": "GANBAATAR M / KHERLENBAATAR S（蒙古） vs SMAGULOVA K / RAKHMETULLAYEVA N（哈萨克斯坦）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "TBA",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -145574,10 +145576,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第8场",
       "matchup": "NIYAZOV A / KULMATOV K（哈萨克斯坦） vs SINGHA G / JAMAN A（孟加拉国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 2",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -145871,10 +145873,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第14场",
       "matchup": "KHANAL K / MAHARJAN P（尼泊尔） vs KOH W / KUBO J（新加坡）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "TBA",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -146168,10 +146170,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第16场",
       "matchup": "AMSAKARUNAN H / MADATHIL R A（印度） vs ALFIAN F / FIKRI M（印度尼西亚）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "Court 1",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -146465,10 +146467,10 @@
       "category": "女子双打",
       "stage": "32强赛 · 第2场",
       "matchup": "SHERCHAN R / MAHARJAN R（尼泊尔） vs KIM H / LEE Y（韩国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "TBA",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -146762,10 +146764,10 @@
       "category": "男子双打",
       "stage": "32强赛 · 第12场",
       "matchup": "ODBAYAR B / BAYARSAIKHAN B（蒙古） vs LIANG W / WANG C（中国）",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "TBA",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -146823,10 +146825,10 @@
       "category": "男子",
       "stage": "预赛 A组",
       "matchup": "日本 vs 尼泊尔",
-      "score": "待赛",
+      "score": "—",
       "venue": "Korogi Athletic Park",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -146850,10 +146852,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -146877,10 +146879,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -146904,10 +146906,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -146931,10 +146933,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -146958,10 +146960,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -146985,10 +146987,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147012,10 +147014,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147039,10 +147041,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147066,10 +147068,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147093,10 +147095,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147120,10 +147122,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147147,10 +147149,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147174,10 +147176,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147201,10 +147203,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147228,10 +147230,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147255,10 +147257,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147282,10 +147284,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147309,10 +147311,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147336,10 +147338,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147363,10 +147365,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147390,10 +147392,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147417,10 +147419,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147444,10 +147446,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147471,10 +147473,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147498,10 +147500,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147525,10 +147527,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147552,10 +147554,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147579,10 +147581,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147606,10 +147608,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147633,10 +147635,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147660,10 +147662,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147687,10 +147689,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147714,10 +147716,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147741,10 +147743,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147768,10 +147770,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147795,10 +147797,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147822,10 +147824,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147849,10 +147851,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147876,10 +147878,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147903,10 +147905,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147930,10 +147932,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147957,10 +147959,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -147984,10 +147986,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -148011,10 +148013,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -148038,10 +148040,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -148065,10 +148067,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -148092,10 +148094,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -148119,10 +148121,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -148240,10 +148242,10 @@
       "category": "男子",
       "stage": "排位赛 · 第17场",
       "matchup": "巴勒斯坦 vs 泰国",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园棒球场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -148361,10 +148363,10 @@
       "category": "男子",
       "stage": "排位赛 · 第18场",
       "matchup": "中国香港 vs 菲律宾",
-      "score": "待赛",
+      "score": "—",
       "venue": "丰桥市民棒球场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -148566,10 +148568,10 @@
       "category": "男子",
       "stage": "1/4决赛 · 第1场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "春日井市综合体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -149241,10 +149243,10 @@
       "category": "女子",
       "stage": "决赛 · 第16场",
       "matchup": "哈萨克斯坦 vs 乌兹别克斯坦",
-      "score": "待赛",
+      "score": "—",
       "venue": "ENTRIO",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -149302,10 +149304,10 @@
       "category": "男子",
       "stage": "预赛 B组",
       "matchup": "马来西亚 vs 阿曼",
-      "score": "待赛",
+      "score": "—",
       "venue": "Korogi Athletic Park",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -149507,10 +149509,10 @@
       "category": "男子",
       "stage": "1/4决赛 · 第2场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "春日井市综合体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150180,10 +150182,10 @@
       "category": "女子",
       "stage": "决赛 · 第17场",
       "matchup": "中国 vs 中国香港",
-      "score": "待赛",
+      "score": "—",
       "venue": "ENTRIO",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150207,10 +150209,10 @@
       "category": "男子双打",
       "stage": "1/4决赛 · 第1场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150234,10 +150236,10 @@
       "category": "男子双打",
       "stage": "1/4决赛 · 第2场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150261,10 +150263,10 @@
       "category": "男子双打",
       "stage": "1/4决赛 · 第3场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150288,10 +150290,10 @@
       "category": "男子双打",
       "stage": "1/4决赛 · 第4场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150315,10 +150317,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150342,10 +150344,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150369,10 +150371,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150396,10 +150398,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150423,10 +150425,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150450,10 +150452,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150477,10 +150479,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150504,10 +150506,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150531,10 +150533,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150558,10 +150560,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150585,10 +150587,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150612,10 +150614,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150639,10 +150641,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150666,10 +150668,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150693,10 +150695,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150720,10 +150722,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150747,10 +150749,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150774,10 +150776,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150801,10 +150803,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150828,10 +150830,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150855,10 +150857,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150882,10 +150884,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150909,10 +150911,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150936,10 +150938,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150963,10 +150965,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -150990,10 +150992,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151017,10 +151019,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151044,10 +151046,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151071,10 +151073,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151098,10 +151100,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151125,10 +151127,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151152,10 +151154,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151357,10 +151359,10 @@
       "category": "男子",
       "stage": "1/4决赛 · 第3场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "春日井市综合体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151384,10 +151386,10 @@
       "category": "女子单打",
       "stage": "1/4决赛 · 第1场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151411,10 +151413,10 @@
       "category": "女子单打",
       "stage": "1/4决赛 · 第2场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151438,10 +151440,10 @@
       "category": "女子单打",
       "stage": "1/4决赛 · 第3场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151465,10 +151467,10 @@
       "category": "女子单打",
       "stage": "1/4决赛 · 第4场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151492,10 +151494,10 @@
       "category": "男子单打",
       "stage": "1/4决赛 · 第1场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151519,10 +151521,10 @@
       "category": "男子单打",
       "stage": "1/4决赛 · 第2场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151546,10 +151548,10 @@
       "category": "男子单打",
       "stage": "1/4决赛 · 第3场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -151573,10 +151575,10 @@
       "category": "男子单打",
       "stage": "1/4决赛 · 第4场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152246,10 +152248,10 @@
       "category": "女子",
       "stage": "决赛 · 第18场",
       "matchup": "韩国 vs 越南",
-      "score": "待赛",
+      "score": "—",
       "venue": "ENTRIO",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152273,10 +152275,10 @@
       "category": "女子双打",
       "stage": "1/4决赛 · 第1场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152300,10 +152302,10 @@
       "category": "女子双打",
       "stage": "1/4决赛 · 第2场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152327,10 +152329,10 @@
       "category": "女子双打",
       "stage": "1/4决赛 · 第3场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152354,10 +152356,10 @@
       "category": "女子双打",
       "stage": "1/4决赛 · 第4场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152559,10 +152561,10 @@
       "category": "男子",
       "stage": "1/4决赛 · 第4场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "春日井市综合体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152680,10 +152682,10 @@
       "category": "男子",
       "stage": "超级循环赛 · 第19场",
       "matchup": "中华台北 vs 日本",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园棒球场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152801,10 +152803,10 @@
       "category": "男子",
       "stage": "超级循环赛 · 第20场",
       "matchup": "中国 vs 韩国",
-      "score": "待赛",
+      "score": "—",
       "venue": "丰桥市民棒球场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152828,10 +152830,10 @@
       "category": "混合双打",
       "stage": "金牌赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152855,10 +152857,10 @@
       "category": "女子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152882,10 +152884,10 @@
       "category": "女子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152909,10 +152911,10 @@
       "category": "女子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152936,10 +152938,10 @@
       "category": "女子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152963,10 +152965,10 @@
       "category": "混合双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -152990,10 +152992,10 @@
       "category": "混合双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153017,10 +153019,10 @@
       "category": "混合双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153044,10 +153046,10 @@
       "category": "混合双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153071,10 +153073,10 @@
       "category": "男子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153098,10 +153100,10 @@
       "category": "男子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153125,10 +153127,10 @@
       "category": "男子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153152,10 +153154,10 @@
       "category": "男子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153179,10 +153181,10 @@
       "category": "男子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153206,10 +153208,10 @@
       "category": "男子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153233,10 +153235,10 @@
       "category": "男子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153260,10 +153262,10 @@
       "category": "男子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153287,10 +153289,10 @@
       "category": "男子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153314,10 +153316,10 @@
       "category": "男子单打",
       "stage": "64强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153341,10 +153343,10 @@
       "category": "男子单打",
       "stage": "64强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153368,10 +153370,10 @@
       "category": "女子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153395,10 +153397,10 @@
       "category": "女子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153422,10 +153424,10 @@
       "category": "女子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153449,10 +153451,10 @@
       "category": "女子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153476,10 +153478,10 @@
       "category": "女子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153503,10 +153505,10 @@
       "category": "女子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153530,10 +153532,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153557,10 +153559,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153584,10 +153586,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153611,10 +153613,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153638,10 +153640,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153665,10 +153667,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153692,10 +153694,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153719,10 +153721,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153746,10 +153748,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -153773,10 +153775,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -154008,10 +154010,10 @@
       "category": "男子",
       "stage": "预赛 B组 · 第1场",
       "matchup": "伊朗 vs 吉尔吉斯斯坦",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -154251,10 +154253,10 @@
       "category": "男子",
       "stage": "预赛 C组 · 第5场",
       "matchup": "卡塔尔 vs 中国香港",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -154292,10 +154294,10 @@
       "category": "男子",
       "stage": "铜牌赛第21场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园棒球场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -154319,10 +154321,10 @@
       "category": "男子双打",
       "stage": "半决赛 · 第1场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -154346,10 +154348,10 @@
       "category": "男子双打",
       "stage": "半决赛 · 第2场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -154589,10 +154591,10 @@
       "category": "男子",
       "stage": "预赛 A组 · 第2场",
       "matchup": "巴基斯坦 vs 哈萨克斯坦",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -154832,10 +154834,10 @@
       "category": "男子",
       "stage": "预赛 D组 · 第6场",
       "matchup": "韩国 vs 菲律宾",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -154859,10 +154861,10 @@
       "category": "男子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -154886,10 +154888,10 @@
       "category": "男子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -154913,10 +154915,10 @@
       "category": "男子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -154940,10 +154942,10 @@
       "category": "男子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -154967,10 +154969,10 @@
       "category": "男子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -154994,10 +154996,10 @@
       "category": "男子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -155021,10 +155023,10 @@
       "category": "男子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -155048,10 +155050,10 @@
       "category": "男子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -155075,10 +155077,10 @@
       "category": "女子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -155102,10 +155104,10 @@
       "category": "女子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -155129,10 +155131,10 @@
       "category": "女子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -155156,10 +155158,10 @@
       "category": "女子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -155865,10 +155867,10 @@
       "category": "女子",
       "stage": "决赛 · 第19场",
       "matchup": "乌兹别克斯坦 vs 中国香港",
-      "score": "待赛",
+      "score": "—",
       "venue": "ENTRIO",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -155892,10 +155894,10 @@
       "category": "女子单打",
       "stage": "半决赛 · 第1场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -155919,10 +155921,10 @@
       "category": "女子单打",
       "stage": "半决赛 · 第2场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -156644,10 +156646,10 @@
       "category": "女子",
       "stage": "决赛 · 第20场",
       "matchup": "中国 vs 越南",
-      "score": "待赛",
+      "score": "—",
       "venue": "ENTRIO",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -156887,10 +156889,10 @@
       "category": "男子",
       "stage": "预赛 B组 · 第3场",
       "matchup": "印度尼西亚 vs 泰国",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -157130,10 +157132,10 @@
       "category": "男子",
       "stage": "预赛 C组 · 第7场",
       "matchup": "印度 vs 越南",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -157855,10 +157857,10 @@
       "category": "女子",
       "stage": "决赛 · 第21场",
       "matchup": "日本 vs 韩国",
-      "score": "待赛",
+      "score": "—",
       "venue": "ENTRIO",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -157896,10 +157898,10 @@
       "category": "男子",
       "stage": "金牌赛第22场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "丰桥市民棒球场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158139,10 +158141,10 @@
       "category": "男子",
       "stage": "预赛 D组 · 第8场",
       "matchup": "中国 vs 中华台北",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158166,10 +158168,10 @@
       "category": "男子双打",
       "stage": "决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158409,10 +158411,10 @@
       "category": "男子",
       "stage": "预赛 A组 · 第4场",
       "matchup": "日本 vs 乌兹别克斯坦",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158436,10 +158438,10 @@
       "category": "女子单打",
       "stage": "金牌赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158487,10 +158489,10 @@
       "category": "男子",
       "stage": "1/4决赛 · 第1场",
       "matchup": "巴基斯坦 vs 待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "Korogi Athletic Park",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158514,10 +158516,10 @@
       "category": "女子双打",
       "stage": "半决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158541,10 +158543,10 @@
       "category": "女子双打",
       "stage": "半决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158568,10 +158570,10 @@
       "category": "混合双打",
       "stage": "半决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158595,10 +158597,10 @@
       "category": "混合双打",
       "stage": "半决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158622,10 +158624,10 @@
       "category": "男子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158649,10 +158651,10 @@
       "category": "男子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158676,10 +158678,10 @@
       "category": "男子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158703,10 +158705,10 @@
       "category": "男子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158730,10 +158732,10 @@
       "category": "男子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158757,10 +158759,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158784,10 +158786,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158811,10 +158813,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158838,10 +158840,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158865,10 +158867,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158892,10 +158894,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158919,10 +158921,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158946,10 +158948,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -158973,10 +158975,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159000,10 +159002,10 @@
       "category": "女子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159027,10 +159029,10 @@
       "category": "女子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159054,10 +159056,10 @@
       "category": "女子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159081,10 +159083,10 @@
       "category": "女子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159108,10 +159110,10 @@
       "category": "女子双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159135,10 +159137,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159162,10 +159164,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159189,10 +159191,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159216,10 +159218,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159243,10 +159245,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159270,10 +159272,10 @@
       "category": "女子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159297,10 +159299,10 @@
       "category": "混合双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159324,10 +159326,10 @@
       "category": "混合双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159351,10 +159353,10 @@
       "category": "混合双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159378,10 +159380,10 @@
       "category": "混合双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159405,10 +159407,10 @@
       "category": "混合双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159432,10 +159434,10 @@
       "category": "混合双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159459,10 +159461,10 @@
       "category": "混合双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159486,10 +159488,10 @@
       "category": "混合双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159721,10 +159723,10 @@
       "category": "男子",
       "stage": "预赛 B组 · 第9场",
       "matchup": "印度尼西亚 vs 吉尔吉斯斯坦",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159964,10 +159966,10 @@
       "category": "男子",
       "stage": "预赛 C组 · 第13场",
       "matchup": "印度 vs 中国香港",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -159991,10 +159993,10 @@
       "category": "女子双打",
       "stage": "半决赛 · 第1场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -160018,10 +160020,10 @@
       "category": "女子双打",
       "stage": "半决赛 · 第2场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -160261,10 +160263,10 @@
       "category": "男子",
       "stage": "预赛 A组 · 第10场",
       "matchup": "巴基斯坦 vs 乌兹别克斯坦",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -160504,10 +160506,10 @@
       "category": "男子",
       "stage": "预赛 D组 · 第14场",
       "matchup": "中国 vs 菲律宾",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -160531,10 +160533,10 @@
       "category": "男子双打",
       "stage": "半决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -160558,10 +160560,10 @@
       "category": "男子双打",
       "stage": "半决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -160585,10 +160587,10 @@
       "category": "男子单打",
       "stage": "半决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -160612,10 +160614,10 @@
       "category": "男子单打",
       "stage": "半决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -160639,10 +160641,10 @@
       "category": "女子单打",
       "stage": "半决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -160666,10 +160668,10 @@
       "category": "女子单打",
       "stage": "半决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -160717,10 +160719,10 @@
       "category": "男子",
       "stage": "1/4决赛 · 第2场",
       "matchup": "印度 vs 待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "Korogi Athletic Park",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -160744,10 +160746,10 @@
       "category": "男子单打",
       "stage": "半决赛 · 第1场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -160771,10 +160773,10 @@
       "category": "男子单打",
       "stage": "半决赛 · 第2场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -160976,10 +160978,10 @@
       "category": "男子",
       "stage": "半决赛 · 第1场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "ENTRIO",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -161219,10 +161221,10 @@
       "category": "男子",
       "stage": "预赛 B组 · 第11场",
       "matchup": "泰国 vs 伊朗",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -161462,10 +161464,10 @@
       "category": "男子",
       "stage": "预赛 C组 · 第15场",
       "matchup": "越南 vs 卡塔尔",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -161667,10 +161669,10 @@
       "category": "男子",
       "stage": "半决赛 · 第2场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "ENTRIO",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -161910,10 +161912,10 @@
       "category": "男子",
       "stage": "预赛 D组 · 第16场",
       "matchup": "中华台北 vs 韩国",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -161937,10 +161939,10 @@
       "category": "女子双打",
       "stage": "决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162180,10 +162182,10 @@
       "category": "男子",
       "stage": "预赛 A组 · 第12场",
       "matchup": "哈萨克斯坦 vs 日本",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162207,10 +162209,10 @@
       "category": "男子单打",
       "stage": "金牌赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "SKY HALL TOYOTA",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162258,10 +162260,10 @@
       "category": "男子",
       "stage": "1/4决赛 · 第3场",
       "matchup": "斯里兰卡 vs 待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "Korogi Athletic Park",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162285,10 +162287,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162312,10 +162314,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162339,10 +162341,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162366,10 +162368,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162393,10 +162395,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162420,10 +162422,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162447,10 +162449,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162474,10 +162476,10 @@
       "category": "男子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162501,10 +162503,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162528,10 +162530,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162555,10 +162557,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162582,10 +162584,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162609,10 +162611,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162636,10 +162638,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162663,10 +162665,10 @@
       "category": "男子单打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162690,10 +162692,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162717,10 +162719,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162744,10 +162746,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162771,10 +162773,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162798,10 +162800,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162825,10 +162827,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162852,10 +162854,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162879,10 +162881,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162906,10 +162908,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162933,10 +162935,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162960,10 +162962,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -162987,10 +162989,10 @@
       "category": "女子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -163014,10 +163016,10 @@
       "category": "混合双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -163041,10 +163043,10 @@
       "category": "混合双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -163068,10 +163070,10 @@
       "category": "混合双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -163095,10 +163097,10 @@
       "category": "混合双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -163122,10 +163124,10 @@
       "category": "混合双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -163149,10 +163151,10 @@
       "category": "混合双打",
       "stage": "32强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -163384,10 +163386,10 @@
       "category": "男子",
       "stage": "预赛 B组 · 第17场",
       "matchup": "吉尔吉斯斯坦 vs 泰国",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -163627,10 +163629,10 @@
       "category": "男子",
       "stage": "预赛 C组 · 第21场",
       "matchup": "中国香港 vs 越南",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -163654,10 +163656,10 @@
       "category": "男子双打",
       "stage": "金牌赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -163681,10 +163683,10 @@
       "category": "男子单打",
       "stage": "金牌赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -163708,10 +163710,10 @@
       "category": "女子双打",
       "stage": "金牌赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -163735,10 +163737,10 @@
       "category": "女子单打",
       "stage": "金牌赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -163762,10 +163764,10 @@
       "category": "混合双打",
       "stage": "金牌赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "一宫市综合体育馆",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -164005,10 +164007,10 @@
       "category": "男子",
       "stage": "预赛 A组 · 第18场",
       "matchup": "乌兹别克斯坦 vs 哈萨克斯坦",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -164248,10 +164250,10 @@
       "category": "男子",
       "stage": "预赛 D组 · 第22场",
       "matchup": "菲律宾 vs 中华台北",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -164299,10 +164301,10 @@
       "category": "男子",
       "stage": "1/4决赛 · 第4场",
       "matchup": "孟加拉国 vs 待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "Korogi Athletic Park",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -164542,10 +164544,10 @@
       "category": "男子",
       "stage": "预赛 B组 · 第19场",
       "matchup": "伊朗 vs 印度尼西亚",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -164785,10 +164787,10 @@
       "category": "男子",
       "stage": "预赛 C组 · 第23场",
       "matchup": "卡塔尔 vs 印度",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -164990,10 +164992,10 @@
       "category": "男子",
       "stage": "铜牌赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "ENTRIO",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -165233,10 +165235,10 @@
       "category": "男子",
       "stage": "预赛 D组 · 第24场",
       "matchup": "韩国 vs 中国",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -165476,10 +165478,10 @@
       "category": "男子",
       "stage": "预赛 A组 · 第20场",
       "matchup": "日本 vs 巴基斯坦",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -165681,10 +165683,10 @@
       "category": "男子",
       "stage": "金牌赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "ENTRIO",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -165708,10 +165710,10 @@
       "category": "男子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -165735,10 +165737,10 @@
       "category": "男子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -165762,10 +165764,10 @@
       "category": "男子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -165789,10 +165791,10 @@
       "category": "男子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -165816,10 +165818,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -165843,10 +165845,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -165870,10 +165872,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -165897,10 +165899,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -165924,10 +165926,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -165951,10 +165953,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -165978,10 +165980,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166005,10 +166007,10 @@
       "category": "男子单打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166032,10 +166034,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166059,10 +166061,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166086,10 +166088,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166113,10 +166115,10 @@
       "category": "女子双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166140,10 +166142,10 @@
       "category": "女子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166167,10 +166169,10 @@
       "category": "女子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166194,10 +166196,10 @@
       "category": "女子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166221,10 +166223,10 @@
       "category": "女子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166248,10 +166250,10 @@
       "category": "混合双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166275,10 +166277,10 @@
       "category": "混合双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166302,10 +166304,10 @@
       "category": "混合双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166329,10 +166331,10 @@
       "category": "混合双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166356,10 +166358,10 @@
       "category": "混合双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166383,10 +166385,10 @@
       "category": "混合双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166410,10 +166412,10 @@
       "category": "混合双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166437,10 +166439,10 @@
       "category": "混合双打",
       "stage": "16强赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166478,10 +166480,10 @@
       "category": "男子",
       "stage": "半决赛 · 第1场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "Korogi Athletic Park",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166505,10 +166507,10 @@
       "category": "男子双打",
       "stage": "半决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166532,10 +166534,10 @@
       "category": "男子双打",
       "stage": "半决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166559,10 +166561,10 @@
       "category": "男子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166586,10 +166588,10 @@
       "category": "男子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166613,10 +166615,10 @@
       "category": "男子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166640,10 +166642,10 @@
       "category": "男子单打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166667,10 +166669,10 @@
       "category": "女子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166694,10 +166696,10 @@
       "category": "女子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166721,10 +166723,10 @@
       "category": "女子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166748,10 +166750,10 @@
       "category": "女子双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166775,10 +166777,10 @@
       "category": "女子单打",
       "stage": "半决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166802,10 +166804,10 @@
       "category": "女子单打",
       "stage": "半决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166829,10 +166831,10 @@
       "category": "混合双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166856,10 +166858,10 @@
       "category": "混合双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166883,10 +166885,10 @@
       "category": "混合双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166910,10 +166912,10 @@
       "category": "混合双打",
       "stage": "1/4决赛",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "名古屋市东山公园网球中心",
       "court": "",
-      "status": "PROVISIONAL",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166951,10 +166953,10 @@
       "category": "男子",
       "stage": "1/4决赛 · 第27场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -166992,10 +166994,10 @@
       "category": "男子",
       "stage": "第9至16名排位赛 · 第29场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -167033,10 +167035,10 @@
       "category": "男子",
       "stage": "1/4决赛 · 第28场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -167074,10 +167076,10 @@
       "category": "男子",
       "stage": "第9至16名排位赛 · 第30场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -167115,10 +167117,10 @@
       "category": "男子",
       "stage": "半决赛 · 第2场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "Korogi Athletic Park",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -167156,10 +167158,10 @@
       "category": "男子",
       "stage": "1/4决赛 · 第26场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -167197,10 +167199,10 @@
       "category": "男子",
       "stage": "第9至16名排位赛 · 第31场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -167238,10 +167240,10 @@
       "category": "男子",
       "stage": "第9至16名排位赛 · 第32场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "小牧公园竞技场",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {
@@ -167279,10 +167281,10 @@
       "category": "男子",
       "stage": "1/4决赛 · 第25场",
       "matchup": "对阵待定",
-      "score": "待赛",
+      "score": "—",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
-      "status": "SCHEDULED",
+      "status": "OFFICIAL",
       "isLive": false
     },
     {

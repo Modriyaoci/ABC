@@ -26,6 +26,7 @@ from sync_service import (
     apply_verified_tennis_snapshots,
     filter_unverified_tennis_rows,
     filter_unlocated_current_tennis_rows, apply_forced_completions,
+    freeze_historical_records,
     sync_all,
 )
 from live_service import FINAL_STATUSES, live_targets, sync_live
@@ -56,6 +57,15 @@ PLAYER_PHOTO_BASE = "https://results.asiangames2026.org/ag2026/photos/"
 PLAYER_PHOTO_CACHE_DIR = Path(os.environ.get("PLAYER_PHOTO_CACHE_DIR", str(ROOT / "data" / "player-photos")))
 PLAYER_PHOTO_CACHE: dict[str, tuple[bytes, str]] = {}
 PLAYER_PHOTO_LOCK = threading.Lock()
+# Tournament standings/brackets are much larger than the live score delta and
+# do not need to be requested again once a discipline has finished.  Keep the
+# last successful payload on disk so a restart (and an official 429) still
+# serves the complete local result.
+TOURNAMENT_CACHE_DIR = ROOT / "data" / "tournament-cache"
+# As of the current competition window these disciplines have no remaining
+# fixtures.  Tennis, volleyball and cricket stay live because their upcoming
+# matches can still change the published draw.
+FROZEN_TOURNAMENT_SPORTS = {"BBL", "BDM", "TTE", "HBL"}
 SPORT_PATHS = {
     "TEN": "tennis",
     "BBL": "baseball",
@@ -66,6 +76,60 @@ SPORT_PATHS = {
     "HBL": "handball",
 }
 SPORT_ROUTES = {f"/{slug}" for slug in SPORT_PATHS.values()}
+
+
+def _tournament_cache_path(sport: str) -> Path:
+    return TOURNAMENT_CACHE_DIR / f"{str(sport).upper()}.json"
+
+
+def _read_tournament_cache(sport: str) -> dict | None:
+    try:
+        payload = json.loads(_tournament_cache_path(sport).read_text(encoding="utf-8"))
+    except (OSError, ValueError, TypeError):
+        return None
+    return payload if isinstance(payload, dict) and isinstance(payload.get("events"), list) else None
+
+
+def _write_tournament_cache(sport: str, payload: dict) -> None:
+    if not isinstance(payload, dict) or not isinstance(payload.get("events"), list):
+        return
+    try:
+        TOURNAMENT_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        target = _tournament_cache_path(sport)
+        temporary = target.with_suffix(".json.tmp")
+        temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        temporary.replace(target)
+    except OSError:
+        # The cache is an optimization; a read-only deployment can still use
+        # the in-memory official response for this request.
+        return
+
+
+def load_tournament_data(sport: str, records: list[dict] | None = None) -> dict:
+    """Serve frozen disciplines locally and persist every successful refresh.
+
+    A missing cache is populated once from the official endpoint.  Thereafter
+    completed disciplines never make another upstream request, while active
+    disciplines continue to refresh and also leave a fallback snapshot for a
+    transient outage.
+    """
+    sport = str(sport or "").upper()
+    cached = _read_tournament_cache(sport)
+    if sport in FROZEN_TOURNAMENT_SPORTS and cached is not None:
+        return {**cached, "local": True}
+    if sport in FROZEN_TOURNAMENT_SPORTS:
+        # These disciplines are intentionally offline after their final
+        # competition day. Do not keep probing the official endpoint when a
+        # cache was never captured (for example during a 429 window).
+        return {"updatedAt": None, "events": [], "message": "本地暂无已缓存的积分榜或对阵图", "local": True, "unavailable": True}
+    try:
+        value = get_tournament(sport, records)
+    except Exception:
+        if cached is not None:
+            return {**cached, "local": True, "stale": True}
+        raise
+    _write_tournament_cache(sport, value)
+    return value
 
 
 def iso_now() -> str:
@@ -269,6 +333,7 @@ class AppState:
             payload["records"] = filter_unverified_tennis_rows(payload["records"])
             payload["records"] = filter_unlocated_current_tennis_rows(payload["records"], self.clock())
             payload["records"] = apply_forced_completions(payload["records"])
+            payload["records"] = freeze_historical_records(payload["records"], self.clock())
         self.payload = payload
         self.status["dataVersion"] = payload.get("meta", {}).get("generatedAt")
         self.status["scheduleVersion"] = self.status["dataVersion"]
@@ -570,6 +635,12 @@ class AppState:
                 payload = self.live_sync(self.data_file, self.clock(), self._progress)
             else:
                 payload = self.full_sync(self.data_file, self._progress)
+            # Never let a fresh feed resurrect rows from dates that have
+            # already passed. Keep those results local and out of future
+            # automatic polling once they have been frozen.
+            payload["records"] = freeze_historical_records(payload.get("records", []), self.clock())
+            payload.setdefault("meta", {})["historicalFrozenAt"] = self.clock().isoformat(timespec="seconds")
+            self.data_file.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
             full_success = last_full_success if live else self.clock().isoformat()
             if (not was_completed or reason in {"manual", "confirmation"}) and today_completed(payload, self.clock(), full_success):
                 ready = self._finish_cached_results(payload, reason == "manual")
@@ -931,7 +1002,10 @@ class RequestHandler(BaseHTTPRequestHandler):
                     if sport not in SPORTS:
                         self._send_json({"message": "未知项目"}, HTTPStatus.BAD_REQUEST)
                         return
-                    value = OFFICIAL_CACHE.get(("tournament", sport), 55, lambda: get_tournament(sport, records))
+                    # Completed disciplines are served from the persistent
+                    # tournament snapshot; active disciplines retain the
+                    # short in-memory cache and refresh normally.
+                    value = OFFICIAL_CACHE.get(("tournament", sport), 55, lambda: load_tournament_data(sport, records))
                 self._send_json(value)
             except Exception:
                 self._send_json({"message": "暂时无法读取官网详情，请稍后重试"}, HTTPStatus.BAD_GATEWAY)

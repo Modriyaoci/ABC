@@ -28,6 +28,27 @@ FORCED_COMPLETIONS = {
     },
 }
 
+HISTORICAL_FINAL_STATUSES = frozenset({"OFFICIAL", "FINISHED", "COMPLETED", "CANCELED", "CANCELLED"})
+
+
+def freeze_historical_records(records: list[dict[str, Any]], now: datetime | None = None) -> list[dict[str, Any]]:
+    """Freeze every match before today as terminal local data.
+
+    Historical rows must never be re-polled: a delayed/empty live feed can
+    otherwise resurrect them as START_LIST or INTERRUPTED. Existing scores
+    are retained; rows whose score was only a placeholder use an em dash so
+    the UI cannot present them as upcoming fixtures.
+    """
+    current = (now or datetime.now(BEIJING_TZ)).astimezone(BEIJING_TZ).date().isoformat()
+    for row in records:
+        date = str(row.get("date") or row.get("sourceDate") or "")
+        if date and date < current:
+            row["status"] = "OFFICIAL"
+            row["isLive"] = False
+            if str(row.get("score") or "").strip() in {"", "待赛", "—", "-"}:
+                row["score"] = "—"
+    return records
+
 
 def apply_forced_completions(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Pin manually confirmed terminal results above unreliable live data."""
@@ -1126,28 +1147,17 @@ def sync_all(
         raise SyncError("；".join(day_errors))
 
     today = datetime.now(BEIJING_TZ).date().isoformat()
-    # Only confirmed historical results are immutable. A service restart can
-    # restore an older seed with pending results; reconcile those sport/days
-    # even if they have disappeared from today's live feed.
-    try:
-        cached_rows = json.loads(output_path.read_text(encoding="utf-8")).get("records", [])
-    except (OSError, ValueError):
-        cached_rows = []
-    settled = {"OFFICIAL", "FINISHED", "COMPLETED", "CANCELED", "CANCELLED"}
-    unresolved_days = {
-        (row.get("sport"), str(row.get("sourceDate") or row.get("date") or ""))
-        for row in cached_rows
-        if row.get("sport") in SPORTS
-        and str(row.get("status") or "").upper() not in settled | {"UNOFFICIAL"}
-        and str(row.get("sourceDate") or row.get("date") or "") < today
-    }
+    # Historical days are local snapshots. Once their competition day has
+    # passed, do not keep re-requesting them to repair a stale/partial row:
+    # repeated retries were the source of both 429s and status flip-flops.
+    # A manual full import can still replace the local snapshot explicitly.
     tasks = [
         (disc, str(day.get("raw")))
         for disc, days in day_lists.items()
         for day in days
         if day.get("raw") and str(day.get("raw")) >= today
     ]
-    tasks = sorted(set(tasks) | {pair for pair in unresolved_days if pair[1]})
+    tasks = sorted(set(tasks))
     total = len(tasks)
     completed = 0
     records: list[dict[str, Any]] = []
@@ -1206,6 +1216,8 @@ def sync_all(
     # no-court row cannot be resurrected when the official endpoint is partial.
     records = filter_unlocated_current_tennis_rows(records)
     records = apply_court_sequencing(records, previous_records)
+    records = apply_forced_completions(records)
+    records = freeze_historical_records(records)
     unique = {
         (record["id"], str(record.get("date") or record.get("sourceDate") or "")): record
         for record in records
@@ -1227,6 +1239,7 @@ def sync_all(
                 disc: sorted(str(day["raw"]) for day in days if day.get("raw"))
                 for disc, days in day_lists.items()
             },
+            "historicalCutoff": datetime.now(BEIJING_TZ).date().isoformat(),
         },
         "records": ordered,
     }
