@@ -1,0 +1,3966 @@
+{
+  "updatedAt": "2026-10-03T09:35:50+08:00",
+  "events": [
+    {
+      "id": "M.SINGLES-----------",
+      "name": "男子单打",
+      "groups": [],
+      "rounds": [
+        {
+          "id": "MAINDRAW:M.SINGLES-----------.R64-",
+          "name": "64强赛",
+          "matches": [
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.000100--",
+              "home": "WANG Chuqin（中国）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.000200--",
+              "home": "PREECHAYAN T（泰国）",
+              "away": "KHAN M（巴基斯坦）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.000300--",
+              "home": "U T（朝鲜）",
+              "away": "TOLOGONOV N（吉尔吉斯斯坦）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.000400--",
+              "home": "BYE",
+              "away": "THAKKAR Manav（印度）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.000500--",
+              "home": "FENG Yi-hsin（中华台北）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.000600--",
+              "home": "ZHENG H（中国澳门）",
+              "away": "CHOONG J（马来西亚）",
+              "homeScore": "1",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.000700--",
+              "home": "SALEH M（巴林）",
+              "away": "BAWM R（孟加拉国）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.000800--",
+              "home": "BYE",
+              "away": "JANG Woojin（韩国）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.000900--",
+              "home": "WONG Chun Ting（中国香港）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.001000--",
+              "home": "ISKANDAROV S（乌兹别克斯坦）",
+              "away": "MYANDAL T（蒙古）",
+              "homeScore": "4",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.001100--",
+              "home": "AHMED M（马尔代夫）",
+              "away": "ALAMIYAN N（伊朗）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.001200--",
+              "home": "HAGBERG J（老挝）",
+              "away": "PANG Y（新加坡）",
+              "homeScore": "3",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.001300--",
+              "home": "KURMANGALIYEV Alan（哈萨克斯坦）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.001400--",
+              "home": "GUBRAN E（也门）",
+              "away": "KAPALI S（尼泊尔）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.001500--",
+              "home": "AHUSSEIN M（卡塔尔）",
+              "away": "JUNINDRA M（印度尼西亚）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.001600--",
+              "home": "BYE",
+              "away": "HARIMOTO Tomokazu（日本）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.001700--",
+              "home": "LIN Yun-ju（中华台北）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.001800--",
+              "home": "RASHED R（巴林）",
+              "away": "BILAL T（巴基斯坦）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.001900--",
+              "home": "ISMAIL M（马尔代夫）",
+              "away": "TANCHAROEN S（泰国）",
+              "homeScore": "1",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.002000--",
+              "home": "BYE",
+              "away": "GERASSIMENKO Kirill（哈萨克斯坦）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.002100--",
+              "home": "CHAN B（中国香港）",
+              "away": "NEGARA M（印度尼西亚）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.002200--",
+              "home": "KASYMOV A（吉尔吉斯斯坦）",
+              "away": "ALDHUBHANI M（也门）",
+              "homeScore": "3",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.002300--",
+              "home": "RI J（朝鲜）",
+              "away": "DILSHODOV D（乌兹别克斯坦）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.002400--",
+              "home": "BYE",
+              "away": "AN Jaehyun（韩国）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.002500--",
+              "home": "LIN Shidong（中国）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.002600--",
+              "home": "MAK T（中国澳门）",
+              "away": "MAHARJAN R（尼泊尔）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.002700--",
+              "home": "KULAPPUWAWADU C（斯里兰卡）",
+              "away": "FARAJI B（伊朗）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.002800--",
+              "home": "WONG Q（马来西亚）",
+              "away": "SHAH M（印度）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.002900--",
+              "home": "QUEK Yong（新加坡）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.003000--",
+              "home": "VONGSA A（老挝）",
+              "away": "ABDULHUSSEIN A（卡塔尔）",
+              "homeScore": "1",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.003100--",
+              "home": "ANKHBAYAR B（蒙古）",
+              "away": "RIDOY M（孟加拉国）",
+              "homeScore": "4",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R64-.003200--",
+              "home": "BYE",
+              "away": "MATSUSHIMA Sora（日本）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:M.SINGLES-----------.R32-",
+          "name": "32强赛",
+          "matches": [
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.000100--",
+              "home": "WANG C（中国）",
+              "away": "PREECHAYAN T（泰国）",
+              "homeScore": "4",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.000200--",
+              "home": "U T（朝鲜）",
+              "away": "THAKKAR M（印度）",
+              "homeScore": "4",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.000300--",
+              "home": "FENG Y（中华台北）",
+              "away": "CHOONG J（马来西亚）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.000400--",
+              "home": "SALEH M（巴林）",
+              "away": "JANG W（韩国）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.000500--",
+              "home": "WONG C（中国香港）",
+              "away": "ISKANDAROV S（乌兹别克斯坦）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.000600--",
+              "home": "ALAMIYAN N（伊朗）",
+              "away": "PANG Y（新加坡）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.000700--",
+              "home": "KURMANGALIYEV A（哈萨克斯坦）",
+              "away": "GUBRAN E（也门）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.000800--",
+              "home": "AHUSSEIN M（卡塔尔）",
+              "away": "HARIMOTO T（日本）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.000900--",
+              "home": "LIN Y（中华台北）",
+              "away": "RASHED R（巴林）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.001000--",
+              "home": "TANCHAROEN S（泰国）",
+              "away": "GERASSIMENKO K（哈萨克斯坦）",
+              "homeScore": "3",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.001100--",
+              "home": "CHAN B（中国香港）",
+              "away": "ALDHUBHANI M（也门）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.001200--",
+              "home": "RI J（朝鲜）",
+              "away": "AN J（韩国）",
+              "homeScore": "4",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.001300--",
+              "home": "LIN S（中国）",
+              "away": "MAK T（中国澳门）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.001400--",
+              "home": "FARAJI B（伊朗）",
+              "away": "SHAH M（印度）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.001500--",
+              "home": "QUEK Y（新加坡）",
+              "away": "ABDULHUSSEIN A（卡塔尔）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.R32-.001600--",
+              "home": "ANKHBAYAR B（蒙古）",
+              "away": "MATSUSHIMA S（日本）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:M.SINGLES-----------.8FNL",
+          "name": "16强赛",
+          "matches": [
+            {
+              "id": "TTE:M.SINGLES-----------.8FNL.000100--",
+              "home": "WANG C（中国）",
+              "away": "U T（朝鲜）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.8FNL.000200--",
+              "home": "FENG Y（中华台北）",
+              "away": "JANG W（韩国）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.8FNL.000300--",
+              "home": "WONG C（中国香港）",
+              "away": "ALAMIYAN N（伊朗）",
+              "homeScore": "2",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.8FNL.000400--",
+              "home": "KURMANGALIYEV A（哈萨克斯坦）",
+              "away": "HARIMOTO T（日本）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.8FNL.000500--",
+              "home": "LIN Y（中华台北）",
+              "away": "GERASSIMENKO K（哈萨克斯坦）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.8FNL.000600--",
+              "home": "CHAN B（中国香港）",
+              "away": "RI J（朝鲜）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.8FNL.000700--",
+              "home": "LIN S（中国）",
+              "away": "SHAH M（印度）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.8FNL.000800--",
+              "home": "QUEK Y（新加坡）",
+              "away": "MATSUSHIMA S（日本）",
+              "homeScore": "2",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:M.SINGLES-----------.QFNL",
+          "name": "1/4决赛",
+          "matches": [
+            {
+              "id": "TTE:M.SINGLES-----------.QFNL.000100--",
+              "home": "WANG C（中国）",
+              "away": "FENG Y（中华台北）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.QFNL.000200--",
+              "home": "ALAMIYAN N（伊朗）",
+              "away": "HARIMOTO T（日本）",
+              "homeScore": "4",
+              "awayScore": "3",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.QFNL.000300--",
+              "home": "LIN Y（中华台北）",
+              "away": "CHAN B（中国香港）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.QFNL.000400--",
+              "home": "LIN S（中国）",
+              "away": "MATSUSHIMA S（日本）",
+              "homeScore": "4",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:M.SINGLES-----------.SFNL",
+          "name": "半决赛",
+          "matches": [
+            {
+              "id": "TTE:M.SINGLES-----------.SFNL.000100--",
+              "home": "WANG C（中国）",
+              "away": "ALAMIYAN N（伊朗）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.SINGLES-----------.SFNL.000200--",
+              "home": "LIN Y（中华台北）",
+              "away": "LIN S（中国）",
+              "homeScore": "3",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:M.SINGLES-----------.FNL-",
+          "name": "决赛",
+          "matches": [
+            {
+              "id": "TTE:M.SINGLES-----------.FNL-.000100--",
+              "home": "WANG C（中国）",
+              "away": "LIN S（中国）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        }
+      ],
+      "message": ""
+    },
+    {
+      "id": "W.SINGLES-----------",
+      "name": "女子单打",
+      "groups": [],
+      "rounds": [
+        {
+          "id": "MAINDRAW:W.SINGLES-----------.R64-",
+          "name": "64强赛",
+          "matches": [
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.000100--",
+              "home": "WANG Manyu（中国）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.000200--",
+              "home": "BYE",
+              "away": "MOHAMED Aia（卡塔尔）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.000300--",
+              "home": "SISOMBOUN C（老挝）",
+              "away": "BATMUNKH B（蒙古）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.000400--",
+              "home": "BYE",
+              "away": "DOO Hoi Kem（中国香港）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.000500--",
+              "home": "AKASHEVA Zauresh（哈萨克斯坦）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.000600--",
+              "home": "THAPA E（尼泊尔）",
+              "away": "KAMALOVA A（乌兹别克斯坦）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.000700--",
+              "home": "ASHTARI M（伊朗）",
+              "away": "RASMI C（印度尼西亚）",
+              "homeScore": "1",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.000800--",
+              "home": "BYE",
+              "away": "SHIN Yubin（韩国）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.000900--",
+              "home": "CHENG I-ching（中华台北）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.001000--",
+              "home": "ALI F（马尔代夫）",
+              "away": "KIM K（朝鲜）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.001100--",
+              "home": "LEONG O（中国澳门）",
+              "away": "SOMA S（孟加拉国）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.001200--",
+              "home": "BYE",
+              "away": "SER Lin Qian（新加坡）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.001300--",
+              "home": "GHORPADE Yashaswini（印度）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.001400--",
+              "home": "ZAZA H（叙利亚）",
+              "away": "KHAN K（巴基斯坦）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.001500--",
+              "home": "AZAR T（黎巴嫩）",
+              "away": "SAWETTABUT S（泰国）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.001600--",
+              "home": "BYE",
+              "away": "HARIMOTO Miwa（日本）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.001700--",
+              "home": "HAYATA Hina（日本）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.001800--",
+              "home": "NEBUCHADNEZZAR A（印度尼西亚）",
+              "away": "ILOUKHANI S（伊朗）",
+              "homeScore": "3",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.001900--",
+              "home": "SANJAA B（蒙古）",
+              "away": "ERKEBAEVA A（乌兹别克斯坦）",
+              "homeScore": "1",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.002000--",
+              "home": "BYE",
+              "away": "SU Tsz Tung（中国香港）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.002100--",
+              "home": "AKULA Sreeja（印度）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.002200--",
+              "home": "MIRKADIROVA S（哈萨克斯坦）",
+              "away": "PYON S（朝鲜）",
+              "homeScore": "1",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.002300--",
+              "home": "CHEN S（中华台北）",
+              "away": "SHRESTHA N（尼泊尔）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.002400--",
+              "home": "BYE",
+              "away": "ZHU Yu Ling（中国澳门）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.002500--",
+              "home": "JOO Cheonhui（韩国）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.002600--",
+              "home": "SWARNA B（斯里兰卡）",
+              "away": "AIAZBEKOVA N（吉尔吉斯斯坦）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.002700--",
+              "home": "CHIRI B（黎巴嫩）",
+              "away": "ABBOUD R（叙利亚）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.002800--",
+              "home": "BYE",
+              "away": "ZENG Jian（新加坡）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.002900--",
+              "home": "PARANANG Orawan（泰国）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.003000--",
+              "home": "MAHI N（孟加拉国）",
+              "away": "NAZIM A（马尔代夫）",
+              "homeScore": "2",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.003100--",
+              "home": "ALI Maryam（卡塔尔）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R64-.003200--",
+              "home": "BYE",
+              "away": "SUN Yingsha（中国）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:W.SINGLES-----------.R32-",
+          "name": "32强赛",
+          "matches": [
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.000100--",
+              "home": "WANG M（中国）",
+              "away": "MOHAMED A（卡塔尔）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.000200--",
+              "home": "BATMUNKH B（蒙古）",
+              "away": "DOO H（中国香港）",
+              "homeScore": "1",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.000300--",
+              "home": "AKASHEVA Z（哈萨克斯坦）",
+              "away": "KAMALOVA A（乌兹别克斯坦）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.000400--",
+              "home": "RASMI C（印度尼西亚）",
+              "away": "SHIN Y（韩国）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.000500--",
+              "home": "CHENG I（中华台北）",
+              "away": "KIM K（朝鲜）",
+              "homeScore": "3",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.000600--",
+              "home": "LEONG O（中国澳门）",
+              "away": "SER L（新加坡）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.000700--",
+              "home": "GHORPADE Y（印度）",
+              "away": "ZAZA H（叙利亚）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.000800--",
+              "home": "SAWETTABUT S（泰国）",
+              "away": "HARIMOTO M（日本）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.000900--",
+              "home": "HAYATA H（日本）",
+              "away": "ILOUKHANI S（伊朗）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.001000--",
+              "home": "ERKEBAEVA A（乌兹别克斯坦）",
+              "away": "SU T（中国香港）",
+              "homeScore": "2",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.001100--",
+              "home": "AKULA S（印度）",
+              "away": "PYON S（朝鲜）",
+              "homeScore": "1",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.001200--",
+              "home": "CHEN S（中华台北）",
+              "away": "ZHU Y（中国澳门）",
+              "homeScore": "2",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.001300--",
+              "home": "JOO C（韩国）",
+              "away": "SWARNA B（斯里兰卡）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.001400--",
+              "home": "ABBOUD R（叙利亚）",
+              "away": "ZENG J（新加坡）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.001500--",
+              "home": "PARANANG O（泰国）",
+              "away": "NAZIM A（马尔代夫）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.R32-.001600--",
+              "home": "ALI M（卡塔尔）",
+              "away": "SUN Y（中国）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:W.SINGLES-----------.8FNL",
+          "name": "16强赛",
+          "matches": [
+            {
+              "id": "TTE:W.SINGLES-----------.8FNL.000100--",
+              "home": "WANG M（中国）",
+              "away": "DOO H（中国香港）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.8FNL.000200--",
+              "home": "AKASHEVA Z（哈萨克斯坦）",
+              "away": "SHIN Y（韩国）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.8FNL.000300--",
+              "home": "KIM K（朝鲜）",
+              "away": "SER L（新加坡）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.8FNL.000400--",
+              "home": "GHORPADE Y（印度）",
+              "away": "HARIMOTO M（日本）",
+              "homeScore": "1",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.8FNL.000500--",
+              "home": "HAYATA H（日本）",
+              "away": "SU T（中国香港）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.8FNL.000600--",
+              "home": "PYON S（朝鲜）",
+              "away": "ZHU Y（中国澳门）",
+              "homeScore": "3",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.8FNL.000700--",
+              "home": "JOO C（韩国）",
+              "away": "ZENG J（新加坡）",
+              "homeScore": "4",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.8FNL.000800--",
+              "home": "PARANANG O（泰国）",
+              "away": "SUN Y（中国）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:W.SINGLES-----------.QFNL",
+          "name": "1/4决赛",
+          "matches": [
+            {
+              "id": "TTE:W.SINGLES-----------.QFNL.000100--",
+              "home": "WANG M（中国）",
+              "away": "SHIN Y（韩国）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.QFNL.000200--",
+              "home": "KIM K（朝鲜）",
+              "away": "HARIMOTO M（日本）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.QFNL.000300--",
+              "home": "HAYATA H（日本）",
+              "away": "ZHU Y（中国澳门）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.QFNL.000400--",
+              "home": "JOO C（韩国）",
+              "away": "SUN Y（中国）",
+              "homeScore": "2",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:W.SINGLES-----------.SFNL",
+          "name": "半决赛",
+          "matches": [
+            {
+              "id": "TTE:W.SINGLES-----------.SFNL.000100--",
+              "home": "WANG M（中国）",
+              "away": "HARIMOTO M（日本）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.SINGLES-----------.SFNL.000200--",
+              "home": "HAYATA H（日本）",
+              "away": "SUN Y（中国）",
+              "homeScore": "1",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:W.SINGLES-----------.FNL-",
+          "name": "决赛",
+          "matches": [
+            {
+              "id": "TTE:W.SINGLES-----------.FNL-.000100--",
+              "home": "WANG M（中国）",
+              "away": "SUN Y（中国）",
+              "homeScore": "4",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            }
+          ]
+        }
+      ],
+      "message": ""
+    },
+    {
+      "id": "X.DOUBLES-----------",
+      "name": "混合双打",
+      "groups": [],
+      "rounds": [
+        {
+          "id": "MAINDRAW:X.DOUBLES-----------.R64-",
+          "name": "64强赛",
+          "matches": [
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.000100--",
+              "home": "LIM Jonghoon / SHIN Yubin（韩国）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.000200--",
+              "home": "BYE",
+              "away": "AHUSSEIN Mohammed / MOHAMED Aia（卡塔尔）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.000300--",
+              "home": "MYANDAL T / BATMUNKH B（蒙古）",
+              "away": "ZHENG H / LEONG O（中国澳门）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.000400--",
+              "home": "BYE",
+              "away": "KHARKI Iskender / MIRKADIROVA Sarvinoz（哈萨克斯坦）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.000500--",
+              "home": "PANG Yew / ZENG Jian（新加坡）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.000600--",
+              "home": "SHINOZUKA H / ITO M（日本）",
+              "away": "DILSHODOV D / ERKEBAEVA A（乌兹别克斯坦）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.000700--",
+              "home": "KASYMOV Atai / AIAZBEKOVA Nurkyz（吉尔吉斯斯坦）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.000800--",
+              "home": "BYE",
+              "away": "LIN Yun-ju / CHENG I-ching（中华台北）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.000900--",
+              "home": "DESAI Harmeet / GHORPADE Yashaswini（印度）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.001000--",
+              "home": "BYE",
+              "away": "ISMAIL Mohamed / ALI Fathimath（马尔代夫）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.001100--",
+              "home": "KHAN M / KHAN K（巴基斯坦）",
+              "away": "MAHARJAN R / THAPA E（尼泊尔）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.001200--",
+              "home": "BYE",
+              "away": "YIU Kwan To / NG Wing Lam（中国香港）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.001300--",
+              "home": "JUNINDRA Muhammad / NEBUCHADNEZZAR Almaira（印度尼西亚）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.001400--",
+              "home": "GHAFFARI A / ASHTARI M（伊朗）",
+              "away": "SANGUANSIN P / PARANANG O（泰国）",
+              "homeScore": "1",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.001500--",
+              "home": "RI Jong Sik / KIM Kum Yong（朝鲜）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.001600--",
+              "home": "BYE",
+              "away": "LIN Shidong / KUAI Man（中国）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.001700--",
+              "home": "WONG Chun Ting / DOO Hoi Kem（中国香港）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.001800--",
+              "home": "BYE",
+              "away": "MAK Tin Ian / KUAN Cheok Lam（中国澳门）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.001900--",
+              "home": "XAYSAVATH X / SISOMBOUN C（老挝）",
+              "away": "RIDOY M / MAHI N（孟加拉国）",
+              "homeScore": "1",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.002000--",
+              "home": "BYE",
+              "away": "PREECHAYAN Thitaphat / VIJITVIRIYAGUL Kulapassr（泰国）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.002100--",
+              "home": "AHMED Moosa / NAZIM Aishath（马尔代夫）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.002200--",
+              "home": "KAPALI S / SHRESTHA N（尼泊尔）",
+              "away": "ANKHBAYAR B / SER-OD A（蒙古）",
+              "homeScore": "1",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.002300--",
+              "home": "KULAPPUWAWADU C / SWARNA B（斯里兰卡）",
+              "away": "ABDULHUSSEIN A / ALI M（卡塔尔）",
+              "homeScore": "3",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.002400--",
+              "home": "BYE",
+              "away": "SHAH Manush / CHITALE Diya（印度）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.002500--",
+              "home": "MATSUSHIMA Sora / HARIMOTO Miwa（日本）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.002600--",
+              "home": "BYE",
+              "away": "U Tae Ryong / PYON Song Gyong（朝鲜）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.002700--",
+              "home": "PRATAMA A / PUTRI C（印度尼西亚）",
+              "away": "FARAJI B / ILOUKHANI S（伊朗）",
+              "homeScore": "3",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.002800--",
+              "home": "BYE",
+              "away": "OH Junsung / KIM Nayeong（韩国）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.002900--",
+              "home": "QUEK Yong / LOY Ming（新加坡）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.003000--",
+              "home": "GERASSIMENKO K / AKASHEVA Z（哈萨克斯坦）",
+              "away": "FENG Y / YEH Y（中华台北）",
+              "homeScore": "1",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.003100--",
+              "home": "ISKANDAROV Shokhrukh / KAMALOVA Arujan（乌兹别克斯坦）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R64-.003200--",
+              "home": "BYE",
+              "away": "WANG Chuqin / SUN Yingsha（中国）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:X.DOUBLES-----------.R32-",
+          "name": "32强赛",
+          "matches": [
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.000100--",
+              "home": "LIM J / SHIN Y（韩国）",
+              "away": "AHUSSEIN M / MOHAMED A（卡塔尔）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.000200--",
+              "home": "ZHENG H / LEONG O（中国澳门）",
+              "away": "KHARKI I / MIRKADIROVA S（哈萨克斯坦）",
+              "homeScore": "2",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.000300--",
+              "home": "PANG Y / ZENG J（新加坡）",
+              "away": "SHINOZUKA H / ITO M（日本）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.000400--",
+              "home": "KASYMOV A / AIAZBEKOVA N（吉尔吉斯斯坦）",
+              "away": "LIN Y / CHENG I（中华台北）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.000500--",
+              "home": "DESAI H / GHORPADE Y（印度）",
+              "away": "ISMAIL M / ALI F（马尔代夫）",
+              "homeScore": "3",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.000600--",
+              "home": "MAHARJAN R / THAPA E（尼泊尔）",
+              "away": "YIU K / NG W（中国香港）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.000700--",
+              "home": "JUNINDRA M / NEBUCHADNEZZAR A（印度尼西亚）",
+              "away": "SANGUANSIN P / PARANANG O（泰国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.000800--",
+              "home": "RI J / KIM K（朝鲜）",
+              "away": "LIN S / KUAI M（中国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.000900--",
+              "home": "WONG C / DOO H（中国香港）",
+              "away": "MAK T / KUAN C（中国澳门）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.001000--",
+              "home": "RIDOY M / MAHI N（孟加拉国）",
+              "away": "PREECHAYAN T / VIJITVIRIYAGUL K（泰国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.001100--",
+              "home": "AHMED M / NAZIM A（马尔代夫）",
+              "away": "ANKHBAYAR B / SER-OD A（蒙古）",
+              "homeScore": "3",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.001200--",
+              "home": "KULAPPUWAWADU C / SWARNA B（斯里兰卡）",
+              "away": "SHAH M / CHITALE D（印度）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.001300--",
+              "home": "MATSUSHIMA S / HARIMOTO M（日本）",
+              "away": "U T / PYON S（朝鲜）",
+              "homeScore": "3",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.001400--",
+              "home": "PRATAMA A / PUTRI C（印度尼西亚）",
+              "away": "OH J / KIM N（韩国）",
+              "homeScore": "1",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.001500--",
+              "home": "QUEK Y / LOY M（新加坡）",
+              "away": "FENG Y / YEH Y（中华台北）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.R32-.001600--",
+              "home": "ISKANDAROV S / KAMALOVA A（乌兹别克斯坦）",
+              "away": "WANG C / SUN Y（中国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:X.DOUBLES-----------.8FNL",
+          "name": "16强赛",
+          "matches": [
+            {
+              "id": "TTE:X.DOUBLES-----------.8FNL.000100--",
+              "home": "LIM J / SHIN Y（韩国）",
+              "away": "KHARKI I / MIRKADIROVA S（哈萨克斯坦）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.8FNL.000200--",
+              "home": "SHINOZUKA H / ITO M（日本）",
+              "away": "LIN Y / CHENG I（中华台北）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.8FNL.000300--",
+              "home": "DESAI H / GHORPADE Y（印度）",
+              "away": "YIU K / NG W（中国香港）",
+              "homeScore": "3",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.8FNL.000400--",
+              "home": "SANGUANSIN P / PARANANG O（泰国）",
+              "away": "LIN S / KUAI M（中国）",
+              "homeScore": "1",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.8FNL.000500--",
+              "home": "WONG C / DOO H（中国香港）",
+              "away": "PREECHAYAN T / VIJITVIRIYAGUL K（泰国）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.8FNL.000600--",
+              "home": "AHMED M / NAZIM A（马尔代夫）",
+              "away": "SHAH M / CHITALE D（印度）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.8FNL.000700--",
+              "home": "MATSUSHIMA S / HARIMOTO M（日本）",
+              "away": "OH J / KIM N（韩国）",
+              "homeScore": "3",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.8FNL.000800--",
+              "home": "FENG Y / YEH Y（中华台北）",
+              "away": "WANG C / SUN Y（中国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:X.DOUBLES-----------.QFNL",
+          "name": "1/4决赛",
+          "matches": [
+            {
+              "id": "TTE:X.DOUBLES-----------.QFNL.000100--",
+              "home": "LIM J / SHIN Y（韩国）",
+              "away": "LIN Y / CHENG I（中华台北）",
+              "homeScore": "3",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.QFNL.000200--",
+              "home": "DESAI H / GHORPADE Y（印度）",
+              "away": "LIN S / KUAI M（中国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.QFNL.000300--",
+              "home": "WONG C / DOO H（中国香港）",
+              "away": "SHAH M / CHITALE D（印度）",
+              "homeScore": "1",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.QFNL.000400--",
+              "home": "MATSUSHIMA S / HARIMOTO M（日本）",
+              "away": "WANG C / SUN Y（中国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:X.DOUBLES-----------.SFNL",
+          "name": "半决赛",
+          "matches": [
+            {
+              "id": "TTE:X.DOUBLES-----------.SFNL.000100--",
+              "home": "LIM J / SHIN Y（韩国）",
+              "away": "LIN S / KUAI M（中国）",
+              "homeScore": "2",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:X.DOUBLES-----------.SFNL.000200--",
+              "home": "SHAH M / CHITALE D（印度）",
+              "away": "WANG C / SUN Y（中国）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:X.DOUBLES-----------.FNL-",
+          "name": "决赛",
+          "matches": [
+            {
+              "id": "TTE:X.DOUBLES-----------.FNL-.000100--",
+              "home": "LIN S / KUAI M（中国）",
+              "away": "WANG C / SUN Y（中国）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            }
+          ]
+        }
+      ],
+      "message": ""
+    },
+    {
+      "id": "M.TEAM--------------",
+      "name": "男子团体",
+      "groups": [
+        {
+          "name": "A组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "中国",
+              "2",
+              "2",
+              "0",
+              "0",
+              "4"
+            ],
+            [
+              "2",
+              "卡塔尔",
+              "2",
+              "1",
+              "0",
+              "1",
+              "3"
+            ],
+            [
+              "3",
+              "中国澳门",
+              "2",
+              "0",
+              "0",
+              "2",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "B组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "日本",
+              "2",
+              "2",
+              "0",
+              "0",
+              "4"
+            ],
+            [
+              "2",
+              "乌兹别克斯坦",
+              "2",
+              "1",
+              "0",
+              "1",
+              "3"
+            ],
+            [
+              "3",
+              "马尔代夫",
+              "2",
+              "0",
+              "0",
+              "2",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "C组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "中华台北",
+              "2",
+              "2",
+              "0",
+              "0",
+              "4"
+            ],
+            [
+              "2",
+              "巴林",
+              "2",
+              "1",
+              "0",
+              "1",
+              "3"
+            ],
+            [
+              "3",
+              "尼泊尔",
+              "2",
+              "0",
+              "0",
+              "2",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "D组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "韩国",
+              "2",
+              "2",
+              "0",
+              "0",
+              "4"
+            ],
+            [
+              "2",
+              "蒙古",
+              "2",
+              "1",
+              "0",
+              "1",
+              "3"
+            ],
+            [
+              "3",
+              "也门",
+              "2",
+              "0",
+              "0",
+              "2",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "E组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "中国香港",
+              "2",
+              "2",
+              "0",
+              "0",
+              "4"
+            ],
+            [
+              "2",
+              "泰国",
+              "2",
+              "1",
+              "0",
+              "1",
+              "3"
+            ],
+            [
+              "3",
+              "吉尔吉斯斯坦",
+              "2",
+              "0",
+              "0",
+              "2",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "F组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "伊朗",
+              "3",
+              "3",
+              "0",
+              "0",
+              "6"
+            ],
+            [
+              "2",
+              "印度",
+              "3",
+              "2",
+              "0",
+              "1",
+              "5"
+            ],
+            [
+              "3",
+              "印度尼西亚",
+              "3",
+              "1",
+              "0",
+              "2",
+              "4"
+            ],
+            [
+              "4",
+              "巴基斯坦",
+              "3",
+              "0",
+              "0",
+              "3",
+              "3"
+            ]
+          ]
+        },
+        {
+          "name": "G组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "哈萨克斯坦",
+              "3",
+              "3",
+              "0",
+              "0",
+              "6"
+            ],
+            [
+              "2",
+              "新加坡",
+              "3",
+              "2",
+              "0",
+              "1",
+              "5"
+            ],
+            [
+              "3",
+              "老挝",
+              "3",
+              "1",
+              "0",
+              "2",
+              "4"
+            ],
+            [
+              "4",
+              "孟加拉国",
+              "3",
+              "0",
+              "0",
+              "3",
+              "3"
+            ]
+          ]
+        }
+      ],
+      "rounds": [
+        {
+          "id": "MAINDRAW:M.TEAM--------------.8FNL",
+          "name": "16强赛",
+          "matches": [
+            {
+              "id": "TTE:M.TEAM--------------.8FNL.00010000",
+              "home": "中国",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.TEAM--------------.8FNL.00020000",
+              "home": "乌兹别克斯坦",
+              "away": "泰国",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.TEAM--------------.8FNL.00030000",
+              "home": "伊朗",
+              "away": "新加坡",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.TEAM--------------.8FNL.00040000",
+              "home": "中华台北",
+              "away": "蒙古",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.TEAM--------------.8FNL.00050000",
+              "home": "韩国",
+              "away": "印度",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.TEAM--------------.8FNL.00060000",
+              "home": "中国香港",
+              "away": "卡塔尔",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.TEAM--------------.8FNL.00070000",
+              "home": "巴林",
+              "away": "哈萨克斯坦",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.TEAM--------------.8FNL.00080000",
+              "home": "BYE",
+              "away": "日本",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:M.TEAM--------------.QFNL",
+          "name": "1/4决赛",
+          "matches": [
+            {
+              "id": "TTE:M.TEAM--------------.QFNL.00010000",
+              "home": "中国",
+              "away": "泰国",
+              "homeScore": "3",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.TEAM--------------.QFNL.00020000",
+              "home": "伊朗",
+              "away": "中华台北",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.TEAM--------------.QFNL.00030000",
+              "home": "韩国",
+              "away": "中国香港",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.TEAM--------------.QFNL.00040000",
+              "home": "日本",
+              "away": "哈萨克斯坦",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:M.TEAM--------------.SFNL",
+          "name": "半决赛",
+          "matches": [
+            {
+              "id": "TTE:M.TEAM--------------.SFNL.00010000",
+              "home": "中国",
+              "away": "中华台北",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.TEAM--------------.SFNL.00020000",
+              "home": "韩国",
+              "away": "日本",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:M.TEAM--------------.FNL-",
+          "name": "决赛",
+          "matches": [
+            {
+              "id": "TTE:M.TEAM--------------.FNL-.00010000",
+              "home": "中国",
+              "away": "日本",
+              "homeScore": "2",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        }
+      ],
+      "message": ""
+    },
+    {
+      "id": "W.TEAM--------------",
+      "name": "女子团体",
+      "groups": [
+        {
+          "name": "A组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "中国",
+              "2",
+              "2",
+              "0",
+              "0",
+              "4"
+            ],
+            [
+              "2",
+              "中国澳门",
+              "2",
+              "1",
+              "0",
+              "1",
+              "3"
+            ],
+            [
+              "3",
+              "尼泊尔",
+              "2",
+              "0",
+              "0",
+              "2",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "B组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "日本",
+              "2",
+              "2",
+              "0",
+              "0",
+              "4"
+            ],
+            [
+              "2",
+              "乌兹别克斯坦",
+              "2",
+              "1",
+              "0",
+              "1",
+              "3"
+            ],
+            [
+              "3",
+              "蒙古",
+              "2",
+              "0",
+              "0",
+              "2",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "C组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "韩国",
+              "2",
+              "2",
+              "0",
+              "0",
+              "4"
+            ],
+            [
+              "2",
+              "哈萨克斯坦",
+              "2",
+              "1",
+              "0",
+              "1",
+              "3"
+            ],
+            [
+              "3",
+              "马尔代夫",
+              "2",
+              "0",
+              "0",
+              "2",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "D组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "朝鲜",
+              "2",
+              "2",
+              "0",
+              "0",
+              "4"
+            ],
+            [
+              "2",
+              "中华台北",
+              "2",
+              "1",
+              "0",
+              "1",
+              "3"
+            ],
+            [
+              "3",
+              "孟加拉国",
+              "2",
+              "0",
+              "0",
+              "2",
+              "2"
+            ]
+          ]
+        },
+        {
+          "name": "E组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "中国香港",
+              "3",
+              "3",
+              "0",
+              "0",
+              "6"
+            ],
+            [
+              "2",
+              "泰国",
+              "3",
+              "2",
+              "0",
+              "1",
+              "5"
+            ],
+            [
+              "3",
+              "黎巴嫩",
+              "3",
+              "1",
+              "0",
+              "2",
+              "4"
+            ],
+            [
+              "4",
+              "卡塔尔",
+              "3",
+              "0",
+              "0",
+              "3",
+              "3"
+            ]
+          ]
+        },
+        {
+          "name": "F组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "印度",
+              "3",
+              "3",
+              "0",
+              "0",
+              "6"
+            ],
+            [
+              "2",
+              "新加坡",
+              "3",
+              "2",
+              "0",
+              "1",
+              "5"
+            ],
+            [
+              "3",
+              "印度尼西亚",
+              "3",
+              "1",
+              "0",
+              "2",
+              "4"
+            ],
+            [
+              "4",
+              "巴基斯坦",
+              "3",
+              "0",
+              "0",
+              "3",
+              "3"
+            ]
+          ]
+        }
+      ],
+      "rounds": [
+        {
+          "id": "MAINDRAW:W.TEAM--------------.8FNL",
+          "name": "16强赛",
+          "matches": [
+            {
+              "id": "TTE:W.TEAM--------------.8FNL.00010000",
+              "home": "中国",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.TEAM--------------.8FNL.00020000",
+              "home": "乌兹别克斯坦",
+              "away": "哈萨克斯坦",
+              "homeScore": "3",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.TEAM--------------.8FNL.00030000",
+              "home": "泰国",
+              "away": "印度",
+              "homeScore": "2",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.TEAM--------------.8FNL.00040000",
+              "home": "BYE",
+              "away": "朝鲜",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.TEAM--------------.8FNL.00050000",
+              "home": "韩国",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.TEAM--------------.8FNL.00060000",
+              "home": "中国香港",
+              "away": "新加坡",
+              "homeScore": "2",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.TEAM--------------.8FNL.00070000",
+              "home": "中国澳门",
+              "away": "中华台北",
+              "homeScore": "1",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.TEAM--------------.8FNL.00080000",
+              "home": "BYE",
+              "away": "日本",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:W.TEAM--------------.QFNL",
+          "name": "1/4决赛",
+          "matches": [
+            {
+              "id": "TTE:W.TEAM--------------.QFNL.00010000",
+              "home": "乌兹别克斯坦",
+              "away": "中国",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.TEAM--------------.QFNL.00020000",
+              "home": "朝鲜",
+              "away": "印度",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.TEAM--------------.QFNL.00030000",
+              "home": "韩国",
+              "away": "新加坡",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.TEAM--------------.QFNL.00040000",
+              "home": "日本",
+              "away": "中华台北",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:W.TEAM--------------.SFNL",
+          "name": "半决赛",
+          "matches": [
+            {
+              "id": "TTE:W.TEAM--------------.SFNL.00010000",
+              "home": "朝鲜",
+              "away": "中国",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.TEAM--------------.SFNL.00020000",
+              "home": "韩国",
+              "away": "日本",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:W.TEAM--------------.FNL-",
+          "name": "决赛",
+          "matches": [
+            {
+              "id": "TTE:W.TEAM--------------.FNL-.00010000",
+              "home": "中国",
+              "away": "日本",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            }
+          ]
+        }
+      ],
+      "message": ""
+    },
+    {
+      "id": "M.DOUBLES-----------",
+      "name": "男子双打",
+      "groups": [],
+      "rounds": [
+        {
+          "id": "MAINDRAW:M.DOUBLES-----------.R64-",
+          "name": "64强赛",
+          "matches": [
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.000100--",
+              "home": "HUANG Youzheng / LIN Shidong（中国）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.000200--",
+              "home": "BYE",
+              "away": "BODISUREN Enkhtuguldurbayasgalan / BODISUREN Enkhtamirbayasgalan（蒙古）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.000300--",
+              "home": "ZHENG H / CHAN C（中国澳门）",
+              "away": "RIDOY M / BAWM R（孟加拉国）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.000400--",
+              "home": "BYE",
+              "away": "LAM Siu Hang / YIU Kwan To（中国香港）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.000500--",
+              "home": "GERASSIMENKO Kirill / KURMANGALIYEV Alan（哈萨克斯坦）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.000600--",
+              "home": "AHMED M / ISMAIL M（马尔代夫）",
+              "away": "FARAJI B / GHAFFARI A（伊朗）",
+              "homeScore": "2",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.000700--",
+              "home": "VONGSA Anane / HAGBERG Johan（老挝）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.000800--",
+              "home": "BYE",
+              "away": "FENG Yi-hsin / KUO Guan-hong（中华台北）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.000900--",
+              "home": "MATSUSHIMA Sora / TOGAMI Shunsuke（日本）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.001000--",
+              "home": "BYE",
+              "away": "KAPALI Sanyog / MAHARJAN Rubin（尼泊尔）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.001100--",
+              "home": "ABDULHUSSEIN A / AHUSSEIN M（卡塔尔）",
+              "away": "PRATAMA A / NEGARA M（印度尼西亚）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.001200--",
+              "home": "BYE",
+              "away": "DESAI Harmeet / GNANASEKARAN Sathiyan（印度）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.001300--",
+              "home": "CHEW Zhe Yu / CHUA Josh（新加坡）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.001400--",
+              "home": "ALAALI M / MAHFOODH S（巴林）",
+              "away": "BILAL T / KHAN A（巴基斯坦）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.001500--",
+              "home": "SANGUANSIN Phakpoom / PREECHAYAN Thitaphat（泰国）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.001600--",
+              "home": "BYE",
+              "away": "OH Junsung / LIM Jonghoon（韩国）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.001700--",
+              "home": "CHAN Baldwin / WONG Chun Ting（中国香港）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.001800--",
+              "home": "BYE",
+              "away": "KHALID Akhyar / RAFIU Mohamed（马尔代夫）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.001900--",
+              "home": "ALAMIYAN N / ALAMIAN N（伊朗）",
+              "away": "KHAN A / KHAN M（巴基斯坦）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.002000--",
+              "home": "BYE",
+              "away": "KENZHIGULOV Aidos / ZHUBANOV Sanzhar（哈萨克斯坦）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.002100--",
+              "home": "JANG Woojin / PARK Gyuhyeon（韩国）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.002200--",
+              "home": "DESRIZAL G / INZAGHI M（印度尼西亚）",
+              "away": "RI J / U T（朝鲜）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.002300--",
+              "home": "GUBRAN Ebrahim / ALDHUBHANI Magd（也门）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.002400--",
+              "home": "BYE",
+              "away": "WEN Ruibo / XIANG Peng（中国）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.002500--",
+              "home": "QUEK Yong / PANG Yew En（新加坡）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.002600--",
+              "home": "BYE",
+              "away": "DILSHODOV Diyorbek / ISKANDAROV Shokhrukh（乌兹别克斯坦）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.002700--",
+              "home": "AL-KUWARI S / KORANI A（卡塔尔）",
+              "away": "ANKHBAYAR B / MYANDAL T（蒙古）",
+              "homeScore": "3",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.002800--",
+              "home": "BYE",
+              "away": "WONG Qi Shen / CHOONG Javen（马来西亚）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.002900--",
+              "home": "HSU Hsien-chia / HUNG Jing-kai（中华台北）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.003000--",
+              "home": "KASYMOV A / KASYMOV A（吉尔吉斯斯坦）",
+              "away": "SALEH M / RASHED R（巴林）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.003100--",
+              "home": "HARIMOTO Tomokazu / SHINOZUKA Hiroto（日本）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R64-.003200--",
+              "home": "BYE",
+              "away": "THAKKAR Manav / SHAH Manush（印度）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:M.DOUBLES-----------.R32-",
+          "name": "32强赛",
+          "matches": [
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.000100--",
+              "home": "HUANG Y / LIN S（中国）",
+              "away": "BODISUREN E / BODISUREN E（蒙古）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.000200--",
+              "home": "ZHENG H / CHAN C（中国澳门）",
+              "away": "LAM S / YIU K（中国香港）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.000300--",
+              "home": "GERASSIMENKO K / KURMANGALIYEV A（哈萨克斯坦）",
+              "away": "FARAJI B / GHAFFARI A（伊朗）",
+              "homeScore": "3",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.000400--",
+              "home": "VONGSA A / HAGBERG J（老挝）",
+              "away": "FENG Y / KUO G（中华台北）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.000500--",
+              "home": "MATSUSHIMA S / TOGAMI S（日本）",
+              "away": "KAPALI S / MAHARJAN R（尼泊尔）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.000600--",
+              "home": "PRATAMA A / NEGARA M（印度尼西亚）",
+              "away": "DESAI H / GNANASEKARAN S（印度）",
+              "homeScore": "2",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.000700--",
+              "home": "CHEW Z / CHUA J（新加坡）",
+              "away": "ALAALI M / MAHFOODH S（巴林）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.000800--",
+              "home": "SANGUANSIN P / PREECHAYAN T（泰国）",
+              "away": "OH J / LIM J（韩国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.000900--",
+              "home": "CHAN B / WONG C（中国香港）",
+              "away": "KHALID A / RAFIU M（马尔代夫）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.001000--",
+              "home": "ALAMIYAN N / ALAMIAN N（伊朗）",
+              "away": "KENZHIGULOV A / ZHUBANOV S（哈萨克斯坦）",
+              "homeScore": "3",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.001100--",
+              "home": "JANG W / PARK G（韩国）",
+              "away": "RI J / U T（朝鲜）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.001200--",
+              "home": "GUBRAN E / ALDHUBHANI M（也门）",
+              "away": "WEN R / XIANG P（中国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.001300--",
+              "home": "QUEK Y / PANG Y（新加坡）",
+              "away": "DILSHODOV D / ISKANDAROV S（乌兹别克斯坦）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.001400--",
+              "home": "AL-KUWARI S / KORANI A（卡塔尔）",
+              "away": "WONG Q / CHOONG J（马来西亚）",
+              "homeScore": "2",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.001500--",
+              "home": "HSU H / HUNG J（中华台北）",
+              "away": "SALEH M / RASHED R（巴林）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.R32-.001600--",
+              "home": "HARIMOTO T / SHINOZUKA H（日本）",
+              "away": "THAKKAR M / SHAH M（印度）",
+              "homeScore": "3",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:M.DOUBLES-----------.8FNL",
+          "name": "16强赛",
+          "matches": [
+            {
+              "id": "TTE:M.DOUBLES-----------.8FNL.000100--",
+              "home": "HUANG Y / LIN S（中国）",
+              "away": "LAM S / YIU K（中国香港）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.8FNL.000200--",
+              "home": "GERASSIMENKO K / KURMANGALIYEV A（哈萨克斯坦）",
+              "away": "FENG Y / KUO G（中华台北）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.8FNL.000300--",
+              "home": "MATSUSHIMA S / TOGAMI S（日本）",
+              "away": "DESAI H / GNANASEKARAN S（印度）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.8FNL.000400--",
+              "home": "CHEW Z / CHUA J（新加坡）",
+              "away": "OH J / LIM J（韩国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.8FNL.000500--",
+              "home": "CHAN B / WONG C（中国香港）",
+              "away": "ALAMIYAN N / ALAMIAN N（伊朗）",
+              "homeScore": "1",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.8FNL.000600--",
+              "home": "RI J / U T（朝鲜）",
+              "away": "WEN R / XIANG P（中国）",
+              "homeScore": "1",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.8FNL.000700--",
+              "home": "QUEK Y / PANG Y（新加坡）",
+              "away": "WONG Q / CHOONG J（马来西亚）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.8FNL.000800--",
+              "home": "HSU H / HUNG J（中华台北）",
+              "away": "HARIMOTO T / SHINOZUKA H（日本）",
+              "homeScore": "1",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:M.DOUBLES-----------.QFNL",
+          "name": "1/4决赛",
+          "matches": [
+            {
+              "id": "TTE:M.DOUBLES-----------.QFNL.000100--",
+              "home": "HUANG Y / LIN S（中国）",
+              "away": "FENG Y / KUO G（中华台北）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.QFNL.000200--",
+              "home": "MATSUSHIMA S / TOGAMI S（日本）",
+              "away": "OH J / LIM J（韩国）",
+              "homeScore": "3",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.QFNL.000300--",
+              "home": "ALAMIYAN N / ALAMIAN N（伊朗）",
+              "away": "WEN R / XIANG P（中国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.QFNL.000400--",
+              "home": "QUEK Y / PANG Y（新加坡）",
+              "away": "HARIMOTO T / SHINOZUKA H（日本）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:M.DOUBLES-----------.SFNL",
+          "name": "半决赛",
+          "matches": [
+            {
+              "id": "TTE:M.DOUBLES-----------.SFNL.000100--",
+              "home": "HUANG Y / LIN S（中国）",
+              "away": "MATSUSHIMA S / TOGAMI S（日本）",
+              "homeScore": "4",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:M.DOUBLES-----------.SFNL.000200--",
+              "home": "WEN R / XIANG P（中国）",
+              "away": "HARIMOTO T / SHINOZUKA H（日本）",
+              "homeScore": "3",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:M.DOUBLES-----------.FNL-",
+          "name": "决赛",
+          "matches": [
+            {
+              "id": "TTE:M.DOUBLES-----------.FNL-.000100--",
+              "home": "HUANG Y / LIN S（中国）",
+              "away": "HARIMOTO T / SHINOZUKA H（日本）",
+              "homeScore": "4",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            }
+          ]
+        }
+      ],
+      "message": ""
+    },
+    {
+      "id": "W.DOUBLES-----------",
+      "name": "女子双打",
+      "groups": [],
+      "rounds": [
+        {
+          "id": "MAINDRAW:W.DOUBLES-----------.R64-",
+          "name": "64强赛",
+          "matches": [
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.000100--",
+              "home": "HARIMOTO Miwa / HAYATA Hina（日本）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.000200--",
+              "home": "BYE",
+              "away": "VIJITVIRIYAGUL Kulapassr / WONGLAKHON Phatsaraphon（泰国）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.000300--",
+              "home": "LEONG On Na / KUAN Cheok Lam（中国澳门）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.000400--",
+              "home": "BYE",
+              "away": "CHEN Szu-yu / WU Ying-syuan（中华台北）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.000500--",
+              "home": "FAN Shuhan / CHEN Yi（中国）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.000600--",
+              "home": "TUSHI S / MAHI N（孟加拉国）",
+              "away": "KIM K / CHA S（朝鲜）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.000700--",
+              "home": "ILOUKHANI Setayesh / ASHTARI Mahshid（伊朗）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.000800--",
+              "home": "BYE",
+              "away": "GHORPADE Yashaswini / CHITALE Diya（印度）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.000900--",
+              "home": "LOY Ming Ying / SER Lin Qian（新加坡）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.001000--",
+              "home": "BYE",
+              "away": "SER-OD Ankhmaa / BATMUNKH Bolor-egshiglen（蒙古）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.001100--",
+              "home": "PUTRI C / RASMI C（印度尼西亚）",
+              "away": "NAZIM A / ALI F（马尔代夫）",
+              "homeScore": "3",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.001200--",
+              "home": "BYE",
+              "away": "AKASHEVA Zauresh / MIRKADIROVA Sarvinoz（哈萨克斯坦）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.001300--",
+              "home": "KIM Nayeong / LEE Eunhye（韩国）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.001400--",
+              "home": "BYE",
+              "away": "SHAIKH Sarrinah / AL-MALKI Fawziya（卡塔尔）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.001500--",
+              "home": "KAMALOVA Arujan / ERKEBAEVA Asel（乌兹别克斯坦）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.001600--",
+              "home": "BYE",
+              "away": "DOO Hoi Kem / NG Wing Lam（中国香港）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.001700--",
+              "home": "SHIN Yubin / JOO Cheonhui（韩国）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.001800--",
+              "home": "BYE",
+              "away": "NAFIZ Aishath / IBRAHIM Mishka（马尔代夫）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.001900--",
+              "home": "THAPA Evana / SHRESTHA Nabita（尼泊尔）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.002000--",
+              "home": "BYE",
+              "away": "TAN Zhao Yun / LAI Chloe（新加坡）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.002100--",
+              "home": "YEH Yi-tian / CHENG I-ching（中华台北）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.002200--",
+              "home": "PYON S / CHOE J（朝鲜）",
+              "away": "KHAN F / KHAN A（巴基斯坦）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.002300--",
+              "home": "CHIRI Bissam / AZAR Talia（黎巴嫩）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.002400--",
+              "home": "BYE",
+              "away": "SAWETTABUT Suthasini / PARANANG Orawan（泰国）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.002500--",
+              "home": "NAGASAKI Miyu / MENDE Rin（日本）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.002600--",
+              "home": "BYE",
+              "away": "ALI Maryam / MOHAMED Aia（卡塔尔）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.002700--",
+              "home": "MAHARANI N / SUDARNITA K（印度尼西亚）",
+              "away": "ZAZA H / ABBOUD R（叙利亚）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.002800--",
+              "home": "BYE",
+              "away": "LEE Hoi Man Karen / SU Tsz Tung（中国香港）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.002900--",
+              "home": "AKULA Sreeja / DAS Syndrela（印度）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.003000--",
+              "home": "BYE",
+              "away": "BATMUNKH Bolor-erdene / SANJAA Burenjargal（蒙古）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.003100--",
+              "home": "ROMANOVSKAYA Angelina / ZHAXYLYKOVA Albina（哈萨克斯坦）",
+              "away": "BYE",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R64-.003200--",
+              "home": "BYE",
+              "away": "KUAI Man / WANG Manyu（中国）",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:W.DOUBLES-----------.R32-",
+          "name": "32强赛",
+          "matches": [
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.000100--",
+              "home": "HARIMOTO M / HAYATA H（日本）",
+              "away": "VIJITVIRIYAGUL K / WONGLAKHON P（泰国）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.000200--",
+              "home": "LEONG O / KUAN C（中国澳门）",
+              "away": "CHEN S / WU Y（中华台北）",
+              "homeScore": "1",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.000300--",
+              "home": "FAN S / CHEN Y（中国）",
+              "away": "KIM K / CHA S（朝鲜）",
+              "homeScore": "3",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.000400--",
+              "home": "ILOUKHANI S / ASHTARI M（伊朗）",
+              "away": "GHORPADE Y / CHITALE D（印度）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.000500--",
+              "home": "LOY M / SER L（新加坡）",
+              "away": "SER-OD A / BATMUNKH B（蒙古）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.000600--",
+              "home": "PUTRI C / RASMI C（印度尼西亚）",
+              "away": "AKASHEVA Z / MIRKADIROVA S（哈萨克斯坦）",
+              "homeScore": "3",
+              "awayScore": "2",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.000700--",
+              "home": "KIM N / LEE E（韩国）",
+              "away": "SHAIKH S / AL-MALKI F（卡塔尔）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.000800--",
+              "home": "KAMALOVA A / ERKEBAEVA A（乌兹别克斯坦）",
+              "away": "DOO H / NG W（中国香港）",
+              "homeScore": "1",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.000900--",
+              "home": "SHIN Y / JOO C（韩国）",
+              "away": "NAFIZ A / IBRAHIM M（马尔代夫）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.001000--",
+              "home": "THAPA E / SHRESTHA N（尼泊尔）",
+              "away": "TAN Z / LAI C（新加坡）",
+              "homeScore": "0",
+              "awayScore": "0",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.001100--",
+              "home": "YEH Y / CHENG I（中华台北）",
+              "away": "PYON S / CHOE J（朝鲜）",
+              "homeScore": "3",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.001200--",
+              "home": "CHIRI B / AZAR T（黎巴嫩）",
+              "away": "SAWETTABUT S / PARANANG O（泰国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.001300--",
+              "home": "NAGASAKI M / MENDE R（日本）",
+              "away": "ALI M / MOHAMED A（卡塔尔）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.001400--",
+              "home": "MAHARANI N / SUDARNITA K（印度尼西亚）",
+              "away": "LEE H / SU T（中国香港）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.001500--",
+              "home": "AKULA S / DAS S（印度）",
+              "away": "BATMUNKH B / SANJAA B（蒙古）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.R32-.001600--",
+              "home": "ROMANOVSKAYA A / ZHAXYLYKOVA A（哈萨克斯坦）",
+              "away": "KUAI M / WANG M（中国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:W.DOUBLES-----------.8FNL",
+          "name": "16强赛",
+          "matches": [
+            {
+              "id": "TTE:W.DOUBLES-----------.8FNL.000100--",
+              "home": "HARIMOTO M / HAYATA H（日本）",
+              "away": "CHEN S / WU Y（中华台北）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.8FNL.000200--",
+              "home": "FAN S / CHEN Y（中国）",
+              "away": "GHORPADE Y / CHITALE D（印度）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.8FNL.000300--",
+              "home": "LOY M / SER L（新加坡）",
+              "away": "PUTRI C / RASMI C（印度尼西亚）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.8FNL.000400--",
+              "home": "KIM N / LEE E（韩国）",
+              "away": "DOO H / NG W（中国香港）",
+              "homeScore": "2",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.8FNL.000500--",
+              "home": "SHIN Y / JOO C（韩国）",
+              "away": "TAN Z / LAI C（新加坡）",
+              "homeScore": "3",
+              "awayScore": "1",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.8FNL.000600--",
+              "home": "YEH Y / CHENG I（中华台北）",
+              "away": "SAWETTABUT S / PARANANG O（泰国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.8FNL.000700--",
+              "home": "NAGASAKI M / MENDE R（日本）",
+              "away": "LEE H / SU T（中国香港）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.8FNL.000800--",
+              "home": "AKULA S / DAS S（印度）",
+              "away": "KUAI M / WANG M（中国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:W.DOUBLES-----------.QFNL",
+          "name": "1/4决赛",
+          "matches": [
+            {
+              "id": "TTE:W.DOUBLES-----------.QFNL.000100--",
+              "home": "HARIMOTO M / HAYATA H（日本）",
+              "away": "FAN S / CHEN Y（中国）",
+              "homeScore": "3",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.QFNL.000200--",
+              "home": "LOY M / SER L（新加坡）",
+              "away": "DOO H / NG W（中国香港）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.QFNL.000300--",
+              "home": "SHIN Y / JOO C（韩国）",
+              "away": "SAWETTABUT S / PARANANG O（泰国）",
+              "homeScore": "2",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.QFNL.000400--",
+              "home": "NAGASAKI M / MENDE R（日本）",
+              "away": "KUAI M / WANG M（中国）",
+              "homeScore": "0",
+              "awayScore": "3",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:W.DOUBLES-----------.SFNL",
+          "name": "半决赛",
+          "matches": [
+            {
+              "id": "TTE:W.DOUBLES-----------.SFNL.000100--",
+              "home": "HARIMOTO M / HAYATA H（日本）",
+              "away": "DOO H / NG W（中国香港）",
+              "homeScore": "4",
+              "awayScore": "0",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "TTE:W.DOUBLES-----------.SFNL.000200--",
+              "home": "SAWETTABUT S / PARANANG O（泰国）",
+              "away": "KUAI M / WANG M（中国）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "MAINDRAW:W.DOUBLES-----------.FNL-",
+          "name": "决赛",
+          "matches": [
+            {
+              "id": "TTE:W.DOUBLES-----------.FNL-.000100--",
+              "home": "HARIMOTO M / HAYATA H（日本）",
+              "away": "KUAI M / WANG M（中国）",
+              "homeScore": "0",
+              "awayScore": "4",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        }
+      ],
+      "message": ""
+    }
+  ],
+  "message": ""
+}

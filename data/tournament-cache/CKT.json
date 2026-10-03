@@ -1,0 +1,297 @@
+{
+  "updatedAt": "2026-10-03T09:35:18+08:00",
+  "events": [
+    {
+      "id": "M.TEAM--------------",
+      "name": "男子",
+      "groups": [
+        {
+          "name": "预赛 A组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "尼泊尔",
+              "2",
+              "1",
+              "0",
+              "0",
+              "3"
+            ],
+            [
+              "2",
+              "阿富汗",
+              "2",
+              "1",
+              "0",
+              "1",
+              "2"
+            ],
+            [
+              "3",
+              "日本",
+              "2",
+              "0",
+              "0",
+              "1",
+              "1"
+            ]
+          ]
+        },
+        {
+          "name": "预赛 B组",
+          "columns": [
+            "排名",
+            "国家/选手",
+            "已赛",
+            "胜",
+            "平",
+            "负",
+            "积分"
+          ],
+          "rows": [
+            [
+              "1",
+              "马来西亚",
+              "1",
+              "1",
+              "0",
+              "0",
+              "3"
+            ],
+            [
+              "2",
+              "中国香港",
+              "2",
+              "1",
+              "0",
+              "1",
+              "2"
+            ],
+            [
+              "3",
+              "阿曼",
+              "1",
+              "0",
+              "0",
+              "1",
+              "1"
+            ]
+          ]
+        }
+      ],
+      "rounds": [
+        {
+          "id": "FNL:M.TEAM--------------.QFNL",
+          "name": "1/4决赛",
+          "matches": [
+            {
+              "id": "CKT:M.TEAM--------------.QFNL.000100--",
+              "home": "巴基斯坦",
+              "away": "中国香港",
+              "homeScore": "0",
+              "awayScore": "0",
+              "winner": "",
+              "status": "CANCELED"
+            },
+            {
+              "id": "CKT:M.TEAM--------------.QFNL.000200--",
+              "home": "印度",
+              "away": "阿富汗",
+              "homeScore": "0",
+              "awayScore": "0",
+              "winner": "",
+              "status": "CANCELED"
+            },
+            {
+              "id": "CKT:M.TEAM--------------.QFNL.000300--",
+              "home": "斯里兰卡",
+              "away": "尼泊尔",
+              "homeScore": "0",
+              "awayScore": "0",
+              "winner": "",
+              "status": "CANCELED"
+            },
+            {
+              "id": "CKT:M.TEAM--------------.QFNL.000400--",
+              "home": "孟加拉国",
+              "away": "马来西亚",
+              "homeScore": "0",
+              "awayScore": "0",
+              "winner": "",
+              "status": "CANCELED"
+            }
+          ]
+        },
+        {
+          "id": "FNL:M.TEAM--------------.SFNL",
+          "name": "半决赛",
+          "matches": [
+            {
+              "id": "CKT:M.TEAM--------------.SFNL.000100--",
+              "home": "巴基斯坦",
+              "away": "孟加拉国",
+              "homeScore": "112",
+              "awayScore": "111",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "CKT:M.TEAM--------------.SFNL.000200--",
+              "home": "印度",
+              "away": "斯里兰卡",
+              "homeScore": "169",
+              "awayScore": "45",
+              "winner": "home",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "FNL:M.TEAM--------------.FNL-",
+          "name": "决赛",
+          "matches": [
+            {
+              "id": "CKT:M.TEAM--------------.FNL-.000100--",
+              "home": "巴基斯坦",
+              "away": "印度",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "",
+              "status": "SCHEDULED"
+            }
+          ]
+        },
+        {
+          "id": "BRN:M.TEAM--------------.FNL-",
+          "name": "铜牌赛",
+          "matches": [
+            {
+              "id": "CKT:M.TEAM--------------.FNL-.000200--",
+              "home": "孟加拉国",
+              "away": "斯里兰卡",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "",
+              "status": "RUNNING"
+            }
+          ]
+        }
+      ],
+      "message": ""
+    },
+    {
+      "id": "W.TEAM--------------",
+      "name": "女子",
+      "groups": [],
+      "rounds": [
+        {
+          "id": "FNL:W.TEAM--------------.QFNL",
+          "name": "1/4决赛",
+          "matches": [
+            {
+              "id": "CKT:W.TEAM--------------.QFNL.000100--",
+              "home": "孟加拉国",
+              "away": "中国",
+              "homeScore": "",
+              "awayScore": "",
+              "winner": "",
+              "status": "CANCELED"
+            },
+            {
+              "id": "CKT:W.TEAM--------------.QFNL.000200--",
+              "home": "巴基斯坦",
+              "away": "泰国",
+              "homeScore": "92",
+              "awayScore": "91",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "CKT:W.TEAM--------------.QFNL.000300--",
+              "home": "斯里兰卡",
+              "away": "马来西亚",
+              "homeScore": "160",
+              "awayScore": "74",
+              "winner": "home",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "CKT:W.TEAM--------------.QFNL.000400--",
+              "home": "印度",
+              "away": "日本",
+              "homeScore": "59",
+              "awayScore": "57",
+              "winner": "home",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "FNL:W.TEAM--------------.SFNL",
+          "name": "半决赛",
+          "matches": [
+            {
+              "id": "CKT:W.TEAM--------------.SFNL.000100--",
+              "home": "巴基斯坦",
+              "away": "斯里兰卡",
+              "homeScore": "177",
+              "awayScore": "178",
+              "winner": "away",
+              "status": "OFFICIAL"
+            },
+            {
+              "id": "CKT:W.TEAM--------------.SFNL.000200--",
+              "home": "孟加拉国",
+              "away": "印度",
+              "homeScore": "81",
+              "awayScore": "195",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "FNL:W.TEAM--------------.FNL-",
+          "name": "决赛",
+          "matches": [
+            {
+              "id": "CKT:W.TEAM--------------.FNL-.000100--",
+              "home": "斯里兰卡",
+              "away": "印度",
+              "homeScore": "69",
+              "awayScore": "216",
+              "winner": "away",
+              "status": "OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "BRN:W.TEAM--------------.FNL-",
+          "name": "铜牌赛",
+          "matches": [
+            {
+              "id": "CKT:W.TEAM--------------.FNL-.000200--",
+              "home": "巴基斯坦",
+              "away": "孟加拉国",
+              "homeScore": "145",
+              "awayScore": "114",
+              "winner": "home",
+              "status": "OFFICIAL"
+            }
+          ]
+        }
+      ],
+      "message": ""
+    }
+  ],
+  "message": ""
+}
