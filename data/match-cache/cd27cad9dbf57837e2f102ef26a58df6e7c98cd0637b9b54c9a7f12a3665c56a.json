@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "MAHARJAN P / MAHARJAN R",
+  "away": "YE H / CHAN N",
+  "homePlayers": [
+    {
+      "name": "MAHARJAN Praful",
+      "nameS": "MAHARJAN Praful",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "BDMXDOUBLES----NEP01",
+      "photo": ""
+    },
+    {
+      "name": "MAHARJAN Rashila",
+      "nameS": "MAHARJAN Rashila",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "BDMXDOUBLES----NEP01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "YE Hong-Wei",
+      "nameS": "YE Hong-Wei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMXDOUBLES----TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHAN Nicole Gonzales",
+      "nameS": "CHAN Nicole Gonzales",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMXDOUBLES----TPE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

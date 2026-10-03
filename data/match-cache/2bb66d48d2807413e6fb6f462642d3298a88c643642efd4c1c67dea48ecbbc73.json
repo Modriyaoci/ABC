@@ -1,0 +1,97 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Japan",
+  "away": "Maldives",
+  "homePlayers": [
+    {
+      "name": "HARIMOTO Tomokazu",
+      "nameS": "HARIMOTO Tomokazu",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MATSUSHIMA Sora",
+      "nameS": "MATSUSHIMA Sora",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TOGAMI Shunsuke",
+      "nameS": "TOGAMI Shunsuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "UDA Yukiya",
+      "nameS": "UDA Yukiya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SHINOZUKA Hiroto",
+      "nameS": "SHINOZUKA Hiroto",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "AHMED Moosa",
+      "nameS": "AHMED Moosa",
+      "org": "MDV",
+      "orgName": "MDV",
+      "country": "MDV",
+      "reg": "TTEMTEAM-------MDV01",
+      "photo": ""
+    },
+    {
+      "name": "ISMAIL Mohamed",
+      "nameS": "ISMAIL Mohamed",
+      "org": "MDV",
+      "orgName": "MDV",
+      "country": "MDV",
+      "reg": "TTEMTEAM-------MDV01",
+      "photo": ""
+    },
+    {
+      "name": "KHALID Akhyar",
+      "nameS": "KHALID Akhyar",
+      "org": "MDV",
+      "orgName": "MDV",
+      "country": "MDV",
+      "reg": "TTEMTEAM-------MDV01",
+      "photo": ""
+    },
+    {
+      "name": "RAFIU Mohamed",
+      "nameS": "RAFIU Mohamed",
+      "org": "MDV",
+      "orgName": "MDV",
+      "country": "MDV",
+      "reg": "TTEMTEAM-------MDV01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

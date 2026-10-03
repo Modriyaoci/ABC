@@ -1,0 +1,286 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Afghanistan",
+  "away": "Japan",
+  "homePlayers": [
+    {
+      "name": "ZAZAI Mohammad Akram",
+      "nameS": "ZAZAI Mohammad Akram",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "EISAKHIL Hassan",
+      "nameS": "EISAKHIL Hassan",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "JANAT Karim",
+      "nameS": "JANAT Karim",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "ABDUL RASOOL Darwish",
+      "nameS": "ABDUL RASOOL Darwish",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "ZADRAN Najibullah",
+      "nameS": "ZADRAN Najibullah",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "SHIRZAD Mohammad Ishaq",
+      "nameS": "SHIRZAD Mohammad Ishaq",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "ALAM Ismatullah",
+      "nameS": "ALAM Ismatullah",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "AHMAD ZAI Abdollah",
+      "nameS": "AHMAD ZAI Abdollah",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "DAWOODZAI Faridoon",
+      "nameS": "DAWOODZAI Faridoon",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Nangeyalia",
+      "nameS": "KHAN Nangeyalia",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "MOMAND Arab Gul",
+      "nameS": "MOMAND Arab Gul",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "TANIWAL Khalid",
+      "nameS": "TANIWAL Khalid",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "MIR Imran",
+      "nameS": "MIR Imran",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "SAFI Farmanullah",
+      "nameS": "SAFI Farmanullah",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "SHINOZADA Faisal Khan",
+      "nameS": "SHINOZADA Faisal Khan",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LAKE Lachlan Graham Shungo",
+      "nameS": "LAKE Lachlan Graham Shungo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SAKURANO Reo",
+      "nameS": "SAKURANO Reo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FLEMING Kendel Sean",
+      "nameS": "FLEMING Kendel Sean",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "ITO Gou Benjamin",
+      "nameS": "ITO Gou Benjamin",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SHIRAI Alexander James Douglas",
+      "nameS": "SHIRAI Alexander James Douglas",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TAKAHASHI Ibrahim",
+      "nameS": "TAKAHASHI Ibrahim",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HINZE Charles Matsumoto",
+      "nameS": "HINZE Charles Matsumoto",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MIYAUCHI Wataru",
+      "nameS": "MIYAUCHI Wataru",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SUZUKI Declan Tora",
+      "nameS": "SUZUKI Declan Tora",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TANIYAMA Makoto",
+      "nameS": "TANIYAMA Makoto",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SLATER Shoma Orlando",
+      "nameS": "SLATER Shoma Orlando",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KUBOTA Kohei",
+      "nameS": "KUBOTA Kohei",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KUSUDA Jake Masayoshi",
+      "nameS": "KUSUDA Jake Masayoshi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TAKADA Tsuyoshi",
+      "nameS": "TAKADA Tsuyoshi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FLEMING Alester",
+      "nameS": "FLEMING Alester",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

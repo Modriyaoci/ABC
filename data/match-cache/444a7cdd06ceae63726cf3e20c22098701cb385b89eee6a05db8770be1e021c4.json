@@ -1,0 +1,106 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Korea",
+  "away": "Kazakhstan",
+  "homePlayers": [
+    {
+      "name": "SHIN Yubin",
+      "nameS": "SHIN Yubin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEWTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JOO Cheonhui",
+      "nameS": "JOO Cheonhui",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEWTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Nayeong",
+      "nameS": "KIM Nayeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEWTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Eunhye",
+      "nameS": "LEE Eunhye",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEWTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Gahyeon",
+      "nameS": "PARK Gahyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEWTEAM-------KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "AKASHEVA Zauresh",
+      "nameS": "AKASHEVA Zauresh",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEWTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "MIRKADIROVA Sarvinoz",
+      "nameS": "MIRKADIROVA Sarvinoz",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEWTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KOSHKUMBAYEVA Zhanerke",
+      "nameS": "KOSHKUMBAYEVA Zhanerke",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEWTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "ROMANOVSKAYA Angelina",
+      "nameS": "ROMANOVSKAYA Angelina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEWTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "ZHAXYLYKOVA Albina",
+      "nameS": "ZHAXYLYKOVA Albina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEWTEAM-------KAZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

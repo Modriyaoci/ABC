@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "ALUDO S / MADIS T",
+  "away": "CHAN H / WU F",
+  "homePlayers": [
+    {
+      "name": "ALUDO Stefi",
+      "nameS": "ALUDO Stefi",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "TENWDOUBLES----PHI02",
+      "photo": ""
+    },
+    {
+      "name": "MADIS Tennielle",
+      "nameS": "MADIS Tennielle",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "TENWDOUBLES----PHI02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHAN Hao-ching",
+      "nameS": "CHAN Hao-ching",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TENWDOUBLES----TPE02",
+      "photo": ""
+    },
+    {
+      "name": "WU Fang-hsien",
+      "nameS": "WU Fang-hsien",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TENWDOUBLES----TPE02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

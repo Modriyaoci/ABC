@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "YEUNG N / YEUNG P",
+  "away": "NAKANISHI K / UESAKA R",
+  "homePlayers": [
+    {
+      "name": "YEUNG Nga Ting",
+      "nameS": "YEUNG Nga Ting",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWDOUBLES----HKG01",
+      "photo": ""
+    },
+    {
+      "name": "YEUNG Pui Lam",
+      "nameS": "YEUNG Pui Lam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWDOUBLES----HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NAKANISHI Kie",
+      "nameS": "NAKANISHI Kie",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMWDOUBLES----JPN02",
+      "photo": ""
+    },
+    {
+      "name": "UESAKA Rin",
+      "nameS": "UESAKA Rin",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMWDOUBLES----JPN02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

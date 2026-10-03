@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KUSUMA F / PUSPITASARI M",
+  "away": "SELVAM K / SINGHI S",
+  "homePlayers": [
+    {
+      "name": "KUSUMA Febriana Dwipuji",
+      "nameS": "KUSUMA Febriana Dwipuji",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWDOUBLES----INA02",
+      "photo": ""
+    },
+    {
+      "name": "PUSPITASARI Meilysa Trias",
+      "nameS": "PUSPITASARI Meilysa Trias",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWDOUBLES----INA02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SELVAM Kavipriya",
+      "nameS": "SELVAM Kavipriya",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWDOUBLES----IND02",
+      "photo": ""
+    },
+    {
+      "name": "SINGHI Simran A.",
+      "nameS": "SINGHI Simran A.",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWDOUBLES----IND02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

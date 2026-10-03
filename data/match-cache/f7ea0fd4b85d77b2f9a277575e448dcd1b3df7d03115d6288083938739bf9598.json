@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "JEONG B / PARK S",
+  "away": "HSIEH S / LIANG E",
+  "homePlayers": [
+    {
+      "name": "JEONG Boyoung",
+      "nameS": "JEONG Boyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TENWDOUBLES----KOR02",
+      "photo": ""
+    },
+    {
+      "name": "PARK Sohyun",
+      "nameS": "PARK Sohyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TENWDOUBLES----KOR02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "HSIEH Su-wei",
+      "nameS": "HSIEH Su-wei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TENWDOUBLES----TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIANG En-shuo",
+      "nameS": "LIANG En-shuo",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TENWDOUBLES----TPE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,106 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Indonesia",
+  "away": "India",
+  "homePlayers": [
+    {
+      "name": "PRATAMA Affan",
+      "nameS": "PRATAMA Affan",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "DESRIZAL Gusti",
+      "nameS": "DESRIZAL Gusti",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "NEGARA Muhammad",
+      "nameS": "NEGARA Muhammad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "INZAGHI Muhammad",
+      "nameS": "INZAGHI Muhammad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "JUNINDRA Muhammad",
+      "nameS": "JUNINDRA Muhammad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEMTEAM-------INA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "DESAI Harmeet",
+      "nameS": "DESAI Harmeet",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "GNANASEKARAN Sathiyan",
+      "nameS": "GNANASEKARAN Sathiyan",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "THAKKAR Manav",
+      "nameS": "THAKKAR Manav",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SHAH Manush",
+      "nameS": "SHAH Manush",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "JAIN Payas",
+      "nameS": "JAIN Payas",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEMTEAM-------IND01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

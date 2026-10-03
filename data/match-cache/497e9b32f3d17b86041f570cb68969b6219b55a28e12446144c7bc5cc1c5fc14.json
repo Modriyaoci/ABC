@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Thailand",
+  "away": "Indonesia",
+  "homePlayers": [
+    {
+      "name": "PANNOY Piyanut",
+      "nameS": "PANNOY Piyanut",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "GUEDPARD Pornpun",
+      "nameS": "GUEDPARD Pornpun",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KUNMUEANG Kanyarat",
+      "nameS": "KUNMUEANG Kanyarat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "NUEKJANG Thatdao",
+      "nameS": "NUEKJANG Thatdao",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SEETALOED Warisara",
+      "nameS": "SEETALOED Warisara",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KHAMWONG Kalyarat",
+      "nameS": "KHAMWONG Kalyarat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "JANTHAWISUT Sasipapron",
+      "nameS": "JANTHAWISUT Sasipapron",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "JAISAEN Natthanicha",
+      "nameS": "JAISAEN Natthanicha",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KOKRAM Pimpichaya",
+      "nameS": "KOKRAM Pimpichaya",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KONGYOT Ajcharaporn",
+      "nameS": "KONGYOT Ajcharaporn",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "MOKSRI Chatchu-on",
+      "nameS": "MOKSRI Chatchu-on",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KAMULTHALA Kaewkalaya",
+      "nameS": "KAMULTHALA Kaewkalaya",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "MARADANTI Namira Tegariani",
+      "nameS": "MARADANTI Namira Tegariani",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "SALIM Tina Syifa Sabila",
+      "nameS": "SALIM Tina Syifa Sabila",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "NURTOMO Chelsa Berliana",
+      "nameS": "NURTOMO Chelsa Berliana",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "YOKU Mediol Stiovanny",
+      "nameS": "YOKU Mediol Stiovanny",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "AGUSTIN Putri Nur Hidayanti",
+      "nameS": "AGUSTIN Putri Nur Hidayanti",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "GURETNO DWI MARGIANI Indah",
+      "nameS": "GURETNO DWI MARGIANI Indah",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "SALSABILA Ersandrina Devega",
+      "nameS": "SALSABILA Ersandrina Devega",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "CAHYANINGTYAS Geofanny Eka",
+      "nameS": "CAHYANINGTYAS Geofanny Eka",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "CAHAYA Ajeng Nur",
+      "nameS": "CAHAYA Ajeng Nur",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "FEBYANE Azzahra Dwi",
+      "nameS": "FEBYANE Azzahra Dwi",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "GANESHTRI Khanza Putri Yansi",
+      "nameS": "GANESHTRI Khanza Putri Yansi",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "AMELIAN Arneta Putri",
+      "nameS": "AMELIAN Arneta Putri",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "AHMED M / NAZIM A",
+  "away": "SHAH M / CHITALE D",
+  "homePlayers": [
+    {
+      "name": "AHMED Moosa",
+      "nameS": "AHMED Moosa",
+      "org": "MDV",
+      "orgName": "MDV",
+      "country": "MDV",
+      "reg": "TTEXDOUBLES----MDV01",
+      "photo": ""
+    },
+    {
+      "name": "NAZIM Aishath",
+      "nameS": "NAZIM Aishath",
+      "org": "MDV",
+      "orgName": "MDV",
+      "country": "MDV",
+      "reg": "TTEXDOUBLES----MDV01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SHAH Manush",
+      "nameS": "SHAH Manush",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEXDOUBLES----IND01",
+      "photo": ""
+    },
+    {
+      "name": "CHITALE Diya",
+      "nameS": "CHITALE Diya",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEXDOUBLES----IND01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

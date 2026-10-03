@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Kyrgyzstan",
+  "away": "Qatar",
+  "homePlayers": [
+    {
+      "name": "TULENOVA Gulmira Almasbekovna",
+      "nameS": "TULENOVA Gulmira Almasbekovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "BEISHENOVA Aizhanat",
+      "nameS": "BEISHENOVA Aizhanat",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "TKACHEVA Mariia Ivanovna",
+      "nameS": "TKACHEVA Mariia Ivanovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "MIRLAN KYZY Madina",
+      "nameS": "MIRLAN KYZY Madina",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "BOLOTBEKOVA Nurzhamal Bolotbekovna",
+      "nameS": "BOLOTBEKOVA Nurzhamal Bolotbekovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "BAIAMANOVA Raiana",
+      "nameS": "BAIAMANOVA Raiana",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ASAMIDINOVA Azemi Abdinabievna",
+      "nameS": "ASAMIDINOVA Azemi Abdinabievna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "SEIITBEKOVA Asema",
+      "nameS": "SEIITBEKOVA Asema",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "AMIRAKULOVA Saikal Azamatovna",
+      "nameS": "AMIRAKULOVA Saikal Azamatovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "YSKAKOVA Alfiia Bolotovna",
+      "nameS": "YSKAKOVA Alfiia Bolotovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "SUERKULOVA Zhanetta Bakytbekovna",
+      "nameS": "SUERKULOVA Zhanetta Bakytbekovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "AITBEKOVA Perizat Azizovna",
+      "nameS": "AITBEKOVA Perizat Azizovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ALSALMAN Lamis",
+      "nameS": "ALSALMAN Lamis",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "SULTAN AL-ALAWI Aisha",
+      "nameS": "SULTAN AL-ALAWI Aisha",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ABOUEITA Dana",
+      "nameS": "ABOUEITA Dana",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "SHALABY Nelly",
+      "nameS": "SHALABY Nelly",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MOUHOUB Meriem",
+      "nameS": "MOUHOUB Meriem",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ELWALEED M EISA Ludan",
+      "nameS": "ELWALEED M EISA Ludan",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "DEYAB Almayasa",
+      "nameS": "DEYAB Almayasa",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ALMADHOUN Sumaia",
+      "nameS": "ALMADHOUN Sumaia",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MAHMOUD Lujain",
+      "nameS": "MAHMOUD Lujain",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Tasneem",
+      "nameS": "ALI Tasneem",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MABROUK Janna",
+      "nameS": "MABROUK Janna",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "GADIAGA Penda Fatma",
+      "nameS": "GADIAGA Penda Fatma",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

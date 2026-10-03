@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHEN T / CHENG S",
+  "away": "KIM J / JANG H",
+  "homePlayers": [
+    {
+      "name": "CHEN Tang Jie",
+      "nameS": "CHEN Tang Jie",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMXDOUBLES----MAS01",
+      "photo": ""
+    },
+    {
+      "name": "CHENG Su Yin",
+      "nameS": "CHENG Su Yin",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMXDOUBLES----MAS01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KIM Jae Hyun",
+      "nameS": "KIM Jae Hyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMXDOUBLES----KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JANG Hajeong",
+      "nameS": "JANG Hajeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMXDOUBLES----KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,439 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Palestine",
+  "away": "Japan",
+  "homePlayers": [
+    {
+      "name": "LAFI Syam",
+      "nameS": "LAFI Syam",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "GHOULEH Ahmad",
+      "nameS": "GHOULEH Ahmad",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "DOLAH Abdelraheem",
+      "nameS": "DOLAH Abdelraheem",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "HADDAD Charles",
+      "nameS": "HADDAD Charles",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "AHMAD Dylan",
+      "nameS": "AHMAD Dylan",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "SHUBLAQ Omar",
+      "nameS": "SHUBLAQ Omar",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "SUBOH Tariq",
+      "nameS": "SUBOH Tariq",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "ABBASI Yousef",
+      "nameS": "ABBASI Yousef",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "AMMAR Hasan",
+      "nameS": "AMMAR Hasan",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "SHAHINKUBTY Luke",
+      "nameS": "SHAHINKUBTY Luke",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "RAYAN Yacoub",
+      "nameS": "RAYAN Yacoub",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "THABATA Faris",
+      "nameS": "THABATA Faris",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "YASIN Rumsey",
+      "nameS": "YASIN Rumsey",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "JABER Adnan",
+      "nameS": "JABER Adnan",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "ELABOUR Tarik",
+      "nameS": "ELABOUR Tarik",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "BABA Paul",
+      "nameS": "BABA Paul",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "HARJLI Ahmad",
+      "nameS": "HARJLI Ahmad",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "HALEEM Yunis Shehab Rezeq",
+      "nameS": "HALEEM Yunis Shehab Rezeq",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "POWRES David",
+      "nameS": "POWRES David",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "MUFAREH Steven",
+      "nameS": "MUFAREH Steven",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "KHOURY Patrick",
+      "nameS": "KHOURY Patrick",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "YABBOUR Joseph",
+      "nameS": "YABBOUR Joseph",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "BADER Kyle",
+      "nameS": "BADER Kyle",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    },
+    {
+      "name": "BARKSDALE Nicolas",
+      "nameS": "BARKSDALE Nicolas",
+      "org": "PLE",
+      "orgName": "PLE",
+      "country": "PLE",
+      "reg": "BBLMTEAM9------PLE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "MARUYAMA Masashi",
+      "nameS": "MARUYAMA Masashi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YANO Yukiya",
+      "nameS": "YANO Yukiya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SATO Yuki",
+      "nameS": "SATO Yuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SOEDA Manami",
+      "nameS": "SOEDA Manami",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SHIBASAKI Masato",
+      "nameS": "SHIBASAKI Masato",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MUKOYAMA Motoki",
+      "nameS": "MUKOYAMA Motoki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUJISAWA Ryosuke",
+      "nameS": "FUJISAWA Ryosuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "AIZAWA Ryosuke",
+      "nameS": "AIZAWA Ryosuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MIZUTANI Shohei",
+      "nameS": "MIZUTANI Shohei",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KUMADA Toyo",
+      "nameS": "KUMADA Toyo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YAMADA Kenta",
+      "nameS": "YAMADA Kenta",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "WADA Keita",
+      "nameS": "WADA Keita",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUKUI Shogo",
+      "nameS": "FUKUI Shogo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "ARIMA Ryo",
+      "nameS": "ARIMA Ryo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KONDO Kazuki",
+      "nameS": "KONDO Kazuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TANIWAKI Koki",
+      "nameS": "TANIWAKI Koki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MATSUDA Wataru",
+      "nameS": "MATSUDA Wataru",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KATO Mizuki",
+      "nameS": "KATO Mizuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HIGUCHI Shin",
+      "nameS": "HIGUCHI Shin",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NAGANO Kento",
+      "nameS": "NAGANO Kento",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TSUJIMOTO Yuki",
+      "nameS": "TSUJIMOTO Yuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KAYO Shuichiro",
+      "nameS": "KAYO Shuichiro",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUCHIGAMI Yoshiki",
+      "nameS": "FUCHIGAMI Yoshiki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

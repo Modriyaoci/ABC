@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "SUTJIADI A / RUNGKAT C",
+  "away": "BISTA S / SHRESTHA N",
+  "homePlayers": [
+    {
+      "name": "SUTJIADI Aldila",
+      "nameS": "SUTJIADI Aldila",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TENXDOUBLES----INA01",
+      "photo": ""
+    },
+    {
+      "name": "RUNGKAT Christopher",
+      "nameS": "RUNGKAT Christopher",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TENXDOUBLES----INA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "BISTA Swastika",
+      "nameS": "BISTA Swastika",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "TENXDOUBLES----NEP02",
+      "photo": ""
+    },
+    {
+      "name": "SHRESTHA Nisan",
+      "nameS": "SHRESTHA Nisan",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "TENXDOUBLES----NEP02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

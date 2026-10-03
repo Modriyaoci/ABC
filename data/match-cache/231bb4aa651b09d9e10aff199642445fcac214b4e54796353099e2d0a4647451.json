@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KHAN M / KHAN K",
+  "away": "MAHARJAN R / THAPA E",
+  "homePlayers": [
+    {
+      "name": "KHAN Muhammad",
+      "nameS": "KHAN Muhammad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TTEXDOUBLES----PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Kalsoom",
+      "nameS": "KHAN Kalsoom",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TTEXDOUBLES----PAK01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "MAHARJAN Rubin",
+      "nameS": "MAHARJAN Rubin",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "1",
+      "photo": ""
+    },
+    {
+      "name": "THAPA Evana",
+      "nameS": "THAPA Evana",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "1",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

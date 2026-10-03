@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "SHINOZUKA H / ITO M",
+  "away": "LIN Y / CHENG I",
+  "homePlayers": [
+    {
+      "name": "SHINOZUKA Hiroto",
+      "nameS": "SHINOZUKA Hiroto",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEXDOUBLES----JPN02",
+      "photo": ""
+    },
+    {
+      "name": "ITO Mima",
+      "nameS": "ITO Mima",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEXDOUBLES----JPN02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LIN Yun-ju",
+      "nameS": "LIN Yun-ju",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEXDOUBLES----TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHENG I-ching",
+      "nameS": "CHENG I-ching",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEXDOUBLES----TPE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

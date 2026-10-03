@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Vietnam",
+  "away": "Uzbekistan",
+  "homePlayers": [
+    {
+      "name": "DINH Van Duy",
+      "nameS": "DINH Van Duy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRINH Duy Phuc",
+      "nameS": "TRINH Duy Phuc",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "DUONG Van Tien",
+      "nameS": "DUONG Van Tien",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Minh Duc",
+      "nameS": "TRAN Minh Duc",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TANG Ngoc Hieu",
+      "nameS": "TANG Ngoc Hieu",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Duy Tuyen",
+      "nameS": "TRAN Duy Tuyen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRUONG The Khai",
+      "nameS": "TRUONG The Khai",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "DINH van Phuong",
+      "nameS": "DINH van Phuong",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "NGUYEN Ngoc Thuan",
+      "nameS": "NGUYEN Ngoc Thuan",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Hoai Phuong",
+      "nameS": "TRAN Hoai Phuong",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "CAO Duc Hoang",
+      "nameS": "CAO Duc Hoang",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "BUI Xuan Tien",
+      "nameS": "BUI Xuan Tien",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "RAKHIMOV Umirbek",
+      "nameS": "RAKHIMOV Umirbek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "HAKIMOV Bilolbek",
+      "nameS": "HAKIMOV Bilolbek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "ISAMOV Khabibullokhon",
+      "nameS": "ISAMOV Khabibullokhon",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MURODOV Mirziyod",
+      "nameS": "MURODOV Mirziyod",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "SOBIROV Islomjon",
+      "nameS": "SOBIROV Islomjon",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "KAYPANOV Aybek",
+      "nameS": "KAYPANOV Aybek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MUROBIDINOV Saidjamol",
+      "nameS": "MUROBIDINOV Saidjamol",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "HAYDAROV Ogabek",
+      "nameS": "HAYDAROV Ogabek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MAMAYUSUFOV Shokhboz",
+      "nameS": "MAMAYUSUFOV Shokhboz",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "OMONOV Shakhzod",
+      "nameS": "OMONOV Shakhzod",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MUHAMADIEV Yakhyo",
+      "nameS": "MUHAMADIEV Yakhyo",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "JURAEV Asadbek",
+      "nameS": "JURAEV Asadbek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

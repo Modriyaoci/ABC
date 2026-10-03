@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KI D / KANG M",
+  "away": "KOH W / KUBO J",
+  "homePlayers": [
+    {
+      "name": "KI Dong Ju",
+      "nameS": "KI Dong Ju",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMDOUBLES----KOR02",
+      "photo": ""
+    },
+    {
+      "name": "KANG Min Hyuk",
+      "nameS": "KANG Min Hyuk",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMDOUBLES----KOR02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KOH Wesley Eng Keat",
+      "nameS": "KOH Wesley Eng Keat",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "BDMMDOUBLES----SGP01",
+      "photo": ""
+    },
+    {
+      "name": "KUBO Junsuke",
+      "nameS": "KUBO Junsuke",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "BDMMDOUBLES----SGP01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

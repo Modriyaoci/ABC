@@ -1,0 +1,304 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "IR Iran",
+  "away": "Korea",
+  "homePlayers": [
+    {
+      "name": "HEIDARI Saber",
+      "nameS": "HEIDARI Saber",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "GHALANDARI Milad",
+      "nameS": "GHALANDARI Milad",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "FAROKHI Mohammadhossein",
+      "nameS": "FAROKHI Mohammadhossein",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ENAYATI Omid",
+      "nameS": "ENAYATI Omid",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HEIDARIAN Ali",
+      "nameS": "HEIDARIAN Ali",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "SIAVOSHISHAHENAYATI Mohammad",
+      "nameS": "SIAVOSHISHAHENAYATI Mohammad",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "RAHNAMA Mehran",
+      "nameS": "RAHNAMA Mehran",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ORAEI Mohammadreza",
+      "nameS": "ORAEI Mohammadreza",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "BEHNAMNIA MOHAMMADMAHDI",
+      "nameS": "BEHNAMNIA MOHAMMADMAHDI",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ADELKHANI Roohollah",
+      "nameS": "ADELKHANI Roohollah",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "KAZEMI Mohammadreza",
+      "nameS": "KAZEMI Mohammadreza",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "AMIRYOUSEFI Ali",
+      "nameS": "AMIRYOUSEFI Ali",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ROBAT Omid",
+      "nameS": "ROBAT Omid",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "PIRZADEH Alireza",
+      "nameS": "PIRZADEH Alireza",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "FATEHIZADEH Behshad",
+      "nameS": "FATEHIZADEH Behshad",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ASARI Younes",
+      "nameS": "ASARI Younes",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KIM Taegwan",
+      "nameS": "KIM Taegwan",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SONG Jeawoo",
+      "nameS": "SONG Jeawoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Kwangsoon",
+      "nameS": "PARK Kwangsoon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "YEON Minmo",
+      "nameS": "YEON Minmo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Jinyoung",
+      "nameS": "KIM Jinyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Yoseb",
+      "nameS": "LEE Yoseb",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HA Min",
+      "nameS": "HA Min",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "WON Minjun",
+      "nameS": "WON Minjun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Donguk",
+      "nameS": "KIM Donguk",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Jinho",
+      "nameS": "KIM Jinho",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JEON Jinsoo",
+      "nameS": "JEON Jinsoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Rakchan",
+      "nameS": "KIM Rakchan",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Seung",
+      "nameS": "PARK Seung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Yeonbin",
+      "nameS": "KIM Yeonbin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JIN Yusung",
+      "nameS": "JIN Yusung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Jaeyong",
+      "nameS": "PARK Jaeyong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

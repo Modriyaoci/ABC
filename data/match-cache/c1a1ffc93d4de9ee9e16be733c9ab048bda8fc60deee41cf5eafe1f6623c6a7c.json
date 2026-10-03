@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KAPILA D / CRASTO T",
+  "away": "LAI S / GOH S",
+  "homePlayers": [
+    {
+      "name": "KAPILA Dhruv",
+      "nameS": "KAPILA Dhruv",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMXDOUBLES----IND02",
+      "photo": ""
+    },
+    {
+      "name": "CRASTO Tanisha",
+      "nameS": "CRASTO Tanisha",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMXDOUBLES----IND02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LAI Shevon Jemie",
+      "nameS": "LAI Shevon Jemie",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMXDOUBLES----MAS02",
+      "photo": ""
+    },
+    {
+      "name": "GOH Soon Huat",
+      "nameS": "GOH Soon Huat",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMXDOUBLES----MAS02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

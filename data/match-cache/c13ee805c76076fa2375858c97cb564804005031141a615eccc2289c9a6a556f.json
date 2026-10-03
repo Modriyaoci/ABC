@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Chinese Taipei",
+  "away": "Indonesia",
+  "homePlayers": [
+    {
+      "name": "HSU Heng-yun",
+      "nameS": "HSU Heng-yun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "XU Zhen-xuan",
+      "nameS": "XU Zhen-xuan",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HUNG Chia-yao",
+      "nameS": "HUNG Chia-yao",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Shu-ho",
+      "nameS": "LIN Shu-ho",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "KAN Ko-hui",
+      "nameS": "KAN Ko-hui",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HSU Wan-yun",
+      "nameS": "HSU Wan-yun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "TSAI Yu-chun",
+      "nameS": "TSAI Yu-chun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIAO Yi-jen",
+      "nameS": "LIAO Yi-jen",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Chieh",
+      "nameS": "CHEN Chieh",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WEN Yi-chin",
+      "nameS": "WEN Yi-chin",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WU Tzu-hua",
+      "nameS": "WU Tzu-hua",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHANG Yi-chi",
+      "nameS": "CHANG Yi-chi",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "MARADANTI Namira Tegariani",
+      "nameS": "MARADANTI Namira Tegariani",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "SALIM Tina Syifa Sabila",
+      "nameS": "SALIM Tina Syifa Sabila",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "NURTOMO Chelsa Berliana",
+      "nameS": "NURTOMO Chelsa Berliana",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "YOKU Mediol Stiovanny",
+      "nameS": "YOKU Mediol Stiovanny",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "AGUSTIN Putri Nur Hidayanti",
+      "nameS": "AGUSTIN Putri Nur Hidayanti",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "GURETNO DWI MARGIANI Indah",
+      "nameS": "GURETNO DWI MARGIANI Indah",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "SALSABILA Ersandrina Devega",
+      "nameS": "SALSABILA Ersandrina Devega",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "CAHYANINGTYAS Geofanny Eka",
+      "nameS": "CAHYANINGTYAS Geofanny Eka",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "CAHAYA Ajeng Nur",
+      "nameS": "CAHAYA Ajeng Nur",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "FEBYANE Azzahra Dwi",
+      "nameS": "FEBYANE Azzahra Dwi",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "GANESHTRI Khanza Putri Yansi",
+      "nameS": "GANESHTRI Khanza Putri Yansi",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "AMELIAN Arneta Putri",
+      "nameS": "AMELIAN Arneta Putri",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Thailand",
+  "away": "IR Iran",
+  "homePlayers": [
+    {
+      "name": "PHRAPUT Toopadit",
+      "nameS": "PHRAPUT Toopadit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "BHINIJDEE Napadet",
+      "nameS": "BHINIJDEE Napadet",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "THANOMNOI Jakkrit",
+      "nameS": "THANOMNOI Jakkrit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PAKDEEKAEW Anuchit",
+      "nameS": "PAKDEEKAEW Anuchit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "INTHANU Nakharin",
+      "nameS": "INTHANU Nakharin",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "MAHASIRIYOTHIN Suwit",
+      "nameS": "MAHASIRIYOTHIN Suwit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "JANPIROM Narongrit",
+      "nameS": "JANPIROM Narongrit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "WONGTORN Boonyarid",
+      "nameS": "WONGTORN Boonyarid",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "RAMSIN Kiadtiphum",
+      "nameS": "RAMSIN Kiadtiphum",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "BAMRUNGPHAKDI Thanat",
+      "nameS": "BAMRUNGPHAKDI Thanat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PHANRAM Anurak",
+      "nameS": "PHANRAM Anurak",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "THUNGKHAM Chaiwat",
+      "nameS": "THUNGKHAM Chaiwat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NASRI MASTANABAD Mobin",
+      "nameS": "NASRI MASTANABAD Mobin",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HOSSEIN KHANZADEH FIROUZJ Poriya",
+      "nameS": "HOSSEIN KHANZADEH FIROUZJ Poriya",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ESMAEILNEZHAD Amin",
+      "nameS": "ESMAEILNEZHAD Amin",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "DAVOODIPOUR Ilshan",
+      "nameS": "DAVOODIPOUR Ilshan",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "BEHNEZHAD Arshia",
+      "nameS": "BEHNEZHAD Arshia",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HAJIPOUR MOGHADDAM FAROUJ Ali",
+      "nameS": "HAJIPOUR MOGHADDAM FAROUJ Ali",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HAJI KALATEH Hossein",
+      "nameS": "HAJI KALATEH Hossein",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "KAZEMI POSHTPARI Yousef",
+      "nameS": "KAZEMI POSHTPARI Yousef",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HAGHPARAST Ali",
+      "nameS": "HAGHPARAST Ali",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "VALIZADEH Mohammad",
+      "nameS": "VALIZADEH Mohammad",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "SHARIFI Morteza",
+      "nameS": "SHARIFI Morteza",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "NASERI CHENARI Seyed Eisa",
+      "nameS": "NASERI CHENARI Seyed Eisa",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

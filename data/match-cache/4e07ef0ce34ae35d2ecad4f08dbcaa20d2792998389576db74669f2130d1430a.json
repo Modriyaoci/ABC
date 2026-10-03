@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "VONGSA A / HAGBERG J",
+  "away": "FENG Y / KUO G",
+  "homePlayers": [
+    {
+      "name": "VONGSA Anane",
+      "nameS": "VONGSA Anane",
+      "org": "LAO",
+      "orgName": "LAO",
+      "country": "LAO",
+      "reg": "TTEMDOUBLES----LAO01",
+      "photo": ""
+    },
+    {
+      "name": "HAGBERG Johan",
+      "nameS": "HAGBERG Johan",
+      "org": "LAO",
+      "orgName": "LAO",
+      "country": "LAO",
+      "reg": "TTEMDOUBLES----LAO01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "FENG Yi-hsin",
+      "nameS": "FENG Yi-hsin",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEMDOUBLES----TPE01",
+      "photo": ""
+    },
+    {
+      "name": "KUO Guan-hong",
+      "nameS": "KUO Guan-hong",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEMDOUBLES----TPE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

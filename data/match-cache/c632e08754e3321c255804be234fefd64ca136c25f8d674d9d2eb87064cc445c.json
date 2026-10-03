@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Mongolia",
+  "away": "Kyrgyzstan",
+  "homePlayers": [
+    {
+      "name": "KHOSBAYAR Nergui",
+      "nameS": "KHOSBAYAR Nergui",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "GANBOLD Enkhnaran",
+      "nameS": "GANBOLD Enkhnaran",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "OTGONSUREN Erdene-enkh",
+      "nameS": "OTGONSUREN Erdene-enkh",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "UDVAL Munkhzul",
+      "nameS": "UDVAL Munkhzul",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "SANSARBOLD Temuulen",
+      "nameS": "SANSARBOLD Temuulen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "PUREVSUREN Enkhkhuslen",
+      "nameS": "PUREVSUREN Enkhkhuslen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATTUR Ninjbolor",
+      "nameS": "BATTUR Ninjbolor",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "MUNGUNTSOOJ Sanchirmaa",
+      "nameS": "MUNGUNTSOOJ Sanchirmaa",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "GANBAATAR Saruulgerel",
+      "nameS": "GANBAATAR Saruulgerel",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATTOGOO Khaliunzaya",
+      "nameS": "BATTOGOO Khaliunzaya",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATBOLD Amarbayasgalan",
+      "nameS": "BATBOLD Amarbayasgalan",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BAYARBAYASGALAN Khulan",
+      "nameS": "BAYARBAYASGALAN Khulan",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "TULENOVA Gulmira Almasbekovna",
+      "nameS": "TULENOVA Gulmira Almasbekovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "BEISHENOVA Aizhanat",
+      "nameS": "BEISHENOVA Aizhanat",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "TKACHEVA Mariia Ivanovna",
+      "nameS": "TKACHEVA Mariia Ivanovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "MIRLAN KYZY Madina",
+      "nameS": "MIRLAN KYZY Madina",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "BOLOTBEKOVA Nurzhamal Bolotbekovna",
+      "nameS": "BOLOTBEKOVA Nurzhamal Bolotbekovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "BAIAMANOVA Raiana",
+      "nameS": "BAIAMANOVA Raiana",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ASAMIDINOVA Azemi Abdinabievna",
+      "nameS": "ASAMIDINOVA Azemi Abdinabievna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "SEIITBEKOVA Asema",
+      "nameS": "SEIITBEKOVA Asema",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "AMIRAKULOVA Saikal Azamatovna",
+      "nameS": "AMIRAKULOVA Saikal Azamatovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "YSKAKOVA Alfiia Bolotovna",
+      "nameS": "YSKAKOVA Alfiia Bolotovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "SUERKULOVA Zhanetta Bakytbekovna",
+      "nameS": "SUERKULOVA Zhanetta Bakytbekovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "AITBEKOVA Perizat Azizovna",
+      "nameS": "AITBEKOVA Perizat Azizovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

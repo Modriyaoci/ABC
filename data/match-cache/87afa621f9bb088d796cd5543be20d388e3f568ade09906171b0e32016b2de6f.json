@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHOGSOMJAV M / CHOGSOMJAV M",
+  "away": "QURESHI M / SUHAIL U",
+  "homePlayers": [
+    {
+      "name": "CHOGSOMJAV Maralgoo",
+      "nameS": "CHOGSOMJAV Maralgoo",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TENWDOUBLES----MGL01",
+      "photo": ""
+    },
+    {
+      "name": "CHOGSOMJAV Martaa",
+      "nameS": "CHOGSOMJAV Martaa",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TENWDOUBLES----MGL01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "QURESHI Mahin Aftab",
+      "nameS": "QURESHI Mahin Aftab",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TENWDOUBLES----PAK01",
+      "photo": ""
+    },
+    {
+      "name": "SUHAIL Ushna",
+      "nameS": "SUHAIL Ushna",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TENWDOUBLES----PAK01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

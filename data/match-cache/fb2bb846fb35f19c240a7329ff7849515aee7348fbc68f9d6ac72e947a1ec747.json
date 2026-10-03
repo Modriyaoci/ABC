@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Nepal",
+  "away": "Mongolia",
+  "homePlayers": [
+    {
+      "name": "THAGUNNA Niruta",
+      "nameS": "THAGUNNA Niruta",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "SUNAR Mina",
+      "nameS": "SUNAR Mina",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "REGMI Sumitra",
+      "nameS": "REGMI Sumitra",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "SAUD CHHETRI Basanti Kumari",
+      "nameS": "SAUD CHHETRI Basanti Kumari",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "BHANDARI Usha",
+      "nameS": "BHANDARI Usha",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "CHAND Laxmi",
+      "nameS": "CHAND Laxmi",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "KHATRI Sunita",
+      "nameS": "KHATRI Sunita",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "SUBEDI Aarati",
+      "nameS": "SUBEDI Aarati",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "NATH Pragati",
+      "nameS": "NATH Pragati",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "BUDHA MAGAR Salina",
+      "nameS": "BUDHA MAGAR Salina",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "KUNWAR Rima",
+      "nameS": "KUNWAR Rima",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "SHRESTHA Salina",
+      "nameS": "SHRESTHA Salina",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KHOSBAYAR Nergui",
+      "nameS": "KHOSBAYAR Nergui",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "GANBOLD Enkhnaran",
+      "nameS": "GANBOLD Enkhnaran",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "OTGONSUREN Erdene-enkh",
+      "nameS": "OTGONSUREN Erdene-enkh",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "UDVAL Munkhzul",
+      "nameS": "UDVAL Munkhzul",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "SANSARBOLD Temuulen",
+      "nameS": "SANSARBOLD Temuulen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "PUREVSUREN Enkhkhuslen",
+      "nameS": "PUREVSUREN Enkhkhuslen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATTUR Ninjbolor",
+      "nameS": "BATTUR Ninjbolor",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "MUNGUNTSOOJ Sanchirmaa",
+      "nameS": "MUNGUNTSOOJ Sanchirmaa",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "GANBAATAR Saruulgerel",
+      "nameS": "GANBAATAR Saruulgerel",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATTOGOO Khaliunzaya",
+      "nameS": "BATTOGOO Khaliunzaya",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATBOLD Amarbayasgalan",
+      "nameS": "BATBOLD Amarbayasgalan",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BAYARBAYASGALAN Khulan",
+      "nameS": "BAYARBAYASGALAN Khulan",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Kyrgyzstan",
+  "away": "Thailand",
+  "homePlayers": [
+    {
+      "name": "TULENOVA Gulmira Almasbekovna",
+      "nameS": "TULENOVA Gulmira Almasbekovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "BEISHENOVA Aizhanat",
+      "nameS": "BEISHENOVA Aizhanat",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "TKACHEVA Mariia Ivanovna",
+      "nameS": "TKACHEVA Mariia Ivanovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "MIRLAN KYZY Madina",
+      "nameS": "MIRLAN KYZY Madina",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "BOLOTBEKOVA Nurzhamal Bolotbekovna",
+      "nameS": "BOLOTBEKOVA Nurzhamal Bolotbekovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "BAIAMANOVA Raiana",
+      "nameS": "BAIAMANOVA Raiana",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ASAMIDINOVA Azemi Abdinabievna",
+      "nameS": "ASAMIDINOVA Azemi Abdinabievna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "SEIITBEKOVA Asema",
+      "nameS": "SEIITBEKOVA Asema",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "AMIRAKULOVA Saikal Azamatovna",
+      "nameS": "AMIRAKULOVA Saikal Azamatovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "YSKAKOVA Alfiia Bolotovna",
+      "nameS": "YSKAKOVA Alfiia Bolotovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "SUERKULOVA Zhanetta Bakytbekovna",
+      "nameS": "SUERKULOVA Zhanetta Bakytbekovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "AITBEKOVA Perizat Azizovna",
+      "nameS": "AITBEKOVA Perizat Azizovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "PANNOY Piyanut",
+      "nameS": "PANNOY Piyanut",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "GUEDPARD Pornpun",
+      "nameS": "GUEDPARD Pornpun",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KUNMUEANG Kanyarat",
+      "nameS": "KUNMUEANG Kanyarat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "NUEKJANG Thatdao",
+      "nameS": "NUEKJANG Thatdao",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SEETALOED Warisara",
+      "nameS": "SEETALOED Warisara",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KHAMWONG Kalyarat",
+      "nameS": "KHAMWONG Kalyarat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "JANTHAWISUT Sasipapron",
+      "nameS": "JANTHAWISUT Sasipapron",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "JAISAEN Natthanicha",
+      "nameS": "JAISAEN Natthanicha",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KOKRAM Pimpichaya",
+      "nameS": "KOKRAM Pimpichaya",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KONGYOT Ajcharaporn",
+      "nameS": "KONGYOT Ajcharaporn",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "MOKSRI Chatchu-on",
+      "nameS": "MOKSRI Chatchu-on",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KAMULTHALA Kaewkalaya",
+      "nameS": "KAMULTHALA Kaewkalaya",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

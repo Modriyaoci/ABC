@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "DANILINA A / PUTINTSEVA Y",
+  "away": "JIANG X / YANG Z",
+  "homePlayers": [
+    {
+      "name": "DANILINA Anna",
+      "nameS": "DANILINA Anna",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENWDOUBLES----KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "PUTINTSEVA Yuliya",
+      "nameS": "PUTINTSEVA Yuliya",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENWDOUBLES----KAZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "JIANG Xinyu",
+      "nameS": "JIANG Xinyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TENWDOUBLES----CHN02",
+      "photo": ""
+    },
+    {
+      "name": "YANG Zhaoxuan",
+      "nameS": "YANG Zhaoxuan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TENWDOUBLES----CHN02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

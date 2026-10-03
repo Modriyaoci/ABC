@@ -1,0 +1,448 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "China",
+  "away": "Korea",
+  "homePlayers": [
+    {
+      "name": "ZHOU Yi",
+      "nameS": "ZHOU Yi",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Lei",
+      "nameS": "WANG Lei",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "HAN Xiao",
+      "nameS": "HAN Xiao",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LUAN Chenchen",
+      "nameS": "LUAN Chenchen",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "CAO Jie",
+      "nameS": "CAO Jie",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHU Xudong",
+      "nameS": "ZHU Xudong",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "FU Wenlong",
+      "nameS": "FU Wenlong",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LI Xiaoyang",
+      "nameS": "LI Xiaoyang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "JING Hui",
+      "nameS": "JING Hui",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LI Yanen",
+      "nameS": "LI Yanen",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WU Anjun",
+      "nameS": "WU Anjun",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHANG Yinfan",
+      "nameS": "ZHANG Yinfan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "JU Haoyu",
+      "nameS": "JU Haoyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "FU Huachen",
+      "nameS": "FU Huachen",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Chen",
+      "nameS": "CHEN Chen",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LI Ningji",
+      "nameS": "LI Ningji",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "HUADAN Cairang",
+      "nameS": "HUADAN Cairang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "SUN Guangxuan",
+      "nameS": "SUN Guangxuan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "SUN Yicong",
+      "nameS": "SUN Yicong",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "SUO Xudi",
+      "nameS": "SUO Xudi",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Lizi",
+      "nameS": "WANG Lizi",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Weiyi",
+      "nameS": "WANG Weiyi",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Xiang",
+      "nameS": "WANG Xiang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHANG Mingxin",
+      "nameS": "ZHANG Mingxin",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KIM Juwon",
+      "nameS": "KIM Juwon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Jaehyeon",
+      "nameS": "LEE Jaehyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "MOON Hyunbin",
+      "nameS": "MOON Hyunbin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Doyeong",
+      "nameS": "KIM Doyeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "MOON Bogyeong",
+      "nameS": "MOON Bogyeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "ROH Sihwan",
+      "nameS": "ROH Sihwan",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Jaehyun",
+      "nameS": "PARK Jaehyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "YOON Donghee",
+      "nameS": "YOON Donghee",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JEONG Junjae",
+      "nameS": "JEONG Junjae",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Junsoon",
+      "nameS": "PARK Junsoon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Jichan",
+      "nameS": "KIM Jichan",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHO Hyeongwoo",
+      "nameS": "CHO Hyeongwoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Geonhee",
+      "nameS": "KIM Geonhee",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHOI Minseok",
+      "nameS": "CHOI Minseok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "OH Wonseok",
+      "nameS": "OH Wonseok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SUNG Yeongtak",
+      "nameS": "SUNG Yeongtak",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Youngwoo",
+      "nameS": "KIM Youngwoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHOI Junyong",
+      "nameS": "CHOI Junyong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "BAE Chanseung",
+      "nameS": "BAE Chanseung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Jinuk",
+      "nameS": "KIM Jinuk",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "GWAK Been",
+      "nameS": "GWAK Been",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SO Hyeongjun",
+      "nameS": "SO Hyeongjun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JO Byeonghyeon",
+      "nameS": "JO Byeonghyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Yeonghyun",
+      "nameS": "PARK Yeonghyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

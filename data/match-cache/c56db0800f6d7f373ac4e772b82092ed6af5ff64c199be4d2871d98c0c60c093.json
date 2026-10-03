@@ -1,0 +1,223 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "IR Iran",
+  "away": "Kyrgyzstan",
+  "homePlayers": [
+    {
+      "name": "NASRI MASTANABAD Mobin",
+      "nameS": "NASRI MASTANABAD Mobin",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HOSSEIN KHANZADEH FIROUZJ Poriya",
+      "nameS": "HOSSEIN KHANZADEH FIROUZJ Poriya",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ESMAEILNEZHAD Amin",
+      "nameS": "ESMAEILNEZHAD Amin",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "DAVOODIPOUR Ilshan",
+      "nameS": "DAVOODIPOUR Ilshan",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "BEHNEZHAD Arshia",
+      "nameS": "BEHNEZHAD Arshia",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HAJIPOUR MOGHADDAM FAROUJ Ali",
+      "nameS": "HAJIPOUR MOGHADDAM FAROUJ Ali",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HAJI KALATEH Hossein",
+      "nameS": "HAJI KALATEH Hossein",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "KAZEMI POSHTPARI Yousef",
+      "nameS": "KAZEMI POSHTPARI Yousef",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HAGHPARAST Ali",
+      "nameS": "HAGHPARAST Ali",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "VALIZADEH Mohammad",
+      "nameS": "VALIZADEH Mohammad",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "SHARIFI Morteza",
+      "nameS": "SHARIFI Morteza",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "NASERI CHENARI Seyed Eisa",
+      "nameS": "NASERI CHENARI Seyed Eisa",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "BAZHIEV Amantur Kubatbekovich",
+      "nameS": "BAZHIEV Amantur Kubatbekovich",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "TOKTOEV Nurmukhammed",
+      "nameS": "TOKTOEV Nurmukhammed",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ZHYRGALBEK U. Baiastan",
+      "nameS": "ZHYRGALBEK U. Baiastan",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "KANYBEK U. Onolbek",
+      "nameS": "KANYBEK U. Onolbek",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ABDIMOMUN U. Iliaz",
+      "nameS": "ABDIMOMUN U. Iliaz",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ASKAR U. Baiel",
+      "nameS": "ASKAR U. Baiel",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "TOKTOSUNOV Ernis Erkinovich",
+      "nameS": "TOKTOSUNOV Ernis Erkinovich",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "MUSAEV Zhamalidin",
+      "nameS": "MUSAEV Zhamalidin",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "SHILOV Roman",
+      "nameS": "SHILOV Roman",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ZHEENBEK U. Zhantemir",
+      "nameS": "ZHEENBEK U. Zhantemir",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "NURALY UULU Manazbek",
+      "nameS": "NURALY UULU Manazbek",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

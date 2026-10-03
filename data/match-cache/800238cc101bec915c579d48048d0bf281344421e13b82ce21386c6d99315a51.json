@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "GUO H / ZHANG S",
+  "away": "BACK D / JANG S",
+  "homePlayers": [
+    {
+      "name": "GUO Hanyu",
+      "nameS": "GUO Hanyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TENWDOUBLES----CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHANG Shuai",
+      "nameS": "ZHANG Shuai",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TENWDOUBLES----CHN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "BACK Dayeon",
+      "nameS": "BACK Dayeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TENWDOUBLES----KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JANG Sujeong",
+      "nameS": "JANG Sujeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TENWDOUBLES----KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

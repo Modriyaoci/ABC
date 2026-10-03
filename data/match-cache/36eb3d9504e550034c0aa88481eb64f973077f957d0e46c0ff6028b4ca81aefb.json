@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "AL-KUWARI S / KORANI A",
+  "away": "ANKHBAYAR B / MYANDAL T",
+  "homePlayers": [
+    {
+      "name": "AL-KUWARI Sultan",
+      "nameS": "AL-KUWARI Sultan",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEMDOUBLES----QAT02",
+      "photo": ""
+    },
+    {
+      "name": "KORANI Ahmed",
+      "nameS": "KORANI Ahmed",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEMDOUBLES----QAT02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ANKHBAYAR Bilguun",
+      "nameS": "ANKHBAYAR Bilguun",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TTEMDOUBLES----MGL01",
+      "photo": ""
+    },
+    {
+      "name": "MYANDAL Temuulen",
+      "nameS": "MYANDAL Temuulen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TTEMDOUBLES----MGL01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

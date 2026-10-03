@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KULAMBAYEVA Z / ZHIYENBAYEVA S",
+  "away": "CHONG E / WONG H",
+  "homePlayers": [
+    {
+      "name": "KULAMBAYEVA Zhibek",
+      "nameS": "KULAMBAYEVA Zhibek",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENWDOUBLES----KAZ02",
+      "photo": ""
+    },
+    {
+      "name": "ZHIYENBAYEVA Sonja",
+      "nameS": "ZHIYENBAYEVA Sonja",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENWDOUBLES----KAZ02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHONG Eudice",
+      "nameS": "CHONG Eudice",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TENWDOUBLES----HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WONG Hong Yi",
+      "nameS": "WONG Hong Yi",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TENWDOUBLES----HKG01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

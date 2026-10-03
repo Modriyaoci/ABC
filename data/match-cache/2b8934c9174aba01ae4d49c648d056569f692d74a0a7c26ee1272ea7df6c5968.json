@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "SAFI M / RAHMANI K",
+  "away": "RIVERA S / ALCANTARA F",
+  "homePlayers": [
+    {
+      "name": "SAFI Meshkatolzahra",
+      "nameS": "SAFI Meshkatolzahra",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TENXDOUBLES----IRI02",
+      "photo": ""
+    },
+    {
+      "name": "RAHMANI Kasra",
+      "nameS": "RAHMANI Kasra",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TENXDOUBLES----IRI02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "RIVERA Shaira",
+      "nameS": "RIVERA Shaira",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "TENXDOUBLES----PHI01",
+      "photo": ""
+    },
+    {
+      "name": "ALCANTARA Francis",
+      "nameS": "ALCANTARA Francis",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "TENXDOUBLES----PHI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

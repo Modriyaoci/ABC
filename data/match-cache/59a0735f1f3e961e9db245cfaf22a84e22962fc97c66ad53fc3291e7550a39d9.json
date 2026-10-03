@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KULAPPUWAWADU C / SWARNA B",
+  "away": "SHAH M / CHITALE D",
+  "homePlayers": [
+    {
+      "name": "KULAPPUWAWADU Chanul",
+      "nameS": "KULAPPUWAWADU Chanul",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "TTEXDOUBLES----SRI01",
+      "photo": ""
+    },
+    {
+      "name": "SWARNA Bimandee",
+      "nameS": "SWARNA Bimandee",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "TTEXDOUBLES----SRI01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SHAH Manush",
+      "nameS": "SHAH Manush",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEXDOUBLES----IND01",
+      "photo": ""
+    },
+    {
+      "name": "CHITALE Diya",
+      "nameS": "CHITALE Diya",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEXDOUBLES----IND01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

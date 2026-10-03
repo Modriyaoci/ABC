@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "GHAFFARI A / ASHTARI M",
+  "away": "SANGUANSIN P / PARANANG O",
+  "homePlayers": [
+    {
+      "name": "GHAFFARI Aryan",
+      "nameS": "GHAFFARI Aryan",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TTEXDOUBLES----IRI02",
+      "photo": ""
+    },
+    {
+      "name": "ASHTARI Mahshid",
+      "nameS": "ASHTARI Mahshid",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TTEXDOUBLES----IRI02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SANGUANSIN Phakpoom",
+      "nameS": "SANGUANSIN Phakpoom",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEXDOUBLES----THA01",
+      "photo": ""
+    },
+    {
+      "name": "PARANANG Orawan",
+      "nameS": "PARANANG Orawan",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEXDOUBLES----THA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

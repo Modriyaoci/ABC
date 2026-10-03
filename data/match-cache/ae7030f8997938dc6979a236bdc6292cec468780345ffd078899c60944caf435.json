@@ -1,0 +1,304 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Korea",
+  "away": "Kuwait",
+  "homePlayers": [
+    {
+      "name": "KIM Taegwan",
+      "nameS": "KIM Taegwan",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SONG Jeawoo",
+      "nameS": "SONG Jeawoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Kwangsoon",
+      "nameS": "PARK Kwangsoon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "YEON Minmo",
+      "nameS": "YEON Minmo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Jinyoung",
+      "nameS": "KIM Jinyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Yoseb",
+      "nameS": "LEE Yoseb",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HA Min",
+      "nameS": "HA Min",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "WON Minjun",
+      "nameS": "WON Minjun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Donguk",
+      "nameS": "KIM Donguk",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Jinho",
+      "nameS": "KIM Jinho",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JEON Jinsoo",
+      "nameS": "JEON Jinsoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Rakchan",
+      "nameS": "KIM Rakchan",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Seung",
+      "nameS": "PARK Seung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Yeonbin",
+      "nameS": "KIM Yeonbin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JIN Yusung",
+      "nameS": "JIN Yusung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Jaeyong",
+      "nameS": "PARK Jaeyong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "HBLMTEAM7------KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ALKHAMEES Abdullah",
+      "nameS": "ALKHAMEES Abdullah",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Saleh",
+      "nameS": "ALI Saleh",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "ALSHAMMARI Abdulaziz",
+      "nameS": "ALSHAMMARI Abdulaziz",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "NAJEM Abdulaziz",
+      "nameS": "NAJEM Abdulaziz",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "ALADWANI Humood",
+      "nameS": "ALADWANI Humood",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "SAFAR Hasan",
+      "nameS": "SAFAR Hasan",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "ALADWANI Saif",
+      "nameS": "ALADWANI Saif",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "ALMASHARI Fawaz",
+      "nameS": "ALMASHARI Fawaz",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "GHADANFAR Mohammad",
+      "nameS": "GHADANFAR Mohammad",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "SALMEEN Abdulaziz",
+      "nameS": "SALMEEN Abdulaziz",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "MOHAMMAD Husain",
+      "nameS": "MOHAMMAD Husain",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "DASHTI Haider",
+      "nameS": "DASHTI Haider",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "NAJEM Yousef",
+      "nameS": "NAJEM Yousef",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "ALMUTAWA Husain",
+      "nameS": "ALMUTAWA Husain",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "ALSHAMMARI Abdulrahman",
+      "nameS": "ALSHAMMARI Abdulrahman",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "BUYABES Mohammad",
+      "nameS": "BUYABES Mohammad",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

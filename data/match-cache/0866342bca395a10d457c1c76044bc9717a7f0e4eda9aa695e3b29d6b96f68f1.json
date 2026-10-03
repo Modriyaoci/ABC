@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "MATSUSHIMA S / TOGAMI S",
+  "away": "DESAI H / GNANASEKARAN S",
+  "homePlayers": [
+    {
+      "name": "MATSUSHIMA Sora",
+      "nameS": "MATSUSHIMA Sora",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMDOUBLES----JPN02",
+      "photo": ""
+    },
+    {
+      "name": "TOGAMI Shunsuke",
+      "nameS": "TOGAMI Shunsuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMDOUBLES----JPN02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "DESAI Harmeet",
+      "nameS": "DESAI Harmeet",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEMDOUBLES----IND02",
+      "photo": ""
+    },
+    {
+      "name": "GNANASEKARAN Sathiyan",
+      "nameS": "GNANASEKARAN Sathiyan",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEMDOUBLES----IND02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

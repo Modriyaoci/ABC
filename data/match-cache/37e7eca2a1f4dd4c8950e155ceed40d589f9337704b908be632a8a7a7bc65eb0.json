@@ -1,0 +1,277 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Pakistan",
+  "away": "Bangladesh",
+  "homePlayers": [
+    {
+      "name": "ULLAH Sahibzada Farhan",
+      "nameS": "ULLAH Sahibzada Farhan",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "SADAQAT Maaz Ahmad",
+      "nameS": "SADAQAT Maaz Ahmad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Usman",
+      "nameS": "KHAN Usman",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "AYUB Saim",
+      "nameS": "AYUB Saim",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "NAWAZ Muhammad Hassan",
+      "nameS": "NAWAZ Muhammad Hassan",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "SAMAD Syed Muhammad Abdul",
+      "nameS": "SAMAD Syed Muhammad Abdul",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "MINHAS Arafat Ahmed",
+      "nameS": "MINHAS Arafat Ahmed",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "LATIF Ahmad Daniyal",
+      "nameS": "LATIF Ahmad Daniyal",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "WASEEM Muhammad",
+      "nameS": "WASEEM Muhammad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "AHMED Abrar",
+      "nameS": "AHMED Abrar",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "MOQIM Sufyan",
+      "nameS": "MOQIM Sufyan",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "MASOOD Chaudhry Saad",
+      "nameS": "MASOOD Chaudhry Saad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Haider",
+      "nameS": "ALI Haider",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "JAVED Akif",
+      "nameS": "JAVED Akif",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "RAZA Ali",
+      "nameS": "RAZA Ali",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTMTEAM-------PAK01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "HASSAN Mohammed Saif",
+      "nameS": "HASSAN Mohammed Saif",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "HASAN Tanzid",
+      "nameS": "HASAN Tanzid",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "DAS Litton Kumer",
+      "nameS": "DAS Litton Kumer",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "EMON Mohammad Parvez Hossain",
+      "nameS": "EMON Mohammad Parvez Hossain",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "HRIDOY Md Tawhid",
+      "nameS": "HRIDOY Md Tawhid",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "SAIKAT Musaddek Hossain",
+      "nameS": "SAIKAT Musaddek Hossain",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "HOSSAIN Md Rishad",
+      "nameS": "HOSSAIN Md Rishad",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "HASAN Shak Mahedi",
+      "nameS": "HASAN Shak Mahedi",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "AHMED Nasum",
+      "nameS": "AHMED Nasum",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "ISLAM Md Shoriful",
+      "nameS": "ISLAM Md Shoriful",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "RAHMAN Md Mustafizur",
+      "nameS": "RAHMAN Md Mustafizur",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "ALISS Al Islam",
+      "nameS": "ALISS Al Islam",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "CHOWDHURY Yasir Ali",
+      "nameS": "CHOWDHURY Yasir Ali",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "MAHMUD Hasan",
+      "nameS": "MAHMUD Hasan",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTMTEAM-------BAN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

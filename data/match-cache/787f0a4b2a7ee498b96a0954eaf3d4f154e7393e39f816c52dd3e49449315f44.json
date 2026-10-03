@@ -1,0 +1,196 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "India",
+  "away": "China",
+  "homePlayers": [
+    {
+      "name": "KAPILA Dhruv",
+      "nameS": "KAPILA Dhruv",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "HASEENA S. K. Prannoy",
+      "nameS": "HASEENA S. K. Prannoy",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "AMSAKARUNAN Hariharan",
+      "nameS": "AMSAKARUNAN Hariharan",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SHETTY Ayush",
+      "nameS": "SHETTY Ayush",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SEN Lakshya",
+      "nameS": "SEN Lakshya",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "KIDAMBI Srikanth",
+      "nameS": "KIDAMBI Srikanth",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "MANNEPALLI Tharun",
+      "nameS": "MANNEPALLI Tharun",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "RANKIREDDY Satwiksairaj",
+      "nameS": "RANKIREDDY Satwiksairaj",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SHETTY Chirag",
+      "nameS": "SHETTY Chirag",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "MADATHIL R Arjun",
+      "nameS": "MADATHIL R Arjun",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "FENG Yan Zhe",
+      "nameS": "FENG Yan Zhe",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "JIANG Zhen Bang",
+      "nameS": "JIANG Zhen Bang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LI Shifeng",
+      "nameS": "LI Shifeng",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "SHI Yuqi",
+      "nameS": "SHI Yuqi",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "HE Ji Ting",
+      "nameS": "HE Ji Ting",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LIANG Weikeng",
+      "nameS": "LIANG Weikeng",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Yi",
+      "nameS": "LIU Yi",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Chang",
+      "nameS": "WANG Chang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LU Guangzu",
+      "nameS": "LU Guangzu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WENG Hongyang",
+      "nameS": "WENG Hongyang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

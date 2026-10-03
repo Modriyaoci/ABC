@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Chinese Taipei",
+  "away": "Korea",
+  "homePlayers": [
+    {
+      "name": "LU Chiang Yao-kai",
+      "nameS": "LU Chiang Yao-kai",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOMTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HUANG Yu-chen",
+      "nameS": "HUANG Yu-chen",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOMTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Jie-ting",
+      "nameS": "CHEN Jie-ting",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOMTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHUANG Shao-chieh",
+      "nameS": "CHUANG Shao-chieh",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOMTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "TSAI Pei-chang",
+      "nameS": "TSAI Pei-chang",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOMTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHANG Yu-chen",
+      "nameS": "CHANG Yu-chen",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOMTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Yu-lin",
+      "nameS": "LIU Yu-lin",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOMTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHANG Yu-sheng",
+      "nameS": "CHANG Yu-sheng",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOMTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Ping-hsun",
+      "nameS": "WANG Ping-hsun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOMTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "JHANG Yun-liang",
+      "nameS": "JHANG Yun-liang",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOMTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WEN Yi-kai",
+      "nameS": "WEN Yi-kai",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOMTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HUANG Jheng-liang",
+      "nameS": "HUANG Jheng-liang",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOMTEAM6------TPE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHA Youngseok",
+      "nameS": "CHA Youngseok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HWANG Seungbin",
+      "nameS": "HWANG Seungbin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Kyeongmin",
+      "nameS": "PARK Kyeongmin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HEO Subong",
+      "nameS": "HEO Subong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HAN Taejun",
+      "nameS": "HAN Taejun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LIM Sungjin",
+      "nameS": "LIM Sungjin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JEONG Hanyong",
+      "nameS": "JEONG Hanyong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "IM Donghyeok",
+      "nameS": "IM Donghyeok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHOI Junhyeok",
+      "nameS": "CHOI Junhyeok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Sanghyeon",
+      "nameS": "LEE Sanghyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SHIN Hojin",
+      "nameS": "SHIN Hojin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LIM Jaeyoung",
+      "nameS": "LIM Jaeyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

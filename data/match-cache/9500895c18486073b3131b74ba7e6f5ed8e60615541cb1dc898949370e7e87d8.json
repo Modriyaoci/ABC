@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHAN H / HO C",
+  "away": "JIANG X / ZHANG T",
+  "homePlayers": [
+    {
+      "name": "CHAN Hao-ching",
+      "nameS": "CHAN Hao-ching",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TENXDOUBLES----TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HO Chenjui",
+      "nameS": "HO Chenjui",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TENXDOUBLES----TPE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "JIANG Xinyu",
+      "nameS": "JIANG Xinyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TENXDOUBLES----CHN02",
+      "photo": ""
+    },
+    {
+      "name": "ZHANG Tianhui",
+      "nameS": "ZHANG Tianhui",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TENXDOUBLES----CHN02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

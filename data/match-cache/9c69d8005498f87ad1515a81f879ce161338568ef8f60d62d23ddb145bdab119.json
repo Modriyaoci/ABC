@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "THONGSA-NGA W / CHAROENKITAMORN C",
+  "away": "LIANG W / WANG C",
+  "homePlayers": [
+    {
+      "name": "THONGSA-NGA Worrapol",
+      "nameS": "THONGSA-NGA Worrapol",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMDOUBLES----THA02",
+      "photo": ""
+    },
+    {
+      "name": "CHAROENKITAMORN Chaloempon",
+      "nameS": "CHAROENKITAMORN Chaloempon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMDOUBLES----THA02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LIANG Weikeng",
+      "nameS": "LIANG Weikeng",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMDOUBLES----CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Chang",
+      "nameS": "WANG Chang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMDOUBLES----CHN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

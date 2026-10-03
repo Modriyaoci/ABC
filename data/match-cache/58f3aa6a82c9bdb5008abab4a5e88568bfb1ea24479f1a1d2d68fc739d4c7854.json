@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "YULDASHEVA S / SHIN M",
+  "away": "DANILINA A / SHEVCHENKO A",
+  "homePlayers": [
+    {
+      "name": "YULDASHEVA Sevil",
+      "nameS": "YULDASHEVA Sevil",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "TENXDOUBLES----UZB02",
+      "photo": ""
+    },
+    {
+      "name": "SHIN Maksim",
+      "nameS": "SHIN Maksim",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "TENXDOUBLES----UZB02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "DANILINA Anna",
+      "nameS": "DANILINA Anna",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENXDOUBLES----KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "SHEVCHENKO Aleksandr",
+      "nameS": "SHEVCHENKO Aleksandr",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENXDOUBLES----KAZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

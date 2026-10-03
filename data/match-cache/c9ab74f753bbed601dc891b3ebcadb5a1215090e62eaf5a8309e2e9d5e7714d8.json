@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KURNIAWAN L / TRISMUWANTARA G",
+  "away": "AL-MASHNI Z / ALKOTOP M",
+  "homePlayers": [
+    {
+      "name": "KURNIAWAN Lucky",
+      "nameS": "KURNIAWAN Lucky",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TENMDOUBLES----INA02",
+      "photo": ""
+    },
+    {
+      "name": "TRISMUWANTARA Gunawan",
+      "nameS": "TRISMUWANTARA Gunawan",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TENMDOUBLES----INA02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "AL-MASHNI Zaid",
+      "nameS": "AL-MASHNI Zaid",
+      "org": "JOR",
+      "orgName": "JOR",
+      "country": "JOR",
+      "reg": "TENMDOUBLES----JOR02",
+      "photo": ""
+    },
+    {
+      "name": "ALKOTOP Mohammad",
+      "nameS": "ALKOTOP Mohammad",
+      "org": "JOR",
+      "orgName": "JOR",
+      "country": "JOR",
+      "reg": "TENMDOUBLES----JOR02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

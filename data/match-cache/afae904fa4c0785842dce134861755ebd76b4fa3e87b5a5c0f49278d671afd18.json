@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHONG E / THOMPSON K",
+  "away": "KU Y / SHIN W",
+  "homePlayers": [
+    {
+      "name": "CHONG Eudice",
+      "nameS": "CHONG Eudice",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TENXDOUBLES----HKG01",
+      "photo": ""
+    },
+    {
+      "name": "THOMPSON Kairan",
+      "nameS": "THOMPSON Kairan",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TENXDOUBLES----HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KU Yeonwoo",
+      "nameS": "KU Yeonwoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TENXDOUBLES----KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SHIN Woobin",
+      "nameS": "SHIN Woobin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TENXDOUBLES----KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

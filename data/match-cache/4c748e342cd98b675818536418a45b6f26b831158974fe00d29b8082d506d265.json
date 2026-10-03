@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "LAI C / LIU K",
+  "away": "EALA A / RIVERA S",
+  "homePlayers": [
+    {
+      "name": "LAI Ching Laam",
+      "nameS": "LAI Ching Laam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TENWDOUBLES----HKG02",
+      "photo": ""
+    },
+    {
+      "name": "LIU Kallista",
+      "nameS": "LIU Kallista",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TENWDOUBLES----HKG02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "EALA Alexandra",
+      "nameS": "EALA Alexandra",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "TENWDOUBLES----PHI01",
+      "photo": ""
+    },
+    {
+      "name": "RIVERA Shaira",
+      "nameS": "RIVERA Shaira",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "TENWDOUBLES----PHI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

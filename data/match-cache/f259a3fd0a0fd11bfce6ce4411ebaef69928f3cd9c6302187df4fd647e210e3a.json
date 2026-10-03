@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "SHEVCHENKO A / SKATOV T",
+  "away": "CHENG J / TAM S",
+  "homePlayers": [
+    {
+      "name": "SHEVCHENKO Aleksandr",
+      "nameS": "SHEVCHENKO Aleksandr",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENMDOUBLES----KAZ02",
+      "photo": ""
+    },
+    {
+      "name": "SKATOV Timofei",
+      "nameS": "SKATOV Timofei",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENMDOUBLES----KAZ02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHENG Jack",
+      "nameS": "CHENG Jack",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TENMDOUBLES----HKG02",
+      "photo": ""
+    },
+    {
+      "name": "TAM Sin Hang",
+      "nameS": "TAM Sin Hang",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TENMDOUBLES----HKG02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

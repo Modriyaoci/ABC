@@ -1,0 +1,196 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Indonesia",
+  "away": "Malaysia",
+  "homePlayers": [
+    {
+      "name": "FARHAN Alwi",
+      "nameS": "FARHAN Alwi",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "SYAHNAWI Amri",
+      "nameS": "SYAHNAWI Amri",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "MARTHIN Daniel",
+      "nameS": "MARTHIN Daniel",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ALFIAN Fajar",
+      "nameS": "ALFIAN Fajar",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "CHRISTIE Jonatan",
+      "nameS": "CHRISTIE Jonatan",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "CARNANDO Leo R.",
+      "nameS": "CARNANDO Leo R.",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "YUSUF Muhamad",
+      "nameS": "YUSUF Muhamad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "JOAQUIN Nikolaus",
+      "nameS": "JOAQUIN Nikolaus",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "FIKRI Muh. Shohibul",
+      "nameS": "FIKRI Muh. Shohibul",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "UBAIDILLAH Moh Zaki",
+      "nameS": "UBAIDILLAH Moh Zaki",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "EWE Eogene Eon",
+      "nameS": "EWE Eogene Eon",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "MOHD. R. Nur Izzuddin",
+      "nameS": "MOHD. R. Nur Izzuddin",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Tang Jie",
+      "nameS": "CHEN Tang Jie",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "GOH Soon Huat",
+      "nameS": "GOH Soon Huat",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "KONG Wei Xiang",
+      "nameS": "KONG Wei Xiang",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "CHIA Aaron Teng Fong",
+      "nameS": "CHIA Aaron Teng Fong",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "TEE Kai Wun",
+      "nameS": "TEE Kai Wun",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "GOH Sze Fei",
+      "nameS": "GOH Sze Fei",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "LEONG Jun Hao",
+      "nameS": "LEONG Jun Hao",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "HOH Justin Shou Wei",
+      "nameS": "HOH Justin Shou Wei",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

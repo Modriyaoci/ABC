@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "ZHENG H / CHAN C",
+  "away": "RIDOY M / BAWM R",
+  "homePlayers": [
+    {
+      "name": "ZHENG Hong Wai",
+      "nameS": "ZHENG Hong Wai",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "TTEMDOUBLES----MAC01",
+      "photo": ""
+    },
+    {
+      "name": "CHAN Chi In",
+      "nameS": "CHAN Chi In",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "TTEMDOUBLES----MAC01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "RIDOY Mohutasin",
+      "nameS": "RIDOY Mohutasin",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEMDOUBLES----BAN01",
+      "photo": ""
+    },
+    {
+      "name": "BAWM Ramhimlian",
+      "nameS": "BAWM Ramhimlian",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEMDOUBLES----BAN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

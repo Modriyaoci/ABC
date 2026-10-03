@@ -1,0 +1,106 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Qatar",
+  "away": "Hong Kong, China",
+  "homePlayers": [
+    {
+      "name": "ALI Maryam",
+      "nameS": "ALI Maryam",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEWTEAM-------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "SHAIKH Sarrinah",
+      "nameS": "SHAIKH Sarrinah",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEWTEAM-------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MOHAMED Aia",
+      "nameS": "MOHAMED Aia",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEWTEAM-------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "AL-ABRI Noora",
+      "nameS": "AL-ABRI Noora",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEWTEAM-------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "AL-MALKI Fawziya",
+      "nameS": "AL-MALKI Fawziya",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEWTEAM-------QAT01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "DOO Hoi Kem",
+      "nameS": "DOO Hoi Kem",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LAM Yee Lok",
+      "nameS": "LAM Yee Lok",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Hoi Man Karen",
+      "nameS": "LEE Hoi Man Karen",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "NG Wing Lam",
+      "nameS": "NG Wing Lam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "SU Tsz Tung",
+      "nameS": "SU Tsz Tung",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEWTEAM-------HKG01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

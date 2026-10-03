@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "XAYSAVATH X / SISOMBOUN C",
+  "away": "RIDOY M / MAHI N",
+  "homePlayers": [
+    {
+      "name": "XAYSAVATH Xaysana",
+      "nameS": "XAYSAVATH Xaysana",
+      "org": "LAO",
+      "orgName": "LAO",
+      "country": "LAO",
+      "reg": "TTEXDOUBLES----LAO01",
+      "photo": ""
+    },
+    {
+      "name": "SISOMBOUN Choutiphone",
+      "nameS": "SISOMBOUN Choutiphone",
+      "org": "LAO",
+      "orgName": "LAO",
+      "country": "LAO",
+      "reg": "TTEXDOUBLES----LAO01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "RIDOY Mohutasin",
+      "nameS": "RIDOY Mohutasin",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEXDOUBLES----BAN01",
+      "photo": ""
+    },
+    {
+      "name": "MAHI Nowrin",
+      "nameS": "MAHI Nowrin",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEXDOUBLES----BAN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

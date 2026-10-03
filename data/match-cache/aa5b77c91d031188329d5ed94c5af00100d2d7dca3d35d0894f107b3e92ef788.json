@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "TUKHTAEVA S / YAKHYAEVA A",
+  "away": "KULAMBAYEVA Z / ZHIYENBAYEVA S",
+  "homePlayers": [
+    {
+      "name": "TUKHTAEVA Sumaya",
+      "nameS": "TUKHTAEVA Sumaya",
+      "org": "TJK",
+      "orgName": "TJK",
+      "country": "TJK",
+      "reg": "TENWDOUBLES----TJK02",
+      "photo": ""
+    },
+    {
+      "name": "YAKHYAEVA Anisa",
+      "nameS": "YAKHYAEVA Anisa",
+      "org": "TJK",
+      "orgName": "TJK",
+      "country": "TJK",
+      "reg": "TENWDOUBLES----TJK02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KULAMBAYEVA Zhibek",
+      "nameS": "KULAMBAYEVA Zhibek",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENWDOUBLES----KAZ02",
+      "photo": ""
+    },
+    {
+      "name": "ZHIYENBAYEVA Sonja",
+      "nameS": "ZHIYENBAYEVA Sonja",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENWDOUBLES----KAZ02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

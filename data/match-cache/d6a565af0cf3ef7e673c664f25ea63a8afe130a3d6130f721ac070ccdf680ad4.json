@@ -1,0 +1,88 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Macao, China",
+  "away": "Qatar",
+  "homePlayers": [
+    {
+      "name": "MAK Tin Ian",
+      "nameS": "MAK Tin Ian",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "TTEMTEAM-------MAC01",
+      "photo": ""
+    },
+    {
+      "name": "ZHENG Hong Wai",
+      "nameS": "ZHENG Hong Wai",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "TTEMTEAM-------MAC01",
+      "photo": ""
+    },
+    {
+      "name": "CHAN Chi In",
+      "nameS": "CHAN Chi In",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "TTEMTEAM-------MAC01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ABDULHUSSEIN Abdullah",
+      "nameS": "ABDULHUSSEIN Abdullah",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEMTEAM-------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ALNASER Rawad",
+      "nameS": "ALNASER Rawad",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEMTEAM-------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "AHUSSEIN Mohammed",
+      "nameS": "AHUSSEIN Mohammed",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEMTEAM-------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "AL-KUWARI Sultan",
+      "nameS": "AL-KUWARI Sultan",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEMTEAM-------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "KORANI Ahmed",
+      "nameS": "KORANI Ahmed",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEMTEAM-------QAT01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

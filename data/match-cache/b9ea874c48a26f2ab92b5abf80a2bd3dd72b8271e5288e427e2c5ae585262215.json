@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "EALA A / RIVERA S",
+  "away": "JIANG X / YANG Z",
+  "homePlayers": [
+    {
+      "name": "EALA Alexandra",
+      "nameS": "EALA Alexandra",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "TENWDOUBLES----PHI01",
+      "photo": ""
+    },
+    {
+      "name": "RIVERA Shaira",
+      "nameS": "RIVERA Shaira",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "TENWDOUBLES----PHI01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "JIANG Xinyu",
+      "nameS": "JIANG Xinyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TENWDOUBLES----CHN02",
+      "photo": ""
+    },
+    {
+      "name": "YANG Zhaoxuan",
+      "nameS": "YANG Zhaoxuan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TENWDOUBLES----CHN02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

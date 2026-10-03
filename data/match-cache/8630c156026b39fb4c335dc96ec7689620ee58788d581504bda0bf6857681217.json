@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "MAHARANI N / SUDARNITA K",
+  "away": "LEE H / SU T",
+  "homePlayers": [
+    {
+      "name": "MAHARANI Ni",
+      "nameS": "MAHARANI Ni",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWDOUBLES----INA01",
+      "photo": ""
+    },
+    {
+      "name": "SUDARNITA Komang",
+      "nameS": "SUDARNITA Komang",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWDOUBLES----INA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LEE Hoi Man Karen",
+      "nameS": "LEE Hoi Man Karen",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEWDOUBLES----HKG02",
+      "photo": ""
+    },
+    {
+      "name": "SU Tsz Tung",
+      "nameS": "SU Tsz Tung",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEWDOUBLES----HKG02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

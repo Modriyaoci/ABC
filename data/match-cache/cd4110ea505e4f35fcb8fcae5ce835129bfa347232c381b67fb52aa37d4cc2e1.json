@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "India",
+  "away": "Pakistan",
+  "homePlayers": [
+    {
+      "name": "BALWAN SINGH Amit",
+      "nameS": "BALWAN SINGH Amit",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "JEBARAJ Joel Benjamin",
+      "nameS": "JEBARAJ Joel Benjamin",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "CHATHAM Muhammad",
+      "nameS": "CHATHAM Muhammad",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "YADAV Chirag",
+      "nameS": "YADAV Chirag",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "KOTTARATHIL Anand",
+      "nameS": "KOTTARATHIL Anand",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "RAI Ashwal",
+      "nameS": "RAI Ashwal",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "CHARLES Jerome Vinith",
+      "nameS": "CHARLES Jerome Vinith",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "LAD Om Vasant",
+      "nameS": "LAD Om Vasant",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "APPAVU Muthusamy",
+      "nameS": "APPAVU Muthusamy",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "EANTHUNGAL JOSEPH John Joseph",
+      "nameS": "EANTHUNGAL JOSEPH John Joseph",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SINGH Shikhar",
+      "nameS": "SINGH Shikhar",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "PULPARAMBIL Hemanth",
+      "nameS": "PULPARAMBIL Hemanth",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "HAMAD Muhammad",
+      "nameS": "HAMAD Muhammad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "JABRAN",
+      "nameS": "JABRAN",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "SIDDIQUE Abu Bakar",
+      "nameS": "SIDDIQUE Abu Bakar",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "YAHYA Muhammad",
+      "nameS": "YAHYA Muhammad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Usman Faryad",
+      "nameS": "ALI Usman Faryad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "RAZA Fahad",
+      "nameS": "RAZA Fahad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Murad",
+      "nameS": "KHAN Murad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "HAYAT Khizar",
+      "nameS": "HAYAT Khizar",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "JEHAN Murad",
+      "nameS": "JEHAN Murad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Afaq",
+      "nameS": "KHAN Afaq",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "YAZMAN Hamid",
+      "nameS": "YAZMAN Hamid",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Musawer",
+      "nameS": "KHAN Musawer",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

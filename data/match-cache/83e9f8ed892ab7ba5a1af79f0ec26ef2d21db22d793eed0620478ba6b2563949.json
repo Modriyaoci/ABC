@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "PUTRI C / RASMI C",
+  "away": "NAZIM A / ALI F",
+  "homePlayers": [
+    {
+      "name": "PUTRI Cindy",
+      "nameS": "PUTRI Cindy",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWDOUBLES----INA02",
+      "photo": ""
+    },
+    {
+      "name": "RASMI Citra",
+      "nameS": "RASMI Citra",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWDOUBLES----INA02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NAZIM Aishath",
+      "nameS": "NAZIM Aishath",
+      "org": "MDV",
+      "orgName": "MDV",
+      "country": "MDV",
+      "reg": "TTEWDOUBLES----MDV01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Fathimath",
+      "nameS": "ALI Fathimath",
+      "org": "MDV",
+      "orgName": "MDV",
+      "country": "MDV",
+      "reg": "TTEWDOUBLES----MDV01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

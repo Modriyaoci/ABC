@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "TRAN D / PHAM T",
+  "away": "PUI C. C. / PUI C. W.",
+  "homePlayers": [
+    {
+      "name": "TRAN Dinh Manh",
+      "nameS": "TRAN Dinh Manh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "BDMXDOUBLES----VIE01",
+      "photo": ""
+    },
+    {
+      "name": "PHAM Thi Khanh",
+      "nameS": "PHAM Thi Khanh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "BDMXDOUBLES----VIE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "PUI Chi Chon",
+      "nameS": "PUI Chi Chon",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "BDMXDOUBLES----MAC02",
+      "photo": ""
+    },
+    {
+      "name": "PUI Chi Wa",
+      "nameS": "PUI Chi Wa",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "BDMXDOUBLES----MAC02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

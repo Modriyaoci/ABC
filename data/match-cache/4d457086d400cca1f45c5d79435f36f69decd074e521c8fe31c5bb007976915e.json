@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Korea",
+  "away": "IR Iran",
+  "homePlayers": [
+    {
+      "name": "CHA Youngseok",
+      "nameS": "CHA Youngseok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HWANG Seungbin",
+      "nameS": "HWANG Seungbin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Kyeongmin",
+      "nameS": "PARK Kyeongmin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HEO Subong",
+      "nameS": "HEO Subong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HAN Taejun",
+      "nameS": "HAN Taejun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LIM Sungjin",
+      "nameS": "LIM Sungjin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JEONG Hanyong",
+      "nameS": "JEONG Hanyong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "IM Donghyeok",
+      "nameS": "IM Donghyeok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHOI Junhyeok",
+      "nameS": "CHOI Junhyeok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Sanghyeon",
+      "nameS": "LEE Sanghyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SHIN Hojin",
+      "nameS": "SHIN Hojin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LIM Jaeyoung",
+      "nameS": "LIM Jaeyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NASRI MASTANABAD Mobin",
+      "nameS": "NASRI MASTANABAD Mobin",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HOSSEIN KHANZADEH FIROUZJ Poriya",
+      "nameS": "HOSSEIN KHANZADEH FIROUZJ Poriya",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ESMAEILNEZHAD Amin",
+      "nameS": "ESMAEILNEZHAD Amin",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "DAVOODIPOUR Ilshan",
+      "nameS": "DAVOODIPOUR Ilshan",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "BEHNEZHAD Arshia",
+      "nameS": "BEHNEZHAD Arshia",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HAJIPOUR MOGHADDAM FAROUJ Ali",
+      "nameS": "HAJIPOUR MOGHADDAM FAROUJ Ali",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HAJI KALATEH Hossein",
+      "nameS": "HAJI KALATEH Hossein",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "KAZEMI POSHTPARI Yousef",
+      "nameS": "KAZEMI POSHTPARI Yousef",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HAGHPARAST Ali",
+      "nameS": "HAGHPARAST Ali",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "VALIZADEH Mohammad",
+      "nameS": "VALIZADEH Mohammad",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "SHARIFI Morteza",
+      "nameS": "SHARIFI Morteza",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "NASERI CHENARI Seyed Eisa",
+      "nameS": "NASERI CHENARI Seyed Eisa",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

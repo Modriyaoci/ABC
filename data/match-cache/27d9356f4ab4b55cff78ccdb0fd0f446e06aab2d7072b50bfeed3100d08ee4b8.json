@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "JUMAR A / AKTER U",
+  "away": "CHEN T / CHENG S",
+  "homePlayers": [
+    {
+      "name": "JUMAR Al Amin",
+      "nameS": "JUMAR Al Amin",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "BDMXDOUBLES----BAN01",
+      "photo": ""
+    },
+    {
+      "name": "AKTER Urmi",
+      "nameS": "AKTER Urmi",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "BDMXDOUBLES----BAN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHEN Tang Jie",
+      "nameS": "CHEN Tang Jie",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMXDOUBLES----MAS01",
+      "photo": ""
+    },
+    {
+      "name": "CHENG Su Yin",
+      "nameS": "CHENG Su Yin",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMXDOUBLES----MAS01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

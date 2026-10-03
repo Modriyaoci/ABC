@@ -1,0 +1,88 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Japan",
+  "away": "Uzbekistan",
+  "homePlayers": [
+    {
+      "name": "HARIMOTO Tomokazu",
+      "nameS": "HARIMOTO Tomokazu",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MATSUSHIMA Sora",
+      "nameS": "MATSUSHIMA Sora",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TOGAMI Shunsuke",
+      "nameS": "TOGAMI Shunsuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "UDA Yukiya",
+      "nameS": "UDA Yukiya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SHINOZUKA Hiroto",
+      "nameS": "SHINOZUKA Hiroto",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "DILSHODOV Diyorbek",
+      "nameS": "DILSHODOV Diyorbek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "TTEMTEAM-------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "ISKANDAROV Shokhrukh",
+      "nameS": "ISKANDAROV Shokhrukh",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "TTEMTEAM-------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "AKHMEDOV Khurshid",
+      "nameS": "AKHMEDOV Khurshid",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "TTEMTEAM-------UZB01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

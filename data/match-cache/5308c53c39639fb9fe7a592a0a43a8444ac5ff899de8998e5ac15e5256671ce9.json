@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Vietnam",
+  "away": "Korea",
+  "homePlayers": [
+    {
+      "name": "THI TRA MY Nguyen",
+      "nameS": "THI TRA MY Nguyen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Thi Thanh Thuy",
+      "nameS": "TRAN Thi Thanh Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "BUI Thi Anh Thao",
+      "nameS": "BUI Thi Anh Thao",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "PHAM Quynh Huong",
+      "nameS": "PHAM Quynh Huong",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Thanh Thuy",
+      "nameS": "LE Thanh Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "VI Thi Yen Nhi",
+      "nameS": "VI Thi Yen Nhi",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Nhu Anh",
+      "nameS": "LE Nhu Anh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "NGUYEN Khanh Dang",
+      "nameS": "NGUYEN Khanh Dang",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "VO Thi Kim Thoa",
+      "nameS": "VO Thi Kim Thoa",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LUU Thi Hue",
+      "nameS": "LUU Thi Hue",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Thi Yen",
+      "nameS": "LE Thi Yen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Thi Bich Thuy",
+      "nameS": "TRAN Thi Bich Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LEE Yelim",
+      "nameS": "LEE Yelim",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Dain",
+      "nameS": "KIM Dain",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HAN Dahye",
+      "nameS": "HAN Dahye",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Eunjin",
+      "nameS": "PARK Eunjin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "NA Hyunsoo",
+      "nameS": "NA Hyunsoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "YUK Seoyoung",
+      "nameS": "YUK Seoyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Dahyeon",
+      "nameS": "LEE Dahyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Eunseo",
+      "nameS": "PARK Eunseo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JUNG Hoyoung",
+      "nameS": "JUNG Hoyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Suyeon",
+      "nameS": "LEE Suyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Hyoim",
+      "nameS": "KIM Hyoim",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KANG Sohwi",
+      "nameS": "KANG Sohwi",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

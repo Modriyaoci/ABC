@@ -1,0 +1,196 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Chinese Taipei",
+  "away": "Thailand",
+  "homePlayers": [
+    {
+      "name": "LIN Chun-Yi",
+      "nameS": "LIN Chun-Yi",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMMTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "YANG Po-Hsuan",
+      "nameS": "YANG Po-Hsuan",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMMTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHI Yu-Jen",
+      "nameS": "CHI Yu-Jen",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMMTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHOU Tien-Chen",
+      "nameS": "CHOU Tien-Chen",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMMTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Chi-Lin",
+      "nameS": "WANG Chi-Lin",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMMTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "YE Hong-Wei",
+      "nameS": "YE Hong-Wei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMMTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Kuang-Heng",
+      "nameS": "LIU Kuang-Heng",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMMTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Tzu-Wei",
+      "nameS": "WANG Tzu-Wei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMMTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Jhe-Huei",
+      "nameS": "LEE Jhe-Huei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMMTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHIU Hsiang-Chieh",
+      "nameS": "CHIU Hsiang-Chieh",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMMTEAM-------TPE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "VITIDSARN Kunlavut",
+      "nameS": "VITIDSARN Kunlavut",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "TEERARATSAKUL Panitchaphon",
+      "nameS": "TEERARATSAKUL Panitchaphon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "ARREE Puritat",
+      "nameS": "ARREE Puritat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PUAVARANUKROH Dechapol",
+      "nameS": "PUAVARANUKROH Dechapol",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "OUPTHONG Ruttanapak",
+      "nameS": "OUPTHONG Ruttanapak",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "TEERARATSAKUL Pakkapon",
+      "nameS": "TEERARATSAKUL Pakkapon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SUKPHUN Peeratchai",
+      "nameS": "SUKPHUN Peeratchai",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "THONGSA-NGA Worrapol",
+      "nameS": "THONGSA-NGA Worrapol",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "CHAROENKITAMORN Chaloempon",
+      "nameS": "CHAROENKITAMORN Chaloempon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "YIMJIT Tanawat",
+      "nameS": "YIMJIT Tanawat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

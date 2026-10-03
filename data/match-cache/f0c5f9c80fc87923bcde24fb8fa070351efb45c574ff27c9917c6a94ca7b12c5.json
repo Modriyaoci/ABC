@@ -1,0 +1,196 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Hong Kong, China",
+  "away": "Korea",
+  "homePlayers": [
+    {
+      "name": "LEE Cheuk Yiu",
+      "nameS": "LEE Cheuk Yiu",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "NG Ka Long Angus",
+      "nameS": "NG Ka Long Angus",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "GUNAWAN Jason",
+      "nameS": "GUNAWAN Jason",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LAM Ka To",
+      "nameS": "LAM Ka To",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LUI Chun Wai",
+      "nameS": "LUI Chun Wai",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "HUNG Kuei Chun",
+      "nameS": "HUNG Kuei Chun",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "YEUNG Shing Choi",
+      "nameS": "YEUNG Shing Choi",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHEUNG Sai Shing",
+      "nameS": "CHEUNG Sai Shing",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "DENG Chi Fai",
+      "nameS": "DENG Chi Fai",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHAN Yin Chak",
+      "nameS": "CHAN Yin Chak",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMMTEAM-------HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KI Dong Ju",
+      "nameS": "KI Dong Ju",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Sang Yong",
+      "nameS": "PARK Sang Yong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JEON Hyeok Jin",
+      "nameS": "JEON Hyeok Jin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHOI Ji Hoon",
+      "nameS": "CHOI Ji Hoon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Won Ho",
+      "nameS": "KIM Won Ho",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Jaeh Yun",
+      "nameS": "KIM Jaeh Yun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JO Song Hyun",
+      "nameS": "JO Song Hyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SEO Seung Jae",
+      "nameS": "SEO Seung Jae",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KANG Min Hyuk",
+      "nameS": "KANG Min Hyuk",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "YOO Tae Bin",
+      "nameS": "YOO Tae Bin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

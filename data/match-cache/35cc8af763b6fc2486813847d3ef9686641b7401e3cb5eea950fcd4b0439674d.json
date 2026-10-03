@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "LIANG W / WANG C",
+  "away": "ALFIAN F / FIKRI M",
+  "homePlayers": [
+    {
+      "name": "LIANG Weikeng",
+      "nameS": "LIANG Weikeng",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMDOUBLES----CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Chang",
+      "nameS": "WANG Chang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMDOUBLES----CHN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ALFIAN Fajar",
+      "nameS": "ALFIAN Fajar",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMDOUBLES----INA01",
+      "photo": ""
+    },
+    {
+      "name": "FIKRI Muh. Shohibul",
+      "nameS": "FIKRI Muh. Shohibul",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMDOUBLES----INA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

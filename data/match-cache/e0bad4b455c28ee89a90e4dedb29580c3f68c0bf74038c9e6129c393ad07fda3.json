@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "ALAMIYAN N / ALAMIAN N",
+  "away": "KENZHIGULOV A / ZHUBANOV S",
+  "homePlayers": [
+    {
+      "name": "ALAMIYAN Noshad",
+      "nameS": "ALAMIYAN Noshad",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TTEMDOUBLES----IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ALAMIAN Nima",
+      "nameS": "ALAMIAN Nima",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TTEMDOUBLES----IRI01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KENZHIGULOV Aidos",
+      "nameS": "KENZHIGULOV Aidos",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEMDOUBLES----KAZ02",
+      "photo": ""
+    },
+    {
+      "name": "ZHUBANOV Sanzhar",
+      "nameS": "ZHUBANOV Sanzhar",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEMDOUBLES----KAZ02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

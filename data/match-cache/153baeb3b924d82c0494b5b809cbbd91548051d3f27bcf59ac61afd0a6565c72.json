@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "RIVERA S / ALCANTARA F",
+  "away": "AOYAMA S / KUSUHARA Y",
+  "homePlayers": [
+    {
+      "name": "RIVERA Shaira",
+      "nameS": "RIVERA Shaira",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "TENXDOUBLES----PHI01",
+      "photo": ""
+    },
+    {
+      "name": "ALCANTARA Francis",
+      "nameS": "ALCANTARA Francis",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "TENXDOUBLES----PHI01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "AOYAMA Shuko",
+      "nameS": "AOYAMA Shuko",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TENXDOUBLES----JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KUSUHARA Yusuke",
+      "nameS": "KUSUHARA Yusuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TENXDOUBLES----JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

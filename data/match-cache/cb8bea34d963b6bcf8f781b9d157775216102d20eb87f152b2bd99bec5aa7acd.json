@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "PRATAMA A / PUTRI C",
+  "away": "OH J / KIM N",
+  "homePlayers": [
+    {
+      "name": "PRATAMA Affan",
+      "nameS": "PRATAMA Affan",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEXDOUBLES----INA02",
+      "photo": ""
+    },
+    {
+      "name": "PUTRI Cindy",
+      "nameS": "PUTRI Cindy",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEXDOUBLES----INA02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "OH Junsung",
+      "nameS": "OH Junsung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEXDOUBLES----KOR02",
+      "photo": ""
+    },
+    {
+      "name": "KIM Nayeong",
+      "nameS": "KIM Nayeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEXDOUBLES----KOR02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

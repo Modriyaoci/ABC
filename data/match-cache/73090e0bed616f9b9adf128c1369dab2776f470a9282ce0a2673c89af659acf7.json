@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "PULLELA G / JOLLY T",
+  "away": "TAN P / MURALITHARAN T",
+  "homePlayers": [
+    {
+      "name": "PULLELA Gayatri Gopichand",
+      "nameS": "PULLELA Gayatri Gopichand",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWDOUBLES----IND01",
+      "photo": ""
+    },
+    {
+      "name": "JOLLY Treesa",
+      "nameS": "JOLLY Treesa",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWDOUBLES----IND01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "TAN Pearly Koong Le",
+      "nameS": "TAN Pearly Koong Le",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMWDOUBLES----MAS01",
+      "photo": ""
+    },
+    {
+      "name": "MURALITHARAN Thinaah",
+      "nameS": "MURALITHARAN Thinaah",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMWDOUBLES----MAS01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

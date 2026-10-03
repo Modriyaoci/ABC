@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "TAGUCHI M / WATANABE Y",
+  "away": "SYAHNAWI A / MARWAH N",
+  "homePlayers": [
+    {
+      "name": "TAGUCHI Maya",
+      "nameS": "TAGUCHI Maya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMXDOUBLES----JPN02",
+      "photo": ""
+    },
+    {
+      "name": "WATANABE Yuta",
+      "nameS": "WATANABE Yuta",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMXDOUBLES----JPN02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SYAHNAWI Amri",
+      "nameS": "SYAHNAWI Amri",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMXDOUBLES----INA01",
+      "photo": ""
+    },
+    {
+      "name": "MARWAH Nita Violina",
+      "nameS": "MARWAH Nita Violina",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMXDOUBLES----INA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

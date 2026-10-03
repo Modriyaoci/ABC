@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "India",
+  "away": "Vietnam",
+  "homePlayers": [
+    {
+      "name": "BALWAN SINGH Amit",
+      "nameS": "BALWAN SINGH Amit",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "JEBARAJ Joel Benjamin",
+      "nameS": "JEBARAJ Joel Benjamin",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "CHATHAM Muhammad",
+      "nameS": "CHATHAM Muhammad",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "YADAV Chirag",
+      "nameS": "YADAV Chirag",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "KOTTARATHIL Anand",
+      "nameS": "KOTTARATHIL Anand",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "RAI Ashwal",
+      "nameS": "RAI Ashwal",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "CHARLES Jerome Vinith",
+      "nameS": "CHARLES Jerome Vinith",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "LAD Om Vasant",
+      "nameS": "LAD Om Vasant",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "APPAVU Muthusamy",
+      "nameS": "APPAVU Muthusamy",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "EANTHUNGAL JOSEPH John Joseph",
+      "nameS": "EANTHUNGAL JOSEPH John Joseph",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SINGH Shikhar",
+      "nameS": "SINGH Shikhar",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "PULPARAMBIL Hemanth",
+      "nameS": "PULPARAMBIL Hemanth",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "DINH Van Duy",
+      "nameS": "DINH Van Duy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRINH Duy Phuc",
+      "nameS": "TRINH Duy Phuc",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "DUONG Van Tien",
+      "nameS": "DUONG Van Tien",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Minh Duc",
+      "nameS": "TRAN Minh Duc",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TANG Ngoc Hieu",
+      "nameS": "TANG Ngoc Hieu",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Duy Tuyen",
+      "nameS": "TRAN Duy Tuyen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRUONG The Khai",
+      "nameS": "TRUONG The Khai",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "DINH van Phuong",
+      "nameS": "DINH van Phuong",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "NGUYEN Ngoc Thuan",
+      "nameS": "NGUYEN Ngoc Thuan",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Hoai Phuong",
+      "nameS": "TRAN Hoai Phuong",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "CAO Duc Hoang",
+      "nameS": "CAO Duc Hoang",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "BUI Xuan Tien",
+      "nameS": "BUI Xuan Tien",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

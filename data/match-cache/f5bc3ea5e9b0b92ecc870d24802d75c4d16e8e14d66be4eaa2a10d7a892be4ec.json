@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Japan",
+  "away": "Korea",
+  "homePlayers": [
+    {
+      "name": "WADA Yukiko",
+      "nameS": "WADA Yukiko",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOWTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SATO Yoshino",
+      "nameS": "SATO Yoshino",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOWTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SEKI Nanami",
+      "nameS": "SEKI Nanami",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOWTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YAMADA Nichika",
+      "nameS": "YAMADA Nichika",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOWTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YAMAGUCHI Maki",
+      "nameS": "YAMAGUCHI Maki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOWTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SHIODE Hitomi",
+      "nameS": "SHIODE Hitomi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOWTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SHIGIHARA Hinata",
+      "nameS": "SHIGIHARA Hinata",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOWTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NISHIZAKI Mana",
+      "nameS": "NISHIZAKI Mana",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOWTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HIROTA Ai",
+      "nameS": "HIROTA Ai",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOWTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KITAMADO Ayane",
+      "nameS": "KITAMADO Ayane",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOWTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "INOUE Miina",
+      "nameS": "INOUE Miina",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOWTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "AKIMOTO Miku",
+      "nameS": "AKIMOTO Miku",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOWTEAM6------JPN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LEE Yelim",
+      "nameS": "LEE Yelim",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Dain",
+      "nameS": "KIM Dain",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HAN Dahye",
+      "nameS": "HAN Dahye",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Eunjin",
+      "nameS": "PARK Eunjin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "NA Hyunsoo",
+      "nameS": "NA Hyunsoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "YUK Seoyoung",
+      "nameS": "YUK Seoyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Dahyeon",
+      "nameS": "LEE Dahyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Eunseo",
+      "nameS": "PARK Eunseo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JUNG Hoyoung",
+      "nameS": "JUNG Hoyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Suyeon",
+      "nameS": "LEE Suyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Hyoim",
+      "nameS": "KIM Hyoim",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KANG Sohwi",
+      "nameS": "KANG Sohwi",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "JIANG F / ZHANG T",
+  "away": "RAHMANI K / YAZDANI A",
+  "homePlayers": [
+    {
+      "name": "JIANG Fumin",
+      "nameS": "JIANG Fumin",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TENMDOUBLES----CHN02",
+      "photo": ""
+    },
+    {
+      "name": "ZHANG Tianhui",
+      "nameS": "ZHANG Tianhui",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TENMDOUBLES----CHN02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "RAHMANI Kasra",
+      "nameS": "RAHMANI Kasra",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TENMDOUBLES----IRI01",
+      "photo": ""
+    },
+    {
+      "name": "YAZDANI Ali",
+      "nameS": "YAZDANI Ali",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TENMDOUBLES----IRI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

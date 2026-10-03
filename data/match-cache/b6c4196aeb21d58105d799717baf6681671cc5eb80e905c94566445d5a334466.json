@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Philippines",
+  "away": "Mongolia",
+  "homePlayers": [
+    {
+      "name": "NITURA Shaina Marie",
+      "nameS": "NITURA Shaina Marie",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "BELEN Mhicaela",
+      "nameS": "BELEN Mhicaela",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "LAURE Ejiya",
+      "nameS": "LAURE Ejiya",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "de GUZMAN Julia Melissa",
+      "nameS": "de GUZMAN Julia Melissa",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "CANINO Angel Anne",
+      "nameS": "CANINO Angel Anne",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "PALOMATA Dell",
+      "nameS": "PALOMATA Dell",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "SOLOMON Alyssa Jae",
+      "nameS": "SOLOMON Alyssa Jae",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "PROVIDO Amie",
+      "nameS": "PROVIDO Amie",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "GAGATE Thea Allison",
+      "nameS": "GAGATE Thea Allison",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "ALBA Marionne Angelique",
+      "nameS": "ALBA Marionne Angelique",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "JAZARENO Ylizyeth Justine",
+      "nameS": "JAZARENO Ylizyeth Justine",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "YTANG Nina",
+      "nameS": "YTANG Nina",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KHOSBAYAR Nergui",
+      "nameS": "KHOSBAYAR Nergui",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "GANBOLD Enkhnaran",
+      "nameS": "GANBOLD Enkhnaran",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "OTGONSUREN Erdene-enkh",
+      "nameS": "OTGONSUREN Erdene-enkh",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "UDVAL Munkhzul",
+      "nameS": "UDVAL Munkhzul",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "SANSARBOLD Temuulen",
+      "nameS": "SANSARBOLD Temuulen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "PUREVSUREN Enkhkhuslen",
+      "nameS": "PUREVSUREN Enkhkhuslen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATTUR Ninjbolor",
+      "nameS": "BATTUR Ninjbolor",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "MUNGUNTSOOJ Sanchirmaa",
+      "nameS": "MUNGUNTSOOJ Sanchirmaa",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "GANBAATAR Saruulgerel",
+      "nameS": "GANBAATAR Saruulgerel",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATTOGOO Khaliunzaya",
+      "nameS": "BATTOGOO Khaliunzaya",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATBOLD Amarbayasgalan",
+      "nameS": "BATBOLD Amarbayasgalan",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BAYARBAYASGALAN Khulan",
+      "nameS": "BAYARBAYASGALAN Khulan",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KIM J / JANG H",
+  "away": "SHAHZAD M / LAROSH M",
+  "homePlayers": [
+    {
+      "name": "KIM Jae Hyun",
+      "nameS": "KIM Jae Hyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMXDOUBLES----KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JANG Hajeong",
+      "nameS": "JANG Hajeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMXDOUBLES----KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SHAHZAD Mahoor",
+      "nameS": "SHAHZAD Mahoor",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "BDMXDOUBLES----PAK01",
+      "photo": ""
+    },
+    {
+      "name": "LAROSH Muhammad Ali",
+      "nameS": "LAROSH Muhammad Ali",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "BDMXDOUBLES----PAK01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

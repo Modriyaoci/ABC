@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHANDRASEKAR A / NARAYANASWAMY B",
+  "away": "BASTOLA A / KHADKA P",
+  "homePlayers": [
+    {
+      "name": "CHANDRASEKAR Anirudh",
+      "nameS": "CHANDRASEKAR Anirudh",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TENMDOUBLES----IND02",
+      "photo": ""
+    },
+    {
+      "name": "NARAYANASWAMY Balaji",
+      "nameS": "NARAYANASWAMY Balaji",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TENMDOUBLES----IND02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "BASTOLA Abhishek",
+      "nameS": "BASTOLA Abhishek",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "TENMDOUBLES----NEP01",
+      "photo": ""
+    },
+    {
+      "name": "KHADKA Pradip",
+      "nameS": "KHADKA Pradip",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "TENMDOUBLES----NEP01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

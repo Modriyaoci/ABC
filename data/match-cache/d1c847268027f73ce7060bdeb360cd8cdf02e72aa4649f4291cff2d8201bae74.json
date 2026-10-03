@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "JEONG N / JO S",
+  "away": "SHERCHAN R / KHANAL K",
+  "homePlayers": [
+    {
+      "name": "JEONG Naeun",
+      "nameS": "JEONG Naeun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMXDOUBLES----KOR02",
+      "photo": ""
+    },
+    {
+      "name": "JO Song Hyun",
+      "nameS": "JO Song Hyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMXDOUBLES----KOR02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SHERCHAN Rihanna",
+      "nameS": "SHERCHAN Rihanna",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "BDMXDOUBLES----NEP02",
+      "photo": ""
+    },
+    {
+      "name": "KHANAL Kshitiz",
+      "nameS": "KHANAL Kshitiz",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "BDMXDOUBLES----NEP02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

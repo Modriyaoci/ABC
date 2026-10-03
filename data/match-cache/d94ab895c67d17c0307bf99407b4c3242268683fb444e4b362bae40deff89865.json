@@ -1,0 +1,304 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Bahrain",
+  "away": "Qatar",
+  "homePlayers": [
+    {
+      "name": "RABIA Mohamed",
+      "nameS": "RABIA Mohamed",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "ISA Hesham",
+      "nameS": "ISA Hesham",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "ALSHOWAIKH Salman",
+      "nameS": "ALSHOWAIKH Salman",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "KADHEM Ahmed",
+      "nameS": "KADHEM Ahmed",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "FADHUL Ahmed",
+      "nameS": "FADHUL Ahmed",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Mohamed",
+      "nameS": "ALI Mohamed",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "ABDULKARIM Abdulla",
+      "nameS": "ABDULKARIM Abdulla",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "SHUBBAR Sayed",
+      "nameS": "SHUBBAR Sayed",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "MADAN Hasan",
+      "nameS": "MADAN Hasan",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "MOHAMED Ali",
+      "nameS": "MOHAMED Ali",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "EID Ahmed",
+      "nameS": "EID Ahmed",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "KHAMIS Jasim",
+      "nameS": "KHAMIS Jasim",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Hasan",
+      "nameS": "ALI Hasan",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "AHMED Mohamed",
+      "nameS": "AHMED Mohamed",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "MOHAMED Mohamed",
+      "nameS": "MOHAMED Mohamed",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    },
+    {
+      "name": "ALSAYYAD Husain",
+      "nameS": "ALSAYYAD Husain",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "HBLMTEAM7------BRN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "MADADI Ahmad",
+      "nameS": "MADADI Ahmad",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Youssef",
+      "nameS": "ALI Youssef",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "DHIB Saifdinne",
+      "nameS": "DHIB Saifdinne",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "SOUSSOU Malek",
+      "nameS": "SOUSSOU Malek",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ABDALLA Abdelrahman",
+      "nameS": "ABDALLA Abdelrahman",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "CAPOTE Rafael",
+      "nameS": "CAPOTE Rafael",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MARZO Frankis",
+      "nameS": "MARZO Frankis",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MURAD Abdulrazzaq",
+      "nameS": "MURAD Abdulrazzaq",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MEMISEVIC Eldar",
+      "nameS": "MEMISEVIC Eldar",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MEGDICH Nasreddine",
+      "nameS": "MEGDICH Nasreddine",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ZEMZEMI Firas",
+      "nameS": "ZEMZEMI Firas",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ABDELRHEM Ahmed",
+      "nameS": "ABDELRHEM Ahmed",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "GUEHIS Amine",
+      "nameS": "GUEHIS Amine",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "HAMAM Mohamedali",
+      "nameS": "HAMAM Mohamedali",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ZAKKAR Ameen",
+      "nameS": "ZAKKAR Ameen",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "EBAID Ebrahim",
+      "nameS": "EBAID Ebrahim",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

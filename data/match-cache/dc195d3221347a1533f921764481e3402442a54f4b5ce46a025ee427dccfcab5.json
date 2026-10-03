@@ -1,0 +1,88 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Uzbekistan",
+  "away": "Kazakhstan",
+  "homePlayers": [
+    {
+      "name": "KHASANOVA Adelina",
+      "nameS": "KHASANOVA Adelina",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "TTEWTEAM-------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "KAMALOVA Arujan",
+      "nameS": "KAMALOVA Arujan",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "TTEWTEAM-------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "ERKEBAEVA Asel",
+      "nameS": "ERKEBAEVA Asel",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "TTEWTEAM-------UZB01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "AKASHEVA Zauresh",
+      "nameS": "AKASHEVA Zauresh",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEWTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "MIRKADIROVA Sarvinoz",
+      "nameS": "MIRKADIROVA Sarvinoz",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEWTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KOSHKUMBAYEVA Zhanerke",
+      "nameS": "KOSHKUMBAYEVA Zhanerke",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEWTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "ROMANOVSKAYA Angelina",
+      "nameS": "ROMANOVSKAYA Angelina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEWTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "ZHAXYLYKOVA Albina",
+      "nameS": "ZHAXYLYKOVA Albina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEWTEAM-------KAZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

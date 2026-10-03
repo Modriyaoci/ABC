@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "TAN P / MURALITHARAN T",
+  "away": "TUNGKASATAN N / MIJAD H",
+  "homePlayers": [
+    {
+      "name": "TAN Pearly Koong Le",
+      "nameS": "TAN Pearly Koong Le",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMWDOUBLES----MAS01",
+      "photo": ""
+    },
+    {
+      "name": "MURALITHARAN Thinaah",
+      "nameS": "MURALITHARAN Thinaah",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMWDOUBLES----MAS01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "TUNGKASATAN Napapakorn",
+      "nameS": "TUNGKASATAN Napapakorn",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMWDOUBLES----THA01",
+      "photo": ""
+    },
+    {
+      "name": "MIJAD Hathaithip",
+      "nameS": "MIJAD Hathaithip",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMWDOUBLES----THA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Uzbekistan",
+  "away": "Philippines",
+  "homePlayers": [
+    {
+      "name": "RAKHIMOV Umirbek",
+      "nameS": "RAKHIMOV Umirbek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "HAKIMOV Bilolbek",
+      "nameS": "HAKIMOV Bilolbek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "ISAMOV Khabibullokhon",
+      "nameS": "ISAMOV Khabibullokhon",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MURODOV Mirziyod",
+      "nameS": "MURODOV Mirziyod",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "SOBIROV Islomjon",
+      "nameS": "SOBIROV Islomjon",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "KAYPANOV Aybek",
+      "nameS": "KAYPANOV Aybek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MUROBIDINOV Saidjamol",
+      "nameS": "MUROBIDINOV Saidjamol",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "HAYDAROV Ogabek",
+      "nameS": "HAYDAROV Ogabek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MAMAYUSUFOV Shokhboz",
+      "nameS": "MAMAYUSUFOV Shokhboz",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "OMONOV Shakhzod",
+      "nameS": "OMONOV Shakhzod",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MUHAMADIEV Yakhyo",
+      "nameS": "MUHAMADIEV Yakhyo",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "JURAEV Asadbek",
+      "nameS": "JURAEV Asadbek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "BAGUNAS Bryan",
+      "nameS": "BAGUNAS Bryan",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "YBANEZ Josh",
+      "nameS": "YBANEZ Josh",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "RETAMAR Ave Joshua",
+      "nameS": "RETAMAR Ave Joshua",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "GARCIA Jude",
+      "nameS": "GARCIA Jude",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "VILLADOS Adrian",
+      "nameS": "VILLADOS Adrian",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "MENDOZA Lirick John",
+      "nameS": "MENDOZA Lirick John",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "TAGUIBOLOS Rwenzmel",
+      "nameS": "TAGUIBOLOS Rwenzmel",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "ORDIALES Leo",
+      "nameS": "ORDIALES Leo",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "ESPEJO Marck Jesus",
+      "nameS": "ESPEJO Marck Jesus",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "JOSAFAT Lloyd",
+      "nameS": "JOSAFAT Lloyd",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "BUDDIN Michaelo",
+      "nameS": "BUDDIN Michaelo",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "MAGALAMAN Joshua",
+      "nameS": "MAGALAMAN Joshua",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

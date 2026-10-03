@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Japan",
+  "away": "Pakistan",
+  "homePlayers": [
+    {
+      "name": "OTSUKA Tatsunori",
+      "nameS": "OTSUKA Tatsunori",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOMTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "ARAI Yudai",
+      "nameS": "ARAI Yudai",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOMTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KAWAHIGASHI Yudai",
+      "nameS": "KAWAHIGASHI Yudai",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOMTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KAI Masato",
+      "nameS": "KAI Masato",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOMTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NISHIMOTO Keigo",
+      "nameS": "NISHIMOTO Keigo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOMTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NISHIYAMA Hiroto",
+      "nameS": "NISHIYAMA Hiroto",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOMTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TAKAHASHI Keihan",
+      "nameS": "TAKAHASHI Keihan",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOMTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SHIMOKAWA Ryo",
+      "nameS": "SHIMOKAWA Ryo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOMTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "GOTO Rikuto",
+      "nameS": "GOTO Rikuto",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOMTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "ASANO Kento",
+      "nameS": "ASANO Kento",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOMTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NISHIKAWA Keitaro",
+      "nameS": "NISHIKAWA Keitaro",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOMTEAM6------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TAKAHASHI Kazuyuki",
+      "nameS": "TAKAHASHI Kazuyuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "VVOMTEAM6------JPN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "HAMAD Muhammad",
+      "nameS": "HAMAD Muhammad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "JABRAN",
+      "nameS": "JABRAN",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "SIDDIQUE Abu Bakar",
+      "nameS": "SIDDIQUE Abu Bakar",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "YAHYA Muhammad",
+      "nameS": "YAHYA Muhammad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Usman Faryad",
+      "nameS": "ALI Usman Faryad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "RAZA Fahad",
+      "nameS": "RAZA Fahad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Murad",
+      "nameS": "KHAN Murad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "HAYAT Khizar",
+      "nameS": "HAYAT Khizar",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "JEHAN Murad",
+      "nameS": "JEHAN Murad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Afaq",
+      "nameS": "KHAN Afaq",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "YAZMAN Hamid",
+      "nameS": "YAZMAN Hamid",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Musawer",
+      "nameS": "KHAN Musawer",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

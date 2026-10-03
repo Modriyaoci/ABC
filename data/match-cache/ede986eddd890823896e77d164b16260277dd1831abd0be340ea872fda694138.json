@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "TUSHI S / MAHI N",
+  "away": "KIM K / CHA S",
+  "homePlayers": [
+    {
+      "name": "TUSHI Samanta",
+      "nameS": "TUSHI Samanta",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEWDOUBLES----BAN01",
+      "photo": ""
+    },
+    {
+      "name": "MAHI Nowrin",
+      "nameS": "MAHI Nowrin",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEWDOUBLES----BAN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KIM Kum Yong",
+      "nameS": "KIM Kum Yong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWDOUBLES----PRK01",
+      "photo": ""
+    },
+    {
+      "name": "CHA Su Yong",
+      "nameS": "CHA Su Yong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWDOUBLES----PRK01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

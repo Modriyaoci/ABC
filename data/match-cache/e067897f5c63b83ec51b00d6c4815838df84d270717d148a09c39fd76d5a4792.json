@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "JEONG N / JO S",
+  "away": "TRAN D / PHAM T",
+  "homePlayers": [
+    {
+      "name": "JEONG Naeun",
+      "nameS": "JEONG Naeun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMXDOUBLES----KOR02",
+      "photo": ""
+    },
+    {
+      "name": "JO Song Hyun",
+      "nameS": "JO Song Hyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMXDOUBLES----KOR02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "TRAN Dinh Manh",
+      "nameS": "TRAN Dinh Manh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "BDMXDOUBLES----VIE01",
+      "photo": ""
+    },
+    {
+      "name": "PHAM Thi Khanh",
+      "nameS": "PHAM Thi Khanh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "BDMXDOUBLES----VIE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

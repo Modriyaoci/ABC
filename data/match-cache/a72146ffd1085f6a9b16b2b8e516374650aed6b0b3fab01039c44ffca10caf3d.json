@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "NIYAZOV A / KULMATOV K",
+  "away": "SINGHA G / JAMAN A",
+  "homePlayers": [
+    {
+      "name": "NIYAZOV Artur",
+      "nameS": "NIYAZOV Artur",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMMDOUBLES----KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KULMATOV Khaitmurat",
+      "nameS": "KULMATOV Khaitmurat",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMMDOUBLES----KAZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SINGHA Gourab",
+      "nameS": "SINGHA Gourab",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "BDMMDOUBLES----BAN02",
+      "photo": ""
+    },
+    {
+      "name": "JAMAN Ayman Ibn",
+      "nameS": "JAMAN Ayman Ibn",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "BDMMDOUBLES----BAN02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

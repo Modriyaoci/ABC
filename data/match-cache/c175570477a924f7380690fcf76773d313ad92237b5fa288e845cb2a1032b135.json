@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "AMSAKARUNAN H / MADATHIL R A",
+  "away": "ALFIAN F / FIKRI M",
+  "homePlayers": [
+    {
+      "name": "AMSAKARUNAN Hariharan",
+      "nameS": "AMSAKARUNAN Hariharan",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMDOUBLES----IND02",
+      "photo": ""
+    },
+    {
+      "name": "MADATHIL R Arjun",
+      "nameS": "MADATHIL R Arjun",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMDOUBLES----IND02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ALFIAN Fajar",
+      "nameS": "ALFIAN Fajar",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMDOUBLES----INA01",
+      "photo": ""
+    },
+    {
+      "name": "FIKRI Muh. Shohibul",
+      "nameS": "FIKRI Muh. Shohibul",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMDOUBLES----INA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

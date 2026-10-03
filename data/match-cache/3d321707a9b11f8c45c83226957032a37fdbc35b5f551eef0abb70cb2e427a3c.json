@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Vietnam",
+  "away": "China",
+  "homePlayers": [
+    {
+      "name": "THI TRA MY Nguyen",
+      "nameS": "THI TRA MY Nguyen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Thi Thanh Thuy",
+      "nameS": "TRAN Thi Thanh Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "BUI Thi Anh Thao",
+      "nameS": "BUI Thi Anh Thao",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "PHAM Quynh Huong",
+      "nameS": "PHAM Quynh Huong",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Thanh Thuy",
+      "nameS": "LE Thanh Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "VI Thi Yen Nhi",
+      "nameS": "VI Thi Yen Nhi",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Nhu Anh",
+      "nameS": "LE Nhu Anh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "NGUYEN Khanh Dang",
+      "nameS": "NGUYEN Khanh Dang",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "VO Thi Kim Thoa",
+      "nameS": "VO Thi Kim Thoa",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LUU Thi Hue",
+      "nameS": "LUU Thi Hue",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Thi Yen",
+      "nameS": "LE Thi Yen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Thi Bich Thuy",
+      "nameS": "TRAN Thi Bich Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "WU Mengjie",
+      "nameS": "WU Mengjie",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHUANG Yushan",
+      "nameS": "ZHUANG Yushan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "TANG Xin",
+      "nameS": "TANG Xin",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHANG Zixuan",
+      "nameS": "ZHANG Zixuan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "GONG Xiangyu",
+      "nameS": "GONG Xiangyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Houyu",
+      "nameS": "CHEN Houyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Aoqian",
+      "nameS": "WANG Aoqian",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "YANG Shuming",
+      "nameS": "YANG Shuming",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "DONG Yuhan",
+      "nameS": "DONG Yuhan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "XIE Shengyu",
+      "nameS": "XIE Shengyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "GUO Zhongnan",
+      "nameS": "GUO Zhongnan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Mengjie",
+      "nameS": "WANG Mengjie",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

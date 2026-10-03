@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "MYANDAL T / BATMUNKH B",
+  "away": "ZHENG H / LEONG O",
+  "homePlayers": [
+    {
+      "name": "MYANDAL Temuulen",
+      "nameS": "MYANDAL Temuulen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TTEXDOUBLES----MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATMUNKH Bolor-erdene",
+      "nameS": "BATMUNKH Bolor-erdene",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TTEXDOUBLES----MGL01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ZHENG Hong Wai",
+      "nameS": "ZHENG Hong Wai",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "TTEXDOUBLES----MAC02",
+      "photo": ""
+    },
+    {
+      "name": "LEONG On Na",
+      "nameS": "LEONG On Na",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "TTEXDOUBLES----MAC02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

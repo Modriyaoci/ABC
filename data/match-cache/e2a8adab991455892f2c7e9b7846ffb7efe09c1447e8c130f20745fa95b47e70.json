@@ -1,0 +1,97 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Japan",
+  "away": "Mongolia",
+  "homePlayers": [
+    {
+      "name": "HARIMOTO Miwa",
+      "nameS": "HARIMOTO Miwa",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HAYATA Hina",
+      "nameS": "HAYATA Hina",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "ITO Mima",
+      "nameS": "ITO Mima",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NAGASAKI Miyu",
+      "nameS": "NAGASAKI Miyu",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MENDE Rin",
+      "nameS": "MENDE Rin",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWTEAM-------JPN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SER-OD Ankhmaa",
+      "nameS": "SER-OD Ankhmaa",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TTEWTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATMUNKH Bolor-erdene",
+      "nameS": "BATMUNKH Bolor-erdene",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TTEWTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "SANJAA Burenjargal",
+      "nameS": "SANJAA Burenjargal",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TTEWTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATMUNKH Bolor-egshiglen",
+      "nameS": "BATMUNKH Bolor-egshiglen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TTEWTEAM-------MGL01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

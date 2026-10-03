@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHAN B / WONG C",
+  "away": "ALAMIYAN N / ALAMIAN N",
+  "homePlayers": [
+    {
+      "name": "CHAN Baldwin",
+      "nameS": "CHAN Baldwin",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEMDOUBLES----HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WONG Chun Ting",
+      "nameS": "WONG Chun Ting",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEMDOUBLES----HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ALAMIYAN Noshad",
+      "nameS": "ALAMIYAN Noshad",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TTEMDOUBLES----IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ALAMIAN Nima",
+      "nameS": "ALAMIAN Nima",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TTEMDOUBLES----IRI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

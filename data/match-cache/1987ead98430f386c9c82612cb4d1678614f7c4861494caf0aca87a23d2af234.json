@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "ROMANOVSKAYA A / ZHAXYLYKOVA A",
+  "away": "KUAI M / WANG M",
+  "homePlayers": [
+    {
+      "name": "ROMANOVSKAYA Angelina",
+      "nameS": "ROMANOVSKAYA Angelina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEWDOUBLES----KAZ02",
+      "photo": ""
+    },
+    {
+      "name": "ZHAXYLYKOVA Albina",
+      "nameS": "ZHAXYLYKOVA Albina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEWDOUBLES----KAZ02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KUAI Man",
+      "nameS": "KUAI Man",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEWDOUBLES----CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Manyu",
+      "nameS": "WANG Manyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEWDOUBLES----CHN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

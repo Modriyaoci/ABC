@@ -1,0 +1,448 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Thailand",
+  "away": "Korea",
+  "homePlayers": [
+    {
+      "name": "RYOTO Yuthai",
+      "nameS": "RYOTO Yuthai",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "MUANGKASEM Naruephol",
+      "nameS": "MUANGKASEM Naruephol",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KAYANUMA Yuri",
+      "nameS": "KAYANUMA Yuri",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "DARU Joseph",
+      "nameS": "DARU Joseph",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "CHAICHUAY Nattapon",
+      "nameS": "CHAICHUAY Nattapon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "NITUTHON Phongsathon",
+      "nameS": "NITUTHON Phongsathon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "BUCHA Setthawut",
+      "nameS": "BUCHA Setthawut",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PETSUNTHAD Phuttabut",
+      "nameS": "PETSUNTHAD Phuttabut",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "LUNGLOEK Anuchit",
+      "nameS": "LUNGLOEK Anuchit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "DUNN Oliver",
+      "nameS": "DUNN Oliver",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "RYOTO Yusuke",
+      "nameS": "RYOTO Yusuke",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "MANEESIRI Nanthawat",
+      "nameS": "MANEESIRI Nanthawat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SAIBUAKAEW Piyathat",
+      "nameS": "SAIBUAKAEW Piyathat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "CHAISONGKRAM Jake",
+      "nameS": "CHAISONGKRAM Jake",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SUWANNASANG Teetat",
+      "nameS": "SUWANNASANG Teetat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "WONGSUWAN Porrawit",
+      "nameS": "WONGSUWAN Porrawit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KEHOE Ryan",
+      "nameS": "KEHOE Ryan",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SAENGNAK Jiraphat",
+      "nameS": "SAENGNAK Jiraphat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "UAMWILAI Nattapat",
+      "nameS": "UAMWILAI Nattapat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "CLARK Alexander",
+      "nameS": "CLARK Alexander",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PROMMA Phuriphat",
+      "nameS": "PROMMA Phuriphat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "OUDOM Linus",
+      "nameS": "OUDOM Linus",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Suppakorn",
+      "nameS": "LIN Suppakorn",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "BURANASIRI Gabriel",
+      "nameS": "BURANASIRI Gabriel",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "PARK Jaehyun",
+      "nameS": "PARK Jaehyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "YOON Donghee",
+      "nameS": "YOON Donghee",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Doyeong",
+      "nameS": "KIM Doyeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "ROH Sihwan",
+      "nameS": "ROH Sihwan",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Jichan",
+      "nameS": "KIM Jichan",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Junsoon",
+      "nameS": "PARK Junsoon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "MOON Bogyeong",
+      "nameS": "MOON Bogyeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "MOON Hyunbin",
+      "nameS": "MOON Hyunbin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Jaehyeon",
+      "nameS": "LEE Jaehyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Geonhee",
+      "nameS": "KIM Geonhee",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JEONG Junjae",
+      "nameS": "JEONG Junjae",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "OH Wonseok",
+      "nameS": "OH Wonseok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "BAE Chanseung",
+      "nameS": "BAE Chanseung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "GWAK Been",
+      "nameS": "GWAK Been",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SO Hyeongjun",
+      "nameS": "SO Hyeongjun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHO Hyeongwoo",
+      "nameS": "CHO Hyeongwoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JO Byeonghyeon",
+      "nameS": "JO Byeonghyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHOI Minseok",
+      "nameS": "CHOI Minseok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Juwon",
+      "nameS": "KIM Juwon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Yeonghyun",
+      "nameS": "PARK Yeonghyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Jinuk",
+      "nameS": "KIM Jinuk",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SUNG Yeongtak",
+      "nameS": "SUNG Yeongtak",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHOI Junyong",
+      "nameS": "CHOI Junyong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Youngwoo",
+      "nameS": "KIM Youngwoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

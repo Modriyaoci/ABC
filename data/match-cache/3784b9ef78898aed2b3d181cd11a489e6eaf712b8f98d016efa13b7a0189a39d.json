@@ -1,0 +1,295 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Hong Kong, China",
+  "away": "Kazakhstan",
+  "homePlayers": [
+    {
+      "name": "CHAN Kam",
+      "nameS": "CHAN Kam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "SZE Yan",
+      "nameS": "SZE Yan",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHONG Sze",
+      "nameS": "CHONG Sze",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHEUNG Man",
+      "nameS": "CHEUNG Man",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "HUNG Cheuk",
+      "nameS": "HUNG Cheuk",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "YEUNG Chun",
+      "nameS": "YEUNG Chun",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "TSANG Yuen",
+      "nameS": "TSANG Yuen",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WU Lei",
+      "nameS": "WU Lei",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Ho",
+      "nameS": "LIU Ho",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "HUNG Sin",
+      "nameS": "HUNG Sin",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "TAI Tsz",
+      "nameS": "TAI Tsz",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LO Kei",
+      "nameS": "LO Kei",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WONG Yee",
+      "nameS": "WONG Yee",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHEUNG Mei",
+      "nameS": "CHEUNG Mei",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "FUNG Sze",
+      "nameS": "FUNG Sze",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "YIU Hei",
+      "nameS": "YIU Hei",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ZHAPAROVA Damira",
+      "nameS": "ZHAPAROVA Damira",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "SITNIKOVA Mariya",
+      "nameS": "SITNIKOVA Mariya",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "REJEMETOVA Sevara",
+      "nameS": "REJEMETOVA Sevara",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "TURSYN Aiym",
+      "nameS": "TURSYN Aiym",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "ZHAPAROVA Aida",
+      "nameS": "ZHAPAROVA Aida",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KHARDINA Veronika",
+      "nameS": "KHARDINA Veronika",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "RADAYEVA Kristina",
+      "nameS": "RADAYEVA Kristina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "ZVYAGINA Zlata",
+      "nameS": "ZVYAGINA Zlata",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "AITENOVA Zhannat",
+      "nameS": "AITENOVA Zhannat",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "ABDIKHAMIT Arailym",
+      "nameS": "ABDIKHAMIT Arailym",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KHASSAKHANOVA Irina",
+      "nameS": "KHASSAKHANOVA Irina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "SEITKASSYM Zhanerke",
+      "nameS": "SEITKASSYM Zhanerke",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "MYRZAMSEIITOVA Madina",
+      "nameS": "MYRZAMSEIITOVA Madina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "STEPANOVA Kristina",
+      "nameS": "STEPANOVA Kristina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KUANDYKOVA Zhanerke",
+      "nameS": "KUANDYKOVA Zhanerke",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLWTEAM7------KAZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

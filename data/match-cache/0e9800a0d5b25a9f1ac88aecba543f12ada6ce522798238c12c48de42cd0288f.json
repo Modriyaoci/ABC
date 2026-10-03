@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "WONG C / DOO H",
+  "away": "SHAH M / CHITALE D",
+  "homePlayers": [
+    {
+      "name": "WONG Chun Ting",
+      "nameS": "WONG Chun Ting",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEXDOUBLES----HKG01",
+      "photo": ""
+    },
+    {
+      "name": "DOO Hoi Kem",
+      "nameS": "DOO Hoi Kem",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEXDOUBLES----HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SHAH Manush",
+      "nameS": "SHAH Manush",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEXDOUBLES----IND01",
+      "photo": ""
+    },
+    {
+      "name": "CHITALE Diya",
+      "nameS": "CHITALE Diya",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEXDOUBLES----IND01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

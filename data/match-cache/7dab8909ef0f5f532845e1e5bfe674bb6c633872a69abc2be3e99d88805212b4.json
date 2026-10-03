@@ -1,0 +1,304 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Qatar",
+  "away": "Japan",
+  "homePlayers": [
+    {
+      "name": "MADADI Ahmad",
+      "nameS": "MADADI Ahmad",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Youssef",
+      "nameS": "ALI Youssef",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "DHIB Saifdinne",
+      "nameS": "DHIB Saifdinne",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "SOUSSOU Malek",
+      "nameS": "SOUSSOU Malek",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ABDALLA Abdelrahman",
+      "nameS": "ABDALLA Abdelrahman",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MARZO Frankis",
+      "nameS": "MARZO Frankis",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "CAPOTE Rafael",
+      "nameS": "CAPOTE Rafael",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MURAD Abdulrazzaq",
+      "nameS": "MURAD Abdulrazzaq",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MEMISEVIC Eldar",
+      "nameS": "MEMISEVIC Eldar",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MEGDICH Nasreddine",
+      "nameS": "MEGDICH Nasreddine",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ZEMZEMI Firas",
+      "nameS": "ZEMZEMI Firas",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ABDELRHEM Ahmed",
+      "nameS": "ABDELRHEM Ahmed",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "GUEHIS Amine",
+      "nameS": "GUEHIS Amine",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "HAMAM Mohamedali",
+      "nameS": "HAMAM Mohamedali",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ZAKKAR Ameen",
+      "nameS": "ZAKKAR Ameen",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "EBAID Ebrahim",
+      "nameS": "EBAID Ebrahim",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NAKAMURA Takumi",
+      "nameS": "NAKAMURA Takumi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NAKATA Kota",
+      "nameS": "NAKATA Kota",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TSUTAYA Taiga",
+      "nameS": "TSUTAYA Taiga",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SAKURAI Tomoya",
+      "nameS": "SAKURAI Tomoya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TANAKA Daisuke",
+      "nameS": "TANAKA Daisuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "BAIG Adam",
+      "nameS": "BAIG Adam",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "ICHIHARA Soya",
+      "nameS": "ICHIHARA Soya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SUGIOKA Naoki",
+      "nameS": "SUGIOKA Naoki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "WATANABE Jin",
+      "nameS": "WATANABE Jin",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "IWASHITA Yuta",
+      "nameS": "IWASHITA Yuta",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YOSHINO Tatsuki",
+      "nameS": "YOSHINO Tatsuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "GOTO Hayato",
+      "nameS": "GOTO Hayato",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TAMAKAWA Hiroyasu",
+      "nameS": "TAMAKAWA Hiroyasu",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUJISAKA Naoki",
+      "nameS": "FUJISAKA Naoki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HASHIMOTO Akio",
+      "nameS": "HASHIMOTO Akio",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MIZUMACHI Kotaro",
+      "nameS": "MIZUMACHI Kotaro",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

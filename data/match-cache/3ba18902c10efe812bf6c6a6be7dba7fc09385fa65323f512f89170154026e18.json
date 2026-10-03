@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "WONG C / DOO H",
+  "away": "PREECHAYAN T / VIJITVIRIYAGUL K",
+  "homePlayers": [
+    {
+      "name": "WONG Chun Ting",
+      "nameS": "WONG Chun Ting",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEXDOUBLES----HKG01",
+      "photo": ""
+    },
+    {
+      "name": "DOO Hoi Kem",
+      "nameS": "DOO Hoi Kem",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEXDOUBLES----HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "PREECHAYAN Thitaphat",
+      "nameS": "PREECHAYAN Thitaphat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEXDOUBLES----THA02",
+      "photo": ""
+    },
+    {
+      "name": "VIJITVIRIYAGUL Kulapassr",
+      "nameS": "VIJITVIRIYAGUL Kulapassr",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEXDOUBLES----THA02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

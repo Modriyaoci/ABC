@@ -1,0 +1,304 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Hong Kong, China",
+  "away": "Japan",
+  "homePlayers": [
+    {
+      "name": "CHAN Tsz",
+      "nameS": "CHAN Tsz",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "HON Hok",
+      "nameS": "HON Hok",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WONG Ling",
+      "nameS": "WONG Ling",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "TSE Wing",
+      "nameS": "TSE Wing",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Siu",
+      "nameS": "LEE Siu",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LAW Chun",
+      "nameS": "LAW Chun",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LEUNG Laam",
+      "nameS": "LEUNG Laam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "ZOU Yuk",
+      "nameS": "ZOU Yuk",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LAU Ka",
+      "nameS": "LAU Ka",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Hau",
+      "nameS": "LEE Hau",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WONG Kin",
+      "nameS": "WONG Kin",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "KAN Yik",
+      "nameS": "KAN Yik",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "KAN Yik",
+      "nameS": "KAN Yik",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHUNG Shu",
+      "nameS": "CHUNG Shu",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "YIP Chi",
+      "nameS": "YIP Chi",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Yun",
+      "nameS": "LIN Yun",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NAKAMURA Takumi",
+      "nameS": "NAKAMURA Takumi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NAKATA Kota",
+      "nameS": "NAKATA Kota",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TSUTAYA Taiga",
+      "nameS": "TSUTAYA Taiga",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SAKURAI Tomoya",
+      "nameS": "SAKURAI Tomoya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TANAKA Daisuke",
+      "nameS": "TANAKA Daisuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "BAIG Adam",
+      "nameS": "BAIG Adam",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "ICHIHARA Soya",
+      "nameS": "ICHIHARA Soya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SUGIOKA Naoki",
+      "nameS": "SUGIOKA Naoki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "WATANABE Jin",
+      "nameS": "WATANABE Jin",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "IWASHITA Yuta",
+      "nameS": "IWASHITA Yuta",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YOSHINO Tatsuki",
+      "nameS": "YOSHINO Tatsuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "GOTO Hayato",
+      "nameS": "GOTO Hayato",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TAMAKAWA Hiroyasu",
+      "nameS": "TAMAKAWA Hiroyasu",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUJISAKA Naoki",
+      "nameS": "FUJISAKA Naoki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HASHIMOTO Akio",
+      "nameS": "HASHIMOTO Akio",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MIZUMACHI Kotaro",
+      "nameS": "MIZUMACHI Kotaro",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLMTEAM7------JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

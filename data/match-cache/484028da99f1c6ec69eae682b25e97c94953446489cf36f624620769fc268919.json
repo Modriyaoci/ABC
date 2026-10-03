@@ -1,0 +1,106 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Hong Kong, China",
+  "away": "Singapore",
+  "homePlayers": [
+    {
+      "name": "DOO Hoi Kem",
+      "nameS": "DOO Hoi Kem",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LAM Yee Lok",
+      "nameS": "LAM Yee Lok",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Hoi Man Karen",
+      "nameS": "LEE Hoi Man Karen",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "NG Wing Lam",
+      "nameS": "NG Wing Lam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "SU Tsz Tung",
+      "nameS": "SU Tsz Tung",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEWTEAM-------HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LOY Ming Ying",
+      "nameS": "LOY Ming Ying",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEWTEAM-------SGP01",
+      "photo": ""
+    },
+    {
+      "name": "SER Lin Qian",
+      "nameS": "SER Lin Qian",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEWTEAM-------SGP01",
+      "photo": ""
+    },
+    {
+      "name": "ZENG Jian",
+      "nameS": "ZENG Jian",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEWTEAM-------SGP01",
+      "photo": ""
+    },
+    {
+      "name": "TAN Zhao Yun",
+      "nameS": "TAN Zhao Yun",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEWTEAM-------SGP01",
+      "photo": ""
+    },
+    {
+      "name": "LAI Chloe",
+      "nameS": "LAI Chloe",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEWTEAM-------SGP01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

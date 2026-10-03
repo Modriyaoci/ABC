@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KU Y / SHIN W",
+  "away": "CHANTA A / CHANTA T",
+  "homePlayers": [
+    {
+      "name": "KU Yeonwoo",
+      "nameS": "KU Yeonwoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TENXDOUBLES----KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SHIN Woobin",
+      "nameS": "SHIN Woobin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TENXDOUBLES----KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHANTA Anchisa",
+      "nameS": "CHANTA Anchisa",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TENXDOUBLES----THA02",
+      "photo": ""
+    },
+    {
+      "name": "CHANTA Thanapet",
+      "nameS": "CHANTA Thanapet",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TENXDOUBLES----THA02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

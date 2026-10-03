@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Indonesia",
+  "away": "Vietnam",
+  "homePlayers": [
+    {
+      "name": "MARADANTI Namira Tegariani",
+      "nameS": "MARADANTI Namira Tegariani",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "SALIM Tina Syifa Sabila",
+      "nameS": "SALIM Tina Syifa Sabila",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "NURTOMO Chelsa Berliana",
+      "nameS": "NURTOMO Chelsa Berliana",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "YOKU Mediol Stiovanny",
+      "nameS": "YOKU Mediol Stiovanny",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "AGUSTIN Putri Nur Hidayanti",
+      "nameS": "AGUSTIN Putri Nur Hidayanti",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "GURETNO DWI MARGIANI Indah",
+      "nameS": "GURETNO DWI MARGIANI Indah",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "SALSABILA Ersandrina Devega",
+      "nameS": "SALSABILA Ersandrina Devega",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "CAHYANINGTYAS Geofanny Eka",
+      "nameS": "CAHYANINGTYAS Geofanny Eka",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "CAHAYA Ajeng Nur",
+      "nameS": "CAHAYA Ajeng Nur",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "FEBYANE Azzahra Dwi",
+      "nameS": "FEBYANE Azzahra Dwi",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "GANESHTRI Khanza Putri Yansi",
+      "nameS": "GANESHTRI Khanza Putri Yansi",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "AMELIAN Arneta Putri",
+      "nameS": "AMELIAN Arneta Putri",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOWTEAM6------INA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "THI TRA MY Nguyen",
+      "nameS": "THI TRA MY Nguyen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Thi Thanh Thuy",
+      "nameS": "TRAN Thi Thanh Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "BUI Thi Anh Thao",
+      "nameS": "BUI Thi Anh Thao",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "PHAM Quynh Huong",
+      "nameS": "PHAM Quynh Huong",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Thanh Thuy",
+      "nameS": "LE Thanh Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "VI Thi Yen Nhi",
+      "nameS": "VI Thi Yen Nhi",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Nhu Anh",
+      "nameS": "LE Nhu Anh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "NGUYEN Khanh Dang",
+      "nameS": "NGUYEN Khanh Dang",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "VO Thi Kim Thoa",
+      "nameS": "VO Thi Kim Thoa",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LUU Thi Hue",
+      "nameS": "LUU Thi Hue",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Thi Yen",
+      "nameS": "LE Thi Yen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Thi Bich Thuy",
+      "nameS": "TRAN Thi Bich Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

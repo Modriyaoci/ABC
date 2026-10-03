@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "SHUBINA D / YULDASHEVA S",
+  "away": "JEONG B / PARK S",
+  "homePlayers": [
+    {
+      "name": "SHUBINA Darya",
+      "nameS": "SHUBINA Darya",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "TENWDOUBLES----UZB01",
+      "photo": ""
+    },
+    {
+      "name": "YULDASHEVA Sevil",
+      "nameS": "YULDASHEVA Sevil",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "TENWDOUBLES----UZB01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "JEONG Boyoung",
+      "nameS": "JEONG Boyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TENWDOUBLES----KOR02",
+      "photo": ""
+    },
+    {
+      "name": "PARK Sohyun",
+      "nameS": "PARK Sohyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TENWDOUBLES----KOR02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

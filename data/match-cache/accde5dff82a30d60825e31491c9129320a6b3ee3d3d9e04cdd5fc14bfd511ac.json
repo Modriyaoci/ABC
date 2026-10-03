@@ -1,0 +1,196 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Chinese Taipei",
+  "away": "Indonesia",
+  "homePlayers": [
+    {
+      "name": "HSIEH Pei-shan",
+      "nameS": "HSIEH Pei-shan",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMWTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HU Ling-Fang",
+      "nameS": "HU Ling-Fang",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMWTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "SUNG Shuo-Yun",
+      "nameS": "SUNG Shuo-Yun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMWTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HUANG Yu-Hsun",
+      "nameS": "HUANG Yu-Hsun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMWTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Jhih-Yun",
+      "nameS": "LIN Jhih-Yun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMWTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHIU Pin-chian",
+      "nameS": "CHIU Pin-chian",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMWTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Hsiang-Ti",
+      "nameS": "LIN Hsiang-Ti",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMWTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HUNG En-Tzu",
+      "nameS": "HUNG En-Tzu",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMWTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HSU Yin-Hui",
+      "nameS": "HSU Yin-Hui",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMWTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHAN Nicole Gonzales",
+      "nameS": "CHAN Nicole Gonzales",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMWTEAM-------TPE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "AMARTYA Ni Kadek Dhinda",
+      "nameS": "AMARTYA Ni Kadek Dhinda",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "RAMADHANTI Siti Fadia Silva",
+      "nameS": "RAMADHANTI Siti Fadia Silva",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "SETIANINGRUM Febi",
+      "nameS": "SETIANINGRUM Febi",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "MARWAH Nita Violina",
+      "nameS": "MARWAH Nita Violina",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "KUSUMA Febriana Dwipuji",
+      "nameS": "KUSUMA Febriana Dwipuji",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "WARDANI Putri Kusuma",
+      "nameS": "WARDANI Putri Kusuma",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ROSE Rachel Allesya",
+      "nameS": "ROSE Rachel Allesya",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "PUSPITASARI Meilysa Trias",
+      "nameS": "PUSPITASARI Meilysa Trias",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "WIRYAWAN Thalita Ramadhani",
+      "nameS": "WIRYAWAN Thalita Ramadhani",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "PUSPITASARI Mutiara Ayu",
+      "nameS": "PUSPITASARI Mutiara Ayu",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

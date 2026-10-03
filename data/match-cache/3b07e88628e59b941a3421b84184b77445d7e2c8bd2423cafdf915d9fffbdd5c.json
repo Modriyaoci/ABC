@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KULAMBAYEVA Z / ZHUKAYEV B",
+  "away": "JIANG X / ZHANG T",
+  "homePlayers": [
+    {
+      "name": "KULAMBAYEVA Zhibek",
+      "nameS": "KULAMBAYEVA Zhibek",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENXDOUBLES----KAZ02",
+      "photo": ""
+    },
+    {
+      "name": "ZHUKAYEV Beibit",
+      "nameS": "ZHUKAYEV Beibit",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENXDOUBLES----KAZ02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "JIANG Xinyu",
+      "nameS": "JIANG Xinyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TENXDOUBLES----CHN02",
+      "photo": ""
+    },
+    {
+      "name": "ZHANG Tianhui",
+      "nameS": "ZHANG Tianhui",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TENXDOUBLES----CHN02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

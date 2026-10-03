@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "PUAVARANUKROH D / PAEWSAMPRAN S",
+  "away": "TAGUCHI M / WATANABE Y",
+  "homePlayers": [
+    {
+      "name": "PUAVARANUKROH Dechapol",
+      "nameS": "PUAVARANUKROH Dechapol",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMXDOUBLES----THA01",
+      "photo": ""
+    },
+    {
+      "name": "PAEWSAMPRAN Supissara",
+      "nameS": "PAEWSAMPRAN Supissara",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMXDOUBLES----THA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "TAGUCHI Maya",
+      "nameS": "TAGUCHI Maya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMXDOUBLES----JPN02",
+      "photo": ""
+    },
+    {
+      "name": "WATANABE Yuta",
+      "nameS": "WATANABE Yuta",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMXDOUBLES----JPN02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

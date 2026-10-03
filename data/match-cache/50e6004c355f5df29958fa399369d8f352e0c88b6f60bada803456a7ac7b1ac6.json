@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Kazakhstan",
+  "away": "Vietnam",
+  "homePlayers": [
+    {
+      "name": "NURBERGENOVA Perizat",
+      "nameS": "NURBERGENOVA Perizat",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KHAZOVA Natalya",
+      "nameS": "KHAZOVA Natalya",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "FOMENKO Yuliya",
+      "nameS": "FOMENKO Yuliya",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "UFIMTSEVA Polina",
+      "nameS": "UFIMTSEVA Polina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "BELCHENKO Margarita",
+      "nameS": "BELCHENKO Margarita",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "BELOVA Kristina",
+      "nameS": "BELOVA Kristina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "SYROYESHKINA Zhanna",
+      "nameS": "SYROYESHKINA Zhanna",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "BEKET Madina",
+      "nameS": "BEKET Madina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "NIKITINA Tatyana",
+      "nameS": "NIKITINA Tatyana",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "MULKIBAYEVA Aigul",
+      "nameS": "MULKIBAYEVA Aigul",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "YATSKIV Tatyana",
+      "nameS": "YATSKIV Tatyana",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KUZNETSOVA Irina",
+      "nameS": "KUZNETSOVA Irina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "THI TRA MY Nguyen",
+      "nameS": "THI TRA MY Nguyen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Thi Thanh Thuy",
+      "nameS": "TRAN Thi Thanh Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "BUI Thi Anh Thao",
+      "nameS": "BUI Thi Anh Thao",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "PHAM Quynh Huong",
+      "nameS": "PHAM Quynh Huong",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Thanh Thuy",
+      "nameS": "LE Thanh Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "VI Thi Yen Nhi",
+      "nameS": "VI Thi Yen Nhi",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Nhu Anh",
+      "nameS": "LE Nhu Anh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "NGUYEN Khanh Dang",
+      "nameS": "NGUYEN Khanh Dang",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "VO Thi Kim Thoa",
+      "nameS": "VO Thi Kim Thoa",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LUU Thi Hue",
+      "nameS": "LUU Thi Hue",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Thi Yen",
+      "nameS": "LE Thi Yen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Thi Bich Thuy",
+      "nameS": "TRAN Thi Bich Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

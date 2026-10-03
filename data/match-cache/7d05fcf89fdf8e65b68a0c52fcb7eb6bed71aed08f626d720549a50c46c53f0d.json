@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Thailand",
+  "away": "Mongolia",
+  "homePlayers": [
+    {
+      "name": "PANNOY Piyanut",
+      "nameS": "PANNOY Piyanut",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "GUEDPARD Pornpun",
+      "nameS": "GUEDPARD Pornpun",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KUNMUEANG Kanyarat",
+      "nameS": "KUNMUEANG Kanyarat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "NUEKJANG Thatdao",
+      "nameS": "NUEKJANG Thatdao",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SEETALOED Warisara",
+      "nameS": "SEETALOED Warisara",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KHAMWONG Kalyarat",
+      "nameS": "KHAMWONG Kalyarat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "JANTHAWISUT Sasipapron",
+      "nameS": "JANTHAWISUT Sasipapron",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "JAISAEN Natthanicha",
+      "nameS": "JAISAEN Natthanicha",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KOKRAM Pimpichaya",
+      "nameS": "KOKRAM Pimpichaya",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KONGYOT Ajcharaporn",
+      "nameS": "KONGYOT Ajcharaporn",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "MOKSRI Chatchu-on",
+      "nameS": "MOKSRI Chatchu-on",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KAMULTHALA Kaewkalaya",
+      "nameS": "KAMULTHALA Kaewkalaya",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KHOSBAYAR Nergui",
+      "nameS": "KHOSBAYAR Nergui",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "GANBOLD Enkhnaran",
+      "nameS": "GANBOLD Enkhnaran",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "OTGONSUREN Erdene-enkh",
+      "nameS": "OTGONSUREN Erdene-enkh",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "UDVAL Munkhzul",
+      "nameS": "UDVAL Munkhzul",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "SANSARBOLD Temuulen",
+      "nameS": "SANSARBOLD Temuulen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "PUREVSUREN Enkhkhuslen",
+      "nameS": "PUREVSUREN Enkhkhuslen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATTUR Ninjbolor",
+      "nameS": "BATTUR Ninjbolor",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "MUNGUNTSOOJ Sanchirmaa",
+      "nameS": "MUNGUNTSOOJ Sanchirmaa",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "GANBAATAR Saruulgerel",
+      "nameS": "GANBAATAR Saruulgerel",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATTOGOO Khaliunzaya",
+      "nameS": "BATTOGOO Khaliunzaya",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATBOLD Amarbayasgalan",
+      "nameS": "BATBOLD Amarbayasgalan",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BAYARBAYASGALAN Khulan",
+      "nameS": "BAYARBAYASGALAN Khulan",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

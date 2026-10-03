@@ -1,0 +1,88 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Kazakhstan",
+  "away": "Bangladesh",
+  "homePlayers": [
+    {
+      "name": "GERASSIMENKO Kirill",
+      "nameS": "GERASSIMENKO Kirill",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEMTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KURMANGALIYEV Alan",
+      "nameS": "KURMANGALIYEV Alan",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEMTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KENZHIGULOV Aidos",
+      "nameS": "KENZHIGULOV Aidos",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEMTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "ZHUBANOV Sanzhar",
+      "nameS": "ZHUBANOV Sanzhar",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEMTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KHARKI Iskender",
+      "nameS": "KHARKI Iskender",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEMTEAM-------KAZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "RIDOY Mohutasin",
+      "nameS": "RIDOY Mohutasin",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "IMON Imrul",
+      "nameS": "IMON Imrul",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "BAWM Ramhimlian",
+      "nameS": "BAWM Ramhimlian",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEMTEAM-------BAN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

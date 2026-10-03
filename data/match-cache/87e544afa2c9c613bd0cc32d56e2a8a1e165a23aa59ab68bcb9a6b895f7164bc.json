@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHONG E / THOMPSON K",
+  "away": "AOYAMA S / KUSUHARA Y",
+  "homePlayers": [
+    {
+      "name": "CHONG Eudice",
+      "nameS": "CHONG Eudice",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TENXDOUBLES----HKG01",
+      "photo": ""
+    },
+    {
+      "name": "THOMPSON Kairan",
+      "nameS": "THOMPSON Kairan",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TENXDOUBLES----HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "AOYAMA Shuko",
+      "nameS": "AOYAMA Shuko",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TENXDOUBLES----JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KUSUHARA Yusuke",
+      "nameS": "KUSUHARA Yusuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TENXDOUBLES----JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

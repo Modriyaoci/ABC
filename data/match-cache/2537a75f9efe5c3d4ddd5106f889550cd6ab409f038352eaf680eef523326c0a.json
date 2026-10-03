@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "LOY M / SER L",
+  "away": "SER-OD A / BATMUNKH B",
+  "homePlayers": [
+    {
+      "name": "LOY Ming Ying",
+      "nameS": "LOY Ming Ying",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEWDOUBLES----SGP01",
+      "photo": ""
+    },
+    {
+      "name": "SER Lin Qian",
+      "nameS": "SER Lin Qian",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEWDOUBLES----SGP01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SER-OD Ankhmaa",
+      "nameS": "SER-OD Ankhmaa",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TTEWDOUBLES----MGL02",
+      "photo": ""
+    },
+    {
+      "name": "BATMUNKH Bolor-egshiglen",
+      "nameS": "BATMUNKH Bolor-egshiglen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TTEWDOUBLES----MGL02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHANTA A / PLIPUECH P",
+  "away": "RAJABALIEVA S / TURSUNOVA A",
+  "homePlayers": [
+    {
+      "name": "CHANTA Anchisa",
+      "nameS": "CHANTA Anchisa",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TENWDOUBLES----THA02",
+      "photo": ""
+    },
+    {
+      "name": "PLIPUECH Peangtarn",
+      "nameS": "PLIPUECH Peangtarn",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TENWDOUBLES----THA02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "RAJABALIEVA Saiyora",
+      "nameS": "RAJABALIEVA Saiyora",
+      "org": "TJK",
+      "orgName": "TJK",
+      "country": "TJK",
+      "reg": "TENWDOUBLES----TJK01",
+      "photo": ""
+    },
+    {
+      "name": "TURSUNOVA Anastasiya",
+      "nameS": "TURSUNOVA Anastasiya",
+      "org": "TJK",
+      "orgName": "TJK",
+      "country": "TJK",
+      "reg": "TENWDOUBLES----TJK01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

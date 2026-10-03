@@ -1,0 +1,241 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Korea",
+  "away": "Hong Kong, China",
+  "homePlayers": [
+    {
+      "name": "LEE Yelim",
+      "nameS": "LEE Yelim",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Dain",
+      "nameS": "KIM Dain",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HAN Dahye",
+      "nameS": "HAN Dahye",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Eunjin",
+      "nameS": "PARK Eunjin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "NA Hyunsoo",
+      "nameS": "NA Hyunsoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "YUK Seoyoung",
+      "nameS": "YUK Seoyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Dahyeon",
+      "nameS": "LEE Dahyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Eunseo",
+      "nameS": "PARK Eunseo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JUNG Hoyoung",
+      "nameS": "JUNG Hoyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Juah",
+      "nameS": "LEE Juah",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Suyeon",
+      "nameS": "LEE Suyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Hyoim",
+      "nameS": "KIM Hyoim",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KANG Sohwi",
+      "nameS": "KANG Sohwi",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHEUNG Hiu Nok Michelle",
+      "nameS": "CHEUNG Hiu Nok Michelle",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOWTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WONG Wan Wun",
+      "nameS": "WONG Wan Wun",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOWTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "TANG Sum Yuen",
+      "nameS": "TANG Sum Yuen",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOWTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHIM Wing Lam",
+      "nameS": "CHIM Wing Lam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOWTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Kit Sum",
+      "nameS": "LEE Kit Sum",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOWTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "SUEN Yee Tung",
+      "nameS": "SUEN Yee Tung",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOWTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "SHUM Lam",
+      "nameS": "SHUM Lam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOWTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "YU Ying Chi",
+      "nameS": "YU Ying Chi",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOWTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "FONG Ka Yi",
+      "nameS": "FONG Ka Yi",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOWTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LEUNG Nga Yee",
+      "nameS": "LEUNG Nga Yee",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOWTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WILSON Halimah Zampaligre",
+      "nameS": "WILSON Halimah Zampaligre",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOWTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "YIM Wing Ni",
+      "nameS": "YIM Wing Ni",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOWTEAM6------HKG01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

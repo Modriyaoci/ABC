@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "LEONG I / VONG K",
+  "away": "MARTHIN D / CARNANDO L",
+  "homePlayers": [
+    {
+      "name": "LEONG Iok Chong",
+      "nameS": "LEONG Iok Chong",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "BDMMDOUBLES----MAC01",
+      "photo": ""
+    },
+    {
+      "name": "VONG Kok Weng",
+      "nameS": "VONG Kok Weng",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "BDMMDOUBLES----MAC01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "MARTHIN Daniel",
+      "nameS": "MARTHIN Daniel",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMDOUBLES----INA02",
+      "photo": ""
+    },
+    {
+      "name": "CARNANDO Leo R.",
+      "nameS": "CARNANDO Leo R.",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMDOUBLES----INA02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

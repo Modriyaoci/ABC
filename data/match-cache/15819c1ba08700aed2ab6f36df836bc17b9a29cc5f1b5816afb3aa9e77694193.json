@@ -1,0 +1,277 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "India",
+  "away": "Sri Lanka",
+  "homePlayers": [
+    {
+      "name": "SOORYAVANSHI Vaibhav",
+      "nameS": "SOORYAVANSHI Vaibhav",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SHARMA Abhishek",
+      "nameS": "SHARMA Abhishek",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "VISHWANADH Sanju",
+      "nameS": "VISHWANADH Sanju",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "IYER Shreyas Santosh",
+      "nameS": "IYER Shreyas Santosh",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "KISHAN Ishan",
+      "nameS": "KISHAN Ishan",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "PATEL Axar Rajeshbhai",
+      "nameS": "PATEL Axar Rajeshbhai",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "NAMBOORI Thakur Tilak Varma",
+      "nameS": "NAMBOORI Thakur Tilak Varma",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "DUBE Shivam Rajesh",
+      "nameS": "DUBE Shivam Rajesh",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "MANI SUNDAR Washington Sundar",
+      "nameS": "MANI SUNDAR Washington Sundar",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "BISHNOI Ravi",
+      "nameS": "BISHNOI Ravi",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "BUMRAH Jasprit Jasbirsingh",
+      "nameS": "BUMRAH Jasprit Jasbirsingh",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SINGH Arshdeep",
+      "nameS": "SINGH Arshdeep",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "NIGAM Vipraj",
+      "nameS": "NIGAM Vipraj",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "THAKUR Yash Ravisingh",
+      "nameS": "THAKUR Yash Ravisingh",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTMTEAM-------IND01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "JAYAWARDENA MDSL",
+      "nameS": "JAYAWARDENA MDSL",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "CROOSPULLE DLS",
+      "nameS": "CROOSPULLE DLS",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "DE LIVERA MKS",
+      "nameS": "DE LIVERA MKS",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "MUTHUTHANTHRIGE NKF",
+      "nameS": "MUTHUTHANTHRIGE NKF",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "ARACHCHIGE SSD",
+      "nameS": "ARACHCHIGE SSD",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "KORALE GEDARA NAB",
+      "nameS": "KORALE GEDARA NAB",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "KARUNARATNE ECD",
+      "nameS": "KARUNARATNE ECD",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "MAHATHANTHILAGE DON WSK",
+      "nameS": "MAHATHANTHILAGE DON WSK",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "KONGANIGE R. TH",
+      "nameS": "KONGANIGE R. TH",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "VIJAYAKANTH Viyaskanth",
+      "nameS": "VIJAYAKANTH Viyaskanth",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "FERNANDO KB",
+      "nameS": "FERNANDO KB",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "MUNASINGHE A. DIH",
+      "nameS": "MUNASINGHE A. DIH",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "SAHKETH Garuka",
+      "nameS": "SAHKETH Garuka",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "DICKWELLA P. DND",
+      "nameS": "DICKWELLA P. DND",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "ILANDARI DEWAGE NT",
+      "nameS": "ILANDARI DEWAGE NT",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTMTEAM-------SRI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

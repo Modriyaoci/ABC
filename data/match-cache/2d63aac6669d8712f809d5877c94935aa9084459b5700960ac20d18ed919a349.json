@@ -1,0 +1,106 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Korea",
+  "away": "Japan",
+  "homePlayers": [
+    {
+      "name": "AN Jaehyun",
+      "nameS": "AN Jaehyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JANG Woojin",
+      "nameS": "JANG Woojin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "OH Junsung",
+      "nameS": "OH Junsung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Gyuhyeon",
+      "nameS": "PARK Gyuhyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LIM Jonghoon",
+      "nameS": "LIM Jonghoon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEMTEAM-------KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "HARIMOTO Tomokazu",
+      "nameS": "HARIMOTO Tomokazu",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MATSUSHIMA Sora",
+      "nameS": "MATSUSHIMA Sora",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TOGAMI Shunsuke",
+      "nameS": "TOGAMI Shunsuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "UDA Yukiya",
+      "nameS": "UDA Yukiya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SHINOZUKA Hiroto",
+      "nameS": "SHINOZUKA Hiroto",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

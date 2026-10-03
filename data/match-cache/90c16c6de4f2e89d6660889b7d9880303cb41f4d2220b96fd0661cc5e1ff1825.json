@@ -1,0 +1,439 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Korea",
+  "away": "Japan",
+  "homePlayers": [
+    {
+      "name": "KIM Doyeong",
+      "nameS": "KIM Doyeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Juwon",
+      "nameS": "KIM Juwon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "ROH Sihwan",
+      "nameS": "ROH Sihwan",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "MOON Bogyeong",
+      "nameS": "MOON Bogyeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Junsoon",
+      "nameS": "PARK Junsoon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "YOON Donghee",
+      "nameS": "YOON Donghee",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Geonhee",
+      "nameS": "KIM Geonhee",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHO Hyeongwoo",
+      "nameS": "CHO Hyeongwoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "MOON Hyunbin",
+      "nameS": "MOON Hyunbin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Jaehyun",
+      "nameS": "PARK Jaehyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JEONG Junjae",
+      "nameS": "JEONG Junjae",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Jichan",
+      "nameS": "KIM Jichan",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Jinuk",
+      "nameS": "KIM Jinuk",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JO Byeonghyeon",
+      "nameS": "JO Byeonghyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Yeonghyun",
+      "nameS": "PARK Yeonghyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHOI Junyong",
+      "nameS": "CHOI Junyong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SO Hyeongjun",
+      "nameS": "SO Hyeongjun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "BAE Chanseung",
+      "nameS": "BAE Chanseung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Jaehyeon",
+      "nameS": "LEE Jaehyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "GWAK Been",
+      "nameS": "GWAK Been",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "OH Wonseok",
+      "nameS": "OH Wonseok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHOI Minseok",
+      "nameS": "CHOI Minseok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SUNG Yeongtak",
+      "nameS": "SUNG Yeongtak",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Youngwoo",
+      "nameS": "KIM Youngwoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BBLMTEAM9------KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "MARUYAMA Masashi",
+      "nameS": "MARUYAMA Masashi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YANO Yukiya",
+      "nameS": "YANO Yukiya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SOEDA Manami",
+      "nameS": "SOEDA Manami",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MUKOYAMA Motoki",
+      "nameS": "MUKOYAMA Motoki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "AIZAWA Ryosuke",
+      "nameS": "AIZAWA Ryosuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MIZUTANI Shohei",
+      "nameS": "MIZUTANI Shohei",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SHIBASAKI Masato",
+      "nameS": "SHIBASAKI Masato",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KUMADA Toyo",
+      "nameS": "KUMADA Toyo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YAMADA Kenta",
+      "nameS": "YAMADA Kenta",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "WADA Keita",
+      "nameS": "WADA Keita",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TSUJIMOTO Yuki",
+      "nameS": "TSUJIMOTO Yuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KAYO Shuichiro",
+      "nameS": "KAYO Shuichiro",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUCHIGAMI Yoshiki",
+      "nameS": "FUCHIGAMI Yoshiki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HIGUCHI Shin",
+      "nameS": "HIGUCHI Shin",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MATSUDA Wataru",
+      "nameS": "MATSUDA Wataru",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KATO Mizuki",
+      "nameS": "KATO Mizuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SATO Yuki",
+      "nameS": "SATO Yuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUJISAWA Ryosuke",
+      "nameS": "FUJISAWA Ryosuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUKUI Shogo",
+      "nameS": "FUKUI Shogo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "ARIMA Ryo",
+      "nameS": "ARIMA Ryo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KONDO Kazuki",
+      "nameS": "KONDO Kazuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NAGANO Kento",
+      "nameS": "NAGANO Kento",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TANIWAKI Koki",
+      "nameS": "TANIWAKI Koki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

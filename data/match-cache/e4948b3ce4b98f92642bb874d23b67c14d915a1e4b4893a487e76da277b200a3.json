@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Korea",
+  "away": "Philippines",
+  "homePlayers": [
+    {
+      "name": "CHA Youngseok",
+      "nameS": "CHA Youngseok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HWANG Seungbin",
+      "nameS": "HWANG Seungbin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Kyeongmin",
+      "nameS": "PARK Kyeongmin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HEO Subong",
+      "nameS": "HEO Subong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HAN Taejun",
+      "nameS": "HAN Taejun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LIM Sungjin",
+      "nameS": "LIM Sungjin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JEONG Hanyong",
+      "nameS": "JEONG Hanyong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "IM Donghyeok",
+      "nameS": "IM Donghyeok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHOI Junhyeok",
+      "nameS": "CHOI Junhyeok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Sanghyeon",
+      "nameS": "LEE Sanghyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SHIN Hojin",
+      "nameS": "SHIN Hojin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LIM Jaeyoung",
+      "nameS": "LIM Jaeyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "BAGUNAS Bryan",
+      "nameS": "BAGUNAS Bryan",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "YBANEZ Josh",
+      "nameS": "YBANEZ Josh",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "RETAMAR Ave Joshua",
+      "nameS": "RETAMAR Ave Joshua",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "GARCIA Jude",
+      "nameS": "GARCIA Jude",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "VILLADOS Adrian",
+      "nameS": "VILLADOS Adrian",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "MENDOZA Lirick John",
+      "nameS": "MENDOZA Lirick John",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "TAGUIBOLOS Rwenzmel",
+      "nameS": "TAGUIBOLOS Rwenzmel",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "ORDIALES Leo",
+      "nameS": "ORDIALES Leo",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "ESPEJO Marck Jesus",
+      "nameS": "ESPEJO Marck Jesus",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "JOSAFAT Lloyd",
+      "nameS": "JOSAFAT Lloyd",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "BUDDIN Michaelo",
+      "nameS": "BUDDIN Michaelo",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "MAGALAMAN Joshua",
+      "nameS": "MAGALAMAN Joshua",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

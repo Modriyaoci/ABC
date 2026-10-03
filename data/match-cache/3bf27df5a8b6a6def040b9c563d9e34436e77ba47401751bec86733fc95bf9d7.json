@@ -1,0 +1,106 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Indonesia",
+  "away": "IR Iran",
+  "homePlayers": [
+    {
+      "name": "PRATAMA Affan",
+      "nameS": "PRATAMA Affan",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "DESRIZAL Gusti",
+      "nameS": "DESRIZAL Gusti",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "NEGARA Muhammad",
+      "nameS": "NEGARA Muhammad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "INZAGHI Muhammad",
+      "nameS": "INZAGHI Muhammad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "JUNINDRA Muhammad",
+      "nameS": "JUNINDRA Muhammad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEMTEAM-------INA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "HABIBI Mohammad",
+      "nameS": "HABIBI Mohammad",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TTEMTEAM-------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ALAMIYAN Noshad",
+      "nameS": "ALAMIYAN Noshad",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TTEMTEAM-------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ALAMIAN Nima",
+      "nameS": "ALAMIAN Nima",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TTEMTEAM-------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "FARAJI Benyamin",
+      "nameS": "FARAJI Benyamin",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TTEMTEAM-------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "GHAFFARI Aryan",
+      "nameS": "GHAFFARI Aryan",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TTEMTEAM-------IRI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

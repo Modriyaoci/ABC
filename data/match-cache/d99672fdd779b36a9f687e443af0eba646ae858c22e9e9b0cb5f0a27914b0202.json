@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KULAPPUWAWADU C / SWARNA B",
+  "away": "ABDULHUSSEIN A / ALI M",
+  "homePlayers": [
+    {
+      "name": "KULAPPUWAWADU Chanul",
+      "nameS": "KULAPPUWAWADU Chanul",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "TTEXDOUBLES----SRI01",
+      "photo": ""
+    },
+    {
+      "name": "SWARNA Bimandee",
+      "nameS": "SWARNA Bimandee",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "TTEXDOUBLES----SRI01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ABDULHUSSEIN Abdullah",
+      "nameS": "ABDULHUSSEIN Abdullah",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEXDOUBLES----QAT02",
+      "photo": ""
+    },
+    {
+      "name": "ALI Maryam",
+      "nameS": "ALI Maryam",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEXDOUBLES----QAT02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KHANAL K / MAHARJAN P",
+  "away": "KOH W / KUBO J",
+  "homePlayers": [
+    {
+      "name": "KHANAL Kshitiz",
+      "nameS": "KHANAL Kshitiz",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "BDMMDOUBLES----NEP01",
+      "photo": ""
+    },
+    {
+      "name": "MAHARJAN Praful",
+      "nameS": "MAHARJAN Praful",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "BDMMDOUBLES----NEP01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KOH Wesley Eng Keat",
+      "nameS": "KOH Wesley Eng Keat",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "BDMMDOUBLES----SGP01",
+      "photo": ""
+    },
+    {
+      "name": "KUBO Junsuke",
+      "nameS": "KUBO Junsuke",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "BDMMDOUBLES----SGP01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

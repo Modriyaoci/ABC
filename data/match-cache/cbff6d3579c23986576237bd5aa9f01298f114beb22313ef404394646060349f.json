@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHEW Z / CHUA J",
+  "away": "OH J / LIM J",
+  "homePlayers": [
+    {
+      "name": "CHEW Zhe Yu",
+      "nameS": "CHEW Zhe Yu",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEMDOUBLES----SGP02",
+      "photo": ""
+    },
+    {
+      "name": "CHUA Josh",
+      "nameS": "CHUA Josh",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEMDOUBLES----SGP02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "OH Junsung",
+      "nameS": "OH Junsung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEMDOUBLES----KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LIM Jonghoon",
+      "nameS": "LIM Jonghoon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEMDOUBLES----KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

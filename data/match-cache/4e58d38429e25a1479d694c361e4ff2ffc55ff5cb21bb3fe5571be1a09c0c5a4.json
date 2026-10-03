@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KUSUMA F / PUSPITASARI M",
+  "away": "LEE S / BAEK H",
+  "homePlayers": [
+    {
+      "name": "KUSUMA Febriana Dwipuji",
+      "nameS": "KUSUMA Febriana Dwipuji",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWDOUBLES----INA02",
+      "photo": ""
+    },
+    {
+      "name": "PUSPITASARI Meilysa Trias",
+      "nameS": "PUSPITASARI Meilysa Trias",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWDOUBLES----INA02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LEE Sohee",
+      "nameS": "LEE Sohee",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMWDOUBLES----KOR01",
+      "photo": ""
+    },
+    {
+      "name": "BAEK Hana",
+      "nameS": "BAEK Hana",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMWDOUBLES----KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

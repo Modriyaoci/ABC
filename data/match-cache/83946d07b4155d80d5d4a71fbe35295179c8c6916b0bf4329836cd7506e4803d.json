@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "HUANG Y / LIN S",
+  "away": "HARIMOTO T / SHINOZUKA H",
+  "homePlayers": [
+    {
+      "name": "HUANG Youzheng",
+      "nameS": "HUANG Youzheng",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEMDOUBLES----CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Shidong",
+      "nameS": "LIN Shidong",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEMDOUBLES----CHN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "HARIMOTO Tomokazu",
+      "nameS": "HARIMOTO Tomokazu",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMDOUBLES----JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SHINOZUKA Hiroto",
+      "nameS": "SHINOZUKA Hiroto",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMDOUBLES----JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

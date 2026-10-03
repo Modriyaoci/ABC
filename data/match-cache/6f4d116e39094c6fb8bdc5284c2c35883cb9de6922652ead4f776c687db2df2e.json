@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KOBORI M / SHIMIZU A",
+  "away": "FARZAMI M / SAFI M",
+  "homePlayers": [
+    {
+      "name": "KOBORI Momoko",
+      "nameS": "KOBORI Momoko",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TENWDOUBLES----JPN02",
+      "photo": ""
+    },
+    {
+      "name": "SHIMIZU Ayano",
+      "nameS": "SHIMIZU Ayano",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TENWDOUBLES----JPN02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "FARZAMI Mandegar",
+      "nameS": "FARZAMI Mandegar",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TENWDOUBLES----IRI01",
+      "photo": ""
+    },
+    {
+      "name": "SAFI Meshkatolzahra",
+      "nameS": "SAFI Meshkatolzahra",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "TENWDOUBLES----IRI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

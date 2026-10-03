@@ -1,0 +1,286 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Sri Lanka",
+  "away": "Malaysia",
+  "homePlayers": [
+    {
+      "name": "WITHARANA Imesha Dulani",
+      "nameS": "WITHARANA Imesha Dulani",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "ATHAPATHTHU MUDIYANSELAGE CJK",
+      "nameS": "ATHAPATHTHU MUDIYANSELAGE CJK",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "GAMAACHCHI WITHANAGE HMP",
+      "nameS": "GAMAACHCHI WITHANAGE HMP",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "WALIKONTHAGEI Kaveesha Dilhari",
+      "nameS": "WALIKONTHAGEI Kaveesha Dilhari",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "DISSANAYAKA SAMARAWICKRAM HM",
+      "nameS": "DISSANAYAKA SAMARAWICKRAM HM",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "KARUNARATNE Hansima",
+      "nameS": "KARUNARATNE Hansima",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "THATUWEL ARAWE GEDARA MAB",
+      "nameS": "THATUWEL ARAWE GEDARA MAB",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "SERAM SENEVIRATHNE EDIRIS KN",
+      "nameS": "SERAM SENEVIRATHNE EDIRIS KN",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "HEWA MUNASINHAGE CPM",
+      "nameS": "HEWA MUNASINHAGE CPM",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "DASANAYAKA Sugandika Manel Kumari",
+      "nameS": "DASANAYAKA Sugandika Manel Kumari",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "HEWA LANKA GEEGANAGE RS",
+      "nameS": "HEWA LANKA GEEGANAGE RS",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "HIKKADUWA GAMAGE Kawya Kavindi",
+      "nameS": "HIKKADUWA GAMAGE Kawya Kavindi",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "MEEPAGE Nimasha Madushani",
+      "nameS": "MEEPAGE Nimasha Madushani",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "EDIRIMUNI Sanjana Kavindi De Silva",
+      "nameS": "EDIRIMUNI Sanjana Kavindi De Silva",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    },
+    {
+      "name": "SANJEEWANI Anushka",
+      "nameS": "SANJEEWANI Anushka",
+      "org": "SRI",
+      "orgName": "SRI",
+      "country": "SRI",
+      "reg": "CKTWTEAM-------SRI01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "HASHIM Ainna Hamizah",
+      "nameS": "HASHIM Ainna Hamizah",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "WAN MOHD ROSLI Wan Julia",
+      "nameS": "WAN MOHD ROSLI Wan Julia",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "DURAISINGAM Winifred Anne",
+      "nameS": "DURAISINGAM Winifred Anne",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "ZULKIFLI Mas Elysa Yasmin",
+      "nameS": "ZULKIFLI Mas Elysa Yasmin",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "ISMAIL Mahirah Izzati",
+      "nameS": "ISMAIL Mahirah Izzati",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "MOHD IKRIMAH Nurin Imanina",
+      "nameS": "MOHD IKRIMAH Nurin Imanina",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "SRI MUHUNAN Dhanusri",
+      "nameS": "SRI MUHUNAN Dhanusri",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "ABEDUL SAMAD Nur Dania Syuhada",
+      "nameS": "ABEDUL SAMAD Nur Dania Syuhada",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "BENN RAKQUIDEAN Arianna Natasya",
+      "nameS": "BENN RAKQUIDEAN Arianna Natasya",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "RAZALI Nazatul Hidayah Husna",
+      "nameS": "RAZALI Nazatul Hidayah Husna",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "ERNI FIRDAUZ Aisya Eleesa",
+      "nameS": "ERNI FIRDAUZ Aisya Eleesa",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "ABDUL RAHMAN Aina Najwa",
+      "nameS": "ABDUL RAHMAN Aina Najwa",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "AZMI Musfirah Nur Ainaa Baiti",
+      "nameS": "AZMI Musfirah Nur Ainaa Baiti",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "ABU JIMI Amalin Sorfina",
+      "nameS": "ABU JIMI Amalin Sorfina",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "NOREFFENDI Nur Qalysha",
+      "nameS": "NOREFFENDI Nur Qalysha",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "CKTWTEAM-------MAS01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

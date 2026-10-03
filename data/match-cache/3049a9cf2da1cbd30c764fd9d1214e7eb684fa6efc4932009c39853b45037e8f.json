@@ -1,0 +1,286 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Vietnam",
+  "away": "Uzbekistan",
+  "homePlayers": [
+    {
+      "name": "NGUYEN Thanh",
+      "nameS": "NGUYEN Thanh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "HUYNH Gia",
+      "nameS": "HUYNH Gia",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "NGUYEN Diem",
+      "nameS": "NGUYEN Diem",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "HA Thu",
+      "nameS": "HA Thu",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "VO Be",
+      "nameS": "VO Be",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "HA Hanh",
+      "nameS": "HA Hanh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "DAM Thi",
+      "nameS": "DAM Thi",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "HOANG Lan",
+      "nameS": "HOANG Lan",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "NGUYEN Anh",
+      "nameS": "NGUYEN Anh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "DO Tu",
+      "nameS": "DO Tu",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "NGUYEN Ngoc",
+      "nameS": "NGUYEN Ngoc",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Hai",
+      "nameS": "TRAN Hai",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "PHAM Loan",
+      "nameS": "PHAM Loan",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "DO Huyen",
+      "nameS": "DO Huyen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "DO Nhu",
+      "nameS": "DO Nhu",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "PHUNG Linh",
+      "nameS": "PHUNG Linh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SAPARBAEVA Sarbinaz",
+      "nameS": "SAPARBAEVA Sarbinaz",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "HBLWTEAM7------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "JURAEVA Mukaddas",
+      "nameS": "JURAEVA Mukaddas",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "HBLWTEAM7------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "KELDIYOROVA Shalola",
+      "nameS": "KELDIYOROVA Shalola",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "HBLWTEAM7------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MULLAEVA Sabina",
+      "nameS": "MULLAEVA Sabina",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "HBLWTEAM7------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "RUZIEVA Ruksshona",
+      "nameS": "RUZIEVA Ruksshona",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "HBLWTEAM7------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "SULTANOVA Dilnoza",
+      "nameS": "SULTANOVA Dilnoza",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "HBLWTEAM7------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MAMIROVA Turoyim",
+      "nameS": "MAMIROVA Turoyim",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "HBLWTEAM7------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "BAYJANOVA Ilmira",
+      "nameS": "BAYJANOVA Ilmira",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "HBLWTEAM7------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "SAFAROVA Khusniya",
+      "nameS": "SAFAROVA Khusniya",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "HBLWTEAM7------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "KHUDOYAROVA Anastasiya",
+      "nameS": "KHUDOYAROVA Anastasiya",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "HBLWTEAM7------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "YUSUFOVA Nilufar",
+      "nameS": "YUSUFOVA Nilufar",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "HBLWTEAM7------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MARIMBOEVA Zulaykho",
+      "nameS": "MARIMBOEVA Zulaykho",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "HBLWTEAM7------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "BOTIROVA Zukhra",
+      "nameS": "BOTIROVA Zukhra",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "HBLWTEAM7------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "POPOVICH Anna",
+      "nameS": "POPOVICH Anna",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "HBLWTEAM7------UZB01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "MAHARANI N / SUDARNITA K",
+  "away": "ZAZA H / ABBOUD R",
+  "homePlayers": [
+    {
+      "name": "MAHARANI Ni",
+      "nameS": "MAHARANI Ni",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWDOUBLES----INA01",
+      "photo": ""
+    },
+    {
+      "name": "SUDARNITA Komang",
+      "nameS": "SUDARNITA Komang",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWDOUBLES----INA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ZAZA Hend",
+      "nameS": "ZAZA Hend",
+      "org": "SYR",
+      "orgName": "SYR",
+      "country": "SYR",
+      "reg": "TTEWDOUBLES----SYR01",
+      "photo": ""
+    },
+    {
+      "name": "ABBOUD Rashel",
+      "nameS": "ABBOUD Rashel",
+      "org": "SYR",
+      "orgName": "SYR",
+      "country": "SYR",
+      "reg": "TTEWDOUBLES----SYR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

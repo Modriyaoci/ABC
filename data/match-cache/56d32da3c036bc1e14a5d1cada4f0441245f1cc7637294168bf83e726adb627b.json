@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "PYON S / CHOE J",
+  "away": "KHAN F / KHAN A",
+  "homePlayers": [
+    {
+      "name": "PYON Song Gyong",
+      "nameS": "PYON Song Gyong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWDOUBLES----PRK02",
+      "photo": ""
+    },
+    {
+      "name": "CHOE Jong Im",
+      "nameS": "CHOE Jong Im",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWDOUBLES----PRK02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KHAN Fatima",
+      "nameS": "KHAN Fatima",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TTEWDOUBLES----PAK02",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Aleena",
+      "nameS": "KHAN Aleena",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TTEWDOUBLES----PAK02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

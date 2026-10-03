@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHIRI B / AZAR T",
+  "away": "SAWETTABUT S / PARANANG O",
+  "homePlayers": [
+    {
+      "name": "CHIRI Bissan",
+      "nameS": "CHIRI Bissan",
+      "org": "LBN",
+      "orgName": "LBN",
+      "country": "LBN",
+      "reg": "TTEWDOUBLES----LBN01",
+      "photo": ""
+    },
+    {
+      "name": "AZAR Talia",
+      "nameS": "AZAR Talia",
+      "org": "LBN",
+      "orgName": "LBN",
+      "country": "LBN",
+      "reg": "TTEWDOUBLES----LBN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SAWETTABUT Suthasini",
+      "nameS": "SAWETTABUT Suthasini",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEWDOUBLES----THA01",
+      "photo": ""
+    },
+    {
+      "name": "PARANANG Orawan",
+      "nameS": "PARANANG Orawan",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEWDOUBLES----THA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

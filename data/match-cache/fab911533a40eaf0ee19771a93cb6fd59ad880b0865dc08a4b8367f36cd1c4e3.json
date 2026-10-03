@@ -1,0 +1,448 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Thailand",
+  "away": "Chinese Taipei",
+  "homePlayers": [
+    {
+      "name": "MUANGKASEM Naruephol",
+      "nameS": "MUANGKASEM Naruephol",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "CHAISONGKRAM Jake",
+      "nameS": "CHAISONGKRAM Jake",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "DUNN Oliver",
+      "nameS": "DUNN Oliver",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SUWANNASANG Teetat",
+      "nameS": "SUWANNASANG Teetat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "CHAICHUAY Nattapon",
+      "nameS": "CHAICHUAY Nattapon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "DARU Joseph",
+      "nameS": "DARU Joseph",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "CLARK Alexander",
+      "nameS": "CLARK Alexander",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "NITUTHON Phongsathon",
+      "nameS": "NITUTHON Phongsathon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SAIBUAKAEW Piyathat",
+      "nameS": "SAIBUAKAEW Piyathat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PETSUNTHAD Phuttabut",
+      "nameS": "PETSUNTHAD Phuttabut",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "RYOTO Yusuke",
+      "nameS": "RYOTO Yusuke",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "LUNGLOEK Anuchit",
+      "nameS": "LUNGLOEK Anuchit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "RYOTO Yuthai",
+      "nameS": "RYOTO Yuthai",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "BUCHA Setthawut",
+      "nameS": "BUCHA Setthawut",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "WONGSUWAN Porrawit",
+      "nameS": "WONGSUWAN Porrawit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "OUDOM Linus",
+      "nameS": "OUDOM Linus",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SAENGNAK Jiraphat",
+      "nameS": "SAENGNAK Jiraphat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "UAMWILAI Nattapat",
+      "nameS": "UAMWILAI Nattapat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Suppakorn",
+      "nameS": "LIN Suppakorn",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KAYANUMA Yuri",
+      "nameS": "KAYANUMA Yuri",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KEHOE Ryan",
+      "nameS": "KEHOE Ryan",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "BURANASIRI Gabriel",
+      "nameS": "BURANASIRI Gabriel",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PROMMA Phuriphat",
+      "nameS": "PROMMA Phuriphat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    },
+    {
+      "name": "MANEESIRI Nanthawat",
+      "nameS": "MANEESIRI Nanthawat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BBLMTEAM9------THA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHEN Hsiao-yun",
+      "nameS": "CHEN Hsiao-yun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Chen-wei",
+      "nameS": "CHEN Chen-wei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "YANG Chen-yu",
+      "nameS": "YANG Chen-yu",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HUANG Wei-sheng",
+      "nameS": "HUANG Wei-sheng",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Yu-li",
+      "nameS": "LIN Yu-li",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Ji-hong",
+      "nameS": "LIU Ji-hong",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHU Chia-en",
+      "nameS": "CHU Chia-en",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Min-sih",
+      "nameS": "CHEN Min-sih",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LI I-wei",
+      "nameS": "LI I-wei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHANG Hsiang",
+      "nameS": "CHANG Hsiang",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "YANG Po-hsiang",
+      "nameS": "YANG Po-hsiang",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "YU Tsung-ju",
+      "nameS": "YU Tsung-ju",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HUANG Chieh-han",
+      "nameS": "HUANG Chieh-han",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Cheng-hao",
+      "nameS": "WANG Cheng-hao",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "KUO Tzu-chuan",
+      "nameS": "KUO Tzu-chuan",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "KAO Yu-wei",
+      "nameS": "KAO Yu-wei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Yan-cheng",
+      "nameS": "WANG Yan-cheng",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Yi-wei",
+      "nameS": "LIN Yi-wei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Yu-chieh",
+      "nameS": "WANG Yu-chieh",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "TSAI Wei-tai",
+      "nameS": "TSAI Wei-tai",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "GUO Dinghong",
+      "nameS": "GUO Dinghong",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HSU Siang-sheng",
+      "nameS": "HSU Siang-sheng",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Yu-min",
+      "nameS": "LIN Yu-min",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Chih-jung",
+      "nameS": "LIU Chih-jung",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

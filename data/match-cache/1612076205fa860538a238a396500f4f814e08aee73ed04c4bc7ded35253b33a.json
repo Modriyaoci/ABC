@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "RI J / U T",
+  "away": "WEN R / XIANG P",
+  "homePlayers": [
+    {
+      "name": "RI Jong Sik",
+      "nameS": "RI Jong Sik",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEMDOUBLES----PRK01",
+      "photo": ""
+    },
+    {
+      "name": "U Tae Ryong",
+      "nameS": "U Tae Ryong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEMDOUBLES----PRK01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "WEN Ruibo",
+      "nameS": "WEN Ruibo",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEMDOUBLES----CHN02",
+      "photo": ""
+    },
+    {
+      "name": "XIANG Peng",
+      "nameS": "XIANG Peng",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEMDOUBLES----CHN02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

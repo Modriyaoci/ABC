@@ -1,0 +1,97 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "DPR Korea",
+  "away": "India",
+  "homePlayers": [
+    {
+      "name": "KIM Kum Yong",
+      "nameS": "KIM Kum Yong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWTEAM-------PRK01",
+      "photo": ""
+    },
+    {
+      "name": "PYON Song Gyong",
+      "nameS": "PYON Song Gyong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWTEAM-------PRK01",
+      "photo": ""
+    },
+    {
+      "name": "CHOE Jong Im",
+      "nameS": "CHOE Jong Im",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWTEAM-------PRK01",
+      "photo": ""
+    },
+    {
+      "name": "CHA Su Yong",
+      "nameS": "CHA Su Yong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWTEAM-------PRK01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "AKULA Sreeja",
+      "nameS": "AKULA Sreeja",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "MUKHERJEE Sutirtha",
+      "nameS": "MUKHERJEE Sutirtha",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "DAS Syndrela",
+      "nameS": "DAS Syndrela",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "GHORPADE Yashaswini",
+      "nameS": "GHORPADE Yashaswini",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "CHITALE Diya",
+      "nameS": "CHITALE Diya",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEWTEAM-------IND01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

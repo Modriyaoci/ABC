@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "ENKHJARGAL S / PUREVDORJ U",
+  "away": "TURSUNOVA A / KURBONOV S",
+  "homePlayers": [
+    {
+      "name": "ENKHJARGAL Sonom-yanzum",
+      "nameS": "ENKHJARGAL Sonom-yanzum",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TENXDOUBLES----MGL02",
+      "photo": ""
+    },
+    {
+      "name": "PUREVDORJ Undrakh",
+      "nameS": "PUREVDORJ Undrakh",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TENXDOUBLES----MGL02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "TURSUNOVA Anastasiya",
+      "nameS": "TURSUNOVA Anastasiya",
+      "org": "TJK",
+      "orgName": "TJK",
+      "country": "TJK",
+      "reg": "TENXDOUBLES----TJK01",
+      "photo": ""
+    },
+    {
+      "name": "KURBONOV Shodmon",
+      "nameS": "KURBONOV Shodmon",
+      "org": "TJK",
+      "orgName": "TJK",
+      "country": "TJK",
+      "reg": "TENXDOUBLES----TJK01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

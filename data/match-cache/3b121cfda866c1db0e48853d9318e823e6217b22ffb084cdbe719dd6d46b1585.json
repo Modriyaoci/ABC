@@ -1,0 +1,106 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Korea",
+  "away": "Japan",
+  "homePlayers": [
+    {
+      "name": "SHIN Yubin",
+      "nameS": "SHIN Yubin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEWTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JOO Cheonhui",
+      "nameS": "JOO Cheonhui",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEWTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Nayeong",
+      "nameS": "KIM Nayeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEWTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Eunhye",
+      "nameS": "LEE Eunhye",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEWTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Gahyeon",
+      "nameS": "PARK Gahyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEWTEAM-------KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "HARIMOTO Miwa",
+      "nameS": "HARIMOTO Miwa",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HAYATA Hina",
+      "nameS": "HAYATA Hina",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "ITO Mima",
+      "nameS": "ITO Mima",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NAGASAKI Miyu",
+      "nameS": "NAGASAKI Miyu",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MENDE Rin",
+      "nameS": "MENDE Rin",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWTEAM-------JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

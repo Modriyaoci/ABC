@@ -1,0 +1,286 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Afghanistan",
+  "away": "Nepal",
+  "homePlayers": [
+    {
+      "name": "ZAZAI Mohammad Akram",
+      "nameS": "ZAZAI Mohammad Akram",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "EISAKHIL Hassan",
+      "nameS": "EISAKHIL Hassan",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "JANAT Karim",
+      "nameS": "JANAT Karim",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "SHINOZADA Faisal Khan",
+      "nameS": "SHINOZADA Faisal Khan",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "ZADRAN Najibullah",
+      "nameS": "ZADRAN Najibullah",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "SHIRZAD Mohammad Ishaq",
+      "nameS": "SHIRZAD Mohammad Ishaq",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "ABDUL RASOOL Darwish",
+      "nameS": "ABDUL RASOOL Darwish",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Nangeyalia",
+      "nameS": "KHAN Nangeyalia",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "AHMAD ZAI Abdollah",
+      "nameS": "AHMAD ZAI Abdollah",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "MOMAND Arab Gul",
+      "nameS": "MOMAND Arab Gul",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "DAWOODZAI Faridoon",
+      "nameS": "DAWOODZAI Faridoon",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "TANIWAL Khalid",
+      "nameS": "TANIWAL Khalid",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "SAFI Farmanullah",
+      "nameS": "SAFI Farmanullah",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "MIR Imran",
+      "nameS": "MIR Imran",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    },
+    {
+      "name": "ALAM Ismatullah",
+      "nameS": "ALAM Ismatullah",
+      "org": "AFG",
+      "orgName": "AFG",
+      "country": "AFG",
+      "reg": "CKTMTEAM-------AFG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "BHURTEL Kushal",
+      "nameS": "BHURTEL Kushal",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "SHEIKH Mahamad Asif",
+      "nameS": "SHEIKH Mahamad Asif",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "JORA Sundeep",
+      "nameS": "JORA Sundeep",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "MALLA Kushal",
+      "nameS": "MALLA Kushal",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "PAUDEL Rohit Kumar",
+      "nameS": "PAUDEL Rohit Kumar",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "AIREE Dipendra Singh",
+      "nameS": "AIREE Dipendra Singh",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "JHA Gulshan Kumar",
+      "nameS": "JHA Gulshan Kumar",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "BAM Lokesh",
+      "nameS": "BAM Lokesh",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "LAMICHHANE Sandeep",
+      "nameS": "LAMICHHANE Sandeep",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "RAJBANSHI Lalit Narayan",
+      "nameS": "RAJBANSHI Lalit Narayan",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "K C Karan",
+      "nameS": "K C Karan",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "KAMI Sompal",
+      "nameS": "KAMI Sompal",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "SHEIKH Md Arif",
+      "nameS": "SHEIKH Md Arif",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "YADAV Nandan",
+      "nameS": "YADAV Nandan",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "MALLA Sher",
+      "nameS": "MALLA Sher",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

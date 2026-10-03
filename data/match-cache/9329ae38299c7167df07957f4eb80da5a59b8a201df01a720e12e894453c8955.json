@@ -1,0 +1,196 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Hong Kong, China",
+  "away": "Malaysia",
+  "homePlayers": [
+    {
+      "name": "LO Sin Yan Happy",
+      "nameS": "LO Sin Yan Happy",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "MEHTA Saloni Samirbhai",
+      "nameS": "MEHTA Saloni Samirbhai",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LIANG Ka Wing",
+      "nameS": "LIANG Ka Wing",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WONG Yi",
+      "nameS": "WONG Yi",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "YEUNG Nga Ting",
+      "nameS": "YEUNG Nga Ting",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "YEUNG Pui Lam",
+      "nameS": "YEUNG Pui Lam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "TSANG Hiu Yan",
+      "nameS": "TSANG Hiu Yan",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LUI Lok Lok",
+      "nameS": "LUI Lok Lok",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "TSE Ying Suet",
+      "nameS": "TSE Ying Suet",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "NG Tsz Yau",
+      "nameS": "NG Tsz Yau",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWTEAM-------HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "RAMDAN Noraqilah Maisarah",
+      "nameS": "RAMDAN Noraqilah Maisarah",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "LAI Shevon Jemie",
+      "nameS": "LAI Shevon Jemie",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "KARUPATHEVAN Letshanaa",
+      "nameS": "KARUPATHEVAN Letshanaa",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "OO Shan Zi",
+      "nameS": "OO Shan Zi",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "WONG Ling Ching",
+      "nameS": "WONG Ling Ching",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "ENG Ler Qi",
+      "nameS": "ENG Ler Qi",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "TAN Pearly Koong Le",
+      "nameS": "TAN Pearly Koong Le",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "MURALITHARAN Thinaah",
+      "nameS": "MURALITHARAN Thinaah",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "LOW Zi Yu",
+      "nameS": "LOW Zi Yu",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMWTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "CHENG Su Yin",
+      "nameS": "CHENG Su Yin",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMWTEAM-------MAS01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

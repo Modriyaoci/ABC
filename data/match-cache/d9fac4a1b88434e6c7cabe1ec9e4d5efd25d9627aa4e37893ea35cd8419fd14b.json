@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Indonesia",
+  "away": "Thailand",
+  "homePlayers": [
+    {
+      "name": "ARABI Boy Arnez",
+      "nameS": "ARABI Boy Arnez",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "KURNIAWAN Hendra",
+      "nameS": "KURNIAWAN Hendra",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "MALIZI Muhammad",
+      "nameS": "MALIZI Muhammad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "GUMILAR Ahmad",
+      "nameS": "GUMILAR Ahmad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "PUTRATAMA Fahri Septian",
+      "nameS": "PUTRATAMA Fahri Septian",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "FAUZAN Rama Fazza",
+      "nameS": "FAUZAN Rama Fazza",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "HALIM Farhan",
+      "nameS": "HALIM Farhan",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ZULFIKRI Dio",
+      "nameS": "ZULFIKRI Dio",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ABHINAYA RAKHA Fahreza",
+      "nameS": "ABHINAYA RAKHA Fahreza",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "NIBRAS Fauzan",
+      "nameS": "NIBRAS Fauzan",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "DANIEL PRATAMA Alfin",
+      "nameS": "DANIEL PRATAMA Alfin",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ARDIAN Sigit",
+      "nameS": "ARDIAN Sigit",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "PHRAPUT Toopadit",
+      "nameS": "PHRAPUT Toopadit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "BHINIJDEE Napadet",
+      "nameS": "BHINIJDEE Napadet",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "THANOMNOI Jakkrit",
+      "nameS": "THANOMNOI Jakkrit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PAKDEEKAEW Anuchit",
+      "nameS": "PAKDEEKAEW Anuchit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "INTHANU Nakharin",
+      "nameS": "INTHANU Nakharin",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "MAHASIRIYOTHIN Suwit",
+      "nameS": "MAHASIRIYOTHIN Suwit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "JANPIROM Narongrit",
+      "nameS": "JANPIROM Narongrit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "WONGTORN Boonyarid",
+      "nameS": "WONGTORN Boonyarid",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "RAMSIN Kiadtiphum",
+      "nameS": "RAMSIN Kiadtiphum",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "BAMRUNGPHAKDI Thanat",
+      "nameS": "BAMRUNGPHAKDI Thanat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PHANRAM Anurak",
+      "nameS": "PHANRAM Anurak",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "THUNGKHAM Chaiwat",
+      "nameS": "THUNGKHAM Chaiwat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Korea",
+  "away": "Qatar",
+  "homePlayers": [
+    {
+      "name": "LEE Yelim",
+      "nameS": "LEE Yelim",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Dain",
+      "nameS": "KIM Dain",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HAN Dahye",
+      "nameS": "HAN Dahye",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Eunjin",
+      "nameS": "PARK Eunjin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "NA Hyunsoo",
+      "nameS": "NA Hyunsoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "YUK Seoyoung",
+      "nameS": "YUK Seoyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Dahyeon",
+      "nameS": "LEE Dahyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Eunseo",
+      "nameS": "PARK Eunseo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JUNG Hoyoung",
+      "nameS": "JUNG Hoyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Suyeon",
+      "nameS": "LEE Suyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Hyoim",
+      "nameS": "KIM Hyoim",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KANG Sohwi",
+      "nameS": "KANG Sohwi",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ALSALMAN Lamis",
+      "nameS": "ALSALMAN Lamis",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "SULTAN AL-ALAWI Aisha",
+      "nameS": "SULTAN AL-ALAWI Aisha",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ABOUEITA Dana",
+      "nameS": "ABOUEITA Dana",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "SHALABY Nelly",
+      "nameS": "SHALABY Nelly",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MOUHOUB Meriem",
+      "nameS": "MOUHOUB Meriem",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ELWALEED M EISA Ludan",
+      "nameS": "ELWALEED M EISA Ludan",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "DEYAB Almayasa",
+      "nameS": "DEYAB Almayasa",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ALMADHOUN Sumaia",
+      "nameS": "ALMADHOUN Sumaia",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MAHMOUD Lujain",
+      "nameS": "MAHMOUD Lujain",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Tasneem",
+      "nameS": "ALI Tasneem",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MABROUK Janna",
+      "nameS": "MABROUK Janna",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "GADIAGA Penda Fatma",
+      "nameS": "GADIAGA Penda Fatma",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

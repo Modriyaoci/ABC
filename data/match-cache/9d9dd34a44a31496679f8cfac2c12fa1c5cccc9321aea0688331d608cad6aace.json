@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "China",
+  "away": "Philippines",
+  "homePlayers": [
+    {
+      "name": "WU Mengjie",
+      "nameS": "WU Mengjie",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHUANG Yushan",
+      "nameS": "ZHUANG Yushan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "TANG Xin",
+      "nameS": "TANG Xin",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHANG Zixuan",
+      "nameS": "ZHANG Zixuan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "GONG Xiangyu",
+      "nameS": "GONG Xiangyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Houyu",
+      "nameS": "CHEN Houyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Aoqian",
+      "nameS": "WANG Aoqian",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "YANG Shuming",
+      "nameS": "YANG Shuming",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "DONG Yuhan",
+      "nameS": "DONG Yuhan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "XIE Shengyu",
+      "nameS": "XIE Shengyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "GUO Zhongnan",
+      "nameS": "GUO Zhongnan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Mengjie",
+      "nameS": "WANG Mengjie",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "VVOWTEAM6------CHN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NITURA Shaina Marie",
+      "nameS": "NITURA Shaina Marie",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "BELEN Mhicaela",
+      "nameS": "BELEN Mhicaela",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "LAURE Ejiya",
+      "nameS": "LAURE Ejiya",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "de GUZMAN Julia Melissa",
+      "nameS": "de GUZMAN Julia Melissa",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "CANINO Angel Anne",
+      "nameS": "CANINO Angel Anne",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "PALOMATA Dell",
+      "nameS": "PALOMATA Dell",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "SOLOMON Alyssa Jae",
+      "nameS": "SOLOMON Alyssa Jae",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "PROVIDO Amie",
+      "nameS": "PROVIDO Amie",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "GAGATE Thea Allison",
+      "nameS": "GAGATE Thea Allison",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "ALBA Marionne Angelique",
+      "nameS": "ALBA Marionne Angelique",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "JAZARENO Ylizyeth Justine",
+      "nameS": "JAZARENO Ylizyeth Justine",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "YTANG Nina",
+      "nameS": "YTANG Nina",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

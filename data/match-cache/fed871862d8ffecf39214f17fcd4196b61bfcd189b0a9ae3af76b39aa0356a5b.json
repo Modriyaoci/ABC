@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "HARIMOTO M / HAYATA H",
+  "away": "CHEN S / WU Y",
+  "homePlayers": [
+    {
+      "name": "HARIMOTO Miwa",
+      "nameS": "HARIMOTO Miwa",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWDOUBLES----JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HAYATA Hina",
+      "nameS": "HAYATA Hina",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWDOUBLES----JPN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHEN Szu-yu",
+      "nameS": "CHEN Szu-yu",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEWDOUBLES----TPE02",
+      "photo": ""
+    },
+    {
+      "name": "WU Ying-syuan",
+      "nameS": "WU Ying-syuan",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEWDOUBLES----TPE02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

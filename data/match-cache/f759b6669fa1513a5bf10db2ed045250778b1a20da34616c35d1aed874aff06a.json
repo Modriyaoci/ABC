@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "MARTHIN D / CARNANDO L",
+  "away": "LIANG W / WANG C",
+  "homePlayers": [
+    {
+      "name": "MARTHIN Daniel",
+      "nameS": "MARTHIN Daniel",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMDOUBLES----INA02",
+      "photo": ""
+    },
+    {
+      "name": "CARNANDO Leo R.",
+      "nameS": "CARNANDO Leo R.",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMDOUBLES----INA02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LIANG Weikeng",
+      "nameS": "LIANG Weikeng",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMDOUBLES----CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Chang",
+      "nameS": "WANG Chang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMDOUBLES----CHN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

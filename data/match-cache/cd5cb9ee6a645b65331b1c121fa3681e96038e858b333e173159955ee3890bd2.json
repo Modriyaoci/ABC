@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KULESHOVA A / NAMENOVA D",
+  "away": "HSIEH P / HUNG E",
+  "homePlayers": [
+    {
+      "name": "KULESHOVA Alissa",
+      "nameS": "KULESHOVA Alissa",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMWDOUBLES----KAZ02",
+      "photo": ""
+    },
+    {
+      "name": "NAMENOVA Diana",
+      "nameS": "NAMENOVA Diana",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMWDOUBLES----KAZ02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "HSIEH Pei-shan",
+      "nameS": "HSIEH Pei-shan",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMWDOUBLES----TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HUNG En-Tzu",
+      "nameS": "HUNG En-Tzu",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMWDOUBLES----TPE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

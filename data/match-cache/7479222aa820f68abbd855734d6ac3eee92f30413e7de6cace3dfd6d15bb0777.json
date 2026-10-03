@@ -1,0 +1,142 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Kazakhstan",
+  "away": "Japan",
+  "homePlayers": [
+    {
+      "name": "PANARIN Dmitriy",
+      "nameS": "PANARIN Dmitriy",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMMTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "NIYAZOV Artur",
+      "nameS": "NIYAZOV Artur",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMMTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KULMATOV Khaitmurat",
+      "nameS": "KULMATOV Khaitmurat",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMMTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "TAJIBULLAYEV Makhsut",
+      "nameS": "TAJIBULLAYEV Makhsut",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMMTEAM-------KAZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SHIMOGAMI Yuichi",
+      "nameS": "SHIMOGAMI Yuichi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TANAKA Yushi",
+      "nameS": "TANAKA Yushi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NISHI Hiroki",
+      "nameS": "NISHI Hiroki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KUMAGAI Kakeru",
+      "nameS": "KUMAGAI Kakeru",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KOBAYASHI Yugo",
+      "nameS": "KOBAYASHI Yugo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HOKI Takuro",
+      "nameS": "HOKI Takuro",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NARAOKA Kodai",
+      "nameS": "NARAOKA Kodai",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "WATANABE Koki",
+      "nameS": "WATANABE Koki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NISHIMOTO Kenta",
+      "nameS": "NISHIMOTO Kenta",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "WATANABE Yuta",
+      "nameS": "WATANABE Yuta",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMMTEAM-------JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

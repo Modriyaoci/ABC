@@ -1,0 +1,277 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Pakistan",
+  "away": "Bangladesh",
+  "homePlayers": [
+    {
+      "name": "ZULFIQAR Shawaal",
+      "nameS": "ZULFIQAR Shawaal",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "FEROZA Gull",
+      "nameS": "FEROZA Gull",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "JABEEN Saira",
+      "nameS": "JABEEN Saira",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "ZAFAR Ayesha",
+      "nameS": "ZAFAR Ayesha",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "FATIMA Eyman",
+      "nameS": "FATIMA Eyman",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "RIAZ Aliya",
+      "nameS": "RIAZ Aliya",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Fatima Sana",
+      "nameS": "KHAN Fatima Sana",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "HASSAN Tuba",
+      "nameS": "HASSAN Tuba",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "RUBAB Tasmia",
+      "nameS": "RUBAB Tasmia",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "SUNDHU Nashra",
+      "nameS": "SUNDHU Nashra",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "HANI Umme",
+      "nameS": "HANI Umme",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "NASEER Eman",
+      "nameS": "NASEER Eman",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "RIASAT Momina",
+      "nameS": "RIASAT Momina",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "BILAL Humna",
+      "nameS": "BILAL Humna",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "AKTER Dilara",
+      "nameS": "AKTER Dilara",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "FERDOUS Juairiya",
+      "nameS": "FERDOUS Juairiya",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "MOSTARY Sobhana",
+      "nameS": "MOSTARY Sobhana",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "JOTY Nigar Sultana",
+      "nameS": "JOTY Nigar Sultana",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "SUPTA Most Sharmin Akter",
+      "nameS": "SUPTA Most Sharmin Akter",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "AKTER Shorna",
+      "nameS": "AKTER Shorna",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "MONI Mst Ritu",
+      "nameS": "MONI Mst Ritu",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Rabeya",
+      "nameS": "KHAN Rabeya",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "AKTER Nahida",
+      "nameS": "AKTER Nahida",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "MAGHLA Mst Shanjida Akther",
+      "nameS": "MAGHLA Mst Shanjida Akther",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "AKTER Marufa",
+      "nameS": "AKTER Marufa",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "EASMIN Mst Farjana",
+      "nameS": "EASMIN Mst Farjana",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "KHATUN Fahima",
+      "nameS": "KHATUN Fahima",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "KHATUN Sultana",
+      "nameS": "KHATUN Sultana",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "SULTANA Mst Sarmin",
+      "nameS": "SULTANA Mst Sarmin",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "CKTWTEAM-------BAN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

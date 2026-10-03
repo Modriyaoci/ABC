@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHAN Y / NG T",
+  "away": "LEONG I / NG W",
+  "homePlayers": [
+    {
+      "name": "CHAN Yin Chak",
+      "nameS": "CHAN Yin Chak",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMXDOUBLES----HKG02",
+      "photo": ""
+    },
+    {
+      "name": "NG Tsz Yau",
+      "nameS": "NG Tsz Yau",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMXDOUBLES----HKG02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LEONG Iok Chong",
+      "nameS": "LEONG Iok Chong",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "BDMXDOUBLES----MAC01",
+      "photo": ""
+    },
+    {
+      "name": "NG Weng Chi",
+      "nameS": "NG Weng Chi",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "BDMXDOUBLES----MAC01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

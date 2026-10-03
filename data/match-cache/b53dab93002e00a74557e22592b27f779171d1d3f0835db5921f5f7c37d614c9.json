@@ -1,0 +1,196 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "India",
+  "away": "Japan",
+  "homePlayers": [
+    {
+      "name": "PULLELA Gayatri Gopichand",
+      "nameS": "PULLELA Gayatri Gopichand",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SHARMA Tanvi",
+      "nameS": "SHARMA Tanvi",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "HOODA Unnati",
+      "nameS": "HOODA Unnati",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SIHAG Devika",
+      "nameS": "SIHAG Devika",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "CRASTO Tanisha",
+      "nameS": "CRASTO Tanisha",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "BARUAH Isharani",
+      "nameS": "BARUAH Isharani",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "PUSARLA V. Sindhu",
+      "nameS": "PUSARLA V. Sindhu",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "JOLLY Treesa",
+      "nameS": "JOLLY Treesa",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SELVAM Kavipriya",
+      "nameS": "SELVAM Kavipriya",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SINGHI Simran A.",
+      "nameS": "SINGHI Simran A.",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "OKUHARA Nozomi",
+      "nameS": "OKUHARA Nozomi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TAGUCHI Maya",
+      "nameS": "TAGUCHI Maya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HOBARA Sayaka",
+      "nameS": "HOBARA Sayaka",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MIYAZAKI Tomoka",
+      "nameS": "MIYAZAKI Tomoka",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NAKANISHI Kie",
+      "nameS": "NAKANISHI Kie",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "GUNJI Riko",
+      "nameS": "GUNJI Riko",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MATSUMOTO Mayu",
+      "nameS": "MATSUMOTO Mayu",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUKUSHIMA Yuki",
+      "nameS": "FUKUSHIMA Yuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YAMAGUCHI Akane",
+      "nameS": "YAMAGUCHI Akane",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "UESAKA Rin",
+      "nameS": "UESAKA Rin",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMWTEAM-------JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "TSANG H / LUI L",
+  "away": "PULLELA G / JOLLY T",
+  "homePlayers": [
+    {
+      "name": "TSANG Hiu Yan",
+      "nameS": "TSANG Hiu Yan",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWDOUBLES----HKG02",
+      "photo": ""
+    },
+    {
+      "name": "LUI Lok Lok",
+      "nameS": "LUI Lok Lok",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWDOUBLES----HKG02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "PULLELA Gayatri Gopichand",
+      "nameS": "PULLELA Gayatri Gopichand",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWDOUBLES----IND01",
+      "photo": ""
+    },
+    {
+      "name": "JOLLY Treesa",
+      "nameS": "JOLLY Treesa",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWDOUBLES----IND01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

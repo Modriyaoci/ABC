@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "LIU S / TAN N",
+  "away": "KIM H / LEE Y",
+  "homePlayers": [
+    {
+      "name": "LIU Sheng Shu",
+      "nameS": "LIU Sheng Shu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMWDOUBLES----CHN01",
+      "photo": ""
+    },
+    {
+      "name": "TAN Ning",
+      "nameS": "TAN Ning",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMWDOUBLES----CHN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KIM Hyejeong",
+      "nameS": "KIM Hyejeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMWDOUBLES----KOR02",
+      "photo": ""
+    },
+    {
+      "name": "LEE Yeonwoo",
+      "nameS": "LEE Yeonwoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMWDOUBLES----KOR02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

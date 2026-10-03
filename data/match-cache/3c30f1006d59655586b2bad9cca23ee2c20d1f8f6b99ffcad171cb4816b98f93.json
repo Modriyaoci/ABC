@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "DAVAADASH M / ENKHJARGAL S",
+  "away": "KHAN A / SHOAIB M",
+  "homePlayers": [
+    {
+      "name": "DAVAADASH Mandakh",
+      "nameS": "DAVAADASH Mandakh",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TENMDOUBLES----MGL02",
+      "photo": ""
+    },
+    {
+      "name": "ENKHJARGAL Sonompuntsag",
+      "nameS": "ENKHJARGAL Sonompuntsag",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TENMDOUBLES----MGL02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KHAN Aqeel",
+      "nameS": "KHAN Aqeel",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TENMDOUBLES----PAK02",
+      "photo": ""
+    },
+    {
+      "name": "SHOAIB Muhammad",
+      "nameS": "SHOAIB Muhammad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TENMDOUBLES----PAK02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

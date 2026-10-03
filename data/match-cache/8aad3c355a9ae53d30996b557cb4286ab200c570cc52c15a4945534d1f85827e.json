@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Chinese Taipei",
+  "away": "Kazakhstan",
+  "homePlayers": [
+    {
+      "name": "HSU Heng-yun",
+      "nameS": "HSU Heng-yun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "XU Zhen-xuan",
+      "nameS": "XU Zhen-xuan",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HUNG Chia-yao",
+      "nameS": "HUNG Chia-yao",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Shu-ho",
+      "nameS": "LIN Shu-ho",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "KAN Ko-hui",
+      "nameS": "KAN Ko-hui",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HSU Wan-yun",
+      "nameS": "HSU Wan-yun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "TSAI Yu-chun",
+      "nameS": "TSAI Yu-chun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIAO Yi-jen",
+      "nameS": "LIAO Yi-jen",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Chieh",
+      "nameS": "CHEN Chieh",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WEN Yi-chin",
+      "nameS": "WEN Yi-chin",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WU Tzu-hua",
+      "nameS": "WU Tzu-hua",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHANG Yi-chi",
+      "nameS": "CHANG Yi-chi",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NURBERGENOVA Perizat",
+      "nameS": "NURBERGENOVA Perizat",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KHAZOVA Natalya",
+      "nameS": "KHAZOVA Natalya",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "FOMENKO Yuliya",
+      "nameS": "FOMENKO Yuliya",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "UFIMTSEVA Polina",
+      "nameS": "UFIMTSEVA Polina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "BELCHENKO Margarita",
+      "nameS": "BELCHENKO Margarita",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "BELOVA Kristina",
+      "nameS": "BELOVA Kristina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "SYROYESHKINA Zhanna",
+      "nameS": "SYROYESHKINA Zhanna",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "BEKET Madina",
+      "nameS": "BEKET Madina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "NIKITINA Tatyana",
+      "nameS": "NIKITINA Tatyana",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "MULKIBAYEVA Aigul",
+      "nameS": "MULKIBAYEVA Aigul",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "YATSKIV Tatyana",
+      "nameS": "YATSKIV Tatyana",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KUZNETSOVA Irina",
+      "nameS": "KUZNETSOVA Irina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,178 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Malaysia",
+  "away": "Mongolia",
+  "homePlayers": [
+    {
+      "name": "EWE Eogene Eon",
+      "nameS": "EWE Eogene Eon",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "MOHD. R. Nur Izzuddin",
+      "nameS": "MOHD. R. Nur Izzuddin",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Tang Jie",
+      "nameS": "CHEN Tang Jie",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "GOH Soon Huat",
+      "nameS": "GOH Soon Huat",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "KONG Wei Xiang",
+      "nameS": "KONG Wei Xiang",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "CHIA Aaron Teng Fong",
+      "nameS": "CHIA Aaron Teng Fong",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "TEE Kai Wun",
+      "nameS": "TEE Kai Wun",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "GOH Sze Fei",
+      "nameS": "GOH Sze Fei",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "LEONG Jun Hao",
+      "nameS": "LEONG Jun Hao",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    },
+    {
+      "name": "HOH Justin Shou Wei",
+      "nameS": "HOH Justin Shou Wei",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMTEAM-------MAS01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "MUNKHBAT Batdavaa",
+      "nameS": "MUNKHBAT Batdavaa",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMMTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "ODBAYAR Bishrelt-erdene",
+      "nameS": "ODBAYAR Bishrelt-erdene",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMMTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BAYARSAIKHAN Battugs",
+      "nameS": "BAYARSAIKHAN Battugs",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMMTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATTUR Davaasuren",
+      "nameS": "BATTUR Davaasuren",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMMTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "JARGALSAIKHAN Gerelsukh",
+      "nameS": "JARGALSAIKHAN Gerelsukh",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMMTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "OLONBAYAR Enkhbat",
+      "nameS": "OLONBAYAR Enkhbat",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMMTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "UULENSOLONGO Usukh-ireedui",
+      "nameS": "UULENSOLONGO Usukh-ireedui",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMMTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "KHISHIGCHULUUN Dulguun",
+      "nameS": "KHISHIGCHULUUN Dulguun",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMMTEAM-------MGL01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

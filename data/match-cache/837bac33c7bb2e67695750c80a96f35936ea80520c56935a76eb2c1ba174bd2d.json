@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KASYMOV A / AIAZBEKOVA N",
+  "away": "LIN Y / CHENG I",
+  "homePlayers": [
+    {
+      "name": "KASYMOV Atai",
+      "nameS": "KASYMOV Atai",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "TTEXDOUBLES----KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "AIAZBEKOVA Nurkyz",
+      "nameS": "AIAZBEKOVA Nurkyz",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "TTEXDOUBLES----KGZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LIN Yun-ju",
+      "nameS": "LIN Yun-ju",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEXDOUBLES----TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHENG I-ching",
+      "nameS": "CHENG I-ching",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEXDOUBLES----TPE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

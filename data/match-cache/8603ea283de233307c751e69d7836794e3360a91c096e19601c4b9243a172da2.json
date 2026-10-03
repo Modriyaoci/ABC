@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "AKULA S / DAS S",
+  "away": "BATMUNKH B / SANJAA B",
+  "homePlayers": [
+    {
+      "name": "AKULA Sreeja",
+      "nameS": "AKULA Sreeja",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEWDOUBLES----IND01",
+      "photo": ""
+    },
+    {
+      "name": "DAS Syndrela",
+      "nameS": "DAS Syndrela",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEWDOUBLES----IND01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "BATMUNKH Bolor-erdene",
+      "nameS": "BATMUNKH Bolor-erdene",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TTEWDOUBLES----MGL01",
+      "photo": ""
+    },
+    {
+      "name": "SANJAA Burenjargal",
+      "nameS": "SANJAA Burenjargal",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TTEWDOUBLES----MGL01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

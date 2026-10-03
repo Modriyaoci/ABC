@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KASYMOV A / KASYMOV A",
+  "away": "SALEH M / RASHED R",
+  "homePlayers": [
+    {
+      "name": "KASYMOV Abai",
+      "nameS": "KASYMOV Abai",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "TTEMDOUBLES----KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "KASYMOV Atai",
+      "nameS": "KASYMOV Atai",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "TTEMDOUBLES----KGZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SALEH Mohamed",
+      "nameS": "SALEH Mohamed",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "TTEMDOUBLES----BRN01",
+      "photo": ""
+    },
+    {
+      "name": "RASHED Rashed",
+      "nameS": "RASHED Rashed",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "TTEMDOUBLES----BRN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

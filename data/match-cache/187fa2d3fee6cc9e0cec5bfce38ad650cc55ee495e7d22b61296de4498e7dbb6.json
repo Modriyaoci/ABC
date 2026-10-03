@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KIM W / SEO S",
+  "away": "MARTHIN D / CARNANDO L",
+  "homePlayers": [
+    {
+      "name": "KIM Won Ho",
+      "nameS": "KIM Won Ho",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMDOUBLES----KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SEO Seung Jae",
+      "nameS": "SEO Seung Jae",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMDOUBLES----KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "MARTHIN Daniel",
+      "nameS": "MARTHIN Daniel",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMDOUBLES----INA02",
+      "photo": ""
+    },
+    {
+      "name": "CARNANDO Leo R.",
+      "nameS": "CARNANDO Leo R.",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMDOUBLES----INA02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

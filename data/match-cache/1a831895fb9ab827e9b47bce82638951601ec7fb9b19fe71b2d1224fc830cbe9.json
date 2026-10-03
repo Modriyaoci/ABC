@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "YANG P / LEE J",
+  "away": "NISHI H / KUMAGAI K",
+  "homePlayers": [
+    {
+      "name": "YANG Po-Hsuan",
+      "nameS": "YANG Po-Hsuan",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMMDOUBLES----TPE02",
+      "photo": ""
+    },
+    {
+      "name": "LEE Jhe-Huei",
+      "nameS": "LEE Jhe-Huei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMMDOUBLES----TPE02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NISHI Hiroki",
+      "nameS": "NISHI Hiroki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMMDOUBLES----JPN02",
+      "photo": ""
+    },
+    {
+      "name": "KUMAGAI Kakeru",
+      "nameS": "KUMAGAI Kakeru",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMMDOUBLES----JPN02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "GERASSIMENKO K / AKASHEVA Z",
+  "away": "FENG Y / YEH Y",
+  "homePlayers": [
+    {
+      "name": "GERASSIMENKO Kirill",
+      "nameS": "GERASSIMENKO Kirill",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEXDOUBLES----KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "AKASHEVA Zauresh",
+      "nameS": "AKASHEVA Zauresh",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEXDOUBLES----KAZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "FENG Yi-hsin",
+      "nameS": "FENG Yi-hsin",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEXDOUBLES----TPE02",
+      "photo": ""
+    },
+    {
+      "name": "YEH Yi-tian",
+      "nameS": "YEH Yi-tian",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEXDOUBLES----TPE02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

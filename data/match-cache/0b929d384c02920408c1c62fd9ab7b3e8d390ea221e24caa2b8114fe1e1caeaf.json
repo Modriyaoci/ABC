@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "SUDJAIPRAPARAT J / AIMSAARD N",
+  "away": "YEUNG N / YEUNG P",
+  "homePlayers": [
+    {
+      "name": "SUDJAIPRAPARAT Jhenicha",
+      "nameS": "SUDJAIPRAPARAT Jhenicha",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMWDOUBLES----THA02",
+      "photo": ""
+    },
+    {
+      "name": "AIMSAARD Nuntakarn",
+      "nameS": "AIMSAARD Nuntakarn",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMWDOUBLES----THA02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "YEUNG Nga Ting",
+      "nameS": "YEUNG Nga Ting",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWDOUBLES----HKG01",
+      "photo": ""
+    },
+    {
+      "name": "YEUNG Pui Lam",
+      "nameS": "YEUNG Pui Lam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMWDOUBLES----HKG01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

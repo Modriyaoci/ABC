@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "DANILINA A / PUTINTSEVA Y",
+  "away": "CHANTA A / PLIPUECH P",
+  "homePlayers": [
+    {
+      "name": "DANILINA Anna",
+      "nameS": "DANILINA Anna",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENWDOUBLES----KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "PUTINTSEVA Yuliya",
+      "nameS": "PUTINTSEVA Yuliya",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENWDOUBLES----KAZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHANTA Anchisa",
+      "nameS": "CHANTA Anchisa",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TENWDOUBLES----THA02",
+      "photo": ""
+    },
+    {
+      "name": "PLIPUECH Peangtarn",
+      "nameS": "PLIPUECH Peangtarn",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TENWDOUBLES----THA02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

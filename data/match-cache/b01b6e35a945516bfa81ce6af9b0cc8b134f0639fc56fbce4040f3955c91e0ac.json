@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "SYAHNAWI A / MARWAH N",
+  "away": "JEONG N / JO S",
+  "homePlayers": [
+    {
+      "name": "SYAHNAWI Amri",
+      "nameS": "SYAHNAWI Amri",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMXDOUBLES----INA01",
+      "photo": ""
+    },
+    {
+      "name": "MARWAH Nita Violina",
+      "nameS": "MARWAH Nita Violina",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMXDOUBLES----INA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "JEONG Naeun",
+      "nameS": "JEONG Naeun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMXDOUBLES----KOR02",
+      "photo": ""
+    },
+    {
+      "name": "JO Song Hyun",
+      "nameS": "JO Song Hyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMXDOUBLES----KOR02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,304 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Japan",
+  "away": "Vietnam",
+  "homePlayers": [
+    {
+      "name": "HATSUMI Miyako",
+      "nameS": "HATSUMI Miyako",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KINJO Arisa",
+      "nameS": "KINJO Arisa",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NAKAYAMA Kaho",
+      "nameS": "NAKAYAMA Kaho",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SAHARA Naoko",
+      "nameS": "SAHARA Naoko",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "WADA Kaoru",
+      "nameS": "WADA Kaoru",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "AIZAWA Natsuki",
+      "nameS": "AIZAWA Natsuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUJITA Asuka",
+      "nameS": "FUJITA Asuka",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KAMETANI Sakura",
+      "nameS": "KAMETANI Sakura",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SASAKI Haruno",
+      "nameS": "SASAKI Haruno",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MATSUURA Minami",
+      "nameS": "MATSUURA Minami",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "GRAY Clare",
+      "nameS": "GRAY Clare",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YOSHIDOME Yuki",
+      "nameS": "YOSHIDOME Yuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NAKAO Ai",
+      "nameS": "NAKAO Ai",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "UESHIMA Aki",
+      "nameS": "UESHIMA Aki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HIGA Kaede",
+      "nameS": "HIGA Kaede",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "ISHIKAWA Sora",
+      "nameS": "ISHIKAWA Sora",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NGUYEN Thanh",
+      "nameS": "NGUYEN Thanh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "HUYNH Gia",
+      "nameS": "HUYNH Gia",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "NGUYEN Diem",
+      "nameS": "NGUYEN Diem",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "HA Thu",
+      "nameS": "HA Thu",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "VO Be",
+      "nameS": "VO Be",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "HA Hanh",
+      "nameS": "HA Hanh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "DAM Thi",
+      "nameS": "DAM Thi",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "HOANG Lan",
+      "nameS": "HOANG Lan",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "NGUYEN Anh",
+      "nameS": "NGUYEN Anh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "DO Tu",
+      "nameS": "DO Tu",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "NGUYEN Ngoc",
+      "nameS": "NGUYEN Ngoc",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Hai",
+      "nameS": "TRAN Hai",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "PHAM Loan",
+      "nameS": "PHAM Loan",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "DO Huyen",
+      "nameS": "DO Huyen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "DO Nhu",
+      "nameS": "DO Nhu",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "PHUNG Linh",
+      "nameS": "PHUNG Linh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "HBLWTEAM7------VIE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "SHIN Y / JOO C",
+  "away": "NAFIZ A / IBRAHIM M",
+  "homePlayers": [
+    {
+      "name": "SHIN Yubin",
+      "nameS": "SHIN Yubin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEWDOUBLES----KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JOO Cheonhui",
+      "nameS": "JOO Cheonhui",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEWDOUBLES----KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NAFIZ Aishath",
+      "nameS": "NAFIZ Aishath",
+      "org": "MDV",
+      "orgName": "MDV",
+      "country": "MDV",
+      "reg": "TTEWDOUBLES----MDV02",
+      "photo": ""
+    },
+    {
+      "name": "IBRAHIM Mishka",
+      "nameS": "IBRAHIM Mishka",
+      "org": "MDV",
+      "orgName": "MDV",
+      "country": "MDV",
+      "reg": "TTEWDOUBLES----MDV02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

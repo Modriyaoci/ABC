@@ -1,0 +1,223 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Hong Kong, China",
+  "away": "Kyrgyzstan",
+  "homePlayers": [
+    {
+      "name": "WAN Ka Nam",
+      "nameS": "WAN Ka Nam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOMTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "YUEN Sze Wai",
+      "nameS": "YUEN Sze Wai",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOMTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "KO Ching Kin",
+      "nameS": "KO Ching Kin",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOMTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHAN King Hoi",
+      "nameS": "CHAN King Hoi",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOMTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LAM Sze Lok",
+      "nameS": "LAM Sze Lok",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOMTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "TAM Chun Ho Damian",
+      "nameS": "TAM Chun Ho Damian",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOMTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "KONG Cheuk Hin",
+      "nameS": "KONG Cheuk Hin",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOMTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LAU Kin Ken",
+      "nameS": "LAU Kin Ken",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOMTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHEUNG Ngai Yiu",
+      "nameS": "CHEUNG Ngai Yiu",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOMTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHIU Yin Laam",
+      "nameS": "CHIU Yin Laam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOMTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WONG Cheuk Nam Samuel",
+      "nameS": "WONG Cheuk Nam Samuel",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOMTEAM6------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHENG Tsz Yui",
+      "nameS": "CHENG Tsz Yui",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "VVOMTEAM6------HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "BAZHIEV Amantur Kubatbekovich",
+      "nameS": "BAZHIEV Amantur Kubatbekovich",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "TOKTOEV Nurmukhammed",
+      "nameS": "TOKTOEV Nurmukhammed",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ZHYRGALBEK U. Baiastan",
+      "nameS": "ZHYRGALBEK U. Baiastan",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "KANYBEK U. Onolbek",
+      "nameS": "KANYBEK U. Onolbek",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ABDIMOMUN U. Iliaz",
+      "nameS": "ABDIMOMUN U. Iliaz",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ASKAR U. Baiel",
+      "nameS": "ASKAR U. Baiel",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "TOKTOSUNOV Ernis Erkinovich",
+      "nameS": "TOKTOSUNOV Ernis Erkinovich",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "MUSAEV Zhamalidin",
+      "nameS": "MUSAEV Zhamalidin",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "SHILOV Roman",
+      "nameS": "SHILOV Roman",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ZHEENBEK U. Zhantemir",
+      "nameS": "ZHEENBEK U. Zhantemir",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "NURALY UULU Manazbek",
+      "nameS": "NURALY UULU Manazbek",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

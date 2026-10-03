@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "HARIMOTO M / HAYATA H",
+  "away": "VIJITVIRIYAGUL K / WONGLAKHON P",
+  "homePlayers": [
+    {
+      "name": "HARIMOTO Miwa",
+      "nameS": "HARIMOTO Miwa",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWDOUBLES----JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HAYATA Hina",
+      "nameS": "HAYATA Hina",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWDOUBLES----JPN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "VIJITVIRIYAGUL Kulapassr",
+      "nameS": "VIJITVIRIYAGUL Kulapassr",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEWDOUBLES----THA02",
+      "photo": ""
+    },
+    {
+      "name": "WONGLAKHON Phatsaraphon",
+      "nameS": "WONGLAKHON Phatsaraphon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEWDOUBLES----THA02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Qatar",
+  "away": "India",
+  "homePlayers": [
+    {
+      "name": "DIAGNE Papemaguette",
+      "nameS": "DIAGNE Papemaguette",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOMTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ALKUWARI Moubarak",
+      "nameS": "ALKUWARI Moubarak",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOMTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "RIBEIRO Renan",
+      "nameS": "RIBEIRO Renan",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOMTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "HASSANEIN Abdullah",
+      "nameS": "HASSANEIN Abdullah",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOMTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "WIDATALLA Mohamed",
+      "nameS": "WIDATALLA Mohamed",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOMTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ALYAFFAI Yousef",
+      "nameS": "ALYAFFAI Yousef",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOMTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "SAMMOUD Mahdi",
+      "nameS": "SAMMOUD Mahdi",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOMTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "NOAMAN Ahmed",
+      "nameS": "NOAMAN Ahmed",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOMTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ABDELRAHIM Ahmed",
+      "nameS": "ABDELRAHIM Ahmed",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOMTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ABUKHIARAH Naji",
+      "nameS": "ABUKHIARAH Naji",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOMTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "BAKRY Abdelrhman",
+      "nameS": "BAKRY Abdelrhman",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOMTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MADUT Mubarak Musa",
+      "nameS": "MADUT Mubarak Musa",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOMTEAM6------QAT01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "BALWAN SINGH Amit",
+      "nameS": "BALWAN SINGH Amit",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "JEBARAJ Joel Benjamin",
+      "nameS": "JEBARAJ Joel Benjamin",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "CHATHAM Muhammad",
+      "nameS": "CHATHAM Muhammad",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "YADAV Chirag",
+      "nameS": "YADAV Chirag",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "KOTTARATHIL Anand",
+      "nameS": "KOTTARATHIL Anand",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "RAI Ashwal",
+      "nameS": "RAI Ashwal",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "CHARLES Jerome Vinith",
+      "nameS": "CHARLES Jerome Vinith",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "LAD Om Vasant",
+      "nameS": "LAD Om Vasant",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "APPAVU Muthusamy",
+      "nameS": "APPAVU Muthusamy",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "EANTHUNGAL JOSEPH John Joseph",
+      "nameS": "EANTHUNGAL JOSEPH John Joseph",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SINGH Shikhar",
+      "nameS": "SINGH Shikhar",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "PULPARAMBIL Hemanth",
+      "nameS": "PULPARAMBIL Hemanth",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

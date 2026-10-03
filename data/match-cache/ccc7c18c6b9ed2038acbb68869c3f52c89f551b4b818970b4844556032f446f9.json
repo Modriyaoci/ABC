@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHOGSOMJAV M / CHOGSOMJAV M",
+  "away": "CHONG E / WONG H",
+  "homePlayers": [
+    {
+      "name": "CHOGSOMJAV Maralgoo",
+      "nameS": "CHOGSOMJAV Maralgoo",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TENWDOUBLES----MGL01",
+      "photo": ""
+    },
+    {
+      "name": "CHOGSOMJAV Martaa",
+      "nameS": "CHOGSOMJAV Martaa",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "TENWDOUBLES----MGL01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHONG Eudice",
+      "nameS": "CHONG Eudice",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TENWDOUBLES----HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WONG Hong Yi",
+      "nameS": "WONG Hong Yi",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TENWDOUBLES----HKG01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Vietnam",
+  "away": "Indonesia",
+  "homePlayers": [
+    {
+      "name": "DINH Van Duy",
+      "nameS": "DINH Van Duy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRINH Duy Phuc",
+      "nameS": "TRINH Duy Phuc",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "DUONG Van Tien",
+      "nameS": "DUONG Van Tien",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Minh Duc",
+      "nameS": "TRAN Minh Duc",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TANG Ngoc Hieu",
+      "nameS": "TANG Ngoc Hieu",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Duy Tuyen",
+      "nameS": "TRAN Duy Tuyen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRUONG The Khai",
+      "nameS": "TRUONG The Khai",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "DINH van Phuong",
+      "nameS": "DINH van Phuong",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "NGUYEN Ngoc Thuan",
+      "nameS": "NGUYEN Ngoc Thuan",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Hoai Phuong",
+      "nameS": "TRAN Hoai Phuong",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "CAO Duc Hoang",
+      "nameS": "CAO Duc Hoang",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "BUI Xuan Tien",
+      "nameS": "BUI Xuan Tien",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOMTEAM6------VIE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ARABI Boy Arnez",
+      "nameS": "ARABI Boy Arnez",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "KURNIAWAN Hendra",
+      "nameS": "KURNIAWAN Hendra",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "MALIZI Muhammad",
+      "nameS": "MALIZI Muhammad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "GUMILAR Ahmad",
+      "nameS": "GUMILAR Ahmad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "PUTRATAMA Fahri Septian",
+      "nameS": "PUTRATAMA Fahri Septian",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "FAUZAN Rama Fazza",
+      "nameS": "FAUZAN Rama Fazza",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "HALIM Farhan",
+      "nameS": "HALIM Farhan",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ZULFIKRI Dio",
+      "nameS": "ZULFIKRI Dio",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ABHINAYA RAKHA Fahreza",
+      "nameS": "ABHINAYA RAKHA Fahreza",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "NIBRAS Fauzan",
+      "nameS": "NIBRAS Fauzan",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "DANIEL PRATAMA Alfin",
+      "nameS": "DANIEL PRATAMA Alfin",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ARDIAN Sigit",
+      "nameS": "ARDIAN Sigit",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

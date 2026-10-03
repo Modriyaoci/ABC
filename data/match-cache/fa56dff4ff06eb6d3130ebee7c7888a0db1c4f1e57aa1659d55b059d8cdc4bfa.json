@@ -1,0 +1,304 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "China",
+  "away": "Hong Kong, China",
+  "homePlayers": [
+    {
+      "name": "LU Chang",
+      "nameS": "LU Chang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "PAN Fengying",
+      "nameS": "PAN Fengying",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LIANG Jing",
+      "nameS": "LIANG Jing",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "JIANG Xintong",
+      "nameS": "JIANG Xintong",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "SHI Zihan",
+      "nameS": "SHI Zihan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Chan",
+      "nameS": "LIU Chan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LI Xiaoqing",
+      "nameS": "LI Xiaoqing",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "YANG Yue",
+      "nameS": "YANG Yue",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "HUANG Sitong",
+      "nameS": "HUANG Sitong",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "HOU Changqing",
+      "nameS": "HOU Changqing",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHANG Pingping",
+      "nameS": "ZHANG Pingping",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "YUAN Lingjie",
+      "nameS": "YUAN Lingjie",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "QU Wenna",
+      "nameS": "QU Wenna",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Xuedan",
+      "nameS": "LIU Xuedan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHENG Yun",
+      "nameS": "ZHENG Yun",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Yuting",
+      "nameS": "LIU Yuting",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHAN Kam",
+      "nameS": "CHAN Kam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "SZE Yan",
+      "nameS": "SZE Yan",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHONG Sze",
+      "nameS": "CHONG Sze",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHEUNG Man",
+      "nameS": "CHEUNG Man",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "HUNG Cheuk",
+      "nameS": "HUNG Cheuk",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "YEUNG Chun",
+      "nameS": "YEUNG Chun",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "TSANG Yuen",
+      "nameS": "TSANG Yuen",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WU Lei",
+      "nameS": "WU Lei",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Ho",
+      "nameS": "LIU Ho",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "HUNG Sin",
+      "nameS": "HUNG Sin",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "TAI Tsz",
+      "nameS": "TAI Tsz",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LO Kei",
+      "nameS": "LO Kei",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WONG Yee",
+      "nameS": "WONG Yee",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHEUNG Mei",
+      "nameS": "CHEUNG Mei",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "FUNG Sze",
+      "nameS": "FUNG Sze",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "YIU Hei",
+      "nameS": "YIU Hei",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLWTEAM7------HKG01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

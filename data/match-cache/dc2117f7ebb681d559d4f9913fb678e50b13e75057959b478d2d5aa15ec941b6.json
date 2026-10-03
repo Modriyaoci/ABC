@@ -1,0 +1,151 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Kazakhstan",
+  "away": "India",
+  "homePlayers": [
+    {
+      "name": "ZHUMABEK Aisha",
+      "nameS": "ZHUMABEK Aisha",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMWTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "NAMENOVA Diana",
+      "nameS": "NAMENOVA Diana",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMWTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "SMAGULOVA Kamila",
+      "nameS": "SMAGULOVA Kamila",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMWTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "RAKHMETULLAYEVA Nargiza",
+      "nameS": "RAKHMETULLAYEVA Nargiza",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMWTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KULESHOVA Alissa",
+      "nameS": "KULESHOVA Alissa",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMWTEAM-------KAZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "PULLELA Gayatri Gopichand",
+      "nameS": "PULLELA Gayatri Gopichand",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SHARMA Tanvi",
+      "nameS": "SHARMA Tanvi",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "HOODA Unnati",
+      "nameS": "HOODA Unnati",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SIHAG Devika",
+      "nameS": "SIHAG Devika",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "CRASTO Tanisha",
+      "nameS": "CRASTO Tanisha",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "BARUAH Isharani",
+      "nameS": "BARUAH Isharani",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "PUSARLA V. Sindhu",
+      "nameS": "PUSARLA V. Sindhu",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "JOLLY Treesa",
+      "nameS": "JOLLY Treesa",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SELVAM Kavipriya",
+      "nameS": "SELVAM Kavipriya",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SINGHI Simran A.",
+      "nameS": "SINGHI Simran A.",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWTEAM-------IND01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

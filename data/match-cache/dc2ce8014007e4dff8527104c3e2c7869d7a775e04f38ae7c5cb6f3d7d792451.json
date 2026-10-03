@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "MOHD. R N / GOH S",
+  "away": "LIANG W / WANG C",
+  "homePlayers": [
+    {
+      "name": "MOHD. R Nur Izzuddin",
+      "nameS": "MOHD. R Nur Izzuddin",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMDOUBLES----MAS02",
+      "photo": ""
+    },
+    {
+      "name": "GOH Sze Fei",
+      "nameS": "GOH Sze Fei",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMMDOUBLES----MAS02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LIANG Weikeng",
+      "nameS": "LIANG Weikeng",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMDOUBLES----CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Chang",
+      "nameS": "WANG Chang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMDOUBLES----CHN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

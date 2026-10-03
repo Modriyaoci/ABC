@@ -1,0 +1,277 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Pakistan",
+  "away": "Thailand",
+  "homePlayers": [
+    {
+      "name": "FEROZA Gull",
+      "nameS": "FEROZA Gull",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "ZULFIQAR Shawaal",
+      "nameS": "ZULFIQAR Shawaal",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "ZAFAR Ayesha",
+      "nameS": "ZAFAR Ayesha",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Fatima Sana",
+      "nameS": "KHAN Fatima Sana",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "RIAZ Aliya",
+      "nameS": "RIAZ Aliya",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "FATIMA Eyman",
+      "nameS": "FATIMA Eyman",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "HASSAN Tuba",
+      "nameS": "HASSAN Tuba",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "NASEER Eman",
+      "nameS": "NASEER Eman",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "HANI Umme",
+      "nameS": "HANI Umme",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "SUNDHU Nashra",
+      "nameS": "SUNDHU Nashra",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "RUBAB Tasmia",
+      "nameS": "RUBAB Tasmia",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "JABEEN Saira",
+      "nameS": "JABEEN Saira",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "RIASAT Momina",
+      "nameS": "RIASAT Momina",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "BILAL Humna",
+      "nameS": "BILAL Humna",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "CKTWTEAM-------PAK01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHANTHAM Natthakan",
+      "nameS": "CHANTHAM Natthakan",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "MAYA Phannita",
+      "nameS": "MAYA Phannita",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KHONCHAROENKAI Nannapat",
+      "nameS": "KHONCHAROENKAI Nannapat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "CHAIWAI Naruemol",
+      "nameS": "CHAIWAI Naruemol",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SUTTHIRUANG Chanida",
+      "nameS": "SUTTHIRUANG Chanida",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SUWANCHONRATHI Aphisara",
+      "nameS": "SUWANCHONRATHI Aphisara",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "CHAIHAN Nannaphat",
+      "nameS": "CHAIHAN Nannaphat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KAMCHOMPHU Onnicha",
+      "nameS": "KAMCHOMPHU Onnicha",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "LAOMI Suleeporn",
+      "nameS": "LAOMI Suleeporn",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PUTTHAWONG Thipatcha",
+      "nameS": "PUTTHAWONG Thipatcha",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "CHATURONGRATTANA Sunida",
+      "nameS": "CHATURONGRATTANA Sunida",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PHENGPAEN Chayanisa",
+      "nameS": "PHENGPAEN Chayanisa",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SUWANCHONRATHI Koranit",
+      "nameS": "SUWANCHONRATHI Koranit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SEESAWAN Thanrada",
+      "nameS": "SEESAWAN Thanrada",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SURIYA Pattamawadee",
+      "nameS": "SURIYA Pattamawadee",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "CKTWTEAM-------THA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

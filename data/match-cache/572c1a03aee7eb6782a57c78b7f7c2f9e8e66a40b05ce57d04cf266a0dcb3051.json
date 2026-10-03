@@ -1,0 +1,304 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Kuwait",
+  "away": "Kazakhstan",
+  "homePlayers": [
+    {
+      "name": "ALKHAMEES Abdullah",
+      "nameS": "ALKHAMEES Abdullah",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Saleh",
+      "nameS": "ALI Saleh",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "ALSHAMMARI Abdulaziz",
+      "nameS": "ALSHAMMARI Abdulaziz",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "NAJEM Abdulaziz",
+      "nameS": "NAJEM Abdulaziz",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "ALADWANI Humood",
+      "nameS": "ALADWANI Humood",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "SAFAR Hasan",
+      "nameS": "SAFAR Hasan",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "ALADWANI Saif",
+      "nameS": "ALADWANI Saif",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "ALMASHARI Fawaz",
+      "nameS": "ALMASHARI Fawaz",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "GHADANFAR Mohammad",
+      "nameS": "GHADANFAR Mohammad",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "SALMEEN Abdulaziz",
+      "nameS": "SALMEEN Abdulaziz",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "MOHAMMAD Husain",
+      "nameS": "MOHAMMAD Husain",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "DASHTI Haider",
+      "nameS": "DASHTI Haider",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "NAJEM Yousef",
+      "nameS": "NAJEM Yousef",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "ALMUTAWA Husain",
+      "nameS": "ALMUTAWA Husain",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "ALSHAMMARI Abdulrahman",
+      "nameS": "ALSHAMMARI Abdulrahman",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    },
+    {
+      "name": "BUYABES Mohammad",
+      "nameS": "BUYABES Mohammad",
+      "org": "KUW",
+      "orgName": "KUW",
+      "country": "KUW",
+      "reg": "HBLMTEAM7------KUW01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NABIYEV Assylkhan",
+      "nameS": "NABIYEV Assylkhan",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "MURATOV Daulet",
+      "nameS": "MURATOV Daulet",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "OSMANOV Ravil",
+      "nameS": "OSMANOV Ravil",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "SALMOV Mikhail",
+      "nameS": "SALMOV Mikhail",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "OXIKBAYEV Askan",
+      "nameS": "OXIKBAYEV Askan",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "GAZIYEV Odilzhan",
+      "nameS": "GAZIYEV Odilzhan",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "MAKHMUDOV Adam",
+      "nameS": "MAKHMUDOV Adam",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "TILEKKABYL Dauren",
+      "nameS": "TILEKKABYL Dauren",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KALI Asset",
+      "nameS": "KALI Asset",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "ANDRUSSYAK Rustam",
+      "nameS": "ANDRUSSYAK Rustam",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "YAKUBOVICH Nikita",
+      "nameS": "YAKUBOVICH Nikita",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "YAKUBOVICH Daniil",
+      "nameS": "YAKUBOVICH Daniil",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "POBOCHENKO Ilya",
+      "nameS": "POBOCHENKO Ilya",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "NADYRBEKOV Davlatbek",
+      "nameS": "NADYRBEKOV Davlatbek",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "RAKIMZHANOV Azizzhan",
+      "nameS": "RAKIMZHANOV Azizzhan",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "IRISMETOV Daniyar",
+      "nameS": "IRISMETOV Daniyar",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

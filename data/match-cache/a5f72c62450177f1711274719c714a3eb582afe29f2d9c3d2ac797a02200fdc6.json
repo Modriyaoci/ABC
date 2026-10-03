@@ -1,0 +1,88 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Korea",
+  "away": "Yemen",
+  "homePlayers": [
+    {
+      "name": "AN Jaehyun",
+      "nameS": "AN Jaehyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JANG Woojin",
+      "nameS": "JANG Woojin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "OH Junsung",
+      "nameS": "OH Junsung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Gyuhyeon",
+      "nameS": "PARK Gyuhyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LIM Jonghoon",
+      "nameS": "LIM Jonghoon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEMTEAM-------KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "GUBRAN Ebrahim",
+      "nameS": "GUBRAN Ebrahim",
+      "org": "YEM",
+      "orgName": "YEM",
+      "country": "YEM",
+      "reg": "TTEMTEAM-------YEM01",
+      "photo": ""
+    },
+    {
+      "name": "ALYAFAEE Abdulrahman",
+      "nameS": "ALYAFAEE Abdulrahman",
+      "org": "YEM",
+      "orgName": "YEM",
+      "country": "YEM",
+      "reg": "TTEMTEAM-------YEM01",
+      "photo": ""
+    },
+    {
+      "name": "ALDHUBHANI Magd",
+      "nameS": "ALDHUBHANI Magd",
+      "org": "YEM",
+      "orgName": "YEM",
+      "country": "YEM",
+      "reg": "TTEMTEAM-------YEM01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

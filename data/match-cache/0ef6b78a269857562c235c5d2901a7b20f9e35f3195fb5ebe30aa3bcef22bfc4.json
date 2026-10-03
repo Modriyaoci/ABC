@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "MATSUSHIMA S / HARIMOTO M",
+  "away": "U T / PYON S",
+  "homePlayers": [
+    {
+      "name": "MATSUSHIMA Sora",
+      "nameS": "MATSUSHIMA Sora",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEXDOUBLES----JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HARIMOTO Miwa",
+      "nameS": "HARIMOTO Miwa",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEXDOUBLES----JPN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "U Tae Ryong",
+      "nameS": "U Tae Ryong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEXDOUBLES----PRK02",
+      "photo": ""
+    },
+    {
+      "name": "PYON Song Gyong",
+      "nameS": "PYON Song Gyong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEXDOUBLES----PRK02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

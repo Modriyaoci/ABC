@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "ISARO P / JONES M",
+  "away": "NAM J / PARK U",
+  "homePlayers": [
+    {
+      "name": "ISARO Pruchya",
+      "nameS": "ISARO Pruchya",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TENMDOUBLES----THA01",
+      "photo": ""
+    },
+    {
+      "name": "JONES Maximus",
+      "nameS": "JONES Maximus",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TENMDOUBLES----THA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NAM Jisung",
+      "nameS": "NAM Jisung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TENMDOUBLES----KOR02",
+      "photo": ""
+    },
+    {
+      "name": "PARK Uisung",
+      "nameS": "PARK Uisung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TENMDOUBLES----KOR02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

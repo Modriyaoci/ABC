@@ -1,0 +1,88 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Uzbekistan",
+  "away": "China",
+  "homePlayers": [
+    {
+      "name": "KHASANOVA Adelina",
+      "nameS": "KHASANOVA Adelina",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "TTEWTEAM-------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "KAMALOVA Arujan",
+      "nameS": "KAMALOVA Arujan",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "TTEWTEAM-------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "ERKEBAEVA Asel",
+      "nameS": "ERKEBAEVA Asel",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "TTEWTEAM-------UZB01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "FAN Shuhan",
+      "nameS": "FAN Shuhan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEWTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Yi",
+      "nameS": "CHEN Yi",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEWTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "KUAI Man",
+      "nameS": "KUAI Man",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEWTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "SUN Yingsha",
+      "nameS": "SUN Yingsha",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEWTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Manyu",
+      "nameS": "WANG Manyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEWTEAM-------CHN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

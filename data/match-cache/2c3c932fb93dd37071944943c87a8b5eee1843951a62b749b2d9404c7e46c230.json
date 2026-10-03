@@ -1,0 +1,142 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Indonesia",
+  "away": "Mongolia",
+  "homePlayers": [
+    {
+      "name": "AMARTYA Ni Kadek Dhinda",
+      "nameS": "AMARTYA Ni Kadek Dhinda",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "RAMADHANTI Siti Fadia Silva",
+      "nameS": "RAMADHANTI Siti Fadia Silva",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "SETIANINGRUM Febi",
+      "nameS": "SETIANINGRUM Febi",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "KUSUMA Febriana Dwipuji",
+      "nameS": "KUSUMA Febriana Dwipuji",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "WARDANI Putri Kusuma",
+      "nameS": "WARDANI Putri Kusuma",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ROSE Rachel Allesya",
+      "nameS": "ROSE Rachel Allesya",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "WIRYAWAN Thalita Ramadhani",
+      "nameS": "WIRYAWAN Thalita Ramadhani",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMWTEAM-------INA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHULUUNBAT Khulangoo",
+      "nameS": "CHULUUNBAT Khulangoo",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMWTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "GANBAT Enkhjin",
+      "nameS": "GANBAT Enkhjin",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMWTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BYAMBAA Khaliunaa",
+      "nameS": "BYAMBAA Khaliunaa",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMWTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "DARKHANBAATAR Kherlen",
+      "nameS": "DARKHANBAATAR Kherlen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMWTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "TSELMEG-OD Enkhlen",
+      "nameS": "TSELMEG-OD Enkhlen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMWTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "ODBAYAR Amin-erdene",
+      "nameS": "ODBAYAR Amin-erdene",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMWTEAM-------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "KHERLENBAATAR Sarangua",
+      "nameS": "KHERLENBAATAR Sarangua",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMWTEAM-------MGL01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

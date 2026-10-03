@@ -1,0 +1,88 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Bangladesh",
+  "away": "Chinese Taipei",
+  "homePlayers": [
+    {
+      "name": "SOMA Sonam",
+      "nameS": "SOMA Sonam",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "TUSHI Samanta",
+      "nameS": "TUSHI Samanta",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "MAHI Nowrin",
+      "nameS": "MAHI Nowrin",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEWTEAM-------BAN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "YEH Yi-tian",
+      "nameS": "YEH Yi-tian",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEWTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Szu-yu",
+      "nameS": "CHEN Szu-yu",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEWTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "PENG Yu-han",
+      "nameS": "PENG Yu-han",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEWTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHENG I-ching",
+      "nameS": "CHENG I-ching",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEWTEAM-------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WU Ying-syuan",
+      "nameS": "WU Ying-syuan",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEWTEAM-------TPE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

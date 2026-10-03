@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "BHOSALE R / RAINA A",
+  "away": "DANILINA A / PUTINTSEVA Y",
+  "homePlayers": [
+    {
+      "name": "BHOSALE Rutuja",
+      "nameS": "BHOSALE Rutuja",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TENWDOUBLES----IND01",
+      "photo": ""
+    },
+    {
+      "name": "RAINA Ankita",
+      "nameS": "RAINA Ankita",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TENWDOUBLES----IND01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "DANILINA Anna",
+      "nameS": "DANILINA Anna",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENWDOUBLES----KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "PUTINTSEVA Yuliya",
+      "nameS": "PUTINTSEVA Yuliya",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENWDOUBLES----KAZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

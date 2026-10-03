@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KIM N / LEE E",
+  "away": "SHAIKH S / AL-MALKI F",
+  "homePlayers": [
+    {
+      "name": "KIM Nayeong",
+      "nameS": "KIM Nayeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEWDOUBLES----KOR02",
+      "photo": ""
+    },
+    {
+      "name": "LEE Eunhye",
+      "nameS": "LEE Eunhye",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TTEWDOUBLES----KOR02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SHAIKH Sarrinah",
+      "nameS": "SHAIKH Sarrinah",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEWDOUBLES----QAT02",
+      "photo": ""
+    },
+    {
+      "name": "AL-MALKI Fawziya",
+      "nameS": "AL-MALKI Fawziya",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "TTEWDOUBLES----QAT02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

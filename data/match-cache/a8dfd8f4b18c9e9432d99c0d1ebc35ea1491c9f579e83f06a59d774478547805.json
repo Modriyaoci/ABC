@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "JIANG F / ZHANG T",
+  "away": "KUSUHARA Y / NAKAGAWA S",
+  "homePlayers": [
+    {
+      "name": "JIANG Fumin",
+      "nameS": "JIANG Fumin",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TENMDOUBLES----CHN02",
+      "photo": ""
+    },
+    {
+      "name": "ZHANG Tianhui",
+      "nameS": "ZHANG Tianhui",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TENMDOUBLES----CHN02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KUSUHARA Yusuke",
+      "nameS": "KUSUHARA Yusuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TENMDOUBLES----JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NAKAGAWA Shunsuke",
+      "nameS": "NAKAGAWA Shunsuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TENMDOUBLES----JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

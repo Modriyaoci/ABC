@@ -1,0 +1,106 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Japan",
+  "away": "Kazakhstan",
+  "homePlayers": [
+    {
+      "name": "HARIMOTO Tomokazu",
+      "nameS": "HARIMOTO Tomokazu",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MATSUSHIMA Sora",
+      "nameS": "MATSUSHIMA Sora",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TOGAMI Shunsuke",
+      "nameS": "TOGAMI Shunsuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "UDA Yukiya",
+      "nameS": "UDA Yukiya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SHINOZUKA Hiroto",
+      "nameS": "SHINOZUKA Hiroto",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEMTEAM-------JPN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "GERASSIMENKO Kirill",
+      "nameS": "GERASSIMENKO Kirill",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEMTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KURMANGALIYEV Alan",
+      "nameS": "KURMANGALIYEV Alan",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEMTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KENZHIGULOV Aidos",
+      "nameS": "KENZHIGULOV Aidos",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEMTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "ZHUBANOV Sanzhar",
+      "nameS": "ZHUBANOV Sanzhar",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEMTEAM-------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KHARKI Iskender",
+      "nameS": "KHARKI Iskender",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEMTEAM-------KAZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

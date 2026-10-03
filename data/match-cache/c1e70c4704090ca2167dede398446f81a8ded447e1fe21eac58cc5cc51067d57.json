@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "SOKTHAVY P / LUANG AMATH N",
+  "away": "THONGSA-NGA W / CHAROENKITAMORN C",
+  "homePlayers": [
+    {
+      "name": "SOKTHAVY Phonesack",
+      "nameS": "SOKTHAVY Phonesack",
+      "org": "LAO",
+      "orgName": "LAO",
+      "country": "LAO",
+      "reg": "BDMMDOUBLES----LAO01",
+      "photo": ""
+    },
+    {
+      "name": "LUANG AMATH Namboun",
+      "nameS": "LUANG AMATH Namboun",
+      "org": "LAO",
+      "orgName": "LAO",
+      "country": "LAO",
+      "reg": "BDMMDOUBLES----LAO01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "THONGSA-NGA Worrapol",
+      "nameS": "THONGSA-NGA Worrapol",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMDOUBLES----THA02",
+      "photo": ""
+    },
+    {
+      "name": "CHAROENKITAMORN Chaloempon",
+      "nameS": "CHAROENKITAMORN Chaloempon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMDOUBLES----THA02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

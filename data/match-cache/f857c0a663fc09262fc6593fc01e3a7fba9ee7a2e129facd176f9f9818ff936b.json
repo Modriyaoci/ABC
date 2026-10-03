@@ -1,0 +1,304 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "China",
+  "away": "Japan",
+  "homePlayers": [
+    {
+      "name": "LU Chang",
+      "nameS": "LU Chang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "PAN Fengying",
+      "nameS": "PAN Fengying",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LIANG Jing",
+      "nameS": "LIANG Jing",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "JIANG Xintong",
+      "nameS": "JIANG Xintong",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "SHI Zihan",
+      "nameS": "SHI Zihan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Chan",
+      "nameS": "LIU Chan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LI Xiaoqing",
+      "nameS": "LI Xiaoqing",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "YANG Yue",
+      "nameS": "YANG Yue",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "HUANG Sitong",
+      "nameS": "HUANG Sitong",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "HOU Changqing",
+      "nameS": "HOU Changqing",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHANG Pingping",
+      "nameS": "ZHANG Pingping",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "YUAN Lingjie",
+      "nameS": "YUAN Lingjie",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "QU Wenna",
+      "nameS": "QU Wenna",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Xuedan",
+      "nameS": "LIU Xuedan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHENG Yun",
+      "nameS": "ZHENG Yun",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Yuting",
+      "nameS": "LIU Yuting",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "HBLWTEAM7------CHN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "HATSUMI Miyako",
+      "nameS": "HATSUMI Miyako",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KINJO Arisa",
+      "nameS": "KINJO Arisa",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NAKAYAMA Kaho",
+      "nameS": "NAKAYAMA Kaho",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SAHARA Naoko",
+      "nameS": "SAHARA Naoko",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "WADA Kaoru",
+      "nameS": "WADA Kaoru",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "AIZAWA Natsuki",
+      "nameS": "AIZAWA Natsuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUJITA Asuka",
+      "nameS": "FUJITA Asuka",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KAMETANI Sakura",
+      "nameS": "KAMETANI Sakura",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SASAKI Haruno",
+      "nameS": "SASAKI Haruno",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MATSUURA Minami",
+      "nameS": "MATSUURA Minami",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "GRAY Clare",
+      "nameS": "GRAY Clare",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YOSHIDOME Yuki",
+      "nameS": "YOSHIDOME Yuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NAKAO Ai",
+      "nameS": "NAKAO Ai",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "UESHIMA Aki",
+      "nameS": "UESHIMA Aki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HIGA Kaede",
+      "nameS": "HIGA Kaede",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "ISHIKAWA Sora",
+      "nameS": "ISHIKAWA Sora",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "HBLWTEAM7------JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

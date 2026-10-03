@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "SUHAIL U / KHAN A",
+  "away": "KULAMBAYEVA Z / ZHUKAYEV B",
+  "homePlayers": [
+    {
+      "name": "SUHAIL Ushna",
+      "nameS": "SUHAIL Ushna",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TENXDOUBLES----PAK02",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Aqeel",
+      "nameS": "KHAN Aqeel",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TENXDOUBLES----PAK02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KULAMBAYEVA Zhibek",
+      "nameS": "KULAMBAYEVA Zhibek",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENXDOUBLES----KAZ02",
+      "photo": ""
+    },
+    {
+      "name": "ZHUKAYEV Beibit",
+      "nameS": "ZHUKAYEV Beibit",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENXDOUBLES----KAZ02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

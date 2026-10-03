@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "MATSUMOTO M / FUKUSHIMA Y",
+  "away": "PULLELA G / JOLLY T",
+  "homePlayers": [
+    {
+      "name": "MATSUMOTO Mayu",
+      "nameS": "MATSUMOTO Mayu",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMWDOUBLES----JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUKUSHIMA Yuki",
+      "nameS": "FUKUSHIMA Yuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BDMWDOUBLES----JPN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "PULLELA Gayatri Gopichand",
+      "nameS": "PULLELA Gayatri Gopichand",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWDOUBLES----IND01",
+      "photo": ""
+    },
+    {
+      "name": "JOLLY Treesa",
+      "nameS": "JOLLY Treesa",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMWDOUBLES----IND01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

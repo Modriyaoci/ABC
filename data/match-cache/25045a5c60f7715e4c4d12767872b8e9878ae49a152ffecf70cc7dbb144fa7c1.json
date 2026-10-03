@@ -1,0 +1,97 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Indonesia",
+  "away": "Pakistan",
+  "homePlayers": [
+    {
+      "name": "PUTRI Cindy",
+      "nameS": "PUTRI Cindy",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "NEBUCHADNEZZAR Almaira",
+      "nameS": "NEBUCHADNEZZAR Almaira",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "RASMI Citra",
+      "nameS": "RASMI Citra",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "MAHARANI Ni",
+      "nameS": "MAHARANI Ni",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "SUDARNITA Komang",
+      "nameS": "SUDARNITA Komang",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWTEAM-------INA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KHAN Kalsoom",
+      "nameS": "KHAN Kalsoom",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TTEWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Fatima",
+      "nameS": "KHAN Fatima",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TTEWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Aleena",
+      "nameS": "KHAN Aleena",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TTEWTEAM-------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "ASLAM Nosheen",
+      "nameS": "ASLAM Nosheen",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TTEWTEAM-------PAK01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

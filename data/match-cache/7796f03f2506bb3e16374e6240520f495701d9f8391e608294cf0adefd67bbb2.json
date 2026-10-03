@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "KHAN A / SHOAIB M",
+  "away": "HO C / HSU Y",
+  "homePlayers": [
+    {
+      "name": "KHAN Aqeel",
+      "nameS": "KHAN Aqeel",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TENMDOUBLES----PAK02",
+      "photo": ""
+    },
+    {
+      "name": "SHOAIB Muhammad",
+      "nameS": "SHOAIB Muhammad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "TENMDOUBLES----PAK02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "HO Chenjui",
+      "nameS": "HO Chenjui",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TENMDOUBLES----TPE02",
+      "photo": ""
+    },
+    {
+      "name": "HSU Yu-hsiou",
+      "nameS": "HSU Yu-hsiou",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TENMDOUBLES----TPE02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

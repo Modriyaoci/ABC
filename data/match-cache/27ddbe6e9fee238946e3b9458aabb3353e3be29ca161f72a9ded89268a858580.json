@@ -1,0 +1,196 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Korea",
+  "away": "China",
+  "homePlayers": [
+    {
+      "name": "KI Dong Ju",
+      "nameS": "KI Dong Ju",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Sang Yong",
+      "nameS": "PARK Sang Yong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JEON Hyeok Jin",
+      "nameS": "JEON Hyeok Jin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHOI Ji Hoon",
+      "nameS": "CHOI Ji Hoon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Won Ho",
+      "nameS": "KIM Won Ho",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Jaeh Yun",
+      "nameS": "KIM Jaeh Yun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JO Song Hyun",
+      "nameS": "JO Song Hyun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SEO Seung Jae",
+      "nameS": "SEO Seung Jae",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KANG Min Hyuk",
+      "nameS": "KANG Min Hyuk",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "YOO Tae Bin",
+      "nameS": "YOO Tae Bin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "BDMMTEAM-------KOR01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "FENG Yan Zhe",
+      "nameS": "FENG Yan Zhe",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "JIANG Zhen Bang",
+      "nameS": "JIANG Zhen Bang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LI Shifeng",
+      "nameS": "LI Shifeng",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "SHI Yuqi",
+      "nameS": "SHI Yuqi",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "HE Ji Ting",
+      "nameS": "HE Ji Ting",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LIANG Weikeng",
+      "nameS": "LIANG Weikeng",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Yi",
+      "nameS": "LIU Yi",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Chang",
+      "nameS": "WANG Chang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LU Guangzu",
+      "nameS": "LU Guangzu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WENG Hongyang",
+      "nameS": "WENG Hongyang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMMTEAM-------CHN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

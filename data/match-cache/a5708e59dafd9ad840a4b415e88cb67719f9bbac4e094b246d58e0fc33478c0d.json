@@ -1,0 +1,430 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "China",
+  "away": "Philippines",
+  "homePlayers": [
+    {
+      "name": "LI Xiaoyang",
+      "nameS": "LI Xiaoyang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Lei",
+      "nameS": "WANG Lei",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LI Yanen",
+      "nameS": "LI Yanen",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHOU Yi",
+      "nameS": "ZHOU Yi",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHU Xudong",
+      "nameS": "ZHU Xudong",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "HAN Xiao",
+      "nameS": "HAN Xiao",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "CAO Jie",
+      "nameS": "CAO Jie",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHANG Mingxin",
+      "nameS": "ZHANG Mingxin",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Chen",
+      "nameS": "CHEN Chen",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "JING Hui",
+      "nameS": "JING Hui",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LUAN Chenchen",
+      "nameS": "LUAN Chenchen",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "FU Wenlong",
+      "nameS": "FU Wenlong",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Lizi",
+      "nameS": "WANG Lizi",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "SUN Guangxuan",
+      "nameS": "SUN Guangxuan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "ZHANG Yinfan",
+      "nameS": "ZHANG Yinfan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LI Ningji",
+      "nameS": "LI Ningji",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "SUO Xudi",
+      "nameS": "SUO Xudi",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WU Anjun",
+      "nameS": "WU Anjun",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "SUN Yicong",
+      "nameS": "SUN Yicong",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Weiyi",
+      "nameS": "WANG Weiyi",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Xiang",
+      "nameS": "WANG Xiang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "FU Huachen",
+      "nameS": "FU Huachen",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "JU Haoyu",
+      "nameS": "JU Haoyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "HUADAN Cairang",
+      "nameS": "HUADAN Cairang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BBLMTEAM9------CHN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "PAREJA Jennald",
+      "nameS": "PAREJA Jennald",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "GORPIDO Cer Gio",
+      "nameS": "GORPIDO Cer Gio",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "BOSITO Erwin",
+      "nameS": "BOSITO Erwin",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "MANAIG Mark Steven",
+      "nameS": "MANAIG Mark Steven",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "SAMUEL Renato Jr.",
+      "nameS": "SAMUEL Renato Jr.",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "BERONILLA Mark John Philip",
+      "nameS": "BERONILLA Mark John Philip",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "PAULE Nigel",
+      "nameS": "PAULE Nigel",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "VARGAS John Reymond",
+      "nameS": "VARGAS John Reymond",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "SANTOS Razhley",
+      "nameS": "SANTOS Razhley",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "LIGUAYAN Ferdinand Jr.",
+      "nameS": "LIGUAYAN Ferdinand Jr.",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "MATANGUIHAN John Leonel",
+      "nameS": "MATANGUIHAN John Leonel",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "DE VERA Liam Alexei",
+      "nameS": "DE VERA Liam Alexei",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "ALTAREJOS Kent Joerend",
+      "nameS": "ALTAREJOS Kent Joerend",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "MAULIT Joven Kenneth",
+      "nameS": "MAULIT Joven Kenneth",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "NISNISAN James Vincent",
+      "nameS": "NISNISAN James Vincent",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "PINEDA Joshua",
+      "nameS": "PINEDA Joshua",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "DE GUZMAN Amiel",
+      "nameS": "DE GUZMAN Amiel",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "GONZAGA Francis Thomas",
+      "nameS": "GONZAGA Francis Thomas",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "DIARAO Junmar",
+      "nameS": "DIARAO Junmar",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "CAROLINO Mar-joseph",
+      "nameS": "CAROLINO Mar-joseph",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "NEROSA Raymond",
+      "nameS": "NEROSA Raymond",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "JASMIN Romeo Jr.",
+      "nameS": "JASMIN Romeo Jr.",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

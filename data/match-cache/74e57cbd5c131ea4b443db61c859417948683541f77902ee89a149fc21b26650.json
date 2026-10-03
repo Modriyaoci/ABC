@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Vietnam",
+  "away": "Qatar",
+  "homePlayers": [
+    {
+      "name": "THI TRA MY Nguyen",
+      "nameS": "THI TRA MY Nguyen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Thi Thanh Thuy",
+      "nameS": "TRAN Thi Thanh Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "BUI Thi Anh Thao",
+      "nameS": "BUI Thi Anh Thao",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "PHAM Quynh Huong",
+      "nameS": "PHAM Quynh Huong",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Thanh Thuy",
+      "nameS": "LE Thanh Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "VI Thi Yen Nhi",
+      "nameS": "VI Thi Yen Nhi",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Nhu Anh",
+      "nameS": "LE Nhu Anh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "NGUYEN Khanh Dang",
+      "nameS": "NGUYEN Khanh Dang",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "VO Thi Kim Thoa",
+      "nameS": "VO Thi Kim Thoa",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LUU Thi Hue",
+      "nameS": "LUU Thi Hue",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "LE Thi Yen",
+      "nameS": "LE Thi Yen",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Thi Bich Thuy",
+      "nameS": "TRAN Thi Bich Thuy",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "VVOWTEAM6------VIE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ALSALMAN Lamis",
+      "nameS": "ALSALMAN Lamis",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "SULTAN AL-ALAWI Aisha",
+      "nameS": "SULTAN AL-ALAWI Aisha",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ABOUEITA Dana",
+      "nameS": "ABOUEITA Dana",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "SHALABY Nelly",
+      "nameS": "SHALABY Nelly",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MOUHOUB Meriem",
+      "nameS": "MOUHOUB Meriem",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ELWALEED M EISA Ludan",
+      "nameS": "ELWALEED M EISA Ludan",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "DEYAB Almayasa",
+      "nameS": "DEYAB Almayasa",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ALMADHOUN Sumaia",
+      "nameS": "ALMADHOUN Sumaia",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MAHMOUD Lujain",
+      "nameS": "MAHMOUD Lujain",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Tasneem",
+      "nameS": "ALI Tasneem",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MABROUK Janna",
+      "nameS": "MABROUK Janna",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "GADIAGA Penda Fatma",
+      "nameS": "GADIAGA Penda Fatma",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

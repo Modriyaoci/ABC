@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "SAWETTABUT S / PARANANG O",
+  "away": "KUAI M / WANG M",
+  "homePlayers": [
+    {
+      "name": "SAWETTABUT Suthasini",
+      "nameS": "SAWETTABUT Suthasini",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEWDOUBLES----THA01",
+      "photo": ""
+    },
+    {
+      "name": "PARANANG Orawan",
+      "nameS": "PARANANG Orawan",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEWDOUBLES----THA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KUAI Man",
+      "nameS": "KUAI Man",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEWDOUBLES----CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Manyu",
+      "nameS": "WANG Manyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEWDOUBLES----CHN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

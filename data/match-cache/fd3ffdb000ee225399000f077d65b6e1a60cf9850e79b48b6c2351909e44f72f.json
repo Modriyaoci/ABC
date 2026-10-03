@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Philippines",
+  "away": "Indonesia",
+  "homePlayers": [
+    {
+      "name": "BAGUNAS Bryan",
+      "nameS": "BAGUNAS Bryan",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "YBANEZ Josh",
+      "nameS": "YBANEZ Josh",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "RETAMAR Ave Joshua",
+      "nameS": "RETAMAR Ave Joshua",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "GARCIA Jude",
+      "nameS": "GARCIA Jude",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "VILLADOS Adrian",
+      "nameS": "VILLADOS Adrian",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "MENDOZA Lirick John",
+      "nameS": "MENDOZA Lirick John",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "TAGUIBOLOS Rwenzmel",
+      "nameS": "TAGUIBOLOS Rwenzmel",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "ORDIALES Leo",
+      "nameS": "ORDIALES Leo",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "ESPEJO Marck Jesus",
+      "nameS": "ESPEJO Marck Jesus",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "JOSAFAT Lloyd",
+      "nameS": "JOSAFAT Lloyd",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "BUDDIN Michaelo",
+      "nameS": "BUDDIN Michaelo",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "MAGALAMAN Joshua",
+      "nameS": "MAGALAMAN Joshua",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOMTEAM6------PHI01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ARABI Boy Arnez",
+      "nameS": "ARABI Boy Arnez",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "KURNIAWAN Hendra",
+      "nameS": "KURNIAWAN Hendra",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "MALIZI Muhammad",
+      "nameS": "MALIZI Muhammad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "GUMILAR Ahmad",
+      "nameS": "GUMILAR Ahmad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "PUTRATAMA Fahri Septian",
+      "nameS": "PUTRATAMA Fahri Septian",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "FAUZAN Rama Fazza",
+      "nameS": "FAUZAN Rama Fazza",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "HALIM Farhan",
+      "nameS": "HALIM Farhan",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ZULFIKRI Dio",
+      "nameS": "ZULFIKRI Dio",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ABHINAYA RAKHA Fahreza",
+      "nameS": "ABHINAYA RAKHA Fahreza",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "NIBRAS Fauzan",
+      "nameS": "NIBRAS Fauzan",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "DANIEL PRATAMA Alfin",
+      "nameS": "DANIEL PRATAMA Alfin",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ARDIAN Sigit",
+      "nameS": "ARDIAN Sigit",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHAN Y / NG T",
+  "away": "JIANG Z / WEI Y",
+  "homePlayers": [
+    {
+      "name": "CHAN Yin Chak",
+      "nameS": "CHAN Yin Chak",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMXDOUBLES----HKG02",
+      "photo": ""
+    },
+    {
+      "name": "NG Tsz Yau",
+      "nameS": "NG Tsz Yau",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMXDOUBLES----HKG02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "JIANG Zhen Bang",
+      "nameS": "JIANG Zhen Bang",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMXDOUBLES----CHN02",
+      "photo": ""
+    },
+    {
+      "name": "WEI Yaxin",
+      "nameS": "WEI Yaxin",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "BDMXDOUBLES----CHN02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

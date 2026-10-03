@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "India",
+  "away": "Korea",
+  "homePlayers": [
+    {
+      "name": "BALWAN SINGH Amit",
+      "nameS": "BALWAN SINGH Amit",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "JEBARAJ Joel Benjamin",
+      "nameS": "JEBARAJ Joel Benjamin",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "CHATHAM Muhammad",
+      "nameS": "CHATHAM Muhammad",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "YADAV Chirag",
+      "nameS": "YADAV Chirag",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "KOTTARATHIL Anand",
+      "nameS": "KOTTARATHIL Anand",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "RAI Ashwal",
+      "nameS": "RAI Ashwal",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "CHARLES Jerome Vinith",
+      "nameS": "CHARLES Jerome Vinith",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "LAD Om Vasant",
+      "nameS": "LAD Om Vasant",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "APPAVU Muthusamy",
+      "nameS": "APPAVU Muthusamy",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "EANTHUNGAL JOSEPH John Joseph",
+      "nameS": "EANTHUNGAL JOSEPH John Joseph",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SINGH Shikhar",
+      "nameS": "SINGH Shikhar",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    },
+    {
+      "name": "PULPARAMBIL Hemanth",
+      "nameS": "PULPARAMBIL Hemanth",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "VVOMTEAM6------IND01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHA Youngseok",
+      "nameS": "CHA Youngseok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HWANG Seungbin",
+      "nameS": "HWANG Seungbin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Kyeongmin",
+      "nameS": "PARK Kyeongmin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HEO Subong",
+      "nameS": "HEO Subong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HAN Taejun",
+      "nameS": "HAN Taejun",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LIM Sungjin",
+      "nameS": "LIM Sungjin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JEONG Hanyong",
+      "nameS": "JEONG Hanyong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "IM Donghyeok",
+      "nameS": "IM Donghyeok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "CHOI Junhyeok",
+      "nameS": "CHOI Junhyeok",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Sanghyeon",
+      "nameS": "LEE Sanghyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "SHIN Hojin",
+      "nameS": "SHIN Hojin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LIM Jaeyoung",
+      "nameS": "LIM Jaeyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOMTEAM6------KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

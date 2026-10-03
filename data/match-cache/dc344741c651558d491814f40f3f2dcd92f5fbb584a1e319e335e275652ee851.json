@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Kazakhstan",
+  "away": "Philippines",
+  "homePlayers": [
+    {
+      "name": "NURBERGENOVA Perizat",
+      "nameS": "NURBERGENOVA Perizat",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KHAZOVA Natalya",
+      "nameS": "KHAZOVA Natalya",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "FOMENKO Yuliya",
+      "nameS": "FOMENKO Yuliya",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "UFIMTSEVA Polina",
+      "nameS": "UFIMTSEVA Polina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "BELCHENKO Margarita",
+      "nameS": "BELCHENKO Margarita",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "BELOVA Kristina",
+      "nameS": "BELOVA Kristina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "SYROYESHKINA Zhanna",
+      "nameS": "SYROYESHKINA Zhanna",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "BEKET Madina",
+      "nameS": "BEKET Madina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "NIKITINA Tatyana",
+      "nameS": "NIKITINA Tatyana",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "MULKIBAYEVA Aigul",
+      "nameS": "MULKIBAYEVA Aigul",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "YATSKIV Tatyana",
+      "nameS": "YATSKIV Tatyana",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KUZNETSOVA Irina",
+      "nameS": "KUZNETSOVA Irina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NITURA Shaina Marie",
+      "nameS": "NITURA Shaina Marie",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "BELEN Mhicaela",
+      "nameS": "BELEN Mhicaela",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "LAURE Ejiya",
+      "nameS": "LAURE Ejiya",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "de GUZMAN Julia Melissa",
+      "nameS": "de GUZMAN Julia Melissa",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "CANINO Angel Anne",
+      "nameS": "CANINO Angel Anne",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "PALOMATA Dell",
+      "nameS": "PALOMATA Dell",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "SOLOMON Alyssa Jae",
+      "nameS": "SOLOMON Alyssa Jae",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "PROVIDO Amie",
+      "nameS": "PROVIDO Amie",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "GAGATE Thea Allison",
+      "nameS": "GAGATE Thea Allison",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "ALBA Marionne Angelique",
+      "nameS": "ALBA Marionne Angelique",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "JAZARENO Ylizyeth Justine",
+      "nameS": "JAZARENO Ylizyeth Justine",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "YTANG Nina",
+      "nameS": "YTANG Nina",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

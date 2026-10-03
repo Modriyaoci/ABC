@@ -1,0 +1,196 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Indonesia",
+  "away": "Thailand",
+  "homePlayers": [
+    {
+      "name": "FARHAN Alwi",
+      "nameS": "FARHAN Alwi",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "SYAHNAWI Amri",
+      "nameS": "SYAHNAWI Amri",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "MARTHIN Daniel",
+      "nameS": "MARTHIN Daniel",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ALFIAN Fajar",
+      "nameS": "ALFIAN Fajar",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "CHRISTIE Jonatan",
+      "nameS": "CHRISTIE Jonatan",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "CARNANDO Leo R.",
+      "nameS": "CARNANDO Leo R.",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "YUSUF Muhamad",
+      "nameS": "YUSUF Muhamad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "JOAQUIN Nikolaus",
+      "nameS": "JOAQUIN Nikolaus",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "FIKRI Muh. Shohibul",
+      "nameS": "FIKRI Muh. Shohibul",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "UBAIDILLAH Moh Zaki",
+      "nameS": "UBAIDILLAH Moh Zaki",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMTEAM-------INA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "VITIDSARN Kunlavut",
+      "nameS": "VITIDSARN Kunlavut",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "TEERARATSAKUL Panitchaphon",
+      "nameS": "TEERARATSAKUL Panitchaphon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "ARREE Puritat",
+      "nameS": "ARREE Puritat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PUAVARANUKROH Dechapol",
+      "nameS": "PUAVARANUKROH Dechapol",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "OUPTHONG Ruttanapak",
+      "nameS": "OUPTHONG Ruttanapak",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "TEERARATSAKUL Pakkapon",
+      "nameS": "TEERARATSAKUL Pakkapon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SUKPHUN Peeratchai",
+      "nameS": "SUKPHUN Peeratchai",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "THONGSA-NGA Worrapol",
+      "nameS": "THONGSA-NGA Worrapol",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "CHAROENKITAMORN Chaloempon",
+      "nameS": "CHAROENKITAMORN Chaloempon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "YIMJIT Tanawat",
+      "nameS": "YIMJIT Tanawat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

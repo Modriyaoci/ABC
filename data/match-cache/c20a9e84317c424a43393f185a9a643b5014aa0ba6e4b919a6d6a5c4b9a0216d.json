@@ -1,0 +1,79 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "DPR Korea",
+  "away": "Bangladesh",
+  "homePlayers": [
+    {
+      "name": "KIM Kum Yong",
+      "nameS": "KIM Kum Yong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWTEAM-------PRK01",
+      "photo": ""
+    },
+    {
+      "name": "PYON Song Gyong",
+      "nameS": "PYON Song Gyong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWTEAM-------PRK01",
+      "photo": ""
+    },
+    {
+      "name": "CHOE Jong Im",
+      "nameS": "CHOE Jong Im",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWTEAM-------PRK01",
+      "photo": ""
+    },
+    {
+      "name": "CHA Su Yong",
+      "nameS": "CHA Su Yong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWTEAM-------PRK01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SOMA Sonam",
+      "nameS": "SOMA Sonam",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "TUSHI Samanta",
+      "nameS": "TUSHI Samanta",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEWTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "MAHI Nowrin",
+      "nameS": "MAHI Nowrin",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEWTEAM-------BAN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

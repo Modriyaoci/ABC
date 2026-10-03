@@ -1,0 +1,304 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Hong Kong, China",
+  "away": "Qatar",
+  "homePlayers": [
+    {
+      "name": "CHAN Tsz",
+      "nameS": "CHAN Tsz",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "HON Hok",
+      "nameS": "HON Hok",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WONG Ling",
+      "nameS": "WONG Ling",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "TSE Wing",
+      "nameS": "TSE Wing",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Siu",
+      "nameS": "LEE Siu",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LAW Chun",
+      "nameS": "LAW Chun",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LEUNG Laam",
+      "nameS": "LEUNG Laam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "ZOU Yuk",
+      "nameS": "ZOU Yuk",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LAU Ka",
+      "nameS": "LAU Ka",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Hau",
+      "nameS": "LEE Hau",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WONG Kin",
+      "nameS": "WONG Kin",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "KAN Yik",
+      "nameS": "KAN Yik",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "KAN Yik",
+      "nameS": "KAN Yik",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHUNG Shu",
+      "nameS": "CHUNG Shu",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "YIP Chi",
+      "nameS": "YIP Chi",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Yun",
+      "nameS": "LIN Yun",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "HBLMTEAM7------HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "MADADI Ahmad",
+      "nameS": "MADADI Ahmad",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Youssef",
+      "nameS": "ALI Youssef",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "DHIB Saifdinne",
+      "nameS": "DHIB Saifdinne",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "SOUSSOU Malek",
+      "nameS": "SOUSSOU Malek",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ABDALLA Abdelrahman",
+      "nameS": "ABDALLA Abdelrahman",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MARZO Frankis",
+      "nameS": "MARZO Frankis",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "CAPOTE Rafael",
+      "nameS": "CAPOTE Rafael",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MURAD Abdulrazzaq",
+      "nameS": "MURAD Abdulrazzaq",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MEMISEVIC Eldar",
+      "nameS": "MEMISEVIC Eldar",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MEGDICH Nasreddine",
+      "nameS": "MEGDICH Nasreddine",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ZEMZEMI Firas",
+      "nameS": "ZEMZEMI Firas",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ABDELRHEM Ahmed",
+      "nameS": "ABDELRHEM Ahmed",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "GUEHIS Amine",
+      "nameS": "GUEHIS Amine",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "HAMAM Mohamedali",
+      "nameS": "HAMAM Mohamedali",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ZAKKAR Ameen",
+      "nameS": "ZAKKAR Ameen",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "EBAID Ebrahim",
+      "nameS": "EBAID Ebrahim",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "HBLMTEAM7------QAT01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

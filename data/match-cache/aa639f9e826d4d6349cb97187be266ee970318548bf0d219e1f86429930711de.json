@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "THAPA E / SHRESTHA N",
+  "away": "TAN Z / LAI C",
+  "homePlayers": [
+    {
+      "name": "THAPA Evana",
+      "nameS": "THAPA Evana",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "TTEWDOUBLES----NEP01",
+      "photo": ""
+    },
+    {
+      "name": "SHRESTHA Nabita",
+      "nameS": "SHRESTHA Nabita",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "TTEWDOUBLES----NEP01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "TAN Zhao Yun",
+      "nameS": "TAN Zhao Yun",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEWDOUBLES----SGP02",
+      "photo": ""
+    },
+    {
+      "name": "LAI Chloe",
+      "nameS": "LAI Chloe",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEWDOUBLES----SGP02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

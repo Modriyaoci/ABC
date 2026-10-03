@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "BHAMBRI Y / SURESH D",
+  "away": "YEVSEYEV D / ZHUKAYEV B",
+  "homePlayers": [
+    {
+      "name": "BHAMBRI Yuki",
+      "nameS": "BHAMBRI Yuki",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TENMDOUBLES----IND01",
+      "photo": ""
+    },
+    {
+      "name": "SURESH Dhakshineswar",
+      "nameS": "SURESH Dhakshineswar",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TENMDOUBLES----IND01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "YEVSEYEV Denis",
+      "nameS": "YEVSEYEV Denis",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENMDOUBLES----KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "ZHUKAYEV Beibit",
+      "nameS": "ZHUKAYEV Beibit",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENMDOUBLES----KAZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

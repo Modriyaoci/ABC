@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Kazakhstan",
+  "away": "Korea",
+  "homePlayers": [
+    {
+      "name": "NURBERGENOVA Perizat",
+      "nameS": "NURBERGENOVA Perizat",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KHAZOVA Natalya",
+      "nameS": "KHAZOVA Natalya",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "FOMENKO Yuliya",
+      "nameS": "FOMENKO Yuliya",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "UFIMTSEVA Polina",
+      "nameS": "UFIMTSEVA Polina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "BELCHENKO Margarita",
+      "nameS": "BELCHENKO Margarita",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "BELOVA Kristina",
+      "nameS": "BELOVA Kristina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "SYROYESHKINA Zhanna",
+      "nameS": "SYROYESHKINA Zhanna",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "BEKET Madina",
+      "nameS": "BEKET Madina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "NIKITINA Tatyana",
+      "nameS": "NIKITINA Tatyana",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "MULKIBAYEVA Aigul",
+      "nameS": "MULKIBAYEVA Aigul",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "YATSKIV Tatyana",
+      "nameS": "YATSKIV Tatyana",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KUZNETSOVA Irina",
+      "nameS": "KUZNETSOVA Irina",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "VVOWTEAM6------KAZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LEE Yelim",
+      "nameS": "LEE Yelim",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Dain",
+      "nameS": "KIM Dain",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "HAN Dahye",
+      "nameS": "HAN Dahye",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Eunjin",
+      "nameS": "PARK Eunjin",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "NA Hyunsoo",
+      "nameS": "NA Hyunsoo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "YUK Seoyoung",
+      "nameS": "YUK Seoyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Dahyeon",
+      "nameS": "LEE Dahyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "PARK Eunseo",
+      "nameS": "PARK Eunseo",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JUNG Hoyoung",
+      "nameS": "JUNG Hoyoung",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Suyeon",
+      "nameS": "LEE Suyeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KIM Hyoim",
+      "nameS": "KIM Hyoim",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    },
+    {
+      "name": "KANG Sohwi",
+      "nameS": "KANG Sohwi",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "VVOWTEAM6------KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

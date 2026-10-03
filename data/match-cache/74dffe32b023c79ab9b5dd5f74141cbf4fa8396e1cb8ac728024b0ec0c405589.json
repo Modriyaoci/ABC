@@ -1,0 +1,88 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Singapore",
+  "away": "Bangladesh",
+  "homePlayers": [
+    {
+      "name": "ELLSWORTH Le",
+      "nameS": "ELLSWORTH Le",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEMTEAM-------SGP01",
+      "photo": ""
+    },
+    {
+      "name": "QUEK Yong",
+      "nameS": "QUEK Yong",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEMTEAM-------SGP01",
+      "photo": ""
+    },
+    {
+      "name": "CHEW Zhe Yu",
+      "nameS": "CHEW Zhe Yu",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEMTEAM-------SGP01",
+      "photo": ""
+    },
+    {
+      "name": "CHUA Josh",
+      "nameS": "CHUA Josh",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEMTEAM-------SGP01",
+      "photo": ""
+    },
+    {
+      "name": "PANG Yew En",
+      "nameS": "PANG Yew En",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEMTEAM-------SGP01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "RIDOY Mohutasin",
+      "nameS": "RIDOY Mohutasin",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "IMON Imrul",
+      "nameS": "IMON Imrul",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "BAWM Ramhimlian",
+      "nameS": "BAWM Ramhimlian",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEMTEAM-------BAN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,286 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Japan",
+  "away": "Nepal",
+  "homePlayers": [
+    {
+      "name": "MIYAUCHI Wataru",
+      "nameS": "MIYAUCHI Wataru",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "ITO Gou Benjamin",
+      "nameS": "ITO Gou Benjamin",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SAKURANO Reo",
+      "nameS": "SAKURANO Reo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SUZUKI Declan Tora",
+      "nameS": "SUZUKI Declan Tora",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FLEMING Kendel Sean",
+      "nameS": "FLEMING Kendel Sean",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KUSUDA Jake Masayoshi",
+      "nameS": "KUSUDA Jake Masayoshi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SHIRAI Alexander James Douglas",
+      "nameS": "SHIRAI Alexander James Douglas",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SLATER Shoma Orlando",
+      "nameS": "SLATER Shoma Orlando",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TAKAHASHI Ibrahim",
+      "nameS": "TAKAHASHI Ibrahim",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HINZE Charles Matsumoto",
+      "nameS": "HINZE Charles Matsumoto",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "LAKE Lachlan Graham Shungo",
+      "nameS": "LAKE Lachlan Graham Shungo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TANIYAMA Makoto",
+      "nameS": "TANIYAMA Makoto",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FLEMING Alester",
+      "nameS": "FLEMING Alester",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TAKADA Tsuyoshi",
+      "nameS": "TAKADA Tsuyoshi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KUBOTA Kohei",
+      "nameS": "KUBOTA Kohei",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTMTEAM-------JPN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "BHURTEL Kushal",
+      "nameS": "BHURTEL Kushal",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "SHEIKH Mahamad Asif",
+      "nameS": "SHEIKH Mahamad Asif",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "JORA Sundeep",
+      "nameS": "JORA Sundeep",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "MALLA Kushal",
+      "nameS": "MALLA Kushal",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "JHA Gulshan Kumar",
+      "nameS": "JHA Gulshan Kumar",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "BAM Lokesh",
+      "nameS": "BAM Lokesh",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "KAMI Sompal",
+      "nameS": "KAMI Sompal",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "PAUDEL Rohit Kumar",
+      "nameS": "PAUDEL Rohit Kumar",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "LAMICHHANE Sandeep",
+      "nameS": "LAMICHHANE Sandeep",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "RAJBANSHI Lalit Narayan",
+      "nameS": "RAJBANSHI Lalit Narayan",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "AIREE Dipendra Singh",
+      "nameS": "AIREE Dipendra Singh",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "K C Karan",
+      "nameS": "K C Karan",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "MALLA Sher",
+      "nameS": "MALLA Sher",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "YADAV Nandan",
+      "nameS": "YADAV Nandan",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "SHEIKH Md Arif",
+      "nameS": "SHEIKH Md Arif",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "CKTMTEAM-------NEP01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "ZHENG H / LEONG O",
+  "away": "KHARKI I / MIRKADIROVA S",
+  "homePlayers": [
+    {
+      "name": "ZHENG Hong Wai",
+      "nameS": "ZHENG Hong Wai",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "TTEXDOUBLES----MAC02",
+      "photo": ""
+    },
+    {
+      "name": "LEONG On Na",
+      "nameS": "LEONG On Na",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "TTEXDOUBLES----MAC02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KHARKI Iskender",
+      "nameS": "KHARKI Iskender",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEXDOUBLES----KAZ02",
+      "photo": ""
+    },
+    {
+      "name": "MIRKADIROVA Sarvinoz",
+      "nameS": "MIRKADIROVA Sarvinoz",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TTEXDOUBLES----KAZ02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

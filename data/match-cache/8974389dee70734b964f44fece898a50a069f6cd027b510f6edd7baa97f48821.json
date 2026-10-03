@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "GANBAATAR M / KHERLENBAATAR S",
+  "away": "SMAGULOVA K / RAKHMETULLAYEVA N",
+  "homePlayers": [
+    {
+      "name": "GANBAATAR Myagmartseren",
+      "nameS": "GANBAATAR Myagmartseren",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMWDOUBLES----MGL02",
+      "photo": ""
+    },
+    {
+      "name": "KHERLENBAATAR Sarangua",
+      "nameS": "KHERLENBAATAR Sarangua",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMWDOUBLES----MGL02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SMAGULOVA Kamila",
+      "nameS": "SMAGULOVA Kamila",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMWDOUBLES----KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "RAKHMETULLAYEVA Nargiza",
+      "nameS": "RAKHMETULLAYEVA Nargiza",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "BDMWDOUBLES----KAZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

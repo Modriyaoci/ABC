@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "HSIEH S / TSENG C",
+  "away": "BHOSALE R / BHAMBRI Y",
+  "homePlayers": [
+    {
+      "name": "HSIEH Su-wei",
+      "nameS": "HSIEH Su-wei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TENXDOUBLES----TPE02",
+      "photo": ""
+    },
+    {
+      "name": "TSENG Chun-hsin",
+      "nameS": "TSENG Chun-hsin",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TENXDOUBLES----TPE02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "BHOSALE Rutuja",
+      "nameS": "BHOSALE Rutuja",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TENXDOUBLES----IND01",
+      "photo": ""
+    },
+    {
+      "name": "BHAMBRI Yuki",
+      "nameS": "BHAMBRI Yuki",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TENXDOUBLES----IND01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

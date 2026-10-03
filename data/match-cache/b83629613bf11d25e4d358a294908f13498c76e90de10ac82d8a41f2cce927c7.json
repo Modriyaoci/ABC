@@ -1,0 +1,70 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Macao, China",
+  "away": "Nepal",
+  "homePlayers": [
+    {
+      "name": "ZHU Yu Ling",
+      "nameS": "ZHU Yu Ling",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "TTEWTEAM-------MAC01",
+      "photo": ""
+    },
+    {
+      "name": "LEONG On Na",
+      "nameS": "LEONG On Na",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "TTEWTEAM-------MAC01",
+      "photo": ""
+    },
+    {
+      "name": "KUAN Cheok Lam",
+      "nameS": "KUAN Cheok Lam",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "TTEWTEAM-------MAC01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "POUDEL Yonggi",
+      "nameS": "POUDEL Yonggi",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "TTEWTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "THAPA Evana",
+      "nameS": "THAPA Evana",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "TTEWTEAM-------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "SHRESTHA Nabita",
+      "nameS": "SHRESTHA Nabita",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "TTEWTEAM-------NEP01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

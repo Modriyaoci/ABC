@@ -1,0 +1,448 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Hong Kong, China",
+  "away": "Chinese Taipei",
+  "homePlayers": [
+    {
+      "name": "YUNG Tsun Wai",
+      "nameS": "YUNG Tsun Wai",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WEN Tsz Yin Jordan",
+      "nameS": "WEN Tsz Yin Jordan",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "MOK Chun Lam",
+      "nameS": "MOK Chun Lam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHENG Hoi Ting",
+      "nameS": "CHENG Hoi Ting",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "TSUI Chak Pui",
+      "nameS": "TSUI Chak Pui",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHENG Yu Hin Oscar",
+      "nameS": "CHENG Yu Hin Oscar",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "NG Yau Pang",
+      "nameS": "NG Yau Pang",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "MA Hon Man Ashley",
+      "nameS": "MA Hon Man Ashley",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WU Tsz Tung",
+      "nameS": "WU Tsz Tung",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "FUNG Anson",
+      "nameS": "FUNG Anson",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHAN Sze Yue",
+      "nameS": "CHAN Sze Yue",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "TAM Ho Yin Benny",
+      "nameS": "TAM Ho Yin Benny",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LAM Lai Him",
+      "nameS": "LAM Lai Him",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHAN Cheuk Kiu",
+      "nameS": "CHAN Cheuk Kiu",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "CHAN Alexander Cheuk Hei",
+      "nameS": "CHAN Alexander Cheuk Hei",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "TSANG Kin Nam",
+      "nameS": "TSANG Kin Nam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "HUNG Wang Chak",
+      "nameS": "HUNG Wang Chak",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "KWOK Ching Connor",
+      "nameS": "KWOK Ching Connor",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WONG Yui Fung",
+      "nameS": "WONG Yui Fung",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "MOK Chun Pui",
+      "nameS": "MOK Chun Pui",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "FONG Chun Hei",
+      "nameS": "FONG Chun Hei",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Ho Chi Ryan",
+      "nameS": "LEE Ho Chi Ryan",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LEE Long Ching",
+      "nameS": "LEE Long Ching",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "LEUNG Ka Ho Sam",
+      "nameS": "LEUNG Ka Ho Sam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BBLMTEAM9------HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "CHEN Chen-wei",
+      "nameS": "CHEN Chen-wei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Hsiao-yun",
+      "nameS": "CHEN Hsiao-yun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HUANG Wei-sheng",
+      "nameS": "HUANG Wei-sheng",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Yu-li",
+      "nameS": "LIN Yu-li",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Ji-hong",
+      "nameS": "LIU Ji-hong",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Min-sih",
+      "nameS": "CHEN Min-sih",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "KAO Yu-wei",
+      "nameS": "KAO Yu-wei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LI I-wei",
+      "nameS": "LI I-wei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "YANG Chen-yu",
+      "nameS": "YANG Chen-yu",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHU Chia-en",
+      "nameS": "CHU Chia-en",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "TSAI Wei-tai",
+      "nameS": "TSAI Wei-tai",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHANG Hsiang",
+      "nameS": "CHANG Hsiang",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "YANG Po-hsiang",
+      "nameS": "YANG Po-hsiang",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "GUO Dinghong",
+      "nameS": "GUO Dinghong",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "KUO Tzu-chuan",
+      "nameS": "KUO Tzu-chuan",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Yu-chieh",
+      "nameS": "WANG Yu-chieh",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Yan-cheng",
+      "nameS": "WANG Yan-cheng",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Yi-wei",
+      "nameS": "LIN Yi-wei",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "YU Tsung-ju",
+      "nameS": "YU Tsung-ju",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HUANG Chieh-han",
+      "nameS": "HUANG Chieh-han",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Cheng-hao",
+      "nameS": "WANG Cheng-hao",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HSU Siang-sheng",
+      "nameS": "HSU Siang-sheng",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Yu-min",
+      "nameS": "LIN Yu-min",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIU Chih-jung",
+      "nameS": "LIU Chih-jung",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BBLMTEAM9------TPE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

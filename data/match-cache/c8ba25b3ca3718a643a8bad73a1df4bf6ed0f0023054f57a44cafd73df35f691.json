@@ -1,0 +1,88 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "China",
+  "away": "Thailand",
+  "homePlayers": [
+    {
+      "name": "HUANG Youzheng",
+      "nameS": "HUANG Youzheng",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Shidong",
+      "nameS": "LIN Shidong",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Chuqin",
+      "nameS": "WANG Chuqin",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WEN Ruibo",
+      "nameS": "WEN Ruibo",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEMTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "XIANG Peng",
+      "nameS": "XIANG Peng",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEMTEAM-------CHN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SANGUANSIN Phakpoom",
+      "nameS": "SANGUANSIN Phakpoom",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "TANCHAROEN Sarayut",
+      "nameS": "TANCHAROEN Sarayut",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PREECHAYAN Thitaphat",
+      "nameS": "PREECHAYAN Thitaphat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEMTEAM-------THA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

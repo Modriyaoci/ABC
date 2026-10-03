@@ -1,0 +1,70 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Thailand",
+  "away": "Kyrgyzstan",
+  "homePlayers": [
+    {
+      "name": "SANGUANSIN Phakpoom",
+      "nameS": "SANGUANSIN Phakpoom",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "TANCHAROEN Sarayut",
+      "nameS": "TANCHAROEN Sarayut",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PREECHAYAN Thitaphat",
+      "nameS": "PREECHAYAN Thitaphat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TTEMTEAM-------THA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "TOLOGONOV Nuradil",
+      "nameS": "TOLOGONOV Nuradil",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "TTEMTEAM-------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "KASYMOV Abai",
+      "nameS": "KASYMOV Abai",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "TTEMTEAM-------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "KASYMOV Atai",
+      "nameS": "KASYMOV Atai",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "TTEMTEAM-------KGZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

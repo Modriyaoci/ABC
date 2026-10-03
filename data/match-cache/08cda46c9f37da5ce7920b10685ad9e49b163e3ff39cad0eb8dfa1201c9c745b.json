@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Nepal",
+  "away": "Kyrgyzstan",
+  "homePlayers": [
+    {
+      "name": "THAGUNNA Niruta",
+      "nameS": "THAGUNNA Niruta",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "SUNAR Mina",
+      "nameS": "SUNAR Mina",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "REGMI Sumitra",
+      "nameS": "REGMI Sumitra",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "SAUD CHHETRI Basanti Kumari",
+      "nameS": "SAUD CHHETRI Basanti Kumari",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "BHANDARI Usha",
+      "nameS": "BHANDARI Usha",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "CHAND Laxmi",
+      "nameS": "CHAND Laxmi",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "KHATRI Sunita",
+      "nameS": "KHATRI Sunita",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "SUBEDI Aarati",
+      "nameS": "SUBEDI Aarati",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "NATH Pragati",
+      "nameS": "NATH Pragati",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "BUDHA MAGAR Salina",
+      "nameS": "BUDHA MAGAR Salina",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "KUNWAR Rima",
+      "nameS": "KUNWAR Rima",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    },
+    {
+      "name": "SHRESTHA Salina",
+      "nameS": "SHRESTHA Salina",
+      "org": "NEP",
+      "orgName": "NEP",
+      "country": "NEP",
+      "reg": "VVOWTEAM6------NEP01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "TULENOVA Gulmira Almasbekovna",
+      "nameS": "TULENOVA Gulmira Almasbekovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "BEISHENOVA Aizhanat",
+      "nameS": "BEISHENOVA Aizhanat",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "TKACHEVA Mariia Ivanovna",
+      "nameS": "TKACHEVA Mariia Ivanovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "MIRLAN KYZY Madina",
+      "nameS": "MIRLAN KYZY Madina",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "BOLOTBEKOVA Nurzhamal Bolotbekovna",
+      "nameS": "BOLOTBEKOVA Nurzhamal Bolotbekovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "BAIAMANOVA Raiana",
+      "nameS": "BAIAMANOVA Raiana",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ASAMIDINOVA Azemi Abdinabievna",
+      "nameS": "ASAMIDINOVA Azemi Abdinabievna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "SEIITBEKOVA Asema",
+      "nameS": "SEIITBEKOVA Asema",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "AMIRAKULOVA Saikal Azamatovna",
+      "nameS": "AMIRAKULOVA Saikal Azamatovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "YSKAKOVA Alfiia Bolotovna",
+      "nameS": "YSKAKOVA Alfiia Bolotovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "SUERKULOVA Zhanetta Bakytbekovna",
+      "nameS": "SUERKULOVA Zhanetta Bakytbekovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "AITBEKOVA Perizat Azizovna",
+      "nameS": "AITBEKOVA Perizat Azizovna",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOWTEAM6------KGZ01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

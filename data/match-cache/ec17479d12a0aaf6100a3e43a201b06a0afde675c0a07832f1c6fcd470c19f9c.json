@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "YANG P / HU L",
+  "away": "LAI S / GOH S",
+  "homePlayers": [
+    {
+      "name": "YANG Po-Hsuan",
+      "nameS": "YANG Po-Hsuan",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMXDOUBLES----TPE02",
+      "photo": ""
+    },
+    {
+      "name": "HU Ling-Fang",
+      "nameS": "HU Ling-Fang",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "BDMXDOUBLES----TPE02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LAI Shevon Jemie",
+      "nameS": "LAI Shevon Jemie",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMXDOUBLES----MAS02",
+      "photo": ""
+    },
+    {
+      "name": "GOH Soon Huat",
+      "nameS": "GOH Soon Huat",
+      "org": "MAS",
+      "orgName": "MAS",
+      "country": "MAS",
+      "reg": "BDMXDOUBLES----MAS02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

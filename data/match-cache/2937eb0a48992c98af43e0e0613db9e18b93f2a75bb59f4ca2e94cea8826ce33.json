@@ -1,0 +1,142 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Bangladesh",
+  "away": "India",
+  "homePlayers": [
+    {
+      "name": "OHIDUL Moajjam Hossain",
+      "nameS": "OHIDUL Moajjam Hossain",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "BDMMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "SINGHA Gourab",
+      "nameS": "SINGHA Gourab",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "BDMMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "JUMAR Al Amin",
+      "nameS": "JUMAR Al Amin",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "BDMMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "JAMAN Ayman Ibn",
+      "nameS": "JAMAN Ayman Ibn",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "BDMMTEAM-------BAN01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KAPILA Dhruv",
+      "nameS": "KAPILA Dhruv",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "HASEENA S. K. Prannoy",
+      "nameS": "HASEENA S. K. Prannoy",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "AMSAKARUNAN Hariharan",
+      "nameS": "AMSAKARUNAN Hariharan",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SHETTY Ayush",
+      "nameS": "SHETTY Ayush",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SEN Lakshya",
+      "nameS": "SEN Lakshya",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "KIDAMBI Srikanth",
+      "nameS": "KIDAMBI Srikanth",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "MANNEPALLI Tharun",
+      "nameS": "MANNEPALLI Tharun",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "RANKIREDDY Satwiksairaj",
+      "nameS": "RANKIREDDY Satwiksairaj",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SHETTY Chirag",
+      "nameS": "SHETTY Chirag",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "MADATHIL R Arjun",
+      "nameS": "MADATHIL R Arjun",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "BDMMTEAM-------IND01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

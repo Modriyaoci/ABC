@@ -1,0 +1,142 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Thailand",
+  "away": "Macau, China",
+  "homePlayers": [
+    {
+      "name": "VITIDSARN Kunlavut",
+      "nameS": "VITIDSARN Kunlavut",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "TEERARATSAKUL Panitchaphon",
+      "nameS": "TEERARATSAKUL Panitchaphon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "ARREE Puritat",
+      "nameS": "ARREE Puritat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PUAVARANUKROH Dechapol",
+      "nameS": "PUAVARANUKROH Dechapol",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "OUPTHONG Ruttanapak",
+      "nameS": "OUPTHONG Ruttanapak",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "TEERARATSAKUL Pakkapon",
+      "nameS": "TEERARATSAKUL Pakkapon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SUKPHUN Peeratchai",
+      "nameS": "SUKPHUN Peeratchai",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "THONGSA-NGA Worrapol",
+      "nameS": "THONGSA-NGA Worrapol",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "CHAROENKITAMORN Chaloempon",
+      "nameS": "CHAROENKITAMORN Chaloempon",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    },
+    {
+      "name": "YIMJIT Tanawat",
+      "nameS": "YIMJIT Tanawat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "BDMMTEAM-------THA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "PUI Pang Fong",
+      "nameS": "PUI Pang Fong",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "BDMMTEAM-------MAC01",
+      "photo": ""
+    },
+    {
+      "name": "PUI Chi Chon",
+      "nameS": "PUI Chi Chon",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "BDMMTEAM-------MAC01",
+      "photo": ""
+    },
+    {
+      "name": "LEONG Iok Chong",
+      "nameS": "LEONG Iok Chong",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "BDMMTEAM-------MAC01",
+      "photo": ""
+    },
+    {
+      "name": "VONG Kok Weng",
+      "nameS": "VONG Kok Weng",
+      "org": "MAC",
+      "orgName": "MAC",
+      "country": "MAC",
+      "reg": "BDMMTEAM-------MAC01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

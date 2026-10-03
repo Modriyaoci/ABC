@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHEAPCHANDEJ P / NAKLO T",
+  "away": "BACK D / JANG S",
+  "homePlayers": [
+    {
+      "name": "CHEAPCHANDEJ Patcharin",
+      "nameS": "CHEAPCHANDEJ Patcharin",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TENWDOUBLES----THA01",
+      "photo": ""
+    },
+    {
+      "name": "NAKLO Thasaporn",
+      "nameS": "NAKLO Thasaporn",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "TENWDOUBLES----THA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "BACK Dayeon",
+      "nameS": "BACK Dayeon",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TENWDOUBLES----KOR01",
+      "photo": ""
+    },
+    {
+      "name": "JANG Sujeong",
+      "nameS": "JANG Sujeong",
+      "org": "KOR",
+      "orgName": "KOR",
+      "country": "KOR",
+      "reg": "TENWDOUBLES----KOR01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

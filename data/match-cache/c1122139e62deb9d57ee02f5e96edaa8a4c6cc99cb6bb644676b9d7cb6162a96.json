@@ -1,0 +1,286 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Hong Kong, China",
+  "away": "Oman",
+  "homePlayers": [
+    {
+      "name": "MOHAMMAD Nizakat Khan",
+      "nameS": "MOHAMMAD Nizakat Khan",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "RATH Anshuman",
+      "nameS": "RATH Anshuman",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "HAYAT Babar",
+      "nameS": "HAYAT Babar",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "HAFEEZ Khan",
+      "nameS": "HAFEEZ Khan",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "MATHUR Shiv",
+      "nameS": "MATHUR Shiv",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "WASIF Shahid",
+      "nameS": "WASIF Shahid",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "MURTAZA Yasim",
+      "nameS": "MURTAZA Yasim",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "RANA Nasrulla",
+      "nameS": "RANA Nasrulla",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Ehsan",
+      "nameS": "KHAN Ehsan",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "SHUKLA Ayush Ashish",
+      "nameS": "SHUKLA Ayush Ashish",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "MOHAMMAD Ghazanfar",
+      "nameS": "MOHAMMAD Ghazanfar",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Mohammad Hassan",
+      "nameS": "KHAN Mohammad Hassan",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "MOHAMMAD Waheed",
+      "nameS": "MOHAMMAD Waheed",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Anas",
+      "nameS": "KHAN Anas",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    },
+    {
+      "name": "HUSSAIN Rajab",
+      "nameS": "HUSSAIN Rajab",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "CKTMTEAM-------HKG01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "AL BALUSHI Mohammed Ali",
+      "nameS": "AL BALUSHI Mohammed Ali",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    },
+    {
+      "name": "AL BALUSHI Shuaib",
+      "nameS": "AL BALUSHI Shuaib",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    },
+    {
+      "name": "AL BALUSHI Zubair",
+      "nameS": "AL BALUSHI Zubair",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    },
+    {
+      "name": "AL BALUSHI Abdul Wahid",
+      "nameS": "AL BALUSHI Abdul Wahid",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    },
+    {
+      "name": "SHIRALKAR Muzaffar",
+      "nameS": "SHIRALKAR Muzaffar",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    },
+    {
+      "name": "MOHAMMED Sufyan",
+      "nameS": "MOHAMMED Sufyan",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    },
+    {
+      "name": "AL BALUSHI Issa",
+      "nameS": "AL BALUSHI Issa",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    },
+    {
+      "name": "AL BALUSHI Abduljalil",
+      "nameS": "AL BALUSHI Abduljalil",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    },
+    {
+      "name": "AL BALUSHI Faris",
+      "nameS": "AL BALUSHI Faris",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    },
+    {
+      "name": "AL BALUSHI Samir",
+      "nameS": "AL BALUSHI Samir",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    },
+    {
+      "name": "AL-BULUSHI Nawed",
+      "nameS": "AL-BULUSHI Nawed",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    },
+    {
+      "name": "AL BALUSHI Wasim",
+      "nameS": "AL BALUSHI Wasim",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    },
+    {
+      "name": "AL BALUSHI Mohamed",
+      "nameS": "AL BALUSHI Mohamed",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    },
+    {
+      "name": "AL ZADJALI Ahmed",
+      "nameS": "AL ZADJALI Ahmed",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    },
+    {
+      "name": "AL BULUSHI Qais",
+      "nameS": "AL BULUSHI Qais",
+      "org": "OMA",
+      "orgName": "OMA",
+      "country": "OMA",
+      "reg": "CKTMTEAM-------OMA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "DESAI H / GHORPADE Y",
+  "away": "YIU K / NG W",
+  "homePlayers": [
+    {
+      "name": "DESAI Harmeet",
+      "nameS": "DESAI Harmeet",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEXDOUBLES----IND02",
+      "photo": ""
+    },
+    {
+      "name": "GHORPADE Yashaswini",
+      "nameS": "GHORPADE Yashaswini",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "TTEXDOUBLES----IND02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "YIU Kwan To",
+      "nameS": "YIU Kwan To",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEXDOUBLES----HKG02",
+      "photo": ""
+    },
+    {
+      "name": "NG Wing Lam",
+      "nameS": "NG Wing Lam",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEXDOUBLES----HKG02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

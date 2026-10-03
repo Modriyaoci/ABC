@@ -1,0 +1,97 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "DPR Korea",
+  "away": "China",
+  "homePlayers": [
+    {
+      "name": "KIM Kum Yong",
+      "nameS": "KIM Kum Yong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWTEAM-------PRK01",
+      "photo": ""
+    },
+    {
+      "name": "PYON Song Gyong",
+      "nameS": "PYON Song Gyong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWTEAM-------PRK01",
+      "photo": ""
+    },
+    {
+      "name": "CHOE Jong Im",
+      "nameS": "CHOE Jong Im",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWTEAM-------PRK01",
+      "photo": ""
+    },
+    {
+      "name": "CHA Su Yong",
+      "nameS": "CHA Su Yong",
+      "org": "PRK",
+      "orgName": "PRK",
+      "country": "PRK",
+      "reg": "TTEWTEAM-------PRK01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "FAN Shuhan",
+      "nameS": "FAN Shuhan",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEWTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Yi",
+      "nameS": "CHEN Yi",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEWTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "KUAI Man",
+      "nameS": "KUAI Man",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEWTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "SUN Yingsha",
+      "nameS": "SUN Yingsha",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEWTEAM-------CHN01",
+      "photo": ""
+    },
+    {
+      "name": "WANG Manyu",
+      "nameS": "WANG Manyu",
+      "org": "CHN",
+      "orgName": "CHN",
+      "country": "CHN",
+      "reg": "TTEWTEAM-------CHN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

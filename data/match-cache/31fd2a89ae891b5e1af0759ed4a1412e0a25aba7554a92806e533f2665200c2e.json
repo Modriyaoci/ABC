@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "HSU H / HUNG J",
+  "away": "SALEH M / RASHED R",
+  "homePlayers": [
+    {
+      "name": "HSU Hsien-chia",
+      "nameS": "HSU Hsien-chia",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEMDOUBLES----TPE02",
+      "photo": ""
+    },
+    {
+      "name": "HUNG Jing-kai",
+      "nameS": "HUNG Jing-kai",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "TTEMDOUBLES----TPE02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SALEH Mohamed",
+      "nameS": "SALEH Mohamed",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "TTEMDOUBLES----BRN01",
+      "photo": ""
+    },
+    {
+      "name": "RASHED Rashed",
+      "nameS": "RASHED Rashed",
+      "org": "BRN",
+      "orgName": "BRN",
+      "country": "BRN",
+      "reg": "TTEMDOUBLES----BRN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

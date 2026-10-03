@@ -1,0 +1,106 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Indonesia",
+  "away": "Singapore",
+  "homePlayers": [
+    {
+      "name": "PUTRI Cindy",
+      "nameS": "PUTRI Cindy",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "NEBUCHADNEZZAR Almaira",
+      "nameS": "NEBUCHADNEZZAR Almaira",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "RASMI Citra",
+      "nameS": "RASMI Citra",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "MAHARANI Ni",
+      "nameS": "MAHARANI Ni",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWTEAM-------INA01",
+      "photo": ""
+    },
+    {
+      "name": "SUDARNITA Komang",
+      "nameS": "SUDARNITA Komang",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "TTEWTEAM-------INA01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LOY Ming Ying",
+      "nameS": "LOY Ming Ying",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEWTEAM-------SGP01",
+      "photo": ""
+    },
+    {
+      "name": "SER Lin Qian",
+      "nameS": "SER Lin Qian",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEWTEAM-------SGP01",
+      "photo": ""
+    },
+    {
+      "name": "ZENG Jian",
+      "nameS": "ZENG Jian",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEWTEAM-------SGP01",
+      "photo": ""
+    },
+    {
+      "name": "TAN Zhao Yun",
+      "nameS": "TAN Zhao Yun",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEWTEAM-------SGP01",
+      "photo": ""
+    },
+    {
+      "name": "LAI Chloe",
+      "nameS": "LAI Chloe",
+      "org": "SGP",
+      "orgName": "SGP",
+      "country": "SGP",
+      "reg": "TTEWTEAM-------SGP01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

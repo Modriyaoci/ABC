@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "UULENSOLONGO U / KHISHIGCHULUUN D",
+  "away": "NGUYEN D / TRAN D",
+  "homePlayers": [
+    {
+      "name": "UULENSOLONGO Usukh-ireedui",
+      "nameS": "UULENSOLONGO Usukh-ireedui",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMMDOUBLES----MGL02",
+      "photo": ""
+    },
+    {
+      "name": "KHISHIGCHULUUN Dulguun",
+      "nameS": "KHISHIGCHULUUN Dulguun",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "BDMMDOUBLES----MGL02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "NGUYEN Dinh Hoang",
+      "nameS": "NGUYEN Dinh Hoang",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "BDMMDOUBLES----VIE01",
+      "photo": ""
+    },
+    {
+      "name": "TRAN Dinh Manh",
+      "nameS": "TRAN Dinh Manh",
+      "org": "VIE",
+      "orgName": "VIE",
+      "country": "VIE",
+      "reg": "BDMMDOUBLES----VIE01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

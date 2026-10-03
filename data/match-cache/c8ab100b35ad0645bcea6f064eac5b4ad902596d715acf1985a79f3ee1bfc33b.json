@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Pakistan",
+  "away": "Uzbekistan",
+  "homePlayers": [
+    {
+      "name": "HAMAD Muhammad",
+      "nameS": "HAMAD Muhammad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "JABRAN",
+      "nameS": "JABRAN",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "SIDDIQUE Abu Bakar",
+      "nameS": "SIDDIQUE Abu Bakar",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "YAHYA Muhammad",
+      "nameS": "YAHYA Muhammad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Usman Faryad",
+      "nameS": "ALI Usman Faryad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "RAZA Fahad",
+      "nameS": "RAZA Fahad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Murad",
+      "nameS": "KHAN Murad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "HAYAT Khizar",
+      "nameS": "HAYAT Khizar",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "JEHAN Murad",
+      "nameS": "JEHAN Murad",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Afaq",
+      "nameS": "KHAN Afaq",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "YAZMAN Hamid",
+      "nameS": "YAZMAN Hamid",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    },
+    {
+      "name": "KHAN Musawer",
+      "nameS": "KHAN Musawer",
+      "org": "PAK",
+      "orgName": "PAK",
+      "country": "PAK",
+      "reg": "VVOMTEAM6------PAK01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "RAKHIMOV Umirbek",
+      "nameS": "RAKHIMOV Umirbek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "HAKIMOV Bilolbek",
+      "nameS": "HAKIMOV Bilolbek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "ISAMOV Khabibullokhon",
+      "nameS": "ISAMOV Khabibullokhon",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MURODOV Mirziyod",
+      "nameS": "MURODOV Mirziyod",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "SOBIROV Islomjon",
+      "nameS": "SOBIROV Islomjon",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "KAYPANOV Aybek",
+      "nameS": "KAYPANOV Aybek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MUROBIDINOV Saidjamol",
+      "nameS": "MUROBIDINOV Saidjamol",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "HAYDAROV Ogabek",
+      "nameS": "HAYDAROV Ogabek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MAMAYUSUFOV Shokhboz",
+      "nameS": "MAMAYUSUFOV Shokhboz",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "OMONOV Shakhzod",
+      "nameS": "OMONOV Shakhzod",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "MUHAMADIEV Yakhyo",
+      "nameS": "MUHAMADIEV Yakhyo",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    },
+    {
+      "name": "JURAEV Asadbek",
+      "nameS": "JURAEV Asadbek",
+      "org": "UZB",
+      "orgName": "UZB",
+      "country": "UZB",
+      "reg": "VVOMTEAM6------UZB01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,421 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Philippines",
+  "away": "Japan",
+  "homePlayers": [
+    {
+      "name": "VARGAS John Reymond",
+      "nameS": "VARGAS John Reymond",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "ALTAREJOS Kent Joerend",
+      "nameS": "ALTAREJOS Kent Joerend",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "BOSITO Erwin",
+      "nameS": "BOSITO Erwin",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "SANTOS Razhley",
+      "nameS": "SANTOS Razhley",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "BERONILLA Mark John Philip",
+      "nameS": "BERONILLA Mark John Philip",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "SAMUEL Renato Jr.",
+      "nameS": "SAMUEL Renato Jr.",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "LIGUAYAN Ferdinand Jr.",
+      "nameS": "LIGUAYAN Ferdinand Jr.",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "MATANGUIHAN John Leonel",
+      "nameS": "MATANGUIHAN John Leonel",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "GORPIDO Cer Gio",
+      "nameS": "GORPIDO Cer Gio",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "MAULIT Joven Kenneth",
+      "nameS": "MAULIT Joven Kenneth",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "NISNISAN James Vincent",
+      "nameS": "NISNISAN James Vincent",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "DIARAO Junmar",
+      "nameS": "DIARAO Junmar",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "NEROSA Raymond",
+      "nameS": "NEROSA Raymond",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "PAREJA Jennald",
+      "nameS": "PAREJA Jennald",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "CAROLINO Mar-joseph",
+      "nameS": "CAROLINO Mar-joseph",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "GONZAGA Francis Thomas",
+      "nameS": "GONZAGA Francis Thomas",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "MANAIG Mark Steven",
+      "nameS": "MANAIG Mark Steven",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "DE GUZMAN Amiel",
+      "nameS": "DE GUZMAN Amiel",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "DE VERA Liam Alexei",
+      "nameS": "DE VERA Liam Alexei",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "PAULE Nigel",
+      "nameS": "PAULE Nigel",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "JASMIN Romeo Jr.",
+      "nameS": "JASMIN Romeo Jr.",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "PINEDA Joshua",
+      "nameS": "PINEDA Joshua",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "BBLMTEAM9------PHI01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "WADA Keita",
+      "nameS": "WADA Keita",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YANO Yukiya",
+      "nameS": "YANO Yukiya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SOEDA Manami",
+      "nameS": "SOEDA Manami",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SHIBASAKI Masato",
+      "nameS": "SHIBASAKI Masato",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MUKOYAMA Motoki",
+      "nameS": "MUKOYAMA Motoki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "AIZAWA Ryosuke",
+      "nameS": "AIZAWA Ryosuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUJISAWA Ryosuke",
+      "nameS": "FUJISAWA Ryosuke",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MIZUTANI Shohei",
+      "nameS": "MIZUTANI Shohei",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KUMADA Toyo",
+      "nameS": "KUMADA Toyo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YAMADA Kenta",
+      "nameS": "YAMADA Kenta",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SATO Yuki",
+      "nameS": "SATO Yuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MARUYAMA Masashi",
+      "nameS": "MARUYAMA Masashi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "ARIMA Ryo",
+      "nameS": "ARIMA Ryo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TSUJIMOTO Yuki",
+      "nameS": "TSUJIMOTO Yuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KATO Mizuki",
+      "nameS": "KATO Mizuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NAGANO Kento",
+      "nameS": "NAGANO Kento",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TANIWAKI Koki",
+      "nameS": "TANIWAKI Koki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "HIGUCHI Shin",
+      "nameS": "HIGUCHI Shin",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "MATSUDA Wataru",
+      "nameS": "MATSUDA Wataru",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KONDO Kazuki",
+      "nameS": "KONDO Kazuki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUKUI Shogo",
+      "nameS": "FUKUI Shogo",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KAYO Shuichiro",
+      "nameS": "KAYO Shuichiro",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUCHIGAMI Yoshiki",
+      "nameS": "FUCHIGAMI Yoshiki",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "BBLMTEAM9------JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "DANILINA A / SHEVCHENKO A",
+  "away": "SHIBAHARA E / FRIEND J",
+  "homePlayers": [
+    {
+      "name": "DANILINA Anna",
+      "nameS": "DANILINA Anna",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENXDOUBLES----KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "SHEVCHENKO Aleksandr",
+      "nameS": "SHEVCHENKO Aleksandr",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "TENXDOUBLES----KAZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SHIBAHARA Ena",
+      "nameS": "SHIBAHARA Ena",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TENXDOUBLES----JPN02",
+      "photo": ""
+    },
+    {
+      "name": "FRIEND Jay",
+      "nameS": "FRIEND Jay",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TENXDOUBLES----JPN02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

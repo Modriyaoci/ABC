@@ -1,0 +1,79 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Lao PDR",
+  "away": "Bangladesh",
+  "homePlayers": [
+    {
+      "name": "VONGSA Anane",
+      "nameS": "VONGSA Anane",
+      "org": "LAO",
+      "orgName": "LAO",
+      "country": "LAO",
+      "reg": "TTEMTEAM-------LAO01",
+      "photo": ""
+    },
+    {
+      "name": "HAGBERG Johan",
+      "nameS": "HAGBERG Johan",
+      "org": "LAO",
+      "orgName": "LAO",
+      "country": "LAO",
+      "reg": "TTEMTEAM-------LAO01",
+      "photo": ""
+    },
+    {
+      "name": "SENGMANY Phongsavanh",
+      "nameS": "SENGMANY Phongsavanh",
+      "org": "LAO",
+      "orgName": "LAO",
+      "country": "LAO",
+      "reg": "TTEMTEAM-------LAO01",
+      "photo": ""
+    },
+    {
+      "name": "XAYSAVATH Xaysana",
+      "nameS": "XAYSAVATH Xaysana",
+      "org": "LAO",
+      "orgName": "LAO",
+      "country": "LAO",
+      "reg": "TTEMTEAM-------LAO01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "RIDOY Mohutasin",
+      "nameS": "RIDOY Mohutasin",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "IMON Imrul",
+      "nameS": "IMON Imrul",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEMTEAM-------BAN01",
+      "photo": ""
+    },
+    {
+      "name": "BAWM Ramhimlian",
+      "nameS": "BAWM Ramhimlian",
+      "org": "BAN",
+      "orgName": "BAN",
+      "country": "BAN",
+      "reg": "TTEMTEAM-------BAN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

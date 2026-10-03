@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Philippines",
+  "away": "Qatar",
+  "homePlayers": [
+    {
+      "name": "NITURA Shaina Marie",
+      "nameS": "NITURA Shaina Marie",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "BELEN Mhicaela",
+      "nameS": "BELEN Mhicaela",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "LAURE Ejiya",
+      "nameS": "LAURE Ejiya",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "de GUZMAN Julia Melissa",
+      "nameS": "de GUZMAN Julia Melissa",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "CANINO Angel Anne",
+      "nameS": "CANINO Angel Anne",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "PALOMATA Dell",
+      "nameS": "PALOMATA Dell",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "SOLOMON Alyssa Jae",
+      "nameS": "SOLOMON Alyssa Jae",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "PROVIDO Amie",
+      "nameS": "PROVIDO Amie",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "GAGATE Thea Allison",
+      "nameS": "GAGATE Thea Allison",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "ALBA Marionne Angelique",
+      "nameS": "ALBA Marionne Angelique",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "JAZARENO Ylizyeth Justine",
+      "nameS": "JAZARENO Ylizyeth Justine",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    },
+    {
+      "name": "YTANG Nina",
+      "nameS": "YTANG Nina",
+      "org": "PHI",
+      "orgName": "PHI",
+      "country": "PHI",
+      "reg": "VVOWTEAM6------PHI01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ALSALMAN Lamis",
+      "nameS": "ALSALMAN Lamis",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "SULTAN AL-ALAWI Aisha",
+      "nameS": "SULTAN AL-ALAWI Aisha",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ABOUEITA Dana",
+      "nameS": "ABOUEITA Dana",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "SHALABY Nelly",
+      "nameS": "SHALABY Nelly",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MOUHOUB Meriem",
+      "nameS": "MOUHOUB Meriem",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ELWALEED M EISA Ludan",
+      "nameS": "ELWALEED M EISA Ludan",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "DEYAB Almayasa",
+      "nameS": "DEYAB Almayasa",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ALMADHOUN Sumaia",
+      "nameS": "ALMADHOUN Sumaia",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MAHMOUD Lujain",
+      "nameS": "MAHMOUD Lujain",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "ALI Tasneem",
+      "nameS": "ALI Tasneem",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "MABROUK Janna",
+      "nameS": "MABROUK Janna",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    },
+    {
+      "name": "GADIAGA Penda Fatma",
+      "nameS": "GADIAGA Penda Fatma",
+      "org": "QAT",
+      "orgName": "QAT",
+      "country": "QAT",
+      "reg": "VVOWTEAM6------QAT01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

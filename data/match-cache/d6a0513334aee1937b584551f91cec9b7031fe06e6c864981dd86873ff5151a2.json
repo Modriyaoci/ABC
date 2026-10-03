@@ -1,0 +1,223 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Kyrgyzstan",
+  "away": "Thailand",
+  "homePlayers": [
+    {
+      "name": "BAZHIEV Amantur Kubatbekovich",
+      "nameS": "BAZHIEV Amantur Kubatbekovich",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "TOKTOEV Nurmukhammed",
+      "nameS": "TOKTOEV Nurmukhammed",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ZHYRGALBEK U. Baiastan",
+      "nameS": "ZHYRGALBEK U. Baiastan",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "KANYBEK U. Onolbek",
+      "nameS": "KANYBEK U. Onolbek",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ABDIMOMUN U. Iliaz",
+      "nameS": "ABDIMOMUN U. Iliaz",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ASKAR U. Baiel",
+      "nameS": "ASKAR U. Baiel",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "TOKTOSUNOV Ernis Erkinovich",
+      "nameS": "TOKTOSUNOV Ernis Erkinovich",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "MUSAEV Zhamalidin",
+      "nameS": "MUSAEV Zhamalidin",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "SHILOV Roman",
+      "nameS": "SHILOV Roman",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "ZHEENBEK U. Zhantemir",
+      "nameS": "ZHEENBEK U. Zhantemir",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    },
+    {
+      "name": "NURALY UULU Manazbek",
+      "nameS": "NURALY UULU Manazbek",
+      "org": "KGZ",
+      "orgName": "KGZ",
+      "country": "KGZ",
+      "reg": "VVOMTEAM6------KGZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "PHRAPUT Toopadit",
+      "nameS": "PHRAPUT Toopadit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "BHINIJDEE Napadet",
+      "nameS": "BHINIJDEE Napadet",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "THANOMNOI Jakkrit",
+      "nameS": "THANOMNOI Jakkrit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PAKDEEKAEW Anuchit",
+      "nameS": "PAKDEEKAEW Anuchit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "INTHANU Nakharin",
+      "nameS": "INTHANU Nakharin",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "MAHASIRIYOTHIN Suwit",
+      "nameS": "MAHASIRIYOTHIN Suwit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "JANPIROM Narongrit",
+      "nameS": "JANPIROM Narongrit",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "WONGTORN Boonyarid",
+      "nameS": "WONGTORN Boonyarid",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "RAMSIN Kiadtiphum",
+      "nameS": "RAMSIN Kiadtiphum",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "BAMRUNGPHAKDI Thanat",
+      "nameS": "BAMRUNGPHAKDI Thanat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "PHANRAM Anurak",
+      "nameS": "PHANRAM Anurak",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "THUNGKHAM Chaiwat",
+      "nameS": "THUNGKHAM Chaiwat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOMTEAM6------THA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,304 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Kazakhstan",
+  "away": "IR Iran",
+  "homePlayers": [
+    {
+      "name": "NABIYEV Assylkhan",
+      "nameS": "NABIYEV Assylkhan",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "MURATOV Daulet",
+      "nameS": "MURATOV Daulet",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "OSMANOV Ravil",
+      "nameS": "OSMANOV Ravil",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "SALMOV Mikhail",
+      "nameS": "SALMOV Mikhail",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "OXIKBAYEV Askan",
+      "nameS": "OXIKBAYEV Askan",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "GAZIYEV Odilzhan",
+      "nameS": "GAZIYEV Odilzhan",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "MAKHMUDOV Adam",
+      "nameS": "MAKHMUDOV Adam",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "TILEKKABYL Dauren",
+      "nameS": "TILEKKABYL Dauren",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "KALI Asset",
+      "nameS": "KALI Asset",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "ANDRUSSYAK Rustam",
+      "nameS": "ANDRUSSYAK Rustam",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "YAKUBOVICH Nikita",
+      "nameS": "YAKUBOVICH Nikita",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "YAKUBOVICH Daniil",
+      "nameS": "YAKUBOVICH Daniil",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "POBOCHENKO Ilya",
+      "nameS": "POBOCHENKO Ilya",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "NADYRBEKOV Davlatbek",
+      "nameS": "NADYRBEKOV Davlatbek",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "RAKIMZHANOV Azizzhan",
+      "nameS": "RAKIMZHANOV Azizzhan",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    },
+    {
+      "name": "IRISMETOV Daniyar",
+      "nameS": "IRISMETOV Daniyar",
+      "org": "KAZ",
+      "orgName": "KAZ",
+      "country": "KAZ",
+      "reg": "HBLMTEAM7------KAZ01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "HEIDARI Saber",
+      "nameS": "HEIDARI Saber",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "GHALANDARI Milad",
+      "nameS": "GHALANDARI Milad",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "FAROKHI Mohammadhossein",
+      "nameS": "FAROKHI Mohammadhossein",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ENAYATI Omid",
+      "nameS": "ENAYATI Omid",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HEIDARIAN Ali",
+      "nameS": "HEIDARIAN Ali",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "SIAVOSHISHAHENAYATI Mohammad",
+      "nameS": "SIAVOSHISHAHENAYATI Mohammad",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "RAHNAMA Mehran",
+      "nameS": "RAHNAMA Mehran",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ORAEI Mohammadreza",
+      "nameS": "ORAEI Mohammadreza",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "BEHNAMNIA MOHAMMADMAHDI",
+      "nameS": "BEHNAMNIA MOHAMMADMAHDI",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ADELKHANI Roohollah",
+      "nameS": "ADELKHANI Roohollah",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "KAZEMI Mohammadreza",
+      "nameS": "KAZEMI Mohammadreza",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "AMIRYOUSEFI Ali",
+      "nameS": "AMIRYOUSEFI Ali",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ROBAT Omid",
+      "nameS": "ROBAT Omid",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "PIRZADEH Alireza",
+      "nameS": "PIRZADEH Alireza",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "FATEHIZADEH Behshad",
+      "nameS": "FATEHIZADEH Behshad",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ASARI Younes",
+      "nameS": "ASARI Younes",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "HBLMTEAM7------IRI01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

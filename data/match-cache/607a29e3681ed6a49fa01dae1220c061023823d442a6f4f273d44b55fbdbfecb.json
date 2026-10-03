@@ -1,0 +1,286 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "India",
+  "away": "Japan",
+  "homePlayers": [
+    {
+      "name": "Shafali",
+      "nameS": "Shafali",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "GUNALAN Kamalini",
+      "nameS": "GUNALAN Kamalini",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "FULMALI Bharti Shrikrushna",
+      "nameS": "FULMALI Bharti Shrikrushna",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "GHOSH Richa",
+      "nameS": "GHOSH Richa",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "BHULLAR Harmanpreet Kaur",
+      "nameS": "BHULLAR Harmanpreet Kaur",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "NALLAPUREDDY Sree Charani",
+      "nameS": "NALLAPUREDDY Sree Charani",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SHARMA Deepti",
+      "nameS": "SHARMA Deepti",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "MANDHANA Smriti Shriniwas",
+      "nameS": "MANDHANA Smriti Shriniwas",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "GAUD Kranti Devi",
+      "nameS": "GAUD Kranti Devi",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "RAJESH PATIL Shreyanka",
+      "nameS": "RAJESH PATIL Shreyanka",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "SHARMA Nandani",
+      "nameS": "SHARMA Nandani",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "YADAV Radha Omprakash",
+      "nameS": "YADAV Radha Omprakash",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "Arundhati Reddy",
+      "nameS": "Arundhati Reddy",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "Renuka",
+      "nameS": "Renuka",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    },
+    {
+      "name": "RAWAL Pratika",
+      "nameS": "RAWAL Pratika",
+      "org": "IND",
+      "orgName": "IND",
+      "country": "IND",
+      "reg": "CKTWTEAM-------IND01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "IWASAKI Haruna",
+      "nameS": "IWASAKI Haruna",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KATO Ayaka",
+      "nameS": "KATO Ayaka",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YANAGIDA Mai",
+      "nameS": "YANAGIDA Mai",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "ODA Erika",
+      "nameS": "ODA Erika",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KATO Shimako",
+      "nameS": "KATO Shimako",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "NISHIMURA Akari",
+      "nameS": "NISHIMURA Akari",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "GOTO Hinase",
+      "nameS": "GOTO Hinase",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "CHANDEL Ahilya",
+      "nameS": "CHANDEL Ahilya",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "FUJIKAWA Ayumi",
+      "nameS": "FUJIKAWA Ayumi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "TOGUCHI Erika",
+      "nameS": "TOGUCHI Erika",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "YASUMOTO Nonoha",
+      "nameS": "YASUMOTO Nonoha",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "SUMI Seika",
+      "nameS": "SUMI Seika",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "OTA Kurumi",
+      "nameS": "OTA Kurumi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "KUSUDA Elena Megumi",
+      "nameS": "KUSUDA Elena Megumi",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    },
+    {
+      "name": "OGAWA Meg",
+      "nameS": "OGAWA Meg",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "CKTWTEAM-------JPN01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

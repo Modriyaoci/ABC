@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "CHEUNG S / DENG C",
+  "away": "ALFIAN F / FIKRI M",
+  "homePlayers": [
+    {
+      "name": "CHEUNG Sai Shing",
+      "nameS": "CHEUNG Sai Shing",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMMDOUBLES----HKG02",
+      "photo": ""
+    },
+    {
+      "name": "DENG Chi Fai",
+      "nameS": "DENG Chi Fai",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "BDMMDOUBLES----HKG02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ALFIAN Fajar",
+      "nameS": "ALFIAN Fajar",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMDOUBLES----INA01",
+      "photo": ""
+    },
+    {
+      "name": "FIKRI Muh. Shohibul",
+      "nameS": "FIKRI Muh. Shohibul",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "BDMMDOUBLES----INA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Chinese Taipei",
+  "away": "Mongolia",
+  "homePlayers": [
+    {
+      "name": "HSU Heng-yun",
+      "nameS": "HSU Heng-yun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "XU Zhen-xuan",
+      "nameS": "XU Zhen-xuan",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HUNG Chia-yao",
+      "nameS": "HUNG Chia-yao",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Shu-ho",
+      "nameS": "LIN Shu-ho",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "KAN Ko-hui",
+      "nameS": "KAN Ko-hui",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HSU Wan-yun",
+      "nameS": "HSU Wan-yun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "TSAI Yu-chun",
+      "nameS": "TSAI Yu-chun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIAO Yi-jen",
+      "nameS": "LIAO Yi-jen",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Chieh",
+      "nameS": "CHEN Chieh",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WEN Yi-chin",
+      "nameS": "WEN Yi-chin",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WU Tzu-hua",
+      "nameS": "WU Tzu-hua",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHANG Yi-chi",
+      "nameS": "CHANG Yi-chi",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "KHOSBAYAR Nergui",
+      "nameS": "KHOSBAYAR Nergui",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "GANBOLD Enkhnaran",
+      "nameS": "GANBOLD Enkhnaran",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "OTGONSUREN Erdene-enkh",
+      "nameS": "OTGONSUREN Erdene-enkh",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "UDVAL Munkhzul",
+      "nameS": "UDVAL Munkhzul",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "SANSARBOLD Temuulen",
+      "nameS": "SANSARBOLD Temuulen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "PUREVSUREN Enkhkhuslen",
+      "nameS": "PUREVSUREN Enkhkhuslen",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATTUR Ninjbolor",
+      "nameS": "BATTUR Ninjbolor",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "MUNGUNTSOOJ Sanchirmaa",
+      "nameS": "MUNGUNTSOOJ Sanchirmaa",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "GANBAATAR Saruulgerel",
+      "nameS": "GANBAATAR Saruulgerel",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATTOGOO Khaliunzaya",
+      "nameS": "BATTOGOO Khaliunzaya",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BATBOLD Amarbayasgalan",
+      "nameS": "BATBOLD Amarbayasgalan",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    },
+    {
+      "name": "BAYARBAYASGALAN Khulan",
+      "nameS": "BAYARBAYASGALAN Khulan",
+      "org": "MGL",
+      "orgName": "MGL",
+      "country": "MGL",
+      "reg": "VVOWTEAM6------MGL01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

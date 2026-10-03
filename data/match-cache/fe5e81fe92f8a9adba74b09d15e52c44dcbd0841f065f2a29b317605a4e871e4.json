@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "Chinese Taipei",
+  "away": "Thailand",
+  "homePlayers": [
+    {
+      "name": "HSU Heng-yun",
+      "nameS": "HSU Heng-yun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "XU Zhen-xuan",
+      "nameS": "XU Zhen-xuan",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HUNG Chia-yao",
+      "nameS": "HUNG Chia-yao",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIN Shu-ho",
+      "nameS": "LIN Shu-ho",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "KAN Ko-hui",
+      "nameS": "KAN Ko-hui",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "HSU Wan-yun",
+      "nameS": "HSU Wan-yun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "TSAI Yu-chun",
+      "nameS": "TSAI Yu-chun",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "LIAO Yi-jen",
+      "nameS": "LIAO Yi-jen",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHEN Chieh",
+      "nameS": "CHEN Chieh",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WEN Yi-chin",
+      "nameS": "WEN Yi-chin",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "WU Tzu-hua",
+      "nameS": "WU Tzu-hua",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    },
+    {
+      "name": "CHANG Yi-chi",
+      "nameS": "CHANG Yi-chi",
+      "org": "TPE",
+      "orgName": "TPE",
+      "country": "TPE",
+      "reg": "VVOWTEAM6------TPE01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "PANNOY Piyanut",
+      "nameS": "PANNOY Piyanut",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "GUEDPARD Pornpun",
+      "nameS": "GUEDPARD Pornpun",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KUNMUEANG Kanyarat",
+      "nameS": "KUNMUEANG Kanyarat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "NUEKJANG Thatdao",
+      "nameS": "NUEKJANG Thatdao",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "SEETALOED Warisara",
+      "nameS": "SEETALOED Warisara",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KHAMWONG Kalyarat",
+      "nameS": "KHAMWONG Kalyarat",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "JANTHAWISUT Sasipapron",
+      "nameS": "JANTHAWISUT Sasipapron",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "JAISAEN Natthanicha",
+      "nameS": "JAISAEN Natthanicha",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KOKRAM Pimpichaya",
+      "nameS": "KOKRAM Pimpichaya",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KONGYOT Ajcharaporn",
+      "nameS": "KONGYOT Ajcharaporn",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "MOKSRI Chatchu-on",
+      "nameS": "MOKSRI Chatchu-on",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    },
+    {
+      "name": "KAMULTHALA Kaewkalaya",
+      "nameS": "KAMULTHALA Kaewkalaya",
+      "org": "THA",
+      "orgName": "THA",
+      "country": "THA",
+      "reg": "VVOWTEAM6------THA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

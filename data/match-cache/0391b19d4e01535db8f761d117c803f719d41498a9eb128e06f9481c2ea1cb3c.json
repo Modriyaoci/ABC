@@ -1,0 +1,52 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "NAGASAKI M / MENDE R",
+  "away": "LEE H / SU T",
+  "homePlayers": [
+    {
+      "name": "NAGASAKI Miyu",
+      "nameS": "NAGASAKI Miyu",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWDOUBLES----JPN02",
+      "photo": ""
+    },
+    {
+      "name": "MENDE Rin",
+      "nameS": "MENDE Rin",
+      "org": "JPN",
+      "orgName": "JPN",
+      "country": "JPN",
+      "reg": "TTEWDOUBLES----JPN02",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "LEE Hoi Man Karen",
+      "nameS": "LEE Hoi Man Karen",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEWDOUBLES----HKG02",
+      "photo": ""
+    },
+    {
+      "name": "SU Tsz Tung",
+      "nameS": "SU Tsz Tung",
+      "org": "HKG",
+      "orgName": "HKG",
+      "country": "HKG",
+      "reg": "TTEWDOUBLES----HKG02",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}

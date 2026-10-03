@@ -1,0 +1,232 @@
+{
+  "available": true,
+  "local": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:52:07+08:00",
+  "home": "IR Iran",
+  "away": "Indonesia",
+  "homePlayers": [
+    {
+      "name": "NASRI MASTANABAD Mobin",
+      "nameS": "NASRI MASTANABAD Mobin",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HOSSEIN KHANZADEH FIROUZJ Poriya",
+      "nameS": "HOSSEIN KHANZADEH FIROUZJ Poriya",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "ESMAEILNEZHAD Amin",
+      "nameS": "ESMAEILNEZHAD Amin",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "DAVOODIPOUR Ilshan",
+      "nameS": "DAVOODIPOUR Ilshan",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "BEHNEZHAD Arshia",
+      "nameS": "BEHNEZHAD Arshia",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HAJIPOUR MOGHADDAM FAROUJ Ali",
+      "nameS": "HAJIPOUR MOGHADDAM FAROUJ Ali",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HAJI KALATEH Hossein",
+      "nameS": "HAJI KALATEH Hossein",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "KAZEMI POSHTPARI Yousef",
+      "nameS": "KAZEMI POSHTPARI Yousef",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "HAGHPARAST Ali",
+      "nameS": "HAGHPARAST Ali",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "VALIZADEH Mohammad",
+      "nameS": "VALIZADEH Mohammad",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "SHARIFI Morteza",
+      "nameS": "SHARIFI Morteza",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    },
+    {
+      "name": "NASERI CHENARI Seyed Eisa",
+      "nameS": "NASERI CHENARI Seyed Eisa",
+      "org": "IRI",
+      "orgName": "IRI",
+      "country": "IRI",
+      "reg": "VVOMTEAM6------IRI01",
+      "photo": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "ARABI Boy Arnez",
+      "nameS": "ARABI Boy Arnez",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "KURNIAWAN Hendra",
+      "nameS": "KURNIAWAN Hendra",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "MALIZI Muhammad",
+      "nameS": "MALIZI Muhammad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "GUMILAR Ahmad",
+      "nameS": "GUMILAR Ahmad",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "PUTRATAMA Fahri Septian",
+      "nameS": "PUTRATAMA Fahri Septian",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "FAUZAN Rama Fazza",
+      "nameS": "FAUZAN Rama Fazza",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "HALIM Farhan",
+      "nameS": "HALIM Farhan",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ZULFIKRI Dio",
+      "nameS": "ZULFIKRI Dio",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ABHINAYA RAKHA Fahreza",
+      "nameS": "ABHINAYA RAKHA Fahreza",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "NIBRAS Fauzan",
+      "nameS": "NIBRAS Fauzan",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "DANIEL PRATAMA Alfin",
+      "nameS": "DANIEL PRATAMA Alfin",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    },
+    {
+      "name": "ARDIAN Sigit",
+      "nameS": "ARDIAN Sigit",
+      "org": "INA",
+      "orgName": "INA",
+      "country": "INA",
+      "reg": "VVOMTEAM6------INA01",
+      "photo": ""
+    }
+  ],
+  "sections": [],
+  "subMatches": [],
+  "message": "本地已保存比赛结果；官网未提供可缓存的小分"
+}
