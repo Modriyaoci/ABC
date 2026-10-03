@@ -1,0 +1,72 @@
+{
+  "available": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:51:06+08:00",
+  "home": "MATSUOKA H（日本）",
+  "away": "THOMPSON K（中国香港）",
+  "homePlayers": [
+    {
+      "name": "MATSUOKA Hayato",
+      "nameS": "MATSUOKA H",
+      "org": "JPN",
+      "orgName": "日本",
+      "country": "日本",
+      "reg": "3204194",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/3204194.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/3204194.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/3204194.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "THOMPSON Kairan",
+      "nameS": "THOMPSON K",
+      "org": "HKG",
+      "orgName": "中国香港",
+      "country": "中国香港",
+      "reg": "1491269",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/1491269.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/1491269.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/1491269.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    }
+  ],
+  "sections": [
+    {
+      "title": "小分",
+      "entityLabel": "姓名",
+      "columns": [
+        "局/节",
+        "MATSUOKA H（日本）",
+        "THOMPSON K（中国香港）"
+      ],
+      "rows": [
+        [
+          "第1盘",
+          "7",
+          "6"
+        ],
+        [
+          "第1盘抢七",
+          "7",
+          "2"
+        ],
+        [
+          "第2盘",
+          "6",
+          "1"
+        ]
+      ]
+    }
+  ],
+  "subMatches": [],
+  "message": ""
+}

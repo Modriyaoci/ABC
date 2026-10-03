@@ -1,0 +1,67 @@
+{
+  "available": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:51:05+08:00",
+  "home": "FITRIADI M（印度尼西亚）",
+  "away": "SHOAIB M（巴基斯坦）",
+  "homePlayers": [
+    {
+      "name": "FITRIADI M Rifqi",
+      "nameS": "FITRIADI M",
+      "org": "INA",
+      "orgName": "印度尼西亚",
+      "country": "印度尼西亚",
+      "reg": "12189143",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/12189143.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/12189143.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/12189143.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SHOAIB Muhammad",
+      "nameS": "SHOAIB M",
+      "org": "PAK",
+      "orgName": "巴基斯坦",
+      "country": "巴基斯坦",
+      "reg": "870154",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/870154.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/870154.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/870154.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    }
+  ],
+  "sections": [
+    {
+      "title": "小分",
+      "entityLabel": "姓名",
+      "columns": [
+        "局/节",
+        "FITRIADI M（印度尼西亚）",
+        "SHOAIB M（巴基斯坦）"
+      ],
+      "rows": [
+        [
+          "第1盘",
+          "6",
+          "4"
+        ],
+        [
+          "第2盘",
+          "6",
+          "4"
+        ]
+      ]
+    }
+  ],
+  "subMatches": [],
+  "message": ""
+}

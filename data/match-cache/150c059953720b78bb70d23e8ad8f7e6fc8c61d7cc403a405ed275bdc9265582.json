@@ -1,0 +1,107 @@
+{
+  "available": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:53:03+08:00",
+  "home": "WONG H/WONG T（中国香港）",
+  "away": "YULDASHEVA S/SHIN M（乌兹别克斯坦）",
+  "homePlayers": [
+    {
+      "name": "WONG Hong Yi",
+      "nameS": "WONG H",
+      "org": "HKG",
+      "orgName": "中国香港",
+      "country": "中国香港",
+      "reg": "1492746",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/1492746.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/1492746.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/1492746.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    },
+    {
+      "name": "WONG Tsz Fu",
+      "nameS": "WONG T",
+      "org": "HKG",
+      "orgName": "中国香港",
+      "country": "中国香港",
+      "reg": "1491532",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/1491532.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/1491532.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/1491532.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "YULDASHEVA Sevil",
+      "nameS": "YULDASHEVA S",
+      "org": "UZB",
+      "orgName": "乌兹别克斯坦",
+      "country": "乌兹别克斯坦",
+      "reg": "12786308",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/12786308.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/12786308.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/12786308.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    },
+    {
+      "name": "SHIN Maksim",
+      "nameS": "SHIN M",
+      "org": "UZB",
+      "orgName": "乌兹别克斯坦",
+      "country": "乌兹别克斯坦",
+      "reg": "12785253",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/12785253.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/12785253.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/12785253.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    }
+  ],
+  "sections": [
+    {
+      "title": "小分",
+      "entityLabel": "姓名",
+      "columns": [
+        "局/节",
+        "WONG H/WONG T（中国香港）",
+        "YULDASHEVA S/SHIN M（乌兹别克斯坦）"
+      ],
+      "rows": [
+        [
+          "第1盘",
+          "6",
+          "7"
+        ],
+        [
+          "第1盘抢七",
+          "5",
+          "7"
+        ],
+        [
+          "第2盘",
+          "6",
+          "0"
+        ],
+        [
+          "第3盘（抢十）",
+          "9",
+          "11"
+        ]
+      ]
+    }
+  ],
+  "subMatches": [],
+  "message": ""
+}

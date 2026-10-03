@@ -1,0 +1,102 @@
+{
+  "available": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:53:01+08:00",
+  "home": "LEE E/SHIN S（韩国）",
+  "away": "PLIPUECH P/ISARO P（泰国）",
+  "homePlayers": [
+    {
+      "name": "LEE Eunhye",
+      "nameS": "LEE E",
+      "org": "KOR",
+      "orgName": "韩国",
+      "country": "韩国",
+      "reg": "6794225",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/6794225.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/6794225.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/6794225.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    },
+    {
+      "name": "SHIN Sanhui",
+      "nameS": "SHIN S",
+      "org": "KOR",
+      "orgName": "韩国",
+      "country": "韩国",
+      "reg": "6793077",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/6793077.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/6793077.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/6793077.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "PLIPUECH Peangtarn",
+      "nameS": "PLIPUECH P",
+      "org": "THA",
+      "orgName": "泰国",
+      "country": "泰国",
+      "reg": "2435461",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/2435461.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/2435461.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/2435461.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    },
+    {
+      "name": "ISARO Pruchya",
+      "nameS": "ISARO P",
+      "org": "THA",
+      "orgName": "泰国",
+      "country": "泰国",
+      "reg": "11408076",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/11408076.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/11408076.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/11408076.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    }
+  ],
+  "sections": [
+    {
+      "title": "小分",
+      "entityLabel": "姓名",
+      "columns": [
+        "局/节",
+        "LEE E/SHIN S（韩国）",
+        "PLIPUECH P/ISARO P（泰国）"
+      ],
+      "rows": [
+        [
+          "第1盘",
+          "4",
+          "6"
+        ],
+        [
+          "第2盘",
+          "6",
+          "1"
+        ],
+        [
+          "第3盘（抢十）",
+          "12",
+          "10"
+        ]
+      ]
+    }
+  ],
+  "subMatches": [],
+  "message": ""
+}

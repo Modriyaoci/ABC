@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-10-03T09:33:53+08:00",
+    "generatedAt": "2026-10-03T09:52:07+08:00",
     "timezone": "UTC+8",
     "source": "https://results.asiangames2026.org/#/schedule/daily/",
     "total": 778,
@@ -103,8 +103,11 @@
         "2026-09-29"
       ]
     },
+    "historicalCutoff": "2026-10-03",
+    "historicalFrozenAt": "2026-10-03T09:52:08+08:00",
     "snapshotSource": "https://two026asiagames-def.onrender.com/api/schedule",
-    "historicalFrozenBefore": "2026-10-03"
+    "historicalFrozenBefore": "2026-10-03",
+    "historicalDetailsCached": 5
   },
   "records": [
     {
@@ -218389,7 +218392,7 @@
       "stage": "32强赛",
       "phase": "32强赛",
       "matchup": "FITRIADI M Rifqi (INA) vs SHOAIB Muhammad (PAK)",
-      "score": "—",
+      "score": "2 : 0",
       "venue": "名古屋市东山公园网球中心",
       "court": "Court 5",
       "officialCourtOrder": 3,
@@ -218410,7 +218413,7 @@
       "stage": "32强赛",
       "phase": "32强赛",
       "matchup": "MATSUOKA Hayato (JPN) vs THOMPSON Kairan (HKG)",
-      "score": "—",
+      "score": "2 : 0",
       "venue": "名古屋市东山公园网球中心",
       "court": "Center Court",
       "officialCourtOrder": 0,
@@ -218604,7 +218607,7 @@
       "stage": "32强赛",
       "phase": "32强赛",
       "matchup": "WONG Hong Yi WONG Tsz Fu (HKG) vs YULDASHEVA Sevil SHIN Maksim (UZB)",
-      "score": "—",
+      "score": "1 : 2",
       "venue": "名古屋市东山公园网球中心",
       "court": "Indoor Court C",
       "officialCourtOrder": 14,
@@ -218625,7 +218628,7 @@
       "stage": "32强赛",
       "phase": "32强赛",
       "matchup": "ASIMOVA Shakhzoda KOSIMI Akhmaddzhon (TJK) vs SHIBAHARA Ena FRIEND Jay (JPN)",
-      "score": "—",
+      "score": "0 : 2",
       "venue": "名古屋市东山公园网球中心",
       "court": "Indoor Court C",
       "officialCourtOrder": 13,
@@ -218646,7 +218649,7 @@
       "stage": "32强赛",
       "phase": "32强赛",
       "matchup": "LEE Eunhye SHIN Sanhui (KOR) vs PLIPUECH Peangtarn ISARO Pruchya (THA)",
-      "score": "—",
+      "score": "2 : 1",
       "venue": "名古屋市东山公园网球中心",
       "court": "Indoor Court A",
       "officialCourtOrder": 6,
@@ -258739,11 +258742,11 @@
         "Members": [
           {
             "Org": "BAN",
-            "Bib": "16",
-            "Name": "DAS Litton Kumer",
-            "NameS": "DAS Litton Kumer",
+            "Bib": "13",
+            "Name": "HASSAN Mohammed Saif",
+            "NameS": "HASSAN Mohammed Saif",
             "FuncDesc": "Athlete",
-            "PosDesc": "Wicket Keeper"
+            "PosDesc": "Right Hand Bat"
           },
           {
             "Org": "BAN",
@@ -258755,19 +258758,19 @@
           },
           {
             "Org": "BAN",
+            "Bib": "16",
+            "Name": "DAS Litton Kumer",
+            "NameS": "DAS Litton Kumer",
+            "FuncDesc": "Athlete",
+            "PosDesc": "Wicket Keeper"
+          },
+          {
+            "Org": "BAN",
             "Bib": "63",
             "Name": "EMON Mohammad Parvez Hossain",
             "NameS": "EMON Mohammad Parvez Hossain",
             "FuncDesc": "Athlete",
             "PosDesc": "Left Hand Bat"
-          },
-          {
-            "Org": "BAN",
-            "Bib": "13",
-            "Name": "HASSAN Mohammed Saif",
-            "NameS": "HASSAN Mohammed Saif",
-            "FuncDesc": "Athlete",
-            "PosDesc": "Right Hand Bat"
           },
           {
             "Org": "BAN",
@@ -258863,7 +258866,7 @@
         "Org": "SRI",
         "Reg": "CKTMTEAM-------SRI01",
         "Name": "Sri Lanka",
-        "Result": "154 - 7",
+        "Result": "165 - 9",
         "Winner": false,
         "HasData": true,
         "NameS": "Sri Lanka",
@@ -258943,19 +258946,19 @@
           },
           {
             "Org": "SRI",
-            "Bib": "53",
-            "Name": "ILANDARI DEWAGE NT",
-            "NameS": "ILANDARI DEWAGE NT",
-            "FuncDesc": "Athlete",
-            "PosDesc": "Right Arm Fast"
-          },
-          {
-            "Org": "SRI",
             "Bib": "59",
             "Name": "VIJAYAKANTH Viyaskanth",
             "NameS": "VIJAYAKANTH Viyaskanth",
             "FuncDesc": "Athlete",
             "PosDesc": "Right Hand Bat"
+          },
+          {
+            "Org": "SRI",
+            "Bib": "53",
+            "Name": "ILANDARI DEWAGE NT",
+            "NameS": "ILANDARI DEWAGE NT",
+            "FuncDesc": "Athlete",
+            "PosDesc": "Right Arm Fast"
           },
           {
             "Org": "SRI",
@@ -258994,7 +258997,7 @@
           {
             "Rk": "",
             "RkPo": 0,
-            "Res": "154 - 7",
+            "Res": "165 - 9",
             "Extensions": []
           }
         ]
@@ -259004,7 +259007,7 @@
       "category": "男子",
       "stage": "铜牌赛",
       "matchup": "孟加拉国 vs 斯里兰卡",
-      "score": "0 : 154",
+      "score": "0 : 165",
       "venue": "Korogi Athletic Park",
       "court": "",
       "status": "RUNNING",
@@ -259140,6 +259143,12 @@
             "RkPo": 0,
             "Res": "20",
             "Extensions": []
+          },
+          {
+            "Rk": "",
+            "RkPo": 0,
+            "Res": "13",
+            "Extensions": []
           }
         ]
       },
@@ -259147,7 +259156,7 @@
         "Org": "KOR",
         "Reg": "VVOMTEAM6------KOR01",
         "Name": "Republic of Korea",
-        "Result": "0",
+        "Result": "1",
         "Winner": false,
         "HasData": true,
         "NameS": "Korea",
@@ -259254,7 +259263,13 @@
           {
             "Rk": "",
             "RkPo": 0,
-            "Res": "24",
+            "Res": "25",
+            "Extensions": []
+          },
+          {
+            "Rk": "",
+            "RkPo": 0,
+            "Res": "16",
             "Extensions": []
           }
         ]
@@ -259264,7 +259279,7 @@
       "category": "男子",
       "stage": "第5至8名排位赛 · 第45场",
       "matchup": "卡塔尔 vs 韩国",
-      "score": "0 : 0",
+      "score": "0 : 1",
       "venue": "冈崎中央综合公园体育馆",
       "court": "",
       "status": "RUNNING",
@@ -259398,7 +259413,13 @@
           {
             "Rk": "",
             "RkPo": 0,
-            "Res": "26",
+            "Res": "29",
+            "Extensions": []
+          },
+          {
+            "Rk": "",
+            "RkPo": 0,
+            "Res": "6",
             "Extensions": []
           }
         ]
@@ -259407,7 +259428,7 @@
         "Org": "UZB",
         "Reg": "VVOMTEAM6------UZB01",
         "Name": "Uzbekistan",
-        "Result": "0",
+        "Result": "1",
         "Winner": false,
         "HasData": true,
         "NameS": "Uzbekistan",
@@ -259514,7 +259535,13 @@
           {
             "Rk": "",
             "RkPo": 0,
-            "Res": "25",
+            "Res": "31",
+            "Extensions": []
+          },
+          {
+            "Rk": "",
+            "RkPo": 0,
+            "Res": "10",
             "Extensions": []
           }
         ]
@@ -259524,7 +259551,7 @@
       "category": "男子",
       "stage": "第9至16名排位赛 · 第41场",
       "matchup": "中国香港 vs 乌兹别克斯坦",
-      "score": "0 : 0",
+      "score": "0 : 1",
       "venue": "小牧公园竞技场",
       "court": "",
       "status": "RUNNING",
@@ -259551,18 +259578,25 @@
         "Org": "HKG",
         "Reg": "1491136",
         "Name": "WONG Coleman",
-        "Result": "",
+        "Result": "0",
         "Winner": false,
         "HasData": true,
         "NameS": "WONG C",
         "Medal": "",
-        "Splits": [],
+        "Splits": [
+          {
+            "Rk": "",
+            "RkPo": 0,
+            "Res": "0",
+            "Extensions": []
+          }
+        ],
         "Extensions": [
           {
             "Type": "COMPETITOR_INFO",
             "Code": "GamePoints",
             "Pos": 0,
-            "Value": "0",
+            "Value": "40",
             "Extensions": []
           },
           {
@@ -259680,14 +259714,14 @@
             "Type": "SERVICE",
             "Code": "MemberServer",
             "Pos": 0,
-            "Value": "",
+            "Value": "1",
             "Extensions": []
           },
           {
             "Type": "SERVICE",
             "Code": "Server",
             "Pos": 0,
-            "Value": "false",
+            "Value": "true",
             "Extensions": []
           }
         ]
@@ -259696,18 +259730,25 @@
         "Org": "CHN",
         "Reg": "10336112",
         "Name": "WU Yibing",
-        "Result": "",
+        "Result": "0",
         "Winner": false,
         "HasData": true,
         "NameS": "WU Y",
         "Medal": "",
-        "Splits": [],
+        "Splits": [
+          {
+            "Rk": "",
+            "RkPo": 0,
+            "Res": "1",
+            "Extensions": []
+          }
+        ],
         "Extensions": [
           {
             "Type": "COMPETITOR_INFO",
             "Code": "GamePoints",
             "Pos": 0,
-            "Value": "0",
+            "Value": "40",
             "Extensions": []
           },
           {
@@ -259842,11 +259883,11 @@
       "category": "男子单打",
       "stage": "金牌赛",
       "matchup": "WONG C（中国香港） vs WU Y（中国）",
-      "score": "待赛",
+      "score": "0 : 0",
       "venue": "名古屋市东山公园网球中心",
       "court": "Center Court",
-      "status": "START_LIST",
-      "isLive": false,
+      "status": "RUNNING",
+      "isLive": true,
       "officialCourtOrder": 0
     },
     {

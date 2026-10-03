@@ -62,6 +62,7 @@ PLAYER_PHOTO_LOCK = threading.Lock()
 # last successful payload on disk so a restart (and an official 429) still
 # serves the complete local result.
 TOURNAMENT_CACHE_DIR = ROOT / "data" / "tournament-cache"
+MATCH_CACHE_DIR = ROOT / "data" / "match-cache"
 # As of the current competition window these disciplines have no remaining
 # fixtures.  Tennis, volleyball and cricket stay live because their upcoming
 # matches can still change the published draw.
@@ -92,6 +93,32 @@ def _read_tournament_cache(sport: str) -> dict | None:
 
 def _write_tournament_cache(sport: str, payload: dict) -> None:
     if not isinstance(payload, dict) or not isinstance(payload.get("events"), list):
+        return
+
+
+def _match_cache_path(match_id: str) -> Path:
+    digest = hashlib.sha256(str(match_id).encode("utf-8")).hexdigest()
+    return MATCH_CACHE_DIR / f"{digest}.json"
+
+
+def _read_match_cache(match_id: str) -> dict | None:
+    try:
+        value = json.loads(_match_cache_path(match_id).read_text(encoding="utf-8"))
+    except (OSError, ValueError, TypeError):
+        return None
+    return value if isinstance(value, dict) and value.get("available") else None
+
+
+def _write_match_cache(match_id: str, payload: dict) -> None:
+    if not isinstance(payload, dict) or not payload.get("available"):
+        return
+    try:
+        MATCH_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        target = _match_cache_path(match_id)
+        temporary = target.with_suffix(".tmp")
+        temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        temporary.replace(target)
+    except OSError:
         return
     try:
         TOURNAMENT_CACHE_DIR.mkdir(parents=True, exist_ok=True)
@@ -990,6 +1017,20 @@ class RequestHandler(BaseHTTPRequestHandler):
                     record = next((row for row in records if row["id"] == match_id), None)
                     if not record:
                         self._send_json({"message": "找不到这场比赛"}, HTTPStatus.NOT_FOUND)
+                        return
+                    # Historical details are immutable once the day has
+                    # ended.  Prefer the checked-in snapshot so opening an
+                    # old match never recontacts the official service.
+                    if str(record.get("date") or "") < now.astimezone(BEIJING_TZ).date().isoformat():
+                        local_detail = _read_match_cache(match_id)
+                        if local_detail is not None:
+                            self._send_json({**local_detail, "local": True})
+                            return
+                        self._send_json({
+                            "available": False,
+                            "local": True,
+                            "message": "本地暂无已缓存的比赛详情",
+                        })
                         return
                     ttl = match_detail_ttl(record)
 

@@ -1,0 +1,97 @@
+{
+  "available": true,
+  "status": "OFFICIAL",
+  "isLive": false,
+  "updatedAt": "2026-10-03T09:53:00+08:00",
+  "home": "ASIMOVA S/KOSIMI A（塔吉克斯坦）",
+  "away": "SHIBAHARA E/FRIEND J（日本）",
+  "homePlayers": [
+    {
+      "name": "ASIMOVA Shakhzoda",
+      "nameS": "ASIMOVA S",
+      "org": "TJK",
+      "orgName": "塔吉克斯坦",
+      "country": "塔吉克斯坦",
+      "reg": "5304819",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/5304819.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/5304819.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/5304819.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    },
+    {
+      "name": "KOSIMI Akhmaddzhon",
+      "nameS": "KOSIMI A",
+      "org": "TJK",
+      "orgName": "塔吉克斯坦",
+      "country": "塔吉克斯坦",
+      "reg": "7826985",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/7826985.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/7826985.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/7826985.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    }
+  ],
+  "awayPlayers": [
+    {
+      "name": "SHIBAHARA Ena",
+      "nameS": "SHIBAHARA E",
+      "org": "JPN",
+      "orgName": "日本",
+      "country": "日本",
+      "reg": "3208021",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/3208021.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/3208021.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/3208021.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    },
+    {
+      "name": "FRIEND Jay",
+      "nameS": "FRIEND J",
+      "org": "JPN",
+      "orgName": "日本",
+      "country": "日本",
+      "reg": "3204628",
+      "photo": "https://results.asiangames2026.org/ag2026/photos/3204628.jpg",
+      "photoUrl": "https://results.asiangames2026.org/ag2026/photos/3204628.jpg",
+      "avatar": "https://results.asiangames2026.org/ag2026/photos/3204628.jpg",
+      "substitute": false,
+      "captain": false,
+      "posDesc": "",
+      "bib": ""
+    }
+  ],
+  "sections": [
+    {
+      "title": "小分",
+      "entityLabel": "姓名",
+      "columns": [
+        "局/节",
+        "ASIMOVA S/KOSIMI A（塔吉克斯坦）",
+        "SHIBAHARA E/FRIEND J（日本）"
+      ],
+      "rows": [
+        [
+          "第1盘",
+          "0",
+          "6"
+        ],
+        [
+          "第2盘",
+          "1",
+          "6"
+        ]
+      ]
+    }
+  ],
+  "subMatches": [],
+  "message": ""
+}
