@@ -478,6 +478,19 @@ def preserve_known_matchups(
             for key in ("home", "away", "matchup"):
                 if old.get(key):
                     row[key] = old[key]
+        # The list feed can temporarily omit a confirmed result even though
+        # the previous local snapshot already contains it (the detail feed is
+        # often updated first). Never replace that local final score with a
+        # placeholder during the next scheduled refresh.
+        if old:
+            incoming_score = str(row.get("score") or "").strip()
+            previous_score = str(old.get("score") or "").strip()
+            old_date = str(old.get("date") or old.get("sourceDate") or "")
+            today = datetime.now(BEIJING_TZ).date().isoformat()
+            if (old_date and old_date < today and previous_score
+                    and previous_score not in {"—", "-", "待赛"}
+                    and incoming_score in {"", "—", "-", "待赛"}):
+                row = dict(row, score=old["score"], status=old.get("status", row.get("status")), isLive=old.get("isLive", row.get("isLive")))
         repaired.append(row)
     return repaired
 
